@@ -1,0 +1,99 @@
+# mcp-bindingdb
+
+> **Under construction:** this project is in early development. Tools, table layouts and examples may
+> change without notice.
+
+An MCP server for querying [BindingDB](https://www.bindingdb.org) (about 3.2M measured protein–ligand
+binding affinities) from a local, read-only DuckDB build of the monthly MySQL dump.
+
+## Build the database
+
+Requires Docker (daemon running) and [uv](https://docs.astral.sh/uv/).
+
+```bash
+scripts/build_duckdb.sh                    # release 202610 -> data/bindingdb_202610.duckdb
+scripts/build_duckdb.sh --release 202611   # a later release
+```
+
+The script downloads the dump, loads it into a temporary MySQL 8.4 container, copies it to DuckDB
+(`scripts/convert_to_duckdb.py`, checking row counts), adds derived query tables
+(`scripts/add_derived_tables.py`), and removes the container. The `regusers` and `person` tables
+(passwords and contact details) are left out unless you pass `--include-pii`.
+
+Derived tables:
+
+| Table | Contents |
+|---|---|
+| `activity` | One row per measured value: `affinity_type`, `relation` (`=`, `<`, `>`), numeric `value`, `unit`, `p_affinity`, plus compound, target, assay and citation columns |
+| `compound` | One row per small molecule: preferred name, InChIKey, SMILES, formula, weight, counts |
+| `compound_name` | Compound synonyms, including ChEMBL ids, PubChem `cid_N` and patent labels |
+| `target` | One row per polymer/complex target: bare UniProt accession, organism, counts |
+| `target_name` | Target synonyms (gene names, UniProt entry names) |
+
+## Run the server
+
+```bash
+uv run mcp-bindingdb                                  # stdio
+uv run mcp-bindingdb --transport streamable-http --port 8000
+```
+
+The database is the newest `data/bindingdb_*.duckdb`, or `--db PATH` / `$BINDINGDB_DUCKDB`.
+
+**Claude Code:** `.mcp.json` in this repo registers the server for the project.
+**Claude Desktop:** add to `claude_desktop_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "mcp-bindingdb": {
+      "command": "uv",
+      "args": ["--directory", "/path/to/mcp-bindingdb", "run", "mcp-bindingdb"]
+    }
+  }
+}
+```
+
+## Tools
+
+| Tool | Purpose |
+|---|---|
+| `search_compounds` | By name/synonym, ChEMBL id, `cid_N`, BDBM id, or InChIKey (full or first block) |
+| `search_targets` | By name, gene name, UniProt entry name or accession; optional organism filter |
+| `get_compound` | Identifiers, synonyms, PDB ligands, most potent targets |
+| `get_target` | Identifiers, synonyms, PDB ids, complex components, measurement counts |
+| `find_ligands_for_target` | Most potent compounds for a target (by id or UniProt accession, optional variants) |
+| `find_targets_for_compound` | Activity/selectivity profile of a compound |
+| `get_activity` | Full record of one measurement, with assay description and citation |
+| `describe_tables` | Table list with descriptions, or columns and sample rows of one table |
+| `run_sql` | Arbitrary read-only DuckDB SQL |
+
+All tools are read-only. The connection is opened read-only with file, network and extension access
+disabled and settings locked, so `run_sql` cannot write data or read anything outside the database.
+Queries time out after 30 s (`--timeout`).
+
+## Data notes
+
+- Ki/Kd/IC50/EC50 are in nM, kon in M⁻¹s⁻¹, koff in s⁻¹; `p_affinity = 9 − log10(nM)`.
+- `>` values (e.g. `>10000`) usually mean inactive at the highest concentration tested; potency filters exclude them.
+- `monomer.display_name` holds only the BDBM id; names are in `compound_name` / `compound.name`.
+- `monomer.chembl_id` is empty in this release; ChEMBL ids appear as synonyms instead.
+- Mutant and construct targets are separate rows sharing a UniProt accession (`uniprot_raw` like `P00533[L858R]`).
+- Text comparisons in DuckDB are case-sensitive (MySQL's were not): use `ILIKE` or `lower()`.
+
+## Examples
+
+`examples/` has twelve transcripts of real questions answered with these tools: each one shows the tool
+calls, the results, and an answer. Regenerate them after a new release with
+`uv run python scripts/generate_examples.py`. Hand-written answers are kept, and the script lists any
+example whose results have changed so its answer can be reviewed.
+
+## Tests
+
+```bash
+uv run pytest
+```
+
+## License
+
+BSD 3-Clause; see [LICENSE](LICENSE). BindingDB data are subject to
+[BindingDB's own terms](https://www.bindingdb.org).
