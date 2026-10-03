@@ -4,8 +4,8 @@ Twelve transcripts of questions answered with the `mcp-bindingdb` tools against 
 Each file shows the question, every tool call with its exact arguments (and SQL), the results (a readable
 table plus the raw JSON in a collapsible block), and an answer written from those results.
 
-Example 13 is a different kind: a standalone HTML report that combines BindingDB data with RDKit and
-scikit-learn analysis (see [Reports](#reports)).
+Example 13 is a different kind: a standalone HTML report that combines BindingDB data with RDKit,
+scikit-learn and IRIS analysis (see [Reports](#reports)).
 
 | # | Question | Tools used | What it shows |
 |---|---|---|---|
@@ -21,7 +21,7 @@ scikit-learn analysis (see [Reports](#reports)).
 | [10](10-kras-g12c-data-growth.md) | Growth of KRAS G12C data; papers vs patents | `search_targets`, `run_sql` | How curation choices shape an answer |
 | [11](11-patent-dataset-summary.md) | Summarize the patent data | `run_sql` | Whole-database aggregation; patents vs other sources; censored values |
 | [12](12-most-recently-added-targets.md) | The 5 most recently added targets | `run_sql`, `search_targets`, `get_target` | Defining "added" from deposition dates; new protein vs new construct; missing organism |
-| [13](13-cdk2-cyclin-a2-chemotypes.html) ([view](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/13-cdk2-cyclin-a2-chemotypes.html)) | Chemotype map of CDK2/cyclin A2 Ki ligands | BindingDB data + RDKit, scikit-learn | Complex targets and excluded mutant constructs; t-SNE of Morgan fingerprints; top compounds per chemotype |
+| [13](13-cdk2-cyclin-a2-chemotypes.html) ([view](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/13-cdk2-cyclin-a2-chemotypes.html)) | Chemotype map of CDK2/cyclin A2 Ki ligands | BindingDB data + RDKit, scikit-learn, IRIS | Complex targets and excluded mutant constructs; t-SNE of Morgan fingerprints; top compounds per chemotype; time-structured IRIS map by publication date |
 
 The answers point out data-quality issues where the results show them (duplicate records, values at
 detection limits, probable unit errors, wrong synonyms). Check these before relying on a single number.
@@ -32,7 +32,9 @@ detection limits, probable unit errors, wrong synonyms). Check these before rely
 (plots embedded) that includes the prompt that produced it. GitHub shows HTML as source, so use the
 "view" link in the table or open the file in a browser. The prompt asked for every compound with a Ki against
 wild-type CDK2/cyclin A2 (complex targets 97 and 92), a t-SNE map of their Morgan fingerprints coloured
-by chemotype and by Ki, and the top 3 compounds per chemotype. It is not produced by
+by chemotype and by Ki, and the top 3 compounds per chemotype. A follow-up prompt added an
+[IRIS](https://github.com/BIDS-Xu-Lab/IRIS) map that places each compound by the publication date of its
+source article (centre to rim) and by chemical similarity (angle). The report is not produced by
 `generate_examples.py` and is not updated when the data release changes.
 
 ## Regenerating
