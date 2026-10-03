@@ -1,0 +1,22 @@
+diff --git a/LargeVis/LargeVis.cpp b/LargeVis/LargeVis.cpp
+index 00860e3..8cc6c6e 100644
+--- a/LargeVis/LargeVis.cpp
++++ b/LargeVis/LargeVis.cpp
+@@ -606,7 +606,7 @@ void LargeVis::ann_thread(int id)
+ 	for (long long i = lo; i < hi; ++i)
+ 	{
+ 		if (interrupt) break;
+-		if ( id == 0 && i > lo && (i-lo)%((hi-lo)/100) == 0 ) logoutp("%cQuerying ANN index with %d neighbors ......%lld%%", 13, n_neighbors, 100*(i-lo)/((hi-lo))+1);
++		if ( id == 0 && i > lo && (i-lo)%std::max<long long>(1, (hi-lo)/100) == 0 ) logoutp("%cQuerying ANN index with %d neighbors ......%lld%%", 13, n_neighbors, 100*(i-lo)/((hi-lo))+1);
+ 		cur_annoy_index->get_nns_by_item(i, n_neighbors + 1, (n_neighbors + 1) * n_trees, &knn_vec[i], NULL);
+ 		for (long long j = 0; j < knn_vec[i].size(); ++j)
+ 			if (knn_vec[i][j] == i)
+@@ -990,7 +990,7 @@ void LargeVis::visualize_thread(int id)
+ 			beta_cur = 0;//(1 - edge_count_actual / (n_samples + 1.0))*(1.-beta)+beta;
+ 			logoutp("%cFitting model\tAlpha: %f\tProgress: %.3lf%%", 13, cur_alpha, (real)edge_count_actual / (real)(n_samples + 1) * 100);
+ 			const bool checkpoints = true;
+-			if (checkpoints && id == 0 && updates++ % (n_samples/10000000) == 0)
++			if (checkpoints && id == 0 && updates++ % std::max<long long>(1, n_samples/10000000) == 0)
+ 			{
+ 				sprintf(buffer, "%lld.out", 10000000 * updates / n_samples);
+ 				//save(buffer);

@@ -5,7 +5,7 @@ Each file shows the question, every tool call with its exact arguments (and SQL)
 table plus the raw JSON in a collapsible block), and an answer written from those results.
 
 Example 13 is a different kind: a standalone HTML report that combines BindingDB data with RDKit,
-scikit-learn and IRIS analysis (see [Reports](#reports)).
+scikit-learn and IRIS analysis, with its scripts and data alongside (see [Reports](#reports)).
 
 | # | Question | Tools used | What it shows |
 |---|---|---|---|
@@ -21,21 +21,30 @@ scikit-learn and IRIS analysis (see [Reports](#reports)).
 | [10](10-kras-g12c-data-growth.md) | Growth of KRAS G12C data; papers vs patents | `search_targets`, `run_sql` | How curation choices shape an answer |
 | [11](11-patent-dataset-summary.md) | Summarize the patent data | `run_sql` | Whole-database aggregation; patents vs other sources; censored values |
 | [12](12-most-recently-added-targets.md) | The 5 most recently added targets | `run_sql`, `search_targets`, `get_target` | Defining "added" from deposition dates; new protein vs new construct; missing organism |
-| [13](13-cdk2-cyclin-a2-chemotypes.html) ([view](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/13-cdk2-cyclin-a2-chemotypes.html)) | Chemotype map of CDK2/cyclin A2 Ki ligands | BindingDB data + RDKit, scikit-learn, IRIS | Complex targets and excluded mutant constructs; t-SNE of Morgan fingerprints; top compounds per chemotype; time-structured IRIS map by publication date |
+| [13](CDK2-cyclin-A2/CDK2_cyclinA2_chemotypes.html) | Chemotype landscape of CDK2/cyclin A2 Ki ligands ([supplementary files](CDK2-cyclin-A2/)) | BindingDB data + RDKit, scikit-learn, IRIS | Choosing the intact complex over truncated constructs; SMARTS chemotypes; t-SNE of Morgan fingerprints; IRIS map with pKi as radius; R-group decomposition |
 
 The answers point out data-quality issues where the results show them (duplicate records, values at
 detection limits, probable unit errors, wrong synonyms). Check these before relying on a single number.
 
 ## Reports
 
-[13-cdk2-cyclin-a2-chemotypes.html](13-cdk2-cyclin-a2-chemotypes.html) is a self-contained HTML page
-(plots embedded) that includes the prompt that produced it. GitHub shows HTML as source, so use the
-"view" link in the table or open the file in a browser. The prompt asked for every compound with a Ki against
-wild-type CDK2/cyclin A2 (complex targets 97 and 92), a t-SNE map of their Morgan fingerprints coloured
-by chemotype and by Ki, and the top 3 compounds per chemotype. A follow-up prompt added an
-[IRIS](https://github.com/BIDS-Xu-Lab/IRIS) map that places each compound by the publication date of its
-source article (centre to rim) and by chemical similarity (angle). The report is not produced by
-`generate_examples.py` and is not updated when the data release changes.
+[CDK2_cyclinA2_chemotypes.html](CDK2-cyclin-A2/CDK2_cyclinA2_chemotypes.html) is a self-contained HTML
+page (plots embedded) that includes the prompt that produced it. GitHub shows HTML as source, so download
+it and open it in a browser. The prompt asked for every compound with a Ki against the intact
+CDK2/cyclin A2 complex (target 97), chemotypes assigned by SMARTS rules, a t-SNE map of Morgan
+fingerprints coloured by chemotype and by Ki, the top 3 compounds per chemotype aligned on their core,
+an [IRIS](https://github.com/BIDS-Xu-Lab/IRIS) map with pKi as the radius, and an R-group decomposition
+of the pyrido[3,4-d]pyrimidine series.
+
+The [CDK2-cyclin-A2](CDK2-cyclin-A2/) folder also holds the supplementary files:
+
+- `figures/`: the figures as PNG files
+- `data/`: compound tables with chemotypes and t-SNE coordinates, the chemotype summary, and the R-group table
+- `scripts/`: the Python scripts that built the analysis and the page, and the prompt (`prompt.txt`)
+- `iris_issue1.patch`: the fix applied to IRIS for [issue #1](https://github.com/BIDS-Xu-Lab/IRIS/issues/1)
+  (a division by zero on small datasets)
+
+The report is not produced by `generate_examples.py` and is not updated when the data release changes.
 
 ## Regenerating
 
