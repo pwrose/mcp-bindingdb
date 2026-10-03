@@ -21,7 +21,7 @@ scikit-learn and IRIS analysis, with its scripts and data alongside (see [Report
 | [10](10-kras-g12c-data-growth.md) | Growth of KRAS G12C data; papers vs patents | `search_targets`, `run_sql` | How curation choices shape an answer |
 | [11](11-patent-dataset-summary.md) | Summarize the patent data | `run_sql` | Whole-database aggregation; patents vs other sources; censored values |
 | [12](12-most-recently-added-targets.md) | The 5 most recently added targets | `run_sql`, `search_targets`, `get_target` | Defining "added" from deposition dates; new protein vs new construct; missing organism |
-| [13](CDK2-cyclin-A2/CDK2_cyclinA2_chemotypes.html) | Chemotype landscape of CDK2/cyclin A2 Ki ligands ([supplementary files](CDK2-cyclin-A2/)) | BindingDB data + RDKit, scikit-learn, IRIS | Choosing the intact complex over truncated constructs; SMARTS chemotypes; t-SNE of Morgan fingerprints; IRIS map with pKi as radius; R-group decomposition |
+| [13](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/CDK2-cyclin-A2/CDK2_cyclinA2_chemotypes.html) | Chemotype landscape of CDK2/cyclin A2 Ki ligands ([supplementary files](CDK2-cyclin-A2/)) | BindingDB data + RDKit, scikit-learn, IRIS | Choosing the intact complex over truncated constructs; SMARTS chemotypes; t-SNE of Morgan fingerprints; IRIS map with pKi as radius; R-group decomposition |
 
 The answers point out data-quality issues where the results show them (duplicate records, values at
 detection limits, probable unit errors, wrong synonyms). Check these before relying on a single number.
@@ -29,8 +29,8 @@ detection limits, probable unit errors, wrong synonyms). Check these before rely
 ## Reports
 
 [CDK2_cyclinA2_chemotypes.html](CDK2-cyclin-A2/CDK2_cyclinA2_chemotypes.html) is a self-contained HTML
-page (plots embedded) that includes the prompt that produced it. GitHub shows HTML as source, so download
-it and open it in a browser. The prompt asked for every compound with a Ki against the intact
+page (plots embedded) that includes the prompt that produced it. GitHub shows HTML as source, so the #13
+link in the table opens a [rendered view](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/CDK2-cyclin-A2/CDK2_cyclinA2_chemotypes.html) instead. The prompt asked for every compound with a Ki against the intact
 CDK2/cyclin A2 complex (target 97), chemotypes assigned by SMARTS rules, a t-SNE map of Morgan
 fingerprints coloured by chemotype and by Ki, the top 3 compounds per chemotype aligned on their core,
 an [IRIS](https://github.com/BIDS-Xu-Lab/IRIS) map with pKi as the radius, and an R-group decomposition
