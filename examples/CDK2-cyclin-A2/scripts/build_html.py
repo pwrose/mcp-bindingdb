@@ -6,10 +6,17 @@ df=pd.read_csv('compounds_ct.csv')
 rg=open('chemotype.py').read().split('RULES = [')[1].split(']\n')[0]
 def b64(p): return base64.b64encode(Path(p).read_bytes()).decode()
 PROMPT = Path('prompt.txt').read_text()
+import gzip
+IPT_CSS = Path('interactive.css').read_text()
+IPT_JS  = Path('interactive.js').read_text()
+IPT_DATA = base64.b64encode(gzip.compress(Path('points.json').read_bytes(),9)).decode()
 
-def fig(path,num,title,cap,cls=''):
+def fig(path,num,title,cap,cls='',interactive=None):
+    live=f'<div class="ipt-wrap" id="{interactive}"></div>' if interactive else ''
+    img=(f'<div class="static-fallback"><img src="data:image/png;base64,{b64(path)}" '
+         f'alt="{html.escape(title)}"></div>')
     return f"""<figure class="{cls}">
-<img src="data:image/png;base64,{b64(path)}" alt="{html.escape(title)}">
+{live}{img}
 <figcaption><b>Figure {num}.</b> {cap}</figcaption></figure>"""
 
 rows="\n".join(
@@ -89,6 +96,7 @@ ul,ol{{padding-left:1.3em}} li{{margin:.3em 0}}
 border:1px solid var(--border);border-left:3px solid var(--rule);
 border-radius:0 8px 8px 0;padding:12px 16px;margin:1.2em 0}}
 @media (max-width:640px){{.inline-core{{float:none;width:60%;margin:0 auto 12px;display:block}}}}
+{IPT_CSS}
 </style></head><body><main>
 
 <h1>Chemotype landscape of CDK2/cyclin A2 K<sub>i</sub> ligands</h1>
@@ -169,15 +177,19 @@ from them, and t-SNE was run directly on that matrix
 pairwise Tanimoto distance is 0.75, so the set is chemically diverse. Both panels
 share identical coordinates, so a point sits in the same place in each.</p>
 {fig('fig1_tsne.png',1,'t-SNE of CDK2 ligands',
- 'Morgan/Tanimoto t-SNE of the 163 compounds. <b>(A)</b> Coloured by rule-assigned '
- 'chemotype, with marker shape as a redundant channel and each class direct-labelled '
- 'at its centroid, so identity never rests on colour alone. <b>(B)</b> The same '
- 'coordinates coloured by pK<sub>i</sub> on a single-hue sequential ramp; open rings '
- 'mark censored measurements, whose colour reflects a bound rather than a point '
- 'estimate. Chemotypes resolve into distinct islands, confirming that the SMARTS '
- 'rules track the fingerprint neighbourhood structure. Potency is not uniform across '
- 'the map: the pyrido[3,4-d]pyrimidine island (right) is systematically weaker than '
- 'the thiazolylpyrimidine territory it faces.')}
+ 'Morgan/Tanimoto t-SNE of the 163 compounds, rendered live from the embedded data. '
+ '<b>(A)</b> Coloured by rule-assigned chemotype, with marker shape as a redundant '
+ 'channel so identity never rests on colour alone. <b>(B)</b> The same coordinates '
+ 'coloured by pK<sub>i</sub> on a single-hue sequential ramp; open rings mark censored '
+ 'measurements, whose colour reflects a bound rather than a point estimate. '
+ 'Chemotypes resolve into distinct islands, confirming that the SMARTS rules track the '
+ 'fingerprint neighbourhood structure. Potency is not uniform across the map: the '
+ 'pyrido[3,4-d]pyrimidine island (right) is systematically weaker than the '
+ 'thiazolylpyrimidine territory it faces. '
+ '<b>Click any point</b> for its structure and full measurement record; click a legend '
+ 'entry to filter a chemotype in or out; the panels are keyboard-navigable with the '
+ 'arrow keys. A static version of this figure is in <code>figures/fig1_tsne.png</code>.',
+ interactive='fig1-interactive')}
 
 <h2>5 · Most potent members, aligned on the defining core</h2>
 <p>For each chemotype the three strongest compounds are shown. The most potent member
@@ -190,7 +202,8 @@ depictions is substitution rather than drawing. Exact measurements are ranked ah
 censored ones, which are shown with their inequality.</p>
 {fig('fig2_chemotype_grid.png',2,'Top 3 per chemotype',
  'Top three compounds per chemotype (rows), aligned and highlighted on the '
- 'substructure that defines the class. Recognisable reference chemistry falls out in '
+ 'substructure that defines the class; each row is headed by its chemotype and the '
+ 'highlight carries that chemotype\'s colour and marker from the Figure 1 legend. Recognisable reference chemistry falls out in '
  'the expected places — staurosporine and UCN-01 as the indolocarbazoles, NU-6102 as '
  'the purine, AT-7519 as the pyrazole carboxamide, and palbociclib '
  '(K<sub>i</sub> &gt; 5 µM) correctly at the bottom of the set as a CDK4/6-selective '
@@ -219,11 +232,14 @@ checkpoint block, which fails identically once the first is fixed. No other chan
 was made to the algorithm.</div>
 {fig('fig3_iris.png',3,'IRIS projection',
  'IRIS projection of the same fingerprints with pK<sub>i</sub> as the radial '
- 'coordinate; rings are labelled in pK<sub>i</sub> units and potency increases '
- 'outward. Angular sectors recover the chemotypes — the pyrido[3,4-d]pyrimidines '
- 'occupy a contiguous wedge, as do the pyrrole-2-carboxamides — while the radial axis '
- 'makes the potency ceiling of each series directly readable: the indolocarbazoles '
- 'sit at the perimeter, the tetrahydroquinazolines stay near the centre.')}
+ 'coordinate, rendered live; rings are labelled in pK<sub>i</sub> units and potency '
+ 'increases outward. Angular sectors recover the chemotypes — the '
+ 'pyrido[3,4-d]pyrimidines occupy a contiguous wedge, as do the pyrrole-2-carboxamides '
+ '— while the radial axis makes the potency ceiling of each series directly readable: '
+ 'the indolocarbazoles sit at the perimeter, the tetrahydroquinazolines stay near the '
+ 'centre. <b>Click any point</b> for its structure and measurement record; the legend '
+ 'filters chemotypes. A static version is in <code>figures/fig3_iris.png</code>.',
+ interactive='fig3-interactive')}
 
 <h2>7 · R-group decomposition of the pyrido[3,4-d]pyrimidines</h2>
 <img class="inline-core" src="data:image/png;base64,{b64('fig4_core.png')}"
@@ -311,6 +327,9 @@ records that this K<sub>i</sub>-only analysis does not touch.</li>
 <ol>{refs}</ol>
 <p class="meta" style="margin-top:2.5em">Data from BindingDB. Analysis performed with
 RDKit, scikit-learn and IRIS.</p>
-</main></body></html>"""
+</main>
+<script type="application/octet-stream" id="ipt-data">{IPT_DATA}</script>
+<script>{IPT_JS}</script>
+</body></html>"""
 Path('CDK2_cyclinA2_chemotypes.html').write_text(HTML)
 print('bytes',len(HTML))
