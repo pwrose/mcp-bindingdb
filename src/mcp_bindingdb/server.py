@@ -76,38 +76,49 @@ def _clamp(n: int, lo: int, hi: int) -> int:
     return max(lo, min(hi, n))
 
 
-SUBSTRUCTURE_INSTRUCTIONS = """
-Substructure search: substructure_search finds compounds containing a SMILES or SMARTS fragment,
-optionally only those measured against one target (with potency filters).
+STRUCTURE_INSTRUCTIONS = """
+Structure search: substructure_search finds compounds containing a SMILES or SMARTS fragment;
+similarity_search finds compounds similar to a molecule (Tanimoto on Morgan fingerprints). Both can be
+restricted to compounds measured against one target, or summarize the targets their hits were
+measured against.
 """
 
 
+TARGET_FILTER_DOC = "With target_id or summarize_by_target: "
+
+
 def load_substructure_index(db: Database) -> substructure.SubstructureIndex | None:
-    """The substructure index next to the database, if RDKit is installed and the index matches the release."""
+    """The structure index next to the database, if RDKit is installed and the index matches the release."""
     path = substructure.index_path(db.path)
     if not path.is_file():
         return None
+    disabled = "substructure_search and similarity_search disabled"
     if not substructure.rdkit_available():
         print(f"mcp-bindingdb: {path.name} found but RDKit is not installed (install the 'substructure' "
-              "extra); substructure_search disabled", file=sys.stderr)
+              f"extra); {disabled}", file=sys.stderr)
         return None
-    index = substructure.SubstructureIndex(path)
+    rebuild = "rebuild it with scripts/build_substructure_index.py"
+    try:
+        index = substructure.SubstructureIndex(path)
+    except ValueError as e:  # an index written by an older version
+        print(f"mcp-bindingdb: {e}; {rebuild}. {disabled}", file=sys.stderr)
+        return None
     release = db.build_info().get("release")
     if index.release != release:
         print(f"mcp-bindingdb: {path.name} is for release {index.release}, the database is {release}; "
-              "rebuild it with scripts/build_substructure_index.py. substructure_search disabled", file=sys.stderr)
+              f"{rebuild}. {disabled}", file=sys.stderr)
         return None
     return index
 
 
 def build_server(db: Database, index: substructure.SubstructureIndex | None = None) -> MCPServer:
-    """`index` enables substructure_search (see load_substructure_index)."""
+    """`index` enables substructure_search and similarity_search (see load_substructure_index)."""
     info = db.build_info()
     mcp = MCPServer(
         name="mcp-bindingdb",
         title="BindingDB",
         version="0.1.0",
-        instructions=INSTRUCTIONS + (SUBSTRUCTURE_INSTRUCTIONS if index else "")
+        instructions=INSTRUCTIONS + (STRUCTURE_INSTRUCTIONS if index else "")
         + f"\nLoaded release: {info.get('release', 'unknown')}.",
     )
 
@@ -436,13 +447,67 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
         return run(sql, None, _clamp(limit, 1, 1000))
 
     if index is not None:
-        _add_substructure_tool(mcp, db, index, run, _activity_query, potency_filter)
+        _add_structure_tools(mcp, db, index, run, _activity_query, potency_filter)
     return mcp
 
 
-def _add_substructure_tool(mcp: MCPServer, db: Database, index: substructure.SubstructureIndex,
-                           run, activity_query, potency_filter) -> None:
+def _add_structure_tools(mcp: MCPServer, db: Database, index: substructure.SubstructureIndex,
+                         run, activity_query, potency_filter) -> None:
     time_limit_s = db.timeout_s * 0.8  # leave time for the SQL that follows the search
+    empty: dict[str, Any] = {"row_count": 0, "truncated": False, "rows": []}
+
+    def target_candidates(target_id: int, target_kind: str, affinity_types: list[str] | None,
+                          max_value_nm: float | None) -> tuple[str, list[int]]:
+        """(id column, monomerids measured against the target that pass the affinity filters)."""
+        id_col = "polymerid" if target_kind == "polymer" else "complexid"
+        pf, pparams = potency_filter(affinity_types, max_value_nm)
+        try:
+            rows = db.rows(f"SELECT DISTINCT monomerid FROM activity WHERE {id_col} = ? AND {pf}",
+                           [target_id, *pparams], limit=10_000_000)
+        except QueryError as e:
+            raise ToolError(str(e)) from None
+        return id_col, [r["monomerid"] for r in rows]
+
+    def no_candidates(about: dict[str, Any], target_id: int, target_kind: str) -> dict[str, Any]:
+        return {"query": about, **empty, "compounds_searched": 0, "search_set_size": 0,
+                "note": f"No compounds measured against {target_kind} {target_id} pass the affinity filters"}
+
+    def summarize_targets(monomerids: list[int], affinity_types: list[str] | None, max_value_nm: float | None,
+                          limit: int) -> dict[str, Any]:
+        """Targets the compounds were measured against: compounds, measurements, best p_affinity per target."""
+        if not monomerids:
+            return {"n_targets": 0, "n_compounds_measured": 0, **empty}
+        pf, pparams = potency_filter(affinity_types, max_value_nm)
+        params = [monomerids, *pparams]
+        rows = run(
+            f"""SELECT CASE WHEN complexid IS NULL THEN 'polymer' ELSE 'complex' END AS target_kind,
+                       coalesce(polymerid, complexid) AS target_id,
+                       any_value(target_name) AS target_name, any_value(uniprot_raw) AS uniprot_raw,
+                       any_value(organism) AS organism, count(DISTINCT monomerid) AS n_compounds,
+                       count(*) AS n_measurements,
+                       list(DISTINCT affinity_type ORDER BY affinity_type) AS affinity_types,
+                       max(p_affinity) AS best_p_affinity
+                FROM activity WHERE monomerid IN (SELECT unnest(?)) AND {pf}
+                GROUP BY polymerid, complexid
+                ORDER BY n_compounds DESC, best_p_affinity DESC NULLS LAST, target_kind, target_id""",
+            params,
+            limit,
+        )
+        totals = run(
+            f"""SELECT count(DISTINCT coalesce(polymerid, -complexid)) AS n_targets,
+                       count(DISTINCT monomerid) AS n_compounds_measured
+                FROM activity WHERE monomerid IN (SELECT unnest(?)) AND {pf}""",
+            params,
+        )["rows"][0]
+        return {**totals, **rows}
+
+    def finish(about: dict[str, Any], result: dict[str, Any], searched: int, total: int,
+               stopped_early: bool = False) -> dict[str, Any]:
+        out = {"query": about, **result, "compounds_searched": searched, "search_set_size": total}
+        if searched < total and not stopped_early:
+            out["note"] = (f"Time limit reached after {searched:,} of {total:,} compounds; results are partial. "
+                           "A more specific query screens faster.")
+        return out
 
     @mcp.tool(annotations=READ_ONLY)
     def substructure_search(
@@ -459,11 +524,11 @@ def _add_substructure_tool(mcp: MCPServer, db: Database, index: substructure.Sub
         summarize_by_target: Annotated[bool, Field(description="Instead of compounds, list every target the "
                                                    "matching compounds were measured against, with the number "
                                                    "of compounds per target")] = False,
-        affinity_types: Annotated[list[AffinityType] | None, Field(description="With target_id or "
-                                                                   "summarize_by_target: measurement types "
-                                                                   "(default Ki, Kd, IC50, EC50)")] = None,
-        max_value_nm: Annotated[float | None, Field(description="With target_id or summarize_by_target: only "
-                                                    "measurements <= this many nM (excludes '>' values)")] = None,
+        affinity_types: Annotated[list[AffinityType] | None, Field(description=TARGET_FILTER_DOC +
+                                                                   "measurement types (default Ki, Kd, IC50, "
+                                                                   "EC50)")] = None,
+        max_value_nm: Annotated[float | None, Field(description=TARGET_FILTER_DOC + "only measurements <= this "
+                                                    "many nM (excludes '>' values)")] = None,
         use_chirality: Annotated[bool, Field(description="Require stereocentres in the query to match")] = False,
         count_only: Annotated[bool, Field(description="Only count matching compounds (whole database; "
                                           "ignores the target filters)")] = False,
@@ -495,38 +560,15 @@ def _add_substructure_tool(mcp: MCPServer, db: Database, index: substructure.Sub
                                "lower bound. A more specific query screens faster.")
             return out
 
-        result: dict[str, Any] = {"row_count": 0, "truncated": False, "rows": []}
         if summarize_by_target:
             if target_id is not None:
                 raise ToolError("summarize_by_target lists every target; omit target_id")
             matches = index.search(mol, index.n_compounds, time_limit_s, use_chirality)
-            pf, pparams = potency_filter(affinity_types, max_value_nm)
-            params = [matches.monomerids, *pparams]
-            totals = {"n_targets": 0, "n_compounds_measured": 0}
-            if matches.monomerids:
-                result = run(
-                    f"""SELECT CASE WHEN complexid IS NULL THEN 'polymer' ELSE 'complex' END AS target_kind,
-                               coalesce(polymerid, complexid) AS target_id,
-                               any_value(target_name) AS target_name, any_value(uniprot_raw) AS uniprot_raw,
-                               any_value(organism) AS organism, count(DISTINCT monomerid) AS n_compounds,
-                               count(*) AS n_measurements,
-                               list(DISTINCT affinity_type ORDER BY affinity_type) AS affinity_types,
-                               max(p_affinity) AS best_p_affinity
-                        FROM activity WHERE monomerid IN (SELECT unnest(?)) AND {pf}
-                        GROUP BY polymerid, complexid
-                        ORDER BY n_compounds DESC, best_p_affinity DESC NULLS LAST, target_kind, target_id""",
-                    params,
-                    limit,
-                )
-                totals = run(
-                    f"""SELECT count(DISTINCT coalesce(polymerid, -complexid)) AS n_targets,
-                               count(DISTINCT monomerid) AS n_compounds_measured
-                        FROM activity WHERE monomerid IN (SELECT unnest(?)) AND {pf}""",
-                    params,
-                )["rows"][0]
-            result = {"n_matching_compounds": len(matches.monomerids), **totals, **result}
+            result = {"n_matching_compounds": len(matches.monomerids),
+                      **summarize_targets(matches.monomerids, affinity_types, max_value_nm, limit)}
         elif target_id is None:
             matches = index.search(mol, limit, time_limit_s, use_chirality)
+            result = dict(empty)
             if matches.monomerids:
                 result = run(
                     """SELECT monomerid, bdbm_id, name, smiles, mol_weight, n_activities, n_targets
@@ -537,30 +579,90 @@ def _add_substructure_tool(mcp: MCPServer, db: Database, index: substructure.Sub
                 )
             result["truncated"] = matches.hit_max_results
         else:
-            id_col = "polymerid" if target_kind == "polymer" else "complexid"
-            pf, pparams = potency_filter(affinity_types, max_value_nm)
-            try:
-                candidates = [r["monomerid"] for r in db.rows(
-                    f"SELECT DISTINCT monomerid FROM activity WHERE {id_col} = ? AND {pf}",
-                    [target_id, *pparams], limit=10_000_000)]
-            except QueryError as e:
-                raise ToolError(str(e)) from None
+            id_col, candidates = target_candidates(target_id, target_kind, affinity_types, max_value_nm)
             if not candidates:
-                return {"query": about, **result, "n_matching_compounds": 0, "compounds_searched": 0,
-                        "search_set_size": 0, "note": f"No compounds measured against {target_kind} "
-                        f"{target_id} pass the affinity filters"}
+                return no_candidates(about, target_id, target_kind)
             matches = index.search(mol, len(candidates), time_limit_s, use_chirality, within=candidates)
+            result = dict(empty)
             if matches.monomerids:
                 result = activity_query(f"{id_col} = ? AND monomerid IN (SELECT unnest(?))",
                                         [target_id, matches.monomerids], affinity_types, max_value_nm,
                                         "monomerid", limit)
             result["n_matching_compounds"] = len(matches.monomerids)
-        result = {"query": about, **result,
-                  "compounds_searched": matches.searched, "search_set_size": matches.total}
-        if not matches.complete and not matches.hit_max_results:
-            result["note"] = (f"Time limit reached after {matches.searched:,} of {matches.total:,} compounds; "
-                              "results are partial. A more specific query screens faster.")
-        return result
+        return finish(about, result, matches.searched, matches.total, matches.hit_max_results)
+
+    @mcp.tool(annotations=READ_ONLY)
+    def similarity_search(
+        smiles: Annotated[str, Field(description="Query molecule as SMILES; salts are reduced to the largest "
+                                     "fragment")],
+        threshold: Annotated[float, Field(ge=0, le=1, description="Minimum Tanimoto similarity (Morgan radius 2, "
+                                          "2048 bits). Roughly: 1.0 same structure ignoring stereo and salts, "
+                                          ">= 0.7 close analogues, 0.4-0.6 often the same series")] = 0.7,
+        target_id: Annotated[int | None, Field(description="Only compounds measured against this target: "
+                                               "polymerid (or complexid with target_kind='complex')")] = None,
+        target_kind: Annotated[Literal["polymer", "complex"], Field(description="Kind of target_id")] = "polymer",
+        summarize_by_target: Annotated[bool, Field(description="Instead of compounds, list every target the "
+                                                   "similar compounds were measured against, with the number "
+                                                   "of compounds per target")] = False,
+        affinity_types: Annotated[list[AffinityType] | None, Field(description=TARGET_FILTER_DOC +
+                                                                   "measurement types (default Ki, Kd, IC50, "
+                                                                   "EC50)")] = None,
+        max_value_nm: Annotated[float | None, Field(description=TARGET_FILTER_DOC + "only measurements <= this "
+                                                    "many nM (excludes '>' values)")] = None,
+        limit: Annotated[int, Field(description="Max rows (1-500)")] = 50,
+    ) -> dict[str, Any]:
+        """Find compounds similar to a molecule (Tanimoto on Morgan fingerprints), most similar first.
+
+        Default: similar compounds with their similarity and measurement counts. With target_id: only
+        compounds measured against that target, each with its most potent measurement. With
+        summarize_by_target: all compounds above the threshold, grouped by target (compounds,
+        measurements, best p_affinity), most compounds first; use max_value_nm (e.g. 10000) to count only
+        compounds that bind."""
+        try:
+            mol = substructure.parse_molecule(smiles)
+        except substructure.QueryParseError as e:
+            raise ToolError(str(e)) from None
+        about = {"input": smiles, "canonical": substructure.Chem.MolToSmiles(mol), "threshold": threshold,
+                 "fingerprint": "Morgan radius 2, 2048 bits, largest fragment"}
+        limit = _clamp(limit, 1, 500)
+
+        if summarize_by_target:
+            if target_id is not None:
+                raise ToolError("summarize_by_target lists every target; omit target_id")
+            hits = index.similar(mol, threshold, time_limit_s)
+            result = {"n_similar_compounds": len(hits.monomerids),
+                      **summarize_targets(hits.monomerids, affinity_types, max_value_nm, limit)}
+            return finish(about, result, hits.searched, hits.total)
+
+        if target_id is None:
+            hits = index.similar(mol, threshold, time_limit_s)
+            id_col = None
+        else:
+            id_col, candidates = target_candidates(target_id, target_kind, affinity_types, max_value_nm)
+            if not candidates:
+                return no_candidates(about, target_id, target_kind)
+            hits = index.similar(mol, threshold, time_limit_s, within=candidates)
+        top = hits.monomerids[:limit]
+        similarity = dict(zip(top, hits.similarities))
+        result = dict(empty)
+        if top:
+            if id_col is None:
+                result = run(
+                    """SELECT monomerid, bdbm_id, name, smiles, mol_weight, n_activities, n_targets
+                       FROM compound WHERE monomerid IN (SELECT unnest(?))""",
+                    [top],
+                    limit,
+                )
+            else:
+                result = activity_query(f"{id_col} = ? AND monomerid IN (SELECT unnest(?))",
+                                        [target_id, top], affinity_types, max_value_nm, "monomerid", limit)
+            for row in result["rows"]:
+                row["similarity"] = similarity[row["monomerid"]]
+            result["rows"].sort(key=lambda r: (-r["similarity"], -(r.get("p_affinity") or 0),
+                                               -(r.get("n_activities") or 0)))
+        result["truncated"] = len(hits.monomerids) > limit
+        result["n_similar_compounds"] = len(hits.monomerids)
+        return finish(about, result, hits.searched, hits.total)
 
 
 def main() -> None:

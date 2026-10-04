@@ -3,8 +3,9 @@
     uv run --extra substructure python scripts/build_substructure_index.py data/bindingdb_202610.duckdb
 
 Writes data/bindingdb_<release>.sslib next to the DuckDB file (or --output). Every compound with a
-SMILES that RDKit can parse is indexed: its canonical SMILES (searched with a trusted-SMILES holder)
-and a pattern fingerprint for screening. Compounds are ordered by number of measurements, most
+SMILES that RDKit can parse is indexed: its canonical SMILES (searched with a trusted-SMILES holder),
+a pattern fingerprint for substructure screening, and a Morgan fingerprint of its largest fragment for
+similarity search. Compounds are ordered by number of measurements, most
 first, so a search that stops at its result limit returns the best-characterized compounds.
 """
 
@@ -19,13 +20,13 @@ import numpy as np
 from rdkit import Chem, DataStructs, RDLogger
 from rdkit.Chem import rdSubstructLibrary
 
-from mcp_bindingdb.substructure import index_path, write_index
+from mcp_bindingdb.substructure import index_path, morgan_fingerprint, write_index
 
 BATCH = 5000
 
 
-def _prepare(rows: list[tuple[int, str]]) -> list[tuple[int, str, bytes] | None]:
-    """Canonical SMILES and pattern fingerprint per compound; None where the SMILES does not parse."""
+def _prepare(rows: list[tuple[int, str]]) -> list[tuple[int, str, bytes, bytes] | None]:
+    """Canonical SMILES, pattern and Morgan fingerprints per compound; None where the SMILES does not parse."""
     RDLogger.DisableLog("rdApp.*")
     fps = rdSubstructLibrary.PatternHolder()
     out = []
@@ -35,7 +36,7 @@ def _prepare(rows: list[tuple[int, str]]) -> list[tuple[int, str, bytes] | None]
             out.append(None)
         else:
             fp = DataStructs.BitVectToBinaryText(fps.MakeFingerprint(mol))  # raw bits, 256 bytes
-            out.append((monomerid, Chem.MolToSmiles(mol), fp))
+            out.append((monomerid, Chem.MolToSmiles(mol), fp, morgan_fingerprint(mol)))
     return out
 
 
@@ -60,6 +61,7 @@ def main() -> int:
     ids: list[int] = []
     smiles_out: list[str] = []
     fps: list[bytes] = []
+    morgan: list[bytes] = []
     failed: list[int] = []
     batches = [rows[i:i + BATCH] for i in range(0, len(rows), BATCH)]
     with Pool(args.workers) as pool:
@@ -68,16 +70,18 @@ def main() -> int:
                 if item is None:
                     failed.append(monomerid)
                     continue
-                _, smiles, fp = item
+                _, smiles, fp, mfp = item
                 ids.append(monomerid)
                 smiles_out.append(smiles)
                 fps.append(fp)
+                morgan.append(mfp)
     fp_array = np.frombuffer(b"".join(fps), dtype=np.uint8).reshape(len(fps), -1)
+    morgan_array = np.frombuffer(b"".join(morgan), dtype=np.uint8).reshape(len(morgan), -1)
 
     building = out.with_name(out.name + ".building")
     meta = {"release": release[0] if release else None, "database": args.database.name,
             "n_compounds": len(ids), "n_unparseable": len(failed)}
-    write_index(building, meta, np.asarray(ids, dtype=np.int64), smiles_out, fp_array)
+    write_index(building, meta, np.asarray(ids, dtype=np.int64), smiles_out, fp_array, morgan_array)
     building.replace(out)
     print(f"  {len(ids):,} indexed, {len(failed):,} SMILES RDKit could not parse"
           + (f" (e.g. BDBM{failed[0]})" if failed else ""))

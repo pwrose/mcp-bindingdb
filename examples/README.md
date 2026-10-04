@@ -1,6 +1,6 @@
 # Example queries
 
-Thirteen transcripts of questions answered with the `mcp-bindingdb` tools against BindingDB release 202610.
+Fourteen transcripts of questions answered with the `mcp-bindingdb` tools against BindingDB release 202610.
 Each file shows the question, every tool call with its exact arguments (and SQL), the results (a readable
 table plus the raw JSON in a collapsible block), and an answer written from those results.
 
@@ -23,6 +23,7 @@ scikit-learn and IRIS analysis, with its scripts and data alongside (see [Report
 | [12](12-most-recently-added-targets.md) | The 5 most recently added targets | `run_sql`, `search_targets`, `get_target` | Defining "added" from deposition dates; new protein vs new construct; missing organism |
 | [13](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/CDK2-cyclin-A2/CDK2_cyclinA2_chemotypes.html) | Chemotype landscape of CDK2/cyclin A2 Ki ligands ([supplementary files](CDK2-cyclin-A2/)) | BindingDB data + RDKit, scikit-learn, IRIS | Choosing the intact complex over truncated constructs; SMARTS chemotypes; t-SNE of Morgan fingerprints; IRIS map with pKi as radius; R-group decomposition; clickable plots showing each compound's structure |
 | [14](14-chemotype-target-profile.md) | Proteins bound by the 4-(thiazol-5-yl)-2-aminopyrimidine chemotype, with compounds per protein | `substructure_search` | Substructure search; SMARTS vs SMILES reading; target counts dominated by one patent; one protein under several targets |
+| [15](15-palbociclib-analogues.md) | Compounds similar to palbociclib, their targets, and their CDK2/cyclin A2 activity | `search_compounds`, `similarity_search` | Similarity search with a target filter and per-target summary; CDK4/6 selectivity; one compound's measurements spread from 230 nM to >10 µM; a suspicious patent construct |
 
 The answers point out data-quality issues where the results show them (duplicate records, values at
 detection limits, probable unit errors, wrong synonyms). Check these before relying on a single number.
@@ -63,5 +64,5 @@ written by hand. Regenerating keeps the answer and records a hash of the tool re
 release changes the results, the script prints `REVIEW <file>: results changed...` so you know which
 answers to recheck. A new example gets a placeholder answer to fill in.
 
-Example 14 uses `substructure_search`, so regenerating it needs RDKit and the substructure index (see
-the main README).
+Examples 14 and 15 use `substructure_search` and `similarity_search`, so regenerating them needs RDKit and
+the structure-search index (see the main README).

@@ -120,3 +120,69 @@ async def test_summarize_by_target(server):
     assert egfr["n_compounds"] == expected["n"]
     ns = [r["n_compounds"] for r in rows]
     assert ns == sorted(ns, reverse=True)
+
+
+GEFITINIB = "COc1cc2ncnc(Nc3ccc(F)c(Cl)c3)c2cc1OCCCN1CCOCC1"
+
+
+async def sim(server, **args):
+    async with Client(server) as client:
+        result = await client.call_tool("similarity_search", args)
+    assert not result.is_error, result.content
+    return result.structured_content
+
+
+@needs_index
+@pytest.mark.anyio
+async def test_both_structure_tools_listed(server):
+    async with Client(server) as client:
+        names = {t.name for t in (await client.list_tools()).tools}
+    assert {"substructure_search", "similarity_search"} <= names
+
+
+@needs_index
+@pytest.mark.anyio
+async def test_similarity_matches_rdkit_tanimoto(server):
+    out = await sim(server, smiles=IMATINIB_SMILES, threshold=0.5, limit=100)
+    rows = out["rows"]
+    assert rows[0]["similarity"] == 1.0 and IMATINIB in [r["monomerid"] for r in rows if r["similarity"] == 1.0]
+    sims = [r["similarity"] for r in rows]
+    assert sims == sorted(sims, reverse=True) and min(sims) >= 0.5
+    assert out["n_similar_compounds"] >= len(rows) and out["compounds_searched"] == INDEX.n_compounds
+    gen = substructure._morgan_tools()
+    _quiet = substructure.rdBase.BlockLogs()
+    query_fp = gen[0].GetFingerprint(gen[1].choose(substructure.Chem.MolFromSmiles(IMATINIB_SMILES)))
+    for r in rows[::10]:
+        mol = gen[1].choose(substructure.Chem.MolFromSmiles(r["smiles"]))
+        expected = substructure.DataStructs.TanimotoSimilarity(query_fp, gen[0].GetFingerprint(mol))
+        assert abs(r["similarity"] - expected) < 1e-3
+
+
+@needs_index
+@pytest.mark.anyio
+async def test_similarity_ignores_salts(server):
+    parent = await sim(server, smiles=IMATINIB_SMILES, limit=20)
+    salt = await sim(server, smiles=IMATINIB_SMILES + ".CS(=O)(=O)O", limit=20)
+    assert parent["rows"] == salt["rows"]
+
+
+@needs_index
+@pytest.mark.anyio
+async def test_similarity_with_target_and_summary(server):
+    out = await sim(server, smiles=GEFITINIB, threshold=0.5, target_id=EGFR, max_value_nm=100, limit=50)
+    rows = out["rows"]
+    assert rows and all(r["polymerid"] == EGFR and r["value"] <= 100 and r["similarity"] >= 0.5 for r in rows)
+    assert [r["similarity"] for r in rows] == sorted((r["similarity"] for r in rows), reverse=True)
+    summary = await sim(server, smiles=IMATINIB_SMILES, summarize_by_target=True, max_value_nm=1000, limit=500)
+    assert "P00519" in {r["uniprot_raw"] for r in summary["rows"]}  # ABL1
+    assert summary["n_targets"] >= summary["row_count"]
+
+
+@needs_index
+@pytest.mark.anyio
+async def test_similarity_bad_input(server):
+    async with Client(server) as client:
+        bad_smiles = await client.call_tool("similarity_search", {"smiles": "C1CC("})
+        bad_threshold = await client.call_tool("similarity_search", {"smiles": "CCO", "threshold": 1.5})
+    assert bad_smiles.is_error and "Not valid SMILES" in bad_smiles.content[0].text
+    assert bad_threshold.is_error

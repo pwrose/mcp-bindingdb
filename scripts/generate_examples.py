@@ -26,6 +26,8 @@ ROOT = Path(__file__).resolve().parents[1]
 ANSWER_PLACEHOLDER = "<!-- ANSWER: write from the results above -->\n"
 RESULTS_HASH = re.compile(r"<!-- results-sha256: ([0-9a-f]{64}) -->")
 
+PALBOCICLIB = "CC1=C(C(=O)N(c2c1cnc(n2)Nc3ccc(cn3)N4CCNCC4)C5CCCC5)C(=O)C"  # BDBM6309, as stored
+
 # Each step is (tool, arguments, columns to show in the table or None for all).
 # An argument value "$prev.rows[0].ki_result_id" is taken from the previous step's result.
 EXAMPLES = [
@@ -357,6 +359,26 @@ ORDER BY r.first_added DESC, r.target_id DESC""".strip()}, None),
                                      "max_value_nm": 10000, "limit": 500},
              ["target_kind", "target_id", "target_name", "uniprot_raw", "organism", "n_compounds",
               "n_measurements", "affinity_types", "best_p_affinity"]),
+        ],
+    },
+    {
+        "slug": "15-palbociclib-analogues",
+        "title": "Analogues of palbociclib",
+        "question": "Which compounds are similar to palbociclib (one of the CDK2/cyclin A2 ligands in example 13), "
+                    "which targets do they bind, and how do they fare against CDK2/cyclin A2?",
+        "steps": [
+            ("search_compounds", {"query": "palbociclib", "limit": 3},
+             ["monomerid", "name", "smiles", "n_activities", "n_targets", "matched_name"]),
+            ("similarity_search", {"smiles": PALBOCICLIB, "threshold": 0.6, "limit": 15},
+             ["monomerid", "name", "similarity", "n_activities", "n_targets"]),
+            ("similarity_search", {"smiles": PALBOCICLIB, "threshold": 0.6, "summarize_by_target": True,
+                                   "max_value_nm": 1000, "limit": 100},
+             ["target_kind", "target_id", "target_name", "uniprot_raw", "n_compounds", "n_measurements",
+              "affinity_types", "best_p_affinity"]),
+            ("similarity_search", {"smiles": PALBOCICLIB, "threshold": 0.6, "target_id": 97,
+                                   "target_kind": "complex", "limit": 50},
+             ["monomerid", "compound_name", "similarity", "affinity_type", "relation", "value", "p_affinity",
+              "n_measurements", "source_id", "year"]),
         ],
     },
 ]

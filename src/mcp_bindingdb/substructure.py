@@ -1,12 +1,15 @@
-"""Substructure search over BindingDB compounds with an RDKit SubstructLibrary.
+"""Substructure and similarity search over BindingDB compounds.
 
-The index is built by scripts/build_substructure_index.py and stored next to the DuckDB file
-(data/bindingdb_<release>.sslib). RDKit is optional: install it with the `substructure` extra.
-Without RDKit or the index file the server simply does not offer substructure search.
+Substructure search uses an RDKit SubstructLibrary; similarity search uses Tanimoto on Morgan
+fingerprints, computed with numpy bit counts. Both come from one index file, built by
+scripts/build_substructure_index.py and stored next to the DuckDB file (data/bindingdb_<release>.sslib).
+RDKit is optional: install it with the `substructure` extra. Without RDKit or the index file the
+server simply does not offer these searches.
 """
 
 from __future__ import annotations
 
+import functools
 import pickle
 import threading
 import time
@@ -16,13 +19,15 @@ from typing import Any, Literal
 
 try:
     import numpy as np
-    from rdkit import Chem, DataStructs, RDLogger
-    from rdkit.Chem import rdSubstructLibrary
+    from rdkit import Chem, DataStructs, RDLogger, rdBase
+    from rdkit.Chem import rdFingerprintGenerator, rdSubstructLibrary
+    from rdkit.Chem.MolStandardize import rdMolStandardize
 except ImportError:  # the `substructure` extra is not installed
     Chem = None
 
-FORMAT_VERSION = 2
-CHUNK = 100_000  # compounds per GetMatches call; the time limit is checked between chunks
+FORMAT_VERSION = 3
+CHUNK = 100_000  # compounds per GetMatches call or Tanimoto block; the time limit is checked between chunks
+MORGAN = {"radius": 2, "fp_size": 2048}  # ECFP4-like; computed on the largest fragment
 
 QueryType = Literal["auto", "smiles", "smarts"]
 
@@ -35,17 +40,32 @@ def index_path(db_path: Path) -> Path:
     return db_path.with_suffix(".sslib")
 
 
-def write_index(path: Path, meta: dict[str, Any], monomerids: Any, smiles: list[str], fingerprints: Any) -> None:
+def write_index(path: Path, meta: dict[str, Any], monomerids: Any, smiles: list[str], fingerprints: Any,
+                morgan: Any) -> None:
     """Write the index as two pickles, a small header first so it can be read without the payload.
 
-    The payload is plain arrays (monomerids, canonical SMILES, pattern-fingerprint bits) rather than
-    SubstructLibrary.Serialize(): rebuilding the library from them takes a few seconds and about a
-    fifth of the memory that deserializing RDKit's archive format does.
+    The payload is plain arrays (monomerids, canonical SMILES, pattern-fingerprint bits, Morgan
+    fingerprint bits) rather than SubstructLibrary.Serialize(): rebuilding the library from them
+    takes a few seconds and about a fifth of the memory that deserializing RDKit's archive format does.
     """
     with open(path, "wb") as f:
-        pickle.dump({"format_version": FORMAT_VERSION, **meta}, f, protocol=pickle.HIGHEST_PROTOCOL)
+        pickle.dump({"format_version": FORMAT_VERSION, "morgan": MORGAN, **meta}, f,
+                    protocol=pickle.HIGHEST_PROTOCOL)
         pickle.dump({"monomerids": monomerids, "smiles": "\n".join(smiles).encode(),
-                     "fingerprints": fingerprints}, f, protocol=pickle.HIGHEST_PROTOCOL)
+                     "fingerprints": fingerprints, "morgan": morgan}, f, protocol=pickle.HIGHEST_PROTOCOL)
+
+
+@functools.cache
+def _morgan_tools() -> tuple[Any, Any]:
+    return (rdFingerprintGenerator.GetMorganGenerator(radius=MORGAN["radius"], fpSize=MORGAN["fp_size"]),
+            rdMolStandardize.LargestFragmentChooser())
+
+
+def morgan_fingerprint(mol: Any) -> bytes:
+    """Raw bits of the Morgan fingerprint of the largest fragment, so salts and solvates score as the parent."""
+    generator, largest = _morgan_tools()
+    _quiet = rdBase.BlockLogs()  # LargestFragmentChooser logs every call
+    return DataStructs.BitVectToBinaryText(generator.GetFingerprint(largest.choose(mol)))
 
 
 def read_header(path: Path) -> dict[str, Any]:
@@ -97,6 +117,30 @@ def _misread_as_smiles(query: str, smiles_mol: Any) -> bool:
                for a in written.GetAtoms())
 
 
+def parse_molecule(smiles: str) -> Any:
+    """Parse a whole-molecule SMILES for similarity search."""
+    RDLogger.DisableLog("rdApp.*")
+    try:
+        mol = Chem.MolFromSmiles(smiles.strip()) if smiles.strip() else None
+    finally:
+        RDLogger.EnableLog("rdApp.*")
+    if mol is None or mol.GetNumAtoms() == 0:
+        raise QueryParseError(f"Not valid SMILES: {smiles!r}")
+    return mol
+
+
+@dataclass
+class Similar:
+    monomerids: list[int]  # most similar first
+    similarities: list[float]
+    searched: int
+    total: int
+
+    @property
+    def complete(self) -> bool:
+        return self.searched >= self.total
+
+
 @dataclass
 class Matches:
     monomerids: list[int]
@@ -110,10 +154,11 @@ class Matches:
 
 
 class SubstructureIndex:
-    """A SubstructLibrary over all compounds, ordered by number of measurements (most first).
+    """A SubstructLibrary and Morgan fingerprints over all compounds, ordered by number of measurements
+    (most first).
 
-    The library is loaded on first use (or by preload()). Searches are serialized with a lock because
-    a target-restricted search sets the library's search order; each search uses all CPU cores.
+    The index is loaded on first use (or by preload()). Substructure searches are serialized with a
+    lock because a target-restricted search sets the library's search order; each uses all CPU cores.
     """
 
     def __init__(self, path: Path):
@@ -122,6 +167,8 @@ class SubstructureIndex:
         if self.header.get("format_version") != FORMAT_VERSION:
             raise ValueError(f"{path}: unsupported index format {self.header.get('format_version')}")
         self._lib = None
+        self._morgan = None  # (n, fp_size/64) uint64
+        self._morgan_bits = None  # set bits per compound
         self._ids = None  # monomerid per library index
         self._sorted_ids = None
         self._order = None
@@ -153,6 +200,8 @@ class SubstructureIndex:
             fps = rdSubstructLibrary.PatternHolder()
             for row in payload.pop("fingerprints"):
                 fps.AddFingerprint(DataStructs.CreateFromBinaryText(row.tobytes()))
+            self._morgan = np.ascontiguousarray(payload.pop("morgan")).view(np.uint64)
+            self._morgan_bits = np.bitwise_count(self._morgan).sum(axis=1, dtype=np.int32)
             self._order = np.argsort(ids, kind="stable")
             self._sorted_ids = ids[self._order]
             self._ids = ids
@@ -213,3 +262,28 @@ class SubstructureIndex:
                                             numThreads=-1)
                 searched = end
         return n, searched, total
+
+    def similar(self, mol: Any, threshold: float, time_limit_s: float, within: list[int] | None = None) -> Similar:
+        """Compounds with Tanimoto similarity >= threshold on Morgan fingerprints, most similar first
+        (ties: most-measured first). `within` restricts the search to those monomerids."""
+        self._load()
+        deadline = time.monotonic() + time_limit_s
+        q = np.frombuffer(morgan_fingerprint(mol), dtype=np.uint64)
+        q_bits = int(np.bitwise_count(q).sum())
+        rows = np.arange(len(self._ids)) if within is None else np.asarray(self._indices_for(within), dtype=np.int64)
+        idx_parts, sim_parts = [], []
+        searched = 0
+        while searched < len(rows) and time.monotonic() < deadline:
+            r = rows[searched:searched + CHUNK]
+            block = self._morgan[r[0]:r[-1] + 1] if within is None else self._morgan[r]
+            common = np.bitwise_count(block & q).sum(axis=1, dtype=np.int32)
+            union = self._morgan_bits[r] + q_bits - common
+            sim = np.divide(common, union, out=np.zeros(len(r), dtype=np.float64), where=union > 0)
+            keep = sim >= threshold
+            idx_parts.append(r[keep])
+            sim_parts.append(sim[keep])
+            searched += len(r)
+        idx = np.concatenate(idx_parts) if idx_parts else np.zeros(0, dtype=np.int64)
+        sim = np.concatenate(sim_parts) if sim_parts else np.zeros(0)
+        order = np.lexsort((idx, -sim))
+        return Similar(self._ids[idx[order]].tolist(), np.round(sim[order], 3).tolist(), searched, len(rows))
