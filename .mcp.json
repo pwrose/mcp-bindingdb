@@ -2,7 +2,7 @@
   "mcpServers": {
     "mcp-bindingdb": {
       "command": "uv",
-      "args": ["--directory", ".", "run", "mcp-bindingdb"]
+      "args": ["--directory", ".", "run", "--extra", "substructure", "mcp-bindingdb"]
     }
   }
 }

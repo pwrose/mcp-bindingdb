@@ -17,8 +17,9 @@ scripts/build_duckdb.sh --release 202611   # a later release
 
 The script downloads the dump, loads it into a temporary MySQL 8.4 container, copies it to DuckDB
 (`scripts/convert_to_duckdb.py`, checking row counts), adds derived query tables
-(`scripts/add_derived_tables.py`), and removes the container. The `regusers` and `person` tables
-(passwords and contact details) are left out unless you pass `--include-pii`.
+(`scripts/add_derived_tables.py`), builds the substructure index (below), and removes the container.
+The `regusers` and `person` tables (passwords and contact details) are left out unless you pass
+`--include-pii`.
 
 Derived tables:
 
@@ -30,11 +31,28 @@ Derived tables:
 | `target` | One row per polymer/complex target: bare UniProt accession, organism, counts |
 | `target_name` | Target synonyms (gene names, UniProt entry names) |
 
+### Substructure index
+
+`substructure_search` needs [RDKit](https://www.rdkit.org) (the optional `substructure` extra) and an
+index file, `data/bindingdb_<release>.sslib`. The build script creates it unless you pass
+`--no-substructure`; to build it for an existing database:
+
+```bash
+uv run --extra substructure python scripts/build_substructure_index.py data/bindingdb_202610.duckdb
+```
+
+The index holds the canonical SMILES and an RDKit pattern fingerprint of each compound (about 480 MB
+for release 202610, built in about a minute on 10 cores; 1,668 SMILES that RDKit cannot parse are
+left out). The server loads it into an RDKit `SubstructLibrary` at startup, which takes about 8 s and
+1.2 GB of memory. Without RDKit or the index, or if the index is for a different release, the server
+runs without `substructure_search`.
+
 ## Run the server
 
 ```bash
-uv run mcp-bindingdb                                  # stdio
-uv run mcp-bindingdb --transport streamable-http --port 8000
+uv run --extra substructure mcp-bindingdb             # stdio
+uv run --extra substructure mcp-bindingdb --transport streamable-http --port 8000
+uv run mcp-bindingdb                                  # without RDKit (no substructure_search)
 ```
 
 The database is the newest `data/bindingdb_*.duckdb`, or `--db PATH` / `$BINDINGDB_DUCKDB`.
@@ -47,7 +65,7 @@ The database is the newest `data/bindingdb_*.duckdb`, or `--db PATH` / `$BINDING
   "mcpServers": {
     "mcp-bindingdb": {
       "command": "uv",
-      "args": ["--directory", "/path/to/mcp-bindingdb", "run", "mcp-bindingdb"]
+      "args": ["--directory", "/path/to/mcp-bindingdb", "run", "--extra", "substructure", "mcp-bindingdb"]
     }
   }
 }
@@ -66,10 +84,21 @@ The database is the newest `data/bindingdb_*.duckdb`, or `--db PATH` / `$BINDING
 | `get_activity` | Full record of one measurement, with assay description and citation |
 | `describe_tables` | Table list with descriptions, or columns and sample rows of one table |
 | `run_sql` | Arbitrary read-only DuckDB SQL |
+| `substructure_search` | Compounds containing a SMILES/SMARTS fragment, optionally only those measured against a target with potency filters; every target the matching compounds hit, with compounds per target; or a count of matches (needs the substructure index) |
 
 All tools are read-only. The connection is opened read-only with file, network and extension access
 disabled and settings locked, so `run_sql` cannot write data or read anything outside the database.
 Queries time out after 30 s (`--timeout`).
+
+`substructure_search` reads a SMILES query by default, so Kekulé and aromatic forms of a ring match
+the same compounds. It uses SMARTS when the query contains `*`, is not valid SMILES, is written
+aromatic but is not a valid aromatic molecule (such as a ring nitrogen missing its H), or has a bracket
+atom without H such as `[#7]` (which SMILES would make a radical). A SMILES query
+ignores H counts written in brackets; pass `query_type="smarts"` to enforce them. The result echoes
+how the query was read. Without a target, results are capped at `limit` and favour the compounds with
+the most measurements. With a target, every compound measured against it is searched and the matches
+are ranked by potency. A search stops at 80% of the query time limit and reports partial results;
+counting a very generic query (a benzene ring matches 1.28M compounds) takes about 5 s.
 
 ## Data notes
 
@@ -82,7 +111,7 @@ Queries time out after 30 s (`--timeout`).
 
 ## Examples
 
-`examples/` has twelve transcripts of real questions answered with these tools: each one shows the tool
+`examples/` has thirteen transcripts of real questions answered with these tools: each one shows the tool
 calls, the results, and an answer. Regenerate them after a new release with
 `uv run python scripts/generate_examples.py`. Hand-written answers are kept, and the script lists any
 example whose results have changed so its answer can be reviewed. There is also an HTML report, a

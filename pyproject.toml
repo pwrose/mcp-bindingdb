@@ -10,12 +10,16 @@ dependencies = [
     "mcp[cli]>=2.3.0",
 ]
 
+[project.optional-dependencies]
+substructure = ["rdkit>=2024.3"]
+
 [project.scripts]
 mcp-bindingdb = "mcp_bindingdb.server:main"
 
 [dependency-groups]
 dev = [
     "pytest>=8",
+    "rdkit>=2024.3",
 ]
 
 [build-system]

@@ -20,7 +20,7 @@ from pathlib import Path
 from mcp import Client
 
 from mcp_bindingdb.db import Database, find_database
-from mcp_bindingdb.server import build_server
+from mcp_bindingdb.server import build_server, load_substructure_index
 
 ROOT = Path(__file__).resolve().parents[1]
 ANSWER_PLACEHOLDER = "<!-- ANSWER: write from the results above -->\n"
@@ -345,6 +345,20 @@ ORDER BY r.first_added DESC, r.target_id DESC""".strip()}, None),
             ("get_target", {"target_id": 2170}, None),
         ],
     },
+    {
+        "slug": "14-chemotype-target-profile",
+        "title": "Target profile of a chemotype",
+        "question": "Which proteins bind compounds containing the 4-(thiazol-5-yl)-2-aminopyrimidine chemotype "
+                    "(the largest chemotype in example 13), and how many compounds bind each protein?",
+        "steps": [
+            ("substructure_search", {"query": "s1cncc1-c1ccnc([#7])n1", "limit": 5},
+             ["monomerid", "name", "smiles", "n_activities", "n_targets"]),
+            ("substructure_search", {"query": "s1cncc1-c1ccnc([#7])n1", "summarize_by_target": True,
+                                     "max_value_nm": 10000, "limit": 500},
+             ["target_kind", "target_id", "target_name", "uniprot_raw", "organism", "n_compounds",
+              "n_measurements", "affinity_types", "best_p_affinity"]),
+        ],
+    },
 ]
 
 
@@ -389,7 +403,13 @@ def render_result(result, cols):
         return f"```\n{result}\n```\n"
     parts = []
     if "rows" in result:
-        note = f"{result['row_count']} row(s)" + (", more available (truncated by limit)" if result["truncated"] else "")
+        for key, val in result.items():  # fields reported alongside the rows (e.g. substructure_search)
+            if key in ("row_count", "truncated", "rows"):
+                continue
+            if isinstance(val, dict):
+                val = ", ".join(f"{k}: `{v}`" if k in ("input", "canonical") else f"{k}: {v}" for k, v in val.items())
+            parts.append(f"**{key}:** {val}\n")
+        note =f"{result['row_count']} row(s)" + (", more available (truncated by limit)" if result["truncated"] else "")
         shown = f" — table shows selected columns" if cols else ""
         parts.append(f"_{note}{shown}._\n\n" + table(result["rows"], cols))
     else:
@@ -463,7 +483,7 @@ async def main() -> None:
     args.out.mkdir(parents=True, exist_ok=True)
     selected = [ex for ex in EXAMPLES if not args.only or ex["slug"].startswith(tuple(args.only))]
     needs_review = []
-    async with Client(build_server(db)) as client:
+    async with Client(build_server(db, load_substructure_index(db))) as client:
         for ex in selected:
             path = args.out / f"{ex['slug']}.md"
             answer, old_digest = (None, None) if args.reset_answers else existing_answer(path)
