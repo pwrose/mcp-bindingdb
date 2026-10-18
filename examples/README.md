@@ -82,4 +82,4 @@ release changes the results, the script prints `REVIEW <file>: results changed..
 answers to recheck. A new example gets a placeholder answer to fill in.
 
 Examples 14 and 15 use `substructure_search` and `similarity_search`, so regenerating them needs RDKit and
-the structure-search index (see the main README).
+the structure-search index (see [Building the database](../docs/building-the-database.md)).
