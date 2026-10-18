@@ -4,8 +4,9 @@ Fourteen transcripts of questions answered with the `mcp-bindingdb` tools agains
 Each file shows the question, every tool call with its exact arguments (and SQL), the results (a readable
 table plus the raw JSON in a collapsible block), and an answer written from those results.
 
-Example 13 is a different kind: a standalone HTML report that combines BindingDB data with RDKit,
-scikit-learn and IRIS analysis, with its scripts and data alongside (see [Reports](#reports)).
+Examples 13 and 16 are a different kind: standalone HTML reports. Example 13 combines BindingDB data
+with RDKit, scikit-learn and IRIS analysis, with its scripts and data alongside; example 16 is a
+substructure-search case study with aligned structure depictions (see [Reports](#reports)).
 
 | # | Question | Tools used | What it shows |
 |---|---|---|---|
@@ -24,6 +25,7 @@ scikit-learn and IRIS analysis, with its scripts and data alongside (see [Report
 | [13](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/CDK2-cyclin-A2/CDK2_cyclinA2_chemotypes.html) | Chemotype landscape of CDK2/cyclin A2 Ki ligands ([supplementary files](CDK2-cyclin-A2/)) | BindingDB data + RDKit, scikit-learn, IRIS | Choosing the intact complex over truncated constructs; SMARTS chemotypes; t-SNE of Morgan fingerprints; IRIS map with pKi as radius; R-group decomposition; clickable plots showing each compound's structure |
 | [14](14-chemotype-target-profile.md) | Proteins bound by the 4-(thiazol-5-yl)-2-aminopyrimidine chemotype, with compounds per protein | `substructure_search` | Substructure search; SMARTS vs SMILES reading; target counts dominated by one patent; one protein under several targets |
 | [15](15-palbociclib-analogues.md) | Compounds similar to palbociclib, their targets, and their CDK2/cyclin A2 activity | `search_compounds`, `similarity_search` | Similarity search with a target filter and per-target summary; CDK4/6 selectivity; one compound's measurements spread from 230 nM to >10 µM; a suspicious patent construct |
+| [16](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/16-4-anilinoquinazoline-target-classes.html) | Targets bound by 4-anilinoquinazolines with Ki or Kd ≤ 10 nM, grouped by target class, with one aligned representative compound per class | `substructure_search`, `run_sql`, `get_compound` + RDKit depictions | Substructure search with a per-target summary and potency filter; hand-assigned target classes; promiscuous approved drugs counted in several classes; PROTACs among EGFR hits; a compound–citation mis-annotation (vandetanib vs HIV-1 protease) |
 
 The answers point out data-quality issues where the results show them (duplicate records, values at
 detection limits, probable unit errors, wrong synonyms). Check these before relying on a single number.
@@ -50,7 +52,14 @@ The [CDK2-cyclin-A2](CDK2-cyclin-A2/) folder also holds the supplementary files:
 - `iris_issue1.patch`: the fix applied to IRIS for [issue #1](https://github.com/BIDS-Xu-Lab/IRIS/issues/1)
   (a division by zero on small datasets)
 
-The report is not produced by `generate_examples.py` and is not updated when the data release changes.
+[16-4-anilinoquinazoline-target-classes.html](16-4-anilinoquinazoline-target-classes.html) is a
+self-contained HTML transcript ([rendered view](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/16-4-anilinoquinazoline-target-classes.html)) that includes its prompt: find targets bound by
+4-anilinoquinazoline ligands with a Ki or Kd ≤ 10 nM, group them by target class with ligand counts, and
+show one representative compound per class in a 2 × 3 grid aligned on the 4-anilinoquinazoline core. It
+lists every tool call, the per-class and per-target counts, and the caveats (duplicate compound records,
+mutant and construct targets counted separately, a probable mis-annotation).
+
+Neither report is produced by `generate_examples.py` or updated when the data release changes.
 
 ## Regenerating
 
