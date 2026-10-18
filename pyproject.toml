@@ -12,12 +12,14 @@ dependencies = [
 
 [project.optional-dependencies]
 substructure = ["rdkit>=2024.3"]
+name = ["pyopsin>=1.1.0"]  # OPSIN IUPAC-name parser; needs a Java runtime
 
 [project.scripts]
 mcp-bindingdb = "mcp_bindingdb.server:main"
 
 [dependency-groups]
 dev = [
+    "pyopsin>=1.1.0",
     "pytest>=8",
     "rdkit>=2024.3",
 ]
@@ -31,3 +33,4 @@ packages = ["src/mcp_bindingdb"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+markers = ["network: needs internet access (PubChem); deselect with -m 'not network'"]

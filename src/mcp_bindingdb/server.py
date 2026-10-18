@@ -14,10 +14,11 @@ from mcp.server.mcpserver.exceptions import ToolError
 from mcp.types import ToolAnnotations
 from pydantic import Field
 
-from . import substructure
+from . import names, substructure
 from .db import Database, QueryError, find_database
 
 AffinityType = Literal["Ki", "Kd", "IC50", "EC50", "kon", "koff"]
+NameSource = Literal["bindingdb", "opsin", "pubchem"]
 POTENCY_TYPES: list[str] = ["Ki", "Kd", "IC50", "EC50"]
 
 INSTRUCTIONS = """\
@@ -27,6 +28,8 @@ articles, patents, PubChem and ChEMBL.
 
 Workflow: resolve names to ids first (search_compounds / search_targets), then use
 find_ligands_for_target, find_targets_for_compound, get_compound, get_target, get_activity.
+chemical_name_to_smiles turns any compound name (trade name, IUPAC name, CAS number) into a structure
+and the BindingDB compounds with that structure, also when the name is not a BindingDB synonym.
 Use run_sql for anything the curated tools do not cover; call describe_tables first.
 
 Data notes:
@@ -66,6 +69,8 @@ TABLE_DOCS = {
     "itc_result_a_b_ab": "Raw isothermal titration calorimetry results (dH, dS, dG, K, stoichiometry).",
     "pdb_bdb": "Raw PDB id to BindingDB id mappings (comma-separated id strings).",
 }
+
+COMPOUND_COLUMNS = "monomerid, bdbm_id, name, inchi_key, smiles, n_activities"
 
 ACTIVITY_COLUMNS = """ki_result_id, affinity_type, relation, value, unit, p_affinity, monomerid,
        compound_name, polymerid, complexid, target_name, uniprot_raw, organism, ph, temp_k,
@@ -111,8 +116,10 @@ def load_substructure_index(db: Database) -> substructure.SubstructureIndex | No
     return index
 
 
-def build_server(db: Database, index: substructure.SubstructureIndex | None = None) -> MCPServer:
-    """`index` enables substructure_search and similarity_search (see load_substructure_index)."""
+def build_server(db: Database, index: substructure.SubstructureIndex | None = None,
+                 network: bool = True) -> MCPServer:
+    """`index` enables substructure_search and similarity_search (see load_substructure_index);
+    `network` lets chemical_name_to_smiles ask PubChem."""
     info = db.build_info()
     mcp = MCPServer(
         name="mcp-bindingdb",
@@ -173,6 +180,79 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
             [q, q],
             limit,
         )
+
+    unavailable = {"opsin": names.opsin_unavailable_reason(),
+                   "pubchem": None if network else "network lookups disabled (--no-network)"}
+
+    def name_in_bindingdb(name: str) -> dict[str, Any] | None:
+        result = run(
+            f"""SELECT {COMPOUND_COLUMNS} FROM compound
+                WHERE monomerid IN (SELECT monomerid FROM compound_name WHERE lower(name) = lower(?))
+                ORDER BY n_activities DESC, monomerid""",
+            [name],
+            10,
+        )
+        rows = result["rows"]
+        if not rows:
+            return None
+        best = next((r for r in rows if r["smiles"]), rows[0])
+        skeletons = {r["inchi_key"][:14] if r["inchi_key"] else r["monomerid"] for r in rows}
+        return {"smiles": best["smiles"], "inchi_key": best["inchi_key"], "monomerid": best["monomerid"],
+                "ambiguous": len(skeletons) > 1 or result["truncated"], "candidates": rows}
+
+    def name_in_service(source: str, name: str) -> dict[str, Any] | None:
+        s = names.opsin_lookup(name) if source == "opsin" else names.pubchem_lookup(name)
+        if s is None:
+            return None
+        found = {"smiles": substructure.canonical_smiles(s.smiles) or s.smiles, "inchi_key": s.inchi_key}
+        extra = {"pubchem_name": s.title, "pubchem_cid": s.cid, "other_pubchem_cids": s.other_cids or None,
+                 "warning": s.warning}
+        found.update({k: v for k, v in extra.items() if v is not None})
+        found["bindingdb_matches"] = run(
+            f"""SELECT {COMPOUND_COLUMNS}, inchi_key = ? AS exact_match FROM compound
+                WHERE inchi_key LIKE ? || '-%'
+                ORDER BY exact_match DESC, n_activities DESC, monomerid""",
+            [s.inchi_key, s.inchi_key[:14]],
+            10,
+        )["rows"] if s.inchi_key else []
+        return found
+
+    @mcp.tool(annotations=ToolAnnotations(readOnlyHint=True, openWorldHint=network))
+    def chemical_name_to_smiles(
+        name: Annotated[str, Field(description="Compound name: synonym or trade name (e.g. 'Ibrance'), "
+                                   "systematic IUPAC name, or CAS number")],
+        sources: Annotated[list[NameSource] | None, Field(description="Sources to try, in this order "
+                                                          "(default: bindingdb, opsin, pubchem)")] = None,
+    ) -> dict[str, Any]:
+        """Convert a chemical name to SMILES, trying BindingDB synonyms (exact, case-insensitive), then
+        OPSIN (systematic IUPAC names, offline), then a PubChem name lookup; stops at the first that
+        knows the name.
+
+        A BindingDB name can belong to several compounds (stereoisomers, or a label such as 'compound 5'):
+        all are returned as candidates, most measured first, with ambiguous=true when their InChIKey
+        first blocks differ. A structure from OPSIN or PubChem is matched back to BindingDB by InChIKey
+        (bindingdb_matches): the same compound first (exact_match), then compounds with the same first
+        block, such as other stereoisomers. Use the SMILES with similarity_search or substructure_search."""
+        q = name.strip()
+        if not q:
+            raise ToolError("Empty name")
+        out: dict[str, Any] = {"query": q, "resolved": False}
+        tried = []
+        for source in dict.fromkeys(sources or ["bindingdb", "opsin", "pubchem"]):
+            if reason := unavailable.get(source):
+                tried.append({"source": source, "status": "unavailable", "detail": reason})
+                continue
+            try:
+                found = name_in_bindingdb(q) if source == "bindingdb" else name_in_service(source, q)
+            except names.NameLookupError as e:
+                tried.append({"source": source, "status": "error", "detail": str(e)})
+                continue
+            tried.append({"source": source, "status": "found" if found else "not found"})
+            if found:
+                out.update(resolved=True, source=source, **found)
+                break
+        out["sources_tried"] = tried
+        return out
 
     @mcp.tool(annotations=READ_ONLY)
     def search_targets(
@@ -672,13 +752,15 @@ def main() -> None:
     p.add_argument("--host", default="127.0.0.1")
     p.add_argument("--port", type=int, default=8000)
     p.add_argument("--timeout", type=float, default=30.0, help="Per-query time limit in seconds")
+    p.add_argument("--no-network", action="store_true",
+                   help="Do not look names up in PubChem (chemical_name_to_smiles)")
     args = p.parse_args()
 
     db = Database(Path(args.db) if args.db else find_database(), timeout_s=args.timeout)
     index = load_substructure_index(db)
     if index is not None:  # loading takes several seconds; start now so the first search does not wait
         threading.Thread(target=index.preload, daemon=True).start()
-    server = build_server(db, index)
+    server = build_server(db, index, network=not args.no_network)
     if args.transport == "stdio":
         server.run("stdio")
     else:

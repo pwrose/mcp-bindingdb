@@ -129,6 +129,15 @@ def parse_molecule(smiles: str) -> Any:
     return mol
 
 
+def canonical_smiles(smiles: str) -> str | None:
+    """RDKit canonical SMILES; None without RDKit or if RDKit cannot parse it."""
+    if Chem is None:
+        return None
+    _quiet = rdBase.BlockLogs()
+    mol = Chem.MolFromSmiles(smiles)
+    return Chem.MolToSmiles(mol) if mol is not None else None
+
+
 @dataclass
 class Similar:
     monomerids: list[int]  # most similar first

@@ -48,12 +48,18 @@ cannot parse are left out. The server loads it at startup, which takes about 8 s
 Without RDKit or the index, or if the index is for a different release or was built by an older
 version, the server runs without the two structure-search tools.
 
+### Name-to-structure lookup
+
+`chemical_name_to_smiles` parses systematic (IUPAC) names with [OPSIN](https://github.com/dan2097/opsin),
+through the optional `name` extra ([pyopsin](https://pypi.org/project/pyopsin/), which bundles the OPSIN
+jar and needs a Java runtime). Without it the tool still uses BindingDB synonyms and PubChem.
+
 ## Run the server
 
 ```bash
-uv run --extra substructure mcp-bindingdb             # stdio
-uv run --extra substructure mcp-bindingdb --transport streamable-http --port 8000
-uv run mcp-bindingdb                                  # without RDKit (no structure search)
+uv run --extra substructure --extra name mcp-bindingdb   # stdio
+uv run --extra substructure --extra name mcp-bindingdb --transport streamable-http --port 8000
+uv run mcp-bindingdb                                     # without RDKit and OPSIN
 ```
 
 The database is the newest `data/bindingdb_*.duckdb`, or `--db PATH` / `$BINDINGDB_DUCKDB`.
@@ -66,7 +72,8 @@ The database is the newest `data/bindingdb_*.duckdb`, or `--db PATH` / `$BINDING
   "mcpServers": {
     "mcp-bindingdb": {
       "command": "uv",
-      "args": ["--directory", "/path/to/mcp-bindingdb", "run", "--extra", "substructure", "mcp-bindingdb"]
+      "args": ["--directory", "/path/to/mcp-bindingdb", "run", "--extra", "substructure", "--extra", "name",
+               "mcp-bindingdb"]
     }
   }
 }
@@ -77,6 +84,7 @@ The database is the newest `data/bindingdb_*.duckdb`, or `--db PATH` / `$BINDING
 | Tool | Purpose |
 |---|---|
 | `search_compounds` | By name/synonym, ChEMBL id, `cid_N`, BDBM id, or InChIKey (full or first block) |
+| `chemical_name_to_smiles` | SMILES for a compound name (trade name, IUPAC name, CAS number) from BindingDB synonyms, OPSIN or PubChem, with the BindingDB compounds that have that structure |
 | `search_targets` | By name, gene name, UniProt entry name or accession; optional organism filter |
 | `get_compound` | Identifiers, synonyms, PDB ligands, most potent targets |
 | `get_target` | Identifiers, synonyms, PDB ids, complex components, measurement counts |
@@ -90,7 +98,17 @@ The database is the newest `data/bindingdb_*.duckdb`, or `--db PATH` / `$BINDING
 
 All tools are read-only. The connection is opened read-only with file, network and extension access
 disabled and settings locked, so `run_sql` cannot write data or read anything outside the database.
-Queries time out after 30 s (`--timeout`).
+Queries time out after 30 s (`--timeout`). The only tool that uses the network is
+`chemical_name_to_smiles`, for PubChem; `--no-network` turns that off.
+
+`chemical_name_to_smiles` tries three sources in order and stops at the first that knows the name:
+an exact (case-insensitive) BindingDB synonym, OPSIN (systematic names, offline; the JVM starts on the
+first lookup, about 1 s), and the PubChem name service. A BindingDB name can belong to several
+compounds (stereoisomers, or patent labels such as `compound 5`); all are returned, most measured first,
+flagged `ambiguous` when their InChIKey first blocks differ. A structure from OPSIN or PubChem is matched
+back to BindingDB by InChIKey: the same compound first, then compounds sharing the first block (other
+stereoisomers). PubChem's staurosporine, for example, has different stereo descriptors from all
+BindingDB entries named staurosporine, so it is found only by its first block.
 
 `substructure_search` reads a SMILES query by default, so Kekulé and aromatic forms of a ring match
 the same compounds. It uses SMARTS when the query contains `*`, is not valid SMILES, is written
@@ -128,6 +146,7 @@ chemotype map of CDK2/cyclin A2 inhibitors (example 13), which is not regenerate
 
 ```bash
 uv run pytest
+uv run pytest -m "not network"   # without the live PubChem test
 ```
 
 ## License

@@ -3,6 +3,7 @@
 import pytest
 from mcp import Client
 
+from mcp_bindingdb import names
 from mcp_bindingdb.db import Database, find_database
 from mcp_bindingdb.server import build_server
 
@@ -12,6 +13,8 @@ except FileNotFoundError:
     pytest.skip("BindingDB DuckDB file not built", allow_module_level=True)
 
 IMATINIB = 13530  # BDBM13530
+PALBOCICLIB = 6309
+ASPIRIN = 22360
 EGFR = 520  # wild-type human EGFR polymer
 pytestmark = pytest.mark.anyio
 
@@ -43,7 +46,7 @@ async def test_lists_all_tools(server):
         tools = {t.name: t for t in (await client.list_tools()).tools}
     assert set(tools) == {
         "search_compounds", "search_targets", "get_compound", "get_target", "find_ligands_for_target",
-        "find_targets_for_compound", "get_activity", "describe_tables", "run_sql",
+        "find_targets_for_compound", "get_activity", "describe_tables", "run_sql", "chemical_name_to_smiles",
     }
     assert all(t.annotations.read_only_hint for t in tools.values())
 
@@ -134,3 +137,61 @@ async def test_query_timeout():
     result = await call(srv, "run_sql", sql="SELECT count(*) FROM range(1000000000) a, range(1000) b "
                                             "WHERE (a.range * b.range) % 7 = 3")
     assert result.is_error and "time limit" in result.content[0].text
+
+
+async def test_name_to_smiles_from_bindingdb(server):
+    out = await ok(server, "chemical_name_to_smiles", name="Palbociclib")
+    assert out["resolved"] and out["source"] == "bindingdb" and out["monomerid"] == PALBOCICLIB
+    assert out["inchi_key"] == "AHJRHEGDXFFMBM-UHFFFAOYSA-N" and not out["ambiguous"]
+    assert [t["source"] for t in out["sources_tried"]] == ["bindingdb"]
+
+
+async def test_name_to_smiles_flags_ambiguous_bindingdb_names(server):
+    out = await ok(server, "chemical_name_to_smiles", name="compound 5", sources=["bindingdb"])
+    assert out["ambiguous"] and len(out["candidates"]) > 1
+
+
+requires_opsin = pytest.mark.skipif(names.opsin_unavailable_reason() is not None,
+                                    reason=str(names.opsin_unavailable_reason()))
+
+
+@requires_opsin
+async def test_name_to_smiles_from_opsin_maps_to_bindingdb(server):
+    out = await ok(server, "chemical_name_to_smiles", name="2-acetyloxybenzoic acid")
+    assert out["resolved"] and out["source"] == "opsin"
+    assert out["inchi_key"] == "BSYNRYMUTXBXSQ-UHFFFAOYSA-N"
+    assert out["bindingdb_matches"][0]["monomerid"] == ASPIRIN and out["bindingdb_matches"][0]["exact_match"]
+
+
+async def test_name_to_smiles_from_pubchem(server, monkeypatch):
+    def fake_pubchem(name):
+        assert name == "Ibrance-like"
+        return names.Structure("CC(=O)Oc1ccccc1C(=O)O", "BSYNRYMUTXBXSQ-UHFFFAOYSA-N", title="Aspirin", cid=2244)
+    monkeypatch.setattr(names, "pubchem_lookup", fake_pubchem)
+    out = await ok(server, "chemical_name_to_smiles", name="Ibrance-like", sources=["bindingdb", "pubchem"])
+    assert out["source"] == "pubchem" and out["pubchem_cid"] == 2244
+    assert out["bindingdb_matches"][0]["monomerid"] == ASPIRIN
+    assert [t["status"] for t in out["sources_tried"]] == ["not found", "found"]
+
+
+async def test_name_to_smiles_reports_failures(server, monkeypatch):
+    def broken_pubchem(name):
+        raise names.NameLookupError("PubChem: HTTP 503 Service Unavailable")
+    monkeypatch.setattr(names, "pubchem_lookup", broken_pubchem)
+    out = await ok(server, "chemical_name_to_smiles", name="not a compound xyzzy", sources=["bindingdb", "pubchem"])
+    assert not out["resolved"]
+    assert out["sources_tried"][1] == {"source": "pubchem", "status": "error",
+                                       "detail": "PubChem: HTTP 503 Service Unavailable"}
+
+
+async def test_name_to_smiles_without_network():
+    out = await ok(build_server(Database(DB_PATH), network=False), "chemical_name_to_smiles",
+                   name="not a compound xyzzy", sources=["pubchem"])
+    assert not out["resolved"] and out["sources_tried"][0]["status"] == "unavailable"
+
+
+@pytest.mark.network
+def test_pubchem_lookup_live():
+    found = names.pubchem_lookup("Ibrance")
+    assert found.inchi_key == "AHJRHEGDXFFMBM-UHFFFAOYSA-N" and found.cid == 5330286
+    assert names.pubchem_lookup("not a compound xyzzy") is None
