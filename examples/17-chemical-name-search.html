@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chemical Name Search</title>
+<style>
+  :root { --bg:#fafaf8; --fg:#1d1d1b; --muted:#6b6b66; --card:#ffffff; --border:#e2e1dc; --accent:#3a6ea5; --ok:#2e7d4f; --no:#b2452f; --code:#f3f2ee; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#1a1a19; --fg:#ecebe6; --muted:#9a9a93; --card:#232321; --border:#3a3a37; --accent:#7fa8d6; --ok:#6cc08f; --no:#e08a75; --code:#2b2b28; } }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:15px/1.55 -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width:860px; margin:0 auto; padding:32px 16px 64px; }
+  h1 { font-size:1.5rem; margin:0 0 4px; }
+  .meta { color:var(--muted); font-size:.85rem; margin-bottom:28px; }
+  .turn { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:16px 18px; margin:16px 0; }
+  .role { font-size:.75rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); margin-bottom:8px; }
+  .user { border-left:4px solid var(--accent); }
+  .tool { border-left:4px solid var(--border); }
+  .tool h3 { font-size:.95rem; margin:0 0 8px; }
+  code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size:.85rem; }
+  code { background:var(--code); padding:1px 5px; border-radius:4px; word-break:break-all; }
+  pre { background:var(--code); padding:12px; border-radius:6px; overflow-x:auto; white-space:pre-wrap; word-break:break-all; margin:8px 0 0; }
+  details summary { cursor:pointer; color:var(--accent); font-size:.85rem; margin-top:8px; }
+  table { width:100%; border-collapse:collapse; margin:12px 0; font-size:.9rem; }
+  th, td { text-align:left; padding:8px; border-bottom:1px solid var(--border); vertical-align:top; }
+  th { color:var(--muted); font-weight:600; }
+  .ok { color:var(--ok); font-weight:600; }
+  .no { color:var(--no); font-weight:600; }
+  .key { display:grid; grid-template-columns:110px 1fr; gap:6px 12px; margin:10px 0; }
+  .key b { color:var(--muted); font-weight:600; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Chemical Name Search</h1>
+  <div class="meta">Transcript · October 17, 2026 · Tool: BindingDB <code>chemical_name_to_smiles</code></div>
+
+  <div class="turn user">
+    <div class="role">Prompt</div>
+    Find the SMILES and InChIKey for this compound: N-(3-chloro-4-fluoro-phenyl)-7-methoxy-6-(3-morpholin-4-ylpropoxy)quinazolin-4-amine using all three methods
+  </div>
+
+  <div class="turn">
+    <div class="role">Claude</div>
+    The name-to-SMILES tool stops at the first source that recognizes a name, so each of the three sources (BindingDB synonyms, OPSIN, PubChem) was queried separately.
+  </div>
+
+  <div class="turn tool">
+    <div class="role">Tool call 1</div>
+    <h3>Source: BindingDB synonyms — <span class="no">not found</span></h3>
+    <details><summary>Raw output</summary>
+<pre>{
+  "query": "N-(3-chloro-4-fluoro-phenyl)-7-methoxy-6-(3-morpholin-4-ylpropoxy)quinazolin-4-amine",
+  "resolved": false,
+  "sources_tried": [ { "source": "bindingdb", "status": "not found" } ]
+}</pre></details>
+  </div>
+
+  <div class="turn tool">
+    <div class="role">Tool call 2</div>
+    <h3>Source: OPSIN — <span class="ok">resolved</span></h3>
+    <div class="key"><b>SMILES</b><code>COc1cc2ncnc(Nc3ccc(F)c(Cl)c3)c2cc1OCCCN1CCOCC1</code><b>InChIKey</b><code>XGALLCVXEZPNRQ-UHFFFAOYSA-N</code></div>
+    <details><summary>Raw output</summary>
+<pre>{
+  "resolved": true,
+  "source": "opsin",
+  "smiles": "COc1cc2ncnc(Nc3ccc(F)c(Cl)c3)c2cc1OCCCN1CCOCC1",
+  "inchi_key": "XGALLCVXEZPNRQ-UHFFFAOYSA-N",
+  "bindingdb_matches": [
+    { "monomerid": 5447, "bdbm_id": "BDBM5447", "name": "Iressa",
+      "inchi_key": "XGALLCVXEZPNRQ-UHFFFAOYSA-N",
+      "smiles": "COc1cc2c(cc1OCCCN3CCOCC3)c(ncn2)Nc4ccc(c(c4)Cl)F",
+      "n_activities": 1177, "exact_match": true },
+    { "monomerid": 50338602, "bdbm_id": "BDBM50338602", "name": "Iressa",
+      "inchi_key": "XGALLCVXEZPNRQ-UHFFFAOYSA-N",
+      "smiles": "COc1cc2c(cc1OCCCN3CCOCC3)c(ncn2)Nc4ccc(c(c4)Cl)F",
+      "n_activities": 6, "exact_match": true }
+  ]
+}</pre></details>
+  </div>
+
+  <div class="turn tool">
+    <div class="role">Tool call 3</div>
+    <h3>Source: PubChem — <span class="ok">resolved</span></h3>
+    <div class="key"><b>SMILES</b><code>COc1cc2ncnc(Nc3ccc(F)c(Cl)c3)c2cc1OCCCN1CCOCC1</code><b>InChIKey</b><code>XGALLCVXEZPNRQ-UHFFFAOYSA-N</code><b>PubChem</b><span>Gefitinib, CID 123631</span></div>
+    <details><summary>Raw output</summary>
+<pre>{
+  "resolved": true,
+  "source": "pubchem",
+  "smiles": "COc1cc2ncnc(Nc3ccc(F)c(Cl)c3)c2cc1OCCCN1CCOCC1",
+  "inchi_key": "XGALLCVXEZPNRQ-UHFFFAOYSA-N",
+  "pubchem_name": "Gefitinib",
+  "pubchem_cid": 123631,
+  "bindingdb_matches": [
+    { "bdbm_id": "BDBM5447", "name": "Iressa", "n_activities": 1177, "exact_match": true },
+    { "bdbm_id": "BDBM50338602", "name": "Iressa", "n_activities": 6, "exact_match": true }
+  ]
+}</pre></details>
+  </div>
+
+  <div class="turn">
+    <div class="role">Claude — answer</div>
+    <p>This compound is <b>gefitinib</b> (Iressa).</p>
+    <div class="key"><b>SMILES</b><code>COc1cc2ncnc(Nc3ccc(F)c(Cl)c3)c2cc1OCCCN1CCOCC1</code><b>InChIKey</b><code>XGALLCVXEZPNRQ-UHFFFAOYSA-N</code></div>
+    <table>
+      <tr><th>Method</th><th>Result</th><th>Notes</th></tr>
+      <tr><td>BindingDB synonyms</td><td class="no">Not found</td><td>This exact systematic name isn't stored as a BindingDB synonym.</td></tr>
+      <tr><td>OPSIN (IUPAC parser)</td><td class="ok">Resolved</td><td>Matched to BindingDB entries BDBM5447 (1,177 activities) and BDBM50338602.</td></tr>
+      <tr><td>PubChem</td><td class="ok">Resolved</td><td>Identified as Gefitinib, CID 123631.</td></tr>
+    </table>
+    <p>OPSIN and PubChem give an identical SMILES and InChIKey. BindingDB stores the same molecule under a different SMILES string (<code>COc1cc2c(cc1OCCCN3CCOCC3)c(ncn2)Nc4ccc(c(c4)Cl)F</code>), which is another way of writing the same structure; its InChIKey matches exactly.</p>
+    <p>Only the BindingDB synonym lookup failed to resolve the name. Searching BindingDB by "gefitinib" or "Iressa" would find the compound directly.</p>
+  </div>
+</main>
+</body>
+</html>

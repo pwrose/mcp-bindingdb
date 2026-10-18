@@ -4,9 +4,10 @@ Fourteen transcripts of questions answered with the `mcp-bindingdb` tools agains
 Each file shows the question, every tool call with its exact arguments (and SQL), the results (a readable
 table plus the raw JSON in a collapsible block), and an answer written from those results.
 
-Examples 13 and 16 are a different kind: standalone HTML reports. Example 13 combines BindingDB data
+Examples 13, 16 and 17 are a different kind: standalone HTML reports. Example 13 combines BindingDB data
 with RDKit, scikit-learn and IRIS analysis, with its scripts and data alongside; example 16 is a
-substructure-search case study with aligned structure depictions (see [Reports](#reports)).
+substructure-search case study with aligned structure depictions; example 17 resolves a systematic name
+with each of the three `chemical_name_to_smiles` sources (see [Reports](#reports)).
 
 | # | Question | Tools used | What it shows |
 |---|---|---|---|
@@ -26,6 +27,7 @@ substructure-search case study with aligned structure depictions (see [Reports](
 | [14](14-chemotype-target-profile.md) | Proteins bound by the 4-(thiazol-5-yl)-2-aminopyrimidine chemotype, with compounds per protein | `substructure_search` | Substructure search; SMARTS vs SMILES reading; target counts dominated by one patent; one protein under several targets |
 | [15](15-palbociclib-analogues.md) | Compounds similar to palbociclib, their targets, and their CDK2/cyclin A2 activity | `search_compounds`, `similarity_search` | Similarity search with a target filter and per-target summary; CDK4/6 selectivity; one compound's measurements spread from 230 nM to >10 µM; a suspicious patent construct |
 | [16](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/16-4-anilinoquinazoline-target-classes.html) | Targets bound by 4-anilinoquinazolines with Ki or Kd ≤ 10 nM, grouped by target class, with one aligned representative compound per class | `substructure_search`, `run_sql`, `get_compound` + RDKit depictions | Substructure search with a per-target summary and potency filter; hand-assigned target classes; promiscuous approved drugs counted in several classes; PROTACs among EGFR hits; a compound–citation mis-annotation (vandetanib vs HIV-1 protease) |
+| [17](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/17-chemical-name-search.html) | SMILES and InChIKey for N-(3-chloro-4-fluoro-phenyl)-7-methoxy-6-(3-morpholin-4-ylpropoxy)quinazolin-4-amine, using all three name sources | `chemical_name_to_smiles` | Name-to-structure lookup source by source: no BindingDB synonym, OPSIN and PubChem agree (gefitinib); matching back to BindingDB by InChIKey; two BindingDB records for one compound; different SMILES strings for the same structure |
 
 The answers point out data-quality issues where the results show them (duplicate records, values at
 detection limits, probable unit errors, wrong synonyms). Check these before relying on a single number.
@@ -59,7 +61,13 @@ show one representative compound per class in a 2 × 3 grid aligned on the 4-ani
 lists every tool call, the per-class and per-target counts, and the caveats (duplicate compound records,
 mutant and construct targets counted separately, a probable mis-annotation).
 
-Neither report is produced by `generate_examples.py` or updated when the data release changes.
+[17-chemical-name-search.html](17-chemical-name-search.html) is a short HTML transcript
+([rendered view](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/17-chemical-name-search.html)) that asks for the SMILES and InChIKey of gefitinib's systematic name from all
+three sources. Because `chemical_name_to_smiles` stops at the first source that knows a name, each source
+is queried in a separate call. The name is not a BindingDB
+synonym; OPSIN and PubChem return the same structure, which matches BDBM5447 and BDBM50338602 by InChIKey.
+
+None of these reports is produced by `generate_examples.py` or updated when the data release changes.
 
 ## Regenerating
 
