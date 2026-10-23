@@ -570,6 +570,15 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
         return {"cleared": mcp.tool_log.reset()}
 
     @mcp.tool(annotations=READ_ONLY)
+    def get_tool_log() -> dict[str, Any]:
+        """List the logged tool calls (index, UTC time, tool and arguments; no results), oldest first.
+
+        The log is shared by every chat this server process has served (Claude Desktop runs one process
+        for all chats), so it can hold calls from other chats. Pick the indices of the calls you made in
+        this chat and pass them to create_transcript as `calls`."""
+        return {"calls": mcp.tool_log.listing()}
+
+    @mcp.tool(annotations=READ_ONLY)
     def create_transcript(
         model: Annotated[str, Field(description="The exact model id that produced the analysis (e.g. "
                                     "'claude-opus-5-5'), from session metadata or the user; never a family "
@@ -580,6 +589,9 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
         date: Annotated[str | None, Field(description="ISO date of the session (default: today)")] = None,
         include_tool_calls: Annotated[bool, Field(description="Append the logged BindingDB tool calls with "
                                                   "their results")] = True,
+        calls: Annotated[list[int] | None, Field(description="Only these logged calls, by the 1-based index "
+                                                 "get_tool_log shows, in log order. Default: every logged "
+                                                 "call")] = None,
         max_result_rows: Annotated[int | None, Field(description="Rows shown per result table, and items per "
                                                      "list; the true counts are kept. null shows all")] = 5,
         skills: Annotated[list[str] | None, Field(description="Agent skills that shaped the analysis, as "
@@ -595,8 +607,10 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
         BindingDB tool call that actually ran (arguments verbatim, SQL for run_sql) with its result.
 
         Tool calls are logged by the server as they run (failed calls and describe_tables are not), so do
-        not re-supply them; call reset_tool_log at the start of an analysis to limit the log to it. The
-        server cannot see your prose, so pass each answer in full via `exchanges`, not a summary.
+        not re-supply them. The log is shared by every chat this server process has served, so it can
+        hold calls from other chats: unless reset_tool_log was called at the start of this analysis, call
+        get_tool_log first and pass the indices of this chat's calls as `calls`. The server cannot see
+        your prose, so pass each answer in full via `exchanges`, not a summary.
 
         Save the returned Markdown verbatim to a .md file (or a Markdown artifact): do not retype, reorder
         or summarize it. The header's Contents line gives the number of tool calls; the saved file should
@@ -609,13 +623,19 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
         the file where they want it; never write an HTML transcript yourself."""
         when = date or _date.today().isoformat()
         turns = [e.model_dump() for e in exchanges or []]
-        calls = list(mcp.tool_log.entries) if include_tool_calls else []
+        log = mcp.tool_log.entries
+        if calls is None:
+            selected = list(log) if include_tool_calls else []
+        else:
+            if bad := [i for i in calls if not 1 <= i <= len(log)]:
+                raise ToolError(f"calls {bad} are not in the log, which has {len(log)} calls; see get_tool_log")
+            selected = [log[i - 1] for i in sorted(set(calls))] if include_tool_calls else []
         skill_list = transcript.clean_entries(skills)
         server_list = transcript.clean_entries(external_mcp_servers)
         generated_by = f"{mcp.name} v{VERSION}"
         if format == "json":
             out: dict[str, Any] = {"title": title, "date": when, "model": model, "bindingdb_release": release,
-                                   "exchanges": turns, "tool_calls": calls, "generated_by": generated_by}
+                                   "exchanges": turns, "tool_calls": selected, "generated_by": generated_by}
             if skill_list:
                 out["skills"] = skill_list
             if server_list:
@@ -624,7 +644,7 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
         drawn = format == "html" and substructure.rdkit_available()
         document = transcript.render_transcript(
             title=title, when=when, model=model, release=release, generated_by=generated_by, exchanges=turns,
-            calls=calls, max_rows=None if max_result_rows is None else max(max_result_rows, 0),
+            calls=selected, max_rows=None if max_result_rows is None else max(max_result_rows, 0),
             skills=skill_list, mcp_servers=server_list, depict=transcript_html.depict if drawn else None)
         if format == "markdown":
             return document
@@ -640,11 +660,13 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
                             f"still available at {LATEST_HTML_URI}") from None
         summary = [
             f"HTML transcript written ({len(page):,} bytes, {transcript.plural(len(turns), 'exchange')}, "
-            f"{transcript.plural(len(calls), 'tool call')}"
+            f"{transcript.plural(len(selected), 'tool call')}"
             + (", structures drawn with RDKit)." if drawn else "; RDKit is not installed, so no structures)."),
             f"- File: {path} (on the machine running mcp-bindingdb)",
             f"- Resource: {LATEST_HTML_URI} (fetch it from there when the server runs remotely)",
             "Deliver this file as is; do not write or edit an HTML transcript yourself.",
+            "Tool calls included:",
+            *(f"{k}. {transcript.signature(c, 160)}" for k, c in enumerate(selected, start=1)),
         ]
         return [TextContent(type="text", text="\n".join(summary)),
                 ResourceLink(type="resource_link", name=path.name, title=title, uri=LATEST_HTML_URI,

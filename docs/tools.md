@@ -15,6 +15,7 @@
 | `substructure_search` | Compounds containing a SMILES/SMARTS fragment, optionally only those measured against a target with potency filters; every target the matching compounds hit, with compounds per target; or a count of matches (needs the structure-search index) |
 | `similarity_search` | Compounds similar to a molecule (Tanimoto on Morgan fingerprints) above a threshold, with the same target filter and per-target summary (needs the structure-search index) |
 | `create_transcript` | Markdown, HTML (with structure drawings) or JSON transcript of the session: prompts and answers, then the logged tool calls with their results |
+| `get_tool_log` | The logged tool calls (index, time, arguments), to pick this chat's calls for `create_transcript` |
 | `reset_tool_log` | Clear the tool-call log that `create_transcript` reports |
 
 ## Safety
@@ -65,9 +66,12 @@ see: its exact model id, and each prompt with its full answer (`exchanges`). The
 to the last call, and a Contents line with counts), the conversation as 👤 User / 🧠 Assistant blocks, and
 a "BindingDB tool calls" section: each call's arguments verbatim (SQL in a `sql` block for `run_sql`),
 then its result, with lists of rows as tables capped at `max_result_rows` (default 5; the true row count
-is kept). `format="json"` returns the same fields unrendered, with full results. The log lives in the
-server process: it covers everything since the server started or since `reset_tool_log`, so call that at
-the start of a new analysis.
+is kept). `format="json"` returns the same fields unrendered, with full results.
+
+The log lives in the server process and covers everything since the server started or since
+`reset_tool_log`. Claude Desktop runs one server process for all chats, so the log mixes chats; the
+server cannot tell them apart. The model therefore lists the log with `get_tool_log` and passes the
+indices of its own calls to `create_transcript` as `calls`.
 
 `format="html"` converts the same document into a standalone page and adds structure drawings: a
 structure column before every `smiles` column, and above the result the query of a substructure or

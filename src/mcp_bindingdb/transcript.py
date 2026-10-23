@@ -15,7 +15,7 @@ from typing import Any
 Depict = Callable[[str, bool], "str | None"]
 
 #: Not logged: schema lookups, and the transcript tools themselves.
-UNLOGGED_TOOLS = {"describe_tables", "create_transcript", "reset_tool_log"}
+UNLOGGED_TOOLS = {"describe_tables", "create_transcript", "reset_tool_log", "get_tool_log"}
 
 
 class ToolLog:
@@ -32,6 +32,18 @@ class ToolLog:
         n = len(self.entries)
         self.entries.clear()
         return n
+
+    def listing(self) -> list[dict[str, Any]]:
+        """The calls without their results, numbered from 1 as create_transcript's `calls` expects."""
+        return [{"index": i, "timestamp": e["timestamp"], "call": signature(e, 200)}
+                for i, e in enumerate(self.entries, start=1)]
+
+
+def signature(call: dict[str, Any], max_chars: int | None = None) -> str:
+    """A call as Python-like text, e.g. search_compounds(query='imatinib', limit=3)."""
+    args = ", ".join(f"{a}={v!r}" for a, v in (call.get("arguments") or {}).items())
+    text = f"{call['tool']}({args})"
+    return text if max_chars is None or len(text) <= max_chars else text[:max_chars - 1] + "…"
 
 
 def render_transcript(*, title: str, when: str, model: str, release: str, generated_by: str,
@@ -106,7 +118,7 @@ def _render_call(call: dict[str, Any], k: int, max_rows: int | None, depict: Dep
     if sql is not None:
         lines += ["```sql", sql.strip(), "```", ""]
     else:
-        lines += ["```python", f"{tool}({', '.join(f'{a}={v!r}' for a, v in args.items())})", "```", ""]
+        lines += ["```python", signature(call), "```", ""]
     return lines + _render_result(call.get("result"), max_rows, depict)
 
 

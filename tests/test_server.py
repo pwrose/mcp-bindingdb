@@ -47,7 +47,7 @@ async def test_lists_all_tools(server):
     assert set(tools) == {
         "search_compounds", "search_targets", "get_compound", "get_target", "find_ligands_for_target",
         "find_targets_for_compound", "get_activity", "describe_tables", "run_sql", "chemical_name_to_smiles",
-        "create_transcript", "reset_tool_log",
+        "create_transcript", "reset_tool_log", "get_tool_log",
     }
     assert all(t.annotations.read_only_hint for name, t in tools.items() if name != "reset_tool_log")
 
@@ -209,6 +209,23 @@ async def test_transcript_shows_prompts_and_logged_calls():
     assert "search_compounds(query='imatinib', limit=3)" in md
     assert "```sql\nSELECT 42 AS answer\n```" in md and "| 42 |" in md
     assert md.count("#### Call ") == 2
+
+
+async def test_transcript_of_selected_calls():
+    srv = build_server(Database(DB_PATH))
+    async with Client(srv) as client:
+        await client.call_tool("search_compounds", {"query": "aspirin", "limit": 1})  # an earlier chat
+        await client.call_tool("search_compounds", {"query": "imatinib", "limit": 1})
+        await client.call_tool("run_sql", {"sql": "SELECT 42 AS answer"})
+        log = (await client.call_tool("get_tool_log", {})).structured_content["calls"]
+        result = await client.call_tool("create_transcript", {"model": "m", "calls": [3, 2]})
+        bad = await client.call_tool("create_transcript", {"model": "m", "calls": [4]})
+    assert [c["index"] for c in log] == [1, 2, 3]
+    assert log[1]["call"] == "search_compounds(query='imatinib', limit=1)"
+    md = result.content[0].text
+    assert "1 exchange" not in md and "- **Contents:** 0 exchanges · 2 tool calls" in md
+    assert "aspirin" not in md and md.index("imatinib") < md.index("SELECT 42")
+    assert bad.is_error and "not in the log" in bad.content[0].text
 
 
 async def test_html_transcript_draws_structures_and_escapes_html(tmp_path):
