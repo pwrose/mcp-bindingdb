@@ -49,7 +49,7 @@ async def test_lists_all_tools(server):
         "find_targets_for_compound", "get_activity", "describe_tables", "run_sql", "chemical_name_to_smiles",
         "create_transcript", "transcript_to_html", "reset_tool_log", "get_tool_log",
     }
-    writes = {"reset_tool_log", "transcript_to_html"}
+    writes = {"reset_tool_log", "transcript_to_html", "create_transcript"}  # the last two write HTML files
     assert all(t.annotations.read_only_hint for name, t in tools.items() if name not in writes)
 
 
@@ -258,6 +258,18 @@ async def test_markdown_transcript_converts_to_html_with_structures(tmp_path):
     assert page.count('<img class="structure"') == 3  # aspirin and 2 imatinib rows; not "xyz"
     assert "<footer>3 structures drawn with RDKit.</footer>" in page
     assert "'Mine'" in given.content[0].text and "1 structure drawn" in given.content[0].text
+
+
+async def test_html_transcript_in_one_call(tmp_path):
+    srv = build_server(Database(DB_PATH), transcript_dir=tmp_path)
+    answer = "| compound | SMILES |\n|---|---|\n| aspirin | CC(=O)Oc1ccccc1C(=O)O |"
+    async with Client(srv) as client:
+        result = await client.call_tool("create_transcript", {
+            "model": "test-model", "format": "html", "exchanges": [{"prompt": "Aspirin?", "answer": answer}]})
+    assert not result.is_error, result.content
+    assert "1 structure drawn" in result.content[0].text and "- **Contents:** 1 exchange" in result.content[0].text
+    [path] = tmp_path.glob("*.html")
+    assert str(path) in result.content[0].text and path.read_text().count('<img class="structure"') == 1
 
 
 @pytest.mark.network

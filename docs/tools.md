@@ -14,14 +14,14 @@
 | `run_sql` | Arbitrary read-only DuckDB SQL |
 | `substructure_search` | Compounds containing a SMILES/SMARTS fragment, optionally only those measured against a target with potency filters; every target the matching compounds hit, with compounds per target; or a count of matches (needs the structure-search index) |
 | `similarity_search` | Compounds similar to a molecule (Tanimoto on Morgan fingerprints) above a threshold, with the same target filter and per-target summary (needs the structure-search index) |
-| `create_transcript` | Markdown (or JSON) transcript of the session: prompts and answers, optionally followed by the logged tool calls with their results |
-| `transcript_to_html` | Converts a Markdown transcript to an HTML page, drawing the structures in every SMILES column |
+| `create_transcript` | Markdown, HTML (with structure drawings) or JSON transcript of the session: prompts and answers, optionally followed by the logged tool calls with their results |
+| `transcript_to_html` | Converts an existing Markdown transcript to an HTML page, drawing the structures in every SMILES column |
 | `get_tool_log` | The logged tool calls (index, time, arguments), to pick this chat's calls for `create_transcript` |
 | `reset_tool_log` | Clear the tool-call log that `create_transcript` reports |
 
 ## Safety
 
-All tools are read-only, except that `transcript_to_html` writes its HTML file. The database connection is opened read-only with file, network and extension access
+All tools are read-only, except that `create_transcript` (with `format="html"`) and `transcript_to_html` write an HTML file. The database connection is opened read-only with file, network and extension access
 disabled and settings locked, so `run_sql` cannot write data or read anything outside the database.
 Queries time out after 30 s (`--timeout`). The only tool that uses the network is
 `chemical_name_to_smiles`, for PubChem; `--no-network` turns that off.
@@ -81,10 +81,12 @@ indices of its own calls to `create_transcript` as `calls`.
 In a tool call's result, the molecules it is about (the query of a substructure or similarity search, a
 structure looked up by name, the compound from `get_compound`) are listed in a `name | smiles` table.
 
-## transcript_to_html
+## HTML transcripts
 
-Converts a Markdown transcript into a standalone HTML page: by default the one the last
-`create_transcript` call returned, or Markdown passed as `markdown` (e.g. a transcript the user edited).
+`create_transcript` with `format="html"` builds the Markdown transcript and converts it in the same
+call, so a user can simply ask for an HTML transcript. `transcript_to_html` does the conversion alone,
+for a Markdown transcript that already exists: by default the one the last `create_transcript` call
+returned, or Markdown passed as `markdown` (e.g. a transcript the user edited).
 Every table with a column whose header contains "SMILES", in the answers as well as in the tool calls,
 gets a structure column before it. RDKit draws the structures on the server as SVG images embedded in
 the page, so it opens offline; cells that are not valid SMILES (or SMARTS) are left empty, and without
