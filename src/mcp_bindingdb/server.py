@@ -865,7 +865,7 @@ def _add_structure_tools(mcp: MCPServer, db: Database, index: substructure.Subst
             for row in result["rows"]:
                 row["similarity"] = similarity[row["monomerid"]]
             result["rows"].sort(key=lambda r: (-r["similarity"], -(r.get("p_affinity") or 0),
-                                               -(r.get("n_activities") or 0)))
+                                               -(r.get("n_activities") or 0), r["monomerid"]))
         result["truncated"] = len(hits.monomerids) > limit
         result["n_similar_compounds"] = len(hits.monomerids)
         return finish(about, result, hits.searched, hits.total)
