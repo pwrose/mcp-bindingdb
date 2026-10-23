@@ -47,8 +47,9 @@ async def test_lists_all_tools(server):
     assert set(tools) == {
         "search_compounds", "search_targets", "get_compound", "get_target", "find_ligands_for_target",
         "find_targets_for_compound", "get_activity", "describe_tables", "run_sql", "chemical_name_to_smiles",
+        "create_transcript", "reset_tool_log",
     }
-    assert all(t.annotations.read_only_hint for t in tools.values())
+    assert all(t.annotations.read_only_hint for name, t in tools.items() if name != "reset_tool_log")
 
 
 async def test_search_compounds_by_name_ranks_exact_first(server):
@@ -188,6 +189,45 @@ async def test_name_to_smiles_without_network():
     out = await ok(build_server(Database(DB_PATH), network=False), "chemical_name_to_smiles",
                    name="not a compound xyzzy", sources=["pubchem"])
     assert not out["resolved"] and out["sources_tried"][0]["status"] == "unavailable"
+
+
+async def test_transcript_shows_prompts_and_logged_calls():
+    srv = build_server(Database(DB_PATH))
+    async with Client(srv) as client:
+        await client.call_tool("search_compounds", {"query": "imatinib", "limit": 3})
+        await client.call_tool("run_sql", {"sql": "SELECT 42 AS answer"})
+        await client.call_tool("describe_tables", {})  # schema lookups are not logged
+        await client.call_tool("get_compound", {"monomerid": -1})  # nor are failed calls
+        result = await client.call_tool("create_transcript", {
+            "model": "test-model", "date": "2026-10-23",
+            "exchanges": [{"prompt": "What is imatinib?", "answer": "A kinase inhibitor."}]})
+        md = result.content[0].text
+        assert (await client.call_tool("reset_tool_log", {})).structured_content == {"cleared": 2}
+    assert md.startswith("# BindingDB Chat Transcript\n")
+    assert "- **Model:** test-model" in md and "- **Contents:** 1 exchange · 2 tool calls" in md
+    assert "👤 **User**\n\nWhat is imatinib?" in md and "🧠 **Assistant**\n\nA kinase inhibitor." in md
+    assert "search_compounds(query='imatinib', limit=3)" in md
+    assert "```sql\nSELECT 42 AS answer\n```" in md and "| 42 |" in md
+    assert md.count("#### Call ") == 2
+
+
+async def test_html_transcript_draws_structures_and_escapes_html(tmp_path):
+    srv = build_server(Database(DB_PATH), transcript_dir=tmp_path)
+    async with Client(srv) as client:
+        await client.call_tool("search_compounds", {"query": "imatinib", "limit": 2})
+        result = await client.call_tool("create_transcript", {
+            "model": "test-model", "format": "html",
+            "exchanges": [{"prompt": "What is imatinib?", "answer": "**Gleevec** <script>alert(1)</script>"}]})
+        assert not result.is_error, result.content
+        link = result.content[1]
+        assert link.uri == "transcript://session/latest.html"
+        resource = (await client.read_resource(link.uri)).contents[0].text
+    [path] = tmp_path.glob("bindingdb-chat-transcript-*.html")
+    page = path.read_text()
+    assert page == resource and str(path) in result.content[0].text
+    assert "<strong>Gleevec</strong> &lt;script&gt;" in page and "<script" not in page
+    assert "<th>structure</th>" in page
+    assert page.count('<img src="data:image/svg+xml;base64,') == page.count('class="structure"') == 2
 
 
 @pytest.mark.network

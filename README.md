@@ -73,6 +73,11 @@ If some tools are missing in a chat, check that they are switched on in the chat
 | `similarity_search` | Compounds similar to a molecule, or the targets they were measured against |
 | `describe_tables` | Table list with descriptions, or the columns of one table |
 | `run_sql` | Any read-only SQL query |
+| `create_transcript` | A record of the session as Markdown, or as an HTML page with structure drawings: your prompts and Claude's answers, then every BindingDB tool call with its result |
+| `reset_tool_log` | Start a new transcript log |
+
+Ask for a transcript at the end of a chat, e.g. "create a transcript of this session and save it as a .md file",
+or "create an HTML transcript with structures" (written to `data/transcripts/`).
 
 All tools are read-only. Only `chemical_name_to_smiles` uses the network, to look names up in PubChem.
 See [Tools](docs/tools.md) for how the searches work and notes on the data.

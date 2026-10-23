@@ -6,15 +6,17 @@ import argparse
 import re
 import sys
 import threading
+from datetime import date as _date
+from datetime import datetime
 from pathlib import Path
 from typing import Annotated, Any, Literal
 
-from mcp.server.mcpserver import MCPServer
+from mcp.server.mcpserver import Context, MCPServer
 from mcp.server.mcpserver.exceptions import ToolError
-from mcp.types import ToolAnnotations
-from pydantic import Field
+from mcp.types import CallToolResult, ResourceLink, TextContent, ToolAnnotations
+from pydantic import BaseModel, Field
 
-from . import names, substructure
+from . import names, substructure, transcript, transcript_html
 from .db import Database, QueryError, find_database
 
 AffinityType = Literal["Ki", "Kd", "IC50", "EC50", "kon", "koff"]
@@ -91,6 +93,33 @@ measured against.
 
 TARGET_FILTER_DOC = "With target_id or summarize_by_target: "
 
+VERSION = "0.1.0"
+LATEST_HTML_URI = "transcript://session/latest.html"
+
+
+class Exchange(BaseModel):
+    prompt: str = Field(description="The user's prompt, verbatim")
+    answer: str = Field("", description="Your full answer to that prompt as the user saw it, verbatim, "
+                        "including tables and lists; not a summary")
+
+
+class BindingDBServer(MCPServer):
+    """MCPServer that records every successful tool call for create_transcript."""
+
+    def __init__(self, *args: Any, **kwargs: Any) -> None:
+        super().__init__(*args, **kwargs)
+        self.tool_log = transcript.ToolLog()
+        self.last_html: str | None = None
+
+    async def call_tool(self, name: str, arguments: dict[str, Any], context: Context | None = None) -> Any:
+        result = await super().call_tool(name, arguments, context)
+        if name not in transcript.UNLOGGED_TOOLS and isinstance(result, CallToolResult) and not result.is_error:
+            content = result.structured_content
+            if content is None:
+                content = "\n".join(c.text for c in result.content if c.type == "text")
+            self.tool_log.record(name, arguments, content)
+        return result
+
 
 def load_substructure_index(db: Database) -> substructure.SubstructureIndex | None:
     """The structure index next to the database, if RDKit is installed and the index matches the release."""
@@ -117,14 +146,15 @@ def load_substructure_index(db: Database) -> substructure.SubstructureIndex | No
 
 
 def build_server(db: Database, index: substructure.SubstructureIndex | None = None,
-                 network: bool = True) -> MCPServer:
+                 network: bool = True, transcript_dir: Path | None = None) -> BindingDBServer:
     """`index` enables substructure_search and similarity_search (see load_substructure_index);
-    `network` lets chemical_name_to_smiles ask PubChem."""
+    `network` lets chemical_name_to_smiles ask PubChem; HTML transcripts are written to `transcript_dir`
+    (default: transcripts/ next to the database)."""
     info = db.build_info()
-    mcp = MCPServer(
+    mcp = BindingDBServer(
         name="mcp-bindingdb",
         title="BindingDB",
-        version="0.1.0",
+        version=VERSION,
         instructions=INSTRUCTIONS + (STRUCTURE_INSTRUCTIONS if index else "")
         + f"\nLoaded release: {info.get('release', 'unknown')}.",
     )
@@ -528,7 +558,103 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
 
     if index is not None:
         _add_structure_tools(mcp, db, index, run, _activity_query, potency_filter)
+    _add_transcript_tools(mcp, info.get("release", "unknown"), transcript_dir or db.path.parent / "transcripts")
     return mcp
+
+
+def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Path) -> None:
+    @mcp.tool(annotations=ToolAnnotations(readOnlyHint=False, destructiveHint=False, openWorldHint=False))
+    def reset_tool_log() -> dict[str, Any]:
+        """Clear the log of tool calls that create_transcript reports. Call at the start of a new analysis,
+        so the transcript holds only its calls."""
+        return {"cleared": mcp.tool_log.reset()}
+
+    @mcp.tool(annotations=READ_ONLY)
+    def create_transcript(
+        model: Annotated[str, Field(description="The exact model id that produced the analysis (e.g. "
+                                    "'claude-opus-5-5'), from session metadata or the user; never a family "
+                                    "name like 'Claude' or a guess. Ask the user if you do not know it")],
+        exchanges: Annotated[list[Exchange] | None, Field(description="The conversation turns, in order: "
+                                                         "each prompt with your full, verbatim answer")] = None,
+        title: Annotated[str, Field(description="Heading of the transcript")] = "BindingDB Chat Transcript",
+        date: Annotated[str | None, Field(description="ISO date of the session (default: today)")] = None,
+        include_tool_calls: Annotated[bool, Field(description="Append the logged BindingDB tool calls with "
+                                                  "their results")] = True,
+        max_result_rows: Annotated[int | None, Field(description="Rows shown per result table, and items per "
+                                                     "list; the true counts are kept. null shows all")] = 5,
+        skills: Annotated[list[str] | None, Field(description="Agent skills that shaped the analysis, as "
+                                                  "'<name> v<version>'; only ones actually followed")] = None,
+        external_mcp_servers: Annotated[list[str] | None, Field(description="Other MCP servers this session "
+                                                                "actually called for evidence, e.g. "
+                                                                "['PubMed']")] = None,
+        format: Annotated[Literal["markdown", "html", "json"], Field(
+            description="markdown: a document to save. html: the same document as a web page with "
+            "structure drawings, written to a file by the server. json: the structured fields")] = "markdown",
+    ) -> Any:
+        """Build a reproducible transcript of this session: each user prompt with your answer, then every
+        BindingDB tool call that actually ran (arguments verbatim, SQL for run_sql) with its result.
+
+        Tool calls are logged by the server as they run (failed calls and describe_tables are not), so do
+        not re-supply them; call reset_tool_log at the start of an analysis to limit the log to it. The
+        server cannot see your prose, so pass each answer in full via `exchanges`, not a summary.
+
+        Save the returned Markdown verbatim to a .md file (or a Markdown artifact): do not retype, reorder
+        or summarize it. The header's Contents line gives the number of tool calls; the saved file should
+        have that many '#### Call' sections. Never say the transcript is saved unless you wrote the file.
+
+        format='html' (when the user asks for an HTML transcript or structure drawings): result tables
+        with SMILES get a structure column, and query molecules and single compounds are drawn too. The
+        page is too large to pass through the chat, so the server writes it to a file and returns its path
+        and a link to the resource transcript://session/latest.html. Give the user that path, or copy
+        the file where they want it; never write an HTML transcript yourself."""
+        when = date or _date.today().isoformat()
+        turns = [e.model_dump() for e in exchanges or []]
+        calls = list(mcp.tool_log.entries) if include_tool_calls else []
+        skill_list = transcript.clean_entries(skills)
+        server_list = transcript.clean_entries(external_mcp_servers)
+        generated_by = f"{mcp.name} v{VERSION}"
+        if format == "json":
+            out: dict[str, Any] = {"title": title, "date": when, "model": model, "bindingdb_release": release,
+                                   "exchanges": turns, "tool_calls": calls, "generated_by": generated_by}
+            if skill_list:
+                out["skills"] = skill_list
+            if server_list:
+                out["external_mcp_servers"] = server_list
+            return out
+        drawn = format == "html" and substructure.rdkit_available()
+        document = transcript.render_transcript(
+            title=title, when=when, model=model, release=release, generated_by=generated_by, exchanges=turns,
+            calls=calls, max_rows=None if max_result_rows is None else max(max_result_rows, 0),
+            skills=skill_list, mcp_servers=server_list, depict=transcript_html.depict if drawn else None)
+        if format == "markdown":
+            return document
+        page = transcript_html.markdown_to_html(document, title, drawn)
+        mcp.last_html = page
+        slug = re.sub(r"[^A-Za-z0-9]+", "-", title).strip("-").lower()[:60] or "transcript"
+        path = transcript_dir / f"{slug}-{datetime.now():%Y-%m-%d-%H%M%S}.html"
+        try:
+            transcript_dir.mkdir(parents=True, exist_ok=True)
+            path.write_text(page, encoding="utf-8")
+        except OSError as e:
+            raise ToolError(f"Could not write the HTML transcript to {transcript_dir}: {e}; the page is "
+                            f"still available at {LATEST_HTML_URI}") from None
+        summary = [
+            f"HTML transcript written ({len(page):,} bytes, {transcript.plural(len(turns), 'exchange')}, "
+            f"{transcript.plural(len(calls), 'tool call')}"
+            + (", structures drawn with RDKit)." if drawn else "; RDKit is not installed, so no structures)."),
+            f"- File: {path} (on the machine running mcp-bindingdb)",
+            f"- Resource: {LATEST_HTML_URI} (fetch it from there when the server runs remotely)",
+            "Deliver this file as is; do not write or edit an HTML transcript yourself.",
+        ]
+        return [TextContent(type="text", text="\n".join(summary)),
+                ResourceLink(type="resource_link", name=path.name, title=title, uri=LATEST_HTML_URI,
+                             mimeType="text/html", size=len(page.encode()))]
+
+    @mcp.resource(LATEST_HTML_URI, name="Latest HTML transcript", mime_type="text/html",
+                  description="The most recent create_transcript page in format='html', with structure drawings.")
+    def latest_html_transcript() -> str:
+        return mcp.last_html or ("<!doctype html><title>No transcript yet</title><p>Call "
+                                 "<code>create_transcript</code> with <code>format='html'</code> first.</p>")
 
 
 def _add_structure_tools(mcp: MCPServer, db: Database, index: substructure.SubstructureIndex,
@@ -754,13 +880,16 @@ def main() -> None:
     p.add_argument("--timeout", type=float, default=30.0, help="Per-query time limit in seconds")
     p.add_argument("--no-network", action="store_true",
                    help="Do not look names up in PubChem (chemical_name_to_smiles)")
+    p.add_argument("--transcript-dir", help="Where create_transcript writes HTML transcripts "
+                   "(default: transcripts/ next to the database)")
     args = p.parse_args()
 
     db = Database(Path(args.db) if args.db else find_database(), timeout_s=args.timeout)
     index = load_substructure_index(db)
     if index is not None:  # loading takes several seconds; start now so the first search does not wait
         threading.Thread(target=index.preload, daemon=True).start()
-    server = build_server(db, index, network=not args.no_network)
+    server = build_server(db, index, network=not args.no_network,
+                          transcript_dir=Path(args.transcript_dir).expanduser() if args.transcript_dir else None)
     if args.transport == "stdio":
         server.run("stdio")
     else:

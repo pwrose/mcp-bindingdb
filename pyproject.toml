@@ -7,6 +7,7 @@ license = "BSD-3-Clause"
 license-files = ["LICENSE"]
 dependencies = [
     "duckdb>=1.1",
+    "markdown-it-py>=2.2",  # HTML transcripts
     "mcp[cli]>=2.3.0",
 ]
 
