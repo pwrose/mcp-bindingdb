@@ -74,6 +74,7 @@ If some tools are missing in a chat, check that they are switched on in the chat
 | `describe_tables` | Table list with descriptions, or the columns of one table |
 | `run_sql` | Any read-only SQL query |
 | `create_transcript` | A record of the session as Markdown, or as an HTML page with structure drawings: your prompts and Claude's answers, and, if you ask, every BindingDB tool call with its result |
+| `draw_structure_grid` | Compounds side by side, aligned on a shared substructure, with binding bars for their main targets |
 | `transcript_to_html` | Turns an existing Markdown transcript into an HTML page with structure drawings |
 | `get_tool_log` | List the logged tool calls, so a transcript includes only this chat's |
 | `reset_tool_log` | Start a new transcript log |
@@ -82,7 +83,7 @@ Ask for a transcript at the end of a chat, e.g. "create a transcript of this ses
 "create an HTML transcript" for a page with the structures drawn (written to `data/transcripts/`).
 Add "with the tool calls" to include every BindingDB lookup and its result.
 
-All tools are read-only, apart from the HTML transcripts, which are written to a file. Only `chemical_name_to_smiles` uses the network, to look names up in PubChem.
+All tools are read-only, apart from the transcripts and figures, which are written to files. Only `chemical_name_to_smiles` uses the network, to look names up in PubChem.
 See [Tools](docs/tools.md) for how the searches work and notes on the data.
 
 ## More

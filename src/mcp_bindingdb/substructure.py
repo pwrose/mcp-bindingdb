@@ -138,27 +138,6 @@ def canonical_smiles(smiles: str) -> str | None:
     return Chem.MolToSmiles(mol) if mol is not None else None
 
 
-@functools.lru_cache(maxsize=2048)
-def depict_svg(text: str, width: int = 180, height: int = 130) -> str | None:
-    """SVG drawing of a SMILES, or else of a SMARTS query; None without RDKit or if RDKit cannot parse it."""
-    if Chem is None or not text:
-        return None
-    _quiet = rdBase.BlockLogs()
-    mol = Chem.MolFromSmiles(text) or Chem.MolFromSmarts(text)
-    if mol is None or mol.GetNumAtoms() == 0:
-        return None
-    from rdkit.Chem.Draw import rdMolDraw2D
-
-    drawer = rdMolDraw2D.MolDraw2DSVG(width, height)
-    drawer.drawOptions().fixedBondLength = 18  # one scale for all; only large molecules are shrunk to fit
-    try:
-        rdMolDraw2D.PrepareAndDrawMolecule(drawer, mol)
-    except (RuntimeError, ValueError):  # e.g. a SMARTS query that cannot be kekulized for drawing
-        return None
-    drawer.FinishDrawing()
-    return drawer.GetDrawingText()
-
-
 @dataclass
 class Similar:
     monomerids: list[int]  # most similar first

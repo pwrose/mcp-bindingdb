@@ -3,20 +3,22 @@
 from __future__ import annotations
 
 import argparse
+import base64
+import html
 import re
 import sys
 import threading
 from datetime import date as _date
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Annotated, Any, Literal
 
 from mcp.server.mcpserver import Context, MCPServer
 from mcp.server.mcpserver.exceptions import ToolError
-from mcp.types import CallToolResult, ResourceLink, TextContent, ToolAnnotations
+from mcp.types import CallToolResult, ImageContent, ResourceLink, TextContent, ToolAnnotations
 from pydantic import BaseModel, Field
 
-from . import names, substructure, transcript, transcript_html
+from . import depict, figures, names, substructure, transcript, transcript_html
 from .db import Database, QueryError, find_database
 
 AffinityType = Literal["Ki", "Kd", "IC50", "EC50", "kon", "koff"]
@@ -91,6 +93,13 @@ measured against.
 """
 
 
+FIGURE_INSTRUCTIONS = """
+Figures: to show several compounds' structures together (e.g. in a grid, aligned on a shared substructure,
+with binding data), use draw_structure_grid rather than drawing them yourself; its figures appear in the
+chat and in transcripts (create_transcript), which cannot include pages you build yourself.
+"""
+
+
 TARGET_FILTER_DOC = "With target_id or summarize_by_target: "
 
 VERSION = "0.1.0"
@@ -101,6 +110,8 @@ class Exchange(BaseModel):
     prompt: str = Field(description="The user's prompt, verbatim")
     answer: str = Field("", description="Your full answer to that prompt as the user saw it, verbatim, "
                         "including tables and lists; not a summary")
+    figures: list[int] = Field(default_factory=list, description="Ids of the figures (draw_structure_grid) "
+                               "shown with this answer")
 
 
 class BindingDBServer(MCPServer):
@@ -157,6 +168,7 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
         title="BindingDB",
         version=VERSION,
         instructions=INSTRUCTIONS + (STRUCTURE_INSTRUCTIONS if index else "")
+        + (FIGURE_INSTRUCTIONS if depict.available() else "")
         + f"\nLoaded release: {info.get('release', 'unknown')}.",
     )
 
@@ -564,28 +576,44 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
 
 
 def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Path) -> None:
-    @mcp.tool(annotations=ToolAnnotations(readOnlyHint=False, destructiveHint=False, openWorldHint=False))
+    figures_dir = transcript_dir / "figures"
+    writes = ToolAnnotations(readOnlyHint=False, destructiveHint=False, openWorldHint=False)
+
+    @mcp.tool(annotations=writes)
     def reset_tool_log() -> dict[str, Any]:
-        """Clear the log of tool calls that create_transcript reports. Call at the start of a new analysis,
-        so the transcript holds only its calls."""
-        return {"cleared": mcp.tool_log.reset()}
+        """Clear the log of tool calls and figures that create_transcript reports. Call at the start of a
+        new analysis, so the transcript holds only its calls."""
+        calls, figs = mcp.tool_log.reset()
+        return {"cleared": calls, "figures_cleared": figs}
 
     @mcp.tool(annotations=READ_ONLY)
     def get_tool_log() -> dict[str, Any]:
-        """List the logged tool calls (index, UTC time, tool and arguments; no results), oldest first.
+        """List the logged tool calls (index, UTC time, tool and arguments; no results) and figures (id,
+        time, title), oldest first.
 
         The log is shared by every chat this server process has served (Claude Desktop runs one process
         for all chats), so it can hold calls from other chats. Pick the indices of the calls you made in
-        this chat and pass them to create_transcript as `calls`."""
-        return {"calls": mcp.tool_log.listing()}
+        this chat and pass them to create_transcript as `calls`, and your figures' ids in `exchanges`."""
+        return {"calls": mcp.tool_log.listing(),
+                "figures": [{"id": f.id, "timestamp": f.timestamp, "title": f.title} for f in mcp.tool_log.figures]}
+
+    def figure_html(file: str) -> str | None:
+        """A figure's HTML by its file name: from the log, or else its PNG from the figures folder."""
+        figure = next((f for f in mcp.tool_log.figures if f.file == file), None)
+        if figure is not None:
+            return figure.html
+        path = figures_dir / Path(file).name
+        if path.suffix != ".png" or not path.is_file():
+            return None
+        return (f'<p><img class="figure" alt="{html.escape(path.stem)}" '
+                f'src="data:image/png;base64,{base64.b64encode(path.read_bytes()).decode()}"></p>\n')
 
     def write_html(source: str) -> list[Any]:
         """Convert a Markdown transcript to HTML, write it to transcript_dir, and summarize the result."""
-        page, drawn = transcript_html.markdown_to_html(source)
+        page, drawn, n_figures = transcript_html.markdown_to_html(source, figure_html)
         mcp.last_html = page
         title = next((line[2:].strip() for line in source.splitlines() if line.startswith("# ")), "transcript")
-        slug = re.sub(r"[^A-Za-z0-9]+", "-", title).strip("-").lower()[:60] or "transcript"
-        path = transcript_dir / f"{slug}-{datetime.now():%Y-%m-%d-%H%M%S}.html"
+        path = transcript_dir / f"{_slug(title)}-{datetime.now():%Y-%m-%d-%H%M%S}.html"
         try:
             transcript_dir.mkdir(parents=True, exist_ok=True)
             path.write_text(page, encoding="utf-8")
@@ -593,10 +621,11 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
             raise ToolError(f"Could not write the HTML transcript to {transcript_dir}: {e}; the page is "
                             f"still available at {LATEST_HTML_URI}") from None
         header = [line for line in source.splitlines() if line.startswith(("- **Date:**", "- **Contents:**"))]
+        parts = [transcript.plural(n_figures, "figure")] if n_figures else []
+        parts.append(f"{transcript.plural(drawn, 'structure')} drawn in tables" if drawn else "no table structures")
         summary = [
-            f"HTML transcript of '{title}' written ({len(page):,} bytes; "
-            + (f"{transcript.plural(drawn, 'structure')} drawn)." if drawn else "no structures drawn).")
-            + ("" if drawn or substructure.rdkit_available() else " RDKit is not installed on the server."),
+            f"HTML transcript of '{title}' written ({len(page):,} bytes; {', '.join(parts)})."
+            + ("" if depict.available() else " RDKit is not installed on the server."),
             *header,
             f"- File: {path} (on the machine running mcp-bindingdb)",
             f"- Resource: {LATEST_HTML_URI} (fetch it from there when the server runs remotely)",
@@ -606,13 +635,67 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
                 ResourceLink(type="resource_link", name=path.name, title=title, uri=LATEST_HTML_URI,
                              mimeType="text/html", size=len(page.encode()))]
 
-    @mcp.tool(annotations=ToolAnnotations(readOnlyHint=False, destructiveHint=False, openWorldHint=False))
+    if depict.available():
+        @mcp.tool(annotations=writes)
+        def draw_structure_grid(
+            title: Annotated[str, Field(description="Figure heading")],
+            compounds: Annotated[list[figures.GridCompound], Field(min_length=1, max_length=24,
+                                                                   description="The compounds, in grid order")],
+            align_to: Annotated[str | None, Field(description="SMILES or SMARTS of the shared core to align "
+                                                  "on and highlight, e.g. 'Nc1ccc(Cl)cc1'; its first atom is "
+                                                  "drawn on the left. Default: the compounds' largest common "
+                                                  "substructure")] = None,
+            columns: Annotated[int, Field(ge=1, le=6, description="Compounds per row")] = 3,
+            description: Annotated[str, Field(description="A sentence or two under the heading")] = "",
+            notes: Annotated[list[str] | None, Field(description="Short notes under the figure, e.g. "
+                                                     "caveats about the data")] = None,
+        ) -> list[Any]:
+            """Draw compounds side by side in a grid, aligned on a shared core that is highlighted, each with
+            a name, subtitle, caption and bars for its binding to its main targets (log scale, coloured by
+            Ki/Kd/IC50/EC50).
+
+            Use it whenever you show several compounds' structures together (e.g. "show them in a grid,
+            aligned by the substructure"), instead of drawing them yourself. The image is shown in the chat,
+            and transcripts include it: list its id in the `figures` of the exchange it belongs to. HTML
+            transcripts embed it; Markdown transcripts link to its PNG."""
+            if align_to and depict.parse(align_to) is None:
+                raise ToolError(f"align_to {align_to!r} is not valid SMILES or SMARTS")
+            block, png, lay = figures.structure_grid(title, compounds, align_to, columns, description, notes)
+            log = mcp.tool_log
+            figure_id, log.next_figure_id = log.next_figure_id, log.next_figure_id + 1
+            file = f"{_slug(title)}-{datetime.now():%Y-%m-%d-%H%M%S}-{figure_id}.png"
+            try:
+                figures_dir.mkdir(parents=True, exist_ok=True)
+                (figures_dir / file).write_bytes(png)
+                saved = f"Saved as {figures_dir / file}."
+            except OSError as e:
+                saved = f"Could not save the PNG in {figures_dir}: {e}; HTML transcripts still include it."
+            log.figures.append(figures.Figure(
+                id=figure_id, timestamp=datetime.now(timezone.utc).isoformat(timespec="seconds"), title=title,
+                file=file, html=block, png=png, spec={"compounds": [c.model_dump() for c in compounds],
+                                                      "align_to": align_to}))
+            if any(lay.cores):
+                alignment = f"aligned on {align_to}" if align_to else "aligned on their largest common substructure"
+            elif align_to:
+                alignment = f"not aligned: no compound contains {align_to}"
+            else:
+                alignment = "not aligned: they share no core of 6 or more atoms"
+            bad = [c.title for c, mol in zip(compounds, lay.mols) if mol is None]
+            text = [f"Figure {figure_id}: '{title}', {transcript.plural(len(compounds), 'compound')}, {alignment}.",
+                    *([f"Not drawn (SMILES not understood): {', '.join(bad)}."] if bad else []),
+                    saved,
+                    f"Transcripts include it under the exchange whose `figures` lists {figure_id}."]
+            return [ImageContent(type="image", data=base64.b64encode(png).decode(), mimeType="image/png"),
+                    TextContent(type="text", text="\n".join(text))]
+
+    @mcp.tool(annotations=writes)
     def create_transcript(
         model: Annotated[str, Field(description="The exact model id that produced the analysis (e.g. "
                                     "'claude-opus-5-5'), from session metadata or the user; never a family "
                                     "name like 'Claude' or a guess. Ask the user if you do not know it")],
         exchanges: Annotated[list[Exchange] | None, Field(description="The conversation turns, in order: "
-                                                         "each prompt with your full, verbatim answer")] = None,
+                                                         "each prompt with your full, verbatim answer and the "
+                                                         "ids of its figures")] = None,
         title: Annotated[str, Field(description="Heading of the transcript")] = "BindingDB Chat Transcript",
         date: Annotated[str | None, Field(description="ISO date of the session (default: today)")] = None,
         include_tool_calls: Annotated[bool, Field(description="Add the BindingDB tool calls with their "
@@ -632,40 +715,56 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
             description="markdown: a document to save. html: a web page with structure drawings, written "
             "to a file by the server. json: the structured fields")] = "markdown",
     ) -> Any:
-        """Build a transcript of this session: each user prompt with your answer. The server cannot see
-        your prose, so pass each answer in full via `exchanges`, not a summary.
+        """Build a transcript of this session: each user prompt with your answer and its figures. The
+        server cannot see your prose, so pass each answer in full via `exchanges`, not a summary.
+
+        Figures made with draw_structure_grid appear under the answer whose `figures` lists their ids. If
+        no exchange lists any, every logged figure is added in a Figures section. A page or artifact you
+        built yourself cannot be included; draw grids of structures with draw_structure_grid.
 
         Tool calls are left out unless the user asks for them (e.g. "with the tool calls", "with the
         queries and results", "a reproducible record"); then set include_tool_calls and the transcript
         adds every BindingDB call that ran (arguments verbatim, SQL for run_sql) with its result. The
         server logs calls as they run (failed calls and describe_tables are not), so do not re-supply
-        them. The log is shared by every chat this server process has served, so it can hold calls from
-        other chats: unless reset_tool_log was called at the start of this analysis, call get_tool_log
-        first and pass the indices of this chat's calls as `calls`.
+        them. The log is shared by every chat this server process has served, so it can hold calls and
+        figures from other chats: unless reset_tool_log was called at the start of this analysis, call
+        get_tool_log first, pass the indices of this chat's calls as `calls`, and list your figures.
 
         Markdown (default): save the returned Markdown verbatim to a .md file (or a Markdown artifact): do
         not retype, reorder or summarize it. Never say the transcript is saved unless you wrote the file.
+        With figures, the server also saves the .md next to the figures/ folder its image links point to,
+        and says where.
 
         format='html' whenever the user asks for an HTML transcript: the server builds the same Markdown
-        and converts it in this one call (see transcript_to_html), drawing the structures of every table
-        with a SMILES column. The page is too large to pass through the chat, so the server writes it to a
-        file and returns its path; give the user that path (or copy the file where they want it), never
-        write an HTML transcript yourself."""
+        and converts it in this one call (see transcript_to_html), embedding the figures and drawing the
+        structures of every table with a SMILES column. The page is too large to pass through the chat,
+        so the server writes it to a file and returns its path; give the user that path (or copy the file
+        where they want it), never write an HTML transcript yourself."""
         when = date or _date.today().isoformat()
         turns = [e.model_dump() for e in exchanges or []]
-        log = mcp.tool_log.entries
+        log = mcp.tool_log
         if calls is not None:
-            if bad := [i for i in calls if not 1 <= i <= len(log)]:
-                raise ToolError(f"calls {bad} are not in the log, which has {len(log)} calls; see get_tool_log")
-            selected = [log[i - 1] for i in sorted(set(calls))]
+            if bad := [i for i in calls if not 1 <= i <= len(log.entries)]:
+                raise ToolError(f"calls {bad} are not in the log, which has {len(log.entries)} calls; "
+                                "see get_tool_log")
+            selected = [log.entries[i - 1] for i in sorted(set(calls))]
         else:
-            selected = list(log) if include_tool_calls else []
+            selected = list(log.entries) if include_tool_calls else []
+        listed = [i for t in turns for i in t["figures"]]
+        if missing := sorted({i for i in listed if log.figure(i) is None}):
+            raise ToolError(f"figures {missing} are not in the log; it has "
+                            f"{[f.id for f in log.figures] or 'none'} (see get_tool_log)")
+        placed = [log.figure(i) for i in dict.fromkeys(listed)]
+        unplaced = [] if listed else list(log.figures)
         skill_list = transcript.clean_entries(skills)
         server_list = transcript.clean_entries(external_mcp_servers)
         generated_by = f"{mcp.name} v{VERSION}"
         if format == "json":
             out: dict[str, Any] = {"title": title, "date": when, "model": model, "bindingdb_release": release,
                                    "exchanges": turns, "tool_calls": selected, "generated_by": generated_by}
+            if placed or unplaced:
+                out["figures"] = [{"id": f.id, "timestamp": f.timestamp, "title": f.title, "file": f.file,
+                                   **f.spec} for f in placed + unplaced]
             if skill_list:
                 out["skills"] = skill_list
             if server_list:
@@ -674,17 +773,29 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
         mcp.last_markdown = transcript.render_transcript(
             title=title, when=when, model=model, release=release, generated_by=generated_by, exchanges=turns,
             calls=selected, max_rows=None if max_result_rows is None else max(max_result_rows, 0),
-            skills=skill_list, mcp_servers=server_list)
-        return write_html(mcp.last_markdown) if format == "html" else mcp.last_markdown
+            skills=skill_list, mcp_servers=server_list, figures=placed, unplaced_figures=unplaced)
+        if format == "html":
+            return write_html(mcp.last_markdown)
+        if not (placed or unplaced):
+            return mcp.last_markdown
+        path = transcript_dir / f"{_slug(title)}-{datetime.now():%Y-%m-%d-%H%M%S}.md"
+        try:
+            path.write_text(mcp.last_markdown, encoding="utf-8")
+            note = (f"This transcript is also saved as {path}, next to the figures/ folder its image links "
+                    "point to; a copy saved elsewhere shows the figures only if that folder is copied along.")
+        except OSError as e:
+            note = f"Could not save the transcript next to its figures in {transcript_dir}: {e}."
+        return [TextContent(type="text", text=mcp.last_markdown), TextContent(type="text", text=note)]
 
-    @mcp.tool(annotations=ToolAnnotations(readOnlyHint=False, destructiveHint=False, openWorldHint=False))
+    @mcp.tool(annotations=writes)
     def transcript_to_html(
         markdown: Annotated[str | None, Field(description="A transcript's Markdown, e.g. one the user edited "
                                               "or one from an earlier session. Default: the transcript the "
                                               "last create_transcript call returned")] = None,
     ) -> Any:
-        """Convert a Markdown transcript into a standalone HTML page with structure drawings: every table
-        with a SMILES column, in the answers as well as in the tool calls, gets a structure column.
+        """Convert a Markdown transcript into a standalone HTML page with its figures embedded and structure
+        drawings: every table with a SMILES column, in the answers as well as in the tool calls, gets a
+        structure column, aligned on the molecules' shared core.
 
         For a new HTML transcript, call create_transcript with format='html' instead; use this tool to
         convert a Markdown transcript the user already has (the last one, or one passed in). The page
@@ -698,10 +809,14 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
         return write_html(source)
 
     @mcp.resource(LATEST_HTML_URI, name="Latest HTML transcript", mime_type="text/html",
-                  description="The most recent transcript_to_html page, with structure drawings.")
+                  description="The most recent HTML transcript, with its figures and structure drawings.")
     def latest_html_transcript() -> str:
         return mcp.last_html or ("<!doctype html><title>No transcript yet</title><p>Call "
-                                 "<code>transcript_to_html</code> first.</p>")
+                                 "<code>create_transcript</code> with <code>format='html'</code> first.</p>")
+
+
+def _slug(title: str) -> str:
+    return re.sub(r"[^A-Za-z0-9]+", "-", title).strip("-").lower()[:60] or "transcript"
 
 
 def _add_structure_tools(mcp: MCPServer, db: Database, index: substructure.SubstructureIndex,

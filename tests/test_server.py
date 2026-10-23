@@ -1,5 +1,8 @@
 """End-to-end tests against the real DuckDB build, through an in-process MCP client."""
 
+import base64
+import re
+
 import pytest
 from mcp import Client
 
@@ -47,9 +50,9 @@ async def test_lists_all_tools(server):
     assert set(tools) == {
         "search_compounds", "search_targets", "get_compound", "get_target", "find_ligands_for_target",
         "find_targets_for_compound", "get_activity", "describe_tables", "run_sql", "chemical_name_to_smiles",
-        "create_transcript", "transcript_to_html", "reset_tool_log", "get_tool_log",
+        "create_transcript", "transcript_to_html", "reset_tool_log", "get_tool_log", "draw_structure_grid",
     }
-    writes = {"reset_tool_log", "transcript_to_html", "create_transcript"}  # the last two write HTML files
+    writes = {"reset_tool_log", "transcript_to_html", "create_transcript", "draw_structure_grid"}  # write files
     assert all(t.annotations.read_only_hint for name, t in tools.items() if name not in writes)
 
 
@@ -204,7 +207,8 @@ async def test_transcript_shows_prompts_and_logged_calls():
             "model": "test-model", "date": "2026-10-23", "include_tool_calls": True,
             "exchanges": [{"prompt": "What is imatinib?", "answer": "A kinase inhibitor."}]})
         md = result.content[0].text
-        assert (await client.call_tool("reset_tool_log", {})).structured_content == {"cleared": 2}
+        cleared = (await client.call_tool("reset_tool_log", {})).structured_content
+        assert cleared == {"cleared": 2, "figures_cleared": 0}
     assert "#### Call" not in plain and "- **Contents:** 0 exchanges\n" in plain  # tool calls are opt-in
     assert md.startswith("# BindingDB Chat Transcript\n")
     assert "- **Model:** test-model" in md and "- **Contents:** 1 exchange · 2 tool calls" in md
@@ -270,6 +274,62 @@ async def test_html_transcript_in_one_call(tmp_path):
     assert "1 structure drawn" in result.content[0].text and "- **Contents:** 1 exchange" in result.content[0].text
     [path] = tmp_path.glob("*.html")
     assert str(path) in result.content[0].text and path.read_text().count('<img class="structure"') == 1
+
+
+SORAFENIB = "CNC(=O)c1cc(ccn1)Oc2ccc(cc2)NC(=O)Nc3ccc(c(c3)C(F)(F)F)Cl"
+BOSUTINIB = "CN1CCN(CC1)CCCOc2cc3c(cc2OC)c(c(cn3)C#N)Nc4cc(c(cc4Cl)Cl)OC"
+CLOZAPINE = "CN1CCN(CC1)C2=Nc3cc(ccc3Nc4c2cccc4)Cl"
+
+
+async def test_structure_grid_figure_in_transcripts(tmp_path):
+    srv = build_server(Database(DB_PATH), transcript_dir=tmp_path)
+    compounds = [
+        {"smiles": SORAFENIB, "title": "Sorafenib", "subtitle": "FDA 2005",
+         "bars": [{"label": "RAF1", "value_nm": 6, "type": "IC50", "note": "n = 32"}]},
+        {"smiles": BOSUTINIB, "title": "Bosutinib", "bars": [{"label": "ABL1", "value_nm": 0.06, "type": "Kd"}]},
+        {"smiles": CLOZAPINE, "title": "Clozapine <b>", "caption": "8-chloro ring"},
+    ]
+    async with Client(srv) as client:
+        bad_core = await client.call_tool("draw_structure_grid", {"title": "x", "compounds": compounds,
+                                                                  "align_to": "not a smiles ("})
+        grid = await client.call_tool("draw_structure_grid", {
+            "title": "Chloroanilines", "compounds": compounds, "align_to": "Nc1ccc(Cl)cc1"})
+        unknown = await client.call_tool("create_transcript", {"model": "m", "exchanges": [
+            {"prompt": "Grid?", "figures": [7]}]})
+        md = await client.call_tool("create_transcript", {"model": "m", "exchanges": [
+            {"prompt": "Grid?", "answer": "Here.", "figures": [1]}]})
+        page = await client.call_tool("create_transcript", {"model": "m", "format": "html", "exchanges": [
+            {"prompt": "Grid?", "answer": "Here.", "figures": [1]}]})
+        log = (await client.call_tool("get_tool_log", {})).structured_content
+    assert bad_core.is_error and "not valid SMILES or SMARTS" in bad_core.content[0].text
+    image, text = grid.content
+    assert image.type == "image" and image.mime_type == "image/png"
+    assert text.text.startswith("Figure 1: 'Chloroanilines', 3 compounds, aligned on Nc1ccc(Cl)cc1.")
+    [png] = (tmp_path / "figures").glob("chloroanilines-*-1.png")
+    assert png.read_bytes()[:4] == b"\x89PNG"
+    assert log["figures"][0]["id"] == 1 and log["figures"][0]["title"] == "Chloroanilines"
+    assert unknown.is_error and "figures [7] are not in the log" in unknown.content[0].text
+    markdown, note = md.content
+    assert f"Here.\n\n![Figure 1: Chloroanilines](figures/{png.name})" in markdown.text
+    assert "- **Contents:** 1 exchange · 1 figure" in markdown.text
+    [saved_md] = tmp_path.glob("*.md")
+    assert saved_md.read_text() == markdown.text and str(saved_md) in note.text
+    [html_path] = tmp_path.glob("*.html")
+    html_page = html_path.read_text()
+    assert "1 figure" in page.content[0].text and f"figures/{png.name}" not in html_page
+    assert html_page.count('<article class="sg-card">') == 3 and "Clozapine &lt;b&gt;" in html_page
+
+
+async def test_html_table_structures_share_a_frame(tmp_path):
+    srv = build_server(Database(DB_PATH), transcript_dir=tmp_path)
+    answer = f"| drug | SMILES |\n|---|---|\n| a | {SORAFENIB} |\n| b | {BOSUTINIB} |\n| c | {CLOZAPINE} |"
+    async with Client(srv) as client:
+        await client.call_tool("create_transcript", {"model": "m", "format": "html", "exchanges": [
+            {"prompt": "?", "answer": answer}]})
+    page = next(tmp_path.glob("*.html")).read_text()
+    svgs = [base64.b64decode(b).decode() for b in re.findall(r'class="structure"[^>]*base64,([^"]+)', page)]
+    sizes = {re.search(r"width='(\d+)px' height='(\d+)px'", svg).groups() for svg in svgs}
+    assert len(svgs) == 3 and len(sizes) == 1  # aligned on their common core: one frame, one scale
 
 
 @pytest.mark.network

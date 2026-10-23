@@ -1,21 +1,23 @@
 """The HTML transcript: a Markdown transcript as one standalone page, with structure drawings.
 
 Modelled on mcp-okn's transcript_render. Every table with a SMILES column (in the answers as well as in
-the tool calls) gets a structure column before it. RDKit draws the structures on the server and they are
-embedded as SVG data: images, so the page needs no network when opened. Without RDKit there are no
-drawings.
+the tool calls) gets a structure column before it, the molecules of a column aligned on the core they
+share (see depict). Figure links (![…](figures/<file>.png), from draw_structure_grid) become the figure.
+RDKit draws on the server and the drawings are embedded as SVG data: images, so the page needs no network
+when opened. Without RDKit there are no structure columns.
 """
 
 from __future__ import annotations
 
 import base64
 import html as _html
+from collections.abc import Callable
 from typing import Any
 
 from markdown_it import MarkdownIt
 from markdown_it.token import Token
 
-from . import substructure
+from . import depict
 
 _CSS = """
 :root { color-scheme: light; }
@@ -39,7 +41,7 @@ table { border-collapse: collapse; font-size: 13px; }
 th, td { border: 1px solid #d1d9e0; padding: 5px 10px; text-align: left; vertical-align: top; }
 td { overflow-wrap: anywhere; max-width: 28em; }
 th { background: #f6f8fa; }
-img.structure { display: block; width: 180px; max-width: none; height: auto; }
+img.structure { display: block; max-width: 300px; height: auto; }
 footer { margin-top: 3em; color: #59636e; font-size: 12px; }
 @media print {
   body { max-width: none; padding: 0; font-size: 11pt; }
@@ -59,13 +61,18 @@ def _renderer() -> MarkdownIt:
     return md
 
 
-def _image(smiles: str) -> str | None:
-    """An <img> of a SMILES (or SMARTS) drawn by RDKit, or None if it cannot be drawn."""
-    svg = substructure.depict_svg(smiles)
-    if svg is None:
-        return None
-    uri = "data:image/svg+xml;base64," + base64.b64encode(svg.encode()).decode()
-    return f'<img class="structure" alt="{_html.escape(smiles)}" src="{uri}">'
+def _images(smiles: list[str]) -> list[str | None]:
+    """<img> drawings of a table column's SMILES (or SMARTS), aligned on their common core; None for a
+    cell that cannot be drawn."""
+    if not depict.available():
+        return [None] * len(smiles)
+    lay = depict.layout(smiles)
+    out: list[str | None] = []
+    for k, text in enumerate(smiles):
+        svg = depict.svg(lay, k)
+        uri = "data:image/svg+xml;base64," + base64.b64encode(svg.encode()).decode() if svg else None
+        out.append(f'<img class="structure" alt="{_html.escape(text)}" src="{uri}">' if uri else None)
+    return out
 
 
 def _cell(tag: str, attrs: dict[str, Any], children: list[Token]) -> list[Token]:
@@ -75,46 +82,82 @@ def _cell(tag: str, attrs: dict[str, Any], children: list[Token]) -> list[Token]
             Token(f"{tag}_close", tag, -1)]
 
 
+def _cells(tokens: list[Token]):
+    """(token index, table number, column, is header, text) of every table cell."""
+    table, col = -1, 0
+    for i, token in enumerate(tokens):
+        if token.type == "table_open":
+            table += 1
+        elif token.type == "tr_open":
+            col = 0
+        elif token.type in ("th_open", "td_open"):
+            yield i, table, col, token.type == "th_open", tokens[i + 1].content.strip()
+            col += 1
+
+
 def _add_structure_columns(tokens: list[Token]) -> tuple[list[Token], int]:
     """Insert a structure column before every table column whose header mentions SMILES.
 
     Returns the new token list and the number of structures drawn."""
-    out: list[Token] = []
+    columns: dict[tuple[int, int], list[str]] = {}  # (table, column) -> the column's SMILES
+    for _, table, col, header, text in _cells(tokens):
+        if header and "smiles" in text.lower():
+            columns[table, col] = []
+        elif (table, col) in columns and not header:
+            columns[table, col].append(text.strip("`"))
+    images = {key: iter(_images(values)) for key, values in columns.items()}
+    inserts: dict[int, list[Token]] = {}
     drawn = 0
-    smiles_cols: list[int] = []  # of the current table
-    col = 0
+    for i, table, col, header, _ in _cells(tokens):
+        if (table, col) not in columns:
+            continue
+        if header:
+            children = [Token("text", "", 0, content="structure")]
+        else:
+            img = next(images[table, col])
+            children = [Token("html_inline", "", 0, content=img)] if img else []
+            drawn += img is not None
+        inserts[i] = _cell(tokens[i].tag, tokens[i].attrs, children)
+    out: list[Token] = []
     for i, token in enumerate(tokens):
-        if token.type == "table_open":
-            smiles_cols = []
-        elif token.type == "tr_open":
-            col = 0
-        elif token.type in ("th_open", "td_open"):
-            content = tokens[i + 1].content.strip()
-            if token.type == "th_open" and "smiles" in content.lower():
-                smiles_cols.append(col)
-            if col in smiles_cols:
-                tag = token.tag
-                if tag == "th":
-                    children = [Token("text", "", 0, content="structure")]
-                else:
-                    img = _image(content.strip("`")) if content else None
-                    children = [Token("html_inline", "", 0, content=img)] if img else []
-                    drawn += img is not None
-                out += _cell(tag, token.attrs, children)
-            col += 1
+        out += inserts.get(i, [])
         out.append(token)
     return out, drawn
 
 
-def markdown_to_html(markdown: str) -> tuple[str, int]:
-    """A transcript's Markdown as a standalone HTML page, and the number of structures drawn."""
+def _add_figures(tokens: list[Token], figure_html: Callable[[str], str | None]) -> tuple[list[Token], int]:
+    """Replace each paragraph that is only a figure link, ![…](figures/<file>), with the figure."""
+    out: list[Token] = []
+    n = 0
+    i = 0
+    while i < len(tokens):
+        token = tokens[i]
+        if (token.type == "paragraph_open" and i + 2 < len(tokens) and tokens[i + 1].type == "inline"
+                and len(tokens[i + 1].children or []) == 1 and tokens[i + 1].children[0].type == "image"):
+            src = str(tokens[i + 1].children[0].attrGet("src") or "")
+            block = figure_html(src[len("figures/"):]) if src.startswith("figures/") else None
+            if block:
+                out.append(Token("html_block", "", 0, content=block))
+                n += 1
+                i += 3
+                continue
+        out.append(token)
+        i += 1
+    return out, n
+
+
+def markdown_to_html(markdown: str, figure_html: Callable[[str], str | None] = lambda _: None,
+                     ) -> tuple[str, int, int]:
+    """A transcript's Markdown as a standalone HTML page, with the number of structures drawn in tables
+    and of figures embedded. `figure_html` gives the HTML of a figure by its file name, or None."""
     md = _renderer()
     env: dict[str, Any] = {}
     tokens, drawn = _add_structure_columns(md.parse(markdown, env))
+    tokens, n_figures = _add_figures(tokens, figure_html)
     title = next((line[2:].strip() for line in markdown.splitlines() if line.startswith("# ")), "Transcript")
     if drawn:
         note = f"{drawn} structure{'' if drawn == 1 else 's'} drawn with RDKit."
-    elif not substructure.rdkit_available():
+    elif not depict.available():
         note = "Structures not drawn: RDKit is not installed on the server."
     else:
         note = ""
@@ -127,4 +170,4 @@ def markdown_to_html(markdown: str) -> tuple[str, int]:
         f"{md.renderer.render(tokens, md.options, env)}"
         + (f"<footer>{note}</footer>\n" if note else "")
         + "</body>\n</html>\n"
-    ), drawn
+    ), drawn, n_figures
