@@ -1,7 +1,9 @@
-"""The HTML transcript: the Markdown transcript as one standalone page, with structure drawings.
+"""The HTML transcript: a Markdown transcript as one standalone page, with structure drawings.
 
-Modelled on mcp-okn's transcript_render. Structures are drawn by RDKit on the server and embedded as
-SVG data: images, so the page needs no network when opened. Without RDKit the page has no drawings.
+Modelled on mcp-okn's transcript_render. Every table with a SMILES column (in the answers as well as in
+the tool calls) gets a structure column before it. RDKit draws the structures on the server and they are
+embedded as SVG data: images, so the page needs no network when opened. Without RDKit there are no
+drawings.
 """
 
 from __future__ import annotations
@@ -11,10 +13,9 @@ import html as _html
 from typing import Any
 
 from markdown_it import MarkdownIt
+from markdown_it.token import Token
 
 from . import substructure
-
-_SVG_URI = "data:image/svg+xml;base64,"
 
 _CSS = """
 :root { color-scheme: light; }
@@ -49,42 +50,81 @@ footer { margin-top: 3em; color: #59636e; font-size: 12px; }
 """
 
 
-def depict(text: str, smarts: bool = False) -> str | None:
-    """A Markdown image of a SMILES (or SMARTS) drawn by RDKit, or None if it cannot be drawn."""
-    svg = substructure.depict_svg(text, smarts)
-    if svg is None:
-        return None
-    return f"![structure]({_SVG_URI}{base64.b64encode(svg.encode()).decode()})"
-
-
 def _renderer() -> MarkdownIt:
-    """A GitHub-like renderer. Raw HTML is escaped, not passed through: answers and result cells are
-    shown as text, never run. The only images allowed besides the defaults are SVG data URIs."""
+    """A GitHub-like renderer. Raw HTML in the Markdown is escaped, not passed through: answers and
+    result cells are shown as text, never run. The structure images are added as tokens after parsing."""
     md = MarkdownIt("commonmark", {"html": False}).enable("table")
-    default_validate = md.validateLink
-    md.validateLink = lambda url: url.startswith(_SVG_URI) or default_validate(url)
-
-    def image(self: Any, tokens: Any, idx: int, options: Any, env: Any) -> str:
-        token = tokens[idx]
-        if str(token.attrGet("src") or "").startswith(_SVG_URI):
-            token.attrSet("class", "structure")
-        return self.image(tokens, idx, options, env)
-
-    md.add_render_rule("image", image)
     md.add_render_rule("table_open", lambda *_: '<div class="table-wrap"><table>\n')
     md.add_render_rule("table_close", lambda *_: "</table></div>\n")
     return md
 
 
-def markdown_to_html(markdown: str, title: str, drawn: bool) -> str:
-    """The transcript Markdown as a standalone HTML page; `drawn` says whether structures were drawn."""
-    note = ("Structures drawn with RDKit." if drawn
-            else "Structures are not drawn: RDKit is not installed on the server.")
+def _image(smiles: str) -> str | None:
+    """An <img> of a SMILES (or SMARTS) drawn by RDKit, or None if it cannot be drawn."""
+    svg = substructure.depict_svg(smiles)
+    if svg is None:
+        return None
+    uri = "data:image/svg+xml;base64," + base64.b64encode(svg.encode()).decode()
+    return f'<img class="structure" alt="{_html.escape(smiles)}" src="{uri}">'
+
+
+def _cell(tag: str, attrs: dict[str, Any], children: list[Token]) -> list[Token]:
+    """The tokens of one table cell."""
+    return [Token(f"{tag}_open", tag, 1, attrs=dict(attrs)),
+            Token("inline", "", 0, children=children),
+            Token(f"{tag}_close", tag, -1)]
+
+
+def _add_structure_columns(tokens: list[Token]) -> tuple[list[Token], int]:
+    """Insert a structure column before every table column whose header mentions SMILES.
+
+    Returns the new token list and the number of structures drawn."""
+    out: list[Token] = []
+    drawn = 0
+    smiles_cols: list[int] = []  # of the current table
+    col = 0
+    for i, token in enumerate(tokens):
+        if token.type == "table_open":
+            smiles_cols = []
+        elif token.type == "tr_open":
+            col = 0
+        elif token.type in ("th_open", "td_open"):
+            content = tokens[i + 1].content.strip()
+            if token.type == "th_open" and "smiles" in content.lower():
+                smiles_cols.append(col)
+            if col in smiles_cols:
+                tag = token.tag
+                if tag == "th":
+                    children = [Token("text", "", 0, content="structure")]
+                else:
+                    img = _image(content.strip("`")) if content else None
+                    children = [Token("html_inline", "", 0, content=img)] if img else []
+                    drawn += img is not None
+                out += _cell(tag, token.attrs, children)
+            col += 1
+        out.append(token)
+    return out, drawn
+
+
+def markdown_to_html(markdown: str) -> tuple[str, int]:
+    """A transcript's Markdown as a standalone HTML page, and the number of structures drawn."""
+    md = _renderer()
+    env: dict[str, Any] = {}
+    tokens, drawn = _add_structure_columns(md.parse(markdown, env))
+    title = next((line[2:].strip() for line in markdown.splitlines() if line.startswith("# ")), "Transcript")
+    if drawn:
+        note = f"{drawn} structure{'' if drawn == 1 else 's'} drawn with RDKit."
+    elif not substructure.rdkit_available():
+        note = "Structures not drawn: RDKit is not installed on the server."
+    else:
+        note = ""
     return (
         "<!doctype html>\n"
         '<html lang="en">\n<head>\n<meta charset="utf-8">\n'
         '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
         f"<title>{_html.escape(title)}</title>\n"
         f"<style>{_CSS}</style>\n</head>\n<body>\n"
-        f"{_renderer().render(markdown)}<footer>{note}</footer>\n</body>\n</html>\n"
-    )
+        f"{md.renderer.render(tokens, md.options, env)}"
+        + (f"<footer>{note}</footer>\n" if note else "")
+        + "</body>\n</html>\n"
+    ), drawn

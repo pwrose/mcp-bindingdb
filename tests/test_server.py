@@ -47,9 +47,10 @@ async def test_lists_all_tools(server):
     assert set(tools) == {
         "search_compounds", "search_targets", "get_compound", "get_target", "find_ligands_for_target",
         "find_targets_for_compound", "get_activity", "describe_tables", "run_sql", "chemical_name_to_smiles",
-        "create_transcript", "reset_tool_log", "get_tool_log",
+        "create_transcript", "transcript_to_html", "reset_tool_log", "get_tool_log",
     }
-    assert all(t.annotations.read_only_hint for name, t in tools.items() if name != "reset_tool_log")
+    writes = {"reset_tool_log", "transcript_to_html"}
+    assert all(t.annotations.read_only_hint for name, t in tools.items() if name not in writes)
 
 
 async def test_search_compounds_by_name_ranks_exact_first(server):
@@ -198,11 +199,13 @@ async def test_transcript_shows_prompts_and_logged_calls():
         await client.call_tool("run_sql", {"sql": "SELECT 42 AS answer"})
         await client.call_tool("describe_tables", {})  # schema lookups are not logged
         await client.call_tool("get_compound", {"monomerid": -1})  # nor are failed calls
+        plain = (await client.call_tool("create_transcript", {"model": "test-model"})).content[0].text
         result = await client.call_tool("create_transcript", {
-            "model": "test-model", "date": "2026-10-23",
+            "model": "test-model", "date": "2026-10-23", "include_tool_calls": True,
             "exchanges": [{"prompt": "What is imatinib?", "answer": "A kinase inhibitor."}]})
         md = result.content[0].text
         assert (await client.call_tool("reset_tool_log", {})).structured_content == {"cleared": 2}
+    assert "#### Call" not in plain and "- **Contents:** 0 exchanges\n" in plain  # tool calls are opt-in
     assert md.startswith("# BindingDB Chat Transcript\n")
     assert "- **Model:** test-model" in md and "- **Contents:** 1 exchange · 2 tool calls" in md
     assert "👤 **User**\n\nWhat is imatinib?" in md and "🧠 **Assistant**\n\nA kinase inhibitor." in md
@@ -228,23 +231,33 @@ async def test_transcript_of_selected_calls():
     assert bad.is_error and "not in the log" in bad.content[0].text
 
 
-async def test_html_transcript_draws_structures_and_escapes_html(tmp_path):
+async def test_markdown_transcript_converts_to_html_with_structures(tmp_path):
     srv = build_server(Database(DB_PATH), transcript_dir=tmp_path)
+    answer = ("**Gleevec** <script>alert(1)</script>\n\n| compound | SMILES |\n|---|---|\n"
+              "| aspirin | `CC(=O)Oc1ccccc1C(=O)O` |\n| not a molecule | xyz |")
     async with Client(srv) as client:
+        missing = await client.call_tool("transcript_to_html", {})
         await client.call_tool("search_compounds", {"query": "imatinib", "limit": 2})
-        result = await client.call_tool("create_transcript", {
-            "model": "test-model", "format": "html",
-            "exchanges": [{"prompt": "What is imatinib?", "answer": "**Gleevec** <script>alert(1)</script>"}]})
+        md = await client.call_tool("create_transcript", {
+            "model": "test-model", "include_tool_calls": True,
+            "exchanges": [{"prompt": "What is imatinib?", "answer": answer}]})
+        assert "base64" not in md.content[0].text  # the Markdown itself has no drawings
+        result = await client.call_tool("transcript_to_html", {})
         assert not result.is_error, result.content
         link = result.content[1]
         assert link.uri == "transcript://session/latest.html"
         resource = (await client.read_resource(link.uri)).contents[0].text
-    [path] = tmp_path.glob("bindingdb-chat-transcript-*.html")
+        given = await client.call_tool("transcript_to_html", {"markdown": "# Mine\n\n| smiles |\n|---|\n| CCO |"})
+    assert missing.is_error and "create_transcript first" in missing.content[0].text
+    [path, _] = sorted(tmp_path.glob("*.html"))
     page = path.read_text()
-    assert page == resource and str(path) in result.content[0].text
+    assert path.name.startswith("bindingdb-chat-transcript-")
+    assert page == resource and str(path) in result.content[0].text and "3 structures drawn" in result.content[0].text
     assert "<strong>Gleevec</strong> &lt;script&gt;" in page and "<script" not in page
-    assert "<th>structure</th>" in page
-    assert page.count('<img src="data:image/svg+xml;base64,') == page.count('class="structure"') == 2
+    assert page.count("<th>structure</th>") == 2  # the answer's table and the search result
+    assert page.count('<img class="structure"') == 3  # aspirin and 2 imatinib rows; not "xyz"
+    assert "<footer>3 structures drawn with RDKit.</footer>" in page
+    assert "'Mine'" in given.content[0].text and "1 structure drawn" in given.content[0].text
 
 
 @pytest.mark.network

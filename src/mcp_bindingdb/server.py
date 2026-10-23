@@ -109,6 +109,7 @@ class BindingDBServer(MCPServer):
     def __init__(self, *args: Any, **kwargs: Any) -> None:
         super().__init__(*args, **kwargs)
         self.tool_log = transcript.ToolLog()
+        self.last_markdown: str | None = None
         self.last_html: str | None = None
 
     async def call_tool(self, name: str, arguments: dict[str, Any], context: Context | None = None) -> Any:
@@ -587,11 +588,12 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
                                                          "each prompt with your full, verbatim answer")] = None,
         title: Annotated[str, Field(description="Heading of the transcript")] = "BindingDB Chat Transcript",
         date: Annotated[str | None, Field(description="ISO date of the session (default: today)")] = None,
-        include_tool_calls: Annotated[bool, Field(description="Append the logged BindingDB tool calls with "
-                                                  "their results")] = True,
-        calls: Annotated[list[int] | None, Field(description="Only these logged calls, by the 1-based index "
-                                                 "get_tool_log shows, in log order. Default: every logged "
-                                                 "call")] = None,
+        include_tool_calls: Annotated[bool, Field(description="Add the BindingDB tool calls with their "
+                                                  "results after the conversation. Only when the user asks "
+                                                  "for them")] = False,
+        calls: Annotated[list[int] | None, Field(description="With the tool calls: only these, by the 1-based "
+                                                 "index get_tool_log shows, in log order (implies "
+                                                 "include_tool_calls). Default: every logged call")] = None,
         max_result_rows: Annotated[int | None, Field(description="Rows shown per result table, and items per "
                                                      "list; the true counts are kept. null shows all")] = 5,
         skills: Annotated[list[str] | None, Field(description="Agent skills that shaped the analysis, as "
@@ -599,37 +601,32 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
         external_mcp_servers: Annotated[list[str] | None, Field(description="Other MCP servers this session "
                                                                 "actually called for evidence, e.g. "
                                                                 "['PubMed']")] = None,
-        format: Annotated[Literal["markdown", "html", "json"], Field(
-            description="markdown: a document to save. html: the same document as a web page with "
-            "structure drawings, written to a file by the server. json: the structured fields")] = "markdown",
+        format: Annotated[Literal["markdown", "json"], Field(description="markdown: a document to save. "
+                                                             "json: the structured fields")] = "markdown",
     ) -> Any:
-        """Build a reproducible transcript of this session: each user prompt with your answer, then every
-        BindingDB tool call that actually ran (arguments verbatim, SQL for run_sql) with its result.
+        """Build a Markdown transcript of this session: each user prompt with your answer. The server cannot
+        see your prose, so pass each answer in full via `exchanges`, not a summary.
 
-        Tool calls are logged by the server as they run (failed calls and describe_tables are not), so do
-        not re-supply them. The log is shared by every chat this server process has served, so it can
-        hold calls from other chats: unless reset_tool_log was called at the start of this analysis, call
-        get_tool_log first and pass the indices of this chat's calls as `calls`. The server cannot see
-        your prose, so pass each answer in full via `exchanges`, not a summary.
+        Tool calls are left out unless the user asks for them (e.g. "with the tool calls", "with the
+        queries and results", "a reproducible record"); then set include_tool_calls and the transcript
+        adds every BindingDB call that ran (arguments verbatim, SQL for run_sql) with its result. The
+        server logs calls as they run (failed calls and describe_tables are not), so do not re-supply
+        them. The log is shared by every chat this server process has served, so it can hold calls from
+        other chats: unless reset_tool_log was called at the start of this analysis, call get_tool_log
+        first and pass the indices of this chat's calls as `calls`.
 
         Save the returned Markdown verbatim to a .md file (or a Markdown artifact): do not retype, reorder
-        or summarize it. The header's Contents line gives the number of tool calls; the saved file should
-        have that many '#### Call' sections. Never say the transcript is saved unless you wrote the file.
-
-        format='html' (when the user asks for an HTML transcript or structure drawings): result tables
-        with SMILES get a structure column, and query molecules and single compounds are drawn too. The
-        page is too large to pass through the chat, so the server writes it to a file and returns its path
-        and a link to the resource transcript://session/latest.html. Give the user that path, or copy
-        the file where they want it; never write an HTML transcript yourself."""
+        or summarize it. Never say the transcript is saved unless you wrote the file. If the user wants
+        an HTML version, call transcript_to_html afterwards."""
         when = date or _date.today().isoformat()
         turns = [e.model_dump() for e in exchanges or []]
         log = mcp.tool_log.entries
-        if calls is None:
-            selected = list(log) if include_tool_calls else []
-        else:
+        if calls is not None:
             if bad := [i for i in calls if not 1 <= i <= len(log)]:
                 raise ToolError(f"calls {bad} are not in the log, which has {len(log)} calls; see get_tool_log")
-            selected = [log[i - 1] for i in sorted(set(calls))] if include_tool_calls else []
+            selected = [log[i - 1] for i in sorted(set(calls))]
+        else:
+            selected = list(log) if include_tool_calls else []
         skill_list = transcript.clean_entries(skills)
         server_list = transcript.clean_entries(external_mcp_servers)
         generated_by = f"{mcp.name} v{VERSION}"
@@ -641,15 +638,32 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
             if server_list:
                 out["external_mcp_servers"] = server_list
             return out
-        drawn = format == "html" and substructure.rdkit_available()
-        document = transcript.render_transcript(
+        mcp.last_markdown = transcript.render_transcript(
             title=title, when=when, model=model, release=release, generated_by=generated_by, exchanges=turns,
             calls=selected, max_rows=None if max_result_rows is None else max(max_result_rows, 0),
-            skills=skill_list, mcp_servers=server_list, depict=transcript_html.depict if drawn else None)
-        if format == "markdown":
-            return document
-        page = transcript_html.markdown_to_html(document, title, drawn)
+            skills=skill_list, mcp_servers=server_list)
+        return mcp.last_markdown
+
+    @mcp.tool(annotations=ToolAnnotations(readOnlyHint=False, destructiveHint=False, openWorldHint=False))
+    def transcript_to_html(
+        markdown: Annotated[str | None, Field(description="A transcript's Markdown, e.g. one the user edited "
+                                              "or one from an earlier session. Default: the transcript the "
+                                              "last create_transcript call returned")] = None,
+    ) -> Any:
+        """Convert a Markdown transcript into a standalone HTML page with structure drawings: every table
+        with a SMILES column, in the answers as well as in the tool calls, gets a structure column.
+
+        Use it when the user asks for an HTML transcript, after create_transcript. The page holds the
+        drawings, so it is too large to pass through the chat: the server writes it to a file and returns
+        its path and a link to the resource transcript://session/latest.html. Check the title and
+        contents in the summary, then give the user the path (or copy the file where they want it); never
+        write an HTML transcript yourself."""
+        source = markdown if markdown is not None else mcp.last_markdown
+        if not source or not source.strip():
+            raise ToolError("No transcript to convert: call create_transcript first, or pass `markdown`")
+        page, drawn = transcript_html.markdown_to_html(source)
         mcp.last_html = page
+        title = next((line[2:].strip() for line in source.splitlines() if line.startswith("# ")), "transcript")
         slug = re.sub(r"[^A-Za-z0-9]+", "-", title).strip("-").lower()[:60] or "transcript"
         path = transcript_dir / f"{slug}-{datetime.now():%Y-%m-%d-%H%M%S}.html"
         try:
@@ -658,25 +672,25 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
         except OSError as e:
             raise ToolError(f"Could not write the HTML transcript to {transcript_dir}: {e}; the page is "
                             f"still available at {LATEST_HTML_URI}") from None
+        header = [line for line in source.splitlines() if line.startswith(("- **Date:**", "- **Contents:**"))]
         summary = [
-            f"HTML transcript written ({len(page):,} bytes, {transcript.plural(len(turns), 'exchange')}, "
-            f"{transcript.plural(len(selected), 'tool call')}"
-            + (", structures drawn with RDKit)." if drawn else "; RDKit is not installed, so no structures)."),
+            f"HTML transcript of '{title}' written ({len(page):,} bytes; "
+            + (f"{transcript.plural(drawn, 'structure')} drawn)." if drawn else "no structures drawn).")
+            + ("" if drawn or substructure.rdkit_available() else " RDKit is not installed on the server."),
+            *header,
             f"- File: {path} (on the machine running mcp-bindingdb)",
             f"- Resource: {LATEST_HTML_URI} (fetch it from there when the server runs remotely)",
             "Deliver this file as is; do not write or edit an HTML transcript yourself.",
-            "Tool calls included:",
-            *(f"{k}. {transcript.signature(c, 160)}" for k, c in enumerate(selected, start=1)),
         ]
         return [TextContent(type="text", text="\n".join(summary)),
                 ResourceLink(type="resource_link", name=path.name, title=title, uri=LATEST_HTML_URI,
                              mimeType="text/html", size=len(page.encode()))]
 
     @mcp.resource(LATEST_HTML_URI, name="Latest HTML transcript", mime_type="text/html",
-                  description="The most recent create_transcript page in format='html', with structure drawings.")
+                  description="The most recent transcript_to_html page, with structure drawings.")
     def latest_html_transcript() -> str:
         return mcp.last_html or ("<!doctype html><title>No transcript yet</title><p>Call "
-                                 "<code>create_transcript</code> with <code>format='html'</code> first.</p>")
+                                 "<code>transcript_to_html</code> first.</p>")
 
 
 def _add_structure_tools(mcp: MCPServer, db: Database, index: substructure.SubstructureIndex,

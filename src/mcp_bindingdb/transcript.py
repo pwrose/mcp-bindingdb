@@ -7,15 +7,11 @@ supplies the tool calls it actually ran, verbatim, with their results.
 from __future__ import annotations
 
 import json
-from collections.abc import Callable
 from datetime import datetime, timezone
 from typing import Any
 
-#: Turns a SMILES (or, with True, a SMARTS) into a Markdown image of the structure, or None.
-Depict = Callable[[str, bool], "str | None"]
-
 #: Not logged: schema lookups, and the transcript tools themselves.
-UNLOGGED_TOOLS = {"describe_tables", "create_transcript", "reset_tool_log", "get_tool_log"}
+UNLOGGED_TOOLS = {"describe_tables", "create_transcript", "transcript_to_html", "reset_tool_log", "get_tool_log"}
 
 
 class ToolLog:
@@ -48,11 +44,8 @@ def signature(call: dict[str, Any], max_chars: int | None = None) -> str:
 
 def render_transcript(*, title: str, when: str, model: str, release: str, generated_by: str,
                       exchanges: list[dict[str, Any]], calls: list[dict[str, Any]], max_rows: int | None,
-                      skills: list[str], mcp_servers: list[str], depict: Depict | None = None) -> str:
-    """The transcript as Markdown: header, the conversation turns, then every logged tool call.
-
-    With `depict` (the HTML transcript), result tables with a smiles column get a structure column, and
-    the query molecule and single compounds in a result are drawn above it."""
+                      skills: list[str], mcp_servers: list[str]) -> str:
+    """The transcript as Markdown: header, the conversation turns, then the given tool calls."""
     body = ["## Conversation", ""]
     if not exchanges:
         body += ["_No prompts recorded._", ""]
@@ -64,9 +57,9 @@ def render_transcript(*, title: str, when: str, model: str, release: str, genera
     if calls:
         body += ["## BindingDB tool calls", ""]
         for k, call in enumerate(calls, start=1):
-            body += _render_call(call, k, max_rows, depict)
+            body += _render_call(call, k, max_rows)
 
-    contents = [plural(len(exchanges), "exchange"), plural(len(calls), "tool call")]
+    contents = [plural(len(exchanges), "exchange"), *([plural(len(calls), "tool call")] if calls else [])]
     window = _active_window(calls)
     header = [
         f"# {title}",
@@ -107,7 +100,7 @@ def _active_window(calls: list[dict[str, Any]]) -> str:
     return f"{first:%Y-%m-%dT%H:%MZ} → {last:%Y-%m-%dT%H:%MZ} ({elapsed})"
 
 
-def _render_call(call: dict[str, Any], k: int, max_rows: int | None, depict: Depict | None) -> list[str]:
+def _render_call(call: dict[str, Any], k: int, max_rows: int | None) -> list[str]:
     """One call: its arguments verbatim (run_sql's SQL as a sql block), then its result."""
     tool = call["tool"]
     args = dict(call.get("arguments") or {})
@@ -119,21 +112,21 @@ def _render_call(call: dict[str, Any], k: int, max_rows: int | None, depict: Dep
         lines += ["```sql", sql.strip(), "```", ""]
     else:
         lines += ["```python", signature(call), "```", ""]
-    return lines + _render_result(call.get("result"), max_rows, depict)
+    return lines + _render_result(call.get("result"), max_rows)
 
 
 def _is_table(key: str, value: Any) -> bool:
     return isinstance(value, list) and (key == "rows" or bool(value) and all(isinstance(r, dict) for r in value))
 
 
-def _render_result(result: Any, max_rows: int | None, depict: Depict | None = None) -> list[str]:
+def _render_result(result: Any, max_rows: int | None) -> list[str]:
     """Lists of rows as Markdown tables (capped at max_rows); everything else as one JSON block."""
     if not isinstance(result, dict):
         return ["```", str(result).strip(), "```", ""]
     tables = {k: v for k, v in result.items() if _is_table(k, v)}
     skip = {"row_count", "truncated"} if "rows" in tables else set()
     other = {k: _cap(v, max_rows) for k, v in result.items() if k not in tables and k not in skip}
-    lines = _render_molecules(result, depict) if depict else []
+    lines = _render_molecules(result)
     if other:
         lines += ["```json", json.dumps(other, indent=2, ensure_ascii=False, default=str), "```", ""]
     for key, rows in tables.items():
@@ -143,28 +136,26 @@ def _render_result(result: Any, max_rows: int | None, depict: Depict | None = No
             count += ", truncated at the limit"
         if len(shown) < len(rows):
             count += f" — showing first {len(shown)}"
-        lines += [f"_{count}_" if key == "rows" else f"**{key}**: {count}", "", *_rows_to_table(shown, depict)]
+        lines += [f"_{count}_" if key == "rows" else f"**{key}**: {count}", "", *_rows_to_table(shown)]
     return lines
 
 
-def _render_molecules(result: dict[str, Any], depict: Depict) -> list[str]:
-    """Drawings of the molecules a result is about, outside its tables: the search query
-    (substructure/similarity), a structure looked up by name, a single compound (get_compound)."""
-    found: list[tuple[str, str, bool]] = []  # (label, SMILES or SMARTS, is SMARTS)
+def _render_molecules(result: dict[str, Any]) -> list[str]:
+    """A name/smiles table of the molecules a result is about, outside its tables: the search query
+    (substructure/similarity), a structure looked up by name, a single compound (get_compound).
+    The HTML transcript draws them, like every smiles column."""
+    found: list[tuple[str, str]] = []
     query = result.get("query")
     if isinstance(query, dict) and query.get("canonical"):
-        smarts = query.get("interpreted_as") == "smarts"
-        found.append(("query (SMARTS)" if smarts else "query", query["canonical"], smarts))
-    if isinstance(result.get("smiles"), str):
-        found.append((query if isinstance(query, str) else "structure", result["smiles"], False))
+        found.append(("query (SMARTS)" if query.get("interpreted_as") == "smarts" else "query", query["canonical"]))
+    if isinstance(result.get("smiles"), str) and result["smiles"]:
+        found.append((query if isinstance(query, str) else "structure", result["smiles"]))
     for key, value in result.items():
-        if isinstance(value, dict) and isinstance(value.get("smiles"), str):
-            found.append((value.get("name") or key, value["smiles"], False))
-    drawn = [(label, text, image) for label, text, smarts in found if (image := depict(text, smarts))]
-    if not drawn:
+        if isinstance(value, dict) and isinstance(value.get("smiles"), str) and value["smiles"]:
+            found.append((value.get("name") or key, value["smiles"]))
+    if not found:
         return []
-    return ["| structure | name | SMILES / SMARTS |", "| --- | --- | --- |",
-            *(f"| {image} | {_cell(label)} | {_cell(text)} |" for label, text, image in drawn), ""]
+    return ["| name | smiles |", "| --- | --- |", *(f"| {_cell(n)} | {_cell(s)} |" for n, s in found), ""]
 
 
 def _cap(value: Any, max_rows: int | None) -> Any:
@@ -174,22 +165,13 @@ def _cap(value: Any, max_rows: int | None) -> Any:
     return [*value[:max_rows], f"… {len(value) - max_rows} more"]
 
 
-def _rows_to_table(rows: list[dict[str, Any]], depict: Depict | None = None) -> list[str]:
-    """Rows as a GitHub-flavoured Markdown table; with `depict`, a structure column before smiles."""
+def _rows_to_table(rows: list[dict[str, Any]]) -> list[str]:
+    """Rows as a GitHub-flavoured Markdown table."""
     if not rows:
         return ["_(no rows)_", ""]
     cols = list(dict.fromkeys(c for r in rows for c in r))
-    draw = depict is not None and "smiles" in cols and "structure" not in cols
-    if draw:
-        cols.insert(cols.index("smiles"), "structure")
-
-    def cell(row: dict[str, Any], col: str) -> str:
-        if draw and col == "structure":
-            return (depict(row["smiles"], False) or "") if row.get("smiles") else ""
-        return _cell(row.get(col))
-
     out = ["| " + " | ".join(cols) + " |", "| " + " | ".join("---" for _ in cols) + " |"]
-    out += ["| " + " | ".join(cell(r, c) for c in cols) + " |" for r in rows]
+    out += ["| " + " | ".join(_cell(r.get(c)) for c in cols) + " |" for r in rows]
     return [*out, ""]
 
 

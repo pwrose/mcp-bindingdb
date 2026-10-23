@@ -139,12 +139,12 @@ def canonical_smiles(smiles: str) -> str | None:
 
 
 @functools.lru_cache(maxsize=2048)
-def depict_svg(text: str, smarts: bool = False, width: int = 180, height: int = 130) -> str | None:
-    """SVG drawing of a SMILES (or SMARTS query); None without RDKit or if RDKit cannot parse it."""
+def depict_svg(text: str, width: int = 180, height: int = 130) -> str | None:
+    """SVG drawing of a SMILES, or else of a SMARTS query; None without RDKit or if RDKit cannot parse it."""
     if Chem is None or not text:
         return None
     _quiet = rdBase.BlockLogs()
-    mol = Chem.MolFromSmarts(text) if smarts else Chem.MolFromSmiles(text)
+    mol = Chem.MolFromSmiles(text) or Chem.MolFromSmarts(text)
     if mol is None or mol.GetNumAtoms() == 0:
         return None
     from rdkit.Chem.Draw import rdMolDraw2D

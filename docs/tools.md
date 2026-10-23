@@ -14,13 +14,14 @@
 | `run_sql` | Arbitrary read-only DuckDB SQL |
 | `substructure_search` | Compounds containing a SMILES/SMARTS fragment, optionally only those measured against a target with potency filters; every target the matching compounds hit, with compounds per target; or a count of matches (needs the structure-search index) |
 | `similarity_search` | Compounds similar to a molecule (Tanimoto on Morgan fingerprints) above a threshold, with the same target filter and per-target summary (needs the structure-search index) |
-| `create_transcript` | Markdown, HTML (with structure drawings) or JSON transcript of the session: prompts and answers, then the logged tool calls with their results |
+| `create_transcript` | Markdown (or JSON) transcript of the session: prompts and answers, optionally followed by the logged tool calls with their results |
+| `transcript_to_html` | Converts a Markdown transcript to an HTML page, drawing the structures in every SMILES column |
 | `get_tool_log` | The logged tool calls (index, time, arguments), to pick this chat's calls for `create_transcript` |
 | `reset_tool_log` | Clear the tool-call log that `create_transcript` reports |
 
 ## Safety
 
-All tools are read-only. The connection is opened read-only with file, network and extension access
+All tools are read-only, except that `transcript_to_html` writes its HTML file. The database connection is opened read-only with file, network and extension access
 disabled and settings locked, so `run_sql` cannot write data or read anything outside the database.
 Queries time out after 30 s (`--timeout`). The only tool that uses the network is
 `chemical_name_to_smiles`, for PubChem; `--no-network` turns that off.
@@ -62,24 +63,34 @@ Modelled on `create_chat_transcript` in [mcp-okn](https://github.com/sbl-sdsc/mc
 every successful tool call as it runs (tool, arguments, UTC timestamp, result); failed calls,
 `describe_tables` and the transcript tools are not logged. The model supplies what the server cannot
 see: its exact model id, and each prompt with its full answer (`exchanges`). The document has a header
-(date, model, optional skills and other MCP servers used, BindingDB release, active window from the first
-to the last call, and a Contents line with counts), the conversation as 👤 User / 🧠 Assistant blocks, and
-a "BindingDB tool calls" section: each call's arguments verbatim (SQL in a `sql` block for `run_sql`),
-then its result, with lists of rows as tables capped at `max_result_rows` (default 5; the true row count
-is kept). `format="json"` returns the same fields unrendered, with full results.
+(date, model, optional skills and other MCP servers used, BindingDB release, and a Contents line with
+counts) and the conversation as 👤 User / 🧠 Assistant blocks.
+
+The tool calls are left out by default. When the user asks for them, the model sets
+`include_tool_calls` (or passes `calls`), and a "BindingDB tool calls" section follows the conversation:
+each call's arguments verbatim (SQL in a `sql` block for `run_sql`), then its result, with lists of rows
+as tables capped at `max_result_rows` (default 5; the true row count is kept). The header then also gives
+the active window from the first to the last call. `format="json"` returns the same fields unrendered,
+with full results.
 
 The log lives in the server process and covers everything since the server started or since
 `reset_tool_log`. Claude Desktop runs one server process for all chats, so the log mixes chats; the
 server cannot tell them apart. The model therefore lists the log with `get_tool_log` and passes the
 indices of its own calls to `create_transcript` as `calls`.
 
-`format="html"` converts the same document into a standalone page and adds structure drawings: a
-structure column before every `smiles` column, and above the result the query of a substructure or
-similarity search, a structure looked up by name, or the compound from `get_compound`. RDKit draws them on
-the server as SVG images embedded in the page, so it opens offline; without RDKit the page has no
-drawings. Answer text and data are shown as text, never as HTML. A drawing is about 20 KB, too much to
-pass through the chat, so the server writes the page itself, to `transcripts/` next to the database
-(`--transcript-dir` changes this), and returns the path plus a link to the resource
+In a tool call's result, the molecules it is about (the query of a substructure or similarity search, a
+structure looked up by name, the compound from `get_compound`) are listed in a `name | smiles` table.
+
+## transcript_to_html
+
+Converts a Markdown transcript into a standalone HTML page: by default the one the last
+`create_transcript` call returned, or Markdown passed as `markdown` (e.g. a transcript the user edited).
+Every table with a column whose header contains "SMILES", in the answers as well as in the tool calls,
+gets a structure column before it. RDKit draws the structures on the server as SVG images embedded in
+the page, so it opens offline; cells that are not valid SMILES (or SMARTS) are left empty, and without
+RDKit there are no drawings. Answer text and data are shown as text, never as HTML. A drawing is about
+20 KB, too much to pass through the chat, so the server writes the page itself, to `transcripts/` next to
+the database (`--transcript-dir` changes this), and returns the path plus a link to the resource
 `transcript://session/latest.html` for clients of a remote server.
 
 ## Data notes
