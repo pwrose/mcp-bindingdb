@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import base64
 import html
+import os
 import re
 import sys
 import threading
@@ -112,6 +113,12 @@ TARGET_FILTER_DOC = "With target_id or summarize_by_target: "
 
 VERSION = "0.1.0"
 LATEST_HTML_URI = "transcript://session/latest.html"
+OUTPUT_DIR_FIELD = Field(description="The folder to write the transcript to, as an absolute path on the "
+                         "machine running this server (e.g. the folder the user named for the results). "
+                         "Default: the server's transcripts folder")
+FILE_NAME_FIELD = Field(description="With output_dir: the file name without extension, e.g. "
+                        "'chloroaniline-drugs-transcript'; a file of that name is replaced. Default: from "
+                        "the title")
 
 
 class Exchange(BaseModel):
@@ -586,6 +593,49 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
 def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Path) -> None:
     figures_dir = transcript_dir / "figures"
     writes = ToolAnnotations(readOnlyHint=False, destructiveHint=False, openWorldHint=False)
+    replaces = ToolAnnotations(readOnlyHint=False, destructiveHint=True, openWorldHint=False)  # same-name files
+
+    def destination(output_dir: str | None, file_name: str | None, title: str, ext: str) -> Path:
+        """Where to write a transcript: <output_dir>/<file_name or the title's slug><ext>, or else a
+        time-stamped file in transcript_dir."""
+        if not output_dir:
+            return transcript_dir / f"{_slug(title)}-{datetime.now():%Y-%m-%d-%H%M%S}{ext}"
+        folder = Path(output_dir).expanduser()
+        if not folder.is_absolute():
+            raise ToolError(f"output_dir must be an absolute path (or start with ~), not {output_dir!r}")
+        stem = Path(file_name).name if file_name else _slug(title)
+        stem = stem[:-len(Path(stem).suffix)] if Path(stem).suffix.lower() in (".md", ".html", ".htm") else stem
+        if not stem.strip(" ."):
+            raise ToolError(f"file_name {file_name!r} is not a usable file name")
+        return folder / f"{stem}{ext}"
+
+    def write(path: Path, text: str) -> str:
+        """Write a transcript file; returns ' (replaced an existing file)' if there was one."""
+        existed = path.exists()
+        try:
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(text, encoding="utf-8")
+        except OSError as e:
+            raise ToolError(f"Could not write {path}: {e.strerror or e}") from None
+        return " (replaced an existing file)" if existed else ""
+
+    def copy_figures(markdown: str, folder: Path) -> int:
+        """Copy the figures a Markdown transcript links to (figures/<file>) into folder/figures/, so the
+        links work there; returns how many."""
+        n = 0
+        for file in dict.fromkeys(re.findall(r"\]\(figures/([^)\s/]+)\)", markdown)):
+            figure = next((f for f in mcp.tool_log.figures if f.file == file), None)
+            source = figures_dir / file
+            data = figure.data if figure is not None else source.read_bytes() if source.is_file() else None
+            if data is None or folder.resolve() == transcript_dir.resolve():
+                continue
+            try:
+                (folder / "figures").mkdir(parents=True, exist_ok=True)
+                (folder / "figures" / file).write_bytes(data)
+            except OSError as e:
+                raise ToolError(f"Could not copy figure {file} to {folder / 'figures'}: {e.strerror or e}") from None
+            n += 1
+        return n
 
     @mcp.tool(annotations=writes)
     def reset_tool_log() -> dict[str, Any]:
@@ -679,18 +729,17 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
         return "\n".join([f"Figure {figure.id}: '{title}' ({ext[1:].upper()}, {len(content):,} bytes).", saved,
                           f"Transcripts include it under the exchange whose `figures` lists {figure.id}."])
 
-    def write_html(source: str) -> list[Any]:
-        """Convert a Markdown transcript to HTML, write it to transcript_dir, and summarize the result."""
+    def write_html(source: str, output_dir: str | None = None, file_name: str | None = None) -> list[Any]:
+        """Convert a Markdown transcript to HTML, write it (to output_dir, else transcript_dir), and
+        summarize the result."""
+        title = next((line[2:].strip() for line in source.splitlines() if line.startswith("# ")), "transcript")
+        path = destination(output_dir, file_name, title, ".html")
         page, drawn, n_figures = transcript_html.markdown_to_html(source, find_figure)
         mcp.last_html = page
-        title = next((line[2:].strip() for line in source.splitlines() if line.startswith("# ")), "transcript")
-        path = transcript_dir / f"{_slug(title)}-{datetime.now():%Y-%m-%d-%H%M%S}.html"
         try:
-            transcript_dir.mkdir(parents=True, exist_ok=True)
-            path.write_text(page, encoding="utf-8")
-        except OSError as e:
-            raise ToolError(f"Could not write the HTML transcript to {transcript_dir}: {e}; the page is "
-                            f"still available at {LATEST_HTML_URI}") from None
+            replaced = write(path, page)
+        except ToolError as e:
+            raise ToolError(f"{e}; the page is still available at {LATEST_HTML_URI}") from None
         header = [line for line in source.splitlines() if line.startswith(("- **Date:**", "- **Contents:**"))]
         parts = [transcript.plural(n_figures, "figure")] if n_figures else []
         parts.append(f"{transcript.plural(drawn, 'structure')} drawn in tables" if drawn else "no table structures")
@@ -698,9 +747,10 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
             f"HTML transcript of '{title}' written ({len(page):,} bytes; {', '.join(parts)})."
             + ("" if depict.available() else " RDKit is not installed on the server."),
             *header,
-            f"- File: {path} (on the machine running mcp-bindingdb)",
+            f"- File: {path}{replaced} (on the machine running mcp-bindingdb)",
             f"- Resource: {LATEST_HTML_URI} (fetch it from there when the server runs remotely)",
-            "Deliver this file as is; do not write or edit an HTML transcript yourself.",
+            "Deliver this file as is; do not write, edit or copy an HTML transcript yourself"
+            + ("." if output_dir else " (pass output_dir to have it written where the user wants it)."),
         ]
         return [TextContent(type="text", text="\n".join(summary)),
                 ResourceLink(type="resource_link", name=path.name, title=title, uri=LATEST_HTML_URI,
@@ -755,7 +805,7 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
             return [ImageContent(type="image", data=base64.b64encode(png).decode(), mimeType="image/png"),
                     TextContent(type="text", text="\n".join(text))]
 
-    @mcp.tool(annotations=writes)
+    @mcp.tool(annotations=replaces)
     def create_transcript(
         model: Annotated[str, Field(description="The exact model id that produced the analysis (e.g. "
                                     "'claude-opus-5-5'), from session metadata or the user; never a family "
@@ -781,6 +831,8 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
         format: Annotated[Literal["markdown", "html", "json"], Field(
             description="markdown: a document to save. html: a web page with structure drawings, written "
             "to a file by the server. json: the structured fields")] = "markdown",
+        output_dir: Annotated[str | None, OUTPUT_DIR_FIELD] = None,
+        file_name: Annotated[str | None, FILE_NAME_FIELD] = None,
     ) -> Any:
         """Build a transcript of this session: each user prompt with your answer and its figures. The
         server cannot see your prose, so pass each answer in full via `exchanges`, not a summary.
@@ -798,16 +850,21 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
         figures from other chats: unless reset_tool_log was called at the start of this analysis, call
         get_tool_log first, pass the indices of this chat's calls as `calls`, and list your figures.
 
-        Markdown (default): save the returned Markdown verbatim to a .md file (or a Markdown artifact): do
-        not retype, reorder or summarize it. Never say the transcript is saved unless you wrote the file.
-        With figures, the server also saves the .md next to the figures/ folder its image links point to,
-        and says where.
+        Where the files go: whenever the user has named a folder for the results (or you are writing them
+        to one), pass it as `output_dir`; the server writes the transcript there, with the figures a
+        Markdown transcript links to in its figures/ subfolder, and replaces a file of the same name. Do
+        not copy or rewrite the files yourself.
+
+        Markdown (default): with output_dir, the server writes the .md file. Without it, save the
+        returned Markdown verbatim to a .md file (or a Markdown artifact): do not retype, reorder or
+        summarize it, and never say the transcript is saved unless you wrote the file; with figures, the
+        server also saves the .md next to the figures/ folder its image links point to.
 
         format='html' whenever the user asks for an HTML transcript: the server builds the same Markdown
         and converts it in this one call (see transcript_to_html), embedding the figures and drawing the
         structures of every table with a SMILES column. The page is too large to pass through the chat,
-        so the server writes it to a file and returns its path; give the user that path (or copy the file
-        where they want it), never write an HTML transcript yourself."""
+        so the server writes it to a file (in output_dir, if given) and returns its path; never write an
+        HTML transcript yourself."""
         when = date or _date.today().isoformat()
         turns = [e.model_dump() for e in exchanges or []]
         log = mcp.tool_log
@@ -844,10 +901,18 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
             calls=selected, max_rows=None if max_result_rows is None else max(max_result_rows, 0),
             skills=skill_list, mcp_servers=server_list, figures=placed, unplaced_figures=unplaced)
         if format == "html":
-            return write_html(mcp.last_markdown)
+            return write_html(mcp.last_markdown, output_dir, file_name)
+        if output_dir:
+            path = destination(output_dir, file_name, title, ".md")
+            replaced = write(path, mcp.last_markdown)
+            n = copy_figures(mcp.last_markdown, path.parent)
+            note = (f"Saved as {path}{replaced}"
+                    + (f", with its {transcript.plural(n, 'figure')} in {path.parent / 'figures'}" if n else "")
+                    + ". Deliver this file as is; do not rewrite or copy it.")
+            return [TextContent(type="text", text=mcp.last_markdown), TextContent(type="text", text=note)]
         if not (placed or unplaced):
             return mcp.last_markdown
-        path = transcript_dir / f"{_slug(title)}-{datetime.now():%Y-%m-%d-%H%M%S}.md"
+        path = destination(None, None, title, ".md")
         try:
             path.write_text(mcp.last_markdown, encoding="utf-8")
             note = (f"This transcript is also saved as {path}, next to the figures/ folder its image links "
@@ -856,11 +921,13 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
             note = f"Could not save the transcript next to its figures in {transcript_dir}: {e}."
         return [TextContent(type="text", text=mcp.last_markdown), TextContent(type="text", text=note)]
 
-    @mcp.tool(annotations=writes)
+    @mcp.tool(annotations=replaces)
     def transcript_to_html(
         markdown: Annotated[str | None, Field(description="A transcript's Markdown, e.g. one the user edited "
                                               "or one from an earlier session. Default: the transcript the "
                                               "last create_transcript call returned")] = None,
+        output_dir: Annotated[str | None, OUTPUT_DIR_FIELD] = None,
+        file_name: Annotated[str | None, FILE_NAME_FIELD] = None,
     ) -> Any:
         """Convert a Markdown transcript into a standalone HTML page with its figures embedded and structure
         drawings: every table with a SMILES column, in the answers as well as in the tool calls, gets a
@@ -869,13 +936,13 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
         For a new HTML transcript, call create_transcript with format='html' instead; use this tool to
         convert a Markdown transcript the user already has (the last one, or one passed in). The page
         holds the drawings, so it is too large to pass through the chat: the server writes it to a file
-        and returns its path and a link to the resource transcript://session/latest.html. Check the title
-        and contents in the summary, then give the user the path (or copy the file where they want it);
-        never write an HTML transcript yourself."""
+        (in output_dir: pass the folder the user wants it in) and returns its path and a link to the
+        resource transcript://session/latest.html. Check the title and contents in the summary, then give
+        the user the path; never write, edit or copy an HTML transcript yourself."""
         source = markdown if markdown is not None else mcp.last_markdown
         if not source or not source.strip():
             raise ToolError("No transcript to convert: call create_transcript first, or pass `markdown`")
-        return write_html(source)
+        return write_html(source, output_dir, file_name)
 
     @mcp.resource(LATEST_HTML_URI, name="Latest HTML transcript", mime_type="text/html",
                   description="The most recent HTML transcript, with its figures and structure drawings.")
@@ -1111,8 +1178,9 @@ def main() -> None:
     p.add_argument("--timeout", type=float, default=30.0, help="Per-query time limit in seconds")
     p.add_argument("--no-network", action="store_true",
                    help="Do not look names up in PubChem (chemical_name_to_smiles)")
-    p.add_argument("--transcript-dir", help="Where create_transcript writes HTML transcripts "
-                   "(default: transcripts/ next to the database)")
+    p.add_argument("--transcript-dir", default=os.environ.get("MCP_BINDINGDB_TRANSCRIPT_DIR"),
+                   help="Where transcripts and figures go unless a call gives output_dir (default: "
+                   "$MCP_BINDINGDB_TRANSCRIPT_DIR, else transcripts/ next to the database)")
     args = p.parse_args()
 
     db = Database(Path(args.db) if args.db else find_database(), timeout_s=args.timeout)

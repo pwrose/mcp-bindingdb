@@ -384,6 +384,31 @@ async def test_add_figure_images_in_transcripts(tmp_path):
     assert "data:image/svg+xml;base64," in page and f"figures/{png.name}" not in page
 
 
+async def test_transcripts_written_to_output_dir(tmp_path):
+    plot = tmp_path / "plot.png"
+    plot.write_bytes(PNG_1X1)
+    results = tmp_path / "my results"
+    (results / "report.md").parent.mkdir()
+    (results / "report.md").write_text("old")
+    srv = build_server(Database(DB_PATH), transcript_dir=tmp_path / "server")
+    exchanges = [{"prompt": "Plot?", "answer": "Here.", "figures": [1]}]
+    async with Client(srv) as client:
+        await client.call_tool("add_figure", {"title": "Plot", "path": str(plot)})
+        md = await client.call_tool("create_transcript", {"model": "m", "exchanges": exchanges,
+                                                          "output_dir": str(results), "file_name": "report.md"})
+        page = await client.call_tool("create_transcript", {"model": "m", "exchanges": exchanges, "format": "html",
+                                                            "title": "My plot", "output_dir": str(results)})
+        relative = await client.call_tool("create_transcript", {"model": "m", "output_dir": "results"})
+    markdown, note = md.content
+    assert (results / "report.md").read_text() == markdown.text
+    assert "report.md (replaced an existing file), with its 1 figure in" in note.text
+    [figure] = (results / "figures").iterdir()
+    assert figure.read_bytes() == PNG_1X1 and f"](figures/{figure.name})" in markdown.text
+    assert (results / "my-plot.html").is_file() and f"{results / 'my-plot.html'} (on the" in page.content[0].text
+    assert relative.is_error and "absolute path" in relative.content[0].text
+    assert not list((tmp_path / "server").glob("*.md")) and not list((tmp_path / "server").glob("*.html"))
+
+
 async def test_html_table_structures_share_a_frame(tmp_path):
     srv = build_server(Database(DB_PATH), transcript_dir=tmp_path)
     answer = f"| drug | SMILES |\n|---|---|\n| a | {SORAFENIB} |\n| b | {BOSUTINIB} |\n| c | {CLOZAPINE} |"

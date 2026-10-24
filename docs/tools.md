@@ -87,6 +87,16 @@ Figures made with `draw_structure_grid` or added with `add_figure` are placed un
 figure's image in `figures/`, with the title and caption of an added image under it;
 when a transcript has figures, the server also saves the `.md` next to that folder so the links work.
 
+### Where transcripts are written
+
+With `output_dir` (an absolute path, e.g. the folder the user named for the results), `create_transcript`
+and `transcript_to_html` write the transcript there as `<file_name>.md` or `.html` (`file_name` defaults to
+the title), replacing a file of the same name, and copy the figures a Markdown transcript links to into
+`<output_dir>/figures/`. The model is told to pass the user's folder rather than copy files afterwards.
+Without `output_dir`, files go to `transcripts/` next to the database, time-stamped; `--transcript-dir` or
+the environment variable `MCP_BINDINGDB_TRANSCRIPT_DIR` changes that folder. Because they can replace
+files, both tools are annotated as destructive.
+
 In a tool call's result, the molecules it is about (the query of a substructure or similarity search, a
 structure looked up by name, the compound from `get_compound`) are listed in a `name | smiles` table.
 
@@ -104,8 +114,8 @@ so the core sits in the same place in every row and all are at the same scale. R
 on the server as SVG images embedded in
 the page, so it opens offline; cells that are not valid SMILES (or SMARTS) are left empty, and without
 RDKit there are no drawings. Answer text and data are shown as text, never as HTML. A drawing is about
-20 KB, too much to pass through the chat, so the server writes the page itself, to `transcripts/` next to
-the database (`--transcript-dir` changes this), and returns the path plus a link to the resource
+20 KB, too much to pass through the chat, so the server writes the page itself (see
+[Where transcripts are written](#where-transcripts-are-written)) and returns the path plus a link to the resource
 `transcript://session/latest.html` for clients of a remote server.
 
 ## draw_structure_grid

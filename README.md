@@ -81,7 +81,9 @@ If some tools are missing in a chat, check that they are switched on in the chat
 | `reset_tool_log` | Start a new transcript log |
 
 Ask for a transcript at the end of a chat, e.g. "create a transcript of this session as a .md file", or
-"create an HTML transcript" for a page with the structures drawn (written to `data/transcripts/`).
+"create an HTML transcript" for a page with the structures drawn. Name a folder ("... in
+~/results/heatmap") and the server writes the files there; otherwise they go to `data/transcripts/`
+(change this with `--transcript-dir` or `MCP_BINDINGDB_TRANSCRIPT_DIR`).
 Add "with the tool calls" to include every BindingDB lookup and its result.
 
 All tools are read-only, apart from the transcripts and figures, which are written to files. Only `chemical_name_to_smiles` uses the network, to look names up in PubChem.
