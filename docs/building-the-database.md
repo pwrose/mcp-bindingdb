@@ -13,7 +13,8 @@ scripts/build_duckdb.sh --release 202611   # a later release
 
 The script downloads the dump, loads it into a temporary MySQL 8.4 container, copies it to DuckDB
 (`scripts/convert_to_duckdb.py`, checking row counts), adds derived query tables
-(`scripts/add_derived_tables.py`), builds the structure-search index (below), and removes the container.
+(`scripts/add_derived_tables.py`), computes standard InChIKeys (below), builds the structure-search
+index (below), and removes the container.
 
 Options:
 
@@ -29,6 +30,25 @@ For release 202610, `data/` holds about 4.5 GB afterwards: the downloaded dump (
 
 The server uses the newest `data/bindingdb_*.duckdb`, or the file given with `--db PATH` or
 `$BINDINGDB_DUCKDB`.
+
+## InChIKeys
+
+BindingDB stores no InChIKey for about 31% of its compounds (453k in release 202610), and many stored
+keys are non-standard (ending `-NA-N` instead of `-SA-N`) or encode stereo differently (427k), so they do
+not match the standard keys that PubChem, OPSIN and RDKit produce. `scripts/compute_inchikeys.py`
+computes the standard InChIKey from each compound's SMILES with RDKit and writes it to
+`compound.inchi_key` and `activity.inchi_key`; where RDKit cannot make one (about 3k compounds) the
+BindingDB key is kept, and `monomer.inchi_key` keeps BindingDB's keys unchanged. Lookups by InChIKey
+(`search_compounds`, `find_targets_for_compound`, `chemical_name_to_smiles`, `exact_structure_search`)
+depend on these keys. The build script runs it; for an existing database (about 4 minutes, needs the
+`substructure` extra):
+
+```bash
+uv run --extra substructure python scripts/compute_inchikeys.py data/bindingdb_202610.duckdb
+```
+
+It updates a copy that then replaces the file, so a running server keeps working; restart it to use the
+new keys. Rerun it after `add_derived_tables.py`, which rebuilds the tables from BindingDB's keys.
 
 ## Derived tables
 
