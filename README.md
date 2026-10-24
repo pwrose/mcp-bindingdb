@@ -57,10 +57,21 @@ answer.
 
 If some tools are missing in a chat, check that they are switched on in the chat's tools menu.
 
+## Interactive structure editor
+
+Ask **"Open the BindingDB structure editor"** in an MCP Apps-compatible chat client. Draw or edit a
+molecule, paste SMILES/SMARTS, or resolve a chemical name with the existing name tool. Review an exact,
+substructure or similarity search (default threshold 0.85), optionally restrict affinity in nM, and
+choose **Run query** to ask the assistant to execute it. The sketcher and chemistry engines are bundled
+with the server. See [setup and testing](docs/structure-editor.md).
+
 ## Tools
 
 | Tool | Purpose |
 |---|---|
+| `open_structure_editor` | Interactive in-chat sketcher and reviewed query preparation |
+| `exact_structure_search` | Complete-molecule equality, including stereo and salts |
+| `filtered_structure_search` | Exact/substructure/similarity with an affinity range applied before result limits |
 | `search_compounds` | Find compounds by name/synonym, ChEMBL id, `cid_N`, BDBM id, or InChIKey |
 | `chemical_name_to_smiles` | SMILES for a compound name (trade name, IUPAC name, CAS number), with the BindingDB compounds that have that structure |
 | `search_targets` | Find targets by name, gene name, UniProt entry name or accession |
