@@ -21,6 +21,9 @@ from pydantic import BaseModel, Field
 
 from . import depict, figures, names, substructure, transcript, transcript_html
 from .db import Database, QueryError, find_database
+from .structure_editor import (
+    create_editor_extension, register_exact_structure_search, register_filtered_structure_search,
+)
 
 AffinityType = Literal["Ki", "Kd", "IC50", "EC50", "kon", "koff"]
 NameSource = Literal["bindingdb", "opsin", "pubchem"]
@@ -35,6 +38,9 @@ Workflow: resolve names to ids first (search_compounds / search_targets), then u
 find_ligands_for_target, find_targets_for_compound, get_compound, get_target, get_activity.
 chemical_name_to_smiles turns any compound name (trade name, IUPAC name, CAS number) into a structure
 and the BindingDB compounds with that structure, also when the name is not a BindingDB synonym.
+Use open_structure_editor when the user wants to draw, edit, or review a structure interactively.
+The editor prepares a reviewed query; Run query asks the assistant to execute it. Use
+filtered_structure_search to enforce the editor affinity range before applying result limits.
 Use run_sql for anything the curated tools do not cover; call describe_tables first.
 
 Data notes:
@@ -185,6 +191,7 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
     info = db.build_info()
     mcp = BindingDBServer(
         name="mcp-bindingdb",
+        extensions=[create_editor_extension(network=network)],
         title="BindingDB",
         version=VERSION,
         instructions=INSTRUCTIONS + (STRUCTURE_INSTRUCTIONS if index else "")
@@ -591,6 +598,8 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
 
     if index is not None:
         _add_structure_tools(mcp, db, index, run, _activity_query, potency_filter)
+    register_exact_structure_search(mcp, db)
+    register_filtered_structure_search(mcp, db, index)
     _add_transcript_tools(mcp, info.get("release", "unknown"), transcript_dir or db.path.parent / "transcripts")
     return mcp
 
