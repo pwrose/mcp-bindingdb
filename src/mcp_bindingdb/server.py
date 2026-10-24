@@ -113,6 +113,9 @@ TARGET_FILTER_DOC = "With target_id or summarize_by_target: "
 
 VERSION = "0.1.0"
 LATEST_HTML_URI = "transcript://session/latest.html"
+FIGURE_ID_NOTE = ("Transcripts include it under the exchange whose `figures` lists id {id}. They number "
+                  "their figures 1, 2, … in the order they appear, whatever the ids: in your answer, refer to "
+                  "a figure by that number or its place ('the figure below'), never by its id.")
 OUTPUT_DIR_FIELD = Field(description="The folder to write the transcript to, as an absolute path on the "
                          "machine running this server (e.g. the folder the user named for the results). "
                          "Default: the server's transcripts folder")
@@ -126,7 +129,8 @@ class Exchange(BaseModel):
     answer: str = Field("", description="Your full answer to that prompt as the user saw it, verbatim, "
                         "including tables and lists; not a summary")
     figures: list[int] = Field(default_factory=list, description="Ids of the figures (from "
-                               "draw_structure_grid or add_figure) shown with this answer")
+                               "draw_structure_grid or add_figure) shown with this answer; the transcript "
+                               "numbers its figures 1, 2, … in order")
 
 
 class BindingDBServer(MCPServer):
@@ -137,6 +141,7 @@ class BindingDBServer(MCPServer):
         self.tool_log = transcript.ToolLog()
         self.last_markdown: str | None = None
         self.last_html: str | None = None
+        self.figure_copies: dict[str, Any] = {}  # file name of a figure copied to an output_dir -> the figure
 
     async def call_tool(self, name: str, arguments: dict[str, Any], context: Context | None = None) -> Any:
         result = await super().call_tool(name, arguments, context)
@@ -619,23 +624,21 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
             raise ToolError(f"Could not write {path}: {e.strerror or e}") from None
         return " (replaced an existing file)" if existed else ""
 
-    def copy_figures(markdown: str, folder: Path) -> int:
-        """Copy the figures a Markdown transcript links to (figures/<file>) into folder/figures/, so the
-        links work there; returns how many."""
-        n = 0
-        for file in dict.fromkeys(re.findall(r"\]\(figures/([^)\s/]+)\)", markdown)):
-            figure = next((f for f in mcp.tool_log.figures if f.file == file), None)
-            source = figures_dir / file
-            data = figure.data if figure is not None else source.read_bytes() if source.is_file() else None
-            if data is None or folder.resolve() == transcript_dir.resolve():
-                continue
-            try:
-                (folder / "figures").mkdir(parents=True, exist_ok=True)
-                (folder / "figures" / file).write_bytes(data)
-            except OSError as e:
-                raise ToolError(f"Could not copy figure {file} to {folder / 'figures'}: {e.strerror or e}") from None
-            n += 1
-        return n
+    def copy_figures(copies: dict[str, figures.Figure], folder: Path, stem: str) -> None:
+        """Write the figures of a Markdown transcript <stem>.md into folder/figures/ under the names its
+        links use (<stem>-figure-<n><ext>), and remove copies of figures it no longer has."""
+        target = folder / "figures"
+        try:
+            target.mkdir(parents=True, exist_ok=True)
+            for name, figure in copies.items():
+                (target / name).write_bytes(figure.data)
+            ours = re.compile(re.escape(stem) + r"-figure-\d+(" + "|".join(map(re.escape, figures.IMAGE_TYPES)) + ")")
+            for old in target.iterdir():
+                if ours.fullmatch(old.name) and old.name not in copies:
+                    old.unlink()
+        except OSError as e:
+            raise ToolError(f"Could not write the figures to {target}: {e.strerror or e}") from None
+        mcp.figure_copies.update(copies)
 
     @mcp.tool(annotations=writes)
     def reset_tool_log() -> dict[str, Any]:
@@ -655,13 +658,15 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
         return {"calls": mcp.tool_log.listing(),
                 "figures": [{"id": f.id, "timestamp": f.timestamp, "title": f.title} for f in mcp.tool_log.figures]}
 
-    def find_figure(file: str) -> transcript_html.Figure | None:
-        """A figure by its file name: from the log, or else its PNG from the figures folder."""
-        figure = next((f for f in mcp.tool_log.figures if f.file == file), None)
+    def find_figure(file: str, folder: Path | None = None) -> transcript_html.Figure | None:
+        """A figure by its file name: from the log or the copies in output folders, or else its image from
+        the server's figures folder or folder/figures/."""
+        figure = next((f for f in mcp.tool_log.figures if f.file == file), None) or mcp.figure_copies.get(file)
         if figure is not None:
             return transcript_html.Figure(figure.html, [c["smiles"] for c in figure.spec.get("compounds", [])])
-        path = figures_dir / Path(file).name
-        if path.suffix not in figures.IMAGE_TYPES or not path.is_file():
+        name = Path(file).name
+        path = next((p for d in (figures_dir, folder and folder / "figures") if d and (p := d / name).is_file()), None)
+        if path is None or path.suffix not in figures.IMAGE_TYPES:
             return None
         data = path.read_bytes()
         return transcript_html.Figure(figures.image_html(path.stem, data, path.suffix),
@@ -726,15 +731,15 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
             raise ToolError(f"{'The data' if path is None else source} is not a PNG, JPEG, GIF, WebP or SVG image")
         figure, saved = log_figure(title, content, ext, figures.image_html(title, content, ext),
                                    {"source": str(source) if path is not None else "data"}, caption.strip())
-        return "\n".join([f"Figure {figure.id}: '{title}' ({ext[1:].upper()}, {len(content):,} bytes).", saved,
-                          f"Transcripts include it under the exchange whose `figures` lists {figure.id}."])
+        return "\n".join([f"Figure id {figure.id}: '{title}' ({ext[1:].upper()}, {len(content):,} bytes).", saved,
+                          FIGURE_ID_NOTE.format(id=figure.id)])
 
     def write_html(source: str, output_dir: str | None = None, file_name: str | None = None) -> list[Any]:
         """Convert a Markdown transcript to HTML, write it (to output_dir, else transcript_dir), and
         summarize the result."""
         title = next((line[2:].strip() for line in source.splitlines() if line.startswith("# ")), "transcript")
         path = destination(output_dir, file_name, title, ".html")
-        page, drawn, n_figures = transcript_html.markdown_to_html(source, find_figure)
+        page, drawn, n_figures = transcript_html.markdown_to_html(source, lambda f: find_figure(f, path.parent))
         mcp.last_html = page
         try:
             replaced = write(path, page)
@@ -780,7 +785,7 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
             and transcripts include it: list its id in the `figures` of the exchange it belongs to. HTML
             transcripts embed it; Markdown transcripts link to its PNG.
 
-            The figure is the answer's display of these compounds: refer to it ("Figure 2") rather than
+            The figure is the answer's display of these compounds: refer to it ("the figure below") rather than
             repeating it. Do not also give a table of the same compounds' SMILES or of the values the bars
             show; add a table only for data the figure lacks (e.g. other targets or measurement types)."""
             if align_to and depict.parse(align_to) is None:
@@ -788,7 +793,6 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
             block, png, lay = figures.structure_grid(title, compounds, align_to, columns, description, notes)
             figure, saved = log_figure(title, png, ".png", block, {"compounds": [c.model_dump() for c in compounds],
                                                                    "align_to": align_to})
-            figure_id = figure.id
             if any(lay.cores):
                 alignment = f"aligned on {align_to}" if align_to else "aligned on their largest common substructure"
             elif align_to:
@@ -796,10 +800,10 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
             else:
                 alignment = "not aligned: they share no core of 6 or more atoms"
             bad = [c.title for c, mol in zip(compounds, lay.mols) if mol is None]
-            text = [f"Figure {figure_id}: '{title}', {transcript.plural(len(compounds), 'compound')}, {alignment}.",
+            text = [f"Figure id {figure.id}: '{title}', {transcript.plural(len(compounds), 'compound')}, {alignment}.",
                     *([f"Not drawn (SMILES not understood): {', '.join(bad)}."] if bad else []),
                     saved,
-                    f"Transcripts include it under the exchange whose `figures` lists {figure_id}.",
+                    FIGURE_ID_NOTE.format(id=figure.id),
                     "The user sees this image: in your answer, refer to it instead of repeating its structures "
                     "or values in tables."]
             return [ImageContent(type="image", data=base64.b64encode(png).decode(), mimeType="image/png"),
@@ -888,26 +892,34 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
             out: dict[str, Any] = {"title": title, "date": when, "model": model, "bindingdb_release": release,
                                    "exchanges": turns, "tool_calls": selected, "generated_by": generated_by}
             if placed or unplaced:
-                out["figures"] = [{"id": f.id, "timestamp": f.timestamp, "title": f.title, "file": f.file,
-                                   **({"caption": f.caption} if f.caption else {}), **f.spec}
+                numbers = transcript.figure_numbers(turns, unplaced)
+                out["figures"] = [{"number": numbers[f.id], "id": f.id, "timestamp": f.timestamp, "title": f.title,
+                                   "file": f.file, **({"caption": f.caption} if f.caption else {}), **f.spec}
                                   for f in placed + unplaced]
             if skill_list:
                 out["skills"] = skill_list
             if server_list:
                 out["external_mcp_servers"] = server_list
             return out
+        copies: dict[str, figures.Figure] = {}  # Markdown in an output_dir: figures named after the transcript
+        if format == "markdown" and output_dir:
+            path = destination(output_dir, file_name, title, ".md")
+            by_id = {f.id: f for f in placed + unplaced}
+            copies = {f"{path.stem}-figure-{n}{Path(by_id[i].file).suffix}": by_id[i]
+                      for i, n in transcript.figure_numbers(turns, unplaced).items()}
         mcp.last_markdown = transcript.render_transcript(
             title=title, when=when, model=model, release=release, generated_by=generated_by, exchanges=turns,
             calls=selected, max_rows=None if max_result_rows is None else max(max_result_rows, 0),
-            skills=skill_list, mcp_servers=server_list, figures=placed, unplaced_figures=unplaced)
+            skills=skill_list, mcp_servers=server_list, figures=placed, unplaced_figures=unplaced,
+            figure_files={f.id: name for name, f in copies.items()})
         if format == "html":
             return write_html(mcp.last_markdown, output_dir, file_name)
         if output_dir:
-            path = destination(output_dir, file_name, title, ".md")
             replaced = write(path, mcp.last_markdown)
-            n = copy_figures(mcp.last_markdown, path.parent)
+            copy_figures(copies, path.parent, path.stem)
             note = (f"Saved as {path}{replaced}"
-                    + (f", with its {transcript.plural(n, 'figure')} in {path.parent / 'figures'}" if n else "")
+                    + (f", with its {transcript.plural(len(copies), 'figure')} in {path.parent / 'figures'}"
+                       if copies else "")
                     + ". Deliver this file as is; do not rewrite or copy it.")
             return [TextContent(type="text", text=mcp.last_markdown), TextContent(type="text", text=note)]
         if not (placed or unplaced):

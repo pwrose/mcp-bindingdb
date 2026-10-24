@@ -83,7 +83,8 @@ server cannot tell them apart. The model therefore lists the log with `get_tool_
 indices of its own calls to `create_transcript` as `calls`.
 
 Figures made with `draw_structure_grid` or added with `add_figure` are placed under the answer whose
-`figures` lists their ids (or, if no answer lists any, in a Figures section). The Markdown links to each
+`figures` lists their ids (or, if no answer lists any, in a Figures section), numbered 1, 2, … in the
+order they appear; the ids themselves keep counting across `reset_tool_log` and chats. The Markdown links to each
 figure's image in `figures/`, with the title and caption of an added image under it;
 when a transcript has figures, the server also saves the `.md` next to that folder so the links work.
 
@@ -91,8 +92,9 @@ when a transcript has figures, the server also saves the `.md` next to that fold
 
 With `output_dir` (an absolute path, e.g. the folder the user named for the results), `create_transcript`
 and `transcript_to_html` write the transcript there as `<file_name>.md` or `.html` (`file_name` defaults to
-the title), replacing a file of the same name, and copy the figures a Markdown transcript links to into
-`<output_dir>/figures/`. The model is told to pass the user's folder rather than copy files afterwards.
+the title), replacing a file of the same name. A Markdown transcript's figures go into
+`<output_dir>/figures/` as `<file_name>-figure-<n>.png` (or `.svg`, …), so regenerating the transcript
+replaces them and removes copies of figures it no longer has; other files there are left alone. The model is told to pass the user's folder rather than copy files afterwards.
 Without `output_dir`, files go to `transcripts/` next to the database, time-stamped; `--transcript-dir` or
 the environment variable `MCP_BINDINGDB_TRANSCRIPT_DIR` changes that folder. Because they can replace
 files, both tools are annotated as destructive.

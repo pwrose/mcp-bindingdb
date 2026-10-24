@@ -53,10 +53,13 @@ def signature(call: dict[str, Any], max_chars: int | None = None) -> str:
 def render_transcript(*, title: str, when: str, model: str, release: str, generated_by: str,
                       exchanges: list[dict[str, Any]], calls: list[dict[str, Any]], max_rows: int | None,
                       skills: list[str], mcp_servers: list[str], figures: list[Any] = (),
-                      unplaced_figures: list[Any] = ()) -> str:
+                      unplaced_figures: list[Any] = (), figure_files: dict[int, str] | None = None) -> str:
     """The transcript as Markdown: header, the conversation turns (each with the figures it lists by id),
-    any other figures, then the given tool calls. Figures are links to figures/<file>."""
+    any other figures, then the given tool calls. Figures are links to figures/<file>, numbered 1, 2, … in
+    the order they appear (their log ids keep counting across resets and chats); `figure_files` renames
+    the files they link to, by figure id."""
     by_id = {f.id: f for f in figures}
+    numbers = figure_numbers(exchanges, unplaced_figures)
     body = ["## Conversation", ""]
     if not exchanges:
         body += ["_No prompts recorded._", ""]
@@ -66,17 +69,17 @@ def render_transcript(*, title: str, when: str, model: str, release: str, genera
         if answer := (exchange.get("answer") or "").strip():
             body += [answer, ""]
         for figure_id in exchange.get("figures") or []:
-            body += _figure_link(by_id[figure_id])
+            body += _figure_link(by_id[figure_id], numbers[figure_id], figure_files)
     if unplaced_figures:
         body += ["## Figures", ""]
         for figure in unplaced_figures:
-            body += _figure_link(figure)
+            body += _figure_link(figure, numbers[figure.id], figure_files)
     if calls:
         body += ["## BindingDB tool calls", ""]
         for k, call in enumerate(calls, start=1):
             body += _render_call(call, k, max_rows)
 
-    n_figures = sum(len(e.get("figures") or []) for e in exchanges) + len(unplaced_figures)
+    n_figures = len(numbers)
     contents = [plural(len(exchanges), "exchange"), *([plural(n_figures, "figure")] if n_figures else []),
                 *([plural(len(calls), "tool call")] if calls else [])]
     window = _active_window(calls)
@@ -96,13 +99,19 @@ def render_transcript(*, title: str, when: str, model: str, release: str, genera
     return "\n".join([*header, *body]).rstrip() + "\n"
 
 
-def _figure_link(figure: Any) -> list[str]:
+def figure_numbers(exchanges: list[dict[str, Any]], unplaced_figures: list[Any] = ()) -> dict[int, int]:
+    """Figure id -> its number in the transcript: 1, 2, … in order of first appearance."""
+    ids = [i for e in exchanges for i in e.get("figures") or []] + [f.id for f in unplaced_figures]
+    return {figure_id: k for k, figure_id in enumerate(dict.fromkeys(ids), start=1)}
+
+
+def _figure_link(figure: Any, number: int, files: dict[int, str] | None) -> list[str]:
     """The figure's image link; for an image figure, its title and caption under it (a structure grid
     shows its own)."""
     alt = figure.title.replace("[", "\\[").replace("]", "\\]")
-    lines = [f"![Figure {figure.id}: {alt}](figures/{figure.file})", ""]
+    lines = [f"![Figure {number}: {alt}](figures/{(files or {}).get(figure.id, figure.file)})", ""]
     if figure.caption is not None:
-        caption = " ".join(f"**Figure {figure.id}: {figure.title.strip().rstrip('.')}.** {figure.caption}".split())
+        caption = " ".join(f"**Figure {number}: {figure.title.strip().rstrip('.')}.** {figure.caption}".split())
         lines += [caption, ""]
     return lines
 

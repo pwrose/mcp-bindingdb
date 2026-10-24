@@ -1,6 +1,7 @@
 """End-to-end tests against the real DuckDB build, through an in-process MCP client."""
 
 import base64
+import json
 import re
 
 import pytest
@@ -306,7 +307,7 @@ async def test_structure_grid_figure_in_transcripts(tmp_path):
     assert bad_core.is_error and "not valid SMILES or SMARTS" in bad_core.content[0].text
     image, text = grid.content
     assert image.type == "image" and image.mime_type == "image/png"
-    assert text.text.startswith("Figure 1: 'Chloroanilines', 3 compounds, aligned on Nc1ccc(Cl)cc1.")
+    assert text.text.startswith("Figure id 1: 'Chloroanilines', 3 compounds, aligned on Nc1ccc(Cl)cc1.")
     [png] = (tmp_path / "figures").glob("chloroanilines-*-1.png")
     assert png.read_bytes()[:4] == b"\x89PNG"
     assert log["figures"][0]["id"] == 1 and log["figures"][0]["title"] == "Chloroanilines"
@@ -369,8 +370,8 @@ async def test_add_figure_images_in_transcripts(tmp_path):
         await client.call_tool("create_transcript", {"model": "m", "format": "html", "exchanges": [
             {"prompt": "Plot?", "answer": "Here.", "figures": [1, 2]}]})
         log = (await client.call_tool("get_tool_log", {})).structured_content
-    assert added.content[0].text.startswith("Figure 1: 'Heat map' (PNG, ")
-    assert svg.content[0].text.startswith("Figure 2: 'Bars' (SVG, ")
+    assert added.content[0].text.startswith("Figure id 1: 'Heat map' (PNG, ")
+    assert svg.content[0].text.startswith("Figure id 2: 'Bars' (SVG, ")
     assert both.is_error and missing.is_error and "Cannot read" in missing.content[0].text
     assert not_image.is_error and "not a PNG" in not_image.content[0].text
     [png] = (tmp_path / "out" / "figures").glob("heat-map-*-1.png")
@@ -384,27 +385,62 @@ async def test_add_figure_images_in_transcripts(tmp_path):
     assert "data:image/svg+xml;base64," in page and f"figures/{png.name}" not in page
 
 
-async def test_transcripts_written_to_output_dir(tmp_path):
+async def test_figures_numbered_in_transcript_order(tmp_path):
     plot = tmp_path / "plot.png"
     plot.write_bytes(PNG_1X1)
-    results = tmp_path / "my results"
-    (results / "report.md").parent.mkdir()
-    (results / "report.md").write_text("old")
-    srv = build_server(Database(DB_PATH), transcript_dir=tmp_path / "server")
-    exchanges = [{"prompt": "Plot?", "answer": "Here.", "figures": [1]}]
+    srv = build_server(Database(DB_PATH), transcript_dir=tmp_path)
     async with Client(srv) as client:
-        await client.call_tool("add_figure", {"title": "Plot", "path": str(plot)})
-        md = await client.call_tool("create_transcript", {"model": "m", "exchanges": exchanges,
-                                                          "output_dir": str(results), "file_name": "report.md"})
-        page = await client.call_tool("create_transcript", {"model": "m", "exchanges": exchanges, "format": "html",
-                                                            "title": "My plot", "output_dir": str(results)})
+        for title in ["Old", "Older"]:
+            await client.call_tool("add_figure", {"title": title, "path": str(plot)})
+        await client.call_tool("reset_tool_log", {})
+        for title in ["A", "B", "C"]:  # ids 3, 4, 5
+            await client.call_tool("add_figure", {"title": title, "path": str(plot)})
+        md = await client.call_tool("create_transcript", {"model": "m", "exchanges": [
+            {"prompt": "1", "figures": [5]}, {"prompt": "2", "figures": [3, 5]}]})
+        unplaced = await client.call_tool("create_transcript", {"model": "m", "exchanges": [{"prompt": "1"}]})
+        record = await client.call_tool("create_transcript", {"model": "m", "format": "json", "exchanges": [
+            {"prompt": "1", "figures": [4]}]})
+    markdown = md.content[0].text
+    assert "![Figure 1: C]" in markdown and "![Figure 2: A]" in markdown and "**Figure 2: A.**" in markdown
+    assert "Figure 3" not in markdown and "- **Contents:** 2 exchanges · 2 figures" in markdown
+    assert [line[:13] for line in unplaced.content[0].text.splitlines() if line.startswith("![")] == [
+        "![Figure 1: A", "![Figure 2: B", "![Figure 3: C"]
+    assert [(f["number"], f["id"]) for f in json.loads(record.content[0].text)["figures"]] == [(1, 4)]
+
+
+async def test_transcripts_written_to_output_dir(tmp_path):
+    plot, svg = tmp_path / "plot.png", tmp_path / "bars.svg"
+    plot.write_bytes(PNG_1X1)
+    svg.write_text(SVG)
+    results = tmp_path / "my results"
+    (results / "figures").mkdir(parents=True)
+    (results / "report.md").write_text("old")
+    (results / "figures" / "mine.png").write_bytes(PNG_1X1)  # not the server's: kept
+    srv = build_server(Database(DB_PATH), transcript_dir=tmp_path / "server")
+    report = {"model": "m", "output_dir": str(results), "file_name": "report.md"}
+    async with Client(srv) as client:
+        for path in [plot, svg, plot]:
+            await client.call_tool("add_figure", {"title": "Plot", "path": str(path)})
+        await client.call_tool("create_transcript", {**report, "exchanges": [
+            {"prompt": "1", "figures": [1]}, {"prompt": "2", "figures": [2]}]})
+        first = sorted(p.name for p in (results / "figures").iterdir())
+        md = await client.call_tool("create_transcript", {**report, "exchanges": [  # regenerated with figure 3
+            {"prompt": "1", "answer": "Here.", "figures": [3]}]})
+        page = await client.call_tool("create_transcript", {"model": "m", "format": "html", "title": "My plot",
+                                                            "output_dir": str(results), "exchanges": [
+                                                                {"prompt": "1", "figures": [3]}]})
         relative = await client.call_tool("create_transcript", {"model": "m", "output_dir": "results"})
     markdown, note = md.content
+    async with Client(build_server(Database(DB_PATH), transcript_dir=tmp_path / "other")) as client:
+        await client.call_tool("transcript_to_html", {"markdown": markdown.text, "output_dir": str(results),
+                                                      "file_name": "report"})
+    assert first == ["mine.png", "report-figure-1.png", "report-figure-2.svg"]
+    assert sorted(p.name for p in (results / "figures").iterdir()) == ["mine.png", "report-figure-1.png"]
     assert (results / "report.md").read_text() == markdown.text
+    assert "![Figure 1: Plot](figures/report-figure-1.png)" in markdown.text
     assert "report.md (replaced an existing file), with its 1 figure in" in note.text
-    [figure] = (results / "figures").iterdir()
-    assert figure.read_bytes() == PNG_1X1 and f"](figures/{figure.name})" in markdown.text
     assert (results / "my-plot.html").is_file() and f"{results / 'my-plot.html'} (on the" in page.content[0].text
+    assert "data:image/png;base64," in (results / "report.html").read_text()  # found in results/figures
     assert relative.is_error and "absolute path" in relative.content[0].text
     assert not list((tmp_path / "server").glob("*.md")) and not list((tmp_path / "server").glob("*.html"))
 
