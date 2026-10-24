@@ -75,6 +75,7 @@ If some tools are missing in a chat, check that they are switched on in the chat
 | `run_sql` | Any read-only SQL query |
 | `create_transcript` | A record of the session as Markdown, or as an HTML page with structure drawings: your prompts and Claude's answers, and, if you ask, every BindingDB tool call with its result |
 | `draw_structure_grid` | Compounds side by side, aligned on a shared substructure, with binding bars for their main targets |
+| `add_figure` | Adds an image made with other tools (e.g. a matplotlib plot) as a figure for transcripts |
 | `transcript_to_html` | Turns an existing Markdown transcript into an HTML page with structure drawings |
 | `get_tool_log` | List the logged tool calls, so a transcript includes only this chat's |
 | `reset_tool_log` | Start a new transcript log |

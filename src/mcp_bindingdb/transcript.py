@@ -12,11 +12,11 @@ from typing import Any
 
 #: Not logged: schema lookups, and the transcript tools themselves.
 UNLOGGED_TOOLS = {"describe_tables", "create_transcript", "transcript_to_html", "reset_tool_log", "get_tool_log",
-                  "draw_structure_grid"}  # figures are logged separately
+                  "draw_structure_grid", "add_figure"}  # figures are logged separately
 
 
 class ToolLog:
-    """Successful tool calls and figures (draw_structure_grid) of this server process, in order."""
+    """Successful tool calls and figures (draw_structure_grid, add_figure) of this server process, in order."""
 
     def __init__(self) -> None:
         self.entries: list[dict[str, Any]] = []
@@ -97,8 +97,14 @@ def render_transcript(*, title: str, when: str, model: str, release: str, genera
 
 
 def _figure_link(figure: Any) -> list[str]:
+    """The figure's image link; for an image figure, its title and caption under it (a structure grid
+    shows its own)."""
     alt = figure.title.replace("[", "\\[").replace("]", "\\]")
-    return [f"![Figure {figure.id}: {alt}](figures/{figure.file})", ""]
+    lines = [f"![Figure {figure.id}: {alt}](figures/{figure.file})", ""]
+    if figure.caption is not None:
+        caption = " ".join(f"**Figure {figure.id}: {figure.title.strip().rstrip('.')}.** {figure.caption}".split())
+        lines += [caption, ""]
+    return lines
 
 
 def clean_entries(entries: list[str] | None) -> list[str]:

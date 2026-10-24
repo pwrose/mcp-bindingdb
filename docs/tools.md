@@ -16,14 +16,16 @@
 | `similarity_search` | Compounds similar to a molecule (Tanimoto on Morgan fingerprints) above a threshold, with the same target filter and per-target summary (needs the structure-search index) |
 | `create_transcript` | Markdown, HTML (with structure drawings) or JSON transcript of the session: prompts and answers, optionally followed by the logged tool calls with their results |
 | `draw_structure_grid` | Compounds side by side, aligned on a shared core that is highlighted, with binding bars per target; shown in the chat and included in transcripts (needs RDKit) |
+| `add_figure` | Adds an image made with other tools (e.g. a matplotlib plot) as a figure for transcripts |
 | `transcript_to_html` | Converts an existing Markdown transcript to an HTML page, drawing the structures in every SMILES column |
 | `get_tool_log` | The logged tool calls (index, time, arguments), to pick this chat's calls for `create_transcript` |
 | `reset_tool_log` | Clear the tool-call log that `create_transcript` reports |
 
 ## Safety
 
-All tools are read-only, except that `create_transcript`, `transcript_to_html` and `draw_structure_grid` write
-transcript and figure files. The database connection is opened read-only with file, network and extension access
+All tools are read-only, except that `create_transcript`, `transcript_to_html`, `draw_structure_grid` and
+`add_figure` write transcript and figure files (`add_figure` reads the image file it is given, and accepts only
+images). The database connection is opened read-only with file, network and extension access
 disabled and settings locked, so `run_sql` cannot write data or read anything outside the database.
 Queries time out after 30 s (`--timeout`). The only tool that uses the network is
 `chemical_name_to_smiles`, for PubChem; `--no-network` turns that off.
@@ -80,8 +82,9 @@ The log lives in the server process and covers everything since the server start
 server cannot tell them apart. The model therefore lists the log with `get_tool_log` and passes the
 indices of its own calls to `create_transcript` as `calls`.
 
-Figures made with `draw_structure_grid` are placed under the answer whose `figures` lists their ids (or,
-if no answer lists any, in a Figures section). The Markdown links to each figure's PNG in `figures/`;
+Figures made with `draw_structure_grid` or added with `add_figure` are placed under the answer whose
+`figures` lists their ids (or, if no answer lists any, in a Figures section). The Markdown links to each
+figure's image in `figures/`, with the title and caption of an added image under it;
 when a transcript has figures, the server also saves the `.md` next to that folder so the links work.
 
 In a tool call's result, the molecules it is about (the query of a substructure or similarity search, a
@@ -118,6 +121,16 @@ The tool returns the figure as a PNG, which shows in the chat, and logs it with 
 `transcripts/figures/`; HTML transcripts embed an HTML version of the figure. It needs RDKit (the
 `substructure` extra, which brings Pillow for the PNG); without it the tool is not offered. The tool tells
 the model to refer to the figure in its answer rather than repeat its structures and values as tables.
+
+## add_figure
+
+Adds an image made with other tools, such as a matplotlib heat map, as a figure: `create_transcript` can
+only include figures in the server's log, so without this the model would have to edit the transcript
+files itself. Pass `path` (a PNG, JPEG, GIF, WebP or SVG file on the machine running the server) or, when
+the image was made where the server cannot read it, `data` (the image base64-encoded, which puts it
+through the chat), plus a `title` and optional `caption`. The server copies the image into
+`transcripts/figures/` and returns its figure id. HTML transcripts embed the image; Markdown transcripts
+link to the copy. It needs no RDKit.
 
 ## Data notes
 

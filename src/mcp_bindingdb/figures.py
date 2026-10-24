@@ -1,8 +1,12 @@
-"""Structure-grid figures (draw_structure_grid): compounds aligned on a shared core, with binding bars.
+"""Figures for transcripts: structure grids the server draws, and images made elsewhere.
 
-Each figure is rendered twice from the same layout: an HTML block that HTML transcripts embed, and a PNG
-that Markdown transcripts link to and the tool shows in the chat. RDKit draws the structures (see
-depict); Pillow, which comes with RDKit, draws the PNG.
+A structure grid (draw_structure_grid) shows compounds aligned on a shared core, with binding bars. It is
+rendered twice from the same layout: an HTML block that HTML transcripts embed, and a PNG that Markdown
+transcripts link to and the tool shows in the chat. RDKit draws the structures (see depict); Pillow,
+which comes with RDKit, draws the PNG.
+
+An image figure (add_figure) is a PNG, JPEG, GIF, WebP or SVG made with other tools, e.g. a matplotlib
+plot, embedded as it is.
 """
 
 from __future__ import annotations
@@ -56,10 +60,11 @@ class Figure:
     id: int
     timestamp: str
     title: str
-    file: str  # PNG file name, under the transcripts' figures/ folder
+    file: str  # image file name, under the transcripts' figures/ folder
     html: str
-    png: bytes
+    data: bytes  # the image file's content
     spec: dict[str, Any] = field(default_factory=dict)
+    caption: str | None = None  # image figures: shown under the image in transcripts (grids have their own)
 
 
 def _fmt(nm: float) -> str:
@@ -334,3 +339,32 @@ def structure_grid(title: str, compounds: list[GridCompound], align_to: str | No
     notes = [n for n in notes or [] if n.strip()]
     return (_html(title, description, compounds, lay, columns, notes),
             _png(title, description, compounds, lay, columns, notes), lay)
+
+
+#: Image formats add_figure accepts: file extension -> media type.
+IMAGE_TYPES = {".png": "image/png", ".jpg": "image/jpeg", ".gif": "image/gif", ".webp": "image/webp",
+               ".svg": "image/svg+xml"}
+MAX_IMAGE_BYTES = 20_000_000
+
+
+def image_type(data: bytes) -> str | None:
+    """The file extension for an image's content (see IMAGE_TYPES), or None if it is not one of them."""
+    if data.startswith(b"\x89PNG\r\n\x1a\n"):
+        return ".png"
+    if data.startswith(b"\xff\xd8\xff"):
+        return ".jpg"
+    if data.startswith((b"GIF87a", b"GIF89a")):
+        return ".gif"
+    if data[:4] == b"RIFF" and data[8:12] == b"WEBP":
+        return ".webp"
+    head = data[:1000].lstrip(b"\xef\xbb\xbf \t\r\n").lower()
+    if head.startswith((b"<svg", b"<?xml", b"<!doctype svg", b"<!--")) and b"<svg" in data[:5000].lower():
+        return ".svg"
+    return None
+
+
+def image_html(title: str, data: bytes, ext: str) -> str:
+    """An image figure as an HTML block; the image is embedded, so the page needs nothing else. Its title
+    and caption follow as text in the transcript."""
+    uri = f"data:{IMAGE_TYPES[ext]};base64,{base64.b64encode(data).decode()}"
+    return f'<p><img class="figure" alt="{html.escape(title)}" src="{uri}"></p>\n'

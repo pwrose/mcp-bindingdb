@@ -51,8 +51,10 @@ async def test_lists_all_tools(server):
         "search_compounds", "search_targets", "get_compound", "get_target", "find_ligands_for_target",
         "find_targets_for_compound", "get_activity", "describe_tables", "run_sql", "chemical_name_to_smiles",
         "create_transcript", "transcript_to_html", "reset_tool_log", "get_tool_log", "draw_structure_grid",
+        "add_figure",
     }
-    writes = {"reset_tool_log", "transcript_to_html", "create_transcript", "draw_structure_grid"}  # write files
+    writes = {"reset_tool_log", "transcript_to_html", "create_transcript", "draw_structure_grid",
+              "add_figure"}  # write files
     assert all(t.annotations.read_only_hint for name, t in tools.items() if name not in writes)
 
 
@@ -342,6 +344,44 @@ async def test_figure_compounds_not_drawn_again_in_tables(tmp_path):
     # Exchange 1: the first table is all in its figure, the second is not; exchange 2 has no figure.
     assert len(pages) == 2 and all(p.count('<img class="structure"') == 4 for p in pages)
     assert all(p.count("<th>structure</th>") == 2 for p in pages)
+
+
+PNG_1X1 = base64.b64decode("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8DwHwAFBQIAX8jx0gAAAABJRU5ErkJggg==")
+SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"><rect width="10" height="10"/></svg>'
+
+
+async def test_add_figure_images_in_transcripts(tmp_path):
+    plot = tmp_path / "plots" / "heatmap.png"
+    plot.parent.mkdir()
+    plot.write_bytes(PNG_1X1)
+    (tmp_path / "notes.txt").write_text("not an image")
+    srv = build_server(Database(DB_PATH), transcript_dir=tmp_path / "out")
+    async with Client(srv) as client:
+        added = await client.call_tool("add_figure", {"title": "Heat map", "path": str(plot),
+                                                      "caption": "Clustered pKi."})
+        svg = await client.call_tool("add_figure", {"title": "Bars",
+                                                    "data": base64.b64encode(SVG.encode()).decode()})
+        both = await client.call_tool("add_figure", {"title": "x", "path": str(plot), "data": "AA=="})
+        missing = await client.call_tool("add_figure", {"title": "x", "path": str(tmp_path / "nope.png")})
+        not_image = await client.call_tool("add_figure", {"title": "x", "path": str(tmp_path / "notes.txt")})
+        md = await client.call_tool("create_transcript", {"model": "m", "exchanges": [
+            {"prompt": "Plot?", "answer": "Here.", "figures": [1, 2]}]})
+        await client.call_tool("create_transcript", {"model": "m", "format": "html", "exchanges": [
+            {"prompt": "Plot?", "answer": "Here.", "figures": [1, 2]}]})
+        log = (await client.call_tool("get_tool_log", {})).structured_content
+    assert added.content[0].text.startswith("Figure 1: 'Heat map' (PNG, ")
+    assert svg.content[0].text.startswith("Figure 2: 'Bars' (SVG, ")
+    assert both.is_error and missing.is_error and "Cannot read" in missing.content[0].text
+    assert not_image.is_error and "not a PNG" in not_image.content[0].text
+    [png] = (tmp_path / "out" / "figures").glob("heat-map-*-1.png")
+    assert png.read_bytes() == PNG_1X1 and len(list((tmp_path / "out" / "figures").glob("bars-*-2.svg"))) == 1
+    assert [f["title"] for f in log["figures"]] == ["Heat map", "Bars"] and log["calls"] == []
+    markdown = md.content[0].text
+    assert f"![Figure 1: Heat map](figures/{png.name})\n\n**Figure 1: Heat map.** Clustered pKi." in markdown
+    assert "**Figure 2: Bars.**" in markdown and "- **Contents:** 1 exchange · 2 figures" in markdown
+    page = next((tmp_path / "out").glob("*.html")).read_text()
+    assert f"data:image/png;base64,{base64.b64encode(PNG_1X1).decode()}" in page
+    assert "data:image/svg+xml;base64," in page and f"figures/{png.name}" not in page
 
 
 async def test_html_table_structures_share_a_frame(tmp_path):

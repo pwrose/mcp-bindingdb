@@ -3,7 +3,7 @@
 Modelled on mcp-okn's transcript_render. Every table with a SMILES column (in the answers as well as in
 the tool calls) gets a structure column before it, the molecules of a column aligned on the core they
 share (see depict), unless a figure under the same answer already draws them all. Figure links
-(![…](figures/<file>.png), from draw_structure_grid) become the figure.
+(![…](figures/<file>), from draw_structure_grid or add_figure) become the figure.
 RDKit draws on the server and the drawings are embedded as SVG data: images, so the page needs no network
 when opened. Without RDKit there are no structure columns.
 """

@@ -93,13 +93,18 @@ measured against.
 """
 
 
+IMAGE_INSTRUCTIONS = """
+Figures in transcripts: create_transcript includes only figures in its log. For an image you made with
+other tools (e.g. a matplotlib plot saved as PNG), call add_figure with its path and list the figure id
+it returns in the exchange; never add images to a transcript, or edit its files, yourself.
+"""
+
 FIGURE_INSTRUCTIONS = """
-Figures: to show several compounds' structures together (e.g. in a grid, aligned on a shared substructure,
-with binding data), use draw_structure_grid rather than drawing them yourself; its figures appear in the
-chat and in transcripts (create_transcript), which cannot include pages you build yourself. The figure
-already shows the structures and binding values: refer to it in your answer instead of repeating them
-(no table of the same compounds' SMILES or of the values the bars show; a table only for data the figure
-lacks).
+Structure figures: to show several compounds' structures together (e.g. in a grid, aligned on a shared
+substructure, with binding data), use draw_structure_grid rather than drawing them yourself; its figures
+appear in the chat and in transcripts. The figure already shows the structures and binding values: refer
+to it in your answer instead of repeating them (no table of the same compounds' SMILES or of the values
+the bars show; a table only for data the figure lacks).
 """
 
 
@@ -113,8 +118,8 @@ class Exchange(BaseModel):
     prompt: str = Field(description="The user's prompt, verbatim")
     answer: str = Field("", description="Your full answer to that prompt as the user saw it, verbatim, "
                         "including tables and lists; not a summary")
-    figures: list[int] = Field(default_factory=list, description="Ids of the figures (draw_structure_grid) "
-                               "shown with this answer")
+    figures: list[int] = Field(default_factory=list, description="Ids of the figures (from "
+                               "draw_structure_grid or add_figure) shown with this answer")
 
 
 class BindingDBServer(MCPServer):
@@ -171,7 +176,7 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
         title="BindingDB",
         version=VERSION,
         instructions=INSTRUCTIONS + (STRUCTURE_INSTRUCTIONS if index else "")
-        + (FIGURE_INSTRUCTIONS if depict.available() else "")
+        + IMAGE_INSTRUCTIONS + (FIGURE_INSTRUCTIONS if depict.available() else "")
         + f"\nLoaded release: {info.get('release', 'unknown')}.",
     )
 
@@ -606,11 +611,73 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
         if figure is not None:
             return transcript_html.Figure(figure.html, [c["smiles"] for c in figure.spec.get("compounds", [])])
         path = figures_dir / Path(file).name
-        if path.suffix != ".png" or not path.is_file():
+        if path.suffix not in figures.IMAGE_TYPES or not path.is_file():
             return None
-        png = path.read_bytes()
-        return transcript_html.Figure(f'<p><img class="figure" alt="{html.escape(path.stem)}" src="data:image/png;'
-                                      f'base64,{base64.b64encode(png).decode()}"></p>\n', figures.png_smiles(png))
+        data = path.read_bytes()
+        return transcript_html.Figure(figures.image_html(path.stem, data, path.suffix),
+                                      figures.png_smiles(data) if path.suffix == ".png" else [])
+
+    def log_figure(title: str, data: bytes, ext: str, html_block: str, spec: dict[str, Any],
+                   caption: str | None = None) -> tuple[figures.Figure, str]:
+        """Log a figure with the next id and save its image in figures/; returns it and where it was saved."""
+        log = mcp.tool_log
+        figure_id, log.next_figure_id = log.next_figure_id, log.next_figure_id + 1
+        file = f"{_slug(title)}-{datetime.now():%Y-%m-%d-%H%M%S}-{figure_id}{ext}"
+        try:
+            figures_dir.mkdir(parents=True, exist_ok=True)
+            (figures_dir / file).write_bytes(data)
+            saved = f"Saved as {figures_dir / file}."
+        except OSError as e:
+            saved = f"Could not save the image in {figures_dir}: {e}; HTML transcripts still include it."
+        figure = figures.Figure(id=figure_id, timestamp=datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                                title=title, file=file, html=html_block, data=data, spec=spec, caption=caption)
+        log.figures.append(figure)
+        return figure, saved
+
+    @mcp.tool(annotations=writes)
+    def add_figure(
+        title: Annotated[str, Field(description="Figure title, e.g. 'Kinase selectivity heat map'")],
+        path: Annotated[str | None, Field(description="The image file (PNG, JPEG, GIF, WebP or SVG) on the "
+                                          "machine running this server, e.g. a plot you saved")] = None,
+        data: Annotated[str | None, Field(description="The image itself, base64-encoded, only when the server "
+                                          "cannot read the file (e.g. it was made in a sandbox elsewhere)")] = None,
+        caption: Annotated[str, Field(description="A sentence or two under the figure: what it shows")] = "",
+    ) -> str:
+        """Add an image made with other tools (e.g. a matplotlib plot) as a figure for transcripts, which
+        include only figures in this server's log. Returns its id: list it in the `figures` of the
+        exchange it belongs to in create_transcript. HTML transcripts embed the image; Markdown transcripts
+        link to the copy the server keeps in its figures/ folder. Never add images to a transcript, or edit
+        its files, yourself.
+
+        Pass `path` when the file is on the machine running this server; `data` puts the whole image
+        through the chat, so use it only when there is no such path. Structure grids are drawn with
+        draw_structure_grid instead."""
+        if (path is None) == (data is None):
+            raise ToolError("Give either path or data")
+        if path is not None:
+            source = Path(path).expanduser()
+            try:
+                if source.stat().st_size > figures.MAX_IMAGE_BYTES:
+                    raise ToolError(f"{source} is larger than {figures.MAX_IMAGE_BYTES:,} bytes")
+                content = source.read_bytes()
+            except OSError as e:
+                raise ToolError(f"Cannot read {source} on the machine running mcp-bindingdb ({e.strerror}); "
+                                "if the image was made elsewhere, pass it as `data` (base64)") from None
+        else:
+            encoded = data.split(",", 1)[1] if data.startswith("data:") else data
+            try:
+                content = base64.b64decode(encoded, validate=True)
+            except ValueError:
+                raise ToolError("data is not valid base64") from None
+            if len(content) > figures.MAX_IMAGE_BYTES:
+                raise ToolError(f"The image is larger than {figures.MAX_IMAGE_BYTES:,} bytes")
+        ext = figures.image_type(content)
+        if ext is None:
+            raise ToolError(f"{'The data' if path is None else source} is not a PNG, JPEG, GIF, WebP or SVG image")
+        figure, saved = log_figure(title, content, ext, figures.image_html(title, content, ext),
+                                   {"source": str(source) if path is not None else "data"}, caption.strip())
+        return "\n".join([f"Figure {figure.id}: '{title}' ({ext[1:].upper()}, {len(content):,} bytes).", saved,
+                          f"Transcripts include it under the exchange whose `figures` lists {figure.id}."])
 
     def write_html(source: str) -> list[Any]:
         """Convert a Markdown transcript to HTML, write it to transcript_dir, and summarize the result."""
@@ -669,19 +736,9 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
             if align_to and depict.parse(align_to) is None:
                 raise ToolError(f"align_to {align_to!r} is not valid SMILES or SMARTS")
             block, png, lay = figures.structure_grid(title, compounds, align_to, columns, description, notes)
-            log = mcp.tool_log
-            figure_id, log.next_figure_id = log.next_figure_id, log.next_figure_id + 1
-            file = f"{_slug(title)}-{datetime.now():%Y-%m-%d-%H%M%S}-{figure_id}.png"
-            try:
-                figures_dir.mkdir(parents=True, exist_ok=True)
-                (figures_dir / file).write_bytes(png)
-                saved = f"Saved as {figures_dir / file}."
-            except OSError as e:
-                saved = f"Could not save the PNG in {figures_dir}: {e}; HTML transcripts still include it."
-            log.figures.append(figures.Figure(
-                id=figure_id, timestamp=datetime.now(timezone.utc).isoformat(timespec="seconds"), title=title,
-                file=file, html=block, png=png, spec={"compounds": [c.model_dump() for c in compounds],
-                                                      "align_to": align_to}))
+            figure, saved = log_figure(title, png, ".png", block, {"compounds": [c.model_dump() for c in compounds],
+                                                                   "align_to": align_to})
+            figure_id = figure.id
             if any(lay.cores):
                 alignment = f"aligned on {align_to}" if align_to else "aligned on their largest common substructure"
             elif align_to:
@@ -728,9 +785,10 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
         """Build a transcript of this session: each user prompt with your answer and its figures. The
         server cannot see your prose, so pass each answer in full via `exchanges`, not a summary.
 
-        Figures made with draw_structure_grid appear under the answer whose `figures` lists their ids. If
-        no exchange lists any, every logged figure is added in a Figures section. A page or artifact you
-        built yourself cannot be included; draw grids of structures with draw_structure_grid.
+        Figures appear under the answer whose `figures` lists their ids. If no exchange lists any, every
+        logged figure is added in a Figures section. Only logged figures can be included: structure grids
+        from draw_structure_grid, and images made with other tools (e.g. matplotlib plots) once added with
+        add_figure. Interactive pages or artifacts you built cannot be included.
 
         Tool calls are left out unless the user asks for them (e.g. "with the tool calls", "with the
         queries and results", "a reproducible record"); then set include_tool_calls and the transcript
@@ -774,7 +832,8 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
                                    "exchanges": turns, "tool_calls": selected, "generated_by": generated_by}
             if placed or unplaced:
                 out["figures"] = [{"id": f.id, "timestamp": f.timestamp, "title": f.title, "file": f.file,
-                                   **f.spec} for f in placed + unplaced]
+                                   **({"caption": f.caption} if f.caption else {}), **f.spec}
+                                  for f in placed + unplaced]
             if skill_list:
                 out["skills"] = skill_list
             if server_list:
