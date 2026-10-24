@@ -12,8 +12,9 @@
 | `get_activity` | Full record of one measurement, with assay description and citation |
 | `describe_tables` | Table list with descriptions, or columns and sample rows of one table |
 | `run_sql` | Arbitrary read-only DuckDB SQL |
-| `substructure_search` | Compounds containing a SMILES/SMARTS fragment, optionally only those measured against a target with potency filters; every target the matching compounds hit, with compounds per target; or a count of matches (needs the structure-search index) |
-| `similarity_search` | Compounds similar to a molecule (Tanimoto on Morgan fingerprints) above a threshold, with the same target filter and per-target summary (needs the structure-search index) |
+| `exact_structure_search` | BindingDB entries of the same molecule (all fragments, stereo, charges, isotopes), optionally only those with a measurement in an affinity range (needs RDKit, not the index) |
+| `substructure_search` | Compounds containing a SMILES/SMARTS fragment, optionally only those with a measurement in an affinity range or measured against a target; every target the matching compounds hit, with compounds per target; or a count of matches (needs the structure-search index) |
+| `similarity_search` | Compounds similar to a molecule (Tanimoto on Morgan fingerprints) above a threshold, with the same affinity and target filters and per-target summary (needs the structure-search index) |
 | `create_transcript` | Markdown, HTML (with structure drawings) or JSON transcript of the session: prompts and answers, optionally followed by the logged tool calls with their results |
 | `draw_structure_grid` | Compounds side by side, aligned on a shared core that is highlighted, with binding bars per target; shown in the chat and included in transcripts (needs RDKit) |
 | `add_figure` | Adds an image made with other tools (e.g. a matplotlib plot) as a figure for transcripts |
@@ -54,12 +55,28 @@ compound measured against it is searched and the matches are ranked by potency. 
 of the query time limit and reports partial results; counting a very generic query (a benzene ring
 matches 1.28M compounds) takes about 5 s.
 
+Affinity filters (`affinity_types`, `min_value_nm`, `max_value_nm`) keep only compounds with at least one
+measurement that passes them, before `limit` applies, and return each with its most potent such
+measurement. Types are not interconverted; the default types are Ki, Kd, IC50 and EC50. Values reported
+as `>` never pass `max_value_nm`, and values reported as `<` never pass a nonzero `min_value_nm`. Both
+structure tools take these filters.
+
 ## similarity_search
 
 It takes a whole molecule as SMILES and returns compounds with Tanimoto similarity at or above
 `threshold` (default 0.7), most similar first. Fingerprints are Morgan, radius 2, 2048 bits, computed on
 the largest fragment, so a salt scores the same as its parent. Stereochemistry is ignored, so
 stereoisomers score 1.0. Scoring all 1.46M compounds takes about 50 ms.
+
+## exact_structure_search
+
+It finds the BindingDB entries of the query molecule: compounds whose canonical isomeric SMILES equals
+the query's, so salts, stereo, charges and isotopes must match, and tautomers or protonation states
+count as different (`similarity_search` with threshold 1.0 ignores stereo and salts). Candidates are the
+compounds sharing the query's InChIKey first block, so it needs the standard InChIKeys that the build
+computes ([InChIKeys](building-the-database.md#inchikeys)); on a database without them it says so, since
+BindingDB's own keys miss many entries (imatinib has three, and BindingDB's keys find only one). It takes
+the same affinity filters as the structure-search tools and needs RDKit but not the index.
 
 ## create_transcript
 

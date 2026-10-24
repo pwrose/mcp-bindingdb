@@ -14,8 +14,10 @@ Node.js and the private Sites workspace are not needed to run the server.
    uv sync --extra substructure --extra name
    ```
 
-   RDKit enables exact search. Substructure and similarity also require the existing `.sslib` index
-   beside your DuckDB file, for the same release. Reuse your existing database and index. If the index
+   All three search modes use RDKit. Substructure and similarity also need the existing `.sslib` index
+   beside your DuckDB file, for the same release. Exact needs standard InChIKeys: run
+   `uv run --extra substructure python scripts/compute_inchikeys.py /path/to/bindingdb.duckdb` once
+   on an existing database ([InChIKeys](building-the-database.md#inchikeys)). Reuse your existing database and index. If the index
    is missing, follow [Structure-search index](building-the-database.md#structure-search-index).
    OPSIN is optional and uses the `name` extra and Java already described in that guide.
 
@@ -26,11 +28,11 @@ Node.js and the private Sites workspace are not needed to run the server.
    uv run pytest -m "not network"
    ```
 
-   The new editor tests use a tiny DuckDB fixture and the repository's actual RDKit index format. They
+   The editor tests use a tiny DuckDB fixture and the repository's actual RDKit index format. They
    cover MCP Apps discovery/resources, registration in `build_server`, seed input, exact stereo/salt
-   equality, affinity endpoints/types/censored values, filtering before result limits, similarity
-   scores, partial-result reporting, tool logging and disabled-network behavior. Existing tests that
-   need a complete BindingDB database are skipped when it is absent.
+   equality and computed InChIKeys, affinity endpoints/types/censored values, filtering before result
+   limits, similarity scores, tool logging and disabled-network behavior. Existing tests that need a complete
+   BindingDB database are skipped when it is absent.
 
 3. Start the server with your existing database, initially as a test instance:
 
@@ -56,8 +58,9 @@ Node.js and the private Sites workspace are not needed to run the server.
 - Affinity starts enabled with **0 ≤ Any ≤ 1000 nM**. Choose Ki and set 10–100 nM. Reversed, missing or
   negative bounds block Run query. Unchecking Affinity removes the filter.
 - Choose **Run query**. The app adds the reviewed query to model context and sends a concise user
-  message asking the assistant to execute it. The assistant calls `filtered_structure_search` when
-  affinity is enabled, otherwise the ordinary matching tool, and reports actual results in chat.
+  message asking the assistant to execute it. The assistant calls `exact_structure_search`,
+  `substructure_search` or `similarity_search`, with the affinity filters when Affinity is on, and
+  reports actual results in chat.
   Opening the editor or changing controls alone does not execute a database search.
 
 The compact view was checked at 640×480, 480×520 and 360×520. Inspection is collapsed by default;
@@ -66,14 +69,16 @@ permissions still require a manual smoke test in your installed ChatGPT or Claud
 
 ## Search semantics
 
-Exact compares full canonical isomeric SMILES after an InChIKey connectivity screen. Stereo, salts,
-charge, isotopes and tautomers remain distinct. Missing/stale stored InChIKeys can reduce recall and
-coverage is reported. Similarity follows this repository's Morgan radius 2, 2048-bit Tanimoto on the
+Exact (`exact_structure_search`) takes the compounds sharing the query's InChIKey first block and keeps
+those whose canonical isomeric SMILES equals the query's. Stereo, salts, charge, isotopes and tautomers
+remain distinct. It needs the standard InChIKeys computed when the database is built
+([InChIKeys](building-the-database.md#inchikeys)).
+Similarity follows this repository's Morgan radius 2, 2048-bit Tanimoto on the
 largest fragment, without chirality; a score of 1 is not exact identity.
 
 Affinity requires at least one qualifying Ki, Kd, IC50 or EC50 measurement in the inclusive nM range.
-Any accepts any one of those types; it does not convert between types. Each hit carries a qualifying
-measurement ID, type, relation and value. Missing/non-finite/negative/non-nM values are excluded.
+Any accepts any one of those types; it does not convert between types. Each hit carries its most
+potent qualifying measurement (id, type, relation, value, target). Missing and non-nM values are excluded.
 `>` bounds do not establish membership in a finite interval. `<` bounds qualify only when the minimum
 is zero and their reported upper bound is within the range. Filtering occurs before result limits,
 not just over the first page of unfiltered structural hits. Partial coverage and time limits are

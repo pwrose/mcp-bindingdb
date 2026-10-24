@@ -52,12 +52,25 @@ async def test_lists_all_tools(server):
         "search_compounds", "search_targets", "get_compound", "get_target", "find_ligands_for_target",
         "find_targets_for_compound", "get_activity", "describe_tables", "run_sql", "chemical_name_to_smiles",
         "create_transcript", "transcript_to_html", "reset_tool_log", "get_tool_log", "draw_structure_grid",
-        "add_figure",
-        "open_structure_editor", "editor_pubchem_candidates", "exact_structure_search", "filtered_structure_search",
+        "add_figure", "open_structure_editor", "editor_pubchem_candidates", "exact_structure_search",
     }
     writes = {"reset_tool_log", "transcript_to_html", "create_transcript", "draw_structure_grid",
               "add_figure"}  # write files
     assert all(t.annotations.read_only_hint for name, t in tools.items() if name not in writes)
+
+
+@pytest.mark.skipif("inchi_keys" not in Database(DB_PATH).build_info(),
+                    reason="InChIKeys not computed (scripts/compute_inchikeys.py)")
+async def test_exact_structure_search_finds_every_entry(server):
+    imatinib = "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cccnc2)n1"
+    out = await ok(server, "exact_structure_search", smiles=imatinib)
+    # BindingDB stores no InChIKey for 31341 and a non-matching one for 86734.
+    assert {r["monomerid"] for r in out["rows"]} == {IMATINIB, 31341, 86734} and "note" not in out
+    salt = await ok(server, "exact_structure_search", smiles=imatinib + ".CS(=O)(=O)O")
+    assert IMATINIB not in {r["monomerid"] for r in salt["rows"]}  # the mesylate is a different molecule
+    potent = await ok(server, "exact_structure_search", smiles=imatinib, affinity_types=["Kd"], min_value_nm=10,
+                      max_value_nm=100)
+    assert potent["rows"] and all(r["affinity_type"] == "Kd" and 10 <= r["value"] <= 100 for r in potent["rows"])
 
 
 async def test_search_compounds_by_name_ranks_exact_first(server):

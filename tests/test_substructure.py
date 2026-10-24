@@ -186,3 +186,16 @@ async def test_similarity_bad_input(server):
         bad_threshold = await client.call_tool("similarity_search", {"smiles": "CCO", "threshold": 1.5})
     assert bad_smiles.is_error and "Not valid SMILES" in bad_smiles.content[0].text
     assert bad_threshold.is_error
+
+
+@needs_index
+@pytest.mark.anyio
+async def test_affinity_filters_without_a_target(server):
+    out = await ok(server, query=QUINAZOLINE, affinity_types=["Ki"], min_value_nm=10, max_value_nm=100, limit=20)
+    rows = out["rows"]
+    assert len(rows) == 20 and out["truncated"]
+    assert all(r["affinity_type"] == "Ki" and r["relation"] == "=" and 10 <= r["value"] <= 100 for r in rows)
+    ps = [r["p_affinity"] for r in rows]
+    assert ps == sorted(ps, reverse=True)
+    out = await sim(server, smiles=IMATINIB_SMILES, threshold=0.85, affinity_types=["Kd"], max_value_nm=100)
+    assert [(r["monomerid"], r["affinity_type"]) for r in out["rows"]] == [(IMATINIB, "Kd")]

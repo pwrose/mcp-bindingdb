@@ -86,10 +86,10 @@ $('runBtn').onclick=async()=>{
  const plan=structuredClone(currentPlan),selectedMode=mode;
  const label={exact:'exact structure',substructure:'substructure',similarity:'similarity'}[selectedMode];
  const threshold=selectedMode==='similarity'?' with a minimum Tanimoto similarity of '+plan.arguments.threshold.toFixed(2):'';
- const affinity=plan.name==='filtered_structure_search'?', requiring at least one '+(plan.arguments.affinity_type==='Any'?'Ki, Kd, IC50, or EC50':plan.arguments.affinity_type)+' measurement from '+plan.arguments.min_value_nm+' to '+plan.arguments.max_value_nm+' nM':'';
+ const args=plan.arguments,affinity=args.max_value_nm===undefined?'':', requiring at least one '+(args.affinity_types?args.affinity_types[0]:'Ki, Kd, IC50, or EC50')+' measurement from '+args.min_value_nm+' to '+args.max_value_nm+' nM';
  submitting=true;$('runBtn').disabled=true;notice('Submitting query to chat…');
  try{
-  await window.BindingDBHost.updateModelContext({content:[{type:'text',text:'User-reviewed BindingDB query (not yet executed):\n'+JSON.stringify(plan)+'\nUse the connected BindingDB search tool with these arguments. If a compatible search tool is unavailable, explain that the BindingDB search service needs to be connected. Do not claim that a search ran without a tool result. If filtered_structure_search is requested, preserve the affinity range and measurement type; never silently run an unfiltered query or filter a truncated list of hits.'}]});
+  await window.BindingDBHost.updateModelContext({content:[{type:'text',text:'User-reviewed BindingDB query (not yet executed):\n'+JSON.stringify(plan)+'\nUse the connected BindingDB search tool with these arguments. If a compatible search tool is unavailable, explain that the BindingDB search service needs to be connected. Do not claim that a search ran without a tool result. Pass the affinity filters (affinity_types, min_value_nm, max_value_nm) unchanged; never silently run an unfiltered query or filter a truncated list of hits.'}]});
   const result=await window.BindingDBHost.sendMessage({role:'user',content:[{type:'text',text:'Run the reviewed BindingDB '+label+' search'+threshold+affinity+' and show the results.'}]});
   if(result?.isError)throw new Error('The chat host did not accept the query request.');
   notice('Query submitted. Results will appear in chat.','success');

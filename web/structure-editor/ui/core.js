@@ -26,21 +26,17 @@
     if(!s) throw new Error('Load a valid structure to prepare a query.');
     if((s.type==='smarts'||s.wildcard) && mode!=='substructure') throw new Error('SMARTS and wildcard queries require Substructure mode. Exact and similarity searches require a concrete molecule.');
     if(mode==='similarity'&&(!Number.isFinite(threshold)||threshold<0||threshold>1)) throw new Error('Similarity must be between 0 and 1.');
+    let filters={};
     if(affinity){
       const {type,min,max}=affinity;
       if(!['Any','Ki','Kd','IC50','EC50'].includes(type)) throw new Error('Select an affinity measurement type.');
       if(!Number.isFinite(min)||!Number.isFinite(max)||min<0||max<0) throw new Error('Affinity limits must be non-negative numbers in nM.');
       if(min>max) throw new Error('Minimum affinity must not exceed maximum affinity.');
-      const args={mode,query:s.type==='smarts'?s.input:s.smiles,query_type:s.type==='smarts'?'smarts':'smiles',affinity_type:type,min_value_nm:min,max_value_nm:max,limit:50};
-      if(mode==='similarity')args.threshold=threshold;
-      if(mode==='substructure')args.use_chirality=chirality;
-      return {name:'filtered_structure_search',arguments:args};
+      filters={...(type==='Any'?{}:{affinity_types:[type]}),min_value_nm:min,max_value_nm:max};
     }
-    if(mode==='similarity') {
-      return {name:'similarity_search',arguments:{smiles:s.smiles,threshold,limit:50}};
-    }
-    if(mode==='substructure') return {name:'substructure_search',arguments:{query:s.type==='smarts'?s.input:s.smiles,query_type:s.type==='smarts'?'smarts':'smiles',use_chirality:chirality,limit:50}};
-    return {name:'exact_structure_search',arguments:{smiles:s.smiles,limit:50}};
+    if(mode==='similarity') return {name:'similarity_search',arguments:{smiles:s.smiles,threshold,...filters,limit:50}};
+    if(mode==='substructure') return {name:'substructure_search',arguments:{query:s.type==='smarts'?s.input:s.smiles,query_type:s.type==='smarts'?'smarts':'smiles',use_chirality:chirality,...filters,limit:50}};
+    return {name:'exact_structure_search',arguments:{smiles:s.smiles,...filters,limit:50}};
   }
   root.BindingDBCore={parse,plan};
 })(globalThis);
