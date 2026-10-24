@@ -66,6 +66,13 @@ def parse(text: str) -> Any:
     return mol
 
 
+def canonical(text: str) -> str:
+    """A molecule's canonical SMILES, to tell whether two SMILES are the same molecule; the text itself
+    if it cannot be parsed."""
+    mol = parse(text) if available() else None
+    return Chem.MolToSmiles(mol) if mol is not None else text.strip()
+
+
 def _core(mols: list[Any], align_to: str | None) -> Any:
     """The core to align on: `align_to`, or else the molecules' maximum common substructure."""
     if align_to:

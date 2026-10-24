@@ -2,7 +2,8 @@
 
 Modelled on mcp-okn's transcript_render. Every table with a SMILES column (in the answers as well as in
 the tool calls) gets a structure column before it, the molecules of a column aligned on the core they
-share (see depict). Figure links (![…](figures/<file>.png), from draw_structure_grid) become the figure.
+share (see depict), unless a figure under the same answer already draws them all. Figure links
+(![…](figures/<file>.png), from draw_structure_grid) become the figure.
 RDKit draws on the server and the drawings are embedded as SVG data: images, so the page needs no network
 when opened. Without RDKit there are no structure columns.
 """
@@ -12,7 +13,7 @@ from __future__ import annotations
 import base64
 import html as _html
 from collections.abc import Callable
-from typing import Any
+from typing import Any, NamedTuple
 
 from markdown_it import MarkdownIt
 from markdown_it.token import Token
@@ -42,6 +43,7 @@ th, td { border: 1px solid #d1d9e0; padding: 5px 10px; text-align: left; vertica
 td { overflow-wrap: anywhere; max-width: 28em; }
 th { background: #f6f8fa; }
 img.structure { display: block; max-width: 300px; height: auto; }
+img.figure { display: block; max-width: 100%; height: auto; }
 footer { margin-top: 3em; color: #59636e; font-size: 12px; }
 @media print {
   body { max-width: none; padding: 0; font-size: 11pt; }
@@ -50,6 +52,13 @@ footer { margin-top: 3em; color: #59636e; font-size: 12px; }
   h1, h2, h3, h4 { break-after: avoid; }
 }
 """
+
+
+class Figure(NamedTuple):
+    """A figure to embed: its HTML, and the SMILES of the compounds it draws (empty if not known)."""
+
+    html: str
+    smiles: list[str]
 
 
 def _renderer() -> MarkdownIt:
@@ -95,16 +104,51 @@ def _cells(tokens: list[Token]):
             col += 1
 
 
-def _add_structure_columns(tokens: list[Token]) -> tuple[list[Token], int]:
-    """Insert a structure column before every table column whose header mentions SMILES.
+def _figure_src(tokens: list[Token], i: int) -> str | None:
+    """The file of the figure link that tokens[i] opens, a paragraph that is only ![…](figures/<file>)."""
+    if (tokens[i].type == "paragraph_open" and i + 2 < len(tokens) and tokens[i + 1].type == "inline"
+            and len(tokens[i + 1].children or []) == 1 and tokens[i + 1].children[0].type == "image"):
+        src = str(tokens[i + 1].children[0].attrGet("src") or "")
+        return src[len("figures/"):] if src.startswith("figures/") else None
+    return None
+
+
+def _sections(tokens: list[Token]) -> list[int]:
+    """The section of each token: a new one starts at each prompt (👤 **User**) and at each of the
+    transcript's own headings, so an answer and the figures under it share a section."""
+    out, section = [], 0
+    for i, token in enumerate(tokens):
+        if (token.type == "paragraph_open" and tokens[i + 1].content.strip() == "👤 **User**"
+                or token.type == "heading_open" and token.tag == "h2"
+                and tokens[i + 1].content.strip() in ("Conversation", "Figures", "BindingDB tool calls")):
+            section += 1
+        out.append(section)
+    return out
+
+
+def _add_structure_columns(tokens: list[Token], figure: Callable[[str], Figure | None]
+                           ) -> tuple[list[Token], int]:
+    """Insert a structure column before every table column whose header mentions SMILES, unless a figure
+    under the same answer already shows all of the column's molecules.
 
     Returns the new token list and the number of structures drawn."""
+    sections = _sections(tokens)
+    in_figures: dict[int, set[str]] = {}  # section -> canonical SMILES of its figures' compounds
+    for i in range(len(tokens)):
+        if (file := _figure_src(tokens, i)) and (found := figure(file)):
+            in_figures.setdefault(sections[i], set()).update(depict.canonical(s) for s in found.smiles)
     columns: dict[tuple[int, int], list[str]] = {}  # (table, column) -> the column's SMILES
-    for _, table, col, header, text in _cells(tokens):
+    table_section: dict[int, int] = {}
+    for i, table, col, header, text in _cells(tokens):
+        table_section[table] = sections[i]
         if header and "smiles" in text.lower():
             columns[table, col] = []
         elif (table, col) in columns and not header:
             columns[table, col].append(text.strip("`"))
+    for (table, col), values in list(columns.items()):
+        shown = in_figures.get(table_section[table])
+        if shown and values and all(depict.canonical(v) in shown for v in values if v):
+            del columns[table, col]  # drawn in the figure already
     images = {key: iter(_images(values)) for key, values in columns.items()}
     inserts: dict[int, list[Token]] = {}
     drawn = 0
@@ -125,35 +169,31 @@ def _add_structure_columns(tokens: list[Token]) -> tuple[list[Token], int]:
     return out, drawn
 
 
-def _add_figures(tokens: list[Token], figure_html: Callable[[str], str | None]) -> tuple[list[Token], int]:
+def _add_figures(tokens: list[Token], figure: Callable[[str], Figure | None]) -> tuple[list[Token], int]:
     """Replace each paragraph that is only a figure link, ![…](figures/<file>), with the figure."""
     out: list[Token] = []
     n = 0
     i = 0
     while i < len(tokens):
-        token = tokens[i]
-        if (token.type == "paragraph_open" and i + 2 < len(tokens) and tokens[i + 1].type == "inline"
-                and len(tokens[i + 1].children or []) == 1 and tokens[i + 1].children[0].type == "image"):
-            src = str(tokens[i + 1].children[0].attrGet("src") or "")
-            block = figure_html(src[len("figures/"):]) if src.startswith("figures/") else None
-            if block:
-                out.append(Token("html_block", "", 0, content=block))
-                n += 1
-                i += 3
-                continue
-        out.append(token)
+        if (file := _figure_src(tokens, i)) and (found := figure(file)):
+            out.append(Token("html_block", "", 0, content=found.html))
+            n += 1
+            i += 3
+            continue
+        out.append(tokens[i])
         i += 1
     return out, n
 
 
-def markdown_to_html(markdown: str, figure_html: Callable[[str], str | None] = lambda _: None,
+def markdown_to_html(markdown: str, figure: Callable[[str], Figure | None] = lambda _: None,
                      ) -> tuple[str, int, int]:
     """A transcript's Markdown as a standalone HTML page, with the number of structures drawn in tables
-    and of figures embedded. `figure_html` gives the HTML of a figure by its file name, or None."""
+    and of figures embedded. `figure` gives a figure by its file name, or None."""
     md = _renderer()
     env: dict[str, Any] = {}
-    tokens, drawn = _add_structure_columns(md.parse(markdown, env))
-    tokens, n_figures = _add_figures(tokens, figure_html)
+    tokens = md.parse(markdown, env)
+    tokens, drawn = _add_structure_columns(tokens, figure)
+    tokens, n_figures = _add_figures(tokens, figure)
     title = next((line[2:].strip() for line in markdown.splitlines() if line.startswith("# ")), "Transcript")
     if drawn:
         note = f"{drawn} structure{'' if drawn == 1 else 's'} drawn with RDKit."

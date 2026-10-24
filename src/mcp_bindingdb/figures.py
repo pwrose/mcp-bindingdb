@@ -10,9 +10,10 @@ from __future__ import annotations
 import base64
 import html
 import io
+import json
 import math
 from dataclasses import dataclass, field
-from typing import Any
+from typing import Any, Literal
 
 from pydantic import BaseModel, Field
 
@@ -27,14 +28,16 @@ FONT_FILES = [
     "C:\\Windows\\Fonts\\arial.ttf",
 ]
 TYPE_COLOURS = {"Ki": "#2f6f8f", "Kd": "#3f8a5c", "IC50": "#7a5aa6", "EC50": "#a8662d"}
-OTHER_COLOUR = "#6b7570"
 CORE_COLOUR = "#e8892e"
+SMILES_KEY = "smiles"  # PNG text chunk: the SMILES of the compounds drawn, as a JSON list
 
 
 class GridBar(BaseModel):
     label: str = Field(description="Target, e.g. 'RAF1'")
     value_nm: float = Field(gt=0, description="Affinity in nM; drawn on a log scale, longer = more potent")
-    type: str = Field("", description="Measurement type: Ki, Kd, IC50 or EC50 (sets the bar colour)")
+    type: Literal["Ki", "Kd", "IC50", "EC50"] = Field(description="Measurement type of the value (sets the "
+                                                      "bar colour); values of different types are not "
+                                                      "comparable")
     note: str = Field("", description="Small print under the bar, e.g. 'n = 32 · Kd 230 nM (4)'")
     faint: bool = Field(False, description="Thin evidence (e.g. fewer than 3 measurements): drawn lighter")
 
@@ -82,7 +85,7 @@ def _legend(compounds: list[GridCompound], scale: tuple[float, float] | None, co
     """(colour, text) legend entries."""
     entries = [(CORE_COLOUR, "shared core")] if core else []
     types = list(dict.fromkeys(b.type for c in compounds for b in c.bars))
-    entries += [(TYPE_COLOURS.get(t, OTHER_COLOUR), t or "other") for t in types]
+    entries += [(TYPE_COLOURS[t], t) for t in types]
     if any(b.faint for c in compounds for b in c.bars):
         entries.append(("#c8cfcb", "thin evidence"))
     if scale:
@@ -129,7 +132,7 @@ def _html(title: str, description: str, compounds: list[GridCompound], lay: depi
                  f'{base64.b64encode(svg.encode()).decode()}"></div>') if svg else f"<p><code>{e(c.smiles)}</code></p>"
         rows = []
         for b in c.bars:
-            colour = TYPE_COLOURS.get(b.type, OTHER_COLOUR)
+            colour = TYPE_COLOURS[b.type]
             width = f"{100 * _fraction(b.value_nm, scale):.1f}%" if scale else "0"
             rows.append(
                 f'<li class="sg-row{" sg-faint" if b.faint else ""}"><span>{e(b.label)}</span>'
@@ -191,7 +194,7 @@ def _wrap(draw: Any, text: str, font: Any, width: float) -> list[str]:
 def _png(title: str, description: str, compounds: list[GridCompound], lay: depict.Layout, columns: int,
          notes: list[str], s: int = 2) -> bytes:
     """The figure as a PNG at `s` times its CSS pixel size."""
-    from PIL import Image, ImageDraw
+    from PIL import Image, ImageDraw, PngImagePlugin
 
     ink, muted, line = (28, 35, 33), (92, 103, 99), (223, 227, 224)
     f_title, f_name, f_text, f_small = _font(24 * s), _font(19 * s), _font(13 * s), _font(11 * s)
@@ -273,7 +276,7 @@ def _png(title: str, description: str, compounds: list[GridCompound], lay: depic
             value_w = 84 * s
             track_x0, track_x1 = x + label_w, x + plate_w - value_w - 6 * s
             for b in c.bars:
-                colour = TYPE_COLOURS.get(b.type, OTHER_COLOUR)
+                colour = TYPE_COLOURS[b.type]
                 rgb = tuple(int(colour[i:i + 2], 16) for i in (1, 3, 5))
                 if b.faint:
                     rgb = tuple(round(v * 0.4 + 255 * 0.6) for v in rgb)
@@ -306,8 +309,21 @@ def _png(title: str, description: str, compounds: list[GridCompound], lay: depic
         d.text((pad, y), _plain(f_text, text), font=f_text, fill=muted)
         y += lh(f_text)
     out = io.BytesIO()
-    image.save(out, format="PNG", optimize=True)
+    info = PngImagePlugin.PngInfo()
+    info.add_text(SMILES_KEY, json.dumps([c.smiles for c in compounds]))  # see png_smiles
+    image.save(out, format="PNG", optimize=True, pnginfo=info)
     return out.getvalue()
+
+
+def png_smiles(png: bytes) -> list[str]:
+    """The SMILES of the compounds a figure PNG draws, from its metadata; empty if it has none."""
+    from PIL import Image
+
+    try:
+        smiles = json.loads(Image.open(io.BytesIO(png)).text.get(SMILES_KEY, "[]"))
+    except (OSError, ValueError, AttributeError):
+        return []
+    return [s for s in smiles if isinstance(s, str)] if isinstance(smiles, list) else []
 
 
 def structure_grid(title: str, compounds: list[GridCompound], align_to: str | None = None, columns: int = 3,

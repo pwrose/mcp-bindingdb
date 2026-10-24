@@ -96,7 +96,10 @@ measured against.
 FIGURE_INSTRUCTIONS = """
 Figures: to show several compounds' structures together (e.g. in a grid, aligned on a shared substructure,
 with binding data), use draw_structure_grid rather than drawing them yourself; its figures appear in the
-chat and in transcripts (create_transcript), which cannot include pages you build yourself.
+chat and in transcripts (create_transcript), which cannot include pages you build yourself. The figure
+already shows the structures and binding values: refer to it in your answer instead of repeating them
+(no table of the same compounds' SMILES or of the values the bars show; a table only for data the figure
+lacks).
 """
 
 
@@ -597,20 +600,21 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
         return {"calls": mcp.tool_log.listing(),
                 "figures": [{"id": f.id, "timestamp": f.timestamp, "title": f.title} for f in mcp.tool_log.figures]}
 
-    def figure_html(file: str) -> str | None:
-        """A figure's HTML by its file name: from the log, or else its PNG from the figures folder."""
+    def find_figure(file: str) -> transcript_html.Figure | None:
+        """A figure by its file name: from the log, or else its PNG from the figures folder."""
         figure = next((f for f in mcp.tool_log.figures if f.file == file), None)
         if figure is not None:
-            return figure.html
+            return transcript_html.Figure(figure.html, [c["smiles"] for c in figure.spec.get("compounds", [])])
         path = figures_dir / Path(file).name
         if path.suffix != ".png" or not path.is_file():
             return None
-        return (f'<p><img class="figure" alt="{html.escape(path.stem)}" '
-                f'src="data:image/png;base64,{base64.b64encode(path.read_bytes()).decode()}"></p>\n')
+        png = path.read_bytes()
+        return transcript_html.Figure(f'<p><img class="figure" alt="{html.escape(path.stem)}" src="data:image/png;'
+                                      f'base64,{base64.b64encode(png).decode()}"></p>\n', figures.png_smiles(png))
 
     def write_html(source: str) -> list[Any]:
         """Convert a Markdown transcript to HTML, write it to transcript_dir, and summarize the result."""
-        page, drawn, n_figures = transcript_html.markdown_to_html(source, figure_html)
+        page, drawn, n_figures = transcript_html.markdown_to_html(source, find_figure)
         mcp.last_html = page
         title = next((line[2:].strip() for line in source.splitlines() if line.startswith("# ")), "transcript")
         path = transcript_dir / f"{_slug(title)}-{datetime.now():%Y-%m-%d-%H%M%S}.html"
@@ -657,7 +661,11 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
             Use it whenever you show several compounds' structures together (e.g. "show them in a grid,
             aligned by the substructure"), instead of drawing them yourself. The image is shown in the chat,
             and transcripts include it: list its id in the `figures` of the exchange it belongs to. HTML
-            transcripts embed it; Markdown transcripts link to its PNG."""
+            transcripts embed it; Markdown transcripts link to its PNG.
+
+            The figure is the answer's display of these compounds: refer to it ("Figure 2") rather than
+            repeating it. Do not also give a table of the same compounds' SMILES or of the values the bars
+            show; add a table only for data the figure lacks (e.g. other targets or measurement types)."""
             if align_to and depict.parse(align_to) is None:
                 raise ToolError(f"align_to {align_to!r} is not valid SMILES or SMARTS")
             block, png, lay = figures.structure_grid(title, compounds, align_to, columns, description, notes)
@@ -684,7 +692,9 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
             text = [f"Figure {figure_id}: '{title}', {transcript.plural(len(compounds), 'compound')}, {alignment}.",
                     *([f"Not drawn (SMILES not understood): {', '.join(bad)}."] if bad else []),
                     saved,
-                    f"Transcripts include it under the exchange whose `figures` lists {figure_id}."]
+                    f"Transcripts include it under the exchange whose `figures` lists {figure_id}.",
+                    "The user sees this image: in your answer, refer to it instead of repeating its structures "
+                    "or values in tables."]
             return [ImageContent(type="image", data=base64.b64encode(png).decode(), mimeType="image/png"),
                     TextContent(type="text", text="\n".join(text))]
 

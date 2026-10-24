@@ -320,6 +320,30 @@ async def test_structure_grid_figure_in_transcripts(tmp_path):
     assert html_page.count('<article class="sg-card">') == 3 and "Clozapine &lt;b&gt;" in html_page
 
 
+async def test_figure_compounds_not_drawn_again_in_tables(tmp_path):
+    srv = build_server(Database(DB_PATH), transcript_dir=tmp_path)
+    compounds = [{"smiles": s, "title": t} for s, t in [(SORAFENIB, "a"), (BOSUTINIB, "b")]]
+    rewritten = "FC(F)(F)c1cc(NC(=O)Nc2ccc(Oc3ccnc(C(=O)NC)c3)cc2)ccc1Cl"  # sorafenib, other SMILES
+    same = f"| drug | SMILES |\n|---|---|\n| a | {rewritten} |\n| b | {BOSUTINIB} |"
+    more = f"| drug | SMILES |\n|---|---|\n| a | {SORAFENIB} |\n| c | {CLOZAPINE} |"
+    async with Client(srv) as client:
+        untyped = await client.call_tool("draw_structure_grid", {"title": "x", "compounds": [
+            {"smiles": SORAFENIB, "title": "a", "bars": [{"label": "RAF1", "value_nm": 6}]}]})
+        await client.call_tool("draw_structure_grid", {"title": "Grid", "compounds": compounds})
+        exchanges = [{"prompt": "1", "answer": f"See Figure 1.\n\n{same}\n\n{more}", "figures": [1]},
+                     {"prompt": "2", "answer": same}]
+        await client.call_tool("create_transcript", {"model": "m", "format": "html", "exchanges": exchanges})
+        markdown = (await client.call_tool("create_transcript", {"model": "m", "title": "Saved",
+                                                                 "exchanges": exchanges})).content[0].text
+    async with Client(build_server(Database(DB_PATH), transcript_dir=tmp_path)) as client:  # a later process
+        await client.call_tool("transcript_to_html", {"markdown": markdown})
+    assert untyped.is_error and "type" in untyped.content[0].text
+    pages = [p.read_text() for p in sorted(tmp_path.glob("*.html"))]  # the figure from the log, then its PNG
+    # Exchange 1: the first table is all in its figure, the second is not; exchange 2 has no figure.
+    assert len(pages) == 2 and all(p.count('<img class="structure"') == 4 for p in pages)
+    assert all(p.count("<th>structure</th>") == 2 for p in pages)
+
+
 async def test_html_table_structures_share_a_frame(tmp_path):
     srv = build_server(Database(DB_PATH), transcript_dir=tmp_path)
     answer = f"| drug | SMILES |\n|---|---|\n| a | {SORAFENIB} |\n| b | {BOSUTINIB} |\n| c | {CLOZAPINE} |"

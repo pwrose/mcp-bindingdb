@@ -94,7 +94,8 @@ call, so a user can simply ask for an HTML transcript. `transcript_to_html` does
 for a Markdown transcript that already exists: by default the one the last `create_transcript` call
 returned, or Markdown passed as `markdown` (e.g. a transcript the user edited).
 Figures are embedded, and every table with a column whose header contains "SMILES", in the answers as well
-as in the tool calls, gets a structure column before it. The molecules of a column are aligned on their
+as in the tool calls, gets a structure column before it, unless a figure under the same answer already
+draws all of its molecules. The molecules of a column are aligned on their
 largest common substructure (when it has at least 6 atoms), which is highlighted, and drawn in one frame,
 so the core sits in the same place in every row and all are at the same scale. RDKit draws the structures
 on the server as SVG images embedded in
@@ -107,15 +108,16 @@ the database (`--transcript-dir` changes this), and returns the path plus a link
 ## draw_structure_grid
 
 Draws compounds side by side, like a figure in a paper: each with a name, subtitle, structure, caption and
-bars for its binding to its main targets (log scale, coloured by Ki, Kd, IC50 or EC50, lighter for thin
-evidence). The structures are aligned on `align_to` (SMILES or SMARTS; its first atom is drawn on the left)
+bars for its binding to its main targets (log scale, coloured by Ki, Kd, IC50 or EC50, which each bar must
+give, lighter for thin evidence). The structures are aligned on `align_to` (SMILES or SMARTS; its first atom is drawn on the left)
 or else on their largest common substructure, which is highlighted, and drawn in one shared frame, so the
 core sits on the same pixels in every column. Layouts use RDKit's CoordGen, which places the rest of each
 molecule around the fixed core with few clashes.
 
 The tool returns the figure as a PNG, which shows in the chat, and logs it with an id. The PNG is saved in
 `transcripts/figures/`; HTML transcripts embed an HTML version of the figure. It needs RDKit (the
-`substructure` extra, which brings Pillow for the PNG); without it the tool is not offered.
+`substructure` extra, which brings Pillow for the PNG); without it the tool is not offered. The tool tells
+the model to refer to the figure in its answer rather than repeat its structures and values as tables.
 
 ## Data notes
 
