@@ -21,7 +21,7 @@ from pydantic import BaseModel, Field
 
 from . import depict, figures, names, substructure, transcript, transcript_html
 from .db import Database, QueryError, find_database
-from .structure_editor import create_editor_extension
+from .structure_editor import FIGURE_META, EditorSearches, add_editor_results_tool, create_editor_extension
 
 AffinityType = Literal["Ki", "Kd", "IC50", "EC50", "kon", "koff"]
 NameSource = Literal["bindingdb", "opsin", "pubchem"]
@@ -36,9 +36,11 @@ Workflow: resolve names to ids first (search_compounds / search_targets), then u
 find_ligands_for_target, find_targets_for_compound, get_compound, get_target, get_activity.
 chemical_name_to_smiles turns any compound name (trade name, IUPAC name, CAS number) into a structure
 and the BindingDB compounds with that structure, also when the name is not a BindingDB synonym.
-Use open_structure_editor when the user wants to draw, edit, or review a structure interactively.
-The editor prepares a reviewed query; Run query asks the assistant to execute it with the tool and
-arguments it gives (exact_structure_search, substructure_search or similarity_search).
+Requests to draw, sketch or edit a structure, molecule or compound, or for a structure editor or sketcher
+("edit structure", "draw a molecule"), mean open_structure_editor: open it directly, with initial_query
+when they name a compound, rather than asking what kind of structure they mean.
+The user runs searches in the editor and sees the results there; you do not. When they ask about them,
+call get_editor_results with the editor_id open_structure_editor returned.
 Use run_sql for anything the curated tools do not cover; call describe_tables first.
 
 Data notes:
@@ -201,9 +203,12 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
     `network` lets chemical_name_to_smiles ask PubChem; HTML transcripts are written to `transcript_dir`
     (default: transcripts/ next to the database)."""
     info = db.build_info()
+    # Not logged here (BindingDBServer.call_tool) but where the assistant fetches it: get_editor_results.
+    editor_searches = EditorSearches(lambda tool, arguments: MCPServer.call_tool(mcp, tool, arguments),
+                                     db.path.parent / "editor-searches")
     mcp = BindingDBServer(
         name="mcp-bindingdb",
-        extensions=[create_editor_extension(network=network)],
+        extensions=[create_editor_extension(network=network, searches=editor_searches)],
         title="BindingDB",
         version=VERSION,
         instructions=INSTRUCTIONS + (STRUCTURE_INSTRUCTIONS if index else "")
@@ -519,7 +524,7 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
 
     def _activity_query(where: str, params: list[Any], affinity_types: list[str] | None,
                         max_value_nm: float | None, best_per: str | None, limit: int,
-                        min_value_nm: float | None = None) -> dict[str, Any]:
+                        min_value_nm: float | None = None, with_smiles: bool = False) -> dict[str, Any]:
         pf, pparams = potency_filter(affinity_types, max_value_nm, min_value_nm)
         order = "(relation = '>'), p_affinity DESC NULLS LAST, value, ki_result_id"
         if best_per:
@@ -531,6 +536,8 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
                 ORDER BY {order}"""
         else:
             sql = f"SELECT {ACTIVITY_COLUMNS} FROM activity WHERE {where} AND {pf} ORDER BY {order}"
+        if with_smiles:  # structure searches: the compounds' structures, e.g. for draw_structure_grid
+            sql = f"SELECT q.*, c.smiles FROM ({sql}) q LEFT JOIN compound c USING (monomerid) ORDER BY {order}"
         return run(sql, [*params, *pparams], limit)
 
     @mcp.tool(annotations=READ_ONLY)
@@ -617,6 +624,7 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
         _add_structure_tools(mcp, db, index, run, _activity_query, potency_filter)
     if substructure.rdkit_available():
         _add_exact_search(mcp, db, run, _activity_query, "inchi_keys" in info)
+    add_editor_results_tool(mcp, editor_searches)
     _add_transcript_tools(mcp, info.get("release", "unknown"), transcript_dir or db.path.parent / "transcripts")
     return mcp
 
@@ -788,7 +796,7 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
                              mimeType="text/html", size=len(page.encode()))]
 
     if depict.available():
-        @mcp.tool(annotations=writes)
+        @mcp.tool(annotations=writes, meta=FIGURE_META)
         def draw_structure_grid(
             title: Annotated[str, Field(description="Figure heading")],
             compounds: Annotated[list[figures.GridCompound], Field(min_length=1, max_length=24,
@@ -801,7 +809,7 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
             description: Annotated[str, Field(description="A sentence or two under the heading")] = "",
             notes: Annotated[list[str] | None, Field(description="Short notes under the figure, e.g. "
                                                      "caveats about the data")] = None,
-        ) -> list[Any]:
+        ) -> CallToolResult:
             """Draw compounds side by side in a grid, aligned on a shared core that is highlighted, each with
             a name, subtitle, caption and bars for its binding to its main targets (log scale, coloured by
             Ki/Kd/IC50/EC50).
@@ -832,8 +840,21 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
                     FIGURE_ID_NOTE.format(id=figure.id),
                     "The user sees this image: in your answer, refer to it instead of repeating its structures "
                     "or values in tables."]
-            return [ImageContent(type="image", data=base64.b64encode(png).decode(), mimeType="image/png"),
-                    TextContent(type="text", text="\n".join(text))]
+            # The figure panel shows the saved file: hosts may strip the image from the result they give it.
+            saved_file = figure.file if (figures_dir / figure.file).is_file() else None
+            return CallToolResult(
+                content=[ImageContent(type="image", data=base64.b64encode(png).decode(), mimeType="image/png"),
+                         TextContent(type="text", text="\n".join(text))],
+                structured_content={"figure_id": figure.id, "figure_file": saved_file})
+
+        @mcp.tool(annotations=READ_ONLY, meta={"ui": {**FIGURE_META["ui"], "visibility": ["app"]}})
+        def figure_image(file: str) -> dict[str, Any]:
+            """For the figure panel: a saved figure's image, by the figure_file draw_structure_grid returned."""
+            path = figures_dir / file
+            if Path(file).name != file or path.suffix.lower() not in figures.IMAGE_TYPES or not path.is_file():
+                raise ToolError(f"No saved figure {file!r}")
+            return {"mime_type": figures.IMAGE_TYPES[path.suffix.lower()],
+                    "data": base64.b64encode(path.read_bytes()).decode()}
 
     @mcp.tool(annotations=replaces)
     def create_transcript(
@@ -1008,7 +1029,7 @@ def _add_exact_search(mcp: MCPServer, db: Database, run, activity_query, compute
         isotopes must match, and tautomers or protonation states count as different (similarity_search
         with threshold 1.0 ignores stereo and salts). Default: the matches with their measurement counts.
         With affinity filters: only matches with a measurement that passes them, each with its most potent
-        such measurement. Needs RDKit but not the structure-search index."""
+        such measurement and its SMILES. Needs RDKit but not the structure-search index."""
         _check_range(min_value_nm, max_value_nm)
         try:
             mol = substructure.parse_molecule(smiles)
@@ -1040,7 +1061,7 @@ def _add_exact_search(mcp: MCPServer, db: Database, run, activity_query, compute
             )
         elif ids:
             result = activity_query("monomerid IN (SELECT unnest(?))", [ids], affinity_types, max_value_nm,
-                                    "monomerid", limit, min_value_nm)
+                                    "monomerid", limit, min_value_nm, with_smiles=True)
         out = {"query": about, **result, "n_exact_matches": len(ids)}
         if not computed_keys:
             out["note"] = ("This database has BindingDB's own InChIKeys, which are missing or non-standard for "
@@ -1078,7 +1099,8 @@ def _add_structure_tools(mcp: MCPServer, db: Database, index: substructure.Subst
         where, params = "monomerid IN (SELECT unnest(?))", [monomerids]
         if id_col is not None:
             where, params = f"{id_col} = ? AND {where}", [target_id, monomerids]
-        return activity_query(where, params, affinity_types, max_value_nm, "monomerid", limit, min_value_nm)
+        return activity_query(where, params, affinity_types, max_value_nm, "monomerid", limit, min_value_nm,
+                              with_smiles=True)
 
     def summarize_targets(monomerids: list[int], affinity_types: list[str] | None, max_value_nm: float | None,
                           min_value_nm: float | None, limit: int) -> dict[str, Any]:
@@ -1144,9 +1166,9 @@ def _add_structure_tools(mcp: MCPServer, db: Database, index: substructure.Subst
         Default: matching compounds with their measurement counts. If more match than `limit`, the result
         is truncated and favours the compounds with the most measurements; use count_only for the total.
         With affinity filters: only compounds with a measurement that passes them (filtered before
-        `limit`), each with its most potent such measurement, most potent first. With target_id: every
-        compound measured against that target is searched, and the matches are returned with their most
-        potent measurement against it, most potent first. With summarize_by_target: all matching
+        `limit`), each with its most potent such measurement and its SMILES, most potent first. With
+        target_id: every compound measured against that target is searched, and the matches are returned
+        with their most potent measurement against it, most potent first. With summarize_by_target: all matching
         compounds, grouped by target (compounds, measurements, best p_affinity), most compounds first; use
         max_value_nm (e.g. 10000) to count only compounds that bind."""
         _check_range(min_value_nm, max_value_nm)
@@ -1226,7 +1248,7 @@ def _add_structure_tools(mcp: MCPServer, db: Database, index: substructure.Subst
 
         Default: similar compounds with their similarity and measurement counts. With affinity filters:
         only compounds with a measurement that passes them (filtered before `limit`), each with its most
-        potent such measurement. With target_id: only compounds measured against that target, each with
+        potent such measurement and its SMILES. With target_id: only compounds measured against that target, each with
         its most potent measurement against it. With summarize_by_target: all compounds above the
         threshold, grouped by target (compounds, measurements, best p_affinity), most compounds first; use
         max_value_nm (e.g. 10000) to count only compounds that bind."""

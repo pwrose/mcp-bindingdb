@@ -15,6 +15,7 @@
 | `exact_structure_search` | BindingDB entries of the same molecule (all fragments, stereo, charges, isotopes), optionally only those with a measurement in an affinity range (needs RDKit, not the index) |
 | `substructure_search` | Compounds containing a SMILES/SMARTS fragment, optionally only those with a measurement in an affinity range or measured against a target; every target the matching compounds hit, with compounds per target; or a count of matches (needs the structure-search index) |
 | `similarity_search` | Compounds similar to a molecule (Tanimoto on Morgan fingerprints) above a threshold, with the same affinity and target filters and per-target summary (needs the structure-search index) |
+| `get_editor_results` | Results of the searches the user ran in the structure editor ([structure-editor.md](structure-editor.md)): the tool, its arguments and its result, by `editor_id` |
 | `create_transcript` | Markdown, HTML (with structure drawings) or JSON transcript of the session: prompts and answers, optionally followed by the logged tool calls with their results |
 | `draw_structure_grid` | Compounds side by side, aligned on a shared core that is highlighted, with binding bars per target; shown in the chat and included in transcripts (needs RDKit) |
 | `add_figure` | Adds an image made with other tools (e.g. a matplotlib plot) as a figure for transcripts |
@@ -57,7 +58,7 @@ matches 1.28M compounds) takes about 5 s.
 
 Affinity filters (`affinity_types`, `min_value_nm`, `max_value_nm`) keep only compounds with at least one
 measurement that passes them, before `limit` applies, and return each with its most potent such
-measurement. Types are not interconverted; the default types are Ki, Kd, IC50 and EC50. Values reported
+measurement and its SMILES. Types are not interconverted; the default types are Ki, Kd, IC50 and EC50. Values reported
 as `>` never pass `max_value_nm`, and values reported as `<` never pass a nonzero `min_value_nm`. Both
 structure tools take these filters.
 
@@ -146,7 +147,11 @@ or else on their largest common substructure, which is highlighted, and drawn in
 core sits on the same pixels in every column. Layouts use RDKit's CoordGen, which places the rest of each
 molecule around the fixed core with few clashes.
 
-The tool returns the figure as a PNG, which shows in the chat, and logs it with an id. The PNG is saved in
+The tool returns the figure as a PNG and logs it with an id. In MCP Apps clients such as Claude Desktop,
+which would show the PNG only as a small thumbnail, the figure appears in a panel in the chat
+(`ui://bindingdb/figure.html`, built from `web/structure-editor/ui/figure.*`); other clients show the PNG.
+Claude Desktop does not pass the image on to the panel, so the panel loads the saved PNG (`figure_file` in
+the result) with the panel-only tool `figure_image`. The PNG is saved in
 `transcripts/figures/`; HTML transcripts embed an HTML version of the figure. It needs RDKit (the
 `substructure` extra, which brings Pillow for the PNG); without it the tool is not offered. The tool tells
 the model to refer to the figure in its answer rather than repeat its structures and values as tables.

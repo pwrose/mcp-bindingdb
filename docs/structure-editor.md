@@ -6,6 +6,12 @@ bridge connects the widget to this server. The generated HTML is compressed into
 under `assets/structure-editor/` and assembled in memory by the server. These files are included in the Python wheel;
 Node.js and the private Sites workspace are not needed to run the server.
 
+The editor and the figure panel need a chat client that displays MCP Apps. Claude Desktop displays them in
+ordinary chats but not in chats with a folder attached (its "local agent mode"): there the tools run, but no
+panel appears. The server cannot tell the two apart, because Desktop connects to it the same way for both
+and advertises MCP Apps support in each, so use a chat without a folder for the editor. The assistant's
+reply on opening the editor says so, and offers to search from a compound name or SMILES instead.
+
 ## Add it to an existing installation
 
 1. Check out this change in a separate working copy or branch, then install dependencies:
@@ -54,18 +60,27 @@ Node.js and the private Sites workspace are not needed to run the server.
   that the generated SMILES follows the drawing and that editing the input invalidates stale output.
 - Paste `[NX3][CX3](=[OX1])` as SMARTS. Confirm that Substructure is selected and the original query is
   preserved; Exact and Similarity require a concrete molecule.
-- Select Similarity. Both the short slider and decimal field start at **0.85** and stay synchronized.
-- Affinity starts enabled with **0 ≤ Any ≤ 1000 nM**. Choose Ki and set 10–100 nM. Reversed, missing or
-  negative bounds block Run query. Unchecking Affinity removes the filter.
-- Choose **Run query**. The app adds the reviewed query to model context and sends a concise user
-  message asking the assistant to execute it. The assistant calls `exact_structure_search`,
-  `substructure_search` or `similarity_search`, with the affinity filters when Affinity is on, and
-  reports actual results in chat.
+- Select Similarity. Both the short slider and decimal field start at **0.70** and stay synchronized.
+- Affinity starts enabled with **0 ≤ Ki Kd IC50 EC50 ≤ 1000 nM**, all four types selected. Click IC50
+  and EC50 to leave them out (the search then sends `affinity_types: ["Ki", "Kd"]`) and set 10–100 nM.
+  Reversed, missing or negative bounds, or no type selected, block Run query. Unchecking Affinity
+  removes the filter.
+- Choose **Run query**. The app runs `exact_structure_search`, `substructure_search` or
+  `similarity_search` on the server through the app-only tool `editor_search`, with the affinity filters
+  when Affinity is on, and shows the results in a table under the search settings: each compound, its
+  similarity, and with Affinity on its most potent qualifying measurement and target.
+- Ask a follow-up in chat, e.g. "Which of these has the most potent Kd?". The assistant does not see
+  the editor, so it calls `get_editor_results` with the `editor_id` that `open_structure_editor`
+  returned. The server keeps each editor's last 10 searches, for the 20 most recently used editors, as
+  files in `data/editor-searches/`: Claude Desktop runs two server processes and sends the editor's calls
+  to one and the assistant's to the other. The tool log records `get_editor_results`, so transcripts show
+  the results the answer was based on.
   Opening the editor or changing controls alone does not execute a database search.
 
-The compact view was checked at 640×480, 480×520 and 360×520. Inspection is collapsed by default;
-expanding it can require additional height in small chat hosts. Client-specific rendering and message
-permissions still require a manual smoke test in your installed ChatGPT or Claude client.
+The layout keeps the controls to two compact bands around a fixed 320 px sketcher (JSME's menus need about
+300 px at full size); the panel grows to fit it rather than shrinking it to the frame. It was
+checked at 720 px and 380 px wide. Inspection is collapsed by default. Client-specific rendering and
+message permissions still require a manual smoke test in your installed ChatGPT or Claude client.
 
 ## Search semantics
 
@@ -76,8 +91,8 @@ remain distinct. It needs the standard InChIKeys computed when the database is b
 Similarity follows this repository's Morgan radius 2, 2048-bit Tanimoto on the
 largest fragment, without chirality; a score of 1 is not exact identity.
 
-Affinity requires at least one qualifying Ki, Kd, IC50 or EC50 measurement in the inclusive nM range.
-Any accepts any one of those types; it does not convert between types. Each hit carries its most
+Affinity requires at least one qualifying measurement of a selected type (Ki, Kd, IC50, EC50; all by
+default) in the inclusive nM range. It does not convert between types. Each hit carries its most
 potent qualifying measurement (id, type, relation, value, target). Missing and non-nM values are excluded.
 `>` bounds do not establish membership in a finite interval. `<` bounds qualify only when the minimum
 is zero and their reported upper bound is within the range. Filtering occurs before result limits,
@@ -95,7 +110,9 @@ npm test
 npm run build
 ```
 
-Commit the source changes and regenerated `src/mcp_bindingdb/assets/structure-editor/*.gz.part` together.
+The build also writes the figure panel that shows `draw_structure_grid`'s figures in the chat,
+`src/mcp_bindingdb/assets/figure-viewer.html.gz`. Commit the source changes and the regenerated
+`src/mcp_bindingdb/assets/structure-editor/*.gz.part` and `figure-viewer.html.gz` together.
 The bridge and RDKit versions are pinned by `package-lock.json`. JSME is vendored; its license and
 provenance are documented in [third-party notices](../web/structure-editor/THIRD_PARTY_NOTICES.md).
 The app loads no scripts from a CDN. Chemistry/name operations go through the MCP server; this PR

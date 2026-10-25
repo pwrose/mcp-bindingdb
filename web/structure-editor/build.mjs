@@ -33,7 +33,8 @@ const engine=`
  script(atob(files['jsme.nocache.js']));
  script(decode(await unzip('${gzip(fs.readFileSync(require.resolve('@rdkit/rdkit')))}')));
  const wasmBinary=await unzip('${gzip(fs.readFileSync(require.resolve('@rdkit/rdkit/RDKit_minimal.wasm')))}');
- const rdkit=await initRDKitModule({wasmBinary});
+ // This RDKit.js build ignores the wasmBinary option and would fetch RDKit_minimal.wasm, which the sandbox blocks.
+ const rdkit=await initRDKitModule({instantiateWasm:(imports,receive)=>{WebAssembly.instantiate(wasmBinary,imports).then(r=>receive(r.instance));return {};}});
  await jsmeReady;
  window.dispatchEvent(new CustomEvent('bindingdb-engines',{detail:{rdkit}}));
  }catch(e){document.getElementById('engineStatus').textContent='Chemistry engine failed';document.getElementById('notice').textContent='Could not initialize the chemistry engine: '+e.message;document.getElementById('notice').className='notice error';}
@@ -47,3 +48,9 @@ const bundle=gzipSync(Buffer.from(html),{level:9});
 const chunkSize=192*1024;
 for(let offset=0;offset<bundle.length;offset+=chunkSize){fs.writeFileSync(path.join(output,String(offset/chunkSize).padStart(3,'0')+'.gz.part'),bundle.subarray(offset,offset+chunkSize));}
 console.log('Built '+output+' ('+(Buffer.byteLength(html)/1024/1024).toFixed(2)+' MB)');
+
+// Figure panel: shows draw_structure_grid's image in the chat (src/mcp_bindingdb/structure_editor.py, FIGURE_URI).
+await build({configFile:false,build:{lib:{entry:path.resolve('ui/figure.js'),name:'BindingDBFigure',formats:['iife'],fileName:()=> 'figure.js'},outDir:'.bridge',emptyOutDir:false,minify:true}});
+const figure=fs.readFileSync('ui/figure.html','utf8').replace('/*FIGURE*/',()=>fs.readFileSync('.bridge/figure.js','utf8').replace(/<\/script/gi,'<\\/script'));
+fs.writeFileSync(path.resolve('../../src/mcp_bindingdb/assets/figure-viewer.html.gz'),gzipSync(Buffer.from(figure),{level:9}));
+console.log('Built figure panel ('+(Buffer.byteLength(figure)/1024).toFixed(0)+' KB)');

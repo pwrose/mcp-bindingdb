@@ -2,18 +2,21 @@
 'use strict';
 const $=id=>document.getElementById(id);
 const core=window.BindingDBCore;
-let fitQueued=false,lastEditorSize='',submitting=false;
+let fitQueued=false,lastEditorSize='',submitting=false,lastRun=null,editorId=null;
 let rdkit=null,editor=null,current=null,mode='exact',inputType='smiles',suppress=false,ready=false,requestSerial=0,currentPlan=null,provenance='Pasted SMILES',pendingInitial=null,lastEditorSmiles='';
 const empty='<div class="empty-depiction">⌬<span>Your rendered structure will appear here</span></div>';
 function queueFit(){if(fitQueued)return;fitQueued=true;requestAnimationFrame(()=>{fitQueued=false;fitEditor();});}
-function fitEditor(){const main=$('workbench'),area=$('editorArea'),container=$('jsme_container');if(!main||!area)return;const fixed=main.getBoundingClientRect().height-area.getBoundingClientRect().height;const budget=Math.min(window.innerHeight||540,540);const minimum=$('inspectDetails').open?100:145;const height=Math.max(minimum,Math.min(270,Math.floor(budget-fixed-2)));if(Math.abs(area.clientHeight-height)>1)area.style.height=height+'px';const width=Math.floor(area.clientWidth);const scale=Math.min(1,height/300);container.style.width=width+'px';container.style.height=height+'px';container.style.transform='none';const size=width+'x'+height;if(editor&&width>0&&size!==lastEditorSize){lastEditorSize=size;editor.setMenuScale(scale);editor.setMolecularAreaScale(scale);editor.setSize(width,height);}}
+// A fixed height: fitting the sketcher to the frame shrinks it in hosts whose frame starts small, and JSME
+// scales its menus down below 300 px.
+const EDITOR_HEIGHT=320;
+function fitEditor(){const area=$('editorArea'),container=$('jsme_container');if(!area)return;const width=Math.floor(area.clientWidth);container.style.width=width+'px';container.style.height=EDITOR_HEIGHT+'px';container.style.transform='none';const size=width+'x'+EDITOR_HEIGHT;if(editor&&width>0&&size!==lastEditorSize){lastEditorSize=size;editor.setMenuScale(1);editor.setMolecularAreaScale(1);editor.setSize(width,EDITOR_HEIGHT);}}
 
 function notice(message,kind=''){ $('notice').textContent=message;$('notice').className='notice '+kind; }
 function release(){if(current?.mol)current.mol.delete();current=null;}
 function invalidate(message){$('queryOverlay').hidden=true;$('provenance').textContent='Input → validation → canonical representation';$('editorState').textContent='JSME molecular sketcher';release();currentPlan=null;$('depiction').innerHTML=empty;$('smilesOutput').value='';$('inchiKey').textContent='—';['atomCount','molWeight','fragments'].forEach(id=>$(id).textContent='—');$('validBadge').textContent='Awaiting validation';$('validBadge').className='badge';$('copySmiles').disabled=true;updatePlan();if(message)notice(message);}
-function setType(type){inputType=type;document.querySelectorAll('[data-type]').forEach(b=>{const yes=b.dataset.type===type;b.classList.toggle('active',yes);b.setAttribute('aria-selected',String(yes));});$('sourceWrap').hidden=type!=='name';$('privacyNote').hidden=type!=='name';$('inputHint').textContent=type==='smarts'?'SMARTS stays a query; it is never turned into molecular SMILES.':'Or draw directly in the editor below.';$('loadBtn').textContent=type==='name'?'Resolve':'Load';$('loadBtn').setAttribute('aria-label',type==='name'?'Resolve chemical name':'Load structure');$('structureInput').placeholder=type==='name'?'Enter a chemical name, e.g. aspirin or 5-ethyl-3,5-dimethyloctanal':type==='smarts'?'Paste a SMARTS query, e.g. [NX3][CX3](=[OX1])':'Paste a SMILES string, e.g. CC(=O)Oc1ccccc1C(=O)O';}
+function setType(type){inputType=type;renderExamples();document.querySelectorAll('[data-type]').forEach(b=>{const yes=b.dataset.type===type;b.classList.toggle('active',yes);b.setAttribute('aria-selected',String(yes));});$('sourceWrap').hidden=type!=='name';$('privacyNote').hidden=type!=='name';$('inputHint').textContent=type==='smarts'?'SMARTS stays a query; it is never turned into molecular SMILES.':'Or draw directly in the editor below.';$('loadBtn').textContent=type==='name'?'Resolve':'Load';$('loadBtn').setAttribute('aria-label',type==='name'?'Resolve chemical name':'Load structure');$('structureInput').placeholder=type==='name'?'Enter a chemical name, e.g. imatinib or 1-amino-4-chlorobenzene':type==='smarts'?'Paste a SMARTS query, e.g. [NX3;H2]c1ccc([F,Cl,Br,I])cc1':'Paste a SMILES string, e.g. Nc1ccc(Cl)cc1';}
 function setMode(value){mode=value;document.querySelectorAll('[data-mode]').forEach(b=>{const yes=b.dataset.mode===mode;b.classList.toggle('active',yes);b.setAttribute('aria-checked',String(yes));});$('similarityOptions').hidden=mode!=='similarity';$('similarityCard').classList.toggle('active',mode==='similarity');$('chiralityWrap').hidden=mode!=='substructure';$('searchNote').textContent=mode==='exact'?'Includes stereo and salts; keeps tautomers distinct.':mode==='substructure'?'Matches compounds containing this fragment.':'Compares the largest fragment; ignores stereo.';updatePlan();}
-function affinityFilter(){if(!$('affinityEnabled').checked)return null;return {type:$('affinityType').value,min:$('affinityMin').valueAsNumber,max:$('affinityMax').valueAsNumber};}
+function affinityFilter(){if(!$('affinityEnabled').checked)return null;return {types:[...document.querySelectorAll('#affinityTypes [aria-pressed="true"]')].map(b=>b.dataset.affinity),min:$('affinityMin').valueAsNumber,max:$('affinityMax').valueAsNumber};}
 function updatePlan(){currentPlan=null;try{if(mode==='similarity'&&(!$('thresholdNumber').validity.valid||!Number.isFinite($('thresholdNumber').valueAsNumber)))throw new Error('Enter 0–1 in steps of 0.01.');currentPlan=core.plan(current,mode,$('thresholdNumber').valueAsNumber,$('chirality').checked,affinityFilter());const label={exact:'exact structure',substructure:'substructure',similarity:'similarity'}[mode];$('queryStatus').textContent=label.charAt(0).toUpperCase()+label.slice(1)+' search ready.';}catch(e){$('queryStatus').textContent=current?e.message:'Draw or load a structure.';}$('queryStatus').hidden=!!currentPlan;$('runBtn').disabled=!currentPlan||submitting;}
 function draw(s){return s.mol.get_svg_with_highlights(JSON.stringify({width:440,height:190,bondLineWidth:1.7,addStereoAnnotation:true,backgroundColour:[1,1,1,1]}));}
 function accept(text,type,source,loadEditor=true){
@@ -31,7 +34,7 @@ function accept(text,type,source,loadEditor=true){
  return true;
 }
 function editChanged(){if(suppress||!ready)return;const drawn=editor.smiles();if(drawn===lastEditorSmiles)return;lastEditorSmiles=drawn;requestSerial++;$('candidates').hidden=true;setType('smiles');$('queryOverlay').hidden=true;let molfile;try{molfile=editor.molFile();}catch{invalidate('Could not read the drawing.');return;}if(!editor.smiles()){invalidate('The drawing is empty. Add an atom, bond, or ring to begin.');$('structureInput').value='';return;}if(accept(molfile,'smiles','Edited in sketcher',false))$('structureInput').value=current.smiles;}
-function dataFromResult(result){if(result.isError)throw new Error(result.content?.[0]?.text||'Tool failed');if(result.structuredContent)return result.structuredContent;const text=result.content?.find(c=>c.type==='text')?.text;try{return JSON.parse(text||'{}');}catch{throw new Error('The name resolver returned an unexpected response.');}}
+function dataFromResult(result){if(result.isError)throw new Error(result.content?.[0]?.text||'Tool failed');if(result.structuredContent)return result.structuredContent;const text=result.content?.find(c=>c.type==='text')?.text;try{return JSON.parse(text||'{}');}catch{throw new Error('The server returned an unexpected response.');}}
 async function resolve(name,source){
  if(window.BindingDBHost){
   const sources=source==='auto'?['bindingdb','pubchem','opsin']:[source];
@@ -53,7 +56,7 @@ async function load(){if(!ready)return;const input=$('structureInput').value.tri
  $('loadBtn').disabled=true;notice('Resolving name…');try{const data=await resolve(input,$('source').value);if(serial!==requestSerial)return;if(!data.candidates?.length){notice('No structure resolved. Try a more specific name or paste a verified SMILES. '+(data.tried||[]).map(t=>t.source+': '+t.status).join('; '),'error');return;}renderCandidates(data,input);notice('Review the candidate structures below and select one.');}catch(e){if(serial===requestSerial)notice('Name resolution failed: '+e.message,'error');}finally{$('loadBtn').disabled=!ready;}}
 async function copy(value,label){try{await navigator.clipboard.writeText(value);notice(label+' copied.','success');}catch{notice('Clipboard is unavailable here. Select and copy the text directly.');}}
 function startNew(){requestSerial++;$('structureInput').value='';$('candidates').hidden=true;setType('smiles');$('queryOverlay').hidden=true;lastEditorSmiles='';suppress=true;editor?.reset();suppress=false;invalidate('Start a new drawing, or paste a molecular SMILES.');}
-function applyInitial(data){if(!ready){pendingInitial=data;return;}setType(data.input_type||'smiles');$('structureInput').value=data.initial_query;if(data.mode)setMode(data.mode);if(!data.initial_query)return;if(inputType!=='name')load();else notice('Name supplied by chat. Resolve it and review the candidates.');}
+function applyInitial(data){editorId=data.editor_id||editorId;if(!ready){pendingInitial=data;return;}setType(data.input_type||'smiles');$('structureInput').value=data.initial_query;if(data.mode)setMode(data.mode);if(!data.initial_query)return;if(inputType!=='name')load();else notice('Name supplied by chat. Resolve it and review the candidates.');}
 window.addEventListener('bindingdb-initial',event=>applyInitial(event.detail));
 function hostConnected(){$('hostStatus').textContent='MCP App · connected to chat';$('runBtn').hidden=false;document.querySelector('.draft-label').hidden=true;}
 window.addEventListener('bindingdb-connected',hostConnected);
@@ -65,38 +68,47 @@ document.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>setMode(b.data
 $('structureInput').oninput=()=>{requestSerial++;$('candidates').hidden=true;invalidate('Input changed. Load it to update the structure and query.');};$('structureInput').onkeydown=e=>{if((e.ctrlKey||e.metaKey)&&e.key==='Enter')load();};
 $('source').onchange=()=>{requestSerial++;$('candidates').hidden=true;invalidate('Resolution source changed. Resolve the name again.');};
 $('loadBtn').onclick=load;
-function example(type,value){$('exampleMenu').open=false;setType(type);$('structureInput').value=value;load();}
-$('aspirinBtn').onclick=()=>example('smiles','CC(=O)Oc1ccccc1C(=O)O');$('amideBtn').onclick=()=>example('smarts','[NX3][CX3](=[OX1])');$('iupacBtn').onclick=()=>example('name','5-ethyl-3,5-dimethyloctanal');
+// Examples for the selected input format, each with the search it suits (SMARTS are always Substructure).
+const EXAMPLES={
+ smiles:[['4-Chloroaniline','Nc1ccc(Cl)cc1','substructure'],['Imatinib','Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cccnc2)n1']],
+ name:[['1-Amino-4-chlorobenzene','1-amino-4-chlorobenzene','substructure'],['Imatinib','imatinib']],
+ smarts:[['4-Haloaniline pattern','[NX3;H2]c1ccc([F,Cl,Br,I])cc1'],['Boronic acid','[#6]B([OX2H1])[OX2H1]']]};
+function renderExamples(){$('exampleList').replaceChildren(...EXAMPLES[inputType].map(([label,value,searchMode])=>{const b=document.createElement('button');b.textContent=label;b.title=value;b.onclick=()=>{$('exampleMenu').open=false;$('structureInput').value=value;load();setMode(searchMode||(inputType==='smarts'?'substructure':'exact'));};return b;}));}
+renderExamples();
 $('clearBtn').onclick=startNew;$('newMoleculeBtn').onclick=startNew;
 $('cleanBtn').onclick=()=>{if(!current||current.type==='smarts')return;current.mol.set_new_coords();suppress=true;try{editor.readMolFile(current.mol.get_molblock());lastEditorSmiles=editor.smiles();}finally{suppress=false;}};
 $('threshold').oninput=()=>{$('thresholdNumber').value=$('threshold').value;$('thresholdNumber').setAttribute('aria-invalid','false');updatePlan();};
 $('thresholdNumber').oninput=()=>{const field=$('thresholdNumber');const valid=field.validity.valid&&Number.isFinite(field.valueAsNumber);field.setAttribute('aria-invalid',String(!valid));if(valid)$('threshold').value=field.value;updatePlan();};$('chirality').onchange=updatePlan;
 function affinityChanged(){
  const enabled=$('affinityEnabled').checked,min=$('affinityMin'),max=$('affinityMax');
- for(const field of [min,max,$('affinityType')])field.disabled=!enabled;
+ for(const field of [min,max,...document.querySelectorAll('#affinityTypes button')])field.disabled=!enabled;
  const ordered=Number.isFinite(min.valueAsNumber)&&Number.isFinite(max.valueAsNumber)&&min.valueAsNumber<=max.valueAsNumber;
  for(const field of [min,max])field.setAttribute('aria-invalid',String(enabled&&(!field.validity.valid||!Number.isFinite(field.valueAsNumber)||!ordered)));
  updatePlan();
 }
-$('affinityEnabled').onchange=affinityChanged;$('affinityType').onchange=affinityChanged;
+$('affinityEnabled').onchange=affinityChanged;
+document.querySelectorAll('#affinityTypes button').forEach(b=>b.onclick=()=>{b.setAttribute('aria-pressed',String(b.getAttribute('aria-pressed')!=='true'));affinityChanged();});
 $('affinityMin').oninput=$('affinityMax').oninput=affinityChanged;
 $('copySmiles').onclick=()=>current?.smiles&&copy(current.smiles,'SMILES');
+function renderHits(run){
+ const h=core.hits(run.plan,run.data),table=$('hitsTable'),numeric=new Set(['Similarity','MW','Measurements','Targets']);
+ $('hitsSummary').textContent=core.describe(run.plan).replace(/^./,c=>c.toUpperCase())+': '+h.summary;
+ const head=document.createElement('tr');for(const c of h.columns){const th=document.createElement('th');th.textContent=c;if(numeric.has(c))th.className='num';head.append(th);}
+ const rows=h.rows.map(cells=>{const tr=document.createElement('tr');cells.forEach((v,k)=>{const td=document.createElement('td');td.textContent=v;if(numeric.has(h.columns[k]))td.className='num';tr.append(td);});return tr;});
+ table.replaceChildren(...(rows.length?[head,...rows]:[]));$('hitsCard').hidden=false;queueFit();
+}
 $('runBtn').onclick=async()=>{
  if(!currentPlan||!window.BindingDBHost||submitting)return;
- const plan=structuredClone(currentPlan),selectedMode=mode;
- const label={exact:'exact structure',substructure:'substructure',similarity:'similarity'}[selectedMode];
- const threshold=selectedMode==='similarity'?' with a minimum Tanimoto similarity of '+plan.arguments.threshold.toFixed(2):'';
- const args=plan.arguments,affinity=args.max_value_nm===undefined?'':', requiring at least one '+(args.affinity_types?args.affinity_types[0]:'Ki, Kd, IC50, or EC50')+' measurement from '+args.min_value_nm+' to '+args.max_value_nm+' nM';
- submitting=true;$('runBtn').disabled=true;notice('Submitting query to chat…');
+ const plan=structuredClone(currentPlan);
+ submitting=true;$('runBtn').disabled=true;notice('Searching BindingDB…');
  try{
-  await window.BindingDBHost.updateModelContext({content:[{type:'text',text:'User-reviewed BindingDB query (not yet executed):\n'+JSON.stringify(plan)+'\nUse the connected BindingDB search tool with these arguments. If a compatible search tool is unavailable, explain that the BindingDB search service needs to be connected. Do not claim that a search ran without a tool result. Pass the affinity filters (affinity_types, min_value_nm, max_value_nm) unchanged; never silently run an unfiltered query or filter a truncated list of hits.'}]});
-  const result=await window.BindingDBHost.sendMessage({role:'user',content:[{type:'text',text:'Run the reviewed BindingDB '+label+' search'+threshold+affinity+' and show the results.'}]});
-  if(result?.isError)throw new Error('The chat host did not accept the query request.');
-  notice('Query submitted. Results will appear in chat.','success');
- }catch(e){notice('Could not submit query: '+e.message,'error');}
+  // Through editor_search, which keeps the result for get_editor_results: the assistant does not see this panel.
+  const data=dataFromResult(await window.BindingDBHost.callServerTool({name:'editor_search',arguments:{editor_id:editorId||'unknown',tool:plan.name,arguments:plan.arguments}}));
+  lastRun={plan,data};renderHits(lastRun);notice('Search complete. Results are below; ask about them in the chat.','success');
+ }catch(e){notice('Search failed: '+e.message,'error');}
  finally{submitting=false;updatePlan();}
 };
 $('guideBtn').onclick=$('aboutBtn').onclick=()=>$('guide').showModal();$('closeGuide').onclick=()=>$('guide').close();$('guide').onclick=e=>{if(e.target===$('guide'))$('guide').close();};
 window.addEventListener('resize',queueFit);$('inspectDetails').addEventListener('toggle',queueFit);new ResizeObserver(queueFit).observe($('workbench'));queueFit();
-window.BindingDBEditor={getState:()=>({ready,inputType,mode,smiles:current?.smiles,plan:currentPlan}),load,accept,startNew};
+window.BindingDBEditor={getState:()=>({ready,inputType,mode,smiles:current?.smiles,plan:currentPlan,lastRun}),load,accept,startNew,renderHits};
 })();

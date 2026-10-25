@@ -1,3 +1,4 @@
+import base64
 import math
 import subprocess
 import sys
@@ -122,6 +123,7 @@ async def test_mcp_apps_discovery_resource_and_initial_input():
         assert resource.mime_type == APP_MIME_TYPE
         assert "BindingDB Structure Studio" in resource.text
         assert "DecompressionStream" in resource.text
+        assert "instantiateWasm" in resource.text  # RDKit.js ignores wasmBinary and would fetch the .wasm
 
 
 @pytest.mark.anyio
@@ -153,7 +155,7 @@ async def test_affinity_range_types_and_censored_measurements(server):
         return (await call(server, "exact_structure_search", smiles=smiles, **filters))["rows"]
 
     rows = await exact(SMILES[0], affinity_types=["Ki"], min_value_nm=5, max_value_nm=5)  # inclusive
-    assert [(r["monomerid"], r["value"]) for r in rows] == [(0, 5)]
+    assert [(r["monomerid"], r["value"], r["smiles"]) for r in rows] == [(0, 5, SMILES[0])]
     assert await exact(SMILES[0], min_value_nm=10, max_value_nm=1000) == []  # Ki 5 below, IC50 1500 above
     assert await exact(SMILES[0], affinity_types=["IC50"], max_value_nm=1000) == []
     assert (await exact(SMILES[1], max_value_nm=1000))[0]["value"] == 1000
@@ -173,12 +175,12 @@ async def test_affinity_filters_apply_before_the_result_limit(server):
     # Compound 0 is the first structural match but has no Kd; limiting first would lose compound 2.
     rows = (await call(server, "substructure_search", query="[NX3]", query_type="smarts",
                        affinity_types=["Kd"], limit=1))["rows"]
-    assert [(r["monomerid"], r["affinity_type"]) for r in rows] == [(2, "Kd")]
+    assert [(r["monomerid"], r["affinity_type"], r["smiles"]) for r in rows] == [(2, "Kd", SMILES[2])]
     assert (await call(server, "substructure_search", query="[NX3]", query_type="smarts", limit=1))["truncated"]
     # Compounds 0-2 share a fingerprint (chirality is ignored); only 0 has a Ki <= 10 nM.
     rows = (await call(server, "similarity_search", smiles=SMILES[0], threshold=1, affinity_types=["Ki"],
                        max_value_nm=10))["rows"]
-    assert [(r["monomerid"], r["similarity"]) for r in rows] == [(0, 1)]
+    assert [(r["monomerid"], r["similarity"], r["smiles"]) for r in rows] == [(0, 1, SMILES[0])]
 
 
 @pytest.mark.anyio
@@ -198,3 +200,77 @@ async def test_editor_is_registered_in_real_server_and_uses_tool_log(server):
         assert any(c["call"].startswith("exact_structure_search(") for c in log.structured_content["calls"])
         blocked = await client.call_tool("editor_pubchem_candidates", {"cids": [2244]})
         assert blocked.is_error and "disabled" in blocked.content[0].text.lower()
+
+
+@pytest.mark.anyio
+async def test_editor_searches_are_kept_for_the_assistant(server):
+    async with Client(server, extensions=[advertise(EXTENSION_ID, {"mimeTypes": [APP_MIME_TYPE]})]) as client:
+        async def call(name, **args):
+            result = await client.call_tool(name, args)
+            assert not result.is_error, result.content
+            return result.structured_content
+
+        assert "get_editor_results" in {t.name for t in (await client.list_tools()).tools}
+        first, second = [(await call("open_structure_editor"))["editor_id"] for _ in range(2)]
+        assert first != second and "get_editor_results" in (await call("open_structure_editor"))["instructions"]
+        assert (await call("get_editor_results", editor_id=first))["searches"] == []
+        await call("reset_tool_log")
+        rows = (await call("editor_search", editor_id=first, tool="exact_structure_search",
+                           arguments={"smiles": "CCO", "max_value_nm": 1000}))["rows"]
+        assert [r["monomerid"] for r in rows] == [5]
+        await call("editor_search", editor_id=first, tool="similarity_search", arguments={"smiles": "CCO"})
+        await call("editor_search", editor_id=second, tool="substructure_search", arguments={"query": "CC"})
+        latest = await call("get_editor_results", editor_id=first)
+        assert latest["n_searches"] == 2 and [s["tool"] for s in latest["searches"]] == ["similarity_search"]
+        both = await call("get_editor_results", editor_id=first, all_searches=True)
+        assert both["searches"][0]["arguments"] == {"smiles": "CCO", "max_value_nm": 1000}
+        assert both["searches"][0]["result"]["rows"] == rows
+        assert (await call("get_editor_results"))["editor_id"] == second  # the most recently used editor
+        # Logged where the assistant fetches the results, not where the editor ran them.
+        calls = [c["call"].split("(")[0] for c in (await call("get_tool_log"))["calls"]]
+        assert calls == ["get_editor_results"] * 3
+        for tool, args in [("exact_structure_search", {"smiles": "C1CCC"}), ("run_sql", {"sql": "SELECT 1"})]:
+            failed = await client.call_tool("editor_search", {"editor_id": first, "tool": tool, "arguments": args})
+            assert failed.is_error
+        assert (await client.call_tool("get_editor_results", {"editor_id": "../x"})).is_error
+        assert (await call("get_editor_results", editor_id=first))["n_searches"] == 2
+
+
+@pytest.mark.anyio
+async def test_editor_results_reach_another_server_process(tmp_path):
+    # Claude Desktop sends the editor's calls and the assistant's to different server processes.
+    from mcp_bindingdb.server import build_server
+
+    db = fixture_database(tmp_path / "fixture.duckdb")
+    editor, assistant = (build_server(db, fixture_index(db, tmp_path / "fixture.sslib"), network=False)
+                         for _ in range(2))
+    async with Client(editor) as client:
+        ran = await client.call_tool("editor_search", {"editor_id": "abc123", "tool": "similarity_search",
+                                                       "arguments": {"smiles": "CCO"}})
+    rows = ran.structured_content["rows"]
+    result = await call(assistant, "get_editor_results", editor_id="abc123")
+    assert result["searches"][0]["result"]["rows"] == rows
+
+
+@pytest.mark.anyio
+async def test_structure_grids_are_shown_in_a_figure_panel(server):
+    if not any(t.name == "draw_structure_grid" for t in await server.list_tools()):
+        pytest.skip("draw_structure_grid needs RDKit drawing")
+    async with Client(server, extensions=[advertise(EXTENSION_ID, {"mimeTypes": [APP_MIME_TYPE]})]) as client:
+        tool = next(t for t in (await client.list_tools()).tools if t.name == "draw_structure_grid")
+        assert tool.meta["ui"]["resourceUri"] == module.FIGURE_URI
+        page = (await client.read_resource(module.FIGURE_URI)).contents[0]
+        assert page.mime_type == APP_MIME_TYPE and 'id="figure"' in page.text
+        result = await client.call_tool("draw_structure_grid", {"title": "Grid", "compounds": [
+            {"title": "ethanol", "smiles": "CCO"}, {"title": "propanol", "smiles": "CCCO"}]})
+        assert not result.is_error and result.content[0].type == "image"
+        # Hosts may strip the image from the result the panel gets; it then loads the saved file.
+        file = result.structured_content["figure_file"]
+        assert file.endswith(".png") and result.structured_content["figure_id"] >= 1
+        image = await client.call_tool("figure_image", {"file": file})
+        assert base64.b64decode(image.structured_content["data"]) == base64.b64decode(result.content[0].data)
+        assert image.structured_content["mime_type"] == "image/png"
+        for bad in ["../fixture.duckdb", "missing.png", "fixture.duckdb"]:
+            assert (await client.call_tool("figure_image", {"file": bad})).is_error
+        panel_only = next(t for t in (await client.list_tools()).tools if t.name == "figure_image")
+        assert panel_only.meta["ui"] == {"resourceUri": module.FIGURE_URI, "visibility": ["app"]}
