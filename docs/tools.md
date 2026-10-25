@@ -89,7 +89,7 @@ see: its exact model id, and each prompt with its full answer (`exchanges`). The
 counts) and the conversation as 👤 User / 🧠 Assistant blocks.
 
 The tool calls are left out by default. When the user asks for them, the model sets
-`include_tool_calls` (or passes `calls`), and a "BindingDB tool calls" section follows the conversation:
+`include_tool_calls`, and a "BindingDB tool calls" section follows the conversation:
 each call's arguments verbatim (SQL in a `sql` block for `run_sql`), then its result, with lists of rows
 as tables capped at `max_result_rows` (default 5; the true row count is kept). The header then also gives
 the active window from the first to the last call. `format="json"` returns the same fields unrendered,
@@ -97,8 +97,9 @@ with full results.
 
 The log lives in the server process and covers everything since the server started or since
 `reset_tool_log`. Claude Desktop runs one server process for all chats, so the log mixes chats; the
-server cannot tell them apart. The model therefore lists the log with `get_tool_log` and passes the
-indices of its own calls to `create_transcript` as `calls`.
+server cannot tell them apart. When including tool calls, the model therefore lists the log with
+`get_tool_log` and passes the indices of its own calls to `create_transcript` as `calls`; without
+`include_tool_calls`, `calls` is ignored, so a transcript never shows tool calls the user did not ask for.
 
 Figures made with `draw_structure_grid` or added with `add_figure` are placed under the answer whose
 `figures` lists their ids (or, if no answer lists any, in a Figures section), numbered 1, 2, … in the

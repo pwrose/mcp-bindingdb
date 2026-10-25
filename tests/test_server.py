@@ -244,13 +244,19 @@ async def test_transcript_of_selected_calls():
         await client.call_tool("search_compounds", {"query": "imatinib", "limit": 1})
         await client.call_tool("run_sql", {"sql": "SELECT 42 AS answer"})
         log = (await client.call_tool("get_tool_log", {})).structured_content["calls"]
-        result = await client.call_tool("create_transcript", {"model": "m", "calls": [3, 2]})
-        bad = await client.call_tool("create_transcript", {"model": "m", "calls": [4]})
+        result = await client.call_tool("create_transcript", {"model": "m", "include_tool_calls": True,
+                                                              "calls": [3, 2]})
+        # Selecting this chat's calls alone does not add them: tool calls are opt-in.
+        plain = await client.call_tool("create_transcript", {"model": "m", "calls": [3, 2]})
+        bad = await client.call_tool("create_transcript", {"model": "m", "include_tool_calls": True,
+                                                           "calls": [4]})
     assert [c["index"] for c in log] == [1, 2, 3]
     assert log[1]["call"] == "search_compounds(query='imatinib', limit=1)"
     md = result.content[0].text
     assert "1 exchange" not in md and "- **Contents:** 0 exchanges · 2 tool calls" in md
     assert "aspirin" not in md and md.index("imatinib") < md.index("SELECT 42")
+    plain_md = plain.content[0].text
+    assert "BindingDB tool calls" not in plain_md and "SELECT 42" not in plain_md and "tool call" not in plain_md
     assert bad.is_error and "not in the log" in bad.content[0].text
 
 

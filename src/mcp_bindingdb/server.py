@@ -869,9 +869,9 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
         include_tool_calls: Annotated[bool, Field(description="Add the BindingDB tool calls with their "
                                                   "results after the conversation. Only when the user asks "
                                                   "for them")] = False,
-        calls: Annotated[list[int] | None, Field(description="With the tool calls: only these, by the 1-based "
-                                                 "index get_tool_log shows, in log order (implies "
-                                                 "include_tool_calls). Default: every logged call")] = None,
+        calls: Annotated[list[int] | None, Field(description="With include_tool_calls: only these, by the "
+                                                 "1-based index get_tool_log shows, in log order. Ignored "
+                                                 "without include_tool_calls. Default: every logged call")] = None,
         max_result_rows: Annotated[int | None, Field(description="Rows shown per result table, and items per "
                                                      "list; the true counts are kept. null shows all")] = 5,
         skills: Annotated[list[str] | None, Field(description="Agent skills that shaped the analysis, as "
@@ -898,8 +898,9 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
         adds every BindingDB call that ran (arguments verbatim, SQL for run_sql) with its result. The
         server logs calls as they run (failed calls and describe_tables are not), so do not re-supply
         them. The log is shared by every chat this server process has served, so it can hold calls and
-        figures from other chats: unless reset_tool_log was called at the start of this analysis, call
-        get_tool_log first, pass the indices of this chat's calls as `calls`, and list your figures.
+        figures from other chats: list your figures' ids in `exchanges`, and when including tool calls,
+        unless reset_tool_log was called at the start of this analysis, call get_tool_log first and pass
+        the indices of this chat's calls as `calls`.
 
         Where the files go: whenever the user has named a folder for the results (or you are writing them
         to one), pass it as `output_dir`; the server writes the transcript there, with the figures a
@@ -919,13 +920,15 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
         when = date or _date.today().isoformat()
         turns = [e.model_dump() for e in exchanges or []]
         log = mcp.tool_log
-        if calls is not None:
-            if bad := [i for i in calls if not 1 <= i <= len(log.entries)]:
-                raise ToolError(f"calls {bad} are not in the log, which has {len(log.entries)} calls; "
-                                "see get_tool_log")
+        if calls is not None and (bad := [i for i in calls if not 1 <= i <= len(log.entries)]):
+            raise ToolError(f"calls {bad} are not in the log, which has {len(log.entries)} calls; "
+                            "see get_tool_log")
+        if not include_tool_calls:
+            selected = []
+        elif calls is not None:
             selected = [log.entries[i - 1] for i in sorted(set(calls))]
         else:
-            selected = list(log.entries) if include_tool_calls else []
+            selected = list(log.entries)
         listed = [i for t in turns for i in t["figures"]]
         if missing := sorted({i for i in listed if log.figure(i) is None}):
             raise ToolError(f"figures {missing} are not in the log; it has "
