@@ -198,6 +198,15 @@ def _wrap(draw: Any, text: str, font: Any, width: float) -> list[str]:
     return lines
 
 
+def _fit(draw: Any, text: str, font: Any, width: float) -> str:
+    """`text`, shortened with an ellipsis if it is wider than `width`."""
+    if width <= 0 or draw.textlength(text, font=font) <= width:
+        return text
+    while text and draw.textlength(text + "...", font=font) > width:
+        text = text[:-1]
+    return text + "..."
+
+
 def _png(title: str, description: str, compounds: list[GridCompound], lay: depict.Layout, columns: int,
          notes: list[str], s: int = 2) -> bytes:
     """The figure as a PNG at `s` times its CSS pixel size."""
@@ -237,20 +246,23 @@ def _png(title: str, description: str, compounds: list[GridCompound], lay: depic
                   + len(cap) * lh(f_text) + (6 * s if cap else 0) + bar_h + pad)
         cards.append((c, img, sub, cap, height))
     head = _wrap(measure, description, f_text, total_w - 2 * pad) if description else []
+    head_title = _wrap(measure, title, f_title, total_w - 2 * pad)
     legend = _legend(compounds, scale, any(lay.cores))
     note_lines = [ln for n in notes for ln in _wrap(measure, "• " + n, f_text, total_w - 2 * pad)]
     labels = [b.label for c in compounds for b in c.bars]
     label_w = min(max((measure.textlength(t, font=f_text) for t in labels), default=0) + 10 * s, plate_w * 0.4)
     rows = [cards[i:i + columns] for i in range(0, len(cards), columns)]
     row_h = [max(c[4] for c in row) for row in rows]
-    total_h = (pad + lh(f_title) + len(head) * lh(f_text) + 10 * s + sum(row_h) + gap * (len(rows) - 1)
+    total_h = (pad + len(head_title) * lh(f_title) + len(head) * lh(f_text) + 10 * s + sum(row_h)
+               + gap * (len(rows) - 1)
                + (10 * s + lh(f_text) if legend else 0) + len(note_lines) * lh(f_text) + pad)
 
     image = Image.new("RGB", (total_w, total_h), (255, 255, 255))
     d = ImageDraw.Draw(image)
     y = pad
-    d.text((pad, y), _plain(f_title, title), font=f_title, fill=ink)
-    y += lh(f_title)
+    for text in head_title:
+        d.text((pad, y), _plain(f_title, text), font=f_title, fill=ink)
+        y += lh(f_title)
     for text in head:
         d.text((pad, y), _plain(f_text, text), font=f_text, fill=muted)
         y += lh(f_text)
@@ -289,7 +301,8 @@ def _png(title: str, description: str, compounds: list[GridCompound], lay: depic
                 if b.faint:
                     rgb = tuple(round(v * 0.4 + 255 * 0.6) for v in rgb)
                 mid = cy + lh(f_text) // 2
-                d.text((x, cy), _plain(f_text, b.label), font=f_text, fill=ink)
+                d.text((x, cy), _fit(d, _plain(f_text, b.label), f_text, label_w - 8 * s),
+                       font=f_text, fill=ink)
                 d.rectangle((track_x0, mid - 4 * s, track_x1, mid + 4 * s), fill=(236, 238, 236))
                 if scale:
                     end = track_x0 + (track_x1 - track_x0) * _fraction(b.value_nm, scale)
