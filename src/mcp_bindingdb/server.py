@@ -20,6 +20,7 @@ from mcp.types import CallToolResult, ImageContent, ResourceLink, TextContent, T
 from pydantic import BaseModel, Field
 
 from . import depict, figures, names, substructure, transcript, transcript_html
+from . import properties as compound_properties
 from .db import Database, QueryError, find_database
 from .structure_editor import FIGURE_META, EditorSearches, add_editor_results_tool, create_editor_extension
 
@@ -65,6 +66,12 @@ TABLE_DOCS = {
     "p_affinity, and denormalized compound, target, assay and citation columns. Start here.",
     "compound": "Derived. One row per small molecule: preferred name, InChIKey, SMILES, formula, "
     "weight, activity/target counts.",
+    "compound_property": "Derived (RDKit, computed for the largest fragment). One row per compound "
+    "(join on monomerid): heavy_atoms, mw, clogp (Crippen), tpsa, hbd/hba (Lipinski NH+OH, N+O), "
+    "rotatable_bonds, rings, aromatic_rings, fsp3, qed, ro5_violations, Bemis-Murcko scaffold and "
+    "generic_scaffold (canonical SMILES; NULL without a ring), and the names of matching PAINS, Brenk and "
+    "NIH structural alerts (lists, empty if none). Ligand efficiency = 1.37 * p_affinity / heavy_atoms "
+    "(kcal/mol per heavy atom); LipE = p_affinity - clogp.",
     "compound_name": "Derived. Compound synonyms (names, CHEMBL ids, PubChem cid_N, patent labels).",
     "target": "Derived. One row per target (polymer or complex) with UniProt accession, organism, counts.",
     "target_name": "Derived. Target synonyms (display names, gene/short names, UniProt entry names).",
@@ -101,8 +108,9 @@ STRUCTURE_INSTRUCTIONS = """
 Structure search: substructure_search finds compounds containing a SMILES or SMARTS fragment;
 similarity_search finds compounds similar to a molecule (Tanimoto on Morgan fingerprints). Both can be
 restricted to compounds with a measurement in an affinity range (affinity_types, min_value_nm,
-max_value_nm; applied before the result limit) or measured against one target, or summarize the
-targets their hits were measured against.
+max_value_nm; applied before the result limit), to compounds whose properties pass a `properties`
+filter, or to compounds measured against one target, or summarize the targets their hits were measured
+against.
 """
 
 
@@ -111,6 +119,19 @@ Figures in transcripts: create_transcript includes only figures in its log. For 
 other tools (e.g. a matplotlib plot saved as PNG), call add_figure with its path and list the figure id
 it returns in the exchange; never add images to a transcript, or edit its files, yourself.
 """
+
+PROPERTY_INSTRUCTIONS = """
+Compound properties: compound_property holds RDKit properties of each compound's parent (largest
+fragment): heavy atoms, MW, cLogP, TPSA, HBD/HBA, QED, Ro5 violations, Bemis-Murcko scaffold, and PAINS,
+Brenk and NIH structural alerts. find_ligands_for_target and the structure searches take a `properties`
+filter (e.g. max_mw, max_ro5_violations, exclude_alerts, scaffold, min_ligand_efficiency) and give each
+measurement's ligand_efficiency (1.37 * p_affinity / heavy atoms, kcal/mol per heavy atom) and lipe
+(p_affinity - cLogP), from whichever affinity type the row has. find_ligands_for_target ranks by them
+(order_by) or groups a target's ligands by scaffold (group_by_scaffold). A PAINS match flags a potent hit as
+a possible assay artefact worth checking; Brenk alerts match about a third of all compounds and are no
+reason by themselves to doubt a measurement.
+"""
+
 
 FIGURE_INSTRUCTIONS = """
 Structure figures: to show several compounds' structures together (e.g. in a grid, aligned on a shared
@@ -130,6 +151,52 @@ MAX_VALUE_FIELD = Field(ge=0, description=AFFINITY_FILTER_DOC + "only measuremen
                         "(excludes '>' values)")
 MIN_VALUE_FIELD = Field(ge=0, description=AFFINITY_FILTER_DOC + "only measurements >= this many nM "
                         "(excludes '<' values)")
+
+# PropertyFilter field -> (SQL over activity joined with compound_property AS cp, comparison)
+PROPERTY_CONDITIONS = {
+    "max_mw": ("cp.mw", "<="), "min_heavy_atoms": ("cp.heavy_atoms", ">="), "max_heavy_atoms": ("cp.heavy_atoms", "<="),
+    "min_clogp": ("cp.clogp", ">="),
+    "max_clogp": ("cp.clogp", "<="), "max_tpsa": ("cp.tpsa", "<="), "max_hbd": ("cp.hbd", "<="),
+    "max_hba": ("cp.hba", "<="), "max_rotatable_bonds": ("cp.rotatable_bonds", "<="),
+    "max_ro5_violations": ("cp.ro5_violations", "<="), "min_qed": ("cp.qed", ">="),
+    "min_ligand_efficiency": (compound_properties.LIGAND_EFFICIENCY_SQL, ">="),
+    "min_lipe": (compound_properties.LIPE_SQL, ">="),
+}
+ACTIVITY_WITH_PROPERTIES = "activity LEFT JOIN compound_property cp USING (monomerid)"
+EFFICIENCY_COLUMNS = f""", round({compound_properties.LIGAND_EFFICIENCY_SQL}, 2) AS ligand_efficiency,
+       round({compound_properties.LIPE_SQL}, 2) AS lipe,
+       CASE WHEN len(cp.pains) > 0 THEN cp.pains END AS pains_alerts"""
+OrderBy = Literal["potency", "ligand_efficiency", "lipe"]
+
+
+class PropertyFilter(BaseModel):
+    """Conditions on the compound_property values of a compound's parent (largest fragment)."""
+    max_mw: float | None = Field(None, description="Molecular weight at most this (Da)")
+    min_heavy_atoms: int | None = Field(None, description="At least this many heavy atoms, e.g. to leave out "
+                                        "fragments when ranking by ligand efficiency")
+    max_heavy_atoms: int | None = Field(None, description="At most this many heavy atoms")
+    min_clogp: float | None = Field(None, description="Crippen cLogP at least this")
+    max_clogp: float | None = Field(None, description="Crippen cLogP at most this")
+    max_tpsa: float | None = Field(None, description="Topological polar surface area at most this (Å²)")
+    max_hbd: int | None = Field(None, description="At most this many H-bond donors (NH + OH)")
+    max_hba: int | None = Field(None, description="At most this many H-bond acceptors (N + O)")
+    max_rotatable_bonds: int | None = Field(None, description="At most this many rotatable bonds")
+    max_ro5_violations: int | None = Field(None, ge=0, le=4, description="At most this many Lipinski "
+                                           "rule-of-five violations; 0 = fully compliant")
+    min_qed: float | None = Field(None, ge=0, le=1, description="Drug-likeness (QED) at least this")
+    exclude_alerts: list[Literal["pains", "brenk", "nih"]] | None = Field(
+        None, description="Leave out compounds matching a structural alert of these catalogs")
+    scaffold: str | None = Field(None, description="SMILES of a molecule or scaffold: only compounds with the "
+                                 "same Bemis-Murcko scaffold (ring systems and linkers) as it")
+    min_ligand_efficiency: float | None = Field(None, description="Only measurements with ligand efficiency "
+                                                "at least this (kcal/mol per heavy atom; 0.3 is a common "
+                                                "bar for leads)")
+    min_lipe: float | None = Field(None, description="Only measurements with LipE (p_affinity - cLogP) at "
+                                   "least this (5 or more is often sought)")
+
+
+PROPERTIES_FIELD = Field(description="Only compounds whose properties pass these conditions (computed for "
+                         "the largest fragment); see PropertyFilter")
 
 VERSION = "0.1.0"
 LATEST_HTML_URI = "transcript://session/latest.html"
@@ -203,6 +270,7 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
     `network` lets chemical_name_to_smiles ask PubChem; HTML transcripts are written to `transcript_dir`
     (default: transcripts/ next to the database)."""
     info = db.build_info()
+    has_properties = "properties" in info  # compound_property (scripts/compute_properties.py)
     # Not logged here (BindingDBServer.call_tool) but where the assistant fetches it: get_editor_results.
     editor_searches = EditorSearches(lambda tool, arguments: MCPServer.call_tool(mcp, tool, arguments),
                                      db.path.parent / "editor-searches")
@@ -212,6 +280,7 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
         title="BindingDB",
         version=VERSION,
         instructions=INSTRUCTIONS + (STRUCTURE_INSTRUCTIONS if index else "")
+        + (PROPERTY_INSTRUCTIONS if has_properties else "")
         + IMAGE_INSTRUCTIONS + (FIGURE_INSTRUCTIONS if depict.available() else "")
         + f"\nLoaded release: {info.get('release', 'unknown')}.",
     )
@@ -234,6 +303,47 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
             clauses.append("unit = 'nM' AND relation <> '<' AND value >= ?")
             params.append(min_value_nm)
         return " AND ".join(clauses), params
+
+    def require_properties(what: str) -> None:
+        if not has_properties:
+            raise ToolError(f"{what} needs compound properties, which this database lacks; add them with "
+                            "scripts/compute_properties.py")
+
+    def property_filter(props: PropertyFilter | None) -> tuple[str, list[Any]]:
+        """SQL conditions for `props` on compound_property, joined as cp (ACTIVITY_WITH_PROPERTIES);
+        ('', []) when it sets none."""
+        conditions = props.model_dump(exclude_none=True) if props else {}
+        if not conditions:
+            return "", []
+        require_properties("The properties filter")
+        clauses, params = [], []
+        for name, value in conditions.items():
+            if name == "scaffold":
+                if compound_properties.Chem is None:
+                    raise ToolError("The scaffold filter needs RDKit, which is not installed on the server")
+                scaffold = compound_properties.murcko_scaffold(value)
+                if scaffold is None:
+                    raise ToolError(f"scaffold {value!r} is not SMILES of a molecule with a ring")
+                clauses.append("cp.scaffold = ?")
+                params.append(scaffold)
+            elif name == "exclude_alerts":
+                clauses += [f"len(cp.{catalog}) = 0" for catalog in dict.fromkeys(value)]
+            else:
+                expr, op = PROPERTY_CONDITIONS[name]
+                clauses.append(f"{expr} {op} ?")
+                params.append(value)
+        return " AND ".join(clauses), params
+
+    def measurement_filter(affinity_types: list[str] | None, max_value_nm: float | None,
+                           min_value_nm: float | None = None,
+                           props: PropertyFilter | None = None) -> tuple[str, list[Any], str]:
+        """potency_filter and property_filter combined, with the table they apply to: activity, or
+        ACTIVITY_WITH_PROPERTIES when there are property conditions."""
+        pf, params = potency_filter(affinity_types, max_value_nm, min_value_nm)
+        prf, prparams = property_filter(props)
+        if not prf:
+            return pf, params, "activity"
+        return f"{pf} AND {prf}", [*params, *prparams], ACTIVITY_WITH_PROPERTIES
 
     @mcp.tool(annotations=READ_ONLY)
     def search_compounds(
@@ -392,7 +502,9 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
         max_synonyms: Annotated[int, Field(description="Max synonyms to return (0-200)")] = 30,
     ) -> dict[str, Any]:
         """Compound details: structure identifiers, synonyms, PDB ligand ids, and a per-target summary
-        of its most potent measurements (top 25 targets by best p_affinity)."""
+        of its most potent measurements (top 25 targets by best p_affinity). With compound properties in
+        the database, also its properties (MW, cLogP, TPSA, QED, Ro5 violations, ...), Bemis-Murcko
+        scaffold, structural alerts (PAINS, Brenk, NIH) and its best ligand efficiency per target."""
         try:
             compound = db.one(
                 """SELECT c.*, m.inchi, m.pdb_ids_exact, m.pdb_ids_sub
@@ -417,9 +529,17 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
                 [monomerid],
                 limit=25,
             )
+            props = (db.one("SELECT * EXCLUDE (monomerid) FROM compound_property WHERE monomerid = ?", [monomerid])
+                     if has_properties else None)
         except QueryError as e:
             raise ToolError(str(e)) from None
-        return {"compound": compound, "synonyms": [s["name"] for s in synonyms], "top_targets": targets}
+        out = {"compound": compound, "synonyms": [s["name"] for s in synonyms], "top_targets": targets}
+        if props:
+            out["properties"] = props
+            for row in targets:  # as LIGAND_EFFICIENCY_SQL
+                if row["best_p_affinity"] is not None and props["heavy_atoms"]:
+                    row["best_ligand_efficiency"] = round(1.37 * row["best_p_affinity"] / props["heavy_atoms"], 2)
+        return out
 
     @mcp.tool(annotations=READ_ONLY)
     def get_target(
@@ -484,9 +604,21 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
                                                     "(excludes '>' values)")] = None,
         best_per_compound: Annotated[bool, Field(description="One row per compound (its most potent "
                                                  "measurement) instead of every measurement")] = True,
+        properties: Annotated[PropertyFilter | None, PROPERTIES_FIELD] = None,
+        order_by: Annotated[OrderBy, Field(description="Rank by potency (p_affinity), ligand_efficiency or "
+                                           "lipe")] = "potency",
+        group_by_scaffold: Annotated[bool, Field(description="Instead of compounds, one row per Bemis-Murcko "
+                                                 "scaffold of the ligands: compounds, best and median "
+                                                 "p_affinity, its most potent compound; most compounds "
+                                                 "first")] = False,
+        generic_scaffold: Annotated[bool, Field(description="With group_by_scaffold: group on generic "
+                                                "scaffolds (all atoms carbon, all bonds single), merging "
+                                                "scaffolds that differ only in heteroatoms or bond "
+                                                "orders")] = False,
         limit: Annotated[int, Field(description="Max rows (1-500)")] = 50,
     ) -> dict[str, Any]:
-        """Compounds measured against a target, most potent first."""
+        """Compounds measured against a target, most potent first. With compound properties in the
+        database, each row also gives ligand_efficiency, lipe and any PAINS alerts (pains_alerts)."""
         if (target_id is None) == (uniprot is None):
             raise ToolError("Give exactly one of target_id or uniprot")
         if target_id is not None:
@@ -495,8 +627,45 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
             where, params = "uniprot = ?", [uniprot.strip().upper()]
         else:
             where, params = "uniprot_raw = ?", [uniprot.strip().upper()]
+        limit = _clamp(limit, 1, 500)
+        if group_by_scaffold:
+            return _scaffold_groups(where, params, affinity_types, max_value_nm, properties, generic_scaffold,
+                                    limit)
+        if order_by != "potency":
+            require_properties(f"order_by={order_by!r}")
         return _activity_query(where, params, affinity_types, max_value_nm,
-                               "monomerid" if best_per_compound else None, _clamp(limit, 1, 500))
+                               "monomerid" if best_per_compound else None, limit, props=properties,
+                               efficiency=True, order_by=order_by)
+
+    def _scaffold_groups(where: str, params: list[Any], affinity_types: list[str] | None,
+                         max_value_nm: float | None, props: PropertyFilter | None, generic: bool,
+                         limit: int) -> dict[str, Any]:
+        """The scaffolds of the compounds measured where `where` holds, with their compounds' potency."""
+        require_properties("group_by_scaffold")
+        pf, pparams, _ = measurement_filter(affinity_types, max_value_nm, None, props)
+        column = "generic_scaffold" if generic else "scaffold"
+        result = run(
+            f"""WITH best AS (  -- each compound's most potent measurement
+                  SELECT monomerid, any_value(compound_name) AS compound_name, max(p_affinity) AS p_affinity,
+                         count(*) AS n_measurements, any_value(cp.{column}) AS scaffold
+                  FROM {ACTIVITY_WITH_PROPERTIES} WHERE {where} AND {pf} GROUP BY monomerid
+                )
+                SELECT scaffold AS scaffold_smiles, count(*) AS n_compounds, sum(n_measurements) AS n_measurements,
+                       max(p_affinity) AS best_p_affinity, round(median(p_affinity), 2) AS median_p_affinity,
+                       arg_max(monomerid, p_affinity) AS best_monomerid,
+                       arg_max(compound_name, p_affinity) AS best_compound_name,
+                       count(*) OVER () AS n_scaffolds, sum(count(*)) OVER () AS n_compounds_total
+                FROM best GROUP BY scaffold
+                ORDER BY n_compounds DESC, best_p_affinity DESC NULLS LAST, scaffold_smiles NULLS LAST""",
+            [*params, *pparams],
+            limit,
+        )
+        totals = {"n_scaffolds": 0, "n_compounds": 0}
+        for row in result["rows"]:
+            totals = {"n_scaffolds": row.pop("n_scaffolds"), "n_compounds": int(row.pop("n_compounds_total"))}
+        note = ("scaffold_smiles is null for compounds without a ring" if not generic else
+                "Generic scaffolds: all atoms carbon, all bonds single; null for compounds without a ring")
+        return {"grouped_by": column, **totals, **result, "note": note}
 
     @mcp.tool(annotations=READ_ONLY)
     def find_targets_for_compound(
@@ -524,20 +693,28 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
 
     def _activity_query(where: str, params: list[Any], affinity_types: list[str] | None,
                         max_value_nm: float | None, best_per: str | None, limit: int,
-                        min_value_nm: float | None = None, with_smiles: bool = False) -> dict[str, Any]:
-        pf, pparams = potency_filter(affinity_types, max_value_nm, min_value_nm)
+                        min_value_nm: float | None = None, with_smiles: bool = False,
+                        props: PropertyFilter | None = None, efficiency: bool = False,
+                        order_by: OrderBy = "potency") -> dict[str, Any]:
+        """Measurements matching `where` and the filters, most potent first (or by order_by); `efficiency`
+        adds ligand_efficiency, lipe and pains_alerts when the database has compound properties."""
+        pf, pparams, source = measurement_filter(affinity_types, max_value_nm, min_value_nm, props)
+        efficiency = efficiency and has_properties
+        cols = ACTIVITY_COLUMNS + (EFFICIENCY_COLUMNS if efficiency else "")
+        source = ACTIVITY_WITH_PROPERTIES if efficiency else source
         order = "(relation = '>'), p_affinity DESC NULLS LAST, value, ki_result_id"
+        ranked = order if order_by == "potency" else f"{order_by} DESC NULLS LAST, {order}"
         if best_per:
             sql = f"""
-                SELECT {ACTIVITY_COLUMNS}, count(*) OVER w AS n_measurements
-                FROM activity WHERE {where} AND {pf}
+                SELECT {cols}, count(*) OVER w AS n_measurements
+                FROM {source} WHERE {where} AND {pf}
                 WINDOW w AS (PARTITION BY {best_per})
                 QUALIFY row_number() OVER (PARTITION BY {best_per} ORDER BY {order}) = 1
-                ORDER BY {order}"""
+                ORDER BY {ranked}"""
         else:
-            sql = f"SELECT {ACTIVITY_COLUMNS} FROM activity WHERE {where} AND {pf} ORDER BY {order}"
+            sql = f"SELECT {cols} FROM {source} WHERE {where} AND {pf} ORDER BY {ranked}"
         if with_smiles:  # structure searches: the compounds' structures, e.g. for draw_structure_grid
-            sql = f"SELECT q.*, c.smiles FROM ({sql}) q LEFT JOIN compound c USING (monomerid) ORDER BY {order}"
+            sql = f"SELECT q.*, c.smiles FROM ({sql}) q LEFT JOIN compound c USING (monomerid) ORDER BY {ranked}"
         return run(sql, [*params, *pparams], limit)
 
     @mcp.tool(annotations=READ_ONLY)
@@ -621,7 +798,7 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
         return run(sql, None, _clamp(limit, 1, 1000))
 
     if index is not None:
-        _add_structure_tools(mcp, db, index, run, _activity_query, potency_filter)
+        _add_structure_tools(mcp, db, index, run, _activity_query, measurement_filter)
     if substructure.rdkit_available():
         _add_exact_search(mcp, db, run, _activity_query, "inchi_keys" in info)
     add_editor_results_tool(mcp, editor_searches)
@@ -1077,19 +1254,20 @@ def _add_exact_search(mcp: MCPServer, db: Database, run, activity_query, compute
 
 
 def _add_structure_tools(mcp: MCPServer, db: Database, index: substructure.SubstructureIndex,
-                         run, activity_query, potency_filter) -> None:
+                         run, activity_query, measurement_filter) -> None:
     time_limit_s = db.timeout_s * 0.8  # leave time for the SQL that follows the search
     empty: dict[str, Any] = {"row_count": 0, "truncated": False, "rows": []}
 
     def candidates_for(target_id: int | None, target_kind: str, affinity_types: list[str] | None,
-                       max_value_nm: float | None, min_value_nm: float | None) -> tuple[str | None, list[int]]:
-        """(id column, monomerids that pass the affinity filters), measured against the target if one is
-        given; the id column is None without a target."""
+                       max_value_nm: float | None, min_value_nm: float | None,
+                       props: PropertyFilter | None) -> tuple[str | None, list[int]]:
+        """(id column, monomerids that pass the affinity and property filters), measured against the
+        target if one is given; the id column is None without a target."""
         id_col = None if target_id is None else "polymerid" if target_kind == "polymer" else "complexid"
-        pf, pparams = potency_filter(affinity_types, max_value_nm, min_value_nm)
+        pf, pparams, source = measurement_filter(affinity_types, max_value_nm, min_value_nm, props)
         where, params = (pf, pparams) if id_col is None else (f"{id_col} = ? AND {pf}", [target_id, *pparams])
         try:
-            rows = db.rows(f"SELECT DISTINCT monomerid FROM activity WHERE {where}", params, limit=10_000_000)
+            rows = db.rows(f"SELECT DISTINCT monomerid FROM {source} WHERE {where}", params, limit=10_000_000)
         except QueryError as e:
             raise ToolError(str(e)) from None
         return id_col, [r["monomerid"] for r in rows]
@@ -1097,24 +1275,24 @@ def _add_structure_tools(mcp: MCPServer, db: Database, index: substructure.Subst
     def no_candidates(about: dict[str, Any], target_id: int | None, target_kind: str) -> dict[str, Any]:
         measured = "" if target_id is None else f" measured against {target_kind} {target_id}"
         return {"query": about, **empty, "compounds_searched": 0, "search_set_size": 0,
-                "note": f"No compounds{measured} pass the affinity filters"}
+                "note": f"No compounds{measured} pass the affinity and property filters"}
 
     def best_measurements(id_col: str | None, target_id: int | None, monomerids: list[int],
                           affinity_types: list[str] | None, max_value_nm: float | None,
-                          min_value_nm: float | None, limit: int) -> dict[str, Any]:
+                          min_value_nm: float | None, props: PropertyFilter | None, limit: int) -> dict[str, Any]:
         """The compounds' most potent measurement that passes the filters (against the target, if any)."""
         where, params = "monomerid IN (SELECT unnest(?))", [monomerids]
         if id_col is not None:
             where, params = f"{id_col} = ? AND {where}", [target_id, monomerids]
         return activity_query(where, params, affinity_types, max_value_nm, "monomerid", limit, min_value_nm,
-                              with_smiles=True)
+                              with_smiles=True, props=props, efficiency=True)
 
     def summarize_targets(monomerids: list[int], affinity_types: list[str] | None, max_value_nm: float | None,
-                          min_value_nm: float | None, limit: int) -> dict[str, Any]:
+                          min_value_nm: float | None, props: PropertyFilter | None, limit: int) -> dict[str, Any]:
         """Targets the compounds were measured against: compounds, measurements, best p_affinity per target."""
         if not monomerids:
             return {"n_targets": 0, "n_compounds_measured": 0, **empty}
-        pf, pparams = potency_filter(affinity_types, max_value_nm, min_value_nm)
+        pf, pparams, source = measurement_filter(affinity_types, max_value_nm, min_value_nm, props)
         params = [monomerids, *pparams]
         rows = run(
             f"""SELECT CASE WHEN complexid IS NULL THEN 'polymer' ELSE 'complex' END AS target_kind,
@@ -1124,7 +1302,7 @@ def _add_structure_tools(mcp: MCPServer, db: Database, index: substructure.Subst
                        count(*) AS n_measurements,
                        list(DISTINCT affinity_type ORDER BY affinity_type) AS affinity_types,
                        max(p_affinity) AS best_p_affinity
-                FROM activity WHERE monomerid IN (SELECT unnest(?)) AND {pf}
+                FROM {source} WHERE monomerid IN (SELECT unnest(?)) AND {pf}
                 GROUP BY polymerid, complexid
                 ORDER BY n_compounds DESC, best_p_affinity DESC NULLS LAST, target_kind, target_id""",
             params,
@@ -1133,7 +1311,7 @@ def _add_structure_tools(mcp: MCPServer, db: Database, index: substructure.Subst
         totals = run(
             f"""SELECT count(DISTINCT coalesce(polymerid, -complexid)) AS n_targets,
                        count(DISTINCT monomerid) AS n_compounds_measured
-                FROM activity WHERE monomerid IN (SELECT unnest(?)) AND {pf}""",
+                FROM {source} WHERE monomerid IN (SELECT unnest(?)) AND {pf}""",
             params,
         )["rows"][0]
         return {**totals, **rows}
@@ -1163,17 +1341,18 @@ def _add_structure_tools(mcp: MCPServer, db: Database, index: substructure.Subst
         affinity_types: Annotated[list[AffinityType] | None, AFFINITY_TYPES_FIELD] = None,
         max_value_nm: Annotated[float | None, MAX_VALUE_FIELD] = None,
         min_value_nm: Annotated[float | None, MIN_VALUE_FIELD] = None,
+        properties: Annotated[PropertyFilter | None, PROPERTIES_FIELD] = None,
         use_chirality: Annotated[bool, Field(description="Require stereocentres in the query to match")] = False,
         count_only: Annotated[bool, Field(description="Only count matching compounds (whole database; "
-                                          "ignores the target and affinity filters)")] = False,
+                                          "ignores the target, affinity and property filters)")] = False,
         limit: Annotated[int, Field(description="Max rows (1-500)")] = 50,
     ) -> dict[str, Any]:
         """Find compounds that contain a substructure, or the targets they were measured against.
 
         Default: matching compounds with their measurement counts. If more match than `limit`, the result
         is truncated and favours the compounds with the most measurements; use count_only for the total.
-        With affinity filters: only compounds with a measurement that passes them (filtered before
-        `limit`), each with its most potent such measurement and its SMILES, most potent first. With
+        With affinity or property filters: only compounds with a measurement that passes them (filtered
+        before `limit`), each with its most potent such measurement and its SMILES, most potent first. With
         target_id: every compound measured against that target is searched, and the matches are returned
         with their most potent measurement against it, most potent first. With summarize_by_target: all matching
         compounds, grouped by target (compounds, measurements, best p_affinity), most compounds first; use
@@ -1187,7 +1366,8 @@ def _add_structure_tools(mcp: MCPServer, db: Database, index: substructure.Subst
         about = {"input": query, "interpreted_as": kind,
                  "canonical": chem.MolToSmiles(mol) if kind == "smiles" else chem.MolToSmarts(mol)}
         limit = _clamp(limit, 1, 500)
-        filtered = affinity_types is not None or max_value_nm is not None or bool(min_value_nm)
+        filtered = (affinity_types is not None or max_value_nm is not None or bool(min_value_nm)
+                    or bool(properties and properties.model_dump(exclude_none=True)))
 
         if count_only:
             n, searched, total = index.count(mol, time_limit_s, use_chirality)
@@ -1203,7 +1383,8 @@ def _add_structure_tools(mcp: MCPServer, db: Database, index: substructure.Subst
                 raise ToolError("summarize_by_target lists every target; omit target_id")
             matches = index.search(mol, index.n_compounds, time_limit_s, use_chirality)
             result = {"n_matching_compounds": len(matches.monomerids),
-                      **summarize_targets(matches.monomerids, affinity_types, max_value_nm, min_value_nm, limit)}
+                      **summarize_targets(matches.monomerids, affinity_types, max_value_nm, min_value_nm,
+                                          properties, limit)}
         elif target_id is None and not filtered:
             matches = index.search(mol, limit, time_limit_s, use_chirality)
             result = dict(empty)
@@ -1217,7 +1398,8 @@ def _add_structure_tools(mcp: MCPServer, db: Database, index: substructure.Subst
                 )
             result["truncated"] = matches.hit_max_results
         else:
-            id_col, candidates = candidates_for(target_id, target_kind, affinity_types, max_value_nm, min_value_nm)
+            id_col, candidates = candidates_for(target_id, target_kind, affinity_types, max_value_nm, min_value_nm,
+                                                properties)
             if not candidates:
                 return no_candidates(about, target_id, target_kind)
             # Against one target, search all its compounds so the most potent come first; otherwise take the
@@ -1227,7 +1409,7 @@ def _add_structure_tools(mcp: MCPServer, db: Database, index: substructure.Subst
             result = dict(empty)
             if matches.monomerids:
                 result = best_measurements(id_col, target_id, matches.monomerids, affinity_types, max_value_nm,
-                                           min_value_nm, limit)
+                                           min_value_nm, properties, limit)
             if id_col:
                 result["n_matching_compounds"] = len(matches.monomerids)
             else:
@@ -1249,14 +1431,15 @@ def _add_structure_tools(mcp: MCPServer, db: Database, index: substructure.Subst
         affinity_types: Annotated[list[AffinityType] | None, AFFINITY_TYPES_FIELD] = None,
         max_value_nm: Annotated[float | None, MAX_VALUE_FIELD] = None,
         min_value_nm: Annotated[float | None, MIN_VALUE_FIELD] = None,
+        properties: Annotated[PropertyFilter | None, PROPERTIES_FIELD] = None,
         limit: Annotated[int, Field(description="Max rows (1-500)")] = 50,
     ) -> dict[str, Any]:
         """Find compounds similar to a molecule (Tanimoto on Morgan fingerprints), most similar first.
 
-        Default: similar compounds with their similarity and measurement counts. With affinity filters:
-        only compounds with a measurement that passes them (filtered before `limit`), each with its most
-        potent such measurement and its SMILES. With target_id: only compounds measured against that target, each with
-        its most potent measurement against it. With summarize_by_target: all compounds above the
+        Default: similar compounds with their similarity and measurement counts. With affinity or property
+        filters: only compounds with a measurement that passes them (filtered before `limit`), each with its
+        most potent such measurement and its SMILES. With target_id: only compounds measured against that
+        target, each with its most potent measurement against it. With summarize_by_target: all compounds above the
         threshold, grouped by target (compounds, measurements, best p_affinity), most compounds first; use
         max_value_nm (e.g. 10000) to count only compounds that bind."""
         _check_range(min_value_nm, max_value_nm)
@@ -1267,7 +1450,8 @@ def _add_structure_tools(mcp: MCPServer, db: Database, index: substructure.Subst
         about = {"input": smiles, "canonical": substructure.Chem.MolToSmiles(mol), "threshold": threshold,
                  "fingerprint": "Morgan radius 2, 2048 bits, largest fragment"}
         limit = _clamp(limit, 1, 500)
-        filtered = affinity_types is not None or max_value_nm is not None or bool(min_value_nm)
+        filtered = (affinity_types is not None or max_value_nm is not None or bool(min_value_nm)
+                    or bool(properties and properties.model_dump(exclude_none=True)))
 
         def similar(within: list[int] | None = None) -> substructure.Similar:
             return index.similar(mol, threshold, time_limit_s, within=within)
@@ -1277,13 +1461,15 @@ def _add_structure_tools(mcp: MCPServer, db: Database, index: substructure.Subst
                 raise ToolError("summarize_by_target lists every target; omit target_id")
             hits = similar()
             result = {"n_similar_compounds": len(hits.monomerids),
-                      **summarize_targets(hits.monomerids, affinity_types, max_value_nm, min_value_nm, limit)}
+                      **summarize_targets(hits.monomerids, affinity_types, max_value_nm, min_value_nm,
+                                          properties, limit)}
             return finish(about, result, hits.searched, hits.total)
 
         if target_id is None and not filtered:
             hits = similar()
         else:
-            id_col, candidates = candidates_for(target_id, target_kind, affinity_types, max_value_nm, min_value_nm)
+            id_col, candidates = candidates_for(target_id, target_kind, affinity_types, max_value_nm, min_value_nm,
+                                                properties)
             if not candidates:
                 return no_candidates(about, target_id, target_kind)
             hits = similar(candidates)
@@ -1300,7 +1486,7 @@ def _add_structure_tools(mcp: MCPServer, db: Database, index: substructure.Subst
                 )
             else:
                 result = best_measurements(id_col, target_id, top, affinity_types, max_value_nm, min_value_nm,
-                                           limit)
+                                           properties, limit)
             for row in result["rows"]:
                 row["similarity"] = similarity[row["monomerid"]]
             result["rows"].sort(key=lambda r: (-r["similarity"], -(r.get("p_affinity") or 0),

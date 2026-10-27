@@ -5,16 +5,16 @@
 | `search_compounds` | By name/synonym, ChEMBL id, `cid_N`, BDBM id, or InChIKey (full or first block) |
 | `chemical_name_to_smiles` | SMILES for a compound name (trade name, IUPAC name, CAS number) from BindingDB synonyms, OPSIN or PubChem, with the BindingDB compounds that have that structure |
 | `search_targets` | By name, gene name, UniProt entry name or accession; optional organism filter |
-| `get_compound` | Identifiers, synonyms, PDB ligands, most potent targets |
+| `get_compound` | Identifiers, synonyms, PDB ligands, most potent targets; properties, scaffold and structural alerts |
 | `get_target` | Identifiers, synonyms, PDB ids, complex components, measurement counts |
-| `find_ligands_for_target` | Most potent compounds for a target (by id or UniProt accession, optional variants) |
+| `find_ligands_for_target` | Most potent compounds for a target (by id or UniProt accession, optional variants), with ligand efficiency and LipE; filtered by properties, ranked by efficiency, or grouped by scaffold |
 | `find_targets_for_compound` | Activity/selectivity profile of a compound |
 | `get_activity` | Full record of one measurement, with assay description and citation |
 | `describe_tables` | Table list with descriptions, or columns and sample rows of one table |
 | `run_sql` | Arbitrary read-only DuckDB SQL |
 | `exact_structure_search` | BindingDB entries of the same molecule (all fragments, stereo, charges, isotopes), optionally only those with a measurement in an affinity range (needs RDKit, not the index) |
-| `substructure_search` | Compounds containing a SMILES/SMARTS fragment, optionally only those with a measurement in an affinity range or measured against a target; every target the matching compounds hit, with compounds per target; or a count of matches (needs the structure-search index) |
-| `similarity_search` | Compounds similar to a molecule (Tanimoto on Morgan fingerprints) above a threshold, with the same affinity and target filters and per-target summary (needs the structure-search index) |
+| `substructure_search` | Compounds containing a SMILES/SMARTS fragment, optionally only those with a measurement in an affinity range, with given properties, or measured against a target; every target the matching compounds hit, with compounds per target; or a count of matches (needs the structure-search index) |
+| `similarity_search` | Compounds similar to a molecule (Tanimoto on Morgan fingerprints) above a threshold, with the same affinity, property and target filters and per-target summary (needs the structure-search index) |
 | `get_editor_results` | Results of the searches the user ran in the structure editor ([structure-editor.md](structure-editor.md)): the tool, its arguments and its result, by `editor_id` |
 | `create_transcript` | Markdown, HTML (with structure drawings) or JSON transcript of the session: prompts and answers, optionally followed by the logged tool calls with their results |
 | `draw_structure_grid` | Compounds side by side, aligned on a shared core that is highlighted, with binding bars per target; shown in the chat and included in transcripts (needs RDKit) |
@@ -78,6 +78,33 @@ compounds sharing the query's InChIKey first block, so it needs the standard InC
 computes ([InChIKeys](building-the-database.md#inchikeys)); on a database without them it says so, since
 BindingDB's own keys miss many entries (imatinib has three, and BindingDB's keys find only one). It takes
 the same affinity filters as the structure-search tools and needs RDKit but not the index.
+
+## Compound properties
+
+With the `compound_property` table ([building-the-database.md](building-the-database.md#compound-properties)),
+computed by RDKit for each compound's parent (largest fragment):
+
+- `get_compound` adds the compound's `properties`: heavy atoms, MW, cLogP (Crippen), TPSA, H-bond donors
+  and acceptors (Lipinski NH+OH and N+O counts), rotatable bonds, rings, aromatic rings, Fsp3, QED, Ro5
+  violations, Bemis-Murcko `scaffold` and `generic_scaffold`, and the names of the PAINS, Brenk and NIH
+  alerts it matches; each top target also gets `best_ligand_efficiency`.
+- Measurement rows of `find_ligands_for_target`, `substructure_search` and `similarity_search` add
+  `ligand_efficiency` (1.37 × p_affinity / heavy atoms, kcal/mol per heavy atom), `lipe` (p_affinity −
+  cLogP) and `pains_alerts`. Both are computed from whichever affinity type the row has.
+- Those three tools take a `properties` filter: `max_mw`, `min_heavy_atoms`, `max_heavy_atoms`, `min_clogp`, `max_clogp`,
+  `max_tpsa`, `max_hbd`, `max_hba`, `max_rotatable_bonds`, `max_ro5_violations`, `min_qed`,
+  `exclude_alerts` (catalogs: `pains`, `brenk`, `nih`), `scaffold` (SMILES of a molecule or scaffold:
+  compounds with the same Bemis-Murcko scaffold) and the per-measurement `min_ligand_efficiency` and
+  `min_lipe`. Like the affinity filters, they apply before the result limit.
+- `find_ligands_for_target` ranks by `order_by` (`potency`, `ligand_efficiency` or `lipe`), and with
+  `group_by_scaffold` returns one row per scaffold of the target's ligands (`scaffold_smiles`, compounds,
+  measurements, best and median p_affinity, the most potent compound), most compounds first;
+  `generic_scaffold` groups on generic scaffolds instead (all atoms carbon, all bonds single).
+
+PAINS (pan-assay interference compounds) alerts flag substructures that often give false positives in
+screening assays, so a potent PAINS hit is worth checking. Brenk alerts (unwanted groups for screening
+libraries) match about a third of BindingDB's compounds, including many drugs, and are no reason by
+themselves to doubt a measurement.
 
 ## create_transcript
 

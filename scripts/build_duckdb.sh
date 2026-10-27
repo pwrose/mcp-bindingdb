@@ -6,7 +6,8 @@
 # Steps: download + unzip dump, load into a temporary MySQL 8.4 container,
 # copy into DuckDB (scripts/convert_to_duckdb.py), add derived query tables
 # (scripts/add_derived_tables.py), compute standard InChIKeys
-# (scripts/compute_inchikeys.py), build the RDKit substructure index
+# (scripts/compute_inchikeys.py) and compound properties (scripts/compute_properties.py),
+# build the RDKit substructure index
 # (scripts/build_substructure_index.py), tear the container down.
 # Requires Docker (daemon running) and uv.
 set -euo pipefail
@@ -87,6 +88,8 @@ log "Adding derived tables"
 uv run --project "$ROOT" python "$ROOT/scripts/add_derived_tables.py" "$BUILDING"
 log "Computing standard InChIKeys"
 uv run --project "$ROOT" --extra substructure python "$ROOT/scripts/compute_inchikeys.py" --in-place "$BUILDING"
+log "Computing compound properties, scaffolds and structural alerts"
+uv run --project "$ROOT" --extra substructure python "$ROOT/scripts/compute_properties.py" --in-place "$BUILDING"
 mv "$BUILDING" "$OUT"
 
 # 4. Substructure index (data/bindingdb_${RELEASE}.sslib, used by substructure_search)

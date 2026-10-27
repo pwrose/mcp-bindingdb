@@ -7,7 +7,7 @@ import re
 import pytest
 from mcp import Client
 
-from mcp_bindingdb import names
+from mcp_bindingdb import names, properties
 from mcp_bindingdb.db import Database, find_database
 from mcp_bindingdb.server import build_server
 
@@ -112,6 +112,57 @@ async def test_find_ligands_potency_filter(server):
     assert rows and all(r["affinity_type"] == "Ki" and r["value"] <= 1.0 and r["relation"] != ">" for r in rows)
     assert len({r["monomerid"] for r in rows}) == len(rows)  # best per compound
     assert all(r["uniprot_raw"] == "P00533" for r in rows)  # wild type only by default
+
+
+needs_properties = pytest.mark.skipif("properties" not in Database(DB_PATH).build_info(),
+                                     reason="compound properties not computed (scripts/compute_properties.py)")
+GEFITINIB_SMILES = "COc1cc2ncnc(Nc3ccc(F)c(Cl)c3)c2cc1OCCCN1CCOCC1"
+
+
+@needs_properties
+async def test_get_compound_properties(server):
+    out = await ok(server, "get_compound", monomerid=IMATINIB)
+    props = out["properties"]
+    assert props["heavy_atoms"] == 37 and props["ro5_violations"] == 0 and props["pains"] == []
+    assert props["scaffold"] == "O=C(Nc1cccc(Nc2nccc(-c3cccnc3)n2)c1)c1ccc(CN2CCNCC2)cc1"
+    abl = next(r for r in out["top_targets"] if r["best_p_affinity"])
+    assert abl["best_ligand_efficiency"] == round(1.37 * abl["best_p_affinity"] / 37, 2)
+
+
+@needs_properties
+async def test_find_ligands_property_filters_and_efficiency(server):
+    out = await ok(server, "find_ligands_for_target", target_id=EGFR, max_value_nm=100, limit=100,
+                   properties={"max_mw": 400, "exclude_alerts": ["pains"], "min_ligand_efficiency": 0.4})
+    rows = out["rows"]
+    assert rows and all(r["ligand_efficiency"] >= 0.4 and r["pains_alerts"] is None for r in rows)
+    ids = [r["monomerid"] for r in rows]
+    check = await ok(server, "run_sql", sql="SELECT max(mw) AS mw, max(len(pains)) AS pains FROM compound_property "
+                     f"WHERE monomerid IN ({','.join(map(str, ids))})")
+    assert check["rows"][0]["mw"] <= 400 and check["rows"][0]["pains"] == 0
+    ranked = await ok(server, "find_ligands_for_target", target_id=EGFR, max_value_nm=100, order_by="lipe",
+                      limit=50)
+    lipe = [r["lipe"] for r in ranked["rows"]]
+    assert lipe == sorted(lipe, reverse=True)
+
+
+@needs_properties
+async def test_find_ligands_by_scaffold(server):
+    same = await ok(server, "find_ligands_for_target", target_id=EGFR, properties={"scaffold": GEFITINIB_SMILES})
+    ids = {r["monomerid"] for r in same["rows"]}
+    assert ids and not same["truncated"]
+    check = await ok(server, "run_sql", sql="SELECT DISTINCT scaffold FROM compound_property "
+                     f"WHERE monomerid IN ({','.join(map(str, ids))})")
+    assert check["rows"] == [{"scaffold": properties.murcko_scaffold(GEFITINIB_SMILES)}]
+    groups = await ok(server, "find_ligands_for_target", target_id=EGFR, max_value_nm=1000, group_by_scaffold=True,
+                      limit=500)
+    counts = [g["n_compounds"] for g in groups["rows"]]
+    assert counts == sorted(counts, reverse=True) and groups["n_scaffolds"] >= len(counts)
+    total = await ok(server, "run_sql", sql="SELECT count(DISTINCT monomerid) AS n FROM activity "
+                     f"WHERE polymerid = {EGFR} AND affinity_type IN ('Ki', 'Kd', 'IC50', 'EC50') AND unit = 'nM' "
+                     "AND relation <> '>' AND value <= 1000")
+    assert groups["n_compounds"] == total["rows"][0]["n"]
+    bad = await call(server, "find_ligands_for_target", target_id=EGFR, properties={"scaffold": "CCO"})
+    assert bad.is_error and "ring" in bad.content[0].text
 
 
 async def test_find_targets_for_compound(server):

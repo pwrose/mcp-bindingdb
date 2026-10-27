@@ -74,14 +74,14 @@ with the server. See [setup and testing](docs/structure-editor.md).
 | `search_compounds` | Find compounds by name/synonym, ChEMBL id, `cid_N`, BDBM id, or InChIKey |
 | `chemical_name_to_smiles` | SMILES for a compound name (trade name, IUPAC name, CAS number), with the BindingDB compounds that have that structure |
 | `search_targets` | Find targets by name, gene name, UniProt entry name or accession |
-| `get_compound` | Identifiers, synonyms, PDB ligands, most potent targets |
+| `get_compound` | Identifiers, synonyms, PDB ligands, most potent targets, properties (MW, cLogP, QED, ...), scaffold and structural alerts (PAINS, Brenk, NIH) |
 | `get_target` | Identifiers, synonyms, PDB ids, complex components, measurement counts |
-| `find_ligands_for_target` | Most potent compounds for a target |
+| `find_ligands_for_target` | Most potent compounds for a target, with ligand efficiency and LipE; filtered by properties (e.g. MW, Ro5, no PAINS, a scaffold), ranked by efficiency, or grouped by scaffold |
 | `find_targets_for_compound` | Activity/selectivity profile of a compound |
 | `get_activity` | Full record of one measurement, with assay description and citation |
 | `exact_structure_search` | BindingDB entries of the same molecule (salts and stereo included), optionally only those with a measurement in an affinity range |
-| `substructure_search` | Compounds containing a SMILES/SMARTS fragment, optionally only those with a measurement in an affinity range, or the targets they were measured against |
-| `similarity_search` | Compounds similar to a molecule, optionally only those with a measurement in an affinity range, or the targets they were measured against |
+| `substructure_search` | Compounds containing a SMILES/SMARTS fragment, optionally only those with a measurement in an affinity range or with given properties, or the targets they were measured against |
+| `similarity_search` | Compounds similar to a molecule, optionally only those with a measurement in an affinity range or with given properties, or the targets they were measured against |
 | `describe_tables` | Table list with descriptions, or the columns of one table |
 | `run_sql` | Any read-only SQL query |
 | `create_transcript` | A record of the session as Markdown, or as an HTML page with structure drawings: your prompts and Claude's answers, and, if you ask, every BindingDB tool call with its result |

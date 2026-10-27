@@ -50,6 +50,21 @@ uv run --extra substructure python scripts/compute_inchikeys.py data/bindingdb_2
 It updates a copy that then replaces the file, so a running server keeps working; restart it to use the
 new keys. Rerun it after `add_derived_tables.py`, which rebuilds the tables from BindingDB's keys.
 
+## Compound properties
+
+`scripts/compute_properties.py` adds the `compound_property` table: RDKit properties of each compound's
+parent (largest fragment, so salts and solvents do not count), its Bemis-Murcko scaffold and the
+structural alerts it matches. The `properties` filters, ligand efficiency and LipE, and scaffold
+grouping in the tools depend on it ([tools.md](tools.md#compound-properties)). The build script runs it; for an existing
+database (about 18 minutes on 10 cores, with progress lines; needs the `substructure` extra):
+
+```bash
+uv run --extra substructure python scripts/compute_properties.py data/bindingdb_202610.duckdb
+```
+
+Like `compute_inchikeys.py` it updates a copy that then replaces the file; restart the server to use it.
+The table only references `compound` by `monomerid`, so it survives a rerun of `add_derived_tables.py`.
+
 ## Derived tables
 
 | Table | Contents |
@@ -57,6 +72,7 @@ new keys. Rerun it after `add_derived_tables.py`, which rebuilds the tables from
 | `activity` | One row per measured value: `affinity_type`, `relation` (`=`, `<`, `>`), numeric `value`, `unit`, `p_affinity`, plus compound, target, assay and citation columns |
 | `compound` | One row per small molecule: preferred name, InChIKey, SMILES, formula, weight, counts |
 | `compound_name` | Compound synonyms, including ChEMBL ids, PubChem `cid_N` and patent labels |
+| `compound_property` | RDKit properties of each compound's parent: heavy atoms, MW, cLogP, TPSA, HBD/HBA, rotatable bonds, rings, Fsp3, QED, Ro5 violations, Bemis-Murcko and generic scaffold, PAINS/Brenk/NIH alerts (from `compute_properties.py`) |
 | `target` | One row per polymer/complex target: bare UniProt accession, organism, counts |
 | `target_name` | Target synonyms (gene names, UniProt entry names) |
 

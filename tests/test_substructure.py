@@ -199,3 +199,23 @@ async def test_affinity_filters_without_a_target(server):
     assert ps == sorted(ps, reverse=True)
     out = await sim(server, smiles=IMATINIB_SMILES, threshold=0.85, affinity_types=["Kd"], max_value_nm=100)
     assert [(r["monomerid"], r["affinity_type"]) for r in out["rows"]] == [(IMATINIB, "Kd")]
+
+
+needs_properties = pytest.mark.skipif(INDEX is None or "properties" not in DB.build_info(),
+                                      reason="index or compound properties not built")
+
+
+@needs_properties
+@pytest.mark.anyio
+async def test_property_filters(server):
+    out = await sim(server, smiles=IMATINIB_SMILES, threshold=0.6, properties={"max_mw": 450}, limit=100)
+    rows = out["rows"]
+    assert rows and IMATINIB not in {r["monomerid"] for r in rows}  # imatinib weighs 493.6
+    assert all("ligand_efficiency" in r and "lipe" in r for r in rows)
+    sub = await ok(server, query=QUINAZOLINE, target_id=EGFR, max_value_nm=10,
+                   properties={"max_ro5_violations": 0, "min_lipe": 5})
+    assert sub["rows"] and all(r["lipe"] >= 5 for r in sub["rows"])
+    summary = await ok(server, query=QUINAZOLINE, summarize_by_target=True, max_value_nm=10,
+                       properties={"exclude_alerts": ["pains", "nih"]}, limit=5)
+    unfiltered = await ok(server, query=QUINAZOLINE, summarize_by_target=True, max_value_nm=10, limit=5)
+    assert 0 < summary["n_compounds_measured"] < unfiltered["n_compounds_measured"]
