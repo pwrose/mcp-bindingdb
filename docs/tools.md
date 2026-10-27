@@ -15,6 +15,9 @@
 | `exact_structure_search` | BindingDB entries of the same molecule (all fragments, stereo, charges, isotopes), optionally only those with a measurement in an affinity range (needs RDKit, not the index) |
 | `substructure_search` | Compounds containing a SMILES/SMARTS fragment, optionally only those with a measurement in an affinity range, with given properties, or measured against a target; every target the matching compounds hit, with compounds per target; or a count of matches (needs the structure-search index) |
 | `similarity_search` | Compounds similar to a molecule (Tanimoto on Morgan fingerprints) above a threshold, with the same affinity, property and target filters and per-target summary (needs the structure-search index) |
+| `decompose_r_groups` | SAR table of one series: a target's ligands containing a core, with each R-group position in its own column and the compound's potency (needs RDKit) |
+| `matched_molecular_pairs` | Pairs of a target's ligands differing by one group, with the effect on potency; or one row per transformation (needs RDKit) |
+| `activity_cliffs` | Pairs of a target's ligands that are structurally close but far apart in potency, by SALI (needs RDKit) |
 | `get_editor_results` | Results of the searches the user ran in the structure editor ([structure-editor.md](structure-editor.md)): the tool, its arguments and its result, by `editor_id` |
 | `create_transcript` | Markdown, HTML (with structure drawings) or JSON transcript of the session: prompts and answers, optionally followed by the logged tool calls with their results |
 | `draw_structure_grid` | Compounds side by side, aligned on a shared core that is highlighted, with binding bars per target; shown in the chat and included in transcripts (needs RDKit) |
@@ -105,6 +108,58 @@ PAINS (pan-assay interference compounds) alerts flag substructures that often gi
 screening assays, so a potent PAINS hit is worth checking. Brenk alerts (unwanted groups for screening
 libraries) match about a third of BindingDB's compounds, including many drugs, and are no reason by
 themselves to doubt a measurement.
+
+## SAR tools
+
+`decompose_r_groups`, `matched_molecular_pairs` and `activity_cliffs` work on one target at a time and
+need RDKit (the `substructure` extra), but not the structure-search index. All three read the same
+ligand set, built so that a difference between two compounds is a difference in chemistry rather than in
+assay:
+
+- exact measurements only (`relation = '='`, nM): a bound such as `< 50 nM` cannot be subtracted from
+  another value;
+- one affinity type, named with `affinity_type` or else the target's most measured one, reported back in
+  the result, because an IC50 and a Ki are not comparable;
+- one row per compound, its most potent qualifying measurement, with `n_measurements` so a value resting
+  on a single report can be spotted;
+- the parent of each structure (largest fragment), so a counter-ion is never mistaken for a substituent;
+- most potent first, capped by `max_compounds` — the cap is what bounds the runtime, and a note says
+  when it cut the set off.
+
+They take the same target arguments as `find_ligands_for_target` (`target_id` with `target_kind`, or
+`uniprot` with optional `include_variants`) and the same `properties` filter.
+
+**`decompose_r_groups`** takes a `core` as SMILES or SMARTS — a scaffold from
+`find_ligands_for_target(group_by_scaffold=True)` is a natural input — and returns one row per matching
+compound with a column per R-group position (`R1`, `R2`, ...), the potency, and `smiles` so
+`draw_structure_grid` can show the series aligned on the returned `matched_core`. A position is
+hydrogen where the compound carries none (`H`), and a position no matching compound substitutes is
+dropped rather than returned as a column of nulls. Marking positions in the core (`[*:1]`, `[*:2]`)
+decomposes only there and is taken literally: a compound substituted elsewhere on the core does not
+match. Without marks, every open position of the core becomes a column, and a ring fused to the core
+fills two of them. `summarize` (on by default) adds, per position, the substituents it carries with
+their compounds' best and median potency, computed over every match rather than the returned page.
+
+**`matched_molecular_pairs`** finds compounds that differ by a single group, by cutting one acyclic
+single bond of each molecule and matching the halves: compounds sharing a constant part and differing in
+the variable part form a pair. A pair found through several constant parts keeps the largest, which
+leaves the smallest change as the transformation. Each pair reads from the smaller group to the larger,
+so `delta_p_affinity` (and `fold_change`, below 1 when potency was lost) is the effect of making that
+change. `include_hydrogen_changes` (on by default) also cuts carbon-hydrogen bonds, which is the only
+way a pair that *adds* a group is found — without it there are no `[H][*:1] >> F[*:1]` pairs at all; it
+costs about four times the fragmentation time. `transformation` keeps only pairs making one given
+change, written as two fragment SMILES around `>>` (either direction matches), and
+`group_by_transformation` returns one row per change with how often it was made, the median, smallest
+and largest effect, and how many pairs it improved — the answer to "what does adding a fluorine do on
+this target?". `max_variable_atoms` (13) bounds how large a changed group may be.
+
+**`activity_cliffs`** compares every pair of the ligand set by Tanimoto on Morgan fingerprints and keeps
+those at or above `min_similarity` (0.8) whose potency differs by at least `min_delta_p` log units
+(1.5), ranked by SALI, the potency difference per unit of structural distance. Two compounds whose
+fingerprints are identical have no defined SALI; they are listed first, and `same_structure` says
+whether they are literally the same molecule under two monomerids — one compound curated twice with
+different reported values, which is a data-quality finding rather than SAR. A cliff resting on a single
+measurement is worth confirming with `get_activity` before being believed.
 
 ## create_transcript
 

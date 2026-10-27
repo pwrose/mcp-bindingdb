@@ -7,6 +7,7 @@ import base64
 import html
 import os
 import re
+import statistics
 import sys
 import threading
 from datetime import date as _date
@@ -19,7 +20,7 @@ from mcp.server.mcpserver.exceptions import ToolError
 from mcp.types import CallToolResult, ImageContent, ResourceLink, TextContent, ToolAnnotations
 from pydantic import BaseModel, Field
 
-from . import depict, figures, names, substructure, transcript, transcript_html
+from . import depict, figures, names, sar, substructure, transcript, transcript_html
 from . import properties as compound_properties
 from .db import Database, QueryError, find_database
 from .structure_editor import FIGURE_META, EditorSearches, add_editor_results_tool, create_editor_extension
@@ -95,6 +96,16 @@ ACTIVITY_COLUMNS = """ki_result_id, affinity_type, relation, value, unit, p_affi
        assay_name, source_id, doi, year"""
 
 
+def _target_where(target_id: int | None, uniprot: str | None, include_variants: bool,
+                  target_kind: str) -> tuple[str, list[Any]]:
+    """SQL on activity for one target's measurements, selected by id or by UniProt accession."""
+    if (target_id is None) == (uniprot is None):
+        raise ToolError("Give exactly one of target_id or uniprot")
+    if target_id is not None:
+        return ("polymerid = ?" if target_kind == "polymer" else "complexid = ?"), [target_id]
+    return ("uniprot = ?" if include_variants else "uniprot_raw = ?"), [uniprot.strip().upper()]
+
+
 def _clamp(n: int, lo: int, hi: int) -> int:
     return max(lo, min(hi, n))
 
@@ -132,6 +143,15 @@ a possible assay artefact worth checking; Brenk alerts match about a third of al
 reason by themselves to doubt a measurement.
 """
 
+
+SAR_INSTRUCTIONS = """
+Structure-activity relationships, one target at a time: decompose_r_groups tabulates a series (the
+target's ligands containing a core, with each R-group position in its own column);
+matched_molecular_pairs finds compounds that differ by one group and what the change did to potency, or
+aggregates those transformations; activity_cliffs finds near-identical compounds with very different
+potency. All three use exact ('=') measurements of a single affinity type, picked as the target's most
+measured type unless you name one, so the potency differences are comparable.
+"""
 
 FIGURE_INSTRUCTIONS = """
 Structure figures: to show several compounds' structures together (e.g. in a grid, aligned on a shared
@@ -197,6 +217,21 @@ class PropertyFilter(BaseModel):
 
 PROPERTIES_FIELD = Field(description="Only compounds whose properties pass these conditions (computed for "
                          "the largest fragment); see PropertyFilter")
+
+# Shared arguments of the tools that work on one target's measurements (find_ligands_for_target, the
+# SAR tools): the target, and the single affinity type a potency difference has to come from.
+TargetIdArg = Annotated[int | None, Field(description="polymerid from search_targets (or complexid with "
+                                          "target_kind='complex')")]
+UniprotArg = Annotated[str | None, Field(description="UniProt accession instead of target_id, e.g. P00533")]
+IncludeVariantsArg = Annotated[bool, Field(description="With uniprot: also include mutant/construct "
+                                           "targets of that accession")]
+TargetKindArg = Annotated[Literal["polymer", "complex"], Field(description="Kind of target_id")]
+OneAffinityTypeArg = Annotated[Literal["Ki", "Kd", "IC50", "EC50"] | None, Field(
+    description="The affinity type the potencies come from; values of different types are not "
+                "comparable, so only one is used. Default: the target's most measured type")]
+MaxCompoundsArg = Annotated[int, Field(description="Compounds to work on, most potent first; a lower "
+                                       "number is faster, a higher one covers more of the target")]
+EXACT_MEASUREMENT = "relation = '=' AND unit = 'nM' AND p_affinity IS NOT NULL"
 
 VERSION = "0.1.0"
 LATEST_HTML_URI = "transcript://session/latest.html"
@@ -281,6 +316,7 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
         version=VERSION,
         instructions=INSTRUCTIONS + (STRUCTURE_INSTRUCTIONS if index else "")
         + (PROPERTY_INSTRUCTIONS if has_properties else "")
+        + (SAR_INSTRUCTIONS if sar.available() else "")
         + IMAGE_INSTRUCTIONS + (FIGURE_INSTRUCTIONS if depict.available() else "")
         + f"\nLoaded release: {info.get('release', 'unknown')}.",
     )
@@ -619,14 +655,7 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
     ) -> dict[str, Any]:
         """Compounds measured against a target, most potent first. With compound properties in the
         database, each row also gives ligand_efficiency, lipe and any PAINS alerts (pains_alerts)."""
-        if (target_id is None) == (uniprot is None):
-            raise ToolError("Give exactly one of target_id or uniprot")
-        if target_id is not None:
-            where, params = ("polymerid = ?" if target_kind == "polymer" else "complexid = ?"), [target_id]
-        elif include_variants:
-            where, params = "uniprot = ?", [uniprot.strip().upper()]
-        else:
-            where, params = "uniprot_raw = ?", [uniprot.strip().upper()]
+        where, params = _target_where(target_id, uniprot, include_variants, target_kind)
         limit = _clamp(limit, 1, 500)
         if group_by_scaffold:
             return _scaffold_groups(where, params, affinity_types, max_value_nm, properties, generic_scaffold,
@@ -801,6 +830,8 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
         _add_structure_tools(mcp, db, index, run, _activity_query, measurement_filter)
     if substructure.rdkit_available():
         _add_exact_search(mcp, db, run, _activity_query, "inchi_keys" in info)
+    if sar.available():
+        _add_sar_tools(mcp, db, property_filter)
     add_editor_results_tool(mcp, editor_searches)
     _add_transcript_tools(mcp, info.get("release", "unknown"), transcript_dir or db.path.parent / "transcripts")
     return mcp
@@ -1251,6 +1282,309 @@ def _add_exact_search(mcp: MCPServer, db: Database, run, activity_query, compute
             out["note"] = ("This database has BindingDB's own InChIKeys, which are missing or non-standard for "
                            "many compounds, so matches can be missed; run scripts/compute_inchikeys.py on it")
         return out
+
+
+def _add_sar_tools(mcp: MCPServer, db: Database, property_filter) -> None:
+    """SAR over one target's ligands: decompose_r_groups, matched_molecular_pairs, activity_cliffs.
+
+    All three read the same ligand set: one row per compound with its most potent exact measurement of a
+    single affinity type, so that a difference between two compounds is a difference in chemistry and
+    not in assay. Only RDKit is needed, not the substructure index.
+    """
+
+    def affinity_type_for(where: str, params: list[Any], affinity_type: str | None) -> str:
+        """The requested affinity type, or the one the target has most exact measurements of."""
+        if affinity_type is not None:
+            return affinity_type
+        row = db.one(f"""SELECT affinity_type FROM activity
+                         WHERE {where} AND {EXACT_MEASUREMENT} AND affinity_type IN (SELECT unnest(?))
+                         GROUP BY affinity_type ORDER BY count(*) DESC, affinity_type""",
+                     [*params, POTENCY_TYPES])
+        if row is None:
+            raise ToolError("That target has no exact ('=') Ki, Kd, IC50 or EC50 measurement in nM, so "
+                            "there is nothing to compare; find_ligands_for_target shows what it does have")
+        return row["affinity_type"]
+
+    def ligand_set(where: str, params: list[Any], affinity_type: str, max_value_nm: float | None,
+                   props: PropertyFilter | None, max_compounds: int) -> tuple[list[dict[str, Any]], bool]:
+        """(compounds, whether max_compounds cut the set off), most potent first, with their structures."""
+        prf, prparams = property_filter(props)
+        source = "activity JOIN compound USING (monomerid)"
+        if prf:
+            source += " LEFT JOIN compound_property cp USING (monomerid)"
+        clauses = [where, "affinity_type = ?", EXACT_MEASUREMENT, "smiles IS NOT NULL"]
+        values: list[Any] = [*params, affinity_type, *prparams]
+        if prf:
+            clauses.append(prf)
+        if max_value_nm is not None:
+            clauses.append("value <= ?")
+            values.append(max_value_nm)
+        try:
+            result = db.query(
+                f"""SELECT monomerid, any_value(compound_name) AS compound_name, any_value(smiles) AS smiles,
+                           round(max(p_affinity), 2) AS p_affinity, min(value) AS value_nm,
+                           count(*) AS n_measurements
+                    FROM {source} WHERE {' AND '.join(clauses)}
+                    GROUP BY monomerid ORDER BY p_affinity DESC, monomerid""",
+                values,
+                max_compounds,
+            )
+        except QueryError as e:
+            raise ToolError(str(e)) from None
+        if not result.rows:
+            raise ToolError(f"No compound has an exact {affinity_type} value in nM against that target "
+                            "under these filters")
+        return result.rows, result.truncated
+
+    def scanned_note(compounds: list[dict[str, Any]], truncated: bool, what: str) -> str | None:
+        if not truncated:
+            return None
+        return (f"Only the {len(compounds):,} most potent compounds were {what}; raise max_compounds to "
+                "cover more of the target, at the cost of time.")
+
+    @mcp.tool(annotations=READ_ONLY)
+    def decompose_r_groups(
+        core: Annotated[str, Field(description="The shared core, as SMILES or SMARTS, e.g. "
+                                   "'c1ncnc2ccccc12' (quinazoline) or a scaffold from "
+                                   "find_ligands_for_target(group_by_scaffold=True). Mark the positions "
+                                   "to tabulate with [*:1], [*:2], ... to decompose only there; without "
+                                   "marks every substituted position of the core becomes a column")],
+        target_id: TargetIdArg = None,
+        uniprot: UniprotArg = None,
+        include_variants: IncludeVariantsArg = False,
+        target_kind: TargetKindArg = "polymer",
+        affinity_type: OneAffinityTypeArg = None,
+        max_value_nm: Annotated[float | None, Field(description="Only compounds at least this potent "
+                                                    "(nM)")] = None,
+        properties: Annotated[PropertyFilter | None, PROPERTIES_FIELD] = None,
+        summarize: Annotated[bool, Field(description="Also, per position, the substituents it carries "
+                                         "with their potency, over every matching compound")] = True,
+        max_compounds: MaxCompoundsArg = 5000,
+        limit: Annotated[int, Field(description="Max rows (1-500)")] = 50,
+    ) -> dict[str, Any]:
+        """An SAR table of one chemical series: the target's ligands that contain `core`, each R-group
+        position in its own column (R1, R2, ...), with the compound's potency. Rows carry `smiles`, so
+        draw_structure_grid can show the series aligned on `matched_core`."""
+        where, params = _target_where(target_id, uniprot, include_variants, target_kind)
+        try:
+            query, query_type = substructure.parse_query(core)
+        except substructure.QueryParseError as e:
+            raise ToolError(str(e)) from None
+        affinity_type = affinity_type_for(where, params, affinity_type)
+        compounds, truncated = ligand_set(where, params, affinity_type, max_value_nm, properties,
+                                          _clamp(max_compounds, 1, 50_000))
+        decomposition = sar.decompose(query, sar.molecules([c["smiles"] for c in compounds]))
+        rows = [{"monomerid": c["monomerid"], "compound_name": c["compound_name"], **groups,
+                 "p_affinity": c["p_affinity"], "value_nm": c["value_nm"],
+                 "n_measurements": c["n_measurements"], "smiles": c["smiles"]}
+                for c, groups in zip(compounds, decomposition.rows) if groups is not None]
+        limit = _clamp(limit, 1, 500)
+        notes = [scanned_note(compounds, truncated, "decomposed")]
+        if len(decomposition.labels) > 4 and not sar.has_attachment_points(query):
+            notes.append(f"The core leaves {len(decomposition.labels)} substitutable positions, so the "
+                         "table has that many columns, and a fused ring can fill two of them. Marking the "
+                         "positions you care about ([*:1], [*:2], ...) gives a table of just those.")
+        if not rows:
+            marked = sar.has_attachment_points(query)
+            notes.append(f"The core matches none of the {len(compounds):,} compounds. " + (
+                "It marks its attachment points, so a compound substituted at any other position of the "
+                "core does not match; drop the [*:n] marks to allow that."
+                if marked else "substructure_search with this query and target_id shows whether any "
+                "compound contains it at all."))
+        out = {"core": {"query": core, "query_type": query_type, "matched_core": decomposition.core},
+               "affinity_type": affinity_type, "r_groups": decomposition.labels,
+               "n_compounds_scanned": len(compounds), "n_compounds_matched": len(rows),
+               "row_count": min(len(rows), limit), "truncated": len(rows) > limit, "rows": rows[:limit]}
+        if summarize and rows:
+            out["r_group_summary"] = {
+                label: _substituent_stats(rows, label) for label in decomposition.labels}
+        return _with_notes(out, notes)
+
+    @mcp.tool(annotations=READ_ONLY)
+    def matched_molecular_pairs(
+        target_id: TargetIdArg = None,
+        uniprot: UniprotArg = None,
+        include_variants: IncludeVariantsArg = False,
+        target_kind: TargetKindArg = "polymer",
+        affinity_type: OneAffinityTypeArg = None,
+        max_value_nm: Annotated[float | None, Field(description="Only compounds at least this potent "
+                                                    "(nM)")] = None,
+        properties: Annotated[PropertyFilter | None, PROPERTIES_FIELD] = None,
+        min_delta_p: Annotated[float, Field(ge=0, description="Only pairs whose potency differs by at "
+                                            "least this many log units (1 = tenfold)")] = 0.0,
+        transformation: Annotated[str | None, Field(description="Only pairs that make this change, as the "
+                                                    "two fragment SMILES of a transformation separated by "
+                                                    "'>>', e.g. '[H][*:1] >> F[*:1]' for adding a "
+                                                    "fluorine; either direction matches")] = None,
+        include_hydrogen_changes: Annotated[bool, Field(description="Also pair a compound with its "
+                                                        "unsubstituted analogue (H -> F, H -> methyl). "
+                                                        "This is the only way an added group shows up; "
+                                                        "turning it off is about four times faster")] = True,
+        group_by_transformation: Annotated[bool, Field(description="Instead of pairs, one row per "
+                                                       "transformation: how often it was made and what it "
+                                                       "did to potency, most frequent first")] = False,
+        max_variable_atoms: Annotated[int, Field(ge=1, le=30, description="The largest group a "
+                                                 "transformation may change, in heavy atoms")] = 13,
+        max_compounds: MaxCompoundsArg = 1000,
+        limit: Annotated[int, Field(description="Max rows (1-500)")] = 50,
+    ) -> dict[str, Any]:
+        """Pairs of the target's ligands that differ by a single group, with what that change did to
+        potency: the evidence for 'what does adding a fluorine do here?'. Each pair reads from the
+        smaller group to the larger, so delta_p_affinity is the effect of making that change."""
+        where, params = _target_where(target_id, uniprot, include_variants, target_kind)
+        affinity_type = affinity_type_for(where, params, affinity_type)
+        wanted = _transformation_filter(transformation)
+        compounds, truncated = ligand_set(where, params, affinity_type, max_value_nm, properties,
+                                          _clamp(max_compounds, 2, 5000))
+        mols = sar.molecules([c["smiles"] for c in compounds])
+        variants = [[] if mol is None else
+                    sar.single_cut_variants(mol, max_variable_atoms, include_hydrogen_changes)
+                    for mol in mols]
+        pairs, hit_cap = sar.matched_pairs(variants)
+        rows = []
+        for (i, j), (constant, variable_i, variable_j) in pairs.items():
+            a, b = compounds[i], compounds[j]
+            from_group, to_group = sar.tidy_fragment(variable_i), sar.tidy_fragment(variable_j)
+            if sar.heavy_atoms(from_group) > sar.heavy_atoms(to_group) or (
+                    sar.heavy_atoms(from_group) == sar.heavy_atoms(to_group) and from_group > to_group):
+                a, b, from_group, to_group = b, a, to_group, from_group
+            delta = round(b["p_affinity"] - a["p_affinity"], 2)
+            if abs(delta) < min_delta_p or (wanted and {from_group, to_group} != wanted):
+                continue
+            rows.append({"transformation": f"{from_group} >> {to_group}", "delta_p_affinity": delta,
+                         "fold_change": sar.fold_change(delta),
+                         "constant_part": sar.tidy_fragment(constant),
+                         "monomerid_from": a["monomerid"], "compound_name_from": a["compound_name"],
+                         "p_affinity_from": a["p_affinity"], "value_nm_from": a["value_nm"],
+                         "monomerid_to": b["monomerid"], "compound_name_to": b["compound_name"],
+                         "p_affinity_to": b["p_affinity"], "value_nm_to": b["value_nm"],
+                         "smiles_from": a["smiles"], "smiles_to": b["smiles"]})
+        rows.sort(key=lambda r: (-abs(r["delta_p_affinity"]), r["monomerid_from"], r["monomerid_to"]))
+        limit = _clamp(limit, 1, 500)
+        notes = [scanned_note(compounds, truncated, "paired"),
+                 f"Pairs were capped at {sar.MAX_PAIRS:,}, so the result is partial." if hit_cap else None,
+                 "A pair comes from cutting one acyclic single bond, so it is a change of substituent, "
+                 "not of scaffold; fold_change below 1 means the change cost potency." if rows else
+                 f"No pair of the {len(compounds):,} compounds differs by a single group under these "
+                 "filters; a larger max_compounds or max_variable_atoms finds more."]
+        out = {"affinity_type": affinity_type, "n_compounds": len(compounds), "n_pairs": len(rows)}
+        if group_by_transformation:
+            grouped = _group_transformations(rows, limit)
+            return _with_notes({**out, **grouped}, notes)
+        return _with_notes({**out, "row_count": min(len(rows), limit), "truncated": len(rows) > limit,
+                            "rows": rows[:limit]}, notes)
+
+    @mcp.tool(annotations=READ_ONLY)
+    def activity_cliffs(
+        target_id: TargetIdArg = None,
+        uniprot: UniprotArg = None,
+        include_variants: IncludeVariantsArg = False,
+        target_kind: TargetKindArg = "polymer",
+        affinity_type: OneAffinityTypeArg = None,
+        properties: Annotated[PropertyFilter | None, PROPERTIES_FIELD] = None,
+        min_similarity: Annotated[float, Field(gt=0, le=1, description="Tanimoto on Morgan fingerprints "
+                                               "the two compounds must reach")] = 0.8,
+        min_delta_p: Annotated[float, Field(gt=0, description="How far their potency must differ, in log "
+                                            "units (1 = tenfold, 2 = hundredfold)")] = 1.5,
+        max_compounds: MaxCompoundsArg = 2000,
+        limit: Annotated[int, Field(description="Max rows (1-500)")] = 50,
+    ) -> dict[str, Any]:
+        """Activity cliffs: pairs of the target's ligands that are structurally close but differ sharply
+        in potency, strongest first by SALI (potency difference per unit of structural distance). A cliff
+        is where the SAR is steep — or where one of the two measurements is wrong."""
+        where, params = _target_where(target_id, uniprot, include_variants, target_kind)
+        affinity_type = affinity_type_for(where, params, affinity_type)
+        compounds, truncated = ligand_set(where, params, affinity_type, None, properties,
+                                          _clamp(max_compounds, 2, 5000))
+        measured = [(c, mol) for c, mol in zip(compounds, sar.molecules([c["smiles"] for c in compounds]))
+                    if mol is not None]
+        close, hit_cap = sar.similar_pairs([substructure.morgan_fingerprint(mol) for _, mol in measured],
+                                           min_similarity)
+        rows = []
+        for i, j, similarity in close:
+            (a, mol_a), (b, mol_b) = measured[i], measured[j]
+            if a["p_affinity"] < b["p_affinity"]:
+                (a, mol_a), (b, mol_b) = (b, mol_b), (a, mol_a)
+            delta = round(a["p_affinity"] - b["p_affinity"], 2)
+            if delta < min_delta_p:
+                continue
+            rows.append({"similarity": similarity, "delta_p_affinity": delta,
+                         "fold_change": sar.fold_change(delta), "sali": sar.sali(delta, similarity),
+                         "same_structure": similarity == 1.0 and sar.same_molecule(mol_a, mol_b),
+                         "monomerid_potent": a["monomerid"], "compound_name_potent": a["compound_name"],
+                         "p_affinity_potent": a["p_affinity"], "value_nm_potent": a["value_nm"],
+                         "n_measurements_potent": a["n_measurements"],
+                         "monomerid_weak": b["monomerid"], "compound_name_weak": b["compound_name"],
+                         "p_affinity_weak": b["p_affinity"], "value_nm_weak": b["value_nm"],
+                         "n_measurements_weak": b["n_measurements"],
+                         "smiles_potent": a["smiles"], "smiles_weak": b["smiles"]})
+        rows.sort(key=lambda r: (r["sali"] is not None, -(r["sali"] or 0), -r["delta_p_affinity"]))
+        limit = _clamp(limit, 1, 500)
+        duplicates = sum(r["same_structure"] for r in rows)
+        indistinguishable = sum(r["sali"] is None and not r["same_structure"] for r in rows)
+        notes = [scanned_note(compounds, truncated, "compared"),
+                 f"Pairs were capped at {sar.MAX_PAIRS:,}, so the result is partial." if hit_cap else None,
+                 f"{duplicates} pair(s) are the same structure under two monomerids (same_structure), so "
+                 "they are not SAR at all: they are one compound curated twice with different reported "
+                 "values." if duplicates else None,
+                 f"{indistinguishable} pair(s) have identical fingerprints without being the same "
+                 "structure (sali is null, listed first): they differ in stereochemistry or in something "
+                 "a Morgan radius-2 fingerprint does not see." if indistinguishable else None,
+                 "Check n_measurements before believing a cliff: a single measurement on either side is "
+                 "worth looking up with get_activity." if rows else
+                 f"No pair among the {len(compounds):,} compounds is this similar and this far apart; "
+                 "lower min_similarity or min_delta_p."]
+        return _with_notes({"affinity_type": affinity_type, "n_compounds": len(measured),
+                            "n_cliffs": len(rows), "row_count": min(len(rows), limit),
+                            "truncated": len(rows) > limit, "rows": rows[:limit]}, notes)
+
+
+def _with_notes(out: dict[str, Any], notes: list[str | None]) -> dict[str, Any]:
+    kept = [note for note in notes if note]
+    return {**out, "note": " ".join(kept)} if kept else out
+
+
+def _substituent_stats(rows: list[dict[str, Any]], label: str, top: int = 8) -> list[dict[str, Any]]:
+    """The substituents at one R-group position, most common first, with their compounds' potency."""
+    by_group: dict[str, list[float]] = {}
+    for row in rows:
+        by_group.setdefault(row[label], []).append(row["p_affinity"])
+    ranked = sorted(by_group.items(), key=lambda item: (-len(item[1]), -max(item[1]), item[0]))
+    return [{"substituent": group, "n_compounds": len(values), "best_p_affinity": max(values),
+             "median_p_affinity": round(statistics.median(values), 2)} for group, values in ranked[:top]]
+
+
+def _transformation_filter(transformation: str | None) -> set[str] | None:
+    """The two fragments of a 'A >> B' transformation, canonical and as a set, so either direction and
+    either spelling of a fragment matches."""
+    if transformation is None:
+        return None
+    parts = [part.strip() for part in transformation.split(">>")]
+    if len(parts) != 2 or not all(parts):
+        raise ToolError(f"transformation {transformation!r} is not two fragment SMILES separated by '>>'")
+    if any(sar.Chem.MolFromSmiles(part, sanitize=False) is None for part in parts):
+        raise ToolError(f"transformation {transformation!r}: both sides must be fragment SMILES with an "
+                        "attachment point, e.g. '[H][*:1] >> F[*:1]'")
+    return {sar.tidy_fragment(part) for part in parts}
+
+
+def _group_transformations(pairs: list[dict[str, Any]], limit: int) -> dict[str, Any]:
+    """One row per transformation: how often it was made, and what it did to potency."""
+    by_change: dict[str, list[dict[str, Any]]] = {}
+    for pair in pairs:
+        by_change.setdefault(pair["transformation"], []).append(pair)
+    rows = []
+    for change, made in by_change.items():
+        deltas = [pair["delta_p_affinity"] for pair in made]
+        best = max(made, key=lambda pair: pair["delta_p_affinity"])
+        rows.append({"transformation": change, "n_pairs": len(made),
+                     "median_delta_p_affinity": round(statistics.median(deltas), 2),
+                     "min_delta_p_affinity": min(deltas), "max_delta_p_affinity": max(deltas),
+                     "n_improved": sum(delta > 0 for delta in deltas),
+                     "best_monomerid_from": best["monomerid_from"], "best_monomerid_to": best["monomerid_to"]})
+    rows.sort(key=lambda row: (-row["n_pairs"], -row["median_delta_p_affinity"], row["transformation"]))
+    return {"grouped_by": "transformation", "n_transformations": len(rows),
+            "row_count": min(len(rows), limit), "truncated": len(rows) > limit, "rows": rows[:limit]}
 
 
 def _add_structure_tools(mcp: MCPServer, db: Database, index: substructure.SubstructureIndex,

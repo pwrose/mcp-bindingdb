@@ -54,7 +54,7 @@ async def test_lists_all_tools(server):
         "create_transcript", "transcript_to_html", "reset_tool_log", "get_tool_log", "draw_structure_grid",
         "add_figure", "open_structure_editor", "editor_pubchem_candidates", "editor_search", "get_editor_results",
         "figure_image",
-        "exact_structure_search",
+        "exact_structure_search", "decompose_r_groups", "matched_molecular_pairs", "activity_cliffs",
     }
     writes = {"reset_tool_log", "transcript_to_html", "create_transcript", "draw_structure_grid",
               "add_figure"}  # write files

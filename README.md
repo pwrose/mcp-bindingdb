@@ -82,6 +82,9 @@ with the server. See [setup and testing](docs/structure-editor.md).
 | `exact_structure_search` | BindingDB entries of the same molecule (salts and stereo included), optionally only those with a measurement in an affinity range |
 | `substructure_search` | Compounds containing a SMILES/SMARTS fragment, optionally only those with a measurement in an affinity range or with given properties, or the targets they were measured against |
 | `similarity_search` | Compounds similar to a molecule, optionally only those with a measurement in an affinity range or with given properties, or the targets they were measured against |
+| `decompose_r_groups` | SAR table of a series: a target's ligands containing a core, each R-group position in its own column |
+| `matched_molecular_pairs` | Pairs of a target's ligands differing by one group, and what the change did to potency |
+| `activity_cliffs` | Near-identical ligands of a target with very different potency |
 | `describe_tables` | Table list with descriptions, or the columns of one table |
 | `run_sql` | Any read-only SQL query |
 | `create_transcript` | A record of the session as Markdown, or as an HTML page with structure drawings: your prompts and Claude's answers, and, if you ask, every BindingDB tool call with its result |
