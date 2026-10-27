@@ -17,7 +17,7 @@ uv run mcp-bindingdb                                     # without RDKit and OPS
 | `--no-network` | Do not look names up in PubChem (`chemical_name_to_smiles`) |
 
 The `substructure` extra (RDKit) enables `substructure_search` and `similarity_search`, which also
-need the index, and `exact_structure_search`, `draw_structure_grid` and the SAR tools
+need the index, and `exact_structure_search`, `draw_structure_grid`, `draw_r_group_table` and the SAR tools
 (`decompose_r_groups`, `matched_molecular_pairs`, `activity_cliffs`), which do not; the `name`
 extra (pyopsin, needs Java) enables OPSIN in `chemical_name_to_smiles`. See
 [Building the database](building-the-database.md).

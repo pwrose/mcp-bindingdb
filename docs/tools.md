@@ -21,6 +21,7 @@
 | `get_editor_results` | Results of the searches the user ran in the structure editor ([structure-editor.md](structure-editor.md)): the tool, its arguments and its result, by `editor_id` |
 | `create_transcript` | Markdown, HTML (with structure drawings) or JSON transcript of the session: prompts and answers, optionally followed by the logged tool calls with their results |
 | `draw_structure_grid` | Compounds side by side, aligned on a shared core that is highlighted, with binding bars per target; shown in the chat and included in transcripts (needs RDKit) |
+| `draw_r_group_table` | An R-group table of one series: the core with its positions named R1, R2, …, then a row per compound whose cells are its substituents, drawn, with binding bars (needs RDKit) |
 | `add_figure` | Adds an image made with other tools (e.g. a matplotlib plot) as a figure for transcripts |
 | `transcript_to_html` | Converts an existing Markdown transcript to an HTML page, drawing the structures in every SMILES column |
 | `get_tool_log` | The logged tool calls (index, time, arguments), to pick this chat's calls for `create_transcript` |
@@ -28,8 +29,8 @@
 
 ## Safety
 
-All tools are read-only, except that `create_transcript`, `transcript_to_html`, `draw_structure_grid` and
-`add_figure` write transcript and figure files (`add_figure` reads the image file it is given, and accepts only
+All tools are read-only, except that `create_transcript`, `transcript_to_html`, `draw_structure_grid`,
+`draw_r_group_table` and `add_figure` write transcript and figure files (`add_figure` reads the image file it is given, and accepts only
 images). The database connection is opened read-only with file, network and extension access
 disabled and settings locked, so `run_sql` cannot write data or read anything outside the database.
 Queries time out after 30 s (`--timeout`). The only tool that uses the network is
@@ -132,7 +133,10 @@ They take the same target arguments as `find_ligands_for_target` (`target_id` wi
 **`decompose_r_groups`** takes a `core` as SMILES or SMARTS — a scaffold from
 `find_ligands_for_target(group_by_scaffold=True)` is a natural input — and returns one row per matching
 compound with a column per R-group position (`R1`, `R2`, ...), the potency, and `smiles` so
-`draw_structure_grid` can show the series aligned on the returned `matched_core`. A position is
+`draw_structure_grid` can show whole structures aligned on the returned `matched_core`. The series
+itself is shown with `draw_r_group_table` (below), which takes that `matched_core` and the rows'
+R-group cells: a substituent SMILES such as `CCC[*:1]` is an input to that tool, not something to put
+in a table or an answer. A position is
 hydrogen where the compound carries none (`H`), and a position no matching compound substitutes is
 dropped rather than returned as a column of nulls. Marking positions in the core (`[*:1]`, `[*:2]`)
 decomposes only there and is taken literally: a compound substituted elsewhere on the core does not
@@ -238,6 +242,25 @@ the result) with the panel-only tool `figure_image`. The PNG is saved in
 `transcripts/figures/`; HTML transcripts embed an HTML version of the figure. It needs RDKit (the
 `substructure` extra, which brings Pillow for the PNG); without it the tool is not offered. The tool tells
 the model to refer to the figure in its answer rather than repeat its structures and values as tables.
+
+## draw_r_group_table
+
+Draws one chemical series the way a medicinal-chemistry paper does: the core once at the top, with each
+`[*:n]` position named `R1`, `R2`, ..., and under it a table whose cells are the substituents
+themselves, drawn, with the compound's name, its potency bars, and a note per column for naming the
+position on the core (`{"R1": "N1"}`). Hydrogen is written as `H` and a position a compound does not
+have as `–`; a cell whose SMILES cannot be parsed is written out and reported in the result. Each
+substituent is drawn with its attachment point as the bond stub where it joins the core, growing to the
+right, and a methyl as `H₃C–` rather than a bare line.
+
+The `core` and the rows' `r_groups` are what `decompose_r_groups` returns (`matched_core` and the `R1`,
+`R2`, ... columns), so the table is one call after the decomposition; summary rows work too, one per
+substituent at a position, with `n_compounds` as the subtitle and the median potency as the bar — for
+those, `row_heading` renames the first column and `core_caption` replaces the sentence beside the core,
+which otherwise says that everything but the named positions is the same in every row. Like
+`draw_structure_grid` it returns a PNG, logs the figure with an id, saves it in `transcripts/figures/`,
+and gives HTML transcripts an HTML version; it needs RDKit. The tool tells the model to refer to the
+table in its answer and to name groups in prose ("an 8-cyclopentyl") rather than list their SMILES.
 
 ## add_figure
 

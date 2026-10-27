@@ -150,15 +150,19 @@ target's ligands containing a core, with each R-group position in its own column
 matched_molecular_pairs finds compounds that differ by one group and what the change did to potency, or
 aggregates those transformations; activity_cliffs finds near-identical compounds with very different
 potency. All three use exact ('=') measurements of a single affinity type, picked as the target's most
-measured type unless you name one, so the potency differences are comparable.
+measured type unless you name one, so the potency differences are comparable. Show a series from
+decompose_r_groups with draw_r_group_table, which draws the core with its positions named R1, R2, ... and
+each substituent in its column; a fragment SMILES ('CCC[*:1]') is an input to that tool, never something
+to put in a table or an answer.
 """
 
 FIGURE_INSTRUCTIONS = """
 Structure figures: to show several compounds' structures together (e.g. in a grid, aligned on a shared
-substructure, with binding data), use draw_structure_grid rather than drawing them yourself; its figures
-appear in the chat and in transcripts. The figure already shows the structures and binding values: refer
-to it in your answer instead of repeating them (no table of the same compounds' SMILES or of the values
-the bars show; a table only for data the figure lacks).
+substructure, with binding data), use draw_structure_grid rather than drawing them yourself; for one
+series varying at a few positions, draw_r_group_table draws the core with R1, R2, ... named and every
+substituent in its column. Their figures appear in the chat and in transcripts. The figure already shows
+the structures and binding values: refer to it in your answer instead of repeating them (no table of the
+same compounds' SMILES or of the values the bars show; a table only for data the figure lacks).
 """
 
 
@@ -1055,6 +1059,63 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
                          TextContent(type="text", text="\n".join(text))],
                 structured_content={"figure_id": figure.id, "figure_file": saved_file})
 
+        @mcp.tool(annotations=writes, meta=FIGURE_META)
+        def draw_r_group_table(
+            title: Annotated[str, Field(description="Figure heading, e.g. '4-anilinoquinazolines at EGFR'")],
+            core: Annotated[str, Field(description="The series' core with its positions marked, e.g. "
+                                       "'[*:1]Nc1ccc2ncnc(N[*:2])c2c1' — normally the `matched_core` "
+                                       "decompose_r_groups returned. It is drawn once above the table with "
+                                       "each [*:n] named Rn")],
+            rows: Annotated[list[figures.RGroupRow], Field(min_length=1, max_length=30,
+                                                           description="One per compound, in table order")],
+            description: Annotated[str, Field(description="A sentence or two under the heading")] = "",
+            column_notes: Annotated[dict[str, str] | None, Field(description="A short note under a column "
+                                                                 "heading, e.g. {'R1': 'N1', 'R3': 'C8'} to "
+                                                                 "name the position on the core")] = None,
+            notes: Annotated[list[str] | None, Field(description="Short notes under the figure, e.g. "
+                                                     "caveats about the data")] = None,
+            core_caption: Annotated[str, Field(description="The sentence beside the core. Default: that "
+                                               "its named positions are the columns and the rest is the "
+                                               "same in every row — replace it when that is not true, "
+                                               "e.g. for one row per substituent at one position")] = "",
+            row_heading: Annotated[str, Field(description="Heading of the first column, e.g. 'Compound' "
+                                              "(default) or 'Group' for a row per substituent")] = "Compound",
+        ) -> CallToolResult:
+            """Draw an R-group table of one chemical series: the core at the top with its positions named
+            R1, R2, ..., then a row per compound whose cells are the substituents themselves, drawn, with
+            bars for its potency.
+
+            This is how a series from decompose_r_groups is shown. Never write the substituents' SMILES in
+            a table or in your answer: the table draws them, and in prose you name a group ('a propyl at
+            N1', 'the 8-cyclopentyl'). The image is shown in the chat, and transcripts include it: list its
+            id in the `figures` of the exchange it belongs to.
+
+            The figure is the answer's display of this series: refer to it ('the table below') instead of
+            repeating its groups or values."""
+            if depict.parse(core) is None:
+                raise ToolError(f"core {core!r} is not valid SMILES or SMARTS")
+            block, png, labels, undrawn = figures.r_group_table(title, core, rows, description,
+                                                               column_notes, notes, core_caption,
+                                                               row_heading)
+            if not labels:
+                raise ToolError("No row has an R-group: give each row's substituents as "
+                                "r_groups, e.g. {'R1': 'CCC[*:1]', 'R2': 'H'}")
+            figure, saved = log_figure(title, png, ".png", block,
+                                       {"core": core, "rows": [r.model_dump() for r in rows]})
+            text = [f"Figure id {figure.id}: '{title}', {transcript.plural(len(rows), 'compound')} over "
+                    f"{', '.join(labels)}.",
+                    *([f"Not drawn (not understood as a substituent): {', '.join(undrawn)}."]
+                      if undrawn else []),
+                    saved,
+                    FIGURE_ID_NOTE.format(id=figure.id),
+                    "The user sees this image: in your answer, refer to it instead of listing the "
+                    "substituents or their SMILES."]
+            saved_file = figure.file if (figures_dir / figure.file).is_file() else None
+            return CallToolResult(
+                content=[ImageContent(type="image", data=base64.b64encode(png).decode(), mimeType="image/png"),
+                         TextContent(type="text", text="\n".join(text))],
+                structured_content={"figure_id": figure.id, "figure_file": saved_file})
+
         @mcp.tool(annotations=READ_ONLY, meta={"ui": {**FIGURE_META["ui"], "visibility": ["app"]}})
         def figure_image(file: str) -> dict[str, Any]:
             """For the figure panel: a saved figure's image, by the figure_file draw_structure_grid returned."""
@@ -1363,8 +1424,13 @@ def _add_sar_tools(mcp: MCPServer, db: Database, property_filter) -> None:
         limit: Annotated[int, Field(description="Max rows (1-500)")] = 50,
     ) -> dict[str, Any]:
         """An SAR table of one chemical series: the target's ligands that contain `core`, each R-group
-        position in its own column (R1, R2, ...), with the compound's potency. Rows carry `smiles`, so
-        draw_structure_grid can show the series aligned on `matched_core`."""
+        position in its own column (R1, R2, ...), with the compound's potency.
+
+        Show the result with draw_r_group_table, passing `matched_core` and each row's R-group cells: it
+        draws the core with its positions named and every substituent as a structure. The substituent
+        SMILES in these rows are for that tool and for your own reasoning — do not put them in a table or
+        an answer; name the groups instead ('an 8-cyclopentyl'). Rows also carry the compound's `smiles`,
+        for draw_structure_grid when whole structures are what you want to show."""
         where, params = _target_where(target_id, uniprot, include_variants, target_kind)
         try:
             query, query_type = substructure.parse_query(core)
@@ -1544,14 +1610,25 @@ def _with_notes(out: dict[str, Any], notes: list[str | None]) -> dict[str, Any]:
     return {**out, "note": " ".join(kept)} if kept else out
 
 
+def _value_nm(p_affinity: float) -> float:
+    """The affinity in nM behind a p_affinity, to three significant figures."""
+    return float(f"{10 ** (9 - p_affinity):.3g}")
+
+
 def _substituent_stats(rows: list[dict[str, Any]], label: str, top: int = 8) -> list[dict[str, Any]]:
-    """The substituents at one R-group position, most common first, with their compounds' potency."""
+    """The substituents at one R-group position, most common first, with their compounds' potency.
+
+    The nM values are there so a position's substituents can go straight into draw_r_group_table, one
+    row per substituent with its median or best potency as the bar.
+    """
     by_group: dict[str, list[float]] = {}
     for row in rows:
         by_group.setdefault(row[label], []).append(row["p_affinity"])
     ranked = sorted(by_group.items(), key=lambda item: (-len(item[1]), -max(item[1]), item[0]))
     return [{"substituent": group, "n_compounds": len(values), "best_p_affinity": max(values),
-             "median_p_affinity": round(statistics.median(values), 2)} for group, values in ranked[:top]]
+             "best_value_nm": _value_nm(max(values)),
+             "median_p_affinity": round(statistics.median(values), 2),
+             "median_value_nm": _value_nm(statistics.median(values))} for group, values in ranked[:top]]
 
 
 def _transformation_filter(transformation: str | None) -> set[str] | None:

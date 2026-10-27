@@ -40,6 +40,7 @@ class Layout:
     lo: Any  # Point2D, lower-left corner of the shared frame; None: each molecule in its own frame
     hi: Any
     bond: float  # bond length in coordinate units
+    attachments: bool = False  # draw '*' atoms as attachment points (a substituent of an R-group table)
 
     def frame(self, k: int) -> tuple[Any, Any]:
         return (self.lo, self.hi) if self.lo is not None else _bounds([self.mols[k]], self.bond)
@@ -85,12 +86,11 @@ def _core(mols: list[Any], align_to: str | None) -> Any:
     return Chem.MolFromSmarts(result.smartsString)
 
 
-def _orient(mol: Any, core_atoms: tuple[int, ...]) -> None:
-    """Rotate mol so its core runs left to right: from the core's first atom to the core atom farthest
-    from it (for 4-chloroaniline, Nc1ccc(Cl)cc1: from N on the left to Cl on the right)."""
+def _run_left_to_right(mol: Any, start: int, atoms: tuple[int, ...]) -> None:
+    """Rotate mol so the atom of `atoms` farthest from atom `start` lies to its right."""
     conf = mol.GetConformer()
-    first = conf.GetAtomPosition(core_atoms[0])
-    far = max(core_atoms, key=lambda i: (conf.GetAtomPosition(i) - first).LengthSq())
+    first = conf.GetAtomPosition(start)
+    far = max(atoms, key=lambda i: (conf.GetAtomPosition(i) - first).LengthSq())
     v = conf.GetAtomPosition(far) - first
     if v.LengthSq() == 0:
         return
@@ -98,6 +98,20 @@ def _orient(mol: Any, core_atoms: tuple[int, ...]) -> None:
     rot = np.array([[math.cos(a), -math.sin(a), 0, 0], [math.sin(a), math.cos(a), 0, 0],
                     [0, 0, 1, 0], [0, 0, 0, 1]])
     rdMolTransforms.TransformConformer(conf, rot)
+
+
+def _orient(mol: Any, core_atoms: tuple[int, ...]) -> None:
+    """Rotate mol so its core runs left to right: from the core's first atom to the core atom farthest
+    from it (for 4-chloroaniline, Nc1ccc(Cl)cc1: from N on the left to Cl on the right)."""
+    _run_left_to_right(mol, core_atoms[0], core_atoms)
+
+
+def _orient_attachment(mol: Any) -> None:
+    """Rotate a substituent so it grows to the right of its attachment point, the way it hangs off the
+    core in an R-group table."""
+    dummies = [a.GetIdx() for a in mol.GetAtoms() if a.GetAtomicNum() == 0]
+    if len(dummies) == 1 and mol.GetNumAtoms() > 1:
+        _run_left_to_right(mol, dummies[0], tuple(range(mol.GetNumAtoms())))
 
 
 def _bounds(mols: list[Any], bond: float) -> tuple[Any, Any]:
@@ -114,10 +128,32 @@ def _bond_length(mols: list[Any]) -> float:
     return lengths[len(lengths) // 2] if lengths and lengths[len(lengths) // 2] > 0 else 1.5
 
 
-def layout(texts: list[str], align_to: str | None = None) -> Layout:
-    """Parse and lay out molecules (SMILES, or SMARTS for a query), aligned on a common core if any."""
+def _r_group_dummies(mol: Any, label: bool) -> Any:
+    """Prepare the '[*:n]' positions of a core or a substituent for drawing.
+
+    With `label` each dummy becomes the position's name ('R1'), which is how a core is drawn above an
+    R-group table. Without it the map number is only dropped, so a drawing made with `attachments` shows
+    the dummy as the bond stub where the group attaches rather than as an atom.
+    """
+    for atom in mol.GetAtoms():
+        if atom.GetAtomicNum() == 0 and atom.GetAtomMapNum():
+            if label:
+                atom.SetProp("atomLabel", f"R{atom.GetAtomMapNum()}")
+            atom.SetAtomMapNum(0)
+    return mol
+
+
+def layout(texts: list[str], align_to: str | None = None, label_r_groups: bool = False,
+           attachments: bool = False) -> Layout:
+    """Parse and lay out molecules (SMILES, or SMARTS for a query), aligned on a common core if any.
+
+    `label_r_groups` names each '[*:n]' position R1, R2, ...; `attachments` draws the unnamed ones as
+    attachment points. Both are for the parts of an R-group table: its core and its substituents.
+    """
     rdDepictor.SetPreferCoordGen(True)  # lays out the rest of a templated molecule with fewer clashes
     mols = [parse(t) for t in texts]
+    if label_r_groups or attachments:
+        mols = [None if m is None else _r_group_dummies(m, label_r_groups) for m in mols]
     valid = [m for m in mols if m is not None]
     core = _core(valid, align_to) if valid else None
     reference, ref_match = None, ()
@@ -140,12 +176,16 @@ def layout(texts: list[str], align_to: str | None = None) -> Layout:
         else:
             rdDepictor.Compute2DCoords(mol)
         cores.append(tuple(match))
+    if attachments:
+        for mol in mols:
+            if mol is not None:
+                _orient_attachment(mol)
     bond = _bond_length(mols)
     aligned = [m for m, c in zip(mols, cores) if m is not None and c]
     lo, hi = _bounds(aligned, bond) if len(aligned) > 1 else (None, None)
     if lo is not None and len(aligned) < len(valid):  # some molecules lack the core: own frames for all
         lo = hi = None
-    return Layout(mols, cores, lo, hi, bond)
+    return Layout(mols, cores, lo, hi, bond, attachments)
 
 
 def _draw(drawer: Any, lay: Layout, k: int, width: int, height: int) -> None:
@@ -156,6 +196,8 @@ def _draw(drawer: Any, lay: Layout, k: int, width: int, height: int) -> None:
     opts.highlightRadius = 0.45
     opts.minFontSize = 13
     opts.bondLineWidth = 1.5
+    opts.dummiesAreAttachments = lay.attachments
+    opts.explicitMethyl = lay.attachments  # a substituent cell: a bare line would not read as a methyl
     lo, hi = lay.frame(k)
     drawer.SetScale(width, height, lo, hi)
     bonds = [b.GetIdx() for b in mol.GetBonds() if b.GetBeginAtomIdx() in core and b.GetEndAtomIdx() in core]

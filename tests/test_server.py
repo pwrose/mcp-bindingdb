@@ -52,12 +52,13 @@ async def test_lists_all_tools(server):
         "search_compounds", "search_targets", "get_compound", "get_target", "find_ligands_for_target",
         "find_targets_for_compound", "get_activity", "describe_tables", "run_sql", "chemical_name_to_smiles",
         "create_transcript", "transcript_to_html", "reset_tool_log", "get_tool_log", "draw_structure_grid",
+        "draw_r_group_table",
         "add_figure", "open_structure_editor", "editor_pubchem_candidates", "editor_search", "get_editor_results",
         "figure_image",
         "exact_structure_search", "decompose_r_groups", "matched_molecular_pairs", "activity_cliffs",
     }
     writes = {"reset_tool_log", "transcript_to_html", "create_transcript", "draw_structure_grid",
-              "add_figure"}  # write files
+              "draw_r_group_table", "add_figure"}  # write files
     assert all(t.annotations.read_only_hint for name, t in tools.items() if name not in writes)
 
 
@@ -394,6 +395,34 @@ async def test_structure_grid_figure_in_transcripts(tmp_path):
     html_page = html_path.read_text()
     assert "1 figure" in page.content[0].text and f"figures/{png.name}" not in html_page
     assert html_page.count('<article class="sg-card">') == 3 and "Clozapine &lt;b&gt;" in html_page
+
+
+async def test_r_group_table_figure_in_transcripts(tmp_path):
+    srv = build_server(Database(DB_PATH), transcript_dir=tmp_path)
+    rows = [
+        {"r_groups": {"R1": "CCC[*:1]", "R3": "C1CCCC1[*:1]"}, "title": "DPCPX", "subtitle": "BDBM50058235",
+         "bars": [{"label": "A1", "value_nm": 0.47, "type": "Ki", "note": "n = 45"}]},
+        {"r_groups": {"R1": "C[*:1]", "R3": "H"}, "title": "Theophylline",
+         "bars": [{"label": "A1", "value_nm": 6200, "type": "Ki", "faint": True}]},
+    ]
+    async with Client(srv) as client:
+        bad = await client.call_tool("draw_r_group_table", {"title": "x", "core": "not a core (",
+                                                            "rows": rows})
+        table = await client.call_tool("draw_r_group_table", {
+            "title": "Xanthines", "core": "O=c1n([*:1])c(=O)c2[nH]c([*:3])nc2n1C", "rows": rows,
+            "column_notes": {"R1": "N1"}, "description": "Two of them."})
+        page = await client.call_tool("create_transcript", {"model": "m", "format": "html", "exchanges": [
+            {"prompt": "The series?", "answer": "See the table.", "figures": [1]}]})
+    assert bad.is_error and "not valid SMILES or SMARTS" in bad.content[0].text
+    image, text = table.content
+    assert image.type == "image" and image.mime_type == "image/png"
+    assert text.text.startswith("Figure id 1: 'Xanthines', 2 compounds over R1, R3.")
+    [png] = (tmp_path / "figures").glob("xanthines-*-1.png")
+    assert png.read_bytes()[:4] == b"\x89PNG"
+    assert "1 figure" in page.content[0].text
+    [html_path] = tmp_path.glob("*.html")
+    html_page = html_path.read_text()
+    assert '<table class="rg-tab">' in html_page and html_page.count("<img") == 4
 
 
 async def test_figure_compounds_not_drawn_again_in_tables(tmp_path):
