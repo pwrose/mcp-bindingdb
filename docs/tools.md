@@ -280,3 +280,4 @@ link to the copy. It needs no RDKit.
 - `monomer.chembl_id` is empty in this release; ChEMBL ids appear as synonyms instead.
 - Mutant and construct targets are separate rows sharing a UniProt accession (`uniprot_raw` like `P00533[L858R]`).
 - Text comparisons in DuckDB are case-sensitive (MySQL's were not): use `ILIKE` or `lower()`.
+- `compound_property.pains`, `brenk` and `nih` are never NULL: a compound with no alert has an empty list, so `WHERE pains IS NOT NULL` silently matches all 1.46M compounds. Use `len(pains) > 0`. The `scaffold` and `generic_scaffold` columns of the same table *do* use NULL (for a compound without a ring), so the two conventions sit side by side.

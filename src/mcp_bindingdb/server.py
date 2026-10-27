@@ -54,6 +54,9 @@ Data notes:
 - Targets with mutations or constructs are separate entries with the same UniProt accession
   (uniprot_raw like 'P00533[L858R]'); `uniprot` holds the bare accession.
 - source_id is a PubMed id, a patent number (US..., WO...) or a PubChem assay (aid...).
+- compound_property.pains, brenk and nih are never NULL: a compound with no alert has an
+  empty list, so `WHERE pains IS NOT NULL` matches every compound. Use `len(pains) > 0`.
+  (scaffold and generic_scaffold in the same table do use NULL, for a compound without a ring.)
 """
 
 READ_ONLY = ToolAnnotations(readOnlyHint=True, openWorldHint=False)
@@ -71,7 +74,8 @@ TABLE_DOCS = {
     "(join on monomerid): heavy_atoms, mw, clogp (Crippen), tpsa, hbd/hba (Lipinski NH+OH, N+O), "
     "rotatable_bonds, rings, aromatic_rings, fsp3, qed, ro5_violations, Bemis-Murcko scaffold and "
     "generic_scaffold (canonical SMILES; NULL without a ring), and the names of matching PAINS, Brenk and "
-    "NIH structural alerts (lists, empty if none). Ligand efficiency = 1.37 * p_affinity / heavy_atoms "
+    "NIH structural alerts (lists, never NULL: empty when the compound has no alert, so test "
+    "len(pains) > 0, not pains IS NOT NULL). Ligand efficiency = 1.37 * p_affinity / heavy_atoms "
     "(kcal/mol per heavy atom); LipE = p_affinity - clogp.",
     "compound_name": "Derived. Compound synonyms (names, CHEMBL ids, PubChem cid_N, patent labels).",
     "target": "Derived. One row per target (polymer or complex) with UniProt accession, organism, counts.",
