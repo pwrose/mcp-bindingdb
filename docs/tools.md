@@ -88,8 +88,8 @@ see: its exact model id, and each prompt with its full answer (`exchanges`). The
 (date, model, optional skills and other MCP servers used, BindingDB release, and a Contents line with
 counts) and the conversation as 👤 User / 🧠 Assistant blocks.
 
-The tool calls are left out by default. When the user asks for them, the model sets
-`include_tool_calls`, and a "BindingDB tool calls" section follows the conversation:
+The tool calls are left out by default, also when the analysis used SQL. Only when the user asks for
+them does the model set `include_tool_calls`, and a "BindingDB tool calls" section follows the conversation:
 each call's arguments verbatim (SQL in a `sql` block for `run_sql`), then its result, with lists of rows
 as tables capped at `max_result_rows` (default 5; the true row count is kept). The header then also gives
 the active window from the first to the last call. `format="json"` returns the same fields unrendered,

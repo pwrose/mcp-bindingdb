@@ -867,8 +867,9 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
         title: Annotated[str, Field(description="Heading of the transcript")] = "BindingDB Chat Transcript",
         date: Annotated[str | None, Field(description="ISO date of the session (default: today)")] = None,
         include_tool_calls: Annotated[bool, Field(description="Add the BindingDB tool calls with their "
-                                                  "results after the conversation. Only when the user asks "
-                                                  "for them")] = False,
+                                                  "results after the conversation. Only when the user's "
+                                                  "request asks for them; never on your own judgment, e.g. "
+                                                  "because the analysis used run_sql")] = False,
         calls: Annotated[list[int] | None, Field(description="With include_tool_calls: only these, by the "
                                                  "1-based index get_tool_log shows, in log order. Ignored "
                                                  "without include_tool_calls. Default: every logged call")] = None,
@@ -894,7 +895,10 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
         add_figure. Interactive pages or artifacts you built cannot be included.
 
         Tool calls are left out unless the user asks for them (e.g. "with the tool calls", "with the
-        queries and results", "a reproducible record"); then set include_tool_calls and the transcript
+        queries and results", "a reproducible record"). Do not add them on your own, not even when the
+        analysis is SQL or the queries seem instructive, and do not tell the reader the answer's SQL is
+        listed below: when a query matters to the answer, quote it in the answer itself. Only when the user
+        asks, set include_tool_calls and the transcript
         adds every BindingDB call that ran (arguments verbatim, SQL for run_sql) with its result. The
         server logs calls as they run (failed calls and describe_tables are not), so do not re-supply
         them. The log is shared by every chat this server process has served, so it can hold calls and
