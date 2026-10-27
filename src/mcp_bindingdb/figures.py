@@ -68,7 +68,9 @@ class Figure:
 
 
 def _fmt(nm: float) -> str:
-    return f"{nm:.3g}"
+    """Three significant figures, without exponents: 0.25, 18, 48,000."""
+    rounded = float(f"{nm:.3g}")
+    return f"{rounded:,.0f}" if rounded >= 1000 else f"{rounded:g}"
 
 
 def _scale(compounds: list[GridCompound]) -> tuple[float, float] | None:
@@ -111,7 +113,7 @@ _CSS = """
 .sg-cap{margin:0;border-left:3px solid #e8892e;padding-left:8px;font-size:13px;align-self:start}
 .sg-cap:empty{border:0}
 .sg-bars{list-style:none;margin:0;padding:0;display:grid;gap:7px;align-content:start}
-.sg-row{display:grid;grid-template-columns:7em minmax(0,1fr) 6.5em;column-gap:8px;align-items:center;font-size:13px}
+.sg-row{display:grid;grid-template-columns:7em minmax(0,1fr) 8.5em;column-gap:8px;align-items:center;font-size:13px}
 .sg-track{height:9px;background:#eceeec;border-radius:2px;overflow:hidden}
 .sg-bar{display:block;height:100%;border-radius:2px}
 .sg-faint .sg-bar{opacity:.4}
@@ -278,7 +280,8 @@ def _png(title: str, description: str, compounds: list[GridCompound], lay: depic
                     d.text((x + 10 * s, cy), _plain(f_text, text), font=f_text, fill=ink)
                     cy += lh(f_text)
                 cy += 6 * s
-            value_w = 84 * s
+            value_w = max([84 * s] + [d.textlength(f"{_fmt(b.value_nm)} nM {b.type}", font=f_text)
+                                      for other in compounds for b in other.bars])  # the same in every card
             track_x0, track_x1 = x + label_w, x + plate_w - value_w - 6 * s
             for b in c.bars:
                 colour = TYPE_COLOURS[b.type]
