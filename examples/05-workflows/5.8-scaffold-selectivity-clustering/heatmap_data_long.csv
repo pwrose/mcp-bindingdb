@@ -1,0 +1,253 @@
+row,monomerid,target,target_name,affinity_type,median_nm,p_affinity,censored,n_measurements,n_used
+1,50237710,ABL1,Tyrosine-protein kinase ABL1,Kd,13.5,7.87,False,17,16
+1,50237710,BCR-ABL,Breakpoint cluster region protein/Tyrosine-protein kinase ABL1,IC50,24.0,7.62,False,14,11
+1,50237710,EGFR,Epidermal growth factor receptor,Kd,10000.0,5.0,True,12,12
+1,50237710,PKC-δ,Protein kinase C delta type,Kd,10000.0,5.0,True,1,1
+1,50237710,SRC,Proto-oncogene tyrosine-protein kinase Src,Kd,1900.0,5.72,False,1,1
+2,13530,ABL1,Tyrosine-protein kinase ABL1,Kd,35.0,7.46,False,35,32
+2,13530,BCR-ABL,Breakpoint cluster region protein/Tyrosine-protein kinase ABL1,Ki,14.0,7.85,False,1,1
+2,13530,EGFR,Epidermal growth factor receptor,Kd,7600.0,5.12,False,23,3
+2,13530,PDGFR-α/β,Platelet-derived growth factor receptor alpha/beta,IC50,50.0,7.3,False,3,3
+2,13530,PKA,cAMP-dependent protein kinase catalytic subunit alpha/beta/gamma,IC50,500000.0,3.3,True,1,1
+2,13530,PKC-α,Protein kinase C alpha type,IC50,100000.0,4.0,True,3,3
+2,13530,PKC-δ,Protein kinase C delta type,Kd,10000.0,5.0,True,2,2
+2,13530,SRC,Proto-oncogene tyrosine-protein kinase Src,Kd,39811.0,4.4,False,3,1
+3,50287091,ABL1,Tyrosine-protein kinase ABL1,IC50,200.0,6.7,False,1,1
+3,50287091,BCR-ABL,Breakpoint cluster region protein/Tyrosine-protein kinase ABL1,IC50,200.0,6.7,False,1,1
+3,50287091,EGFR,Epidermal growth factor receptor,IC50,100000.0,4.0,True,2,2
+3,50287091,PDGFR-α/β,Platelet-derived growth factor receptor alpha/beta,IC50,50.0,7.3,False,2,2
+3,50287091,PKA,cAMP-dependent protein kinase catalytic subunit alpha/beta/gamma,IC50,100000.0,4.0,True,2,2
+3,50287091,PKC-α,Protein kinase C alpha type,IC50,100000.0,4.0,True,2,2
+3,50287091,PKC-δ,Protein kinase C delta type,IC50,500000.0,3.3,True,2,2
+3,50287091,SRC,Proto-oncogene tyrosine-protein kinase Src,IC50,100000.0,4.0,True,2,2
+4,50175491,ABL1,Tyrosine-protein kinase ABL1,IC50,110.0,6.96,False,2,2
+4,50175491,BCR-ABL,Breakpoint cluster region protein/Tyrosine-protein kinase ABL1,IC50,200.0,6.7,False,2,2
+4,50175491,EGFR,Epidermal growth factor receptor,IC50,100000.0,4.0,True,2,2
+4,50175491,PDGFR-α/β,Platelet-derived growth factor receptor alpha/beta,IC50,10.0,8.0,False,3,3
+4,50175491,PKA,cAMP-dependent protein kinase catalytic subunit alpha/beta/gamma,IC50,100000.0,4.0,True,2,2
+4,50175491,PKC-α,Protein kinase C alpha type,IC50,100000.0,4.0,True,3,3
+4,50175491,PKC-δ,Protein kinase C delta type,IC50,500000.0,3.3,True,2,2
+4,50175491,SRC,Proto-oncogene tyrosine-protein kinase Src,IC50,100000.0,4.0,True,3,3
+5,50287090,ABL1,Tyrosine-protein kinase ABL1,IC50,800.0,6.1,False,1,1
+5,50287090,BCR-ABL,Breakpoint cluster region protein/Tyrosine-protein kinase ABL1,IC50,794.0,6.1,False,1,1
+5,50287090,EGFR,Epidermal growth factor receptor,IC50,100000.0,4.0,True,2,2
+5,50287090,PDGFR-α/β,Platelet-derived growth factor receptor alpha/beta,IC50,10.0,8.0,False,2,2
+5,50287090,PKA,cAMP-dependent protein kinase catalytic subunit alpha/beta/gamma,IC50,100000.0,4.0,True,2,2
+5,50287090,PKC-α,Protein kinase C alpha type,IC50,100000.0,4.0,True,2,2
+5,50287090,PKC-δ,Protein kinase C delta type,IC50,300000.0,3.52,True,2,2
+5,50287090,SRC,Proto-oncogene tyrosine-protein kinase Src,IC50,100000.0,4.0,True,2,2
+6,50240407,ABL1,Tyrosine-protein kinase ABL1,IC50,6550.0,5.18,False,2,2
+6,50240407,BCR-ABL,Breakpoint cluster region protein/Tyrosine-protein kinase ABL1,IC50,399.0,6.4,False,2,2
+6,50240407,EGFR,Epidermal growth factor receptor,IC50,65000.0,4.19,False,2,1
+6,50240407,PDGFR-α/β,Platelet-derived growth factor receptor alpha/beta,IC50,100.0,7.0,False,2,2
+6,50240407,PKA,cAMP-dependent protein kinase catalytic subunit alpha/beta/gamma,IC50,500000.0,3.3,True,2,2
+6,50240407,PKC-α,Protein kinase C alpha type,IC50,72000.0,4.14,False,2,2
+6,50240407,PKC-δ,Protein kinase C delta type,IC50,500000.0,3.3,True,2,2
+6,50240407,SRC,Proto-oncogene tyrosine-protein kinase Src,IC50,100000.0,4.0,True,2,2
+7,50290412,ABL1,Tyrosine-protein kinase ABL1,IC50,200.0,6.7,False,1,1
+7,50290412,BCR-ABL,Breakpoint cluster region protein/Tyrosine-protein kinase ABL1,IC50,200.0,6.7,False,1,1
+7,50290412,EGFR,Epidermal growth factor receptor,IC50,50000.0,4.3,True,1,1
+7,50290412,PDGFR-α/β,Platelet-derived growth factor receptor alpha/beta,IC50,3000.0,5.52,False,1,1
+7,50290412,PKA,cAMP-dependent protein kinase catalytic subunit alpha/beta/gamma,IC50,500000.0,3.3,True,1,1
+7,50290412,SRC,Proto-oncogene tyrosine-protein kinase Src,IC50,100000.0,4.0,True,1,1
+8,50287092,EGFR,Epidermal growth factor receptor,IC50,75000.0,4.12,False,1,1
+8,50287092,PDGFR-α/β,Platelet-derived growth factor receptor alpha/beta,IC50,2500.0,5.6,False,1,1
+8,50287092,PKA,cAMP-dependent protein kinase catalytic subunit alpha/beta/gamma,IC50,500000.0,3.3,True,1,1
+8,50287092,PKC-α,Protein kinase C alpha type,IC50,100000.0,4.0,True,1,1
+8,50287092,PKC-δ,Protein kinase C delta type,IC50,100000.0,4.0,True,1,1
+9,50290419,ABL1,Tyrosine-protein kinase ABL1,IC50,450.0,6.35,False,1,1
+9,50290419,BCR-ABL,Breakpoint cluster region protein/Tyrosine-protein kinase ABL1,IC50,447.0,6.35,False,1,1
+9,50290419,EGFR,Epidermal growth factor receptor,IC50,100000.0,4.0,True,1,1
+9,50290419,PDGFR-α/β,Platelet-derived growth factor receptor alpha/beta,IC50,800.0,6.1,False,1,1
+9,50290419,PKA,cAMP-dependent protein kinase catalytic subunit alpha/beta/gamma,IC50,500000.0,3.3,True,1,1
+9,50290419,SRC,Proto-oncogene tyrosine-protein kinase Src,IC50,46000.0,4.34,False,1,1
+10,50287096,ABL1,Tyrosine-protein kinase ABL1,IC50,800.0,6.1,False,1,1
+10,50287096,BCR-ABL,Breakpoint cluster region protein/Tyrosine-protein kinase ABL1,IC50,794.0,6.1,False,1,1
+10,50287096,EGFR,Epidermal growth factor receptor,IC50,100000.0,4.0,True,2,2
+10,50287096,PDGFR-α/β,Platelet-derived growth factor receptor alpha/beta,IC50,300.0,6.52,False,2,2
+10,50287096,PKA,cAMP-dependent protein kinase catalytic subunit alpha/beta/gamma,IC50,500000.0,3.3,True,2,2
+10,50287096,PKC-α,Protein kinase C alpha type,IC50,80000.0,4.1,False,2,1
+10,50287096,PKC-δ,Protein kinase C delta type,IC50,300000.0,3.52,True,2,2
+10,50287096,SRC,Proto-oncogene tyrosine-protein kinase Src,IC50,100000.0,4.0,True,2,2
+11,50287094,EGFR,Epidermal growth factor receptor,IC50,100000.0,4.0,True,1,1
+11,50287094,PDGFR-α/β,Platelet-derived growth factor receptor alpha/beta,IC50,150.0,6.82,False,1,1
+11,50287094,PKA,cAMP-dependent protein kinase catalytic subunit alpha/beta/gamma,IC50,500000.0,3.3,True,1,1
+11,50287094,PKC-α,Protein kinase C alpha type,IC50,100000.0,4.0,True,1,1
+11,50287094,PKC-δ,Protein kinase C delta type,IC50,100000.0,4.0,True,1,1
+12,50290422,ABL1,Tyrosine-protein kinase ABL1,IC50,100.0,7.0,False,1,1
+12,50290422,BCR-ABL,Breakpoint cluster region protein/Tyrosine-protein kinase ABL1,IC50,100.0,7.0,False,1,1
+12,50290422,EGFR,Epidermal growth factor receptor,IC50,100000.0,4.0,True,1,1
+12,50290422,PDGFR-α/β,Platelet-derived growth factor receptor alpha/beta,IC50,200.0,6.7,False,1,1
+12,50290422,PKA,cAMP-dependent protein kinase catalytic subunit alpha/beta/gamma,IC50,475000.0,3.32,False,1,1
+12,50290422,SRC,Proto-oncogene tyrosine-protein kinase Src,IC50,7800.0,5.11,False,2,2
+13,50290430,ABL1,Tyrosine-protein kinase ABL1,IC50,1000.0,6.0,False,1,1
+13,50290430,BCR-ABL,Breakpoint cluster region protein/Tyrosine-protein kinase ABL1,IC50,1000.0,6.0,False,1,1
+13,50290430,EGFR,Epidermal growth factor receptor,IC50,100000.0,4.0,True,1,1
+13,50290430,PDGFR-α/β,Platelet-derived growth factor receptor alpha/beta,IC50,800.0,6.1,False,1,1
+13,50290430,PKA,cAMP-dependent protein kinase catalytic subunit alpha/beta/gamma,IC50,500000.0,3.3,True,1,1
+13,50290430,SRC,Proto-oncogene tyrosine-protein kinase Src,IC50,100000.0,4.0,True,1,1
+14,50290411,ABL1,Tyrosine-protein kinase ABL1,IC50,1300.0,5.89,False,1,1
+14,50290411,BCR-ABL,Breakpoint cluster region protein/Tyrosine-protein kinase ABL1,IC50,1288.0,5.89,False,1,1
+14,50290411,EGFR,Epidermal growth factor receptor,IC50,100000.0,4.0,True,1,1
+14,50290411,PDGFR-α/β,Platelet-derived growth factor receptor alpha/beta,IC50,1500.0,5.82,False,1,1
+14,50290411,PKA,cAMP-dependent protein kinase catalytic subunit alpha/beta/gamma,IC50,500000.0,3.3,True,1,1
+14,50290411,PKC-α,Protein kinase C alpha type,IC50,350.0,6.46,False,1,1
+14,50290411,PKC-δ,Protein kinase C delta type,IC50,500000.0,3.3,True,1,1
+14,50290411,SRC,Proto-oncogene tyrosine-protein kinase Src,IC50,100000.0,4.0,True,1,1
+15,50290429,ABL1,Tyrosine-protein kinase ABL1,IC50,1900.0,5.72,False,1,1
+15,50290429,BCR-ABL,Breakpoint cluster region protein/Tyrosine-protein kinase ABL1,IC50,1905.0,5.72,False,1,1
+15,50290429,EGFR,Epidermal growth factor receptor,IC50,100000.0,4.0,False,1,1
+15,50290429,PDGFR-α/β,Platelet-derived growth factor receptor alpha/beta,IC50,1000.0,6.0,False,1,1
+15,50290429,PKA,cAMP-dependent protein kinase catalytic subunit alpha/beta/gamma,IC50,500000.0,3.3,True,1,1
+15,50290429,PKC-α,Protein kinase C alpha type,IC50,320.0,6.49,False,1,1
+15,50290429,PKC-δ,Protein kinase C delta type,IC50,500000.0,3.3,True,1,1
+15,50290429,SRC,Proto-oncogene tyrosine-protein kinase Src,IC50,100000.0,4.0,True,1,1
+16,50290423,ABL1,Tyrosine-protein kinase ABL1,IC50,34000.0,4.47,False,1,1
+16,50290423,BCR-ABL,Breakpoint cluster region protein/Tyrosine-protein kinase ABL1,IC50,33884.0,4.47,False,1,1
+16,50290423,EGFR,Epidermal growth factor receptor,IC50,100000.0,4.0,False,1,1
+16,50290423,PDGFR-α/β,Platelet-derived growth factor receptor alpha/beta,IC50,100000.0,4.0,True,1,1
+16,50290423,PKA,cAMP-dependent protein kinase catalytic subunit alpha/beta/gamma,IC50,500000.0,3.3,True,1,1
+16,50290423,PKC-α,Protein kinase C alpha type,IC50,790.0,6.1,False,1,1
+16,50290423,PKC-δ,Protein kinase C delta type,IC50,500000.0,3.3,True,1,1
+16,50290423,SRC,Proto-oncogene tyrosine-protein kinase Src,IC50,93000.0,4.03,False,1,1
+17,50290410,ABL1,Tyrosine-protein kinase ABL1,IC50,8000.0,5.1,False,1,1
+17,50290410,BCR-ABL,Breakpoint cluster region protein/Tyrosine-protein kinase ABL1,IC50,7943.0,5.1,False,1,1
+17,50290410,PDGFR-α/β,Platelet-derived growth factor receptor alpha/beta,IC50,10000.0,5.0,True,1,1
+17,50290410,PKC-α,Protein kinase C alpha type,IC50,45000.0,4.35,False,1,1
+17,50290410,PKC-δ,Protein kinase C delta type,IC50,100000.0,4.0,True,1,1
+17,50290410,SRC,Proto-oncogene tyrosine-protein kinase Src,IC50,126000.0,3.9,False,1,1
+18,50287095,EGFR,Epidermal growth factor receptor,IC50,100000.0,4.0,True,1,1
+18,50287095,PDGFR-α/β,Platelet-derived growth factor receptor alpha/beta,IC50,10000.0,5.0,True,1,1
+18,50287095,PKA,cAMP-dependent protein kinase catalytic subunit alpha/beta/gamma,IC50,500000.0,3.3,True,1,1
+18,50287095,PKC-α,Protein kinase C alpha type,IC50,71000.0,4.15,False,1,1
+18,50287095,PKC-δ,Protein kinase C delta type,IC50,100000.0,4.0,True,1,1
+19,50287098,EGFR,Epidermal growth factor receptor,IC50,100000.0,4.0,True,1,1
+19,50287098,PDGFR-α/β,Platelet-derived growth factor receptor alpha/beta,IC50,10000.0,5.0,True,1,1
+19,50287098,PKA,cAMP-dependent protein kinase catalytic subunit alpha/beta/gamma,IC50,500000.0,3.3,True,1,1
+19,50287098,PKC-α,Protein kinase C alpha type,IC50,100000.0,4.0,True,1,1
+19,50287098,PKC-δ,Protein kinase C delta type,IC50,100000.0,4.0,True,1,1
+20,50287097,ABL1,Tyrosine-protein kinase ABL1,IC50,1500.0,5.82,False,1,1
+20,50287097,BCR-ABL,Breakpoint cluster region protein/Tyrosine-protein kinase ABL1,IC50,1514.0,5.82,False,1,1
+20,50287097,EGFR,Epidermal growth factor receptor,IC50,100000.0,4.0,True,2,2
+20,50287097,PDGFR-α/β,Platelet-derived growth factor receptor alpha/beta,IC50,10000.0,5.0,True,2,2
+20,50287097,PKA,cAMP-dependent protein kinase catalytic subunit alpha/beta/gamma,IC50,500000.0,3.3,True,2,2
+20,50287097,PKC-α,Protein kinase C alpha type,IC50,240000.0,3.62,False,2,1
+20,50287097,PKC-δ,Protein kinase C delta type,IC50,500000.0,3.3,True,2,2
+20,50287097,SRC,Proto-oncogene tyrosine-protein kinase Src,IC50,100000.0,4.0,True,2,2
+21,50240406,ABL1,Tyrosine-protein kinase ABL1,IC50,5800.0,5.24,False,1,1
+21,50240406,BCR-ABL,Breakpoint cluster region protein/Tyrosine-protein kinase ABL1,IC50,5754.0,5.24,False,1,1
+21,50240406,EGFR,Epidermal growth factor receptor,IC50,100000.0,4.0,True,2,2
+21,50240406,PDGFR-α/β,Platelet-derived growth factor receptor alpha/beta,IC50,50000.0,4.3,False,2,2
+21,50240406,PKA,cAMP-dependent protein kinase catalytic subunit alpha/beta/gamma,IC50,500000.0,3.3,True,2,2
+21,50240406,PKC-α,Protein kinase C alpha type,IC50,500000.0,3.3,False,2,1
+21,50240406,PKC-δ,Protein kinase C delta type,IC50,500000.0,3.3,True,2,2
+21,50240406,SRC,Proto-oncogene tyrosine-protein kinase Src,IC50,100000.0,4.0,True,2,2
+22,50290418,ABL1,Tyrosine-protein kinase ABL1,IC50,5100.0,5.29,False,1,1
+22,50290418,BCR-ABL,Breakpoint cluster region protein/Tyrosine-protein kinase ABL1,IC50,5129.0,5.29,False,1,1
+22,50290418,PDGFR-α/β,Platelet-derived growth factor receptor alpha/beta,IC50,100000.0,4.0,True,1,1
+22,50290418,PKA,cAMP-dependent protein kinase catalytic subunit alpha/beta/gamma,IC50,500000.0,3.3,True,1,1
+22,50290418,SRC,Proto-oncogene tyrosine-protein kinase Src,IC50,90000.0,4.05,False,1,1
+23,50287093,EGFR,Epidermal growth factor receptor,IC50,100000.0,4.0,True,1,1
+23,50287093,PDGFR-α/β,Platelet-derived growth factor receptor alpha/beta,IC50,100000.0,4.0,True,1,1
+23,50287093,PKA,cAMP-dependent protein kinase catalytic subunit alpha/beta/gamma,IC50,500000.0,3.3,True,1,1
+23,50287093,PKC-α,Protein kinase C alpha type,IC50,500000.0,3.3,True,1,1
+23,50287093,PKC-δ,Protein kinase C delta type,IC50,500000.0,3.3,True,1,1
+23,50287093,SRC,Proto-oncogene tyrosine-protein kinase Src,IC50,100000.0,4.0,True,1,1
+24,50290428,ABL1,Tyrosine-protein kinase ABL1,IC50,3800.0,5.42,False,1,1
+24,50290428,BCR-ABL,Breakpoint cluster region protein/Tyrosine-protein kinase ABL1,IC50,3802.0,5.42,False,1,1
+24,50290428,PDGFR-α/β,Platelet-derived growth factor receptor alpha/beta,IC50,100000.0,4.0,True,1,1
+24,50290428,PKA,cAMP-dependent protein kinase catalytic subunit alpha/beta/gamma,IC50,500000.0,3.3,True,1,1
+24,50290428,SRC,Proto-oncogene tyrosine-protein kinase Src,IC50,90000.0,4.05,False,1,1
+25,50287089,EGFR,Epidermal growth factor receptor,IC50,49000.0,4.31,False,1,1
+25,50287089,PDGFR-α/β,Platelet-derived growth factor receptor alpha/beta,IC50,100000.0,4.0,True,1,1
+25,50287089,PKA,cAMP-dependent protein kinase catalytic subunit alpha/beta/gamma,IC50,500000.0,3.3,True,1,1
+25,50287089,PKC-α,Protein kinase C alpha type,IC50,85000.0,4.07,False,1,1
+25,50287089,PKC-δ,Protein kinase C delta type,IC50,100000.0,4.0,True,1,1
+26,50290414,ABL1,Tyrosine-protein kinase ABL1,IC50,2000.0,5.7,False,1,1
+26,50290414,BCR-ABL,Breakpoint cluster region protein/Tyrosine-protein kinase ABL1,IC50,1995.0,5.7,False,1,1
+26,50290414,PDGFR-α/β,Platelet-derived growth factor receptor alpha/beta,IC50,100000.0,4.0,True,1,1
+26,50290414,PKA,cAMP-dependent protein kinase catalytic subunit alpha/beta/gamma,IC50,500000.0,3.3,True,1,1
+26,50290414,SRC,Proto-oncogene tyrosine-protein kinase Src,IC50,44000.0,4.36,False,1,1
+27,50290421,ABL1,Tyrosine-protein kinase ABL1,IC50,500.0,6.3,False,1,1
+27,50290421,BCR-ABL,Breakpoint cluster region protein/Tyrosine-protein kinase ABL1,IC50,501.0,6.3,False,1,1
+27,50290421,EGFR,Epidermal growth factor receptor,IC50,100000.0,4.0,True,1,1
+27,50290421,PDGFR-α/β,Platelet-derived growth factor receptor alpha/beta,IC50,100000.0,4.0,True,1,1
+27,50290421,PKA,cAMP-dependent protein kinase catalytic subunit alpha/beta/gamma,IC50,500000.0,3.3,True,1,1
+27,50290421,PKC-α,Protein kinase C alpha type,IC50,1300.0,5.89,False,1,1
+27,50290421,PKC-δ,Protein kinase C delta type,IC50,24000.0,4.62,False,1,1
+27,50290421,SRC,Proto-oncogene tyrosine-protein kinase Src,IC50,78000.0,4.11,False,1,1
+28,50045485,ABL1,Tyrosine-protein kinase ABL1,IC50,1500.0,5.82,False,1,1
+28,50045485,BCR-ABL,Breakpoint cluster region protein/Tyrosine-protein kinase ABL1,IC50,1514.0,5.82,False,1,1
+28,50045485,EGFR,Epidermal growth factor receptor,IC50,100000.0,4.0,True,1,1
+28,50045485,PDGFR-α/β,Platelet-derived growth factor receptor alpha/beta,IC50,10000.0,5.0,True,1,1
+28,50045485,PKA,cAMP-dependent protein kinase catalytic subunit alpha/beta/gamma,IC50,500000.0,3.3,True,1,1
+28,50045485,PKC-α,Protein kinase C alpha type,IC50,1600.0,5.8,False,1,1
+28,50045485,PKC-δ,Protein kinase C delta type,IC50,23000.0,4.64,False,1,1
+28,50045485,SRC,Proto-oncogene tyrosine-protein kinase Src,IC50,100000.0,4.0,True,1,1
+29,50045424,ABL1,Tyrosine-protein kinase ABL1,IC50,1800.0,5.74,False,1,1
+29,50045424,EGFR,Epidermal growth factor receptor,IC50,100000.0,4.0,False,1,1
+29,50045424,PDGFR-α/β,Platelet-derived growth factor receptor alpha/beta,IC50,10000.0,5.0,True,1,1
+29,50045424,PKA,cAMP-dependent protein kinase catalytic subunit alpha/beta/gamma,IC50,500000.0,3.3,True,1,1
+29,50045424,PKC-α,Protein kinase C alpha type,IC50,10500.0,4.98,False,1,1
+29,50045424,PKC-δ,Protein kinase C delta type,IC50,39000.0,4.41,False,1,1
+29,50045424,SRC,Proto-oncogene tyrosine-protein kinase Src,IC50,100000.0,4.0,True,1,1
+30,50287088,EGFR,Epidermal growth factor receptor,IC50,100000.0,4.0,True,1,1
+30,50287088,PDGFR-α/β,Platelet-derived growth factor receptor alpha/beta,IC50,10000.0,5.0,True,1,1
+30,50287088,PKA,cAMP-dependent protein kinase catalytic subunit alpha/beta/gamma,IC50,500000.0,3.3,True,1,1
+30,50287088,PKC-α,Protein kinase C alpha type,IC50,10000.0,5.0,False,1,1
+30,50287088,PKC-δ,Protein kinase C delta type,IC50,100000.0,4.0,True,1,1
+31,50290417,ABL1,Tyrosine-protein kinase ABL1,IC50,150.0,6.82,False,1,1
+31,50290417,BCR-ABL,Breakpoint cluster region protein/Tyrosine-protein kinase ABL1,IC50,151.0,6.82,False,1,1
+31,50290417,EGFR,Epidermal growth factor receptor,IC50,100000.0,4.0,True,1,1
+31,50290417,PDGFR-α/β,Platelet-derived growth factor receptor alpha/beta,IC50,50000.0,4.3,False,1,1
+31,50290417,PKA,cAMP-dependent protein kinase catalytic subunit alpha/beta/gamma,IC50,500000.0,3.3,True,1,1
+31,50290417,PKC-α,Protein kinase C alpha type,IC50,1700.0,5.77,False,1,1
+31,50290417,PKC-δ,Protein kinase C delta type,IC50,17000.0,4.77,False,1,1
+31,50290417,SRC,Proto-oncogene tyrosine-protein kinase Src,IC50,9000.0,5.05,False,1,1
+32,50290427,ABL1,Tyrosine-protein kinase ABL1,IC50,300.0,6.52,False,1,1
+32,50290427,EGFR,Epidermal growth factor receptor,IC50,50000.0,4.3,True,1,1
+32,50290427,PDGFR-α/β,Platelet-derived growth factor receptor alpha/beta,IC50,20000.0,4.7,False,1,1
+32,50290427,PKA,cAMP-dependent protein kinase catalytic subunit alpha/beta/gamma,IC50,500000.0,3.3,True,1,1
+32,50290427,SRC,Proto-oncogene tyrosine-protein kinase Src,IC50,3000.0,5.52,False,1,1
+33,50290415,ABL1,Tyrosine-protein kinase ABL1,IC50,400.0,6.4,False,1,1
+33,50290415,EGFR,Epidermal growth factor receptor,IC50,45000.0,4.35,False,1,1
+33,50290415,PDGFR-α/β,Platelet-derived growth factor receptor alpha/beta,IC50,10000.0,5.0,True,1,1
+33,50290415,SRC,Proto-oncogene tyrosine-protein kinase Src,IC50,9800.0,5.01,False,1,1
+34,50175493,ABL1,Tyrosine-protein kinase ABL1,IC50,400.0,6.4,False,2,2
+34,50175493,BCR-ABL,Breakpoint cluster region protein/Tyrosine-protein kinase ABL1,IC50,299.0,6.52,False,2,2
+34,50175493,EGFR,Epidermal growth factor receptor,IC50,50000.0,4.3,True,2,2
+34,50175493,PDGFR-α/β,Platelet-derived growth factor receptor alpha/beta,IC50,5000.0,5.3,False,3,3
+34,50175493,PKA,cAMP-dependent protein kinase catalytic subunit alpha/beta/gamma,IC50,500000.0,3.3,True,2,2
+34,50175493,PKC-α,Protein kinase C alpha type,IC50,1200.0,5.92,False,3,3
+34,50175493,PKC-δ,Protein kinase C delta type,IC50,23000.0,4.64,False,2,2
+34,50175493,SRC,Proto-oncogene tyrosine-protein kinase Src,IC50,15700.0,4.8,False,3,3
+35,50045526,ABL1,Tyrosine-protein kinase ABL1,IC50,1000.0,6.0,False,1,1
+35,50045526,BCR-ABL,Breakpoint cluster region protein/Tyrosine-protein kinase ABL1,IC50,1000.0,6.0,False,1,1
+35,50045526,EGFR,Epidermal growth factor receptor,IC50,7100.0,5.15,False,1,1
+35,50045526,PDGFR-α/β,Platelet-derived growth factor receptor alpha/beta,IC50,10000.0,5.0,True,1,1
+35,50045526,PKA,cAMP-dependent protein kinase catalytic subunit alpha/beta/gamma,IC50,340000.0,3.47,False,1,1
+35,50045526,PKC-α,Protein kinase C alpha type,IC50,1500.0,5.82,False,1,1
+35,50045526,PKC-δ,Protein kinase C delta type,IC50,34000.0,4.47,False,1,1
+35,50045526,SRC,Proto-oncogene tyrosine-protein kinase Src,IC50,4900.0,5.31,False,1,1
+36,50045481,ABL1,Tyrosine-protein kinase ABL1,IC50,3300.0,5.48,False,1,1
+36,50045481,BCR-ABL,Breakpoint cluster region protein/Tyrosine-protein kinase ABL1,IC50,3311.0,5.48,False,1,1
+36,50045481,EGFR,Epidermal growth factor receptor,IC50,100000.0,4.0,True,1,1
+36,50045481,PDGFR-α/β,Platelet-derived growth factor receptor alpha/beta,IC50,18000.0,4.74,False,1,1
+36,50045481,PKA,cAMP-dependent protein kinase catalytic subunit alpha/beta/gamma,IC50,500000.0,3.3,True,1,1
+36,50045481,PKC-α,Protein kinase C alpha type,IC50,1000.0,6.0,False,1,1
+36,50045481,PKC-δ,Protein kinase C delta type,IC50,21000.0,4.68,False,1,1
+36,50045481,SRC,Proto-oncogene tyrosine-protein kinase Src,IC50,1600.0,5.8,False,1,1
+37,50290431,ABL1,Tyrosine-protein kinase ABL1,IC50,200.0,6.7,False,1,1
+37,50290431,EGFR,Epidermal growth factor receptor,IC50,100000.0,4.0,True,1,1
+37,50290431,PDGFR-α/β,Platelet-derived growth factor receptor alpha/beta,IC50,600.0,6.22,False,1,1
+37,50290431,PKC-α,Protein kinase C alpha type,IC50,2000.0,5.7,False,1,1
+37,50290431,PKC-δ,Protein kinase C delta type,IC50,19000.0,4.72,False,1,1
+37,50290431,SRC,Proto-oncogene tyrosine-protein kinase Src,IC50,3700.0,5.43,False,1,1
+38,50045528,ABL1,Tyrosine-protein kinase ABL1,IC50,700.0,6.15,False,1,1
+38,50045528,BCR-ABL,Breakpoint cluster region protein/Tyrosine-protein kinase ABL1,IC50,708.0,6.15,False,1,1
+38,50045528,EGFR,Epidermal growth factor receptor,IC50,50000.0,4.3,False,1,1
+38,50045528,PDGFR-α/β,Platelet-derived growth factor receptor alpha/beta,IC50,100000.0,4.0,True,1,1
+38,50045528,PKA,cAMP-dependent protein kinase catalytic subunit alpha/beta/gamma,IC50,6000.0,5.22,False,1,1
+38,50045528,PKC-α,Protein kinase C alpha type,IC50,210000.0,3.68,False,1,1
+38,50045528,PKC-δ,Protein kinase C delta type,IC50,500000.0,3.3,True,1,1
+38,50045528,SRC,Proto-oncogene tyrosine-protein kinase Src,IC50,14000.0,4.85,False,1,1

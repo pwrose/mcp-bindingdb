@@ -1,0 +1,1685 @@
+target,kind,target_id,change,affinity_type,monomerid_from,monomerid_to,delta_p_affinity,shared_source,assay_name,source_kind,delta_in_assay
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,3532,4626,-0.51,,,,
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,3772,3773,-0.33,10639288,Kinase Inhibition Assay,article,-0.33
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,4567,50077238,0.01,10753475,ChEMBL_64445 (CHEMBL674020),article,0.01
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,4777,50077231,0.1,10346932,ChEMBL_64442 (CHEMBL674017),article,0.21
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,112499,50033375,0.38,,,,
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,170461,170542,-0.07,US9085540B2,Inhibition Assay,patent,-0.06
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,173427,173430,0.48,US9096601B2,Inhibition Assay,patent,0.48
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,200335,200489,0.0,US9670231B2,Not found,patent,-0.01
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,414541,414577,-0.18,US10435400B2,Wild Type EGFR and Mutant EGFR Kinase Inhibition Test,patent,-0.18
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,505411,505782,0.0,US11066414B2,High Throughput Biochemical Assay,patent,0.0
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,505500,505445,-0.18,US11066414B2,High Throughput Biochemical Assay,patent,-0.18
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,505500,505446,0.0,US11066414B2,High Throughput Biochemical Assay,patent,0.0
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,505775,505403,-0.18,US11066414B2,High Throughput Biochemical Assay,patent,-0.18
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,505786,505792,-0.3,US11066414B2,High Throughput Biochemical Assay,patent,-0.3
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,505792,505775,0.0,US11066414B2,High Throughput Biochemical Assay,patent,0.0
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,505805,506032,0.0,US11066414B2,High Throughput Biochemical Assay,patent,0.0
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,505824,505822,-0.18,US11066414B2,High Throughput Biochemical Assay,patent,-0.18
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,505831,505846,-0.18,US11066414B2,High Throughput Biochemical Assay,patent,-0.18
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,505843,505854,0.0,US11066414B2,High Throughput Biochemical Assay,patent,0.0
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,505846,505798,0.18,US11066414B2,High Throughput Biochemical Assay,patent,0.18
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,505854,505824,0.0,US11066414B2,High Throughput Biochemical Assay,patent,0.0
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,505874,505835,-0.18,US11066414B2,High Throughput Biochemical Assay,patent,-0.18
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,505881,505882,0.0,US11066414B2,High Throughput Biochemical Assay,patent,0.0
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,505888,505884,-0.18,US11066414B2,High Throughput Biochemical Assay,patent,-0.18
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,505901,506022,0.0,US11066414B2,High Throughput Biochemical Assay,patent,0.0
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,505902,505821,0.0,US11066414B2,High Throughput Biochemical Assay,patent,0.0
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,505902,506023,0.0,US11066414B2,High Throughput Biochemical Assay,patent,0.0
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,505903,505886,0.0,US11066414B2,High Throughput Biochemical Assay,patent,0.0
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,505910,505878,-0.18,US11066414B2,High Throughput Biochemical Assay,patent,-0.18
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,505922,505879,-0.18,US11066414B2,High Throughput Biochemical Assay,patent,-0.18
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,505940,505976,0.0,US11066414B2,High Throughput Biochemical Assay,patent,0.0
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,505945,505888,0.0,US11066414B2,High Throughput Biochemical Assay,patent,0.0
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,505957,505948,-0.18,US11066414B2,High Throughput Biochemical Assay,patent,-0.18
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,505957,505953,-0.18,US11066414B2,High Throughput Biochemical Assay,patent,-0.18
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,505976,505941,-0.18,US11066414B2,High Throughput Biochemical Assay,patent,-0.18
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,506048,506164,-0.3,US11066414B2,High Throughput Biochemical Assay,patent,-0.3
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,506196,506213,0.0,US11066414B2,High Throughput Biochemical Assay,patent,0.0
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,506221,505982,-0.3,US11066414B2,High Throughput Biochemical Assay,patent,-0.3
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,506226,506051,0.0,US11066414B2,High Throughput Biochemical Assay,patent,0.0
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,506228,506221,0.3,US11066414B2,High Throughput Biochemical Assay,patent,0.3
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,506229,506228,-0.3,US11066414B2,High Throughput Biochemical Assay,patent,-0.3
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,506247,506166,0.3,US11066414B2,High Throughput Biochemical Assay,patent,0.3
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,50029668,50260360,-1.55,30530173,ChEMBL_1909512 (CHEMBL4411958),article,0.26
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,50077230,50077234,-0.04,10346932,ChEMBL_64443 (CHEMBL674018),article,-0.04
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,50077243,50077242,0.32,,,,
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,50077244,50237049,-0.56,,,,
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,50159347,294480,0.67,,,,
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,50322823,50033373,-1.2,25409491,ChEMBL_1433615 (CHEMBL3385194),article,0.49
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,50326514,50326513,-0.06,20797871,ChEMBL_658103 (CHEMBL1249168),article,-0.06
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,50391086,50391088,0.0,22959248,ChEMBL_840627 (CHEMBL2090278),article,0.09
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,50405281,50405287,0.19,36064123,ChEMBL_2265030,article,0.19
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,50405282,50405288,0.01,36064123,ChEMBL_2265030,article,0.01
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,50458058,50458062,0.28,29466773,ChEMBL_1761976 (CHEMBL4197223),article,0.46
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,50458060,50458067,0.23,29466773,ChEMBL_1761976 (CHEMBL4197223),article,0.08
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,50558403,50558411,0.48,27614407,ChEMBL_2063567 (CHEMBL4718820),article,0.48
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,50558419,50558412,-0.48,,,,
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,50600260,50600262,-0.31,35378251,ChEMBL_2233431 (CHEMBL5147203),article,-0.3
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,50600261,50600259,0.65,35378251,ChEMBL_2233431 (CHEMBL5147203),article,0.65
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,50600274,50600281,-0.48,35378251,ChEMBL_2233431 (CHEMBL5147203),article,-0.48
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,50600274,50600282,0.3,35378251,ChEMBL_2233431 (CHEMBL5147203),article,0.3
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,50600274,50600283,-0.85,35378251,ChEMBL_2233431 (CHEMBL5147203),article,-0.85
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,50602101,50602103,-0.63,36384036,ChEMBL_2239140 (CHEMBL5153036),article,-0.6
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,50615093,50615094,-0.48,37197473,ChEMBL_2299671,article,-0.37
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,50618651,50618655,0.53,37269687,ChEMBL_2317306,article,0.64
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,50654304,50654307,0.24,39657459,ChEMBL_2606247,article,0.24
+EGFR,receptor tyrosine kinase,520,fluorine,IC50,50657777,50657778,-0.12,39626019,ChEMBL_2620059,article,-0.12
+EGFR,receptor tyrosine kinase,520,methyl,IC50,3570,3571,-1.56,8632415,Kinase Inhibition Assay,article,-1.56
+EGFR,receptor tyrosine kinase,520,methyl,IC50,4567,4595,-0.23,11462982,Kinase Inhibition Assay,article,-0.23
+EGFR,receptor tyrosine kinase,520,methyl,IC50,4777,4781,-0.24,11462982,Kinase Inhibition Assay,article,-0.25
+EGFR,receptor tyrosine kinase,520,methyl,IC50,31826,50656500,-0.57,,,,
+EGFR,receptor tyrosine kinase,520,methyl,IC50,170461,170475,0.07,US9085540B2,Inhibition Assay,patent,0.07
+EGFR,receptor tyrosine kinase,520,methyl,IC50,170461,170482,-0.07,US9085540B2,Inhibition Assay,patent,-0.06
+EGFR,receptor tyrosine kinase,520,methyl,IC50,170461,170503,0.29,US9085540B2,Inhibition Assay,patent,0.29
+EGFR,receptor tyrosine kinase,520,methyl,IC50,170529,170484,0.07,US9085540B2,Inhibition Assay,patent,0.07
+EGFR,receptor tyrosine kinase,520,methyl,IC50,170539,170540,0.03,US9085540B2,Inhibition Assay,patent,0.03
+EGFR,receptor tyrosine kinase,520,methyl,IC50,199995,199967,0.15,US9670231B2,Not found,patent,0.15
+EGFR,receptor tyrosine kinase,520,methyl,IC50,200335,200630,0.03,US9670231B2,Not found,patent,0.03
+EGFR,receptor tyrosine kinase,520,methyl,IC50,200489,199996,-0.04,US9670231B2,Not found,patent,-0.03
+EGFR,receptor tyrosine kinase,520,methyl,IC50,200490,200478,0.05,US9670231B2,Not found,patent,0.06
+EGFR,receptor tyrosine kinase,520,methyl,IC50,200491,200487,0.3,US9670231B2,Not found,patent,0.3
+EGFR,receptor tyrosine kinase,520,methyl,IC50,200630,200627,-0.1,US9670231B2,Not found,patent,-0.1
+EGFR,receptor tyrosine kinase,520,methyl,IC50,200791,200792,0.22,US9670231B2,Not found,patent,0.22
+EGFR,receptor tyrosine kinase,520,methyl,IC50,200801,200800,-0.08,US9670231B2,Not found,patent,-0.08
+EGFR,receptor tyrosine kinase,520,methyl,IC50,200810,200809,0.2,US9670231B2,Not found,patent,0.19
+EGFR,receptor tyrosine kinase,520,methyl,IC50,228124,228125,0.24,US9556191B2,Kinase Assay,patent,0.24
+EGFR,receptor tyrosine kinase,520,methyl,IC50,264129,264160,-0.1,US9714235B2,BT474 Assay,patent,-0.1
+EGFR,receptor tyrosine kinase,520,methyl,IC50,332539,332540,-0.61,30600209,ChEMBL_1832355 (CHEMBL4332363),article,-0.61
+EGFR,receptor tyrosine kinase,520,methyl,IC50,332539,332541,-0.34,30600209,ChEMBL_1832355 (CHEMBL4332363),article,-0.34
+EGFR,receptor tyrosine kinase,520,methyl,IC50,504411,504414,-0.14,US11040984B2,Kinase Assay,patent,-0.14
+EGFR,receptor tyrosine kinase,520,methyl,IC50,504414,504415,0.02,US11040984B2,Kinase Assay,patent,0.02
+EGFR,receptor tyrosine kinase,520,methyl,IC50,504535,505778,-0.3,US11066414B2,High Throughput Biochemical Assay,patent,-0.3
+EGFR,receptor tyrosine kinase,520,methyl,IC50,504535,505786,0.0,US11066414B2,High Throughput Biochemical Assay,patent,0.0
+EGFR,receptor tyrosine kinase,520,methyl,IC50,505412,505411,0.3,US11066414B2,High Throughput Biochemical Assay,patent,0.3
+EGFR,receptor tyrosine kinase,520,methyl,IC50,505542,504514,0.0,US11066414B2,High Throughput Biochemical Assay,patent,0.0
+EGFR,receptor tyrosine kinase,520,methyl,IC50,505542,505541,-0.18,US11066414B2,High Throughput Biochemical Assay,patent,-0.18
+EGFR,receptor tyrosine kinase,520,methyl,IC50,505610,505572,0.0,US11066414B2,High Throughput Biochemical Assay,patent,0.0
+EGFR,receptor tyrosine kinase,520,methyl,IC50,505684,505683,0.0,US11066414B2,High Throughput Biochemical Assay,patent,0.0
+EGFR,receptor tyrosine kinase,520,methyl,IC50,505706,505635,0.0,US11066414B2,High Throughput Biochemical Assay,patent,0.0
+EGFR,receptor tyrosine kinase,520,methyl,IC50,505715,505710,-0.18,US11066414B2,High Throughput Biochemical Assay,patent,-0.18
+EGFR,receptor tyrosine kinase,520,methyl,IC50,505769,505785,0.0,US11066414B2,High Throughput Biochemical Assay,patent,0.0
+EGFR,receptor tyrosine kinase,520,methyl,IC50,505794,505915,-0.48,US11066414B2,High Throughput Biochemical Assay,patent,-0.48
+EGFR,receptor tyrosine kinase,520,methyl,IC50,505805,505843,0.0,US11066414B2,High Throughput Biochemical Assay,patent,0.0
+EGFR,receptor tyrosine kinase,520,methyl,IC50,505818,505929,0.0,US11066414B2,High Throughput Biochemical Assay,patent,0.0
+EGFR,receptor tyrosine kinase,520,methyl,IC50,505819,505932,-0.3,US11066414B2,High Throughput Biochemical Assay,patent,-0.3
+EGFR,receptor tyrosine kinase,520,methyl,IC50,505824,505948,-0.18,US11066414B2,High Throughput Biochemical Assay,patent,-0.18
+EGFR,receptor tyrosine kinase,520,methyl,IC50,505960,505880,0.0,US11066414B2,High Throughput Biochemical Assay,patent,0.0
+EGFR,receptor tyrosine kinase,520,methyl,IC50,506062,506119,0.0,US11066414B2,High Throughput Biochemical Assay,patent,0.0
+EGFR,receptor tyrosine kinase,520,methyl,IC50,506066,505831,0.0,US11066414B2,High Throughput Biochemical Assay,patent,0.0
+EGFR,receptor tyrosine kinase,520,methyl,IC50,506066,505998,-0.18,US11066414B2,High Throughput Biochemical Assay,patent,-0.18
+EGFR,receptor tyrosine kinase,520,methyl,IC50,506095,506126,0.0,US11066414B2,High Throughput Biochemical Assay,patent,0.0
+EGFR,receptor tyrosine kinase,520,methyl,IC50,506119,506122,0.0,US11066414B2,High Throughput Biochemical Assay,patent,0.0
+EGFR,receptor tyrosine kinase,520,methyl,IC50,506123,506124,0.0,US11066414B2,High Throughput Biochemical Assay,patent,0.0
+EGFR,receptor tyrosine kinase,520,methyl,IC50,506126,506123,0.0,US11066414B2,High Throughput Biochemical Assay,patent,0.0
+EGFR,receptor tyrosine kinase,520,methyl,IC50,506146,506150,0.0,US11066414B2,High Throughput Biochemical Assay,patent,0.0
+EGFR,receptor tyrosine kinase,520,methyl,IC50,506214,506213,0.0,US11066414B2,High Throughput Biochemical Assay,patent,0.0
+EGFR,receptor tyrosine kinase,520,methyl,IC50,561454,561455,-0.22,US11390625B2,Not found,patent,0.19
+EGFR,receptor tyrosine kinase,520,methyl,IC50,717483,717518,-0.4,US20250034165A1,Inhibitory Activity for EGFR (WT) Kinase,patent,-0.4
+EGFR,receptor tyrosine kinase,520,methyl,IC50,717491,717526,0.13,US20250034165A1,Inhibitory Activity for EGFR (WT) Kinase,patent,0.13
+EGFR,receptor tyrosine kinase,520,methyl,IC50,717495,717497,-0.07,US20250034165A1,Inhibitory Activity for EGFR (WT) Kinase,patent,-0.07
+EGFR,receptor tyrosine kinase,520,methyl,IC50,717499,717500,0.03,US20250034165A1,Inhibitory Activity for EGFR (WT) Kinase,patent,0.03
+EGFR,receptor tyrosine kinase,520,methyl,IC50,717499,717503,-0.02,US20250034165A1,Inhibitory Activity for EGFR (WT) Kinase,patent,-0.03
+EGFR,receptor tyrosine kinase,520,methyl,IC50,717505,717525,-0.06,US20250034165A1,Inhibitory Activity for EGFR (WT) Kinase,patent,-0.05
+EGFR,receptor tyrosine kinase,520,methyl,IC50,717518,717517,0.11,US20250034165A1,Inhibitory Activity for EGFR (WT) Kinase,patent,0.11
+EGFR,receptor tyrosine kinase,520,methyl,IC50,790061,790039,-0.11,US20250353864A1,Biochemical Assays for Inhibition of Wild-Type and Mutant EGFRs,patent,-0.11
+EGFR,receptor tyrosine kinase,520,methyl,IC50,790085,790086,-0.34,US20250353864A1,Biochemical Assays for Inhibition of Wild-Type and Mutant EGFRs,patent,-0.35
+EGFR,receptor tyrosine kinase,520,methyl,IC50,50123170,50123171,0.37,26310890,ChEMBL_1520607 (CHEMBL3625155),article,0.37
+EGFR,receptor tyrosine kinase,520,methyl,IC50,50123196,332539,0.24,,,,
+EGFR,receptor tyrosine kinase,520,methyl,IC50,50123203,332542,0.19,,,,
+EGFR,receptor tyrosine kinase,520,methyl,IC50,50179509,31826,1.0,,,,
+EGFR,receptor tyrosine kinase,520,methyl,IC50,50182695,4566,0.9,16480284,ChEMBL_334483 (CHEMBL862512),article,0.9
+EGFR,receptor tyrosine kinase,520,methyl,IC50,50210162,50383051,0.74,,,,
+EGFR,receptor tyrosine kinase,520,methyl,IC50,50276123,50276101,0.5,29906114,ChEMBL_1715285 (CHEMBL4125334),article,0.74
+EGFR,receptor tyrosine kinase,520,methyl,IC50,50276123,50276104,0.8,29906114,ChEMBL_1715285 (CHEMBL4125334),article,0.93
+EGFR,receptor tyrosine kinase,520,methyl,IC50,50383283,50383287,-0.66,22339342,ChEMBL_819567 (CHEMBL2033651),article,-0.66
+EGFR,receptor tyrosine kinase,520,methyl,IC50,50532912,50532911,0.3,27396610,ChEMBL_1924071 (CHEMBL4427027),article,1.57
+EGFR,receptor tyrosine kinase,520,methyl,IC50,50532912,50532914,0.6,27396610,ChEMBL_1924071 (CHEMBL4427027),article,1.61
+EGFR,receptor tyrosine kinase,520,methyl,IC50,50558376,50558393,0.3,27614407,ChEMBL_2063567 (CHEMBL4718820),article,0.3
+EGFR,receptor tyrosine kinase,520,methyl,IC50,50558385,50558386,-0.3,27614407,ChEMBL_2063567 (CHEMBL4718820),article,-0.3
+EGFR,receptor tyrosine kinase,520,methyl,IC50,50579857,50579861,-0.48,34624491,ChEMBL_2145644 (CHEMBL5029924),article,-0.12
+EGFR,receptor tyrosine kinase,520,methyl,IC50,50592743,50592741,-0.12,35810715,ChEMBL_2205222 (CHEMBL5117930),article,0.05
+EGFR,receptor tyrosine kinase,520,methyl,IC50,50592745,50592754,-0.13,35810715,ChEMBL_2205221 (CHEMBL5117929),article,0.32
+EGFR,receptor tyrosine kinase,520,methyl,IC50,50592746,50592752,0.44,35810715,ChEMBL_2205221 (CHEMBL5117929),article,0.57
+EGFR,receptor tyrosine kinase,520,methyl,IC50,50592746,50592755,-0.11,35810715,ChEMBL_2205222 (CHEMBL5117930),article,-0.1
+EGFR,receptor tyrosine kinase,520,methyl,IC50,50598683,50598684,-0.4,35838760,ChEMBL_2227703 (CHEMBL5141216),article,-0.18
+EGFR,receptor tyrosine kinase,520,methyl,IC50,50605425,50605422,0.14,39681043,ChEMBL_2613399,article,0.02
+EGFR,receptor tyrosine kinase,520,methyl,IC50,50615098,50615097,0.6,37197473,ChEMBL_2299669,article,0.72
+EGFR,receptor tyrosine kinase,520,methyl,IC50,50618649,50618653,-0.7,37269687,ChEMBL_2317306,article,0.36
+EGFR,receptor tyrosine kinase,520,methyl,IC50,50618651,50618654,0.75,37269687,ChEMBL_2317306,article,0.98
+EGFR,receptor tyrosine kinase,520,methyl,IC50,50618660,50618662,-0.52,37269687,ChEMBL_2317306,article,-0.39
+EGFR,receptor tyrosine kinase,520,methyl,IC50,50630522,50630523,0.45,37885208,ChEMBL_2363373,article,0.44
+EGFR,receptor tyrosine kinase,520,methyl,IC50,50630530,50630531,-0.08,37885208,ChEMBL_2363373,article,-0.09
+EGFR,receptor tyrosine kinase,520,methyl,IC50,50643838,50643841,0.0,38518121,ChEMBL_2463487,article,0.0
+EGFR,receptor tyrosine kinase,520,methyl,IC50,50646573,50646575,0.17,38908104,ChEMBL_2476957,article,0.07
+EGFR,receptor tyrosine kinase,520,chlorine,IC50,200335,200490,0.21,US9670231B2,Not found,patent,0.2
+EGFR,receptor tyrosine kinase,520,chlorine,IC50,249900,250051,-0.15,36912866,ChEMBL_2291428,article,-0.15
+EGFR,receptor tyrosine kinase,520,chlorine,IC50,505735,505676,-0.18,US11066414B2,High Throughput Biochemical Assay,patent,-0.18
+EGFR,receptor tyrosine kinase,520,chlorine,IC50,505748,505708,0.18,US11066414B2,High Throughput Biochemical Assay,patent,0.18
+EGFR,receptor tyrosine kinase,520,chlorine,IC50,505822,505988,0.0,US11066414B2,High Throughput Biochemical Assay,patent,0.0
+EGFR,receptor tyrosine kinase,520,chlorine,IC50,50557554,50645677,0.75,,,,
+EGFR,receptor tyrosine kinase,520,chlorine,IC50,50579857,50579860,-0.3,34624491,ChEMBL_2145644 (CHEMBL5029924),article,0.05
+EGFR,receptor tyrosine kinase,520,chlorine,IC50,50582238,50582243,-0.07,35178175,ChEMBL_2153742 (CHEMBL5038289),article,-0.07
+EGFR,receptor tyrosine kinase,520,chlorine,IC50,50613861,50613848,-0.29,36804726,ChEMBL_2294506,article,0.08
+EGFR,receptor tyrosine kinase,520,chlorine,IC50,50613862,50613848,0.81,36804726,ChEMBL_2294498,article,0.81
+EGFR,receptor tyrosine kinase,520,chlorine,IC50,50621967,50621968,-0.17,39681043,ChEMBL_2613398,article,-0.17
+EGFR,receptor tyrosine kinase,520,chlorine,IC50,50667495,50667496,-0.82,40120497,ChEMBL_2667177,article,-0.82
+EGFR,receptor tyrosine kinase,520,chlorine,IC50,50667501,50667502,0.94,40120497,ChEMBL_2667177,article,0.94
+EGFR,receptor tyrosine kinase,520,chlorine,IC50,50667504,50667505,0.04,40120497,ChEMBL_2667177,article,0.04
+EGFR,receptor tyrosine kinase,520,chlorine,IC50,50667512,50667513,0.58,40120497,ChEMBL_2667177,article,0.58
+ROR-gamma,nuclear receptor,738,fluorine,IC50,189877,189881,-0.12,US9920054B2,,patent,0.49
+ROR-gamma,nuclear receptor,738,fluorine,IC50,189897,189874,0.16,US9670201B2,Assay of Co-Activator Recruitment by TR-FRET,patent,0.17
+ROR-gamma,nuclear receptor,738,fluorine,IC50,190324,190326,-0.08,US9670201B2,Assay of Co-Activator Recruitment by TR-FRET,patent,-0.07
+ROR-gamma,nuclear receptor,738,fluorine,IC50,285795,285796,-0.21,US10080744B2,RORgammat (full-length human) Reporter Assay A,patent,-0.2
+ROR-gamma,nuclear receptor,738,fluorine,IC50,328434,328446,0.15,US9663502B2,Biochemical TR-FRET assay,patent,0.16
+ROR-gamma,nuclear receptor,738,fluorine,IC50,328435,328448,-0.17,US9663502B2,Biochemical TR-FRET assay,patent,-0.17
+ROR-gamma,nuclear receptor,738,fluorine,IC50,328445,328887,0.07,US9663502B2,Biochemical TR-FRET assay,patent,0.07
+ROR-gamma,nuclear receptor,738,fluorine,IC50,328473,328478,0.33,US9663502B2,Biochemical TR-FRET assay,patent,0.33
+ROR-gamma,nuclear receptor,738,fluorine,IC50,328473,328882,0.21,US9663502B2,Biochemical TR-FRET assay,patent,0.2
+ROR-gamma,nuclear receptor,738,fluorine,IC50,328478,328888,-0.02,US9663502B2,Biochemical TR-FRET assay,patent,-0.02
+ROR-gamma,nuclear receptor,738,fluorine,IC50,328486,328480,0.63,US9663502B2,Biochemical TR-FRET assay,patent,0.63
+ROR-gamma,nuclear receptor,738,fluorine,IC50,328494,328495,-0.05,US9663502B2,Biochemical TR-FRET assay,patent,-0.05
+ROR-gamma,nuclear receptor,738,fluorine,IC50,328552,328551,0.05,US9663502B2,Biochemical TR-FRET assay,patent,0.05
+ROR-gamma,nuclear receptor,738,fluorine,IC50,328563,328558,-0.08,US9663502B2,Biochemical TR-FRET assay,patent,-0.08
+ROR-gamma,nuclear receptor,738,fluorine,IC50,328711,328787,-0.19,US9663502B2,Biochemical TR-FRET assay,patent,-0.19
+ROR-gamma,nuclear receptor,738,fluorine,IC50,328742,328788,-0.06,US9663502B2,Biochemical TR-FRET assay,patent,-0.07
+ROR-gamma,nuclear receptor,738,fluorine,IC50,328751,328784,-0.09,US9663502B2,Biochemical TR-FRET assay,patent,-0.08
+ROR-gamma,nuclear receptor,738,fluorine,IC50,328804,328806,-0.02,US9663502B2,Biochemical TR-FRET assay,patent,-0.02
+ROR-gamma,nuclear receptor,738,fluorine,IC50,328815,328812,0.28,US9663502B2,Biochemical TR-FRET assay,patent,0.28
+ROR-gamma,nuclear receptor,738,fluorine,IC50,328815,328884,0.14,US9663502B2,Biochemical TR-FRET assay,patent,0.14
+ROR-gamma,nuclear receptor,738,fluorine,IC50,328821,328885,-0.37,US9663502B2,Biochemical TR-FRET assay,patent,-0.37
+ROR-gamma,nuclear receptor,738,fluorine,IC50,328882,328888,0.1,US9663502B2,Biochemical TR-FRET assay,patent,0.11
+ROR-gamma,nuclear receptor,738,fluorine,IC50,332411,332516,-0.12,US10196354B2,Biological Assays,patent,-0.12
+ROR-gamma,nuclear receptor,738,fluorine,IC50,332431,332518,-0.4,US10196354B2,Biological Assays,patent,-0.4
+ROR-gamma,nuclear receptor,738,fluorine,IC50,332432,332520,0.0,US10196354B2,Biological Assays,patent,0.0
+ROR-gamma,nuclear receptor,738,fluorine,IC50,332433,332431,0.0,US10196354B2,Biological Assays,patent,0.0
+ROR-gamma,nuclear receptor,738,fluorine,IC50,332433,332517,-0.4,US10196354B2,Biological Assays,patent,-0.4
+ROR-gamma,nuclear receptor,738,fluorine,IC50,332517,332518,0.0,US10196354B2,Biological Assays,patent,0.0
+ROR-gamma,nuclear receptor,738,fluorine,IC50,338462,338460,0.3,US9751873B2,Binding Assay,patent,0.3
+ROR-gamma,nuclear receptor,738,fluorine,IC50,338469,338467,0.3,US9751873B2,Binding Assay,patent,0.3
+ROR-gamma,nuclear receptor,738,fluorine,IC50,344442,344686,-0.23,US9783511B2,Biochemical TR-FRET Assay,patent,-0.23
+ROR-gamma,nuclear receptor,738,fluorine,IC50,344446,344692,-0.06,US9783511B2,Biochemical TR-FRET Assay,patent,-0.06
+ROR-gamma,nuclear receptor,738,fluorine,IC50,344447,344442,0.0,US9783511B2,Biochemical TR-FRET Assay,patent,0.0
+ROR-gamma,nuclear receptor,738,fluorine,IC50,344447,344493,-0.22,US9783511B2,Biochemical TR-FRET Assay,patent,-0.22
+ROR-gamma,nuclear receptor,738,fluorine,IC50,344447,344691,-0.23,US9783511B2,Biochemical TR-FRET Assay,patent,-0.23
+ROR-gamma,nuclear receptor,738,fluorine,IC50,344449,344689,-0.21,US9783511B2,Biochemical TR-FRET Assay,patent,-0.21
+ROR-gamma,nuclear receptor,738,fluorine,IC50,344460,344688,0.01,US9783511B2,Biochemical TR-FRET Assay,patent,0.01
+ROR-gamma,nuclear receptor,738,fluorine,IC50,344461,344496,-0.29,US9783511B2,Biochemical TR-FRET Assay,patent,-0.28
+ROR-gamma,nuclear receptor,738,fluorine,IC50,344461,344687,-0.16,US9783511B2,Biochemical TR-FRET Assay,patent,-0.15
+ROR-gamma,nuclear receptor,738,fluorine,IC50,344465,344464,-0.18,US9783511B2,Biochemical TR-FRET Assay,patent,-0.18
+ROR-gamma,nuclear receptor,738,fluorine,IC50,344466,344460,0.3,US9783511B2,Biochemical TR-FRET Assay,patent,0.3
+ROR-gamma,nuclear receptor,738,fluorine,IC50,344467,344446,0.2,US9783511B2,Biochemical TR-FRET Assay,patent,0.2
+ROR-gamma,nuclear receptor,738,fluorine,IC50,344468,344461,0.25,US9783511B2,Biochemical TR-FRET Assay,patent,0.24
+ROR-gamma,nuclear receptor,738,fluorine,IC50,344470,344695,-0.35,US9783511B2,Biochemical TR-FRET Assay,patent,-0.35
+ROR-gamma,nuclear receptor,738,fluorine,IC50,344474,344530,0.05,US9783511B2,Biochemical TR-FRET Assay,patent,0.05
+ROR-gamma,nuclear receptor,738,fluorine,IC50,344532,344690,-0.06,US9783511B2,Biochemical TR-FRET Assay,patent,-0.06
+ROR-gamma,nuclear receptor,738,fluorine,IC50,344543,344547,-0.29,US9783511B2,Biochemical TR-FRET Assay,patent,-0.29
+ROR-gamma,nuclear receptor,738,fluorine,IC50,344691,344686,0.0,US9783511B2,Biochemical TR-FRET Assay,patent,0.0
+ROR-gamma,nuclear receptor,738,fluorine,IC50,352512,352537,-0.05,US10745364B2,Biological Assay,patent,-0.05
+ROR-gamma,nuclear receptor,738,fluorine,IC50,352588,352590,0.08,US10745364B2,Biological Assay,patent,0.08
+ROR-gamma,nuclear receptor,738,fluorine,IC50,352754,352758,0.13,US10745364B2,Biological Assay,patent,0.13
+ROR-gamma,nuclear receptor,738,fluorine,IC50,352757,352761,-0.1,US10745364B2,Biological Assay,patent,-0.11
+ROR-gamma,nuclear receptor,738,fluorine,IC50,359487,359497,-0.09,US10221142B2,Biological Assay,patent,-0.09
+ROR-gamma,nuclear receptor,738,fluorine,IC50,359544,359539,-0.2,US10221142B2,Biological Assay,patent,-0.2
+ROR-gamma,nuclear receptor,738,fluorine,IC50,359548,359545,0.0,US10221142B2,Biological Assay,patent,0.0
+ROR-gamma,nuclear receptor,738,fluorine,IC50,359550,359535,0.05,US10221142B2,Biological Assay,patent,0.06
+ROR-gamma,nuclear receptor,738,fluorine,IC50,359606,359607,0.21,US10221142B2,Biological Assay,patent,0.21
+ROR-gamma,nuclear receptor,738,fluorine,IC50,363749,363750,-0.04,US9855229B2,Inhibition Assay,patent,-0.04
+ROR-gamma,nuclear receptor,738,fluorine,IC50,363752,363753,0.55,US9855229B2,Inhibition Assay,patent,0.55
+ROR-gamma,nuclear receptor,738,fluorine,IC50,364370,364371,-0.6,31272795,ChEMBL_1849372 (CHEMBL4349913),article,0.04
+ROR-gamma,nuclear receptor,738,fluorine,IC50,383405,383433,0.22,US10280144B2,In Vitro RORc Ligand Binding Assay,patent,0.22
+ROR-gamma,nuclear receptor,738,fluorine,IC50,383408,383406,-0.34,US10280144B2,In Vitro RORc Ligand Binding Assay,patent,-0.34
+ROR-gamma,nuclear receptor,738,fluorine,IC50,383408,383422,-0.13,US10280144B2,In Vitro RORc Ligand Binding Assay,patent,-0.13
+ROR-gamma,nuclear receptor,738,fluorine,IC50,383408,383430,-0.28,US10280144B2,In Vitro RORc Ligand Binding Assay,patent,-0.27
+ROR-gamma,nuclear receptor,738,fluorine,IC50,383414,383408,0.35,US10280144B2,In Vitro RORc Ligand Binding Assay,patent,0.35
+ROR-gamma,nuclear receptor,738,fluorine,IC50,383442,383417,0.04,US10280144B2,In Vitro RORc Ligand Binding Assay,patent,0.03
+ROR-gamma,nuclear receptor,738,fluorine,IC50,383442,383433,-0.01,US10280144B2,In Vitro RORc Ligand Binding Assay,patent,-0.02
+ROR-gamma,nuclear receptor,738,fluorine,IC50,383443,383405,-0.14,US10280144B2,In Vitro RORc Ligand Binding Assay,patent,-0.14
+ROR-gamma,nuclear receptor,738,fluorine,IC50,383443,383442,0.09,US10280144B2,In Vitro RORc Ligand Binding Assay,patent,0.1
+ROR-gamma,nuclear receptor,738,fluorine,IC50,385391,385454,0.0,US10689369B2,Biological Assay for RORgammaT Activity,patent,0.0
+ROR-gamma,nuclear receptor,738,fluorine,IC50,385393,385394,-0.18,US10689369B2,Biological Assay for RORgammaT Activity,patent,-0.18
+ROR-gamma,nuclear receptor,738,fluorine,IC50,385394,385395,0.0,US10689369B2,Biological Assay for RORgammaT Activity,patent,0.0
+ROR-gamma,nuclear receptor,738,fluorine,IC50,385415,385455,-0.18,US10689369B2,Biological Assay for RORgammaT Activity,patent,-0.18
+ROR-gamma,nuclear receptor,738,fluorine,IC50,385430,385450,-0.12,US10689369B2,Biological Assay for RORgammaT Activity,patent,-0.12
+ROR-gamma,nuclear receptor,738,fluorine,IC50,385431,385452,0.18,US10689369B2,Biological Assay for RORgammaT Activity,patent,0.18
+ROR-gamma,nuclear receptor,738,fluorine,IC50,385436,385451,0.18,US10689369B2,Biological Assay for RORgammaT Activity,patent,0.18
+ROR-gamma,nuclear receptor,738,fluorine,IC50,385475,385473,-0.3,US10689369B2,Biological Assay for RORgammaT Activity,patent,-0.3
+ROR-gamma,nuclear receptor,738,fluorine,IC50,385486,385491,0.0,US10689369B2,Biological Assay for RORgammaT Activity,patent,0.0
+ROR-gamma,nuclear receptor,738,fluorine,IC50,385507,385489,0.0,US10689369B2,Biological Assay for RORgammaT Activity,patent,0.0
+ROR-gamma,nuclear receptor,738,fluorine,IC50,385512,385511,-0.3,US10689369B2,Biological Assay for RORgammaT Activity,patent,-0.3
+ROR-gamma,nuclear receptor,738,fluorine,IC50,392136,392168,-0.3,29631962,ChEMBL_1711300 (CHEMBL4121349),article,-0.29
+ROR-gamma,nuclear receptor,738,fluorine,IC50,411413,411394,0.19,US10385036B2,TR-FRET (time-resolved fluorescence resonance energy transfer) assay,patent,0.19
+ROR-gamma,nuclear receptor,738,fluorine,IC50,411413,411412,0.94,US10385036B2,TR-FRET (time-resolved fluorescence resonance energy transfer) assay,patent,0.94
+ROR-gamma,nuclear receptor,738,fluorine,IC50,414262,414411,0.25,US10435369B2,General RORgamma Gal4 Reporter Assay,patent,0.26
+ROR-gamma,nuclear receptor,738,fluorine,IC50,435134,435140,0.23,US10584121B2,Biological Assay,patent,0.23
+ROR-gamma,nuclear receptor,738,fluorine,IC50,435135,435139,0.11,US10584121B2,Biological Assay,patent,0.1
+ROR-gamma,nuclear receptor,738,fluorine,IC50,435135,50615659,-0.25,,,,
+ROR-gamma,nuclear receptor,738,fluorine,IC50,435136,435135,-0.07,US10584121B2,Biological Assay,patent,-0.07
+ROR-gamma,nuclear receptor,738,fluorine,IC50,435139,435137,-0.14,US10584121B2,Biological Assay,patent,-0.13
+ROR-gamma,nuclear receptor,738,fluorine,IC50,50044254,50112367,-0.09,26191367,ChEMBL_1513553 (CHEMBL3610010),article,-0.1
+ROR-gamma,nuclear receptor,738,fluorine,IC50,50106301,50509564,-0.37,32071676,ChEMBL_1838767 (CHEMBL4338900),article,0.25
+ROR-gamma,nuclear receptor,738,fluorine,IC50,50112364,50112363,0.2,26191367,ChEMBL_1513553 (CHEMBL3610010),article,0.2
+ROR-gamma,nuclear receptor,738,fluorine,IC50,50446290,50446289,-0.42,24900774,ChEMBL_1288040 (CHEMBL3110543),article,-0.43
+ROR-gamma,nuclear receptor,738,fluorine,IC50,50509564,50509558,0.0,32071676,ChEMBL_1838767 (CHEMBL4338900),article,0.33
+ROR-gamma,nuclear receptor,738,fluorine,IC50,50512490,364370,0.2,31272795,ChEMBL_1849372 (CHEMBL4349913),article,0.37
+ROR-gamma,nuclear receptor,738,fluorine,IC50,50512490,50512498,0.16,31272795,ChEMBL_1849371 (CHEMBL4349912),article,0.16
+ROR-gamma,nuclear receptor,738,fluorine,IC50,50512498,364371,-0.56,31272795,ChEMBL_1849372 (CHEMBL4349913),article,0.26
+ROR-gamma,nuclear receptor,738,fluorine,IC50,50512498,50512510,-0.96,31272795,ChEMBL_1849372 (CHEMBL4349913),article,0.3
+ROR-gamma,nuclear receptor,738,fluorine,IC50,50615659,435137,0.22,,,,
+ROR-gamma,nuclear receptor,738,methyl,IC50,189877,189879,-0.08,US9920054B2,,patent,0.53
+ROR-gamma,nuclear receptor,738,methyl,IC50,189897,189873,0.07,US9670201B2,Assay of Co-Activator Recruitment by TR-FRET,patent,0.07
+ROR-gamma,nuclear receptor,738,methyl,IC50,189898,189899,0.0,US9670201B2,Assay of Co-Activator Recruitment by TR-FRET,patent,0.0
+ROR-gamma,nuclear receptor,738,methyl,IC50,285757,285759,0.34,US10080744B2,RORgammat (full-length human) Reporter Assay A,patent,0.35
+ROR-gamma,nuclear receptor,738,methyl,IC50,310628,310630,0.27,US10150762B2,RORgammat (full-length human) Reporter Assay A,patent,0.3
+ROR-gamma,nuclear receptor,738,methyl,IC50,328473,328480,0.66,US9663502B2,Biochemical TR-FRET assay,patent,0.66
+ROR-gamma,nuclear receptor,738,methyl,IC50,328511,328512,0.18,US9663502B2,Biochemical TR-FRET assay,patent,0.18
+ROR-gamma,nuclear receptor,738,methyl,IC50,328563,328951,-0.16,US9663502B2,Biochemical TR-FRET assay,patent,-0.16
+ROR-gamma,nuclear receptor,738,methyl,IC50,328589,328590,0.05,US9663502B2,Biochemical TR-FRET assay,patent,0.04
+ROR-gamma,nuclear receptor,738,methyl,IC50,328675,328676,-0.14,US9663502B2,Biochemical TR-FRET assay,patent,-0.14
+ROR-gamma,nuclear receptor,738,methyl,IC50,328675,328677,-0.04,US9663502B2,Biochemical TR-FRET assay,patent,-0.04
+ROR-gamma,nuclear receptor,738,methyl,IC50,328677,328673,0.18,US9663502B2,Biochemical TR-FRET assay,patent,0.18
+ROR-gamma,nuclear receptor,738,methyl,IC50,328679,328686,-0.14,US9663502B2,Biochemical TR-FRET assay,patent,-0.14
+ROR-gamma,nuclear receptor,738,methyl,IC50,328711,328712,-0.06,US9663502B2,Biochemical TR-FRET assay,patent,-0.06
+ROR-gamma,nuclear receptor,738,methyl,IC50,328751,328782,-0.01,US9663502B2,Biochemical TR-FRET assay,patent,-0.01
+ROR-gamma,nuclear receptor,738,methyl,IC50,328752,328756,0.05,US9663502B2,Biochemical TR-FRET assay,patent,0.05
+ROR-gamma,nuclear receptor,738,methyl,IC50,328756,328783,-0.08,US9663502B2,Biochemical TR-FRET assay,patent,-0.08
+ROR-gamma,nuclear receptor,738,methyl,IC50,328771,328758,-0.22,US9663502B2,Biochemical TR-FRET assay,patent,-0.22
+ROR-gamma,nuclear receptor,738,methyl,IC50,328804,328845,-0.2,US9663502B2,Biochemical TR-FRET assay,patent,-0.2
+ROR-gamma,nuclear receptor,738,methyl,IC50,328823,328826,0.22,US9663502B2,Biochemical TR-FRET assay,patent,0.22
+ROR-gamma,nuclear receptor,738,methyl,IC50,328837,328846,-0.11,US9663502B2,Biochemical TR-FRET assay,patent,-0.11
+ROR-gamma,nuclear receptor,738,methyl,IC50,328846,328852,-0.18,US9663502B2,Biochemical TR-FRET assay,patent,-0.17
+ROR-gamma,nuclear receptor,738,methyl,IC50,328852,328858,0.0,US9663502B2,Biochemical TR-FRET assay,patent,-0.01
+ROR-gamma,nuclear receptor,738,methyl,IC50,329723,329729,0.0,US9663522B2,Biological Assay,patent,0.0
+ROR-gamma,nuclear receptor,738,methyl,IC50,344460,344678,-0.07,US9783511B2,Biochemical TR-FRET Assay,patent,-0.07
+ROR-gamma,nuclear receptor,738,methyl,IC50,344544,344578,-0.13,US9783511B2,Biochemical TR-FRET Assay,patent,-0.12
+ROR-gamma,nuclear receptor,738,methyl,IC50,344550,344570,-0.12,US9783511B2,Biochemical TR-FRET Assay,patent,-0.12
+ROR-gamma,nuclear receptor,738,methyl,IC50,352512,352534,-0.29,US10745364B2,Biological Assay,patent,-0.29
+ROR-gamma,nuclear receptor,738,methyl,IC50,352525,352532,-0.23,US10745364B2,Biological Assay,patent,-0.23
+ROR-gamma,nuclear receptor,738,methyl,IC50,352532,352533,0.02,US10745364B2,Biological Assay,patent,0.02
+ROR-gamma,nuclear receptor,738,methyl,IC50,352534,352535,-0.06,US10745364B2,Biological Assay,patent,-0.05
+ROR-gamma,nuclear receptor,738,methyl,IC50,352535,352536,-0.22,US10745364B2,Biological Assay,patent,-0.23
+ROR-gamma,nuclear receptor,738,methyl,IC50,352615,352644,0.06,US10745364B2,Biological Assay,patent,0.06
+ROR-gamma,nuclear receptor,738,methyl,IC50,352626,352633,-0.08,US10745364B2,Biological Assay,patent,-0.08
+ROR-gamma,nuclear receptor,738,methyl,IC50,352626,352635,-0.14,US10745364B2,Biological Assay,patent,-0.15
+ROR-gamma,nuclear receptor,738,methyl,IC50,352632,352630,0.09,US10745364B2,Biological Assay,patent,0.09
+ROR-gamma,nuclear receptor,738,methyl,IC50,352633,352634,-0.15,US10745364B2,Biological Assay,patent,-0.15
+ROR-gamma,nuclear receptor,738,methyl,IC50,352635,352634,-0.09,US10745364B2,Biological Assay,patent,-0.08
+ROR-gamma,nuclear receptor,738,methyl,IC50,352643,352624,-0.26,US10745364B2,Biological Assay,patent,-0.26
+ROR-gamma,nuclear receptor,738,methyl,IC50,352644,352643,-0.02,US10745364B2,Biological Assay,patent,-0.02
+ROR-gamma,nuclear receptor,738,methyl,IC50,352653,352650,-0.19,US10745364B2,Biological Assay,patent,-0.19
+ROR-gamma,nuclear receptor,738,methyl,IC50,352653,359778,-0.28,US10745364B2,Biological Assay,patent,-0.28
+ROR-gamma,nuclear receptor,738,methyl,IC50,352707,352711,-0.09,US10745364B2,Biological Assay,patent,-0.09
+ROR-gamma,nuclear receptor,738,methyl,IC50,352707,352712,-0.05,US10745364B2,Biological Assay,patent,-0.05
+ROR-gamma,nuclear receptor,738,methyl,IC50,352726,352789,0.02,US9809561B2,Biological Assay,patent,0.02
+ROR-gamma,nuclear receptor,738,methyl,IC50,352729,352732,-0.13,US9809561B2,Biological Assay,patent,-0.13
+ROR-gamma,nuclear receptor,738,methyl,IC50,352733,352729,0.0,US9809561B2,Biological Assay,patent,0.03
+ROR-gamma,nuclear receptor,738,methyl,IC50,352736,352735,-0.06,US10745364B2,Biological Assay,patent,-0.06
+ROR-gamma,nuclear receptor,738,methyl,IC50,352775,352726,-0.13,US10745364B2,Biological Assay,patent,-0.13
+ROR-gamma,nuclear receptor,738,methyl,IC50,359539,359545,0.12,US10221142B2,Biological Assay,patent,0.12
+ROR-gamma,nuclear receptor,738,methyl,IC50,359544,359548,-0.08,US10221142B2,Biological Assay,patent,-0.08
+ROR-gamma,nuclear receptor,738,methyl,IC50,359555,359554,-0.28,US10221142B2,Biological Assay,patent,-0.28
+ROR-gamma,nuclear receptor,738,methyl,IC50,359572,359573,0.0,US10221142B2,Biological Assay,patent,0.0
+ROR-gamma,nuclear receptor,738,methyl,IC50,359684,352563,-0.21,US10221146B2,biochemical TR-FRET assay,patent,-0.21
+ROR-gamma,nuclear receptor,738,methyl,IC50,359821,352707,-0.14,US10221146B2,biochemical TR-FRET assay,patent,-0.14
+ROR-gamma,nuclear receptor,738,methyl,IC50,383449,383455,-0.23,US10280144B2,In Vitro RORc Ligand Binding Assay,patent,-0.22
+ROR-gamma,nuclear receptor,738,methyl,IC50,383449,383456,-0.24,US10280144B2,In Vitro RORc Ligand Binding Assay,patent,-0.23
+ROR-gamma,nuclear receptor,738,methyl,IC50,385391,385400,0.0,US10689369B2,Biological Assay for RORgammaT Activity,patent,0.0
+ROR-gamma,nuclear receptor,738,methyl,IC50,385396,385399,-0.12,US10689369B2,Biological Assay for RORgammaT Activity,patent,-0.12
+ROR-gamma,nuclear receptor,738,methyl,IC50,385484,385509,-0.3,US10689369B2,Biological Assay for RORgammaT Activity,patent,-0.3
+ROR-gamma,nuclear receptor,738,methyl,IC50,385485,385510,-0.3,US10689369B2,Biological Assay for RORgammaT Activity,patent,-0.3
+ROR-gamma,nuclear receptor,738,methyl,IC50,385486,385512,0.0,US10689369B2,Biological Assay for RORgammaT Activity,patent,0.0
+ROR-gamma,nuclear receptor,738,methyl,IC50,385491,385482,0.0,US10689369B2,Biological Assay for RORgammaT Activity,patent,0.0
+ROR-gamma,nuclear receptor,738,methyl,IC50,385491,385511,-0.3,US10689369B2,Biological Assay for RORgammaT Activity,patent,-0.3
+ROR-gamma,nuclear receptor,738,methyl,IC50,385504,385505,-0.3,US10689369B2,Biological Assay for RORgammaT Activity,patent,-0.3
+ROR-gamma,nuclear receptor,738,methyl,IC50,385534,385529,0.0,US10287272B2,Biological Assay for RORgammaT Activity,patent,0.0
+ROR-gamma,nuclear receptor,738,methyl,IC50,392076,392136,0.12,29631962,ChEMBL_1711300 (CHEMBL4121349),article,0.12
+ROR-gamma,nuclear receptor,738,methyl,IC50,392102,50271674,-0.59,29631962,ChEMBL_1711300 (CHEMBL4121349),article,-0.59
+ROR-gamma,nuclear receptor,738,methyl,IC50,411413,411409,0.62,US10385036B2,TR-FRET (time-resolved fluorescence resonance energy transfer) assay,patent,0.62
+ROR-gamma,nuclear receptor,738,methyl,IC50,411418,411419,-0.05,US10385036B2,TR-FRET (time-resolved fluorescence resonance energy transfer) assay,patent,-0.05
+ROR-gamma,nuclear receptor,738,methyl,IC50,414262,414248,0.17,US10435369B2,General RORgamma Gal4 Reporter Assay,patent,0.18
+ROR-gamma,nuclear receptor,738,methyl,IC50,414276,414267,0.3,US10435369B2,General RORgamma Gal4 Reporter Assay,patent,0.3
+ROR-gamma,nuclear receptor,738,methyl,IC50,414280,414277,0.55,US10435369B2,General RORgamma Gal4 Reporter Assay,patent,0.54
+ROR-gamma,nuclear receptor,738,methyl,IC50,414336,414378,0.3,US10435369B2,General RORgamma Gal4 Reporter Assay,patent,0.3
+ROR-gamma,nuclear receptor,738,methyl,IC50,497502,497632,-0.11,US11008312B2,In Vitro Ligand Binding Assay,patent,-0.11
+ROR-gamma,nuclear receptor,738,methyl,IC50,497508,497532,0.02,US11008312B2,In Vitro Ligand Binding Assay,patent,0.02
+ROR-gamma,nuclear receptor,738,methyl,IC50,497510,497531,-0.01,US11008312B2,In Vitro Ligand Binding Assay,patent,-0.01
+ROR-gamma,nuclear receptor,738,methyl,IC50,497512,497575,0.23,US11008312B2,In Vitro Ligand Binding Assay,patent,0.22
+ROR-gamma,nuclear receptor,738,methyl,IC50,497513,497576,0.09,US11008312B2,In Vitro Ligand Binding Assay,patent,0.1
+ROR-gamma,nuclear receptor,738,methyl,IC50,497519,497561,-0.05,US11008312B2,In Vitro Ligand Binding Assay,patent,-0.05
+ROR-gamma,nuclear receptor,738,methyl,IC50,497520,497554,0.09,US11008312B2,In Vitro Ligand Binding Assay,patent,0.08
+ROR-gamma,nuclear receptor,738,methyl,IC50,497521,497559,0.16,US11008312B2,In Vitro Ligand Binding Assay,patent,0.16
+ROR-gamma,nuclear receptor,738,methyl,IC50,497530,497538,-0.02,US11008312B2,In Vitro Ligand Binding Assay,patent,-0.01
+ROR-gamma,nuclear receptor,738,methyl,IC50,497562,497563,-0.15,US11008312B2,In Vitro Ligand Binding Assay,patent,-0.14
+ROR-gamma,nuclear receptor,738,methyl,IC50,497572,497590,-0.27,US11008312B2,In Vitro Ligand Binding Assay,patent,-0.27
+ROR-gamma,nuclear receptor,738,methyl,IC50,497573,497591,-0.35,US11008312B2,In Vitro Ligand Binding Assay,patent,-0.36
+ROR-gamma,nuclear receptor,738,methyl,IC50,497603,497685,0.02,US11008312B2,In Vitro Ligand Binding Assay,patent,0.02
+ROR-gamma,nuclear receptor,738,methyl,IC50,497603,497686,-0.01,US11008312B2,In Vitro Ligand Binding Assay,patent,-0.01
+ROR-gamma,nuclear receptor,738,methyl,IC50,497603,497709,0.12,US11008312B2,In Vitro Ligand Binding Assay,patent,0.12
+ROR-gamma,nuclear receptor,738,methyl,IC50,497655,497727,-0.23,US11008312B2,In Vitro Ligand Binding Assay,patent,-0.22
+ROR-gamma,nuclear receptor,738,methyl,IC50,497655,497742,-0.38,US11008312B2,In Vitro Ligand Binding Assay,patent,-0.38
+ROR-gamma,nuclear receptor,738,methyl,IC50,50044255,50112368,-0.09,26191367,ChEMBL_1513553 (CHEMBL3610010),article,-0.1
+ROR-gamma,nuclear receptor,738,methyl,IC50,50105928,50105988,-0.21,26048789,ChEMBL_1506249 (CHEMBL3599133),article,-0.21
+ROR-gamma,nuclear receptor,738,methyl,IC50,50106007,50106008,-0.11,26048789,ChEMBL_1506249 (CHEMBL3599133),article,-0.12
+ROR-gamma,nuclear receptor,738,methyl,IC50,50112360,50112359,0.1,26191367,ChEMBL_1513553 (CHEMBL3610010),article,0.1
+ROR-gamma,nuclear receptor,738,methyl,IC50,50112366,50112367,0.1,26191367,ChEMBL_1513553 (CHEMBL3610010),article,0.1
+ROR-gamma,nuclear receptor,738,methyl,IC50,50112590,50112586,0.2,26191367,ChEMBL_1513553 (CHEMBL3610010),article,0.2
+ROR-gamma,nuclear receptor,738,methyl,IC50,50445895,50287460,0.0,29456799,ChEMBL_1729706 (CHEMBL4144984),article,0.4
+ROR-gamma,nuclear receptor,738,methyl,IC50,50452843,50452842,-0.17,29258712,ChEMBL_1748478 (CHEMBL4182988),article,-0.17
+ROR-gamma,nuclear receptor,738,methyl,IC50,50452853,50452843,-0.1,29258712,ChEMBL_1748479 (CHEMBL4182989),article,0.08
+ROR-gamma,nuclear receptor,738,methyl,IC50,50460097,50460080,-0.2,29342416,ChEMBL_1768412 (CHEMBL4220524),article,0.34
+ROR-gamma,nuclear receptor,738,methyl,IC50,50466893,50466890,0.22,30130103,ChEMBL_1794593 (CHEMBL4266710),article,1.31
+ROR-gamma,nuclear receptor,738,methyl,IC50,50543663,50543664,0.43,32334912,ChEMBL_1989659 (CHEMBL4623394),article,0.65
+ROR-gamma,nuclear receptor,738,methyl,IC50,50543673,285765,0.05,,,,
+ROR-gamma,nuclear receptor,738,methyl,IC50,50622137,50622139,-0.31,37172324,ChEMBL_2331838,article,-0.31
+ROR-gamma,nuclear receptor,738,chlorine,IC50,189877,189884,0.43,US9920054B2,,patent,1.04
+ROR-gamma,nuclear receptor,738,chlorine,IC50,310682,310623,0.49,US10150762B2,RORgammat (full-length human) Reporter Assay B,patent,0.48
+ROR-gamma,nuclear receptor,738,chlorine,IC50,328449,328441,-0.21,US9663502B2,Biochemical TR-FRET assay,patent,-0.21
+ROR-gamma,nuclear receptor,738,chlorine,IC50,328473,328477,0.58,US9663502B2,Biochemical TR-FRET assay,patent,0.58
+ROR-gamma,nuclear receptor,738,chlorine,IC50,328483,328484,0.3,US9663502B2,Biochemical TR-FRET assay,patent,0.3
+ROR-gamma,nuclear receptor,738,chlorine,IC50,328563,328554,-0.02,US9663502B2,Biochemical TR-FRET assay,patent,-0.02
+ROR-gamma,nuclear receptor,738,chlorine,IC50,328686,328769,0.18,US9663502B2,Biochemical TR-FRET assay,patent,0.18
+ROR-gamma,nuclear receptor,738,chlorine,IC50,328688,328777,0.13,US9663502B2,Biochemical TR-FRET assay,patent,0.13
+ROR-gamma,nuclear receptor,738,chlorine,IC50,328703,328740,0.22,US9663502B2,Biochemical TR-FRET assay,patent,0.21
+ROR-gamma,nuclear receptor,738,chlorine,IC50,328711,328752,0.05,US9663502B2,Biochemical TR-FRET assay,patent,0.05
+ROR-gamma,nuclear receptor,738,chlorine,IC50,328712,328756,0.16,US9663502B2,Biochemical TR-FRET assay,patent,0.16
+ROR-gamma,nuclear receptor,738,chlorine,IC50,328715,328778,0.23,US9663502B2,Biochemical TR-FRET assay,patent,0.23
+ROR-gamma,nuclear receptor,738,chlorine,IC50,328719,328763,0.11,US9663502B2,Biochemical TR-FRET assay,patent,0.1
+ROR-gamma,nuclear receptor,738,chlorine,IC50,328722,328766,0.19,US9663502B2,Biochemical TR-FRET assay,patent,0.19
+ROR-gamma,nuclear receptor,738,chlorine,IC50,328725,328767,0.14,US9663502B2,Biochemical TR-FRET assay,patent,0.14
+ROR-gamma,nuclear receptor,738,chlorine,IC50,328732,328771,0.31,US9663502B2,Biochemical TR-FRET assay,patent,0.31
+ROR-gamma,nuclear receptor,738,chlorine,IC50,328733,328773,0.14,US9663502B2,Biochemical TR-FRET assay,patent,0.14
+ROR-gamma,nuclear receptor,738,chlorine,IC50,328734,328774,0.07,US9663502B2,Biochemical TR-FRET assay,patent,0.06
+ROR-gamma,nuclear receptor,738,chlorine,IC50,328735,328775,0.15,US9663502B2,Biochemical TR-FRET assay,patent,0.16
+ROR-gamma,nuclear receptor,738,chlorine,IC50,328742,328772,-0.15,US9663502B2,Biochemical TR-FRET assay,patent,-0.15
+ROR-gamma,nuclear receptor,738,chlorine,IC50,328804,328818,-0.02,US9663502B2,Biochemical TR-FRET assay,patent,-0.02
+ROR-gamma,nuclear receptor,738,chlorine,IC50,328815,328819,0.43,US9663502B2,Biochemical TR-FRET assay,patent,0.43
+ROR-gamma,nuclear receptor,738,chlorine,IC50,328837,328840,0.11,US9663502B2,Biochemical TR-FRET assay,patent,0.11
+ROR-gamma,nuclear receptor,738,chlorine,IC50,328837,328854,-0.03,US9663502B2,Biochemical TR-FRET assay,patent,-0.03
+ROR-gamma,nuclear receptor,738,chlorine,IC50,328847,328863,-0.02,US9663502B2,Biochemical TR-FRET assay,patent,-0.02
+ROR-gamma,nuclear receptor,738,chlorine,IC50,328852,328870,-0.01,US9663502B2,Biochemical TR-FRET assay,patent,-0.01
+ROR-gamma,nuclear receptor,738,chlorine,IC50,328874,328876,-0.12,US9663502B2,Biochemical TR-FRET assay,patent,-0.13
+ROR-gamma,nuclear receptor,738,chlorine,IC50,332433,332430,-0.3,US10196354B2,Biological Assays,patent,-0.3
+ROR-gamma,nuclear receptor,738,chlorine,IC50,344461,344503,-0.26,US9783511B2,Biochemical TR-FRET Assay,patent,-0.26
+ROR-gamma,nuclear receptor,738,chlorine,IC50,344467,344480,-0.05,US9783511B2,Biochemical TR-FRET Assay,patent,-0.04
+ROR-gamma,nuclear receptor,738,chlorine,IC50,344475,344480,0.0,US9783511B2,Biochemical TR-FRET Assay,patent,0.01
+ROR-gamma,nuclear receptor,738,chlorine,IC50,352485,352482,-0.03,US10745364B2,Biological Assay,patent,-0.03
+ROR-gamma,nuclear receptor,738,chlorine,IC50,352512,352525,-0.3,US10745364B2,Biological Assay,patent,-0.3
+ROR-gamma,nuclear receptor,738,chlorine,IC50,352534,352532,-0.24,US10745364B2,Biological Assay,patent,-0.24
+ROR-gamma,nuclear receptor,738,chlorine,IC50,352535,352533,-0.16,US10745364B2,Biological Assay,patent,-0.17
+ROR-gamma,nuclear receptor,738,chlorine,IC50,352614,352619,0.4,US10745364B2,Biological Assay,patent,0.4
+ROR-gamma,nuclear receptor,738,chlorine,IC50,352754,352755,0.15,US10745364B2,Biological Assay,patent,0.15
+ROR-gamma,nuclear receptor,738,chlorine,IC50,352757,352760,-0.22,US10745364B2,Biological Assay,patent,-0.22
+ROR-gamma,nuclear receptor,738,chlorine,IC50,497749,497844,0.05,US11008312B2,In Vitro Ligand Binding Assay,patent,0.05
+ROR-gamma,nuclear receptor,738,chlorine,IC50,50044255,50112359,-0.29,26191367,ChEMBL_1513553 (CHEMBL3610010),article,-0.29
+ROR-gamma,nuclear receptor,738,chlorine,IC50,50044255,50112367,-0.09,26191367,ChEMBL_1513553 (CHEMBL3610010),article,-0.1
+ROR-gamma,nuclear receptor,738,chlorine,IC50,50112586,50112368,0.1,26191367,ChEMBL_1513553 (CHEMBL3610010),article,0.1
+ROR-gamma,nuclear receptor,738,chlorine,IC50,50112590,50044255,0.39,26191367,ChEMBL_1513553 (CHEMBL3610010),article,0.39
+ROR-gamma,nuclear receptor,738,chlorine,IC50,50446288,50446282,-0.18,24900774,ChEMBL_1288040 (CHEMBL3110543),article,-0.18
+ROR-gamma,nuclear receptor,738,chlorine,IC50,50446288,50446283,-0.18,24900774,ChEMBL_1288040 (CHEMBL3110543),article,-0.18
+ROR-gamma,nuclear receptor,738,chlorine,IC50,50446290,50446288,-0.12,24900774,ChEMBL_1288040 (CHEMBL3110543),article,-0.12
+ROR-gamma,nuclear receptor,738,chlorine,IC50,50460080,50458200,0.77,29342416,ChEMBL_1768412 (CHEMBL4220524),article,0.92
+ROR-gamma,nuclear receptor,738,chlorine,IC50,50509564,50509559,-0.52,32071676,ChEMBL_1838767 (CHEMBL4338900),article,-0.42
+CA II,zinc metalloenzyme,1193,fluorine,Ki,10870,11621,0.4,12747790,CA Inhibition Assay,article,0.42
+CA II,zinc metalloenzyme,1193,fluorine,Ki,11615,11616,0.48,14971907,Esterase  Assay,article,0.48
+CA II,zinc metalloenzyme,1193,fluorine,Ki,11622,11625,0.3,12747790,CA Inhibition Assay,article,0.3
+CA II,zinc metalloenzyme,1193,fluorine,Ki,11623,11626,0.55,12747790,CA Inhibition Assay,article,0.54
+CA II,zinc metalloenzyme,1193,fluorine,Ki,11624,11627,0.3,12747790,CA Inhibition Assay,article,0.3
+CA II,zinc metalloenzyme,1193,fluorine,Ki,50037243,50037237,-0.04,25456084,ChEMBL_1436582 (CHEMBL3382962),article,-0.04
+CA II,zinc metalloenzyme,1193,fluorine,Ki,50107375,50107372,-1.0,26105196,ChEMBL_1509204 (CHEMBL3602837),article,-1.0
+CA II,zinc metalloenzyme,1193,fluorine,Ki,50143815,50143805,-0.31,26804228,ChEMBL_1551184 (CHEMBL3761632),article,-0.3
+CA II,zinc metalloenzyme,1193,fluorine,Ki,50144820,16670,0.02,,,,
+CA II,zinc metalloenzyme,1193,fluorine,Ki,50144828,50094347,0.37,,,,
+CA II,zinc metalloenzyme,1193,fluorine,Ki,50146749,50094392,-0.03,,,,
+CA II,zinc metalloenzyme,1193,fluorine,Ki,50167364,50167372,0.0,15908201,ChEMBL_308634 (CHEMBL834887),article,0.0
+CA II,zinc metalloenzyme,1193,fluorine,Ki,50174518,50174429,0.25,27166574,ChEMBL_1580999 (CHEMBL3812831),article,0.26
+CA II,zinc metalloenzyme,1193,fluorine,Ki,50180247,50180244,-0.53,27298005,ChEMBL_1583577 (CHEMBL3815664),article,-0.53
+CA II,zinc metalloenzyme,1193,fluorine,Ki,50197815,50197814,-0.33,27933963,ChEMBL_1619737 (CHEMBL3861906),article,-0.34
+CA II,zinc metalloenzyme,1193,fluorine,Ki,50237365,50237370,-0.74,28272885,ChEBML_1660852,article,-0.74
+CA II,zinc metalloenzyme,1193,fluorine,Ki,50239271,50239280,0.77,28453941,ChEMBL_1665868 (CHEMBL4015664),article,0.77
+CA II,zinc metalloenzyme,1193,fluorine,Ki,50239281,50239275,1.22,28453941,ChEMBL_1665868 (CHEMBL4015664),article,1.22
+CA II,zinc metalloenzyme,1193,fluorine,Ki,50261599,50261607,-0.8,28887000,ChEBML_1696165,article,-0.8
+CA II,zinc metalloenzyme,1193,fluorine,Ki,50261600,50261607,0.1,28887000,ChEBML_1696165,article,0.1
+CA II,zinc metalloenzyme,1193,fluorine,Ki,50280336,50564139,0.1,,,,
+CA II,zinc metalloenzyme,1193,fluorine,Ki,50492464,50492462,0.01,23842519,ChEMBL_975781 (CHEMBL2415309),article,0.01
+CA II,zinc metalloenzyme,1193,fluorine,Ki,50492465,50492470,-0.3,23842519,ChEMBL_975781 (CHEMBL2415309),article,-0.3
+CA II,zinc metalloenzyme,1193,fluorine,Ki,50507823,50507821,0.78,32435417,ChEMBL_1973883 (CHEMBL4606701),article,0.78
+CA II,zinc metalloenzyme,1193,fluorine,Ki,50515814,50515835,-0.58,31472471,ChEMBL_1862692 (CHEMBL4363548),article,0.77
+CA II,zinc metalloenzyme,1193,fluorine,Ki,50527096,50527084,-1.19,32031797,ChEMBL_1902056 (CHEMBL4404278),article,-1.19
+CA II,zinc metalloenzyme,1193,fluorine,Ki,50538704,50538706,0.96,32435417,ChEMBL_1973883 (CHEMBL4606701),article,0.96
+CA II,zinc metalloenzyme,1193,fluorine,Ki,50566708,50566710,0.09,34237441,ChEMBL_2101557 (CHEMBL4809953),article,0.09
+CA II,zinc metalloenzyme,1193,fluorine,Ki,50566722,50566724,0.65,34237441,ChEMBL_2101557 (CHEMBL4809953),article,0.65
+CA II,zinc metalloenzyme,1193,fluorine,Ki,50585408,50585411,-0.03,34902732,ChEMBL_2162454 (CHEMBL5047315),article,-0.03
+CA II,zinc metalloenzyme,1193,fluorine,Ki,50585421,50585423,0.03,34902732,ChEMBL_2162454 (CHEMBL5047315),article,0.03
+CA II,zinc metalloenzyme,1193,fluorine,Ki,50588838,50588841,0.0,33121862,ChEMBL_2191905 (CHEMBL5104265),article,0.0
+CA II,zinc metalloenzyme,1193,fluorine,Ki,50588839,50588842,0.0,33121862,ChEMBL_2191905 (CHEMBL5104265),article,0.0
+CA II,zinc metalloenzyme,1193,fluorine,Ki,50588840,50588843,0.0,33121862,ChEMBL_2191905 (CHEMBL5104265),article,0.0
+CA II,zinc metalloenzyme,1193,fluorine,Ki,50588958,50588959,0.0,33121862,ChEMBL_2191925 (CHEMBL5104285),article,0.0
+CA II,zinc metalloenzyme,1193,fluorine,Ki,50621320,50621330,0.44,38628786,ChEMBL_2328151,article,0.44
+CA II,zinc metalloenzyme,1193,methyl,Ki,10880,50331833,-2.35,33085484,ChEMBL_2018972 (CHEMBL4672550),article,0.65
+CA II,zinc metalloenzyme,1193,methyl,Ki,10884,50041027,-0.18,8164249,ChEMBL_45062 (CHEMBL658729),article,0.09
+CA II,zinc metalloenzyme,1193,methyl,Ki,11397,11400,0.09,10882008,In vitro binding of inhibitor to hCA-II,article,0.09
+CA II,zinc metalloenzyme,1193,methyl,Ki,11400,11406,-0.11,10882008,In vitro binding of inhibitor to hCA-II,article,-0.11
+CA II,zinc metalloenzyme,1193,methyl,Ki,11400,11409,-0.2,10882008,In vitro binding of inhibitor to hCA-II,article,-0.2
+CA II,zinc metalloenzyme,1193,methyl,Ki,11401,11407,0.14,10882008,In vitro binding of inhibitor to hCA-II,article,0.15
+CA II,zinc metalloenzyme,1193,methyl,Ki,14718,14736,-0.07,15084132,Esterase  Assay,article,-0.06
+CA II,zinc metalloenzyme,1193,methyl,Ki,14722,14737,-0.79,15084132,Esterase  Assay,article,-0.79
+CA II,zinc metalloenzyme,1193,methyl,Ki,14727,14728,0.02,15084132,Esterase  Assay,article,0.03
+CA II,zinc metalloenzyme,1193,methyl,Ki,14728,14729,-0.53,15084132,Esterase  Assay,article,-0.53
+CA II,zinc metalloenzyme,1193,methyl,Ki,14728,14730,-0.51,15084132,Esterase  Assay,article,-0.52
+CA II,zinc metalloenzyme,1193,methyl,Ki,14729,14731,-0.1,15084132,Esterase  Assay,article,-0.1
+CA II,zinc metalloenzyme,1193,methyl,Ki,14730,14732,-0.04,15084132,Esterase  Assay,article,-0.04
+CA II,zinc metalloenzyme,1193,methyl,Ki,14735,14733,0.01,15084132,Esterase  Assay,article,0.01
+CA II,zinc metalloenzyme,1193,methyl,Ki,33280,50136096,-0.82,14640555,ChEMBL_45234 (CHEMBL657192),article,-0.83
+CA II,zinc metalloenzyme,1193,methyl,Ki,210935,210936,-0.18,27860128,CA Inhibition Assay,article,-0.18
+CA II,zinc metalloenzyme,1193,methyl,Ki,50012207,50012208,0.01,2061922,ChEMBL_45238 (CHEMBL658941),article,0.01
+CA II,zinc metalloenzyme,1193,methyl,Ki,50013789,50143605,-0.05,26803577,ChEMBL_1551176 (CHEMBL3761624),article,-0.05
+CA II,zinc metalloenzyme,1193,methyl,Ki,50017728,50017725,0.26,,,,
+CA II,zinc metalloenzyme,1193,methyl,Ki,50017728,50017726,-0.22,2585439,ChEBML_45241,article,-0.21
+CA II,zinc metalloenzyme,1193,methyl,Ki,50017729,50017728,-0.2,2585439,ChEBML_45241,article,-0.2
+CA II,zinc metalloenzyme,1193,methyl,Ki,50017732,50017729,0.52,2585439,ChEBML_45241,article,0.52
+CA II,zinc metalloenzyme,1193,methyl,Ki,50037243,50037239,0.0,25456084,ChEMBL_1436582 (CHEMBL3382962),article,0.0
+CA II,zinc metalloenzyme,1193,methyl,Ki,50041027,50041045,0.33,8164249,ChEMBL_45062 (CHEMBL658729),article,0.33
+CA II,zinc metalloenzyme,1193,methyl,Ki,50041041,10884,0.98,8164249,ChEMBL_45062 (CHEMBL658729),article,0.71
+CA II,zinc metalloenzyme,1193,methyl,Ki,50041048,50041037,0.77,8164249,ChEMBL_45062 (CHEMBL658729),article,0.77
+CA II,zinc metalloenzyme,1193,methyl,Ki,50094806,50094836,0.1,11123998,ChEMBL_45081 (CHEMBL657152),article,0.1
+CA II,zinc metalloenzyme,1193,methyl,Ki,50094809,50094807,-0.12,11123998,ChEMBL_45081 (CHEMBL657152),article,-0.12
+CA II,zinc metalloenzyme,1193,methyl,Ki,50098106,50098101,-0.17,12747791,ChEMBL_45235 (CHEMBL657193),article,-0.16
+CA II,zinc metalloenzyme,1193,methyl,Ki,50107375,50107374,-0.5,26105196,ChEMBL_1509204 (CHEMBL3602837),article,-0.5
+CA II,zinc metalloenzyme,1193,methyl,Ki,50135609,50135629,0.03,14611846,ChEBML_45085,article,0.03
+CA II,zinc metalloenzyme,1193,methyl,Ki,50135622,50135603,0.12,14611846,ChEBML_45085,article,0.12
+CA II,zinc metalloenzyme,1193,methyl,Ki,50135626,50135620,0.02,14611846,ChEBML_45085,article,0.02
+CA II,zinc metalloenzyme,1193,methyl,Ki,50135627,50135611,0.12,14611846,ChEBML_45085,article,0.12
+CA II,zinc metalloenzyme,1193,methyl,Ki,50136093,50136080,0.1,14640555,ChEMBL_45234 (CHEMBL657192),article,0.1
+CA II,zinc metalloenzyme,1193,methyl,Ki,50174518,50174348,0.07,27166574,ChEMBL_1580999 (CHEMBL3812831),article,0.07
+CA II,zinc metalloenzyme,1193,methyl,Ki,50180239,50180238,-0.06,27298005,ChEMBL_1583577 (CHEMBL3815664),article,-0.06
+CA II,zinc metalloenzyme,1193,methyl,Ki,50180247,50180239,-0.78,27298005,ChEMBL_1583577 (CHEMBL3815664),article,-0.78
+CA II,zinc metalloenzyme,1193,methyl,Ki,50190139,50190138,0.15,27396930,ChEMBL_1591367 (CHEMBL3830276),article,0.14
+CA II,zinc metalloenzyme,1193,methyl,Ki,50197816,50197819,-0.18,27933963,ChEMBL_1619737 (CHEMBL3861906),article,-0.18
+CA II,zinc metalloenzyme,1193,methyl,Ki,50331833,50331834,0.71,33085484,ChEMBL_2018972 (CHEMBL4672550),article,0.72
+CA II,zinc metalloenzyme,1193,methyl,Ki,50331833,50331835,0.66,33085484,ChEMBL_2018972 (CHEMBL4672550),article,0.66
+CA II,zinc metalloenzyme,1193,methyl,Ki,50331835,16668,-0.05,33085484,ChEMBL_2018972 (CHEMBL4672550),article,-0.05
+CA II,zinc metalloenzyme,1193,methyl,Ki,50415863,50423787,0.22,21130650,ChEMBL_698609 (CHEMBL1647882),article,0.22
+CA II,zinc metalloenzyme,1193,methyl,Ki,50423787,50423788,0.78,21130650,ChEMBL_698609 (CHEMBL1647882),article,0.78
+CA II,zinc metalloenzyme,1193,methyl,Ki,50423788,50423789,0.8,21130650,ChEMBL_698609 (CHEMBL1647882),article,0.8
+CA II,zinc metalloenzyme,1193,methyl,Ki,50504621,50504622,0.0,31629164,ChEMBL_1815682 (CHEMBL4315256),article,0.02
+CA II,zinc metalloenzyme,1193,methyl,Ki,50507827,50507826,0.86,30530195,ChEMBL_1831753 (CHEMBL4331761),article,0.86
+CA II,zinc metalloenzyme,1193,methyl,Ki,50507827,50507828,0.96,30530195,ChEMBL_1831753 (CHEMBL4331761),article,0.96
+CA II,zinc metalloenzyme,1193,methyl,Ki,50511590,50511591,-0.69,34052322,ChEMBL_2104705 (CHEMBL4813208),article,-0.69
+CA II,zinc metalloenzyme,1193,methyl,Ki,50513292,50513293,0.59,31136893,ChEMBL_1852924 (CHEMBL4353548),article,0.59
+CA II,zinc metalloenzyme,1193,methyl,Ki,50515558,50515559,-0.13,31401537,ChEMBL_1861556 (CHEMBL4362412),article,-0.12
+CA II,zinc metalloenzyme,1193,methyl,Ki,50515558,50515563,-0.19,31401537,ChEMBL_1861556 (CHEMBL4362412),article,-0.18
+CA II,zinc metalloenzyme,1193,methyl,Ki,50523351,50523342,0.88,30826507,ChEMBL_1890033 (CHEMBL4391787),article,0.88
+CA II,zinc metalloenzyme,1193,methyl,Ki,50566698,50566712,-0.31,34237441,ChEMBL_2101557 (CHEMBL4809953),article,-0.31
+CA II,zinc metalloenzyme,1193,methyl,Ki,50566699,50566702,-0.13,34237441,ChEMBL_2101557 (CHEMBL4809953),article,-0.14
+CA II,zinc metalloenzyme,1193,methyl,Ki,50566699,50566713,0.01,34237441,ChEMBL_2101557 (CHEMBL4809953),article,0.01
+CA II,zinc metalloenzyme,1193,methyl,Ki,50566702,50566716,0.42,34237441,ChEMBL_2101557 (CHEMBL4809953),article,0.43
+CA II,zinc metalloenzyme,1193,methyl,Ki,50566705,50566719,0.19,34237441,ChEMBL_2101557 (CHEMBL4809953),article,0.18
+CA II,zinc metalloenzyme,1193,methyl,Ki,50566708,50566722,-0.67,34237441,ChEMBL_2101557 (CHEMBL4809953),article,-0.67
+CA II,zinc metalloenzyme,1193,methyl,Ki,50566709,50566723,-0.06,34237441,ChEMBL_2101557 (CHEMBL4809953),article,-0.06
+CA II,zinc metalloenzyme,1193,methyl,Ki,50566710,50566724,-0.11,34237441,ChEMBL_2101557 (CHEMBL4809953),article,-0.11
+CA II,zinc metalloenzyme,1193,methyl,Ki,50566711,50566725,-0.52,34237441,ChEMBL_2101557 (CHEMBL4809953),article,-0.52
+CA II,zinc metalloenzyme,1193,methyl,Ki,50566713,50566716,0.28,34237441,ChEMBL_2101557 (CHEMBL4809953),article,0.28
+CA II,zinc metalloenzyme,1193,methyl,Ki,50574149,50574150,0.1,34507012,ChEMBL_2121942 (CHEMBL4831089),article,0.1
+CA II,zinc metalloenzyme,1193,methyl,Ki,50588855,50588857,0.0,33121862,ChEMBL_2191905 (CHEMBL5104265),article,0.0
+CA II,zinc metalloenzyme,1193,methyl,Ki,50588857,50588858,0.0,33121862,ChEMBL_2191905 (CHEMBL5104265),article,0.0
+CA II,zinc metalloenzyme,1193,methyl,Ki,50588866,50588867,0.0,33121862,ChEMBL_2191905 (CHEMBL5104265),article,0.0
+CA II,zinc metalloenzyme,1193,methyl,Ki,50588887,50588888,0.0,33121862,ChEMBL_2191905 (CHEMBL5104265),article,0.0
+CA II,zinc metalloenzyme,1193,methyl,Ki,50588949,50588952,0.0,33121862,ChEMBL_2191925 (CHEMBL5104285),article,0.0
+CA II,zinc metalloenzyme,1193,methyl,Ki,50588958,50588962,0.0,33121862,ChEMBL_2191925 (CHEMBL5104285),article,0.0
+CA II,zinc metalloenzyme,1193,methyl,Ki,50589019,50589021,0.0,33121862,ChEMBL_2191929 (CHEMBL5104289),article,0.0
+CA II,zinc metalloenzyme,1193,methyl,Ki,50589026,50589011,0.0,33121862,ChEMBL_2191929 (CHEMBL5104289),article,0.0
+CA II,zinc metalloenzyme,1193,methyl,Ki,50589063,50589064,0.0,33121862,ChEMBL_2191931 (CHEMBL5104291),article,0.0
+CA II,zinc metalloenzyme,1193,methyl,Ki,50596541,50596542,0.04,35066141,ChEMBL_2220660 (CHEMBL5133994),article,0.04
+CA II,zinc metalloenzyme,1193,methyl,Ki,50621320,50621322,0.01,38628786,ChEMBL_2328151,article,0.01
+CA II,zinc metalloenzyme,1193,methyl,Ki,50624917,50624918,0.21,36201858,ChEMBL_2344000,article,0.21
+CA II,zinc metalloenzyme,1193,methyl,Ki,50640719,50640721,0.29,38266245,ChEMBL_2448883,article,0.29
+CA II,zinc metalloenzyme,1193,methyl,Ki,50642791,50642795,0.04,38207099,ChEMBL_2458836,article,0.04
+CA II,zinc metalloenzyme,1193,chlorine,Ki,10870,11622,0.52,12747790,CA Inhibition Assay,article,0.54
+CA II,zinc metalloenzyme,1193,chlorine,Ki,11615,11617,0.48,14971907,Esterase  Assay,article,0.48
+CA II,zinc metalloenzyme,1193,chlorine,Ki,11621,11625,0.42,12747790,CA Inhibition Assay,article,0.43
+CA II,zinc metalloenzyme,1193,chlorine,Ki,11622,11628,0.08,12747790,CA Inhibition Assay,article,0.08
+CA II,zinc metalloenzyme,1193,chlorine,Ki,11623,11629,0.07,12747790,CA Inhibition Assay,article,0.07
+CA II,zinc metalloenzyme,1193,chlorine,Ki,11624,11630,-0.12,12747790,CA Inhibition Assay,article,-0.12
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50054650,50054648,0.09,25050167,ChEMBL_1453079 (CHEMBL3362528),article,0.09
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50098106,50098102,0.07,12747791,ChEMBL_45235 (CHEMBL657193),article,0.07
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50107375,50107371,-0.18,26105196,ChEMBL_1509204 (CHEMBL3602837),article,-0.18
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50116578,50116580,-0.33,26233435,ChEMBL_1513115 (CHEMBL3610543),article,-0.33
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50130739,50130740,-0.12,26408817,ChEMBL_1524848 (CHEMBL3636830),article,-0.12
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50130751,50130752,-0.03,26408817,ChEMBL_1524848 (CHEMBL3636830),article,-0.03
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50140309,50139130,0.05,,,,
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50167364,50167371,0.01,15908201,ChEMBL_308634 (CHEMBL834887),article,0.01
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50174518,50174426,0.03,27166574,ChEMBL_1580999 (CHEMBL3812831),article,0.03
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50180247,50180243,-0.74,27298005,ChEMBL_1583577 (CHEMBL3815664),article,-0.74
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50211596,50211601,0.88,28111158,ChEMBL_1636648 (CHEMBL3879546),article,0.88
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50239271,50239272,-0.05,28453941,ChEMBL_1665868 (CHEMBL4015664),article,-0.05
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50239281,50239277,1.08,28453941,ChEMBL_1665868 (CHEMBL4015664),article,1.08
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50252992,50252996,-0.39,28511907,ChEMBL_1685231 (CHEMBL4035710),article,-0.39
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50252998,50252996,-0.01,28511907,ChEMBL_1685231 (CHEMBL4035710),article,-0.01
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50457342,50457335,0.2,28947945,ChEMBL_1759336 (CHEMBL4194344),article,0.2
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50492464,50492460,0.03,23842519,ChEMBL_975781 (CHEMBL2415309),article,0.03
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50492465,50492461,0.02,23842519,ChEMBL_975781 (CHEMBL2415309),article,0.02
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50495063,50495058,1.0,24332658,ChEMBL_1282048 (CHEMBL3101837),article,1.01
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50507830,50507834,0.0,30530195,ChEMBL_1831753 (CHEMBL4331761),article,0.0
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50515804,50515838,0.34,31472471,ChEMBL_1862692 (CHEMBL4363548),article,-1.14
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50515814,50515804,-0.34,31472471,ChEMBL_1862692 (CHEMBL4363548),article,1.01
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50515814,50515815,0.0,32795767,ChEMBL_2304338,article,0.0
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50515815,50515838,0.0,32795767,ChEMBL_2304338,article,0.0
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50523334,50523352,1.17,30826507,ChEMBL_1890033 (CHEMBL4391787),article,1.17
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50523335,50523339,0.89,30826507,ChEMBL_1890033 (CHEMBL4391787),article,0.9
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50523344,50523332,0.12,30826507,ChEMBL_1890033 (CHEMBL4391787),article,0.12
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50527082,50527086,0.85,32031797,ChEMBL_1902056 (CHEMBL4404278),article,0.86
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50527082,50527096,1.08,32031797,ChEMBL_1902056 (CHEMBL4404278),article,1.09
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50527088,50527090,-0.09,32031797,ChEMBL_1902056 (CHEMBL4404278),article,-0.08
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50538704,50538708,-0.18,34216985,ChEMBL_2105291 (CHEMBL4813794),article,-0.18
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50564139,50564141,-0.55,32044580,ChEMBL_2086702 (CHEMBL4767965),article,-0.55
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50585408,50585415,-0.02,34902732,ChEMBL_2162454 (CHEMBL5047315),article,-0.02
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50585411,50585416,0.03,34902732,ChEMBL_2162454 (CHEMBL5047315),article,0.03
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50585415,50585419,0.0,34902732,ChEMBL_2162454 (CHEMBL5047315),article,0.0
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50588838,50588844,0.0,33121862,ChEMBL_2191905 (CHEMBL5104265),article,0.0
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50588839,50588845,0.0,33121862,ChEMBL_2191905 (CHEMBL5104265),article,0.0
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50588840,221998,0.0,33121862,ChEMBL_2191905 (CHEMBL5104265),article,0.0
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50588949,50588950,0.0,33121862,ChEMBL_2191925 (CHEMBL5104285),article,0.0
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50588958,50588960,0.0,33121862,ChEMBL_2191925 (CHEMBL5104285),article,0.0
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50621320,50621325,-0.02,38628786,ChEMBL_2328151,article,-0.02
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50621320,50621326,0.01,38628786,ChEMBL_2328151,article,0.01
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50621325,50621327,0.02,38628786,ChEMBL_2328151,article,0.02
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50621326,50621327,-0.01,38628786,ChEMBL_2328151,article,-0.01
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50621326,50621328,-0.04,38628786,ChEMBL_2328151,article,-0.04
+CA II,zinc metalloenzyme,1193,chlorine,Ki,50642791,50642793,0.95,38207099,ChEMBL_2458836,article,0.95
+Adenosine A2A,GPCR,2130,fluorine,Ki,26234,26235,0.18,18947224,Receptor Binding Assay,article,0.19
+Adenosine A2A,GPCR,2130,fluorine,Ki,303260,303264,-0.31,US10138212B2,A2a Ki assay,patent,-0.32
+Adenosine A2A,GPCR,2130,fluorine,Ki,303261,303264,0.36,US10138212B2,A2a Ki assay,patent,0.36
+Adenosine A2A,GPCR,2130,fluorine,Ki,471620,471640,-0.3,US10822338B2,Competition Binding Assay,patent,-0.3
+Adenosine A2A,GPCR,2130,fluorine,Ki,493749,493757,0.55,US10988455B2,Binding Assay,patent,-0.36
+Adenosine A2A,GPCR,2130,fluorine,Ki,493749,493770,0.49,US10988455B2,Binding Assay,patent,0.49
+Adenosine A2A,GPCR,2130,fluorine,Ki,493768,50382498,-0.03,US10988455B2,Binding Assay,patent,-0.03
+Adenosine A2A,GPCR,2130,fluorine,Ki,493770,493769,0.19,US10988455B2,Binding Assay,patent,0.19
+Adenosine A2A,GPCR,2130,fluorine,Ki,508538,508543,-0.08,US11046714B2,competition binding assay,patent,-0.08
+Adenosine A2A,GPCR,2130,fluorine,Ki,508555,508558,0.48,US11046714B2,competition binding assay,patent,0.48
+Adenosine A2A,GPCR,2130,fluorine,Ki,508618,508630,0.61,US11046714B2,competition binding assay,patent,0.6
+Adenosine A2A,GPCR,2130,fluorine,Ki,508705,508704,0.18,US11046714B2,competition binding assay,patent,0.18
+Adenosine A2A,GPCR,2130,fluorine,Ki,508708,508710,0.0,US11046714B2,competition binding assay,patent,0.0
+Adenosine A2A,GPCR,2130,fluorine,Ki,616065,616074,-0.5,US20230271964A1,Adenosine Receptor Binding Assay,patent,-0.5
+Adenosine A2A,GPCR,2130,fluorine,Ki,616077,616080,-0.4,US20230271964A1,Adenosine Receptor Binding Assay,patent,-0.4
+Adenosine A2A,GPCR,2130,fluorine,Ki,616082,616094,-0.1,US20230271964A1,Adenosine Receptor Binding Assay,patent,-0.1
+Adenosine A2A,GPCR,2130,fluorine,Ki,616084,616093,0.4,US20230271964A1,Adenosine Receptor Binding Assay,patent,0.4
+Adenosine A2A,GPCR,2130,fluorine,Ki,616088,616095,-0.7,US20230271964A1,Adenosine Receptor Binding Assay,patent,-0.7
+Adenosine A2A,GPCR,2130,fluorine,Ki,616097,616102,-0.1,US20230271964A1,Adenosine Receptor Binding Assay,patent,-0.1
+Adenosine A2A,GPCR,2130,fluorine,Ki,616098,616101,-0.3,US20230271964A1,Adenosine Receptor Binding Assay,patent,-0.3
+Adenosine A2A,GPCR,2130,fluorine,Ki,616103,616107,-0.5,US20230271964A1,Adenosine Receptor Binding Assay,patent,-0.5
+Adenosine A2A,GPCR,2130,fluorine,Ki,616104,616108,0.4,US20230271964A1,Adenosine Receptor Binding Assay,patent,0.4
+Adenosine A2A,GPCR,2130,fluorine,Ki,616140,616142,-0.9,US20230271964A1,Adenosine Receptor Binding Assay,patent,-0.9
+Adenosine A2A,GPCR,2130,fluorine,Ki,616143,616145,-0.2,US20230271964A1,Adenosine Receptor Binding Assay,patent,-0.2
+Adenosine A2A,GPCR,2130,fluorine,Ki,616146,616148,-0.2,US20230271964A1,Adenosine Receptor Binding Assay,patent,-0.2
+Adenosine A2A,GPCR,2130,fluorine,Ki,618723,618729,0.34,US20230293517A1,Adenosine Receptor Time-Resolved Fluorescence Resonance Energy Transfer (TRFRET) Binding Assay,patent,0.34
+Adenosine A2A,GPCR,2130,fluorine,Ki,618731,618837,-1.16,US20230293517A1,Adenosine Receptor Time-Resolved Fluorescence Resonance Energy Transfer (TRFRET) Binding Assay,patent,-1.17
+Adenosine A2A,GPCR,2130,fluorine,Ki,618734,618875,-0.69,US20230293517A1,Adenosine Receptor Time-Resolved Fluorescence Resonance Energy Transfer (TRFRET) Binding Assay,patent,-0.69
+Adenosine A2A,GPCR,2130,fluorine,Ki,618734,618949,0.21,US20230293517A1,Adenosine Receptor Time-Resolved Fluorescence Resonance Energy Transfer (TRFRET) Binding Assay,patent,0.21
+Adenosine A2A,GPCR,2130,fluorine,Ki,618746,618912,-0.82,US20230293517A1,Adenosine Receptor Time-Resolved Fluorescence Resonance Energy Transfer (TRFRET) Binding Assay,patent,-0.82
+Adenosine A2A,GPCR,2130,fluorine,Ki,618770,618836,-0.55,US20230293517A1,Adenosine Receptor Time-Resolved Fluorescence Resonance Energy Transfer (TRFRET) Binding Assay,patent,-0.55
+Adenosine A2A,GPCR,2130,fluorine,Ki,618777,618838,-0.52,US20230293517A1,Adenosine Receptor Time-Resolved Fluorescence Resonance Energy Transfer (TRFRET) Binding Assay,patent,-0.51
+Adenosine A2A,GPCR,2130,fluorine,Ki,618789,618945,0.21,US20230293517A1,Adenosine Receptor Time-Resolved Fluorescence Resonance Energy Transfer (TRFRET) Binding Assay,patent,0.21
+Adenosine A2A,GPCR,2130,fluorine,Ki,618790,618839,-0.82,US20230293517A1,Adenosine Receptor Time-Resolved Fluorescence Resonance Energy Transfer (TRFRET) Binding Assay,patent,-0.83
+Adenosine A2A,GPCR,2130,fluorine,Ki,618867,618869,0.25,US20230293517A1,Adenosine Receptor Time-Resolved Fluorescence Resonance Energy Transfer (TRFRET) Binding Assay,patent,0.25
+Adenosine A2A,GPCR,2130,fluorine,Ki,618949,618867,-0.16,US20230293517A1,Adenosine Receptor Time-Resolved Fluorescence Resonance Energy Transfer (TRFRET) Binding Assay,patent,-0.16
+Adenosine A2A,GPCR,2130,fluorine,Ki,792984,792983,-0.5,US12552799B2,Adenosine Receptor Binding Assay,patent,-0.5
+Adenosine A2A,GPCR,2130,fluorine,Ki,50011294,50563134,-0.97,33548636,ChEMBL_2081575 (CHEMBL4737366),article,0.14
+Adenosine A2A,GPCR,2130,fluorine,Ki,50079329,50079322,0.15,25780876,ChEMBL_1472822 (CHEMBL3419484),article,0.15
+Adenosine A2A,GPCR,2130,fluorine,Ki,50139653,50139655,0.34,26781932,ChEBML_1553861,article,0.34
+Adenosine A2A,GPCR,2130,fluorine,Ki,50139653,50139748,0.56,26781932,ChEBML_1553861,article,0.56
+Adenosine A2A,GPCR,2130,fluorine,Ki,50139653,50139751,-0.6,26781932,ChEBML_1553861,article,-0.6
+Adenosine A2A,GPCR,2130,fluorine,Ki,50139748,50139777,-1.08,26781932,ChEBML_1553861,article,-1.08
+Adenosine A2A,GPCR,2130,fluorine,Ki,50139751,50139777,0.08,26781932,ChEBML_1553861,article,0.09
+Adenosine A2A,GPCR,2130,fluorine,Ki,50165056,50165064,0.33,15808481,ChEMBL_303597 (CHEMBL829686),article,0.86
+Adenosine A2A,GPCR,2130,fluorine,Ki,50201017,303255,0.0,US10138212B2,A2a Ki assay,patent,0.0
+Adenosine A2A,GPCR,2130,fluorine,Ki,50202773,50202769,0.05,17234414,ChEMBL_454055 (CHEMBL903246),article,0.05
+Adenosine A2A,GPCR,2130,fluorine,Ki,50202785,50202768,0.27,17234414,ChEMBL_454055 (CHEMBL903246),article,0.27
+Adenosine A2A,GPCR,2130,fluorine,Ki,50202986,50202991,0.1,17236762,ChEMBL_454087 (CHEMBL903278),article,0.44
+Adenosine A2A,GPCR,2130,fluorine,Ki,50202988,50202985,0.37,17236762,ChEMBL_454087 (CHEMBL903278),article,0.37
+Adenosine A2A,GPCR,2130,fluorine,Ki,50202990,50202985,0.0,17236762,ChEMBL_454087 (CHEMBL903278),article,0.0
+Adenosine A2A,GPCR,2130,fluorine,Ki,50202990,50202999,-0.26,17236762,ChEMBL_454087 (CHEMBL903278),article,-0.26
+Adenosine A2A,GPCR,2130,fluorine,Ki,50202992,50202988,-0.15,17236762,ChEMBL_454087 (CHEMBL903278),article,-0.15
+Adenosine A2A,GPCR,2130,fluorine,Ki,50202992,50202990,0.22,17236762,ChEMBL_454087 (CHEMBL903278),article,0.22
+Adenosine A2A,GPCR,2130,fluorine,Ki,50202993,50202992,0.2,17236762,ChEMBL_454087 (CHEMBL903278),article,0.2
+Adenosine A2A,GPCR,2130,fluorine,Ki,50202993,50202996,0.42,17236762,ChEMBL_454087 (CHEMBL903278),article,0.43
+Adenosine A2A,GPCR,2130,fluorine,Ki,50202996,50202990,0.0,17236762,ChEMBL_454087 (CHEMBL903278),article,0.0
+Adenosine A2A,GPCR,2130,fluorine,Ki,50235042,50235044,0.21,28055204,ChEMBL_1654437 (CHEMBL4003803),article,0.27
+Adenosine A2A,GPCR,2130,fluorine,Ki,50235042,50235046,0.24,28055204,ChEMBL_1654437 (CHEMBL4003803),article,0.31
+Adenosine A2A,GPCR,2130,fluorine,Ki,50235043,50235046,-0.4,28055204,ChEMBL_1654437 (CHEMBL4003803),article,-0.36
+Adenosine A2A,GPCR,2130,fluorine,Ki,50237064,50237076,-0.1,18329269,ChEMBL_463076 (CHEMBL928986),article,-0.1
+Adenosine A2A,GPCR,2130,fluorine,Ki,50237073,50237070,-0.01,18329269,ChEMBL_463076 (CHEMBL928986),article,-0.01
+Adenosine A2A,GPCR,2130,fluorine,Ki,50237095,50237086,-0.07,18329269,ChEMBL_463076 (CHEMBL928986),article,-0.07
+Adenosine A2A,GPCR,2130,fluorine,Ki,50239036,50377558,0.0,18411049,ChEMBL_479713 (CHEMBL921473),article,0.0
+Adenosine A2A,GPCR,2130,fluorine,Ki,50275660,50275800,-0.18,18835161,ChEMBL_492788 (CHEMBL939476),article,-0.18
+Adenosine A2A,GPCR,2130,fluorine,Ki,50275801,50275745,0.0,18835161,ChEMBL_492788 (CHEMBL939476),article,0.0
+Adenosine A2A,GPCR,2130,fluorine,Ki,50275803,50275961,0.3,18835161,ChEMBL_492788 (CHEMBL939476),article,0.3
+Adenosine A2A,GPCR,2130,fluorine,Ki,50275912,50275962,0.3,18835161,ChEMBL_492788 (CHEMBL939476),article,0.3
+Adenosine A2A,GPCR,2130,fluorine,Ki,50275913,50275963,0.3,18835161,ChEMBL_492788 (CHEMBL939476),article,0.3
+Adenosine A2A,GPCR,2130,fluorine,Ki,50294502,50294503,0.34,19362836,ChEMBL_575569 (CHEMBL1036412),article,0.34
+Adenosine A2A,GPCR,2130,fluorine,Ki,50294502,50294504,0.2,19362836,ChEMBL_575569 (CHEMBL1036412),article,0.2
+Adenosine A2A,GPCR,2130,fluorine,Ki,50315542,50315543,-0.27,20303771,ChEMBL_627304 (CHEMBL1105450),article,-0.26
+Adenosine A2A,GPCR,2130,fluorine,Ki,50316992,50316993,-0.16,20347304,ChEMBL_630130 (CHEMBL1113721),article,-0.16
+Adenosine A2A,GPCR,2130,fluorine,Ki,50317022,50317023,-0.06,20347304,ChEMBL_630130 (CHEMBL1113721),article,-0.06
+Adenosine A2A,GPCR,2130,fluorine,Ki,50372560,50372566,0.12,18249540,ChEMBL_465258 (CHEMBL930529),article,0.12
+Adenosine A2A,GPCR,2130,fluorine,Ki,50377512,50165069,0.22,18411049,ChEMBL_479713 (CHEMBL921473),article,0.22
+Adenosine A2A,GPCR,2130,fluorine,Ki,50377529,50377528,0.3,18411049,ChEMBL_479713 (CHEMBL921473),article,0.3
+Adenosine A2A,GPCR,2130,fluorine,Ki,50377549,50377529,-0.12,18411049,ChEMBL_479713 (CHEMBL921473),article,-0.12
+Adenosine A2A,GPCR,2130,fluorine,Ki,50382492,50382493,0.66,22220592,ChEMBL_816161 (CHEMBL2024727),article,-0.3
+Adenosine A2A,GPCR,2130,fluorine,Ki,50382498,493771,-0.33,US10988455B2,Binding Assay,patent,-0.33
+Adenosine A2A,GPCR,2130,fluorine,Ki,50382498,50382496,-0.25,22220592,ChEMBL_816161 (CHEMBL2024727),article,-0.12
+Adenosine A2A,GPCR,2130,fluorine,Ki,50394722,50394720,-0.63,22239465,ChEMBL_858812 (CHEMBL2167687),article,-0.64
+Adenosine A2A,GPCR,2130,fluorine,Ki,50457087,50457095,-0.23,28835798,ChEMBL_1758721 (CHEMBL4193729),article,0.46
+Adenosine A2A,GPCR,2130,fluorine,Ki,50457088,50457086,0.48,28835798,ChEMBL_1758721 (CHEMBL4193729),article,0.63
+Adenosine A2A,GPCR,2130,fluorine,Ki,50457088,50594659,0.48,,,,
+Adenosine A2A,GPCR,2130,fluorine,Ki,50457095,50457102,-0.1,28835798,ChEMBL_1758721 (CHEMBL4193729),article,-0.11
+Adenosine A2A,GPCR,2130,fluorine,Ki,50457095,50457108,0.07,28835798,ChEMBL_1758721 (CHEMBL4193729),article,0.07
+Adenosine A2A,GPCR,2130,fluorine,Ki,50457099,50457098,0.54,28835798,ChEMBL_1758724 (CHEMBL4193732),article,0.54
+Adenosine A2A,GPCR,2130,fluorine,Ki,50457105,50457091,-0.12,28835798,ChEMBL_1758721 (CHEMBL4193729),article,0.08
+Adenosine A2A,GPCR,2130,fluorine,Ki,50563124,50563128,0.09,33548636,ChEMBL_2081575 (CHEMBL4737366),article,0.09
+Adenosine A2A,GPCR,2130,fluorine,Ki,50563124,50563129,-0.03,33548636,ChEMBL_2081575 (CHEMBL4737366),article,-0.03
+Adenosine A2A,GPCR,2130,fluorine,Ki,50580276,50580311,-0.11,34783558,ChEMBL_2148006 (CHEMBL5032352),article,-0.1
+Adenosine A2A,GPCR,2130,methyl,Ki,26237,26241,0.1,18947224,Receptor Binding Assay,article,0.11
+Adenosine A2A,GPCR,2130,methyl,Ki,26242,26243,-0.02,18947224,Receptor Binding Assay,article,-0.02
+Adenosine A2A,GPCR,2130,methyl,Ki,35784,35843,-0.03,19695884,Radioligand Binding Assay,article,-0.03
+Adenosine A2A,GPCR,2130,methyl,Ki,35785,35784,0.18,19695884,Radioligand Binding Assay,article,0.19
+Adenosine A2A,GPCR,2130,methyl,Ki,35785,35786,0.03,19695884,Radioligand Binding Assay,article,0.03
+Adenosine A2A,GPCR,2130,methyl,Ki,35786,35829,0.2,19695884,Radioligand Binding Assay,article,0.2
+Adenosine A2A,GPCR,2130,methyl,Ki,35786,35843,0.12,19695884,Radioligand Binding Assay,article,0.12
+Adenosine A2A,GPCR,2130,methyl,Ki,35829,35830,-0.08,19695884,Radioligand Binding Assay,article,-0.08
+Adenosine A2A,GPCR,2130,methyl,Ki,35829,35832,-0.08,19695884,Radioligand Binding Assay,article,-0.08
+Adenosine A2A,GPCR,2130,methyl,Ki,35833,35835,-0.3,19695884,Radioligand Binding Assay,article,-0.3
+Adenosine A2A,GPCR,2130,methyl,Ki,35837,35838,-0.24,19695884,Radioligand Binding Assay,article,-0.23
+Adenosine A2A,GPCR,2130,methyl,Ki,35837,35839,-0.2,19695884,Radioligand Binding Assay,article,-0.2
+Adenosine A2A,GPCR,2130,methyl,Ki,35843,35830,0.0,19695884,Radioligand Binding Assay,article,0.0
+Adenosine A2A,GPCR,2130,methyl,Ki,128306,128307,0.05,US8796284B2,Competition Radioligand Binding Assay,patent,0.06
+Adenosine A2A,GPCR,2130,methyl,Ki,303259,303246,0.65,US10138212B2,A2a Ki assay,patent,0.65
+Adenosine A2A,GPCR,2130,methyl,Ki,303259,303263,-0.23,US10138212B2,A2a Ki assay,patent,-0.22
+Adenosine A2A,GPCR,2130,methyl,Ki,303260,303255,0.45,US10138212B2,A2a Ki assay,patent,0.45
+Adenosine A2A,GPCR,2130,methyl,Ki,303297,303248,0.65,US10138212B2,A2a Ki assay,patent,0.65
+Adenosine A2A,GPCR,2130,methyl,Ki,471637,471636,-0.02,US10822338B2,Competition Binding Assay,patent,-0.02
+Adenosine A2A,GPCR,2130,methyl,Ki,508525,508651,0.73,US11046714B2,competition binding assay,patent,0.73
+Adenosine A2A,GPCR,2130,methyl,Ki,508538,508539,-0.11,US11046714B2,competition binding assay,patent,-0.11
+Adenosine A2A,GPCR,2130,methyl,Ki,508539,508541,-0.03,US11046714B2,competition binding assay,patent,-0.04
+Adenosine A2A,GPCR,2130,methyl,Ki,508543,508654,-0.13,US11046714B2,competition binding assay,patent,-0.14
+Adenosine A2A,GPCR,2130,methyl,Ki,508675,508676,-0.15,US11046714B2,competition binding assay,patent,-0.15
+Adenosine A2A,GPCR,2130,methyl,Ki,577292,577283,0.0,US11472811B2,Adenosine Receptor Binding Assay,patent,0.0
+Adenosine A2A,GPCR,2130,methyl,Ki,616053,616058,-0.3,US20230271964A1,Adenosine Receptor Binding Assay,patent,-0.3
+Adenosine A2A,GPCR,2130,methyl,Ki,616053,616065,0.9,US20230271964A1,Adenosine Receptor Binding Assay,patent,0.9
+Adenosine A2A,GPCR,2130,methyl,Ki,616056,616057,0.3,US20230271964A1,Adenosine Receptor Binding Assay,patent,0.3
+Adenosine A2A,GPCR,2130,methyl,Ki,616070,616060,0.1,US20230271964A1,Adenosine Receptor Binding Assay,patent,0.1
+Adenosine A2A,GPCR,2130,methyl,Ki,616074,616075,-0.1,US20230271964A1,Adenosine Receptor Binding Assay,patent,-0.1
+Adenosine A2A,GPCR,2130,methyl,Ki,616080,616078,-0.4,US20230271964A1,Adenosine Receptor Binding Assay,patent,-0.4
+Adenosine A2A,GPCR,2130,methyl,Ki,616085,616082,0.7,US20230271964A1,Adenosine Receptor Binding Assay,patent,0.7
+Adenosine A2A,GPCR,2130,methyl,Ki,616094,616096,-0.2,US20230271964A1,Adenosine Receptor Binding Assay,patent,-0.2
+Adenosine A2A,GPCR,2130,methyl,Ki,618722,618830,-0.49,US20230293517A1,Adenosine Receptor Time-Resolved Fluorescence Resonance Energy Transfer (TRFRET) Binding Assay,patent,-0.49
+Adenosine A2A,GPCR,2130,methyl,Ki,618723,618770,-0.04,US20230293517A1,Adenosine Receptor Time-Resolved Fluorescence Resonance Energy Transfer (TRFRET) Binding Assay,patent,-0.04
+Adenosine A2A,GPCR,2130,methyl,Ki,618730,618965,0.42,US20230293517A1,Adenosine Receptor Time-Resolved Fluorescence Resonance Energy Transfer (TRFRET) Binding Assay,patent,0.42
+Adenosine A2A,GPCR,2130,methyl,Ki,618732,618964,-0.15,US20230293517A1,Adenosine Receptor Time-Resolved Fluorescence Resonance Energy Transfer (TRFRET) Binding Assay,patent,-0.15
+Adenosine A2A,GPCR,2130,methyl,Ki,618734,618849,-0.77,US20230293517A1,Adenosine Receptor Time-Resolved Fluorescence Resonance Energy Transfer (TRFRET) Binding Assay,patent,-0.76
+Adenosine A2A,GPCR,2130,methyl,Ki,618734,618952,0.41,US20230293517A1,Adenosine Receptor Time-Resolved Fluorescence Resonance Energy Transfer (TRFRET) Binding Assay,patent,0.41
+Adenosine A2A,GPCR,2130,methyl,Ki,618748,618777,-0.34,US20230293517A1,Adenosine Receptor Time-Resolved Fluorescence Resonance Energy Transfer (TRFRET) Binding Assay,patent,-0.34
+Adenosine A2A,GPCR,2130,methyl,Ki,618752,618731,0.46,US20230293517A1,Adenosine Receptor Time-Resolved Fluorescence Resonance Energy Transfer (TRFRET) Binding Assay,patent,0.47
+Adenosine A2A,GPCR,2130,methyl,Ki,618770,618955,-0.51,US20230293517A1,Adenosine Receptor Time-Resolved Fluorescence Resonance Energy Transfer (TRFRET) Binding Assay,patent,-0.51
+Adenosine A2A,GPCR,2130,methyl,Ki,618902,618917,0.15,US20230293517A1,Adenosine Receptor Time-Resolved Fluorescence Resonance Energy Transfer (TRFRET) Binding Assay,patent,0.14
+Adenosine A2A,GPCR,2130,methyl,Ki,618908,618961,0.33,US20230293517A1,Adenosine Receptor Time-Resolved Fluorescence Resonance Energy Transfer (TRFRET) Binding Assay,patent,0.33
+Adenosine A2A,GPCR,2130,methyl,Ki,618917,618916,0.19,US20230293517A1,Adenosine Receptor Time-Resolved Fluorescence Resonance Energy Transfer (TRFRET) Binding Assay,patent,0.2
+Adenosine A2A,GPCR,2130,methyl,Ki,618952,618951,-0.11,US20230293517A1,Adenosine Receptor Time-Resolved Fluorescence Resonance Energy Transfer (TRFRET) Binding Assay,patent,-0.11
+Adenosine A2A,GPCR,2130,methyl,Ki,618958,618959,0.02,US20230293517A1,Adenosine Receptor Time-Resolved Fluorescence Resonance Energy Transfer (TRFRET) Binding Assay,patent,0.02
+Adenosine A2A,GPCR,2130,methyl,Ki,761355,761425,-0.87,US20250243194A1,Adenosine Receptor Time-Resolved Fluorescence Resonance Energy Transfer (TRFRET) Binding Assay,patent,-0.87
+Adenosine A2A,GPCR,2130,methyl,Ki,761371,761367,0.02,US20250243194A1,Adenosine Receptor Time-Resolved Fluorescence Resonance Energy Transfer (TRFRET) Binding Assay,patent,0.02
+Adenosine A2A,GPCR,2130,methyl,Ki,761383,761371,-0.06,US20250243194A1,Adenosine Receptor Time-Resolved Fluorescence Resonance Energy Transfer (TRFRET) Binding Assay,patent,-0.07
+Adenosine A2A,GPCR,2130,methyl,Ki,761398,761400,-1.79,US20250243194A1,Adenosine Receptor Time-Resolved Fluorescence Resonance Energy Transfer (TRFRET) Binding Assay,patent,-1.78
+Adenosine A2A,GPCR,2130,methyl,Ki,761398,761404,-0.25,US20250243194A1,Adenosine Receptor Time-Resolved Fluorescence Resonance Energy Transfer (TRFRET) Binding Assay,patent,-0.25
+Adenosine A2A,GPCR,2130,methyl,Ki,761398,761411,-0.31,US20250243194A1,Adenosine Receptor Time-Resolved Fluorescence Resonance Energy Transfer (TRFRET) Binding Assay,patent,-0.3
+Adenosine A2A,GPCR,2130,methyl,Ki,761399,761400,0.18,US20250243194A1,Adenosine Receptor Time-Resolved Fluorescence Resonance Energy Transfer (TRFRET) Binding Assay,patent,0.19
+Adenosine A2A,GPCR,2130,methyl,Ki,761401,761398,0.98,US20250243194A1,Adenosine Receptor Time-Resolved Fluorescence Resonance Energy Transfer (TRFRET) Binding Assay,patent,0.98
+Adenosine A2A,GPCR,2130,methyl,Ki,761401,761399,-0.99,US20250243194A1,Adenosine Receptor Time-Resolved Fluorescence Resonance Energy Transfer (TRFRET) Binding Assay,patent,-0.99
+Adenosine A2A,GPCR,2130,methyl,Ki,761413,761409,0.14,US20250243194A1,Adenosine Receptor Time-Resolved Fluorescence Resonance Energy Transfer (TRFRET) Binding Assay,patent,0.13
+Adenosine A2A,GPCR,2130,methyl,Ki,761417,761413,0.34,US20250243194A1,Adenosine Receptor Time-Resolved Fluorescence Resonance Energy Transfer (TRFRET) Binding Assay,patent,0.34
+Adenosine A2A,GPCR,2130,methyl,Ki,761417,761420,-0.75,US20250243194A1,Adenosine Receptor Time-Resolved Fluorescence Resonance Energy Transfer (TRFRET) Binding Assay,patent,-0.76
+Adenosine A2A,GPCR,2130,methyl,Ki,761420,761409,1.23,US20250243194A1,Adenosine Receptor Time-Resolved Fluorescence Resonance Energy Transfer (TRFRET) Binding Assay,patent,1.23
+Adenosine A2A,GPCR,2130,methyl,Ki,50051242,50094688,0.31,19501513,ChEMBL_587703 (CHEMBL1037717),article,0.31
+Adenosine A2A,GPCR,2130,methyl,Ki,50082416,50051242,0.2,19501513,ChEMBL_587703 (CHEMBL1037717),article,0.2
+Adenosine A2A,GPCR,2130,methyl,Ki,50082417,50082416,-0.12,19501513,ChEMBL_587703 (CHEMBL1037717),article,-0.11
+Adenosine A2A,GPCR,2130,methyl,Ki,50094701,50082417,0.17,19501513,ChEMBL_587703 (CHEMBL1037717),article,0.16
+Adenosine A2A,GPCR,2130,methyl,Ki,50108681,50108680,0.68,26048804,ChEMBL_1506709 (CHEMBL3598725),article,0.68
+Adenosine A2A,GPCR,2130,methyl,Ki,50139778,50139780,-0.19,26781932,ChEBML_1553861,article,-0.19
+Adenosine A2A,GPCR,2130,methyl,Ki,50147638,50147655,0.3,15149696,ChEBML_31364,article,0.3
+Adenosine A2A,GPCR,2130,methyl,Ki,50147638,50147656,0.48,15149696,ChEBML_31364,article,0.48
+Adenosine A2A,GPCR,2130,methyl,Ki,50152233,50256298,0.05,19109019,ChEMBL_515145 (CHEMBL1024667),article,0.05
+Adenosine A2A,GPCR,2130,methyl,Ki,50168099,50168108,0.17,27161878,ChEMBL_1575929 (CHEMBL3802552),article,0.18
+Adenosine A2A,GPCR,2130,methyl,Ki,50176058,50176055,0.3,16250647,ChEMBL_321018 (CHEMBL883651),article,0.3
+Adenosine A2A,GPCR,2130,methyl,Ki,50200984,50201020,-0.18,US10138212B2,A2a Ki assay,patent,-0.18
+Adenosine A2A,GPCR,2130,methyl,Ki,50201017,303246,0.4,US10138212B2,A2a Ki assay,patent,0.4
+Adenosine A2A,GPCR,2130,methyl,Ki,50202986,50202983,-0.5,17236762,ChEMBL_454087 (CHEMBL903278),article,-0.16
+Adenosine A2A,GPCR,2130,methyl,Ki,50224350,50224363,0.31,17927167,ChEMBL_450736 (CHEMBL901019),article,0.31
+Adenosine A2A,GPCR,2130,methyl,Ki,50235052,50235053,0.64,28055204,ChEMBL_1654441 (CHEMBL4003807),article,0.64
+Adenosine A2A,GPCR,2130,methyl,Ki,50237064,50237083,0.12,18329269,ChEMBL_463076 (CHEMBL928986),article,0.12
+Adenosine A2A,GPCR,2130,methyl,Ki,50237085,50237088,0.0,18329269,ChEMBL_463076 (CHEMBL928986),article,0.0
+Adenosine A2A,GPCR,2130,methyl,Ki,50238381,50238380,-0.41,28590753,ChEBML_1663191,article,-0.41
+Adenosine A2A,GPCR,2130,methyl,Ki,50238388,50238381,0.4,28590753,ChEBML_1663191,article,0.39
+Adenosine A2A,GPCR,2130,methyl,Ki,50238959,50377475,-0.34,18407496,ChEMBL_479703 (CHEMBL933567),article,-0.35
+Adenosine A2A,GPCR,2130,methyl,Ki,50239036,50377557,0.0,18411049,ChEMBL_479713 (CHEMBL921473),article,0.0
+Adenosine A2A,GPCR,2130,methyl,Ki,50239036,50377566,0.0,18411049,ChEMBL_479713 (CHEMBL921473),article,0.0
+Adenosine A2A,GPCR,2130,methyl,Ki,50243698,50242873,0.38,18558486,ChEMBL_491362 (CHEMBL986416),article,0.38
+Adenosine A2A,GPCR,2130,methyl,Ki,50252061,50252063,0.4,18562199,ChEMBL_491756 (CHEMBL937827),article,0.4
+Adenosine A2A,GPCR,2130,methyl,Ki,50252113,50252163,-0.05,18562199,ChEMBL_491756 (CHEMBL937827),article,-0.05
+Adenosine A2A,GPCR,2130,methyl,Ki,50252164,50252165,0.27,18562199,ChEMBL_491756 (CHEMBL937827),article,0.27
+Adenosine A2A,GPCR,2130,methyl,Ki,50252166,50252210,0.25,18562199,ChEMBL_491756 (CHEMBL937827),article,0.25
+Adenosine A2A,GPCR,2130,methyl,Ki,50256093,50256094,-0.18,19109019,ChEMBL_515145 (CHEMBL1024667),article,-0.18
+Adenosine A2A,GPCR,2130,methyl,Ki,50256202,50256299,0.22,19109019,ChEMBL_515145 (CHEMBL1024667),article,0.22
+Adenosine A2A,GPCR,2130,methyl,Ki,50266416,50255246,-0.1,19140664,ChEMBL_516361 (CHEMBL987748),article,-0.1
+Adenosine A2A,GPCR,2130,methyl,Ki,50275694,50275743,-0.05,18835161,ChEMBL_492788 (CHEMBL939476),article,-0.06
+Adenosine A2A,GPCR,2130,methyl,Ki,50275803,50275856,-0.18,18835161,ChEMBL_492788 (CHEMBL939476),article,-0.18
+Adenosine A2A,GPCR,2130,methyl,Ki,50275856,50275857,0.0,18835161,ChEMBL_492788 (CHEMBL939476),article,0.0
+Adenosine A2A,GPCR,2130,methyl,Ki,50294502,50294507,0.54,19362836,ChEMBL_575569 (CHEMBL1036412),article,0.54
+Adenosine A2A,GPCR,2130,methyl,Ki,50294502,50294508,0.47,19362836,ChEMBL_575569 (CHEMBL1036412),article,0.47
+Adenosine A2A,GPCR,2130,methyl,Ki,50298526,50298499,-0.09,19501513,ChEMBL_587703 (CHEMBL1037717),article,-0.09
+Adenosine A2A,GPCR,2130,methyl,Ki,50298527,50298500,0.31,19501513,ChEMBL_587703 (CHEMBL1037717),article,0.31
+Adenosine A2A,GPCR,2130,methyl,Ki,50298530,50298498,0.0,19501513,ChEMBL_587703 (CHEMBL1037717),article,0.0
+Adenosine A2A,GPCR,2130,methyl,Ki,50309479,50309480,-0.06,20031406,ChEMBL_609496 (CHEMBL1071768),article,-0.05
+Adenosine A2A,GPCR,2130,methyl,Ki,50309481,50309482,-0.17,20031406,ChEMBL_609496 (CHEMBL1071768),article,-0.17
+Adenosine A2A,GPCR,2130,methyl,Ki,50315538,50315539,0.97,20303771,ChEMBL_627304 (CHEMBL1105450),article,0.97
+Adenosine A2A,GPCR,2130,methyl,Ki,50315539,50315540,0.5,20303771,ChEMBL_627304 (CHEMBL1105450),article,0.5
+Adenosine A2A,GPCR,2130,methyl,Ki,50335694,50335695,0.1,21186795,ChEMBL_715071 (CHEMBL1664177),article,0.1
+Adenosine A2A,GPCR,2130,methyl,Ki,50335695,50335696,0.05,21186795,ChEMBL_715071 (CHEMBL1664177),article,0.05
+Adenosine A2A,GPCR,2130,methyl,Ki,50372560,50372565,0.12,18249540,ChEMBL_465258 (CHEMBL930529),article,0.12
+Adenosine A2A,GPCR,2130,methyl,Ki,50377483,50377482,-0.06,18407496,ChEMBL_479703 (CHEMBL933567),article,-0.06
+Adenosine A2A,GPCR,2130,methyl,Ki,50377492,50238959,0.05,18407496,ChEMBL_479703 (CHEMBL933567),article,0.06
+Adenosine A2A,GPCR,2130,methyl,Ki,50377492,50377491,-0.12,18407496,ChEMBL_479703 (CHEMBL933567),article,-0.12
+Adenosine A2A,GPCR,2130,methyl,Ki,50377501,50377483,-0.4,18407496,ChEMBL_479703 (CHEMBL933567),article,-0.39
+Adenosine A2A,GPCR,2130,methyl,Ki,50377501,50377502,0.25,18407496,ChEMBL_479703 (CHEMBL933567),article,0.25
+Adenosine A2A,GPCR,2130,methyl,Ki,50377502,50377482,-0.71,18407496,ChEMBL_479703 (CHEMBL933567),article,-0.71
+Adenosine A2A,GPCR,2130,methyl,Ki,50377549,50377540,0.0,18411049,ChEMBL_479713 (CHEMBL921473),article,0.0
+Adenosine A2A,GPCR,2130,methyl,Ki,50457087,50457107,0.02,28835798,ChEMBL_1758721 (CHEMBL4193729),article,0.7
+Adenosine A2A,GPCR,2130,methyl,Ki,50457107,50457094,-0.1,28835798,ChEMBL_1758721 (CHEMBL4193729),article,-0.1
+Adenosine A2A,GPCR,2130,methyl,Ki,50493147,50493148,-0.62,23953686,ChEMBL_980555 (CHEMBL2422901),article,-0.63
+Adenosine A2A,GPCR,2130,methyl,Ki,50493151,50493147,-2.26,23953686,ChEMBL_980555 (CHEMBL2422901),article,-2.26
+Adenosine A2A,GPCR,2130,methyl,Ki,50493154,50493157,0.05,23953686,ChEMBL_980555 (CHEMBL2422901),article,0.05
+Adenosine A2A,GPCR,2130,methyl,Ki,50494430,50494431,0.31,24189496,ChEMBL_1274849 (CHEMBL3090423),article,0.31
+Adenosine A2A,GPCR,2130,methyl,Ki,50508674,50508672,0.15,30638876,ChEMBL_1833776 (CHEMBL4333784),article,0.15
+Adenosine A2A,GPCR,2130,methyl,Ki,50542171,50542172,0.3,32573250,ChEMBL_1986036 (CHEMBL4619442),article,0.3
+Adenosine A2A,GPCR,2130,methyl,Ki,50563126,50011294,1.1,33548636,ChEMBL_2081575 (CHEMBL4737366),article,-0.01
+Adenosine A2A,GPCR,2130,methyl,Ki,50580284,50580285,0.26,34783558,ChEMBL_2148006 (CHEMBL5032352),article,0.26
+Adenosine A2A,GPCR,2130,chlorine,Ki,156370,156361,-0.01,US9018371B2,Binding Assay,patent,-0.01
+Adenosine A2A,GPCR,2130,chlorine,Ki,156371,156362,-0.04,US9018371B2,Binding Assay,patent,-0.04
+Adenosine A2A,GPCR,2130,chlorine,Ki,156373,156364,-0.22,US9018371B2,Binding Assay,patent,-0.22
+Adenosine A2A,GPCR,2130,chlorine,Ki,50079329,50079321,0.21,25780876,ChEMBL_1472822 (CHEMBL3419484),article,0.21
+Adenosine A2A,GPCR,2130,chlorine,Ki,50139653,50139752,-0.44,26781932,ChEBML_1553861,article,-0.44
+Adenosine A2A,GPCR,2130,chlorine,Ki,50139752,50139776,-0.34,26781932,ChEBML_1553861,article,-0.34
+Adenosine A2A,GPCR,2130,chlorine,Ki,50161342,50317013,-1.74,20347304,ChEMBL_630130 (CHEMBL1113721),article,-1.74
+Adenosine A2A,GPCR,2130,chlorine,Ki,50202772,50202765,-0.05,17234414,ChEMBL_454055 (CHEMBL903246),article,-0.05
+Adenosine A2A,GPCR,2130,chlorine,Ki,50202787,50202788,0.63,17234414,ChEMBL_454055 (CHEMBL903246),article,0.63
+Adenosine A2A,GPCR,2130,chlorine,Ki,50202993,50202994,0.5,17236762,ChEMBL_454087 (CHEMBL903278),article,0.51
+Adenosine A2A,GPCR,2130,chlorine,Ki,50210801,50210813,0.0,27718474,ChEMBL_1635281 (CHEMBL3878179),article,0.0
+Adenosine A2A,GPCR,2130,chlorine,Ki,50239036,50377556,0.0,18411049,ChEMBL_479713 (CHEMBL921473),article,0.0
+Adenosine A2A,GPCR,2130,chlorine,Ki,50243659,50243695,-0.22,18558486,ChEMBL_491362 (CHEMBL986416),article,-0.22
+Adenosine A2A,GPCR,2130,chlorine,Ki,50294502,50294505,0.47,19362836,ChEMBL_575569 (CHEMBL1036412),article,0.47
+Adenosine A2A,GPCR,2130,chlorine,Ki,50294502,50294506,0.31,19362836,ChEMBL_575569 (CHEMBL1036412),article,0.31
+Adenosine A2A,GPCR,2130,chlorine,Ki,50315542,50315544,0.86,20303771,ChEMBL_627304 (CHEMBL1105450),article,0.86
+Adenosine A2A,GPCR,2130,chlorine,Ki,50315542,50315545,1.46,20303771,ChEMBL_627304 (CHEMBL1105450),article,1.46
+Adenosine A2A,GPCR,2130,chlorine,Ki,50317007,50317008,-0.3,20347304,ChEMBL_630130 (CHEMBL1113721),article,-0.3
+Adenosine A2A,GPCR,2130,chlorine,Ki,50340052,50340051,-0.12,21398125,ChEMBL_739869 (CHEMBL1762929),article,-0.12
+Adenosine A2A,GPCR,2130,chlorine,Ki,50377549,50377538,0.48,18411049,ChEMBL_479713 (CHEMBL921473),article,0.48
+Adenosine A2A,GPCR,2130,chlorine,Ki,50394722,50394718,0.48,22239465,ChEMBL_858812 (CHEMBL2167687),article,0.48
+hERG,ion channel,2132,fluorine,IC50,24226,50451597,-2.3,29042223,ChEMBL_1745714 (CHEMBL4180224),article,0.23
+hERG,ion channel,2132,fluorine,IC50,289617,289641,-0.25,28406621,ChEMBL_1661931 (CHEMBL4011543),article,-0.24
+hERG,ion channel,2132,fluorine,IC50,300924,300952,-0.65,US10590130B2,Binding Assay ,patent,-0.65
+hERG,ion channel,2132,fluorine,IC50,300930,300987,0.18,US10590130B2,Binding Assay ,patent,0.19
+hERG,ion channel,2132,fluorine,IC50,300950,300965,-0.27,US10590130B2,Binding Assay ,patent,-0.28
+hERG,ion channel,2132,fluorine,IC50,300955,300962,-0.44,US10131663B2,hERG Binding Assay,patent,-0.17
+hERG,ion channel,2132,fluorine,IC50,300959,300969,0.43,US10590130B2,Binding Assay ,patent,0.44
+hERG,ion channel,2132,fluorine,IC50,300959,300980,0.05,US10590130B2,Binding Assay ,patent,0.06
+hERG,ion channel,2132,fluorine,IC50,300959,300981,0.53,US10590130B2,Binding Assay ,patent,0.53
+hERG,ion channel,2132,fluorine,IC50,300961,300975,-0.47,US10131663B2,hERG Binding Assay,patent,0.08
+hERG,ion channel,2132,fluorine,IC50,300963,300973,0.23,US10131663B2,hERG Binding Assay,patent,0.29
+hERG,ion channel,2132,fluorine,IC50,300964,300967,0.11,US10590130B2,Binding Assay ,patent,0.11
+hERG,ion channel,2132,fluorine,IC50,300969,300963,-0.02,US10590130B2,Binding Assay ,patent,-0.03
+hERG,ion channel,2132,fluorine,IC50,300969,300964,-0.08,US10590130B2,Binding Assay ,patent,-0.08
+hERG,ion channel,2132,fluorine,IC50,300976,300972,0.74,US10590130B2,Binding Assay ,patent,0.74
+hERG,ion channel,2132,fluorine,IC50,300977,300968,0.33,US10590130B2,Binding Assay ,patent,0.33
+hERG,ion channel,2132,fluorine,IC50,300980,300964,0.3,US10590130B2,Binding Assay ,patent,0.3
+hERG,ion channel,2132,fluorine,IC50,300981,300963,-0.12,US10590130B2,Binding Assay ,patent,-0.12
+hERG,ion channel,2132,fluorine,IC50,300982,300961,0.27,US10590130B2,Binding Assay ,patent,0.27
+hERG,ion channel,2132,fluorine,IC50,300983,300933,-0.12,US10590130B2,Binding Assay ,patent,-0.12
+hERG,ion channel,2132,fluorine,IC50,300984,300976,-0.15,US10131663B2,hERG Binding Assay,patent,0.22
+hERG,ion channel,2132,fluorine,IC50,300992,300993,-0.54,US10590130B2,Binding Assay ,patent,-0.54
+hERG,ion channel,2132,fluorine,IC50,300992,436275,0.38,US10590130B2,Binding Assay ,patent,0.38
+hERG,ion channel,2132,fluorine,IC50,301001,300953,0.29,US10131663B2,hERG Binding Assay,patent,0.41
+hERG,ion channel,2132,fluorine,IC50,301003,300997,0.32,US10590130B2,Binding Assay ,patent,0.32
+hERG,ion channel,2132,fluorine,IC50,301007,301006,0.07,US10590130B2,Binding Assay ,patent,0.07
+hERG,ion channel,2132,fluorine,IC50,311032,310990,0.17,US10155727B2,Inhibition of Specific Binding to the hERG-Receptor (HERGBD),patent,0.17
+hERG,ion channel,2132,fluorine,IC50,311033,50201028,1.55,US10155727B2,Inhibition of Specific Binding to the hERG-Receptor (HERGBD),patent,1.54
+hERG,ion channel,2132,fluorine,IC50,396817,396843,0.25,US9981950B2,Inhibition Assay,patent,0.26
+hERG,ion channel,2132,fluorine,IC50,396822,396854,0.48,US9981950B2,Inhibition Assay,patent,0.48
+hERG,ion channel,2132,fluorine,IC50,396826,396834,-0.75,US9981950B2,Inhibition Assay,patent,-0.75
+hERG,ion channel,2132,fluorine,IC50,396863,396868,-0.87,US9981950B2,Inhibition Assay,patent,-0.87
+hERG,ion channel,2132,fluorine,IC50,396882,396849,-0.55,US9981950B2,Inhibition Assay,patent,-0.55
+hERG,ion channel,2132,fluorine,IC50,396883,396859,-0.39,US9981950B2,Inhibition Assay,patent,-0.39
+hERG,ion channel,2132,fluorine,IC50,396889,396892,-0.58,US9981950B2,Inhibition Assay,patent,-0.58
+hERG,ion channel,2132,fluorine,IC50,688394,688396,-0.2,US20240190824A1,Thallium flux assay,patent,-0.16
+hERG,ion channel,2132,fluorine,IC50,688429,688397,1.04,US20240190824A1,Thallium flux assay,patent,-0.18
+hERG,ion channel,2132,fluorine,IC50,688429,688409,0.97,US20240190824A1,Thallium flux assay,patent,-0.27
+hERG,ion channel,2132,fluorine,IC50,688429,688435,-0.41,US20240190824A1,Thallium flux assay,patent,-0.41
+hERG,ion channel,2132,fluorine,IC50,688429,688436,-0.45,US20240190824A1,Thallium flux assay,patent,-0.46
+hERG,ion channel,2132,fluorine,IC50,688429,688443,-0.58,US20240190824A1,Thallium flux assay,patent,-0.59
+hERG,ion channel,2132,fluorine,IC50,688432,688414,0.58,US20240190824A1,Thallium flux assay,patent,-0.03
+hERG,ion channel,2132,fluorine,IC50,688432,688415,0.49,US20240190824A1,Thallium flux assay,patent,0.05
+hERG,ion channel,2132,fluorine,IC50,688474,688417,0.98,US20240190824A1,Thallium flux assay,patent,0.09
+hERG,ion channel,2132,fluorine,IC50,688494,688495,-0.02,US20240190824A1,Thallium flux assay,patent,-0.02
+hERG,ion channel,2132,fluorine,IC50,688498,688493,0.35,US20240190824A1,Thallium flux assay,patent,0.35
+hERG,ion channel,2132,fluorine,IC50,50020250,50082380,2.92,,,,
+hERG,ion channel,2132,fluorine,IC50,50082303,50082380,2.92,25911300,ChEMBL_1475692 (CHEMBL3424851),article,3.46
+hERG,ion channel,2132,fluorine,IC50,50082306,50020250,-0.03,,,,
+hERG,ion channel,2132,fluorine,IC50,50082306,50082303,-0.03,25911300,ChEMBL_1475693 (CHEMBL3424852),article,0.34
+hERG,ion channel,2132,fluorine,IC50,50082306,50082391,2.35,25911300,ChEMBL_1475692 (CHEMBL3424851),article,2.35
+hERG,ion channel,2132,fluorine,IC50,50082390,50082379,-1.0,25911300,ChEMBL_1475692 (CHEMBL3424851),article,-1.0
+hERG,ion channel,2132,fluorine,IC50,50082391,50082380,0.54,25911300,ChEMBL_1475692 (CHEMBL3424851),article,0.53
+hERG,ion channel,2132,fluorine,IC50,50082409,50082381,0.26,25911300,ChEMBL_1475692 (CHEMBL3424851),article,0.25
+hERG,ion channel,2132,fluorine,IC50,50082433,50082384,-0.25,25911300,ChEMBL_1475692 (CHEMBL3424851),article,-0.25
+hERG,ion channel,2132,fluorine,IC50,50082445,50082385,-0.36,25911300,ChEMBL_1475692 (CHEMBL3424851),article,-0.36
+hERG,ion channel,2132,fluorine,IC50,50082517,50082387,0.17,25911300,ChEMBL_1475692 (CHEMBL3424851),article,0.17
+hERG,ion channel,2132,fluorine,IC50,50084125,50084144,-0.3,25978963,ChEMBL_1477140 (CHEMBL3428449),article,-0.3
+hERG,ion channel,2132,fluorine,IC50,50084145,50084126,0.0,25978963,ChEMBL_1477140 (CHEMBL3428449),article,0.0
+hERG,ion channel,2132,fluorine,IC50,50091559,50091556,0.07,26005524,ChEMBL_1498163 (CHEMBL3583383),article,0.07
+hERG,ion channel,2132,fluorine,IC50,50127989,50001786,1.51,12729675,ChEBML_158542,article,1.47
+hERG,ion channel,2132,fluorine,IC50,50154533,50154521,-0.13,26898814,ChEMBL_1560972 (CHEMBL3779605),article,-0.13
+hERG,ion channel,2132,fluorine,IC50,50154902,50154843,0.0,26951894,ChEMBL_1561632 (CHEMBL3776609),article,0.0
+hERG,ion channel,2132,fluorine,IC50,50185042,50197135,-0.14,17064075,ChEMBL_408752 (CHEMBL909940),article,-0.14
+hERG,ion channel,2132,fluorine,IC50,50192235,50192247,-0.12,27564135,ChEMBL_1613479 (CHEMBL3855279),article,-0.12
+hERG,ion channel,2132,fluorine,IC50,50192309,50192098,-0.08,27564135,ChEMBL_1613479 (CHEMBL3855279),article,-0.08
+hERG,ion channel,2132,fluorine,IC50,50197113,50197136,-0.19,17064075,ChEMBL_408752 (CHEMBL909940),article,-0.19
+hERG,ion channel,2132,fluorine,IC50,50197114,50197113,0.23,17064075,ChEMBL_408752 (CHEMBL909940),article,0.22
+hERG,ion channel,2132,fluorine,IC50,50197114,50197139,-0.35,17064075,ChEMBL_408752 (CHEMBL909940),article,-0.35
+hERG,ion channel,2132,fluorine,IC50,50197118,50197119,-0.03,17064075,ChEMBL_408752 (CHEMBL909940),article,-0.03
+hERG,ion channel,2132,fluorine,IC50,50197120,50197123,-0.2,17064075,ChEMBL_408752 (CHEMBL909940),article,-0.2
+hERG,ion channel,2132,fluorine,IC50,50197120,50197129,-0.44,17064075,ChEMBL_408752 (CHEMBL909940),article,-0.43
+hERG,ion channel,2132,fluorine,IC50,50197124,50197144,-0.46,17064075,ChEMBL_408752 (CHEMBL909940),article,-0.46
+hERG,ion channel,2132,fluorine,IC50,50197139,50197136,0.39,17064075,ChEMBL_408752 (CHEMBL909940),article,0.39
+hERG,ion channel,2132,fluorine,IC50,50312272,50415714,-0.66,19891474,ChEMBL_622010 (CHEMBL1107671),article,0.2
+hERG,ion channel,2132,fluorine,IC50,50314292,50314294,-0.06,21802950,ChEMBL_766668 (CHEMBL1827362),article,-0.05
+hERG,ion channel,2132,fluorine,IC50,50328440,50417124,-0.5,20839775,ChEMBL_665566 (CHEMBL1261450),article,-0.5
+hERG,ion channel,2132,fluorine,IC50,50333597,50301081,-0.04,21190859,ChEMBL_699750 (CHEMBL1648563),article,-0.05
+hERG,ion channel,2132,fluorine,IC50,50333597,50333613,0.28,21190859,ChEMBL_699750 (CHEMBL1648563),article,0.28
+hERG,ion channel,2132,fluorine,IC50,50333597,50333614,0.45,21190859,ChEMBL_699750 (CHEMBL1648563),article,0.45
+hERG,ion channel,2132,fluorine,IC50,50370682,50609447,-0.13,36368496,ChEMBL_2277957,article,-0.1
+hERG,ion channel,2132,fluorine,IC50,50389590,50154532,-0.11,26898814,ChEMBL_1560972 (CHEMBL3779605),article,-0.11
+hERG,ion channel,2132,fluorine,IC50,50389590,50154533,0.17,26898814,ChEMBL_1560972 (CHEMBL3779605),article,0.17
+hERG,ion channel,2132,fluorine,IC50,50389590,50400519,0.0,26898814,ChEMBL_1560972 (CHEMBL3779605),article,0.0
+hERG,ion channel,2132,fluorine,IC50,50391768,50391781,0.4,24900480,ChEMBL_849882 (CHEMBL2148626),article,0.4
+hERG,ion channel,2132,fluorine,IC50,50400519,50154521,0.04,26898814,ChEMBL_1560972 (CHEMBL3779605),article,0.03
+hERG,ion channel,2132,fluorine,IC50,50514234,50514233,0.6,31743642,ChEMBL_1855928 (CHEMBL4356657),article,0.6
+hERG,ion channel,2132,fluorine,IC50,50514234,50514259,-0.18,31743642,ChEMBL_1855928 (CHEMBL4356657),article,-0.18
+hERG,ion channel,2132,fluorine,IC50,50562525,50562526,0.38,33261899,ChEMBL_2079116 (CHEMBL4734907),article,0.39
+hERG,ion channel,2132,fluorine,IC50,50562537,50562527,-0.4,,,,
+hERG,ion channel,2132,fluorine,IC50,50562537,50562534,0.34,,,,
+hERG,ion channel,2132,fluorine,IC50,50577255,50577259,0.0,34413963,ChEMBL_2129860 (CHEMBL4839289),article,0.0
+hERG,ion channel,2132,fluorine,IC50,50578649,50578654,-0.5,34292726,ChEMBL_2133671 (CHEMBL4843281),article,-0.5
+hERG,ion channel,2132,methyl,IC50,300930,300954,-0.24,US10590130B2,Binding Assay ,patent,-0.23
+hERG,ion channel,2132,methyl,IC50,300955,300953,-0.09,US10131663B2,hERG Binding Assay,patent,-0.01
+hERG,ion channel,2132,methyl,IC50,300955,300979,0.12,US10590130B2,Binding Assay ,patent,0.12
+hERG,ion channel,2132,methyl,IC50,300959,300978,-0.37,US10590130B2,Binding Assay ,patent,-0.37
+hERG,ion channel,2132,methyl,IC50,300999,300997,0.09,US10131663B2,hERG Binding Assay,patent,0.3
+hERG,ion channel,2132,methyl,IC50,301001,300998,-0.09,US10131663B2,hERG Binding Assay,patent,0.03
+hERG,ion channel,2132,methyl,IC50,310952,310950,0.01,USRE49517E1,Inhibition of Specific Binding to the hERG Receptor (HERGBD),patent,0.44
+hERG,ion channel,2132,methyl,IC50,310960,310961,-0.33,USRE49517E1,Inhibition of Specific Binding to the hERG Receptor (HERGBD),patent,0.31
+hERG,ion channel,2132,methyl,IC50,310962,311027,-0.57,USRE49517E1,Inhibition of Specific Binding to the hERG Receptor (HERGBD),patent,0.18
+hERG,ion channel,2132,methyl,IC50,310962,50201026,-0.14,USRE49517E1,Inhibition of Specific Binding to the hERG Receptor (HERGBD),patent,0.27
+hERG,ion channel,2132,methyl,IC50,310977,310984,-0.23,US10155727B2,Inhibition of Specific Binding to the hERG-Receptor (HERGBD),patent,-0.22
+hERG,ion channel,2132,methyl,IC50,310979,310991,0.15,US10155727B2,Inhibition of Specific Binding to the hERG-Receptor (HERGBD),patent,0.15
+hERG,ion channel,2132,methyl,IC50,310981,310990,0.02,US10155727B2,Inhibition of Specific Binding to the hERG-Receptor (HERGBD),patent,0.01
+hERG,ion channel,2132,methyl,IC50,310986,310987,-0.39,USRE49517E1,Inhibition of Specific Binding to the hERG Receptor (HERGBD),patent,0.16
+hERG,ion channel,2132,methyl,IC50,310988,310989,0.18,US10155727B2,Inhibition of Specific Binding to the hERG-Receptor (HERGBD),patent,0.18
+hERG,ion channel,2132,methyl,IC50,310989,310992,0.1,US10155727B2,Inhibition of Specific Binding to the hERG-Receptor (HERGBD),patent,0.1
+hERG,ion channel,2132,methyl,IC50,396811,396820,0.08,US9981950B2,Inhibition Assay,patent,0.08
+hERG,ion channel,2132,methyl,IC50,396816,396864,1.24,US9981950B2,Inhibition Assay,patent,1.24
+hERG,ion channel,2132,methyl,IC50,396817,396818,0.17,US9981950B2,Inhibition Assay,patent,0.17
+hERG,ion channel,2132,methyl,IC50,396817,396848,1.37,US9981950B2,Inhibition Assay,patent,1.37
+hERG,ion channel,2132,methyl,IC50,396818,396811,-0.26,US9981950B2,Inhibition Assay,patent,-0.26
+hERG,ion channel,2132,methyl,IC50,396818,396816,-0.48,US9981950B2,Inhibition Assay,patent,-0.48
+hERG,ion channel,2132,methyl,IC50,396818,396863,1.15,US9981950B2,Inhibition Assay,patent,1.15
+hERG,ion channel,2132,methyl,IC50,396822,396858,0.89,US9981950B2,Inhibition Assay,patent,0.89
+hERG,ion channel,2132,methyl,IC50,396825,396826,0.02,US9981950B2,Inhibition Assay,patent,0.02
+hERG,ion channel,2132,methyl,IC50,396826,396827,-0.21,US9981950B2,Inhibition Assay,patent,-0.22
+hERG,ion channel,2132,methyl,IC50,396826,396828,-0.2,US9981950B2,Inhibition Assay,patent,-0.2
+hERG,ion channel,2132,methyl,IC50,396827,396830,0.04,US9981950B2,Inhibition Assay,patent,0.05
+hERG,ion channel,2132,methyl,IC50,396828,396831,-1.85,US9981950B2,Inhibition Assay,patent,-1.85
+hERG,ion channel,2132,methyl,IC50,396835,396836,-0.29,US9981950B2,Inhibition Assay,patent,-0.29
+hERG,ion channel,2132,methyl,IC50,396836,396838,0.1,US9981950B2,Inhibition Assay,patent,0.11
+hERG,ion channel,2132,methyl,IC50,396844,396835,0.15,US9981950B2,Inhibition Assay,patent,0.15
+hERG,ion channel,2132,methyl,IC50,396848,396863,-0.05,US9981950B2,Inhibition Assay,patent,-0.05
+hERG,ion channel,2132,methyl,IC50,396850,396865,-0.2,US9981950B2,Inhibition Assay,patent,-0.2
+hERG,ion channel,2132,methyl,IC50,396863,396864,-0.39,US9981950B2,Inhibition Assay,patent,-0.39
+hERG,ion channel,2132,methyl,IC50,396865,396866,-0.45,US9981950B2,Inhibition Assay,patent,-0.46
+hERG,ion channel,2132,methyl,IC50,396874,396876,-0.03,US9981950B2,Inhibition Assay,patent,-0.03
+hERG,ion channel,2132,methyl,IC50,396874,396898,-0.03,US9981950B2,Inhibition Assay,patent,-0.02
+hERG,ion channel,2132,methyl,IC50,396876,396877,-0.43,US9981950B2,Inhibition Assay,patent,-0.43
+hERG,ion channel,2132,methyl,IC50,396876,396878,0.08,US9981950B2,Inhibition Assay,patent,0.08
+hERG,ion channel,2132,methyl,IC50,396877,396880,-1.08,US9981950B2,Inhibition Assay,patent,-1.08
+hERG,ion channel,2132,methyl,IC50,396878,396879,-0.1,US9981950B2,Inhibition Assay,patent,-0.1
+hERG,ion channel,2132,methyl,IC50,396881,396899,0.25,US9981950B2,Inhibition Assay,patent,0.25
+hERG,ion channel,2132,methyl,IC50,396882,396884,0.14,US9981950B2,Inhibition Assay,patent,0.14
+hERG,ion channel,2132,methyl,IC50,396884,396885,-0.33,US9981950B2,Inhibition Assay,patent,-0.33
+hERG,ion channel,2132,methyl,IC50,396886,396889,-0.12,US9981950B2,Inhibition Assay,patent,-0.12
+hERG,ion channel,2132,methyl,IC50,396889,396890,-0.29,US9981950B2,Inhibition Assay,patent,-0.29
+hERG,ion channel,2132,methyl,IC50,396890,396888,-1.37,US9981950B2,Inhibition Assay,patent,-1.37
+hERG,ion channel,2132,methyl,IC50,396903,398608,0.1,US10323021B2,hERG receptor binding assay,patent,0.11
+hERG,ion channel,2132,methyl,IC50,396904,396905,-0.03,US9981950B2,Inhibition Assay,patent,-0.03
+hERG,ion channel,2132,methyl,IC50,494073,50616086,-0.83,36538027,ChEMBL_2307090,article,-0.82
+hERG,ion channel,2132,methyl,IC50,610436,610438,0.23,36883854,ChEMBL_2291086,article,0.23
+hERG,ion channel,2132,methyl,IC50,610439,610436,-0.06,36883854,ChEMBL_2291086,article,0.42
+hERG,ion channel,2132,methyl,IC50,610443,610444,0.24,36883854,ChEMBL_2291086,article,0.24
+hERG,ion channel,2132,methyl,IC50,610446,610448,0.18,36883854,ChEMBL_2291086,article,0.18
+hERG,ion channel,2132,methyl,IC50,688426,688489,-0.74,US20240190824A1,Thallium flux assay,patent,0.11
+hERG,ion channel,2132,methyl,IC50,688460,688469,-0.23,US20240190824A1,Thallium flux assay,patent,-0.23
+hERG,ion channel,2132,methyl,IC50,688462,688477,-0.45,US20240190824A1,Thallium flux assay,patent,-0.45
+hERG,ion channel,2132,methyl,IC50,688476,688471,0.24,US20240190824A1,Thallium flux assay,patent,0.24
+hERG,ion channel,2132,methyl,IC50,688479,688475,0.06,US20240190824A1,Thallium flux assay,patent,0.06
+hERG,ion channel,2132,methyl,IC50,50020250,50082381,2.32,,,,
+hERG,ion channel,2132,methyl,IC50,50020250,50113633,0.3,,,,
+hERG,ion channel,2132,methyl,IC50,50020250,50113830,0.18,,,,
+hERG,ion channel,2132,methyl,IC50,50044632,50044630,0.12,24856064,ChEMBL_1447392 (CHEMBL3380409),article,0.12
+hERG,ion channel,2132,methyl,IC50,50082303,50082381,2.32,25911300,ChEMBL_1475692 (CHEMBL3424851),article,2.86
+hERG,ion channel,2132,methyl,IC50,50082303,50113633,0.3,26141771,ChEMBL_1510551 (CHEMBL3607786),article,0.82
+hERG,ion channel,2132,methyl,IC50,50082303,50113830,0.18,,,,
+hERG,ion channel,2132,methyl,IC50,50082306,50082409,2.03,25911300,ChEMBL_1475692 (CHEMBL3424851),article,2.03
+hERG,ion channel,2132,methyl,IC50,50082381,50082382,0.38,25911300,ChEMBL_1475692 (CHEMBL3424851),article,0.38
+hERG,ion channel,2132,methyl,IC50,50113633,50113634,-0.22,26141771,ChEMBL_1510551 (CHEMBL3607786),article,-0.22
+hERG,ion channel,2132,methyl,IC50,50113830,50082382,2.52,,,,
+hERG,ion channel,2132,methyl,IC50,50201021,310955,-0.56,US10155727B2,Inhibition of Specific Binding to the hERG-Receptor (HERGBD),patent,-0.55
+hERG,ion channel,2132,methyl,IC50,50201023,310962,-0.69,USRE49517E1,Inhibition of Specific Binding to the hERG Receptor (HERGBD),patent,-0.09
+hERG,ion channel,2132,methyl,IC50,50249754,50249755,0.0,19459652,ChEMBL_498774 (CHEMBL1021966),article,0.0
+hERG,ion channel,2132,methyl,IC50,50253002,50253003,0.34,18800760,ChEMBL_539362 (CHEMBL1027247),article,0.34
+hERG,ion channel,2132,methyl,IC50,50253003,50253031,0.12,18800760,ChEMBL_539362 (CHEMBL1027247),article,0.12
+hERG,ion channel,2132,methyl,IC50,50253031,50253032,0.26,18800760,ChEMBL_539362 (CHEMBL1027247),article,0.27
+hERG,ion channel,2132,methyl,IC50,50262492,50262526,-0.22,28958623,ChEMBL_1696845 (CHEMBL4047735),article,-0.22
+hERG,ion channel,2132,methyl,IC50,50262492,50262538,-0.05,28958623,ChEMBL_1696845 (CHEMBL4047735),article,-0.05
+hERG,ion channel,2132,methyl,IC50,50262495,50262496,-0.08,28958623,ChEMBL_1696845 (CHEMBL4047735),article,-0.08
+hERG,ion channel,2132,methyl,IC50,50262495,50262518,-0.42,28958623,ChEMBL_1696845 (CHEMBL4047735),article,-0.42
+hERG,ion channel,2132,methyl,IC50,50262495,50262537,0.42,28958623,ChEMBL_1696845 (CHEMBL4047735),article,0.42
+hERG,ion channel,2132,methyl,IC50,50262496,50262497,-0.71,28958623,ChEMBL_1696845 (CHEMBL4047735),article,-0.71
+hERG,ion channel,2132,methyl,IC50,50262520,50262492,-0.59,28958623,ChEMBL_1696845 (CHEMBL4047735),article,-0.59
+hERG,ion channel,2132,methyl,IC50,50262538,50262527,0.3,28958623,ChEMBL_1696845 (CHEMBL4047735),article,0.3
+hERG,ion channel,2132,methyl,IC50,50267776,50267777,1.1,19320488,ChEMBL_563071 (CHEMBL1011901),article,1.1
+hERG,ion channel,2132,methyl,IC50,50295987,50295989,-0.08,19487123,ChEMBL_579203 (CHEMBL1055593),article,-0.08
+hERG,ion channel,2132,methyl,IC50,50295987,50295990,-0.13,19487123,ChEMBL_579203 (CHEMBL1055593),article,-0.13
+hERG,ion channel,2132,methyl,IC50,50296182,50296183,-0.34,21802950,ChEMBL_766668 (CHEMBL1827362),article,-0.34
+hERG,ion channel,2132,methyl,IC50,50301699,50301700,0.0,19683441,ChEMBL_597859 (CHEMBL1039122),article,-0.01
+hERG,ion channel,2132,methyl,IC50,50301704,50301705,0.25,19683441,ChEMBL_597859 (CHEMBL1039122),article,0.25
+hERG,ion channel,2132,methyl,IC50,50325855,50327248,0.64,20727752,ChEMBL_664324 (CHEMBL1259359),article,0.64
+hERG,ion channel,2132,methyl,IC50,50325855,50327249,0.07,20727752,ChEMBL_664324 (CHEMBL1259359),article,0.07
+hERG,ion channel,2132,methyl,IC50,50325855,50327250,0.0,20727752,ChEMBL_664324 (CHEMBL1259359),article,-0.01
+hERG,ion channel,2132,methyl,IC50,50325855,50327265,-0.99,20727752,ChEMBL_664324 (CHEMBL1259359),article,-0.99
+hERG,ion channel,2132,methyl,IC50,50327243,50327244,0.22,20727752,ChEMBL_664324 (CHEMBL1259359),article,0.22
+hERG,ion channel,2132,methyl,IC50,50327244,50327266,-0.79,20727752,ChEMBL_664324 (CHEMBL1259359),article,-0.79
+hERG,ion channel,2132,methyl,IC50,50327250,50327267,-0.9,20727752,ChEMBL_664324 (CHEMBL1259359),article,-0.9
+hERG,ion channel,2132,methyl,IC50,50327251,50327272,-0.39,20727752,ChEMBL_664324 (CHEMBL1259359),article,-0.39
+hERG,ion channel,2132,methyl,IC50,50327265,50327267,0.09,20727752,ChEMBL_664324 (CHEMBL1259359),article,0.09
+hERG,ion channel,2132,methyl,IC50,50327265,50327270,0.11,20727752,ChEMBL_664324 (CHEMBL1259359),article,0.11
+hERG,ion channel,2132,methyl,IC50,50389590,50154530,0.58,26898814,ChEMBL_1560972 (CHEMBL3779605),article,0.58
+hERG,ion channel,2132,methyl,IC50,50391770,50391760,0.11,24900480,ChEMBL_849882 (CHEMBL2148626),article,0.11
+hERG,ion channel,2132,methyl,IC50,50391770,50391763,0.82,24900480,ChEMBL_849882 (CHEMBL2148626),article,0.82
+hERG,ion channel,2132,methyl,IC50,50391770,50391764,0.21,24900480,ChEMBL_849882 (CHEMBL2148626),article,0.21
+hERG,ion channel,2132,methyl,IC50,50504113,50504110,0.0,31335138,ChEMBL_1813578 (CHEMBL4313152),article,0.0
+hERG,ion channel,2132,methyl,IC50,50514234,50514248,0.0,31743642,ChEMBL_1855928 (CHEMBL4356657),article,0.0
+hERG,ion channel,2132,methyl,IC50,50514234,50514273,0.6,31743642,ChEMBL_1855928 (CHEMBL4356657),article,0.6
+hERG,ion channel,2132,methyl,IC50,50558168,50558167,0.41,27240550,ChEMBL_2062193 (CHEMBL4717446),article,0.41
+hERG,ion channel,2132,methyl,IC50,50558170,50558169,0.07,27240550,ChEMBL_2062193 (CHEMBL4717446),article,0.07
+hERG,ion channel,2132,methyl,IC50,50558171,50558170,0.16,27240550,ChEMBL_2062193 (CHEMBL4717446),article,0.16
+hERG,ion channel,2132,methyl,IC50,50562525,50562531,-0.14,,,,
+hERG,ion channel,2132,methyl,IC50,50562525,50562532,0.49,,,,
+hERG,ion channel,2132,methyl,IC50,50562537,50562533,0.34,,,,
+hERG,ion channel,2132,methyl,IC50,50613167,50613169,0.15,36883854,ChEMBL_2291086,article,0.15
+hERG,ion channel,2132,methyl,IC50,50613168,50613170,0.09,36883854,ChEMBL_2291086,article,0.09
+hERG,ion channel,2132,methyl,IC50,50613169,50613165,0.14,36883854,ChEMBL_2291086,article,0.14
+hERG,ion channel,2132,methyl,IC50,50613169,50613172,0.23,36883854,ChEMBL_2291086,article,0.23
+hERG,ion channel,2132,methyl,IC50,50613170,50613166,0.03,36883854,ChEMBL_2291086,article,0.03
+hERG,ion channel,2132,methyl,IC50,50613172,50613173,-0.03,36883854,ChEMBL_2291086,article,-0.03
+hERG,ion channel,2132,methyl,IC50,50613182,610138,0.26,36883854,ChEMBL_2291086,article,0.25
+hERG,ion channel,2132,methyl,IC50,50613185,50613186,0.15,36883854,ChEMBL_2291086,article,0.15
+hERG,ion channel,2132,chlorine,IC50,14001,14003,0.6,19534531,ChEMBL_545772 (CHEMBL1027667),article,0.59
+hERG,ion channel,2132,chlorine,IC50,311033,50201022,1.73,US10155727B2,Inhibition of Specific Binding to the hERG-Receptor (HERGBD),patent,1.73
+hERG,ion channel,2132,chlorine,IC50,396811,396827,0.79,US9981950B2,Inhibition Assay,patent,0.78
+hERG,ion channel,2132,chlorine,IC50,396816,396828,1.02,US9981950B2,Inhibition Assay,patent,1.02
+hERG,ion channel,2132,chlorine,IC50,396817,396825,0.89,US9981950B2,Inhibition Assay,patent,0.89
+hERG,ion channel,2132,chlorine,IC50,396818,396826,0.74,US9981950B2,Inhibition Assay,patent,0.74
+hERG,ion channel,2132,chlorine,IC50,396820,396830,0.75,US9981950B2,Inhibition Assay,patent,0.75
+hERG,ion channel,2132,chlorine,IC50,396822,396829,0.73,US9981950B2,Inhibition Assay,patent,0.73
+hERG,ion channel,2132,chlorine,IC50,396851,396849,0.16,US9981950B2,Inhibition Assay,patent,0.17
+hERG,ion channel,2132,chlorine,IC50,396861,396859,0.38,US9981950B2,Inhibition Assay,patent,0.38
+hERG,ion channel,2132,chlorine,IC50,50001778,50001786,0.41,12729675,ChEBML_158542,article,0.37
+hERG,ion channel,2132,chlorine,IC50,50082306,50082304,0.24,25911300,ChEMBL_1475692 (CHEMBL3424851),article,0.24
+hERG,ion channel,2132,chlorine,IC50,50082306,50082389,2.13,25911300,ChEMBL_1475692 (CHEMBL3424851),article,2.12
+hERG,ion channel,2132,chlorine,IC50,50095761,50494716,0.56,24224763,ChEMBL_1278260 (CHEMBL3096732),article,0.56
+hERG,ion channel,2132,chlorine,IC50,50166802,50166788,0.66,15878274,ChEMBL_306311 (CHEMBL827704),article,0.65
+hERG,ion channel,2132,chlorine,IC50,50175387,50161093,0.03,19821575,ChEMBL_591458 (CHEMBL1052905),article,0.03
+hERG,ion channel,2132,chlorine,IC50,50197113,50197144,-0.42,17064075,ChEMBL_408752 (CHEMBL909940),article,-0.42
+hERG,ion channel,2132,chlorine,IC50,50197114,50197124,0.27,17064075,ChEMBL_408752 (CHEMBL909940),article,0.27
+hERG,ion channel,2132,chlorine,IC50,50197124,50185040,0.41,17064075,ChEMBL_408752 (CHEMBL909940),article,0.41
+hERG,ion channel,2132,chlorine,IC50,50197139,50197146,0.05,17064075,ChEMBL_408752 (CHEMBL909940),article,0.05
+hERG,ion channel,2132,chlorine,IC50,50237799,289617,0.22,28406621,ChEMBL_1661931 (CHEMBL4011543),article,0.21
+hERG,ion channel,2132,chlorine,IC50,50333597,50333615,0.68,21190859,ChEMBL_699750 (CHEMBL1648563),article,0.68
+hERG,ion channel,2132,chlorine,IC50,50333597,50333618,0.63,21190859,ChEMBL_699750 (CHEMBL1648563),article,0.63
+hERG,ion channel,2132,chlorine,IC50,50389590,50154531,0.42,26898814,ChEMBL_1560972 (CHEMBL3779605),article,0.42
+hERG,ion channel,2132,chlorine,IC50,50391768,50391786,0.55,24900480,ChEMBL_849882 (CHEMBL2148626),article,0.55
+hERG,ion channel,2132,chlorine,IC50,50411387,50411390,0.4,17867665,ChEMBL_446344 (CHEMBL895464),article,0.4
+hERG,ion channel,2132,chlorine,IC50,50411396,50411390,0.9,17867665,ChEMBL_446344 (CHEMBL895464),article,0.9
+hERG,ion channel,2132,chlorine,IC50,50494735,50095760,2.07,24224763,ChEMBL_1278260 (CHEMBL3096732),article,1.07
+hERG,ion channel,2132,chlorine,IC50,50499725,50562530,0.02,,,,
+hERG,ion channel,2132,chlorine,IC50,50504113,50504111,0.0,31335138,ChEMBL_1813578 (CHEMBL4313152),article,0.0
+hERG,ion channel,2132,chlorine,IC50,50562529,50562536,0.15,,,,
+AChE,serine hydrolase,3619,fluorine,IC50,8961,8992,-1.44,10821713,AChE Inhibition Assay,article,0.46
+AChE,serine hydrolase,3619,fluorine,IC50,8961,50279995,-1.39,15317459,ChEMBL_307248 (CHEMBL829154),article,0.5
+AChE,serine hydrolase,3619,fluorine,IC50,9408,50004037,0.28,20053484,ChEMBL_633769 (CHEMBL1119333),article,0.29
+AChE,serine hydrolase,3619,fluorine,IC50,327447,327448,0.03,US9663465B2,Inhibition Assay,patent,0.03
+AChE,serine hydrolase,3619,fluorine,IC50,50004027,50004028,-0.09,20053484,ChEMBL_633769 (CHEMBL1119333),article,-0.1
+AChE,serine hydrolase,3619,fluorine,IC50,50008558,50008541,-0.26,1738151,ChEMBL_29409 (CHEMBL643382),article,0.0
+AChE,serine hydrolase,3619,fluorine,IC50,50008558,50008544,-0.26,1738151,ChEMBL_29409 (CHEMBL643382),article,0.0
+AChE,serine hydrolase,3619,fluorine,IC50,50008558,50008564,0.72,1738151,ChEMBL_29377 (CHEMBL648291),article,0.72
+AChE,serine hydrolase,3619,fluorine,IC50,50037138,50039203,-0.65,20053484,ChEMBL_633769 (CHEMBL1119333),article,-0.65
+AChE,serine hydrolase,3619,fluorine,IC50,50037138,50039226,0.1,20053484,ChEMBL_633769 (CHEMBL1119333),article,0.1
+AChE,serine hydrolase,3619,fluorine,IC50,50037138,50039227,-0.33,20053484,ChEMBL_633769 (CHEMBL1119333),article,-0.33
+AChE,serine hydrolase,3619,fluorine,IC50,50079861,50094633,0.32,11101357,ChEMBL_28153 (CHEMBL644108),article,0.32
+AChE,serine hydrolase,3619,fluorine,IC50,50079867,50094633,1.21,11101357,ChEMBL_28153 (CHEMBL644108),article,1.21
+AChE,serine hydrolase,3619,fluorine,IC50,50094626,50094631,0.07,11101357,ChEMBL_28153 (CHEMBL644108),article,0.08
+AChE,serine hydrolase,3619,fluorine,IC50,50094628,50094631,1.22,11101357,ChEMBL_28153 (CHEMBL644108),article,1.22
+AChE,serine hydrolase,3619,fluorine,IC50,50107891,50094626,1.26,,,,
+AChE,serine hydrolase,3619,fluorine,IC50,50107891,50094628,0.11,,,,
+AChE,serine hydrolase,3619,fluorine,IC50,50107892,50079861,1.05,,,,
+AChE,serine hydrolase,3619,fluorine,IC50,50107892,50079867,0.16,,,,
+AChE,serine hydrolase,3619,fluorine,IC50,50117595,50117612,0.25,12182862,ChEMBL_28291 (CHEMBL644831),article,0.25
+AChE,serine hydrolase,3619,fluorine,IC50,50124872,50124879,1.1,26386602,ChEMBL_1521647 (CHEMBL3626447),article,1.18
+AChE,serine hydrolase,3619,fluorine,IC50,50124874,50124881,1.12,26386602,ChEMBL_1521646 (CHEMBL3626446),article,1.23
+AChE,serine hydrolase,3619,fluorine,IC50,50124876,50281126,0.09,26386602,ChEMBL_1521647 (CHEMBL3626447),article,0.24
+AChE,serine hydrolase,3619,fluorine,IC50,50154771,50154774,0.25,15481986,ChEMBL_305174 (CHEMBL832763),article,0.25
+AChE,serine hydrolase,3619,fluorine,IC50,50433314,8992,0.01,,,,
+AChE,serine hydrolase,3619,fluorine,IC50,50433314,50279995,0.06,,,,
+AChE,serine hydrolase,3619,fluorine,IC50,50486452,50486506,0.18,,,,
+AChE,serine hydrolase,3619,fluorine,IC50,50563377,50563379,0.06,33582578,ChEMBL_2082220 (CHEMBL4738011),article,0.06
+AChE,serine hydrolase,3619,fluorine,IC50,50563389,50563391,0.01,33582578,ChEMBL_2082220 (CHEMBL4738011),article,0.01
+AChE,serine hydrolase,3619,fluorine,IC50,50574586,50574587,-0.26,34198150,ChEMBL_2122761 (CHEMBL4831994),article,-0.26
+AChE,serine hydrolase,3619,fluorine,IC50,50574586,50574588,0.41,34198150,ChEMBL_2122761 (CHEMBL4831994),article,0.41
+AChE,serine hydrolase,3619,fluorine,IC50,50610558,50610559,0.17,33984802,ChEMBL_2281430,article,0.17
+AChE,serine hydrolase,3619,fluorine,IC50,50634776,50204751,-2.82,,,,
+AChE,serine hydrolase,3619,fluorine,IC50,50634776,50204754,-2.92,,,,
+AChE,serine hydrolase,3619,fluorine,IC50,50634776,50204831,-3.04,,,,
+AChE,serine hydrolase,3619,fluorine,IC50,50640647,50640649,-0.16,38157596,ChEMBL_2448625,article,-0.15
+AChE,serine hydrolase,3619,methyl,IC50,8961,8985,-1.36,15317459,ChEMBL_307248 (CHEMBL829154),article,0.4
+AChE,serine hydrolase,3619,methyl,IC50,8961,50279983,-1.5,33892271,ChEMBL_2110044 (CHEMBL4818719),article,0.41
+AChE,serine hydrolase,3619,methyl,IC50,10608,10610,-0.52,16570913,Cholinesterase Inhibition Assay,article,-0.53
+AChE,serine hydrolase,3619,methyl,IC50,10614,10616,-1.31,16570913,Cholinesterase Inhibition Assay,article,-0.48
+AChE,serine hydrolase,3619,methyl,IC50,10622,10611,0.34,10346939,ChEMBL_28143 (CHEMBL644927),article,0.37
+AChE,serine hydrolase,3619,methyl,IC50,10686,50077259,-0.09,,,,
+AChE,serine hydrolase,3619,methyl,IC50,10688,50077262,0.01,,,,
+AChE,serine hydrolase,3619,methyl,IC50,10692,10916,-1.63,9767635,Cholinesterase Inhibition Assay,article,-1.64
+AChE,serine hydrolase,3619,methyl,IC50,10692,10932,-0.27,9767635,Cholinesterase Inhibition Assay,article,-0.27
+AChE,serine hydrolase,3619,methyl,IC50,10742,10743,-0.46,12431053,Cholinesterase Inhibition Assay,article,-0.46
+AChE,serine hydrolase,3619,methyl,IC50,10913,50486319,0.0,,,,
+AChE,serine hydrolase,3619,methyl,IC50,10916,10917,-0.34,9767635,Cholinesterase Inhibition Assay,article,-0.33
+AChE,serine hydrolase,3619,methyl,IC50,10917,10918,-0.11,9767635,Cholinesterase Inhibition Assay,article,-0.11
+AChE,serine hydrolase,3619,methyl,IC50,10918,10933,0.63,9767635,Cholinesterase Inhibition Assay,article,0.62
+AChE,serine hydrolase,3619,methyl,IC50,10932,10935,-0.85,9767635,Cholinesterase Inhibition Assay,article,-0.85
+AChE,serine hydrolase,3619,methyl,IC50,10932,10938,-0.1,9767635,Cholinesterase Inhibition Assay,article,-0.1
+AChE,serine hydrolase,3619,methyl,IC50,10933,10936,-0.92,9767635,Cholinesterase Inhibition Assay,article,-0.91
+AChE,serine hydrolase,3619,methyl,IC50,10933,10939,-1.07,9767635,Cholinesterase Inhibition Assay,article,-1.07
+AChE,serine hydrolase,3619,methyl,IC50,10949,50218528,0.38,17998161,ChEMBL_463671 (CHEMBL929818),article,0.4
+AChE,serine hydrolase,3619,methyl,IC50,10958,10959,0.32,11708910,Cholinesterase Inhibition Assay,article,0.34
+AChE,serine hydrolase,3619,methyl,IC50,10958,10974,-0.13,11708910,Cholinesterase Inhibition Assay,article,-0.1
+AChE,serine hydrolase,3619,methyl,IC50,10959,10961,0.0,12166941,Cholinesterase Inhibition Assay,article,0.0
+AChE,serine hydrolase,3619,methyl,IC50,10959,10976,-0.36,11708910,Cholinesterase Inhibition Assay,article,-0.36
+AChE,serine hydrolase,3619,methyl,IC50,10959,10977,-0.15,11708910,Cholinesterase Inhibition Assay,article,-0.15
+AChE,serine hydrolase,3619,methyl,IC50,10959,10978,-0.41,20684567,ChEMBL_659615 (CHEMBL1249049),article,0.19
+AChE,serine hydrolase,3619,methyl,IC50,10961,10973,-0.18,20684567,ChEMBL_659615 (CHEMBL1249049),article,-0.18
+AChE,serine hydrolase,3619,methyl,IC50,10972,50014109,-0.48,,,,
+AChE,serine hydrolase,3619,methyl,IC50,10974,10976,0.09,11708910,Cholinesterase Inhibition Assay,article,0.09
+AChE,serine hydrolase,3619,methyl,IC50,10974,10978,0.04,11708910,Cholinesterase Inhibition Assay,article,0.03
+AChE,serine hydrolase,3619,methyl,IC50,10974,10981,-0.04,11708910,Cholinesterase Inhibition Assay,article,-0.04
+AChE,serine hydrolase,3619,methyl,IC50,10974,10982,-0.44,11708910,Cholinesterase Inhibition Assay,article,-0.44
+AChE,serine hydrolase,3619,methyl,IC50,11023,50326246,-0.82,,,,
+AChE,serine hydrolase,3619,methyl,IC50,11023,50596649,-0.3,,,,
+AChE,serine hydrolase,3619,methyl,IC50,327447,50657573,-0.53,39454222,ChEMBL_2618951,article,-0.52
+AChE,serine hydrolase,3619,methyl,IC50,50004000,50326246,-2.34,20684567,ChEMBL_659615 (CHEMBL1249049),article,-0.22
+AChE,serine hydrolase,3619,methyl,IC50,50004000,50596649,-1.82,,,,
+AChE,serine hydrolase,3619,methyl,IC50,50005758,50005761,-0.26,1573636,ChEMBL_28305 (CHEMBL875789),article,-0.26
+AChE,serine hydrolase,3619,methyl,IC50,50005761,50005762,-0.41,,,,
+AChE,serine hydrolase,3619,methyl,IC50,50005777,50005758,0.59,1573636,ChEBML_28304,article,0.59
+AChE,serine hydrolase,3619,methyl,IC50,50008558,50008556,0.42,1738151,ChEMBL_29377 (CHEMBL648291),article,0.41
+AChE,serine hydrolase,3619,methyl,IC50,50008558,50008560,-0.28,1738151,ChEMBL_29409 (CHEMBL643382),article,0.0
+AChE,serine hydrolase,3619,methyl,IC50,50008558,50008567,-0.88,1738151,ChEMBL_29409 (CHEMBL643382),article,0.0
+AChE,serine hydrolase,3619,methyl,IC50,50008579,50008570,-0.28,1738152,ChEBML_29413,article,-0.28
+AChE,serine hydrolase,3619,methyl,IC50,50037138,50039223,-0.4,20053484,ChEMBL_633769 (CHEMBL1119333),article,-0.4
+AChE,serine hydrolase,3619,methyl,IC50,50037141,50039222,-0.12,20053484,ChEMBL_633769 (CHEMBL1119333),article,-0.12
+AChE,serine hydrolase,3619,methyl,IC50,50037171,50037173,-0.04,20053484,ChEMBL_633769 (CHEMBL1119333),article,-0.04
+AChE,serine hydrolase,3619,methyl,IC50,50037173,50037141,-0.3,20053484,ChEMBL_633769 (CHEMBL1119333),article,-0.3
+AChE,serine hydrolase,3619,methyl,IC50,50038733,50318746,-0.46,20053484,ChEMBL_633769 (CHEMBL1119333),article,-0.11
+AChE,serine hydrolase,3619,methyl,IC50,50038733,50318755,-0.49,20053484,ChEMBL_633769 (CHEMBL1119333),article,-0.14
+AChE,serine hydrolase,3619,methyl,IC50,50039222,50039231,-0.21,20053484,ChEMBL_633769 (CHEMBL1119333),article,-0.21
+AChE,serine hydrolase,3619,methyl,IC50,50039716,50039728,0.85,20053484,ChEMBL_633769 (CHEMBL1119333),article,0.85
+AChE,serine hydrolase,3619,methyl,IC50,50039717,50154794,0.16,15481986,ChEMBL_305174 (CHEMBL832763),article,0.16
+AChE,serine hydrolase,3619,methyl,IC50,50039728,50039729,0.13,8558505,ChEMBL_28756 (CHEMBL641020),article,0.13
+AChE,serine hydrolase,3619,methyl,IC50,50079861,50094626,0.34,11101357,ChEMBL_28153 (CHEMBL644108),article,0.34
+AChE,serine hydrolase,3619,methyl,IC50,50079867,50094628,0.08,11101357,ChEMBL_28153 (CHEMBL644108),article,0.08
+AChE,serine hydrolase,3619,methyl,IC50,50094633,50094631,0.09,11101357,ChEMBL_28153 (CHEMBL644108),article,0.1
+AChE,serine hydrolase,3619,methyl,IC50,50099570,50099596,-0.02,25282654,ChEMBL_1431531 (CHEMBL3390452),article,-0.02
+AChE,serine hydrolase,3619,methyl,IC50,50099591,50099570,-0.01,25282654,ChEMBL_1431531 (CHEMBL3390452),article,-0.0
+AChE,serine hydrolase,3619,methyl,IC50,50102726,50102729,-0.11,20053484,ChEMBL_633769 (CHEMBL1119333),article,-0.11
+AChE,serine hydrolase,3619,methyl,IC50,50102729,50102743,-0.36,20053484,ChEMBL_633769 (CHEMBL1119333),article,-0.35
+AChE,serine hydrolase,3619,methyl,IC50,50107892,50107891,0.13,11741490,ChEMBL_28622 (CHEMBL642883),article,0.14
+AChE,serine hydrolase,3619,methyl,IC50,50117620,50117618,0.63,12182862,ChEMBL_28291 (CHEMBL644831),article,0.63
+AChE,serine hydrolase,3619,methyl,IC50,50124874,50124872,0.47,26386602,ChEMBL_1521646 (CHEMBL3626446),article,0.58
+AChE,serine hydrolase,3619,methyl,IC50,50124881,50124879,0.45,26386602,ChEMBL_1521647 (CHEMBL3626447),article,0.58
+AChE,serine hydrolase,3619,methyl,IC50,50124881,50124880,-0.05,26386602,ChEMBL_1521647 (CHEMBL3626447),article,0.02
+AChE,serine hydrolase,3619,methyl,IC50,50124882,50124881,1.08,26386602,ChEMBL_1521647 (CHEMBL3626447),article,1.14
+AChE,serine hydrolase,3619,methyl,IC50,50138750,50138731,0.25,14711311,ChEMBL_29411 (CHEMBL643384),article,0.25
+AChE,serine hydrolase,3619,methyl,IC50,50154768,50154780,0.63,15481986,ChEMBL_305174 (CHEMBL832763),article,0.63
+AChE,serine hydrolase,3619,methyl,IC50,50238212,50606806,0.45,,,,
+AChE,serine hydrolase,3619,methyl,IC50,50238219,50238220,0.51,28613859,ChEMBL_1663551 (CHEMBL4013232),article,0.51
+AChE,serine hydrolase,3619,methyl,IC50,50238225,50238224,0.11,28613859,ChEMBL_1663551 (CHEMBL4013232),article,0.11
+AChE,serine hydrolase,3619,methyl,IC50,50238225,50238235,0.32,28613859,ChEMBL_1663551 (CHEMBL4013232),article,0.31
+AChE,serine hydrolase,3619,methyl,IC50,50238236,50238216,0.65,28613859,ChEMBL_1663551 (CHEMBL4013232),article,0.65
+AChE,serine hydrolase,3619,methyl,IC50,50298402,50298403,0.15,19473849,ChEMBL_588496 (CHEMBL1041236),article,0.16
+AChE,serine hydrolase,3619,methyl,IC50,50298405,50298406,-0.2,19473849,ChEMBL_588496 (CHEMBL1041236),article,-0.2
+AChE,serine hydrolase,3619,methyl,IC50,50298409,50298408,-0.18,19473849,ChEMBL_588496 (CHEMBL1041236),article,-0.18
+AChE,serine hydrolase,3619,methyl,IC50,50304320,50304323,-0.2,19726199,ChEMBL_606474 (CHEMBL1065425),article,-0.19
+AChE,serine hydrolase,3619,methyl,IC50,50304327,50304329,-0.02,19726199,ChEMBL_606474 (CHEMBL1065425),article,-0.02
+AChE,serine hydrolase,3619,methyl,IC50,50318745,50038733,-0.3,20053484,ChEMBL_633769 (CHEMBL1119333),article,-0.65
+AChE,serine hydrolase,3619,methyl,IC50,50318746,50318754,-0.21,20053484,ChEMBL_633769 (CHEMBL1119333),article,-0.21
+AChE,serine hydrolase,3619,methyl,IC50,50318755,50318754,-0.18,20053484,ChEMBL_633769 (CHEMBL1119333),article,-0.18
+AChE,serine hydrolase,3619,methyl,IC50,50318860,10922,0.51,,,,
+AChE,serine hydrolase,3619,methyl,IC50,50318863,10925,0.0,,,,
+AChE,serine hydrolase,3619,methyl,IC50,50318866,10928,0.0,,,,
+AChE,serine hydrolase,3619,methyl,IC50,50318869,10931,0.0,,,,
+AChE,serine hydrolase,3619,methyl,IC50,50321917,50321918,0.24,20627738,ChEMBL_642168 (CHEMBL1176719),article,0.24
+AChE,serine hydrolase,3619,methyl,IC50,50379273,10597,0.12,,,,
+AChE,serine hydrolase,3619,methyl,IC50,50386424,50189331,-0.04,,,,
+AChE,serine hydrolase,3619,methyl,IC50,50389383,50389382,0.47,22818849,ChEMBL_831932 (CHEMBL2066006),article,0.48
+AChE,serine hydrolase,3619,methyl,IC50,50433314,8985,0.09,,,,
+AChE,serine hydrolase,3619,methyl,IC50,50433314,50279983,-0.05,,,,
+AChE,serine hydrolase,3619,methyl,IC50,50456687,50456696,0.13,28728106,ChEMBL_1757775 (CHEMBL4192783),article,0.12
+AChE,serine hydrolase,3619,methyl,IC50,50456688,50456692,0.26,28728106,ChEMBL_1757775 (CHEMBL4192783),article,0.27
+AChE,serine hydrolase,3619,methyl,IC50,50456689,50456691,-0.04,28728106,ChEMBL_1757775 (CHEMBL4192783),article,-0.03
+AChE,serine hydrolase,3619,methyl,IC50,50456697,50456688,1.3,28728106,ChEMBL_1757775 (CHEMBL4192783),article,1.29
+AChE,serine hydrolase,3619,methyl,IC50,50456698,50456694,0.05,28728106,ChEMBL_1757775 (CHEMBL4192783),article,0.05
+AChE,serine hydrolase,3619,methyl,IC50,50486452,50486489,-0.06,,,,
+AChE,serine hydrolase,3619,methyl,IC50,50556390,50556407,-1.57,32950908,ChEMBL_2056084 (CHEMBL4711085),article,-1.57
+AChE,serine hydrolase,3619,methyl,IC50,50556407,50556408,0.96,32950908,ChEMBL_2056084 (CHEMBL4711085),article,0.96
+AChE,serine hydrolase,3619,methyl,IC50,50610549,50610547,-0.18,33984802,ChEMBL_2281430,article,-0.18
+AChE,serine hydrolase,3619,methyl,IC50,50610550,50610548,-0.35,33984802,ChEMBL_2281430,article,-0.35
+AChE,serine hydrolase,3619,methyl,IC50,50610551,50610552,0.42,33984802,ChEMBL_2281430,article,0.42
+AChE,serine hydrolase,3619,methyl,IC50,50634776,50029944,-3.25,,,,
+AChE,serine hydrolase,3619,methyl,IC50,50653583,50653584,-0.48,39667052,ChEMBL_2602685,article,-0.48
+AChE,serine hydrolase,3619,methyl,IC50,50653588,50653589,-0.4,39667052,ChEMBL_2602685,article,-0.4
+AChE,serine hydrolase,3619,methyl,IC50,50653612,50653613,-1.03,39673864,ChEMBL_2602830,article,-1.03
+AChE,serine hydrolase,3619,methyl,IC50,50653612,50653615,-0.19,39673864,ChEMBL_2602830,article,-0.19
+AChE,serine hydrolase,3619,methyl,IC50,50653613,50653616,-0.46,39673864,ChEMBL_2602830,article,-0.46
+AChE,serine hydrolase,3619,methyl,IC50,50653614,50653617,-0.14,39673864,ChEMBL_2602830,article,-0.14
+AChE,serine hydrolase,3619,methyl,IC50,50653615,50653616,-1.3,39673864,ChEMBL_2602830,article,-1.3
+AChE,serine hydrolase,3619,methyl,IC50,50653618,50653619,-1.11,39673864,ChEMBL_2602830,article,-1.11
+AChE,serine hydrolase,3619,methyl,IC50,50653621,50653622,0.2,39673864,ChEMBL_2602830,article,0.2
+AChE,serine hydrolase,3619,methyl,IC50,50653621,50653624,0.08,39673864,ChEMBL_2602830,article,0.07
+AChE,serine hydrolase,3619,methyl,IC50,50653622,50653625,0.78,39673864,ChEMBL_2602830,article,0.78
+AChE,serine hydrolase,3619,methyl,IC50,50653623,50653626,1.15,39673864,ChEMBL_2602830,article,1.15
+AChE,serine hydrolase,3619,methyl,IC50,50653624,50653625,0.9,39673864,ChEMBL_2602830,article,0.9
+AChE,serine hydrolase,3619,methyl,IC50,50653627,50653628,-0.52,39673864,ChEMBL_2602830,article,-0.52
+AChE,serine hydrolase,3619,methyl,IC50,50663938,50663936,0.0,39243456,ChEMBL_2647988,article,0.0
+AChE,serine hydrolase,3619,chlorine,IC50,8961,8987,0.24,32706255,ChEMBL_2071578 (CHEMBL4727112),article,1.33
+AChE,serine hydrolase,3619,chlorine,IC50,8961,50279984,-0.47,33892271,ChEMBL_2110044 (CHEMBL4818719),article,0.99
+AChE,serine hydrolase,3619,chlorine,IC50,8961,50280623,-1.34,15317459,ChEMBL_307253 (CHEMBL829159),article,-0.31
+AChE,serine hydrolase,3619,chlorine,IC50,9007,9009,0.7,16420031,Cholinesterase Inhibition Assay,article,0.7
+AChE,serine hydrolase,3619,chlorine,IC50,9007,50523376,1.8,,,,
+AChE,serine hydrolase,3619,chlorine,IC50,9009,9012,1.1,16420031,Cholinesterase Inhibition Assay,article,1.1
+AChE,serine hydrolase,3619,chlorine,IC50,9020,9021,1.25,20053484,ChEMBL_633769 (CHEMBL1119333),article,1.24
+AChE,serine hydrolase,3619,chlorine,IC50,10507,10512,1.44,15658850,Enzyme Inhibition Assay,article,1.44
+AChE,serine hydrolase,3619,chlorine,IC50,10583,10587,0.05,22185619,ChEMBL_811246 (CHEMBL2015198),article,0.08
+AChE,serine hydrolase,3619,chlorine,IC50,10584,10588,0.01,15771413,Enzyme Inhibition Assay,article,0.01
+AChE,serine hydrolase,3619,chlorine,IC50,10585,10589,-0.08,22185619,ChEMBL_811246 (CHEMBL2015198),article,0.03
+AChE,serine hydrolase,3619,chlorine,IC50,10586,10590,0.05,22185619,ChEMBL_811246 (CHEMBL2015198),article,0.13
+AChE,serine hydrolase,3619,chlorine,IC50,132071,132074,0.64,US8841453B2,Inhibition Assay,patent,0.64
+AChE,serine hydrolase,3619,chlorine,IC50,132071,132081,-0.07,US8841453B2,Inhibition Assay,patent,-0.07
+AChE,serine hydrolase,3619,chlorine,IC50,132083,132085,-0.09,US8841453B2,Inhibition Assay,patent,-0.08
+AChE,serine hydrolase,3619,chlorine,IC50,132083,132086,-0.84,US8841453B2,Inhibition Assay,patent,-0.84
+AChE,serine hydrolase,3619,chlorine,IC50,132084,132087,-0.83,US8841453B2,Inhibition Assay,patent,-0.83
+AChE,serine hydrolase,3619,chlorine,IC50,132084,132088,-0.27,US8841453B2,Inhibition Assay,patent,-0.27
+AChE,serine hydrolase,3619,chlorine,IC50,327447,50079362,0.21,39454222,ChEMBL_2618951,article,0.21
+AChE,serine hydrolase,3619,chlorine,IC50,50004018,50003999,-0.03,20053484,ChEMBL_633769 (CHEMBL1119333),article,-0.03
+AChE,serine hydrolase,3619,chlorine,IC50,50027471,50379272,-1.26,22185619,ChEMBL_811246 (CHEMBL2015198),article,-1.26
+AChE,serine hydrolase,3619,chlorine,IC50,50028679,50028681,0.87,25259726,ChEMBL_1439857 (CHEMBL3387411),article,0.87
+AChE,serine hydrolase,3619,chlorine,IC50,50028679,50028693,-0.83,25259726,ChEMBL_1439857 (CHEMBL3387411),article,-0.84
+AChE,serine hydrolase,3619,chlorine,IC50,50028680,50028682,1.0,25259726,ChEMBL_1439857 (CHEMBL3387411),article,1.0
+AChE,serine hydrolase,3619,chlorine,IC50,50028680,50028694,0.15,25259726,ChEMBL_1439857 (CHEMBL3387411),article,0.15
+AChE,serine hydrolase,3619,chlorine,IC50,50028681,50028691,-0.23,25259726,ChEMBL_1439857 (CHEMBL3387411),article,-0.23
+AChE,serine hydrolase,3619,chlorine,IC50,50028682,50028692,-0.22,25259726,ChEMBL_1439857 (CHEMBL3387411),article,-0.22
+AChE,serine hydrolase,3619,chlorine,IC50,50028683,50028685,1.54,25259726,ChEMBL_1439857 (CHEMBL3387411),article,1.54
+AChE,serine hydrolase,3619,chlorine,IC50,50028693,50028691,1.47,25259726,ChEMBL_1439857 (CHEMBL3387411),article,1.48
+AChE,serine hydrolase,3619,chlorine,IC50,50028694,50028692,0.63,25259726,ChEMBL_1439857 (CHEMBL3387411),article,0.63
+AChE,serine hydrolase,3619,chlorine,IC50,50032393,50032382,-0.26,20053484,ChEMBL_633769 (CHEMBL1119333),article,-0.26
+AChE,serine hydrolase,3619,chlorine,IC50,50037138,50039204,-0.47,20053484,ChEMBL_633769 (CHEMBL1119333),article,-0.47
+AChE,serine hydrolase,3619,chlorine,IC50,50037138,50039215,-0.58,20053484,ChEMBL_633769 (CHEMBL1119333),article,-0.58
+AChE,serine hydrolase,3619,chlorine,IC50,50060470,50280625,0.86,15317459,ChEMBL_307253 (CHEMBL829159),article,0.85
+AChE,serine hydrolase,3619,chlorine,IC50,50060470,50280626,-0.41,15317459,ChEMBL_307253 (CHEMBL829159),article,-0.42
+AChE,serine hydrolase,3619,chlorine,IC50,50060470,50280627,-0.11,15317459,ChEMBL_307253 (CHEMBL829159),article,-0.13
+AChE,serine hydrolase,3619,chlorine,IC50,50073114,50133471,-0.62,26503905,ChEMBL_1525953 (CHEMBL3635777),article,0.56
+AChE,serine hydrolase,3619,chlorine,IC50,50094629,50094630,0.93,11101357,ChEMBL_28153 (CHEMBL644108),article,0.93
+AChE,serine hydrolase,3619,chlorine,IC50,50099602,50523387,1.18,30851693,ChEMBL_1890173 (CHEMBL4391927),article,1.28
+AChE,serine hydrolase,3619,chlorine,IC50,50107891,50094629,0.51,,,,
+AChE,serine hydrolase,3619,chlorine,IC50,50107892,10592,2.2,,,,
+AChE,serine hydrolase,3619,chlorine,IC50,50107892,50200340,1.87,,,,
+AChE,serine hydrolase,3619,chlorine,IC50,50108990,50108991,-0.26,25678015,ChEMBL_1508181 (CHEMBL3603059),article,-0.27
+AChE,serine hydrolase,3619,chlorine,IC50,50108992,50027471,0.19,,,,
+AChE,serine hydrolase,3619,chlorine,IC50,50108992,50108994,0.63,25678015,ChEMBL_1508181 (CHEMBL3603059),article,0.64
+AChE,serine hydrolase,3619,chlorine,IC50,50108993,50108990,0.72,25678015,ChEMBL_1508181 (CHEMBL3603059),article,0.72
+AChE,serine hydrolase,3619,chlorine,IC50,50108993,50108995,0.43,25678015,ChEMBL_1508181 (CHEMBL3603059),article,0.43
+AChE,serine hydrolase,3619,chlorine,IC50,50108994,50379272,-1.7,,,,
+AChE,serine hydrolase,3619,chlorine,IC50,50108995,50108991,0.03,25678015,ChEMBL_1508181 (CHEMBL3603059),article,0.02
+AChE,serine hydrolase,3619,chlorine,IC50,50225209,50371198,0.14,17944454,ChEMBL_451097 (CHEMBL900177),article,0.15
+AChE,serine hydrolase,3619,chlorine,IC50,50225210,50371197,0.55,17944454,ChEMBL_451097 (CHEMBL900177),article,0.55
+AChE,serine hydrolase,3619,chlorine,IC50,50225215,50371199,0.37,17944454,ChEMBL_451097 (CHEMBL900177),article,0.37
+AChE,serine hydrolase,3619,chlorine,IC50,50238225,50238213,0.0,28613859,ChEMBL_1663551 (CHEMBL4013232),article,0.0
+AChE,serine hydrolase,3619,chlorine,IC50,50238225,50238223,0.74,28613859,ChEMBL_1663551 (CHEMBL4013232),article,0.74
+AChE,serine hydrolase,3619,chlorine,IC50,50271140,50271142,0.51,18517184,ChEMBL_552872 (CHEMBL960589),article,0.51
+AChE,serine hydrolase,3619,chlorine,IC50,50271189,50271191,0.3,18517184,ChEMBL_552872 (CHEMBL960589),article,0.3
+AChE,serine hydrolase,3619,chlorine,IC50,50271190,50271192,0.3,18517184,ChEMBL_552872 (CHEMBL960589),article,0.31
+AChE,serine hydrolase,3619,chlorine,IC50,50291635,50291636,0.06,29324339,ChEMBL_1731300 (CHEMBL4146836),article,0.06
+AChE,serine hydrolase,3619,chlorine,IC50,50318731,9022,0.0,,,,
+AChE,serine hydrolase,3619,chlorine,IC50,50318732,9023,0.0,,,,
+AChE,serine hydrolase,3619,chlorine,IC50,50322766,50322768,0.74,20545360,ChEMBL_642381 (CHEMBL1177574),article,0.74
+AChE,serine hydrolase,3619,chlorine,IC50,50351015,50351016,-1.04,21798635,ChEMBL_763958 (CHEMBL1820359),article,-1.04
+AChE,serine hydrolase,3619,chlorine,IC50,50351020,50351015,1.11,21798635,ChEMBL_763958 (CHEMBL1820359),article,1.1
+AChE,serine hydrolase,3619,chlorine,IC50,50379265,50027470,1.12,22185619,ChEMBL_811246 (CHEMBL2015198),article,1.12
+AChE,serine hydrolase,3619,chlorine,IC50,50380537,50380541,1.78,22243648,ChEMBL_813113 (CHEMBL2020732),article,1.78
+AChE,serine hydrolase,3619,chlorine,IC50,50380542,50380551,0.82,22243648,ChEMBL_813113 (CHEMBL2020732),article,0.82
+AChE,serine hydrolase,3619,chlorine,IC50,50380543,50380550,0.96,22243648,ChEMBL_813113 (CHEMBL2020732),article,0.95
+AChE,serine hydrolase,3619,chlorine,IC50,50380544,50380549,0.9,22243648,ChEMBL_813113 (CHEMBL2020732),article,0.9
+AChE,serine hydrolase,3619,chlorine,IC50,50380545,50380559,1.46,22243648,ChEMBL_813113 (CHEMBL2020732),article,1.46
+AChE,serine hydrolase,3619,chlorine,IC50,50380546,50380558,1.51,22243648,ChEMBL_813113 (CHEMBL2020732),article,1.52
+AChE,serine hydrolase,3619,chlorine,IC50,50380553,50380552,0.89,22243648,ChEMBL_813113 (CHEMBL2020732),article,0.89
+AChE,serine hydrolase,3619,chlorine,IC50,50380555,50380547,1.86,22243648,ChEMBL_813113 (CHEMBL2020732),article,1.86
+AChE,serine hydrolase,3619,chlorine,IC50,50433314,8987,1.69,,,,
+AChE,serine hydrolase,3619,chlorine,IC50,50433314,50279984,0.98,,,,
+AChE,serine hydrolase,3619,chlorine,IC50,50433314,50280623,0.11,,,,
+AChE,serine hydrolase,3619,chlorine,IC50,50456687,50456690,0.3,28728106,ChEMBL_1757775 (CHEMBL4192783),article,0.3
+AChE,serine hydrolase,3619,chlorine,IC50,50456688,50456691,0.26,28728106,ChEMBL_1757775 (CHEMBL4192783),article,0.27
+AChE,serine hydrolase,3619,chlorine,IC50,50456689,50456690,-0.04,28728106,ChEMBL_1757775 (CHEMBL4192783),article,-0.03
+AChE,serine hydrolase,3619,chlorine,IC50,50456697,50456687,1.26,28728106,ChEMBL_1757775 (CHEMBL4192783),article,1.26
+AChE,serine hydrolase,3619,chlorine,IC50,50456697,50456689,1.6,28728106,ChEMBL_1757775 (CHEMBL4192783),article,1.59
+AChE,serine hydrolase,3619,chlorine,IC50,50456698,50456693,0.23,28728106,ChEMBL_1757775 (CHEMBL4192783),article,0.23
+AChE,serine hydrolase,3619,chlorine,IC50,50456699,50456700,0.24,28728106,ChEMBL_1757775 (CHEMBL4192783),article,0.24
+AChE,serine hydrolase,3619,chlorine,IC50,50465093,50465100,0.48,29541355,ChEMBL_1784114 (CHEMBL4255631),article,0.48
+AChE,serine hydrolase,3619,chlorine,IC50,50465101,50465096,0.25,29541355,ChEMBL_1784114 (CHEMBL4255631),article,0.25
+AChE,serine hydrolase,3619,chlorine,IC50,50507210,50507209,-0.36,30447434,ChEMBL_1829442 (CHEMBL4329316),article,-0.36
+AChE,serine hydrolase,3619,chlorine,IC50,50507213,50507211,0.25,30447434,ChEMBL_1829442 (CHEMBL4329316),article,0.25
+AChE,serine hydrolase,3619,chlorine,IC50,50523371,50523393,0.18,30851693,ChEMBL_1890173 (CHEMBL4391927),article,0.18
+AChE,serine hydrolase,3619,chlorine,IC50,50523376,9012,0.0,,,,
+AChE,serine hydrolase,3619,chlorine,IC50,50541051,50541052,0.74,31864798,ChEMBL_1983599 (CHEMBL4617005),article,0.73
+AChE,serine hydrolase,3619,chlorine,IC50,50556390,50556405,-1.53,32950908,ChEMBL_2056084 (CHEMBL4711085),article,-1.53
+AChE,serine hydrolase,3619,chlorine,IC50,50556400,50556399,0.57,32950908,ChEMBL_2056084 (CHEMBL4711085),article,0.57
+AChE,serine hydrolase,3619,chlorine,IC50,50560210,50560218,1.44,32706255,ChEMBL_2071578 (CHEMBL4727112),article,1.44
+AChE,serine hydrolase,3619,chlorine,IC50,50560211,50560217,1.28,32706255,ChEMBL_2071578 (CHEMBL4727112),article,1.28
+AChE,serine hydrolase,3619,chlorine,IC50,50563377,50563378,0.28,33582578,ChEMBL_2082220 (CHEMBL4738011),article,0.28
+AChE,serine hydrolase,3619,chlorine,IC50,50563381,50563382,-0.03,33582578,ChEMBL_2082220 (CHEMBL4738011),article,-0.03
+AChE,serine hydrolase,3619,chlorine,IC50,50563389,50563390,0.12,33582578,ChEMBL_2082220 (CHEMBL4738011),article,0.12
+AChE,serine hydrolase,3619,chlorine,IC50,50574586,50574589,-1.5,34198150,ChEMBL_2122761 (CHEMBL4831994),article,-1.5
+AChE,serine hydrolase,3619,chlorine,IC50,50587054,50587063,0.96,33829779,ChEMBL_2170777 (CHEMBL5055911),article,0.96
+AChE,serine hydrolase,3619,chlorine,IC50,50587055,50587058,0.84,33829779,ChEMBL_2170777 (CHEMBL5055911),article,0.85
+AChE,serine hydrolase,3619,chlorine,IC50,50587056,50587057,0.92,33829779,ChEMBL_2170777 (CHEMBL5055911),article,0.92
+AChE,serine hydrolase,3619,chlorine,IC50,50587059,50587064,0.78,33829779,ChEMBL_2170777 (CHEMBL5055911),article,0.78
+AChE,serine hydrolase,3619,chlorine,IC50,50587066,50587061,0.66,33829779,ChEMBL_2170777 (CHEMBL5055911),article,0.66
+AChE,serine hydrolase,3619,chlorine,IC50,50610556,50610557,0.18,33984802,ChEMBL_2281430,article,0.18
+AChE,serine hydrolase,3619,chlorine,IC50,50618903,50618906,1.01,37487339,ChEMBL_2318181,article,1.02
+AChE,serine hydrolase,3619,chlorine,IC50,50634776,50204835,-3.3,,,,
+AChE,serine hydrolase,3619,chlorine,IC50,50640647,50640651,-0.49,38157596,ChEMBL_2448625,article,-0.49
+AChE,serine hydrolase,3619,chlorine,IC50,50653583,50653587,0.23,39667052,ChEMBL_2602685,article,0.23
+AChE,serine hydrolase,3619,chlorine,IC50,50653588,50653592,0.44,39667052,ChEMBL_2602685,article,0.44
+AChE,serine hydrolase,3619,chlorine,IC50,50653612,50653614,-1.31,39673864,ChEMBL_2602830,article,-1.32
+AChE,serine hydrolase,3619,chlorine,IC50,50653612,50653618,0.3,39673864,ChEMBL_2602830,article,0.3
+AChE,serine hydrolase,3619,chlorine,IC50,50653613,50653619,0.22,39673864,ChEMBL_2602830,article,0.22
+AChE,serine hydrolase,3619,chlorine,IC50,50653614,50653620,0.3,39673864,ChEMBL_2602830,article,0.3
+AChE,serine hydrolase,3619,chlorine,IC50,50653615,50653617,-1.26,39673864,ChEMBL_2602830,article,-1.26
+AChE,serine hydrolase,3619,chlorine,IC50,50653618,50653620,-1.31,39673864,ChEMBL_2602830,article,-1.31
+AChE,serine hydrolase,3619,chlorine,IC50,50653621,50653623,0.05,39673864,ChEMBL_2602830,article,0.05
+AChE,serine hydrolase,3619,chlorine,IC50,50653621,50653627,0.52,39673864,ChEMBL_2602830,article,0.52
+AChE,serine hydrolase,3619,chlorine,IC50,50653622,50653628,-0.2,39673864,ChEMBL_2602830,article,-0.2
+AChE,serine hydrolase,3619,chlorine,IC50,50653623,50653629,-0.5,39673864,ChEMBL_2602830,article,-0.5
+AChE,serine hydrolase,3619,chlorine,IC50,50653624,50653626,1.12,39673864,ChEMBL_2602830,article,1.12
+AChE,serine hydrolase,3619,chlorine,IC50,50653627,50653629,-0.97,39673864,ChEMBL_2602830,article,-0.97
+BACE1,aspartyl protease,5093,fluorine,IC50,18751,19476,-0.08,US8846658B2,Inhibition Assay,patent,-0.08
+BACE1,aspartyl protease,5093,fluorine,IC50,26502,26788,0.18,19428244,Enzyme Inhibition Assay,article,0.18
+BACE1,aspartyl protease,5093,fluorine,IC50,116233,116236,0.1,US10683287B2,Inhibition Assay,patent,0.1
+BACE1,aspartyl protease,5093,fluorine,IC50,124132,124138,-0.7,US8754075B2,Inhibition Assay,patent,-0.7
+BACE1,aspartyl protease,5093,fluorine,IC50,124135,124136,-0.3,US8754075B2,Inhibition Assay,patent,-0.3
+BACE1,aspartyl protease,5093,fluorine,IC50,124143,124135,0.6,US8754075B2,Inhibition Assay,patent,0.6
+BACE1,aspartyl protease,5093,fluorine,IC50,136738,136863,-0.06,US8865911B2,Diluted TR-FRET Assay,patent,-0.06
+BACE1,aspartyl protease,5093,fluorine,IC50,136738,155120,-0.58,,,,
+BACE1,aspartyl protease,5093,fluorine,IC50,136849,136848,-0.31,US8865911B2,Diluted TR-FRET Assay,patent,-0.32
+BACE1,aspartyl protease,5093,fluorine,IC50,136855,136850,-0.42,US8865911B2,Diluted TR-FRET Assay,patent,-0.42
+BACE1,aspartyl protease,5093,fluorine,IC50,150686,150688,0.05,US8987254B2,FRET Assay,patent,0.04
+BACE1,aspartyl protease,5093,fluorine,IC50,150686,150691,-0.08,US9999624B2,FRET Assay,patent,-0.08
+BACE1,aspartyl protease,5093,fluorine,IC50,150687,150689,-0.08,US8987254B2,FRET Assay,patent,-0.07
+BACE1,aspartyl protease,5093,fluorine,IC50,150688,150693,-0.12,34081466,ChEMBL_2149724 (CHEMBL5034186),article,-0.11
+BACE1,aspartyl protease,5093,fluorine,IC50,150690,150692,0.1,US8987254B2,FRET Assay,patent,0.1
+BACE1,aspartyl protease,5093,fluorine,IC50,150690,400643,0.1,,,,
+BACE1,aspartyl protease,5093,fluorine,IC50,150691,150693,0.01,US8987254B2,FRET Assay,patent,0.01
+BACE1,aspartyl protease,5093,fluorine,IC50,153632,50457586,0.08,29733614,ChEMBL_1760190 (CHEMBL4195198),article,0.09
+BACE1,aspartyl protease,5093,fluorine,IC50,171399,171477,0.41,US9611261B2,In Vitro Enzymatic FRET Assay,patent,0.41
+BACE1,aspartyl protease,5093,fluorine,IC50,171461,171477,0.22,US9611261B2,In Vitro Enzymatic FRET Assay,patent,0.22
+BACE1,aspartyl protease,5093,fluorine,IC50,171565,171401,0.14,US9611261B2,In Vitro Enzymatic FRET Assay,patent,0.14
+BACE1,aspartyl protease,5093,fluorine,IC50,171565,171462,0.34,US9611261B2,In Vitro Enzymatic FRET Assay,patent,0.34
+BACE1,aspartyl protease,5093,fluorine,IC50,171645,171587,0.32,US9611261B2,In Vitro Enzymatic FRET Assay,patent,0.32
+BACE1,aspartyl protease,5093,fluorine,IC50,171645,171683,0.3,US9611261B2,In Vitro Enzymatic FRET Assay,patent,0.3
+BACE1,aspartyl protease,5093,fluorine,IC50,171651,171581,0.11,US9611261B2,In Vitro Enzymatic FRET Assay,patent,0.11
+BACE1,aspartyl protease,5093,fluorine,IC50,195117,195118,0.4,US10336717B2,BACE Assay,patent,0.4
+BACE1,aspartyl protease,5093,fluorine,IC50,195422,195418,0.24,US10336717B2,BACE Assay,patent,0.24
+BACE1,aspartyl protease,5093,fluorine,IC50,214835,214960,0.21,US9296734B2,In Vitro Enzymatic BACE FRET Assay,patent,0.22
+BACE1,aspartyl protease,5093,fluorine,IC50,214839,214961,-0.09,US9296734B2,In Vitro Enzymatic BACE FRET Assay,patent,-0.09
+BACE1,aspartyl protease,5093,fluorine,IC50,214844,214835,0.0,US9296734B2,In Vitro Enzymatic BACE FRET Assay,patent,0.0
+BACE1,aspartyl protease,5093,fluorine,IC50,214844,214997,0.06,US9296734B2,In Vitro Enzymatic BACE FRET Assay,patent,0.06
+BACE1,aspartyl protease,5093,fluorine,IC50,214996,214966,-0.06,US9296734B2,In Vitro Enzymatic BACE FRET Assay,patent,-0.07
+BACE1,aspartyl protease,5093,fluorine,IC50,214997,214960,0.15,US9296734B2,In Vitro Enzymatic BACE FRET Assay,patent,0.15
+BACE1,aspartyl protease,5093,fluorine,IC50,220806,220783,0.18,US9296759B2,Fluorescence Resonance Energy Transfer (FRET) Assay,patent,0.18
+BACE1,aspartyl protease,5093,fluorine,IC50,220827,220826,0.2,US9296759B2,Fluorescence Resonance Energy Transfer (FRET) Assay,patent,0.21
+BACE1,aspartyl protease,5093,fluorine,IC50,220828,220825,0.25,US9296759B2,Fluorescence Resonance Energy Transfer (FRET) Assay,patent,0.25
+BACE1,aspartyl protease,5093,fluorine,IC50,220839,220799,0.03,US9296759B2,Fluorescence Resonance Energy Transfer (FRET) Assay,patent,0.03
+BACE1,aspartyl protease,5093,fluorine,IC50,220840,220798,0.23,US9296759B2,Fluorescence Resonance Energy Transfer (FRET) Assay,patent,0.24
+BACE1,aspartyl protease,5093,fluorine,IC50,220854,220856,-0.41,US9296759B2,Fluorescence Resonance Energy Transfer (FRET) Assay,patent,-0.41
+BACE1,aspartyl protease,5093,fluorine,IC50,228399,228414,0.02,US9556135B2,In Vivo Inhibition of Beta-Secretase,patent,0.02
+BACE1,aspartyl protease,5093,fluorine,IC50,228399,228415,-0.38,US9556135B2,In Vivo Inhibition of Beta-Secretase,patent,-0.38
+BACE1,aspartyl protease,5093,fluorine,IC50,228400,228425,0.43,US9556135B2,In Vivo Inhibition of Beta-Secretase,patent,0.43
+BACE1,aspartyl protease,5093,fluorine,IC50,228419,229990,0.55,US9556135B2,In Vivo Inhibition of Beta-Secretase,patent,0.55
+BACE1,aspartyl protease,5093,fluorine,IC50,228425,229992,0.56,US9556135B2,In Vivo Inhibition of Beta-Secretase,patent,0.56
+BACE1,aspartyl protease,5093,fluorine,IC50,228474,228476,0.1,US9556135B2,In Vivo Inhibition of Beta-Secretase,patent,0.09
+BACE1,aspartyl protease,5093,fluorine,IC50,228868,229050,-0.43,US9556135B2,In Vivo Inhibition of Beta-Secretase,patent,-0.43
+BACE1,aspartyl protease,5093,fluorine,IC50,229582,230011,-0.06,US9556135B2,In Vivo Inhibition of Beta-Secretase,patent,-0.06
+BACE1,aspartyl protease,5093,fluorine,IC50,338836,338843,-0.01,US9751886B2,FRET Based Assay,patent,-0.01
+BACE1,aspartyl protease,5093,fluorine,IC50,338836,338844,0.02,US9751886B2,FRET Based Assay,patent,0.02
+BACE1,aspartyl protease,5093,fluorine,IC50,372742,372921,-0.26,US10246429B2,In Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assays,patent,-0.27
+BACE1,aspartyl protease,5093,fluorine,IC50,372921,372920,-0.08,US10246429B2,In Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assays,patent,-0.07
+BACE1,aspartyl protease,5093,fluorine,IC50,400331,400979,-0.11,US9999624B2,FRET Assay,patent,-0.11
+BACE1,aspartyl protease,5093,fluorine,IC50,400607,150692,0.1,,,,
+BACE1,aspartyl protease,5093,fluorine,IC50,400607,400643,0.1,US9999624B2,FRET Assay,patent,0.1
+BACE1,aspartyl protease,5093,fluorine,IC50,403754,195119,0.19,US10336717B2,BACE Assay,patent,0.19
+BACE1,aspartyl protease,5093,fluorine,IC50,403754,195132,0.62,US10336717B2,BACE Assay,patent,0.62
+BACE1,aspartyl protease,5093,fluorine,IC50,404165,195379,0.04,US10336717B2,BACE Assay,patent,0.04
+BACE1,aspartyl protease,5093,fluorine,IC50,477920,477924,0.18,US10889581B2,In Vitro Enzymatic FRET (Fluorescence Resonance Energy Transfer) Assays,patent,0.18
+BACE1,aspartyl protease,5093,fluorine,IC50,501187,501188,0.0,US11021493B2,In Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assays,patent,0.0
+BACE1,aspartyl protease,5093,fluorine,IC50,501192,501239,0.48,US11021493B2,In Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assays,patent,0.48
+BACE1,aspartyl protease,5093,fluorine,IC50,501197,501247,-0.12,US11021493B2,In Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assays,patent,-0.12
+BACE1,aspartyl protease,5093,fluorine,IC50,501323,501353,0.1,US11021493B2,In Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assays,patent,0.1
+BACE1,aspartyl protease,5093,fluorine,IC50,501350,501357,0.0,US11021493B2,In Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assays,patent,0.0
+BACE1,aspartyl protease,5093,fluorine,IC50,589207,589169,1.25,US11548903B2,n Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assay,patent,1.25
+BACE1,aspartyl protease,5093,fluorine,IC50,705373,705445,0.05,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.06
+BACE1,aspartyl protease,5093,fluorine,IC50,705384,705378,0.0,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.0
+BACE1,aspartyl protease,5093,fluorine,IC50,705388,50510782,-0.11,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.11
+BACE1,aspartyl protease,5093,fluorine,IC50,705398,705413,-0.19,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.19
+BACE1,aspartyl protease,5093,fluorine,IC50,705403,705396,0.21,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.21
+BACE1,aspartyl protease,5093,fluorine,IC50,705407,705425,0.3,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.3
+BACE1,aspartyl protease,5093,fluorine,IC50,705410,705437,0.35,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.34
+BACE1,aspartyl protease,5093,fluorine,IC50,705416,705414,-0.2,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.2
+BACE1,aspartyl protease,5093,fluorine,IC50,705419,705450,-0.01,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.01
+BACE1,aspartyl protease,5093,fluorine,IC50,705420,705414,-0.41,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.41
+BACE1,aspartyl protease,5093,fluorine,IC50,705427,705450,-0.18,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.19
+BACE1,aspartyl protease,5093,fluorine,IC50,705444,705451,0.57,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.58
+BACE1,aspartyl protease,5093,fluorine,IC50,705473,705527,0.03,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.03
+BACE1,aspartyl protease,5093,fluorine,IC50,705474,705528,-0.03,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.03
+BACE1,aspartyl protease,5093,fluorine,IC50,705486,705863,0.35,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.35
+BACE1,aspartyl protease,5093,fluorine,IC50,705488,705489,0.12,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.12
+BACE1,aspartyl protease,5093,fluorine,IC50,705490,705491,-0.02,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.02
+BACE1,aspartyl protease,5093,fluorine,IC50,705493,705491,0.09,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.09
+BACE1,aspartyl protease,5093,fluorine,IC50,705497,705489,0.32,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.32
+BACE1,aspartyl protease,5093,fluorine,IC50,705507,705808,-0.03,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.04
+BACE1,aspartyl protease,5093,fluorine,IC50,705519,705517,0.14,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.14
+BACE1,aspartyl protease,5093,fluorine,IC50,705557,50510972,0.33,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.33
+BACE1,aspartyl protease,5093,fluorine,IC50,705558,705559,0.11,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.12
+BACE1,aspartyl protease,5093,fluorine,IC50,705560,705559,0.17,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.17
+BACE1,aspartyl protease,5093,fluorine,IC50,705564,705558,0.46,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.46
+BACE1,aspartyl protease,5093,fluorine,IC50,705564,705560,0.4,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.4
+BACE1,aspartyl protease,5093,fluorine,IC50,705564,705565,0.79,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.79
+BACE1,aspartyl protease,5093,fluorine,IC50,705565,705559,-0.22,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.22
+BACE1,aspartyl protease,5093,fluorine,IC50,705566,705569,0.29,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.29
+BACE1,aspartyl protease,5093,fluorine,IC50,705636,705715,0.42,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.42
+BACE1,aspartyl protease,5093,fluorine,IC50,705672,705880,-0.48,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.48
+BACE1,aspartyl protease,5093,fluorine,IC50,705676,705740,0.03,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.02
+BACE1,aspartyl protease,5093,fluorine,IC50,705677,705734,-0.63,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.63
+BACE1,aspartyl protease,5093,fluorine,IC50,705680,705679,0.34,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.34
+BACE1,aspartyl protease,5093,fluorine,IC50,705682,705686,0.02,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.02
+BACE1,aspartyl protease,5093,fluorine,IC50,705687,705819,-0.07,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.07
+BACE1,aspartyl protease,5093,fluorine,IC50,705690,705679,0.04,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.04
+BACE1,aspartyl protease,5093,fluorine,IC50,705691,705740,-0.12,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.12
+BACE1,aspartyl protease,5093,fluorine,IC50,705692,50510980,-0.27,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.28
+BACE1,aspartyl protease,5093,fluorine,IC50,705693,705819,-0.11,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.11
+BACE1,aspartyl protease,5093,fluorine,IC50,705694,50510977,0.2,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.15
+BACE1,aspartyl protease,5093,fluorine,IC50,705695,705407,0.11,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.12
+BACE1,aspartyl protease,5093,fluorine,IC50,705695,705692,0.7,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.71
+BACE1,aspartyl protease,5093,fluorine,IC50,705695,50510978,0.36,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.37
+BACE1,aspartyl protease,5093,fluorine,IC50,705696,705694,-0.08,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.08
+BACE1,aspartyl protease,5093,fluorine,IC50,705696,50510993,0.12,,,,
+BACE1,aspartyl protease,5093,fluorine,IC50,705697,705680,0.21,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.21
+BACE1,aspartyl protease,5093,fluorine,IC50,705697,705690,0.51,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.51
+BACE1,aspartyl protease,5093,fluorine,IC50,705698,705687,0.53,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.52
+BACE1,aspartyl protease,5093,fluorine,IC50,705698,705693,0.57,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.56
+BACE1,aspartyl protease,5093,fluorine,IC50,705699,705676,0.55,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.56
+BACE1,aspartyl protease,5093,fluorine,IC50,705699,705691,0.7,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.7
+BACE1,aspartyl protease,5093,fluorine,IC50,705700,705688,0.32,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.32
+BACE1,aspartyl protease,5093,fluorine,IC50,705701,705753,-0.14,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.14
+BACE1,aspartyl protease,5093,fluorine,IC50,705703,705704,0.14,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.14
+BACE1,aspartyl protease,5093,fluorine,IC50,705704,705735,-0.2,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.2
+BACE1,aspartyl protease,5093,fluorine,IC50,705705,50510985,0.58,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.55
+BACE1,aspartyl protease,5093,fluorine,IC50,705706,705736,0.7,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.7
+BACE1,aspartyl protease,5093,fluorine,IC50,705707,50510974,0.29,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.29
+BACE1,aspartyl protease,5093,fluorine,IC50,705707,50559903,-0.13,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.13
+BACE1,aspartyl protease,5093,fluorine,IC50,705708,50510976,0.01,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.04
+BACE1,aspartyl protease,5093,fluorine,IC50,705709,705737,0.12,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.13
+BACE1,aspartyl protease,5093,fluorine,IC50,705710,705734,-0.12,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.12
+BACE1,aspartyl protease,5093,fluorine,IC50,705711,705677,0.59,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.59
+BACE1,aspartyl protease,5093,fluorine,IC50,705711,705710,0.08,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.08
+BACE1,aspartyl protease,5093,fluorine,IC50,705801,705798,0.02,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.03
+BACE1,aspartyl protease,5093,fluorine,IC50,705802,705795,-0.15,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.15
+BACE1,aspartyl protease,5093,fluorine,IC50,705803,50510992,-0.52,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.52
+BACE1,aspartyl protease,5093,fluorine,IC50,705839,705883,-0.05,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.05
+BACE1,aspartyl protease,5093,fluorine,IC50,705847,705575,-0.36,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.37
+BACE1,aspartyl protease,5093,fluorine,IC50,705851,705914,0.26,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.26
+BACE1,aspartyl protease,5093,fluorine,IC50,705852,705841,0.5,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.5
+BACE1,aspartyl protease,5093,fluorine,IC50,705853,705789,-0.13,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.13
+BACE1,aspartyl protease,5093,fluorine,IC50,705859,50510983,-0.16,,,,
+BACE1,aspartyl protease,5093,fluorine,IC50,705861,705788,-0.52,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.52
+BACE1,aspartyl protease,5093,fluorine,IC50,705868,705893,-0.13,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.13
+BACE1,aspartyl protease,5093,fluorine,IC50,705873,705846,-0.71,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.7
+BACE1,aspartyl protease,5093,fluorine,IC50,705874,705800,-1.47,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-1.48
+BACE1,aspartyl protease,5093,fluorine,IC50,705879,705878,0.58,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.58
+BACE1,aspartyl protease,5093,fluorine,IC50,705882,705888,0.73,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.73
+BACE1,aspartyl protease,5093,fluorine,IC50,705899,50510985,0.33,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.3
+BACE1,aspartyl protease,5093,fluorine,IC50,705914,705873,0.68,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.68
+BACE1,aspartyl protease,5093,fluorine,IC50,705923,705935,0.06,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.06
+BACE1,aspartyl protease,5093,fluorine,IC50,705927,705895,0.81,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.81
+BACE1,aspartyl protease,5093,fluorine,IC50,705928,705894,0.08,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.07
+BACE1,aspartyl protease,5093,fluorine,IC50,705930,705902,-0.14,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.14
+BACE1,aspartyl protease,5093,fluorine,IC50,705931,705705,-0.12,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.11
+BACE1,aspartyl protease,5093,fluorine,IC50,705931,705899,0.13,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.13
+BACE1,aspartyl protease,5093,fluorine,IC50,705938,705899,0.2,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.2
+BACE1,aspartyl protease,5093,fluorine,IC50,50012617,195119,0.19,,,,
+BACE1,aspartyl protease,5093,fluorine,IC50,50012617,195132,0.62,,,,
+BACE1,aspartyl protease,5093,fluorine,IC50,50012660,228439,-2.83,US9556135B2,In Vivo Inhibition of Beta-Secretase,patent,0.15
+BACE1,aspartyl protease,5093,fluorine,IC50,50012660,228443,-3.05,US9556135B2,In Vivo Inhibition of Beta-Secretase,patent,-0.07
+BACE1,aspartyl protease,5093,fluorine,IC50,50012660,230025,-2.93,US9556135B2,In Vivo Inhibition of Beta-Secretase,patent,0.05
+BACE1,aspartyl protease,5093,fluorine,IC50,50031628,50031627,0.18,25363711,ChEMBL_1441677 (CHEMBL3377654),article,0.18
+BACE1,aspartyl protease,5093,fluorine,IC50,50032728,50032731,0.0,25389560,ChEMBL_1442550 (CHEMBL3371674),article,0.0
+BACE1,aspartyl protease,5093,fluorine,IC50,50032728,50032733,0.7,25389560,ChEMBL_1442550 (CHEMBL3371674),article,0.7
+BACE1,aspartyl protease,5093,fluorine,IC50,50032733,50032734,0.2,25389560,ChEMBL_1442550 (CHEMBL3371674),article,0.2
+BACE1,aspartyl protease,5093,fluorine,IC50,50032742,50032744,0.4,25389560,ChEMBL_1442550 (CHEMBL3371674),article,0.4
+BACE1,aspartyl protease,5093,fluorine,IC50,50061580,50061731,0.35,,,,
+BACE1,aspartyl protease,5093,fluorine,IC50,50061581,50032737,0.93,25613679,ChEMBL_1461646 (CHEMBL3395115),article,0.94
+BACE1,aspartyl protease,5093,fluorine,IC50,50061582,50061735,0.37,,,,
+BACE1,aspartyl protease,5093,fluorine,IC50,50061584,50061775,0.37,,,,
+BACE1,aspartyl protease,5093,fluorine,IC50,50061585,50061780,0.48,,,,
+BACE1,aspartyl protease,5093,fluorine,IC50,50061587,50061831,0.4,,,,
+BACE1,aspartyl protease,5093,fluorine,IC50,50061588,50061874,0.3,,,,
+BACE1,aspartyl protease,5093,fluorine,IC50,50061590,50061890,0.92,,,,
+BACE1,aspartyl protease,5093,fluorine,IC50,50061591,50061580,0.45,25613679,ChEMBL_1461646 (CHEMBL3395115),article,0.44
+BACE1,aspartyl protease,5093,fluorine,IC50,50061591,50061893,0.8,,,,
+BACE1,aspartyl protease,5093,fluorine,IC50,50061592,50061728,0.48,,,,
+BACE1,aspartyl protease,5093,fluorine,IC50,50061594,50510991,-0.78,,,,
+BACE1,aspartyl protease,5093,fluorine,IC50,50061599,50061738,0.63,,,,
+BACE1,aspartyl protease,5093,fluorine,IC50,50061890,50061729,-0.6,25699151,ChEMBL_1462007 (CHEMBL3396457),article,-0.6
+BACE1,aspartyl protease,5093,fluorine,IC50,50061890,50061730,0.0,25699151,ChEMBL_1462007 (CHEMBL3396457),article,0.0
+BACE1,aspartyl protease,5093,fluorine,IC50,50061893,50061731,0.0,25699151,ChEMBL_1462007 (CHEMBL3396457),article,0.0
+BACE1,aspartyl protease,5093,fluorine,IC50,50169365,50169366,0.51,26985314,ChEMBL_1577901 (CHEMBL3806438),article,0.52
+BACE1,aspartyl protease,5093,fluorine,IC50,50383838,50392782,-0.3,24900403,ChEMBL_853105 (CHEMBL2154573),article,-0.12
+BACE1,aspartyl protease,5093,fluorine,IC50,50383839,50392782,0.4,24900403,ChEMBL_853105 (CHEMBL2154573),article,0.7
+BACE1,aspartyl protease,5093,fluorine,IC50,50383845,50383847,0.75,22572583,ChEMBL_819409 (CHEMBL2033076),article,0.76
+BACE1,aspartyl protease,5093,fluorine,IC50,50383854,50383856,-0.12,22572583,ChEMBL_819409 (CHEMBL2033076),article,-0.12
+BACE1,aspartyl protease,5093,fluorine,IC50,50392776,50383838,0.48,24900403,ChEMBL_853104 (CHEMBL2154572),article,0.76
+BACE1,aspartyl protease,5093,fluorine,IC50,50392776,50383839,-0.22,24900403,ChEMBL_853104 (CHEMBL2154572),article,0.06
+BACE1,aspartyl protease,5093,fluorine,IC50,50392776,50392777,-0.08,24900403,ChEMBL_853104 (CHEMBL2154572),article,0.21
+BACE1,aspartyl protease,5093,fluorine,IC50,50393088,50398268,-0.38,22924815,ChEMBL_874894 (CHEMBL2183079),article,-0.03
+BACE1,aspartyl protease,5093,fluorine,IC50,50393100,50393107,0.09,24900397,ChEMBL_853651 (CHEMBL2154188),article,0.35
+BACE1,aspartyl protease,5093,fluorine,IC50,50397688,50397707,0.07,22468684,ChEMBL_874114 (CHEMBL2187055),article,0.07
+BACE1,aspartyl protease,5093,fluorine,IC50,50397688,50397708,0.25,22468684,ChEMBL_874114 (CHEMBL2187055),article,0.25
+BACE1,aspartyl protease,5093,fluorine,IC50,50397688,50397709,-0.04,22468684,ChEMBL_874114 (CHEMBL2187055),article,-0.04
+BACE1,aspartyl protease,5093,fluorine,IC50,50397692,50397712,0.33,22468684,ChEMBL_874114 (CHEMBL2187055),article,0.33
+BACE1,aspartyl protease,5093,fluorine,IC50,50462005,204994,0.02,29775538,ChEMBL_1772315 (CHEMBL4224427),article,0.18
+BACE1,aspartyl protease,5093,fluorine,IC50,50501811,50567456,0.01,33588527,ChEMBL_2103356 (CHEMBL4811859),article,0.01
+BACE1,aspartyl protease,5093,fluorine,IC50,50501819,50501816,0.47,31021626,ChEMBL_1805609 (CHEMBL4304968),article,0.48
+BACE1,aspartyl protease,5093,fluorine,IC50,50510783,501285,-0.7,US11021493B2,In Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assays,patent,-0.7
+BACE1,aspartyl protease,5093,fluorine,IC50,50510974,705409,-0.05,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.05
+BACE1,aspartyl protease,5093,fluorine,IC50,50510975,705614,-0.7,,,,
+BACE1,aspartyl protease,5093,fluorine,IC50,50510978,705425,0.05,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.05
+BACE1,aspartyl protease,5093,fluorine,IC50,50510978,50510980,0.07,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.06
+BACE1,aspartyl protease,5093,fluorine,IC50,50510979,705396,-0.01,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.06
+BACE1,aspartyl protease,5093,fluorine,IC50,50510989,705938,0.13,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.13
+BACE1,aspartyl protease,5093,fluorine,IC50,50510993,705684,-0.13,,,,
+BACE1,aspartyl protease,5093,fluorine,IC50,50510993,50510977,0.0,31589043,ChEMBL_1842976 (CHEMBL4343403),article,0.0
+BACE1,aspartyl protease,5093,fluorine,IC50,50545178,50545179,-0.22,32089426,ChEMBL_1994453 (CHEMBL4628348),article,-0.22
+BACE1,aspartyl protease,5093,fluorine,IC50,50559903,705409,0.37,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.37
+BACE1,aspartyl protease,5093,fluorine,IC50,50569345,50569350,0.71,33765486,ChEMBL_2108993 (CHEMBL4817668),article,0.72
+BACE1,aspartyl protease,5093,fluorine,IC50,50569346,50510820,0.31,,,,
+BACE1,aspartyl protease,5093,fluorine,IC50,50569348,50569349,0.62,33765486,ChEMBL_2108993 (CHEMBL4817668),article,0.62
+BACE1,aspartyl protease,5093,fluorine,IC50,50580213,50510779,-0.04,,,,
+BACE1,aspartyl protease,5093,fluorine,IC50,50583315,50583324,0.1,35059126,ChEMBL_2157065 (CHEMBL5041725),article,0.1
+BACE1,aspartyl protease,5093,fluorine,IC50,50596252,50596254,-0.48,34838652,ChEMBL_2219917 (CHEMBL5133251),article,-0.48
+BACE1,aspartyl protease,5093,fluorine,IC50,50610558,50610559,-0.12,33984802,ChEMBL_2281431,article,-0.11
+BACE1,aspartyl protease,5093,methyl,IC50,124132,124170,-0.88,US8754075B2,Inhibition Assay,patent,-0.88
+BACE1,aspartyl protease,5093,methyl,IC50,124133,124168,-0.52,US8754075B2,Inhibition Assay,patent,-0.52
+BACE1,aspartyl protease,5093,methyl,IC50,134360,50012653,0.08,US8846658B2,Inhibition Assay,patent,0.41
+BACE1,aspartyl protease,5093,methyl,IC50,134445,134463,-0.6,US8846658B2,Inhibition Assay,patent,-0.6
+BACE1,aspartyl protease,5093,methyl,IC50,134448,134445,0.48,US8846658B2,Inhibition Assay,patent,0.48
+BACE1,aspartyl protease,5093,methyl,IC50,136739,136829,-0.1,US8865911B2,Diluted TR-FRET Assay,patent,-0.1
+BACE1,aspartyl protease,5093,methyl,IC50,136740,136824,-0.73,US8865911B2,Diluted TR-FRET Assay,patent,-0.73
+BACE1,aspartyl protease,5093,methyl,IC50,136834,136859,-0.31,US8865911B2,Diluted TR-FRET Assay,patent,-0.31
+BACE1,aspartyl protease,5093,methyl,IC50,171399,171401,0.53,US9611261B2,In Vitro Enzymatic FRET Assay,patent,0.53
+BACE1,aspartyl protease,5093,methyl,IC50,171461,171462,0.54,US9611261B2,In Vitro Enzymatic FRET Assay,patent,0.54
+BACE1,aspartyl protease,5093,methyl,IC50,171587,171581,0.2,US9611261B2,In Vitro Enzymatic FRET Assay,patent,0.2
+BACE1,aspartyl protease,5093,methyl,IC50,171645,171651,0.41,US9611261B2,In Vitro Enzymatic FRET Assay,patent,0.41
+BACE1,aspartyl protease,5093,methyl,IC50,214835,214839,0.51,US9296734B2,In Vitro Enzymatic BACE FRET Assay,patent,0.52
+BACE1,aspartyl protease,5093,methyl,IC50,214835,215026,0.36,US9296734B2,In Vitro Enzymatic BACE FRET Assay,patent,0.36
+BACE1,aspartyl protease,5093,methyl,IC50,214960,214961,0.21,US9296734B2,In Vitro Enzymatic BACE FRET Assay,patent,0.21
+BACE1,aspartyl protease,5093,methyl,IC50,214996,214995,-0.3,US9296734B2,In Vitro Enzymatic BACE FRET Assay,patent,-0.3
+BACE1,aspartyl protease,5093,methyl,IC50,220836,220858,-0.55,US9296759B2,Fluorescence Resonance Energy Transfer (FRET) Assay,patent,-0.56
+BACE1,aspartyl protease,5093,methyl,IC50,220854,220859,-0.46,US9296759B2,Fluorescence Resonance Energy Transfer (FRET) Assay,patent,-0.46
+BACE1,aspartyl protease,5093,methyl,IC50,223395,223400,0.24,29613789,ChEMBL_1748603 (CHEMBL4183113),article,0.21
+BACE1,aspartyl protease,5093,methyl,IC50,228440,228474,-0.78,US9556135B2,In Vivo Inhibition of Beta-Secretase,patent,-0.78
+BACE1,aspartyl protease,5093,methyl,IC50,228473,228472,-0.94,US9556135B2,In Vivo Inhibition of Beta-Secretase,patent,-0.94
+BACE1,aspartyl protease,5093,methyl,IC50,230017,228478,0.17,US9556135B2,In Vivo Inhibition of Beta-Secretase,patent,0.17
+BACE1,aspartyl protease,5093,methyl,IC50,230018,228479,0.15,US9556135B2,In Vivo Inhibition of Beta-Secretase,patent,0.15
+BACE1,aspartyl protease,5093,methyl,IC50,312938,223381,-0.49,US9605007B2,Cell-Free Assay,patent,-0.35
+BACE1,aspartyl protease,5093,methyl,IC50,372703,372734,-0.36,US10246429B2,In Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assays,patent,-0.37
+BACE1,aspartyl protease,5093,methyl,IC50,372742,372741,0.0,US10246429B2,In Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assays,patent,-0.0
+BACE1,aspartyl protease,5093,methyl,IC50,372742,372743,0.04,US10246429B2,In Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assays,patent,0.04
+BACE1,aspartyl protease,5093,methyl,IC50,372811,372815,0.48,US10246429B2,In Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assays,patent,0.48
+BACE1,aspartyl protease,5093,methyl,IC50,372818,372819,0.43,US10246429B2,In Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assays,patent,0.43
+BACE1,aspartyl protease,5093,methyl,IC50,372823,372830,0.51,US10246429B2,In Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assays,patent,0.51
+BACE1,aspartyl protease,5093,methyl,IC50,372829,372833,0.48,US10246429B2,In Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assays,patent,0.48
+BACE1,aspartyl protease,5093,methyl,IC50,372881,372883,0.38,US10246429B2,In Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assays,patent,0.38
+BACE1,aspartyl protease,5093,methyl,IC50,501241,501259,-0.48,US11021493B2,In Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assays,patent,-0.48
+BACE1,aspartyl protease,5093,methyl,IC50,501289,501280,-0.6,US11021493B2,In Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assays,patent,-0.6
+BACE1,aspartyl protease,5093,methyl,IC50,589192,589194,-0.45,US11548903B2,n Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assay,patent,-0.45
+BACE1,aspartyl protease,5093,methyl,IC50,589194,589195,0.23,US11548903B2,n Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assay,patent,0.23
+BACE1,aspartyl protease,5093,methyl,IC50,589195,589184,0.02,US11548903B2,n Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assay,patent,0.02
+BACE1,aspartyl protease,5093,methyl,IC50,589206,589202,0.54,US11548903B2,n Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assay,patent,0.54
+BACE1,aspartyl protease,5093,methyl,IC50,705388,705444,-1.0,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-1.0
+BACE1,aspartyl protease,5093,methyl,IC50,705419,705443,-0.33,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.32
+BACE1,aspartyl protease,5093,methyl,IC50,705478,705529,-1.15,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-1.15
+BACE1,aspartyl protease,5093,methyl,IC50,705501,705743,0.2,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.2
+BACE1,aspartyl protease,5093,methyl,IC50,705569,705553,-0.21,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.2
+BACE1,aspartyl protease,5093,methyl,IC50,705574,705576,0.07,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.07
+BACE1,aspartyl protease,5093,methyl,IC50,705590,705589,-0.28,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.28
+BACE1,aspartyl protease,5093,methyl,IC50,705654,705658,-0.16,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.16
+BACE1,aspartyl protease,5093,methyl,IC50,705656,705662,-0.34,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.34
+BACE1,aspartyl protease,5093,methyl,IC50,705659,705661,0.12,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.12
+BACE1,aspartyl protease,5093,methyl,IC50,705674,705915,-0.4,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.39
+BACE1,aspartyl protease,5093,methyl,IC50,705679,705742,-0.48,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.48
+BACE1,aspartyl protease,5093,methyl,IC50,705685,705677,0.02,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.02
+BACE1,aspartyl protease,5093,methyl,IC50,705688,705488,-0.64,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.64
+BACE1,aspartyl protease,5093,methyl,IC50,705694,705704,-0.25,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.25
+BACE1,aspartyl protease,5093,methyl,IC50,705694,705945,-0.01,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.0
+BACE1,aspartyl protease,5093,methyl,IC50,705696,705703,-0.47,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.47
+BACE1,aspartyl protease,5093,methyl,IC50,705705,705939,1.07,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,1.07
+BACE1,aspartyl protease,5093,methyl,IC50,705707,705940,0.4,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.41
+BACE1,aspartyl protease,5093,methyl,IC50,705708,705706,-0.87,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.87
+BACE1,aspartyl protease,5093,methyl,IC50,705708,705917,0.06,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.06
+BACE1,aspartyl protease,5093,methyl,IC50,705725,705724,-0.32,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.32
+BACE1,aspartyl protease,5093,methyl,IC50,705733,705719,-0.51,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.51
+BACE1,aspartyl protease,5093,methyl,IC50,705740,705762,-0.35,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.35
+BACE1,aspartyl protease,5093,methyl,IC50,705741,705744,0.04,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.04
+BACE1,aspartyl protease,5093,methyl,IC50,705744,705760,0.15,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.15
+BACE1,aspartyl protease,5093,methyl,IC50,705758,705748,0.07,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.07
+BACE1,aspartyl protease,5093,methyl,IC50,705785,705794,0.51,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.51
+BACE1,aspartyl protease,5093,methyl,IC50,705840,705493,-1.05,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-1.06
+BACE1,aspartyl protease,5093,methyl,IC50,705847,705851,-0.28,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.29
+BACE1,aspartyl protease,5093,methyl,IC50,705850,705876,-0.53,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.53
+BACE1,aspartyl protease,5093,methyl,IC50,705851,705850,0.17,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.17
+BACE1,aspartyl protease,5093,methyl,IC50,705861,705891,-0.27,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.28
+BACE1,aspartyl protease,5093,methyl,IC50,705873,705919,-1.31,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-1.3
+BACE1,aspartyl protease,5093,methyl,IC50,705882,705918,0.67,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.67
+BACE1,aspartyl protease,5093,methyl,IC50,705883,705496,-0.85,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.85
+BACE1,aspartyl protease,5093,methyl,IC50,705886,705889,-0.1,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.1
+BACE1,aspartyl protease,5093,methyl,IC50,705895,705935,-0.71,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.71
+BACE1,aspartyl protease,5093,methyl,IC50,705899,705613,-0.39,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.4
+BACE1,aspartyl protease,5093,methyl,IC50,705910,705904,-0.07,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.06
+BACE1,aspartyl protease,5093,methyl,IC50,705913,705948,-0.21,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.21
+BACE1,aspartyl protease,5093,methyl,IC50,705927,705923,0.04,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.04
+BACE1,aspartyl protease,5093,methyl,IC50,50012660,228440,-2.53,US9556135B2,In Vivo Inhibition of Beta-Secretase,patent,0.45
+BACE1,aspartyl protease,5093,methyl,IC50,50061591,50061592,0.02,25613679,ChEMBL_1461645 (CHEMBL3395114),article,0.03
+BACE1,aspartyl protease,5093,methyl,IC50,50061890,50061965,-0.12,25699151,ChEMBL_1462007 (CHEMBL3396457),article,-0.12
+BACE1,aspartyl protease,5093,methyl,IC50,50061893,50061728,-0.3,25699151,ChEMBL_1462007 (CHEMBL3396457),article,-0.3
+BACE1,aspartyl protease,5093,methyl,IC50,50131807,50131808,0.2,26378740,ChEMBL_1525859 (CHEMBL3635178),article,0.2
+BACE1,aspartyl protease,5093,methyl,IC50,50264185,50264186,-0.26,29617572,ChEMBL_1698387 (CHEMBL4049277),article,-0.26
+BACE1,aspartyl protease,5093,methyl,IC50,50264195,50264184,-0.01,29617572,ChEMBL_1698387 (CHEMBL4049277),article,-0.0
+BACE1,aspartyl protease,5093,methyl,IC50,50383838,50392770,0.0,24900403,ChEMBL_853104 (CHEMBL2154572),article,0.0
+BACE1,aspartyl protease,5093,methyl,IC50,50383839,50392783,0.1,24900403,ChEMBL_853105 (CHEMBL2154573),article,0.42
+BACE1,aspartyl protease,5093,methyl,IC50,50386515,50386513,0.0,22380629,ChEMBL_826120 (CHEMBL2049561),article,0.0
+BACE1,aspartyl protease,5093,methyl,IC50,50387054,50387056,-0.3,22698785,ChEMBL_827643 (CHEMBL2050682),article,-0.03
+BACE1,aspartyl protease,5093,methyl,IC50,50393099,136830,-0.63,US8865911B2,Diluted TR-FRET Assay,patent,0.26
+BACE1,aspartyl protease,5093,methyl,IC50,50393099,50393106,-0.43,24900397,ChEMBL_853651 (CHEMBL2154188),article,-0.02
+BACE1,aspartyl protease,5093,methyl,IC50,50397692,50397689,-0.15,22468684,ChEMBL_874114 (CHEMBL2187055),article,-0.14
+BACE1,aspartyl protease,5093,methyl,IC50,50397692,50397704,-0.15,22468684,ChEMBL_874113 (CHEMBL2187054),article,-0.1
+BACE1,aspartyl protease,5093,methyl,IC50,50398312,50392776,0.12,22928914,ChEMBL_874923 (CHEMBL2183108),article,0.12
+BACE1,aspartyl protease,5093,methyl,IC50,50432608,124167,0.4,US8754075B2,Inhibition Assay,patent,0.4
+BACE1,aspartyl protease,5093,methyl,IC50,50432615,50432614,0.0,23590342,ChEMBL_950722 (CHEMBL2353183),article,0.34
+BACE1,aspartyl protease,5093,methyl,IC50,50510782,705451,-0.32,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.32
+BACE1,aspartyl protease,5093,methyl,IC50,50510783,501235,0.0,US11021493B2,In Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assays,patent,0.0
+BACE1,aspartyl protease,5093,methyl,IC50,50510975,705902,-0.25,,,,
+BACE1,aspartyl protease,5093,methyl,IC50,50510976,705736,-0.18,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.13
+BACE1,aspartyl protease,5093,methyl,IC50,50510976,705920,0.03,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.08
+BACE1,aspartyl protease,5093,methyl,IC50,50510977,705735,-0.65,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.59
+BACE1,aspartyl protease,5093,methyl,IC50,50510984,50510972,-0.41,31589043,ChEMBL_1842975 (CHEMBL4343402),article,-0.41
+BACE1,aspartyl protease,5093,methyl,IC50,50510986,705737,-0.28,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,-0.26
+BACE1,aspartyl protease,5093,methyl,IC50,50510989,50510975,0.52,31589043,ChEMBL_1842975 (CHEMBL4343402),article,0.58
+BACE1,aspartyl protease,5093,methyl,IC50,50579814,50579806,0.16,34553934,ChEMBL_2145460 (CHEMBL5029740),article,0.16
+BACE1,aspartyl protease,5093,methyl,IC50,50596248,50596252,0.48,34838652,ChEMBL_2219917 (CHEMBL5133251),article,0.48
+BACE1,aspartyl protease,5093,methyl,IC50,50610551,50610552,0.12,33984802,ChEMBL_2281431,article,0.12
+BACE1,aspartyl protease,5093,chlorine,IC50,124132,124133,-0.18,US8754075B2,Inhibition Assay,patent,-0.18
+BACE1,aspartyl protease,5093,chlorine,IC50,124170,124168,0.18,US8754075B2,Inhibition Assay,patent,0.18
+BACE1,aspartyl protease,5093,chlorine,IC50,124174,124177,-0.48,US8754075B2,Inhibition Assay,patent,-0.48
+BACE1,aspartyl protease,5093,chlorine,IC50,136744,136863,0.54,US8865911B2,Diluted TR-FRET Assay,patent,0.54
+BACE1,aspartyl protease,5093,chlorine,IC50,195422,195423,-0.03,US10336717B2,BACE Assay,patent,-0.03
+BACE1,aspartyl protease,5093,chlorine,IC50,204940,50462001,-0.47,29775538,ChEMBL_1772315 (CHEMBL4224427),article,-0.03
+BACE1,aspartyl protease,5093,chlorine,IC50,210070,116292,-0.16,33588527,ChEMBL_2103356 (CHEMBL4811859),article,-0.16
+BACE1,aspartyl protease,5093,chlorine,IC50,228399,230001,-0.08,US9556135B2,In Vivo Inhibition of Beta-Secretase,patent,-0.07
+BACE1,aspartyl protease,5093,chlorine,IC50,312913,312921,0.3,US9605006B2,Pharmacological Assay,patent,0.3
+BACE1,aspartyl protease,5093,chlorine,IC50,312938,312941,-0.79,US9605007B2,Cell-Free Assay,patent,-0.65
+BACE1,aspartyl protease,5093,chlorine,IC50,403754,195133,0.7,US10336717B2,BACE Assay,patent,0.7
+BACE1,aspartyl protease,5093,chlorine,IC50,501187,501350,-0.3,US11021493B2,In Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assays,patent,-0.3
+BACE1,aspartyl protease,5093,chlorine,IC50,501188,501357,-0.3,US11021493B2,In Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assays,patent,-0.3
+BACE1,aspartyl protease,5093,chlorine,IC50,705566,705567,0.25,US20160046618A1,In Vitro Enzymatic BACE1 and BACE2 FRET Assays,patent,0.26
+BACE1,aspartyl protease,5093,chlorine,IC50,50012617,195133,0.7,,,,
+BACE1,aspartyl protease,5093,chlorine,IC50,50432608,124137,-0.3,US8754075B2,Inhibition Assay,patent,-0.3
+BACE1,aspartyl protease,5093,chlorine,IC50,50610556,50610557,-0.14,33984802,ChEMBL_2281431,article,-0.14

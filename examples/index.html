@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>mcp-bindingdb Examples</title>
+<style>
+:root { --fg:#1f2328; --muted:#59636e; --bg:#ffffff; --card:#f6f8fa; --line:#d1d9e0; --accent:#0969da; --tag:#ddf4ff; --tagfg:#0550ae; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --fg:#e6edf3; --muted:#9198a1; --bg:#0d1117; --card:#151b23; --line:#3d444d; --accent:#4493f8; --tag:#0c2d6b; --tagfg:#9ecbff; } }
+:root[data-theme="dark"] { --fg:#e6edf3; --muted:#9198a1; --bg:#0d1117; --card:#151b23; --line:#3d444d; --accent:#4493f8; --tag:#0c2d6b; --tagfg:#9ecbff; }
+body { margin:0 auto; max-width:960px; padding:32px 16px 64px; font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; color:var(--fg); background:var(--bg); }
+h1 { font-size:2em; margin:0 0 .3em; }
+.lede { color:var(--muted); max-width:46em; }
+h2 { font-size:1.35em; margin:2.2em 0 .2em; padding-bottom:.3em; border-bottom:1px solid var(--line); }
+.intro { color:var(--muted); margin:.3em 0 1em; }
+ol.cards { list-style:none; padding:0; margin:0; display:grid; gap:10px; }
+.card { display:flex; gap:14px; background:var(--card); border:1px solid var(--line); border-radius:8px; padding:12px 14px; }
+.num { font:600 14px ui-monospace,SFMono-Regular,Menlo,monospace; color:var(--muted); min-width:2.2em; padding-top:2px; }
+.body { min-width:0; flex:1; }
+a { color:var(--accent); text-decoration:none; overflow-wrap:anywhere; }
+a:hover { text-decoration:underline; }
+a.title { font-weight:600; font-size:1.05em; }
+blockquote { margin:.35em 0 .5em; padding:0 0 0 .8em; border-left:3px solid var(--line); color:var(--fg); font-style:italic; }
+.tag { display:inline-block; font-size:12px; background:var(--tag); color:var(--tagfg); border-radius:999px; padding:1px 9px; margin:0 6px 4px 0; }
+.files { font-size:12.5px; color:var(--muted); margin-top:2px; }
+.howto { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:12px 16px; margin-top:1.4em; }
+.howto p { margin:.4em 0; }
+footer { margin-top:3em; color:var(--muted); font-size:12.5px; }
+</style>
+</head>
+<body>
+<h1>mcp-bindingdb Examples</h1>
+<p class="lede">40 worked examples for new users of the BindingDB MCP server. They start with one-line lookups and build up to multi-step analyses. Each example is a real conversation: the prompt, the answer, a short lesson about the data, the tools that were used, and what to try next.</p>
+<div class="howto">
+<p><strong>How to use these.</strong> Read the transcript, then paste the quoted prompt into your own chat with mcp-bindingdb connected and compare. Transcripts show the tool calls only where the prompt asks for them (Example 7.3). Tables that carry SMILES are drawn as structures.</p>
+</div>
+<section><h2>Level 1 — Simple lookups</h2><p class="intro">One question, one or two tools: find a compound or a target and read its record.</p><ol class="cards"><li class="card">
+  <div class="num">1.1</div>
+  <div class="body">
+    <a class="title" href="01-simple-lookups/1.1-compound-by-name/1.1-compound-by-name.html">Look up a compound by name (imatinib)</a>
+    <blockquote>What does BindingDB know about imatinib?</blockquote>
+    <div class="tags"></div>
+    
+  </div>
+</li><li class="card">
+  <div class="num">1.2</div>
+  <div class="body">
+    <a class="title" href="01-simple-lookups/1.2-compound-by-identifier/1.2-compound-by-identifier.html">Look up a compound by identifier</a>
+    <blockquote>I have a few identifiers for the same drug: CHEMBL941, PubChem CID 5291, BDBM13530 and the InChIKey block KTUFNOKKBVMGRW. Do they all find the same compound in BindingDB?</blockquote>
+    <div class="tags"><span class="tag">structures</span></div>
+    
+  </div>
+</li><li class="card">
+  <div class="num">1.3</div>
+  <div class="body">
+    <a class="title" href="01-simple-lookups/1.3-target-by-gene-name/1.3-target-by-gene-name.html">Look up a target by gene name (EGFR)</a>
+    <blockquote>Find the human EGFR protein in BindingDB. How much data is there?</blockquote>
+    <div class="tags"></div>
+    
+  </div>
+</li><li class="card">
+  <div class="num">1.4</div>
+  <div class="body">
+    <a class="title" href="01-simple-lookups/1.4-name-to-structure/1.4-name-to-structure.html">Turn a chemical name into a structure</a>
+    <blockquote>Give me the SMILES and the BindingDB record for three compounds I only know by name: the trade name Ibrance, the IUPAC name N-(3-chloro-4-fluorophenyl)-7-methoxy-6-(3-morpholin-4-ylpropoxy)quinazolin-4-amine, and the CAS number 50-78-2.</blockquote>
+    <div class="tags"><span class="tag">structures</span></div>
+    
+  </div>
+</li></ol></section><section><h2>Level 2 — Structure search</h2><p class="intro">Search by chemical structure: exact match, similarity, substructure, SMARTS, and scaffold-to-target summaries.</p><ol class="cards"><li class="card">
+  <div class="num">2.1</div>
+  <div class="body">
+    <a class="title" href="02-structure-search/2.1-exact-structure/2.1-exact-structure.html">Exact structure search (the two enantiomers of crizotinib)</a>
+    <blockquote>Is (S)-crizotinib in BindingDB as its own compound, separate from crizotinib? Compare the two enantiomers on the targets where both were measured.</blockquote>
+    <div class="tags"><span class="tag">structure grid</span></div>
+    
+  </div>
+</li><li class="card">
+  <div class="num">2.2</div>
+  <div class="body">
+    <a class="title" href="02-structure-search/2.2-similarity-search/2.2-similarity-search.html">Similarity search: close analogues of imatinib</a>
+    <blockquote>Find close analogues of imatinib (Tanimoto ≥ 0.7) that bind any target below 100 nM.</blockquote>
+    <div class="tags"><span class="tag">structure grid</span><span class="tag">structures</span></div>
+    
+  </div>
+</li><li class="card">
+  <div class="num">2.3</div>
+  <div class="body">
+    <a class="title" href="02-structure-search/2.3-substructure-count-and-potency/2.3-substructure-count-and-potency.html">Substructure search: how many quinazolines, and which are most potent?</a>
+    <blockquote>How many compounds in BindingDB contain a quinazoline core, and which are the most potent?</blockquote>
+    <div class="tags"><span class="tag">structures</span></div>
+    
+  </div>
+</li><li class="card">
+  <div class="num">2.4</div>
+  <div class="body">
+    <a class="title" href="02-structure-search/2.4-smiles-vs-smarts/2.4-smiles-vs-smarts.html">SMILES vs SMARTS queries (4-chloroaniline)</a>
+    <blockquote>Find compounds with a 4-chloroaniline group. What changes if I require a free NH2 (primary amine)?</blockquote>
+    <div class="tags"><span class="tag">structures</span></div>
+    
+  </div>
+</li><li class="card">
+  <div class="num">2.5</div>
+  <div class="body">
+    <a class="title" href="02-structure-search/2.5-scaffold-target-landscape/2.5-scaffold-target-landscape.html">Scaffold → target landscape (imatinib core)</a>
+    <blockquote>Which targets have the most compounds containing the 2-anilino-4-(3-pyridyl)pyrimidine core of imatinib?</blockquote>
+    <div class="tags"><span class="tag">1 plot</span><span class="tag">structures</span></div>
+    <div class="files">Also in this folder: <a href="02-structure-search/2.5-scaffold-target-landscape/scaffold_targets_top15.png">scaffold_targets_top15.png</a></div>
+  </div>
+</li><li class="card">
+  <div class="num">2.6</div>
+  <div class="body">
+    <a class="title" href="02-structure-search/2.6-structure-editor/2.6-structure-editor.html">Draw a structure and search with the structure editor</a>
+    <blockquote>Edit a compound</blockquote>
+    <div class="tags"><span class="tag">2 plots</span><span class="tag">structures</span><span class="tag">2 turns</span></div>
+    
+  </div>
+</li></ol></section><section><h2>Level 3 — Compound ↔ target</h2><p class="intro">Which compounds hit a target, which targets a compound hits, and what lies behind a single measurement.</p><ol class="cards"><li class="card">
+  <div class="num">3.1</div>
+  <div class="body">
+    <a class="title" href="03-compound-target/3.1-ligands-for-target/3.1-ligands-for-target.html">Most potent ligands for a target (EGFR)</a>
+    <blockquote>What are the 20 most potent EGFR inhibitors in BindingDB with a Ki or Kd below 1 nM?</blockquote>
+    <div class="tags"><span class="tag">structures</span></div>
+    
+  </div>
+</li><li class="card">
+  <div class="num">3.2</div>
+  <div class="body">
+    <a class="title" href="03-compound-target/3.2-compound-selectivity-profile/3.2-compound-selectivity-profile.html">Selectivity profile of a drug (imatinib)</a>
+    <blockquote>Which human targets does imatinib bind below 100 nM?</blockquote>
+    <div class="tags"></div>
+    
+  </div>
+</li><li class="card">
+  <div class="num">3.3</div>
+  <div class="body">
+    <a class="title" href="03-compound-target/3.3-mutant-vs-wild-type/3.3-mutant-vs-wild-type.html">Mutant vs wild type (EGFR T790M)</a>
+    <blockquote>Compare inhibitors of EGFR wild type with the T790M mutant.</blockquote>
+    <div class="tags"><span class="tag">structures</span></div>
+    
+  </div>
+</li><li class="card">
+  <div class="num">3.4</div>
+  <div class="body">
+    <a class="title" href="03-compound-target/3.4-measurement-details/3.4-measurement-details.html">Drill into one measurement (gefitinib on EGFR)</a>
+    <blockquote>Show me the assay details behind the most potent gefitinib measurement on EGFR.</blockquote>
+    <div class="tags"></div>
+    
+  </div>
+</li><li class="card">
+  <div class="num">3.5</div>
+  <div class="body">
+    <a class="title" href="03-compound-target/3.5-protein-complexes/3.5-protein-complexes.html">Protein complexes: GABA-A receptor subtypes</a>
+    <blockquote>The benzodiazepine binding site sits between two subunits of the GABA-A receptor. How does BindingDB store a target like that, and how selective are the benzodiazepine-site drugs across the subtypes?</blockquote>
+    <div class="tags"><span class="tag">structure grid</span></div>
+    
+  </div>
+</li></ol></section><section><h2>Level 4 — Series SAR</h2><p class="intro">R-group tables, matched molecular pairs and activity cliffs: what one substituent does to potency, and when the data says something else.</p><ol class="cards"><li class="card">
+  <div class="num">4.1</div>
+  <div class="body">
+    <a class="title" href="04-series-sar/4.1-r-group-table/4.1-r-group-table.html">R-group table: the position that picks the COX isoform</a>
+    <blockquote>Celecoxib is a 1,5-diarylpyrazole. Tabulate that whole series against COX-2 for me, by R-group position, and tell me what each position prefers.</blockquote>
+    <div class="tags"><span class="tag">3 turns</span></div>
+    
+  </div>
+</li><li class="card">
+  <div class="num">4.2</div>
+  <div class="body">
+    <a class="title" href="04-series-sar/4.2-matched-pairs/4.2-matched-pairs.html">Matched molecular pairs: swapping a group, not an atom</a>
+    <blockquote>Single-atom tweaks are not where my project is. On factor Xa, which whole-group swaps have a track record of improving potency?</blockquote>
+    <div class="tags"><span class="tag">structure grid</span><span class="tag">structures</span><span class="tag">3 turns</span></div>
+    
+  </div>
+</li><li class="card">
+  <div class="num">4.3</div>
+  <div class="body">
+    <a class="title" href="04-series-sar/4.3-activity-cliffs/4.3-activity-cliffs.html">Activity cliffs: only the ones measured in the same patent</a>
+    <blockquote>Find the activity cliffs on menin, but only count a pair when both compounds were measured in the same patent — I don&#x27;t want to compare two labs&#x27; assays. Check the assay conditions where they are recorded.</blockquote>
+    <div class="tags"><span class="tag">structure grid</span><span class="tag">2 turns</span></div>
+    
+  </div>
+</li><li class="card">
+  <div class="num">4.4</div>
+  <div class="body">
+    <a class="title" href="04-series-sar/4.4-transformations-by-target/4.4-transformations-by-target.html">Transformations across seven target classes, one document at a time</a>
+    <blockquote>Is the fluorine effect target-specific? Compare what adding a fluorine, a methyl and a chlorine do across a kinase, a protease, a hydrolase, a metalloenzyme, a GPCR, an ion channel and a nuclear receptor — and only count a pair when both compounds were measured in the same patent or paper.</blockquote>
+    <div class="tags"><span class="tag">1 plot</span><span class="tag">2 turns</span></div>
+    <div class="files">Also in this folder: <a href="04-series-sar/4.4-transformations-by-target/plot_transformation_effects.py">plot_transformation_effects.py</a>, <a href="04-series-sar/4.4-transformations-by-target/transformation_deltas.csv">transformation_deltas.csv</a>, <a href="04-series-sar/4.4-transformations-by-target/transformation_effects.png">transformation_effects.png</a></div>
+  </div>
+</li></ol></section><section><h2>Level 5 — Multi-step workflows</h2><p class="intro">Realistic analyses that chain several tools: repurposing, selectivity panels, hit expansion, safety, species, patents, target networks.</p><ol class="cards"><li class="card">
+  <div class="num">5.1</div>
+  <div class="body">
+    <a class="title" href="05-workflows/5.1-repurposing-from-analogues/5.1-repurposing-from-analogues.html">From a drug to its analogues to their targets (sildenafil)</a>
+    <blockquote>Start from sildenafil: find its close analogues in BindingDB and tell me which targets besides PDE5 they hit.</blockquote>
+    <div class="tags"><span class="tag">structures</span></div>
+    
+  </div>
+</li><li class="card">
+  <div class="num">5.2</div>
+  <div class="body">
+    <a class="title" href="05-workflows/5.2-kinase-selectivity-panel/5.2-kinase-selectivity-panel.html">Kinase selectivity panel of four BCR-ABL inhibitors</a>
+    <blockquote>Compare imatinib, nilotinib, dasatinib and bosutinib across the kinases they&#x27;ve all been tested against, as a heat map of median pAffinity.</blockquote>
+    <div class="tags"><span class="tag">1 plot</span><span class="tag">structures</span></div>
+    <div class="files">Also in this folder: <a href="05-workflows/5.2-kinase-selectivity-panel/heatmap_matrix_pKd.csv">heatmap_matrix_pKd.csv</a>, <a href="05-workflows/5.2-kinase-selectivity-panel/kinase_selectivity_heatmap.png">kinase_selectivity_heatmap.png</a></div>
+  </div>
+</li><li class="card">
+  <div class="num">5.3</div>
+  <div class="body">
+    <a class="title" href="05-workflows/5.3-hit-expansion/5.3-hit-expansion.html">Hit expansion: from one screening hit to an SAR series</a>
+    <blockquote>I have a screening hit: Brc1cccc(Nc2ncnc3ccccc23)c1 — a 3-bromoanilino quinazoline. Find analogues, show the best ones, and tell me what the SAR suggests.</blockquote>
+    <div class="tags"><span class="tag">structure grid</span></div>
+    
+  </div>
+</li><li class="card">
+  <div class="num">5.4</div>
+  <div class="body">
+    <a class="title" href="05-workflows/5.4-herg-liability/5.4-herg-liability.html">hERG liability: which known drugs block the channel?</a>
+    <blockquote>Which well-known drugs bind the hERG potassium channel (KCNH2) below 1 µM?</blockquote>
+    <div class="tags"><span class="tag">structures</span></div>
+    
+  </div>
+</li><li class="card">
+  <div class="num">5.5</div>
+  <div class="body">
+    <a class="title" href="05-workflows/5.5-species-comparison/5.5-species-comparison.html">Compare a target across species (human vs rat D2 receptor)</a>
+    <blockquote>For the dopamine D2 receptor, do compounds bind the human and rat receptors with similar affinity?</blockquote>
+    <div class="tags"><span class="tag">1 plot</span><span class="tag">structures</span></div>
+    <div class="files">Also in this folder: <a href="05-workflows/5.5-species-comparison/drd2_human_vs_rat.png">drd2_human_vs_rat.png</a></div>
+  </div>
+</li><li class="card">
+  <div class="num">5.6</div>
+  <div class="body">
+    <a class="title" href="05-workflows/5.6-patent-provenance/5.6-patent-provenance.html">Trace potent compounds to their patents (BTK inhibitors)</a>
+    <blockquote>Which patents report the most potent BTK inhibitors, and in which years were they published?</blockquote>
+    <div class="tags"><span class="tag">structures</span></div>
+    
+  </div>
+</li><li class="card">
+  <div class="num">5.7</div>
+  <div class="body">
+    <a class="title" href="05-workflows/5.7-imatinib-target-network/5.7-imatinib-target-network.html">Imatinib&#x27;s targets and the network they form</a>
+    <blockquote>Find the targets that bind to Imatinib with an affinity (Ki, Kd, IC50) of &lt;= 1 micromolar. Then create a visual protein protein interaction network around these targets with the same affinity threshold.</blockquote>
+    <div class="tags"><span class="tag">1 plot</span></div>
+    <div class="files">Also in this folder: <a href="05-workflows/5.7-imatinib-target-network/imatinib_target_network.png">imatinib_target_network.png</a>, <a href="05-workflows/5.7-imatinib-target-network/plot_imatinib_network.py">plot_imatinib_network.py</a></div>
+  </div>
+</li><li class="card">
+  <div class="num">5.8</div>
+  <div class="body">
+    <a class="title" href="05-workflows/5.8-scaffold-selectivity-clustering/5.8-scaffold-selectivity-clustering.html">Clustered selectivity heat map and R-groups of the imatinib core</a>
+    <blockquote>Find the compounds that contain the 2-anilino-4-(3-pyridyl)pyrimidine substructure, the core scaffold of imatinib and nilotinib. Build a hierarchically clustered heat map of their binding affinities across the kinase targets they&#x27;ve been tested against, so I can see how the analogs group by selectivity profile. Distinguish the type of binding affinity in the heat map. If there are multiple measurements, use the median affinity. Choose the compounds and targets so the matrix is informative rather than mostly empty. Note any caveats about data coverage. Then create an R-group decomposition and list the compounds in the same order as in the heatmap.</blockquote>
+    <div class="tags"><span class="tag">1 plot</span></div>
+    <div class="files">Also in this folder: <a href="05-workflows/5.8-scaffold-selectivity-clustering/heatmap_data_long.csv">heatmap_data_long.csv</a>, <a href="05-workflows/5.8-scaffold-selectivity-clustering/heatmap_matrix.csv">heatmap_matrix.csv</a>, <a href="05-workflows/5.8-scaffold-selectivity-clustering/kinase_selectivity_heatmap.png">kinase_selectivity_heatmap.png</a>, <a href="05-workflows/5.8-scaffold-selectivity-clustering/rgroup_table.csv">rgroup_table.csv</a></div>
+  </div>
+</li></ol></section><section><h2>Level 6 — Properties, efficiency and alerts</h2><p class="intro">Computed compound properties: drug-likeness, ligand efficiency, Bemis-Murcko scaffolds and structural alerts, as filters and as answers.</p><ol class="cards"><li class="card">
+  <div class="num">6.1</div>
+  <div class="body">
+    <a class="title" href="06-properties/6.1-drug-likeness-radar/6.1-drug-likeness-radar.html">Drug-likeness radar: the DPP-4 inhibitors</a>
+    <blockquote>How drug-like are the DPP-4 inhibitors, the gliptins? Compare their properties in radar plots, and show their structures with how potent and selective they are.</blockquote>
+    <div class="tags"><span class="tag">structure grid</span><span class="tag">1 plot</span></div>
+    <div class="files">Also in this folder: <a href="06-properties/6.1-drug-likeness-radar/gliptin_drug_likeness_radar.png">gliptin_drug_likeness_radar.png</a>, <a href="06-properties/6.1-drug-likeness-radar/gliptin_properties.csv">gliptin_properties.csv</a>, <a href="06-properties/6.1-drug-likeness-radar/plot_gliptin_radar.py">plot_gliptin_radar.py</a></div>
+  </div>
+</li><li class="card">
+  <div class="num">6.2</div>
+  <div class="body">
+    <a class="title" href="06-properties/6.2-ligand-efficiency/6.2-ligand-efficiency.html">Ligand efficiency over time: BACE1 inhibitors</a>
+    <blockquote>For BACE1, how has ligand efficiency changed over the years? Rank the most efficient inhibitors, and plot potency against size per period.</blockquote>
+    <div class="tags"><span class="tag">structure grid</span><span class="tag">1 plot</span></div>
+    <div class="files">Also in this folder: <a href="06-properties/6.2-ligand-efficiency/bace1_best_affinity.csv">bace1_best_affinity.csv</a>, <a href="06-properties/6.2-ligand-efficiency/bace1_efficiency_by_period.png">bace1_efficiency_by_period.png</a>, <a href="06-properties/6.2-ligand-efficiency/plot_bace1_efficiency.py">plot_bace1_efficiency.py</a></div>
+  </div>
+</li><li class="card">
+  <div class="num">6.3</div>
+  <div class="body">
+    <a class="title" href="06-properties/6.3-scaffold-landscape/6.3-scaffold-landscape.html">Scaffold landscape and chemical space: PDE2A inhibitors</a>
+    <blockquote>Which chemical series bind PDE2A at 10 nM or better? Group them by scaffold, and map the chemical space with a t-SNE plot.</blockquote>
+    <div class="tags"><span class="tag">structure grid</span><span class="tag">1 plot</span><span class="tag">2 turns</span></div>
+    <div class="files">Also in this folder: <a href="06-properties/6.3-scaffold-landscape/pde2a_chemical_space_tsne.png">pde2a_chemical_space_tsne.png</a>, <a href="06-properties/6.3-scaffold-landscape/pde2a_potent_ligands.csv">pde2a_potent_ligands.csv</a>, <a href="06-properties/6.3-scaffold-landscape/plot_pde2a_tsne.py">plot_pde2a_tsne.py</a></div>
+  </div>
+</li><li class="card">
+  <div class="num">6.4</div>
+  <div class="body">
+    <a class="title" href="06-properties/6.4-pains-triage/6.4-pains-triage.html">PAINS triage: 5-lipoxygenase inhibitors</a>
+    <blockquote>5-lipoxygenase has a long literature of natural-product inhibitors and I don&#x27;t trust much of it. How many of its reported inhibitors carry PAINS alerts, which alerts, and does that track with potency?</blockquote>
+    <div class="tags"><span class="tag">structure grid</span><span class="tag">3 turns</span></div>
+    
+  </div>
+</li><li class="card">
+  <div class="num">6.5</div>
+  <div class="body">
+    <a class="title" href="06-properties/6.5-property-filtered-analogues/6.5-property-filtered-analogues.html">Property-filtered analogue search: ibrutinib and BTK</a>
+    <blockquote>I want analogues of ibrutinib that are potent on BTK but smaller and free of problem groups. Search by similarity with property filters and show me what survives.</blockquote>
+    <div class="tags"><span class="tag">structure grid</span></div>
+    
+  </div>
+</li></ol></section><section><h2>Level 7 — SQL analytics</h2><p class="intro">Direct SQL over the BindingDB tables, for questions the curated tools do not cover.</p><ol class="cards"><li class="card">
+  <div class="num">7.1</div>
+  <div class="body">
+    <a class="title" href="07-sql-analytics/7.1-schema-discovery/7.1-schema-discovery.html">Schema discovery: what tables are in BindingDB?</a>
+    <blockquote>What tables are in the BindingDB database, and which ones should I start with?</blockquote>
+    <div class="tags"></div>
+    
+  </div>
+</li><li class="card">
+  <div class="num">7.2</div>
+  <div class="body">
+    <a class="title" href="07-sql-analytics/7.2-aggregate-counts/7.2-aggregate-counts.html">Aggregate counts: the most-studied human targets</a>
+    <blockquote>Which 10 human targets have the most distinct compounds measured?</blockquote>
+    <div class="tags"></div>
+    
+  </div>
+</li><li class="card">
+  <div class="num">7.3</div>
+  <div class="body">
+    <a class="title" href="07-sql-analytics/7.3-patent-landscape/7.3-patent-landscape.html">Patent landscape in BindingDB</a>
+    <blockquote>Analyze the patent landscape in BindingDB.</blockquote>
+    <div class="tags"><span class="tag">4 plots</span></div>
+    <div class="files">Also in this folder: <a href="07-sql-analytics/7.3-patent-landscape/plot_patent_landscape.py">plot_patent_landscape.py</a></div>
+  </div>
+</li><li class="card">
+  <div class="num">7.4</div>
+  <div class="body">
+    <a class="title" href="07-sql-analytics/7.4-data-quality-censored-values/7.4-data-quality-censored-values.html">Data quality: censored values</a>
+    <blockquote>How many measurements are censored (&#x27;&gt;&#x27; or &#x27;&lt;&#x27;), broken down by affinity type? Why does that matter?</blockquote>
+    <div class="tags"></div>
+    
+  </div>
+</li><li class="card">
+  <div class="num">7.5</div>
+  <div class="body">
+    <a class="title" href="07-sql-analytics/7.5-itc-thermodynamics/7.5-itc-thermodynamics.html">ITC thermodynamics: ΔG, ΔH and −TΔS</a>
+    <blockquote>Show isothermal titration calorimetry (ITC) results for carbonic anhydrase II ligands: ΔG, ΔH and −TΔS.</blockquote>
+    <div class="tags"><span class="tag">structures</span></div>
+    
+  </div>
+</li><li class="card">
+  <div class="num">7.6</div>
+  <div class="body">
+    <a class="title" href="07-sql-analytics/7.6-pdb-cross-links/7.6-pdb-cross-links.html">PDB cross-links: HIV-1 protease ligands with crystal structures</a>
+    <blockquote>Which compounds measured against HIV-1 protease also have a crystal structure in the PDB?</blockquote>
+    <div class="tags"><span class="tag">structures</span></div>
+    
+  </div>
+</li></ol></section><section><h2>Level 8 — Deliverables</h2><p class="intro">Saving the work: a Markdown transcript, and a reproducible record with every tool call.</p><ol class="cards"><li class="card">
+  <div class="num">8.1</div>
+  <div class="body">
+    <a class="title" href="08-deliverables/8.1-markdown-transcript/8.1-markdown-transcript.html">Save a conversation as a Markdown transcript</a>
+    <blockquote>Which targets does palbociclib bind at 100 nM or better?</blockquote>
+    <div class="tags"><span class="tag">2 turns</span></div>
+    <div class="files">Also in this folder: <a href="08-deliverables/8.1-markdown-transcript/8.1-markdown-transcript.md">8.1-markdown-transcript.md</a></div>
+  </div>
+</li><li class="card">
+  <div class="num">8.2</div>
+  <div class="body">
+    <a class="title" href="08-deliverables/8.2-reproducible-record/8.2-reproducible-record.html">A reproducible record with every tool call</a>
+    <blockquote>How selective are palbociclib, ribociclib and abemaciclib for CDK4/6 over the other CDKs? Make an HTML transcript that includes every query and its results, so a colleague can rerun the analysis.</blockquote>
+    <div class="tags"><span class="tag">tool calls</span><span class="tag">structures</span></div>
+    
+  </div>
+</li></ol></section>
+<footer>Generated from the transcripts in this folder · BindingDB release 202610 · mcp-bindingdb v0.1.0</footer>
+</body>
+</html>

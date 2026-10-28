@@ -1,0 +1,6 @@
+name,bdbm,heavy_atoms,mw,clogp,tpsa,hbd,hba,rotatable_bonds,fsp3,qed,ro5_violations
+Sitagliptin,BDBM11162,28,407.32,2.02,77.04,2,6,4,0.438,0.622,0
+Vildagliptin,BDBM11695,22,303.41,1.17,76.36,2,5,3,0.882,0.821,0
+Saxagliptin,BDBM50225074,23,315.42,1.16,90.35,3,5,2,0.889,0.8,0
+Alogliptin,BDBM16285,25,339.4,0.39,97.05,2,7,3,0.389,0.873,0
+Linagliptin,BDBM50228403,35,472.55,1.15,116.86,2,10,4,0.4,0.443,0

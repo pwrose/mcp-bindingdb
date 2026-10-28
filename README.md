@@ -8,10 +8,12 @@ protein–ligand binding affinities for 1.5M compounds and 13k targets, from a l
 
 ## Examples
 
-[Seventeen worked examples](examples/README.md) show real questions answered with these tools, such as
-the most potent EGFR ligands, imatinib's selectivity profile, analogues of palbociclib, the targets of a
-chemotype, and turning a chemical name into a structure. Each shows the tool calls, the results and the
-answer.
+[Forty worked examples](examples/README.md), in eight levels, show real questions answered with these
+tools: looking up compounds and targets, exact, similarity and substructure search, selectivity profiles,
+R-group tables and matched pairs, multi-step workflows such as a clustered selectivity heat map, property
+filters and structural alerts, SQL analytics, and saving the work as a transcript. Each is an HTML
+transcript with the prompt, the answer, its figures and structure drawings
+([index](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/index.html)).
 
 ## Claude setup
 
@@ -108,7 +110,7 @@ See [Tools](docs/tools.md) for how the searches work and notes on the data.
 
 - [Building the database](docs/building-the-database.md): releases, derived tables, structure-search index
 - [Tools](docs/tools.md): tool details, safety, data notes
-- [Development](docs/development.md): running the server by hand, server options, tests, regenerating examples
+- [Development](docs/development.md): running the server by hand, server options, tests, examples
 
 ## License
 
