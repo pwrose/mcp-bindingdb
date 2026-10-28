@@ -115,6 +115,29 @@ def _legend(compounds: list[GridCompound], scale: tuple[float, float] | None, co
     return entries
 
 
+def _bar_columns(bars: list[GridBar], prefix: str) -> str:
+    """Inline CSS that sizes a figure's bar label and value columns to their widest entry.
+
+    Each bar row is its own small grid, so columns sized to their content would start every bar after its
+    own label and end it before its own value; fixed to the widest, every bar in the figure starts and ends
+    at the same place and a value draws the same length wherever it appears. (A structure grid caps the
+    label at 40% of the card, as its PNG does, and shortens longer labels with an ellipsis; in a card too narrow
+    for label, bar and value side by side, the label (wrapping if need be) and value share a line and the bar
+    runs full width below.) The label is measured at 13 px
+    in the PNG's font, the value at the monospace font's 0.6 em (13 px, the type at 11 px), each with a
+    margin because the page's own fonts can be a little wider.
+    """
+    if not bars:
+        return ""
+    from PIL import Image, ImageDraw
+
+    measure = ImageDraw.Draw(Image.new("RGB", (1, 1)))
+    font = _font(13)
+    label = max(measure.textlength(b.label, font=font) for b in bars)
+    value = max(0.6 * (13 * len(f"{_fmt(b.value_nm)} nM ") + 11 * len(b.type)) for b in bars)
+    return f"--{prefix}-label:{math.ceil(label * 1.12 + 2)}px;--{prefix}-value:{math.ceil(value + 4)}px"
+
+
 _CSS = """
 .sg{margin:1.5em 0;font:14px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;color:#1c2321}
 .sg h3{margin:0 0 4px;font-size:1.3em}
@@ -127,8 +150,9 @@ _CSS = """
 .sg-plate img{display:block;width:100%;height:auto}
 .sg-cap{margin:0;border-left:3px solid #e8892e;padding-left:8px;font-size:13px;align-self:start}
 .sg-cap:empty{border:0}
-.sg-bars{list-style:none;margin:0;padding:0;display:grid;gap:7px;align-content:start}
-.sg-row{display:grid;grid-template-columns:7em minmax(0,1fr) 8.5em;column-gap:8px;align-items:center;font-size:13px}
+.sg-bars{list-style:none;margin:0;padding:0;display:grid;gap:7px;align-content:start;container-type:inline-size}
+.sg-row{display:grid;grid-template-columns:min(var(--sg-label,7em),40%) minmax(0,1fr) var(--sg-value,8.5em);column-gap:8px;align-items:center;font-size:13px}
+.sg-row>span:first-child{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .sg-track{height:9px;background:#eceeec;border-radius:2px;overflow:hidden}
 .sg-bar{display:block;height:100%;border-radius:2px}
 .sg-faint .sg-bar{opacity:.4}
@@ -139,6 +163,7 @@ _CSS = """
 .sg-legend span{display:inline-flex;align-items:center;gap:6px}
 .sg-sw{width:13px;height:9px;border-radius:2px;display:inline-block}
 .sg-notes{margin:10px 0 0;padding-left:1.2em;font-size:13px;color:#5c6763}
+@container (max-width:300px){.sg-row{grid-template-columns:minmax(0,1fr) auto}.sg-row>span:first-child{white-space:normal}.sg-track{grid-column:1/-1;grid-row:2}.sg-note{grid-column:1/-1}}
 @media (max-width:800px){.sg-grid{grid-template-columns:minmax(0,1fr)!important}}
 """
 
@@ -157,7 +182,7 @@ def _html(title: str, description: str, compounds: list[GridCompound], lay: depi
             colour = TYPE_COLOURS[b.type]
             width = f"{100 * _fraction(b.value_nm, scale):.1f}%" if scale else "0"
             rows.append(
-                f'<li class="sg-row{" sg-faint" if b.faint else ""}"><span>{e(b.label)}</span>'
+                f'<li class="sg-row{" sg-faint" if b.faint else ""}"><span title="{e(b.label)}">{e(b.label)}</span>'
                 f'<span class="sg-track"><span class="sg-bar" style="width:{width};background:{colour}"></span></span>'
                 f'<span class="sg-val">{_fmt(b.value_nm)} nM <i>{e(b.type)}</i></span>'
                 + (f'<span class="sg-note">{e(b.note)}</span>' if b.note else "") + "</li>")
@@ -168,7 +193,8 @@ def _html(title: str, description: str, compounds: list[GridCompound], lay: depi
     legend = "".join(f"<span>{swatch.format(c) if c else ''}{e(t)}</span>"
                      for c, t in _legend(compounds, scale, any(lay.cores)))
     return (
-        f'<figure class="sg"><style>{_CSS}</style><h3>{e(title)}</h3>'
+        f'<figure class="sg" style="{_bar_columns([b for c in compounds for b in c.bars], "sg")}">'
+        f'<style>{_CSS}</style><h3>{e(title)}</h3>'
         + (f'<p class="sg-desc">{e(description)}</p>' if description else "")
         + f'<div class="sg-grid" style="grid-template-columns:repeat({columns},minmax(0,1fr))">{"".join(cards)}</div>'
         + (f'<p class="sg-legend">{legend}</p>' if legend else "")
@@ -222,6 +248,47 @@ def _fit(draw: Any, text: str, font: Any, width: float) -> str:
     return text + "..."
 
 
+def _legend_lines(draw: Any, legend: list[tuple[str, str]], font: Any, width: float,
+                  s: int) -> list[list[tuple[str, str]]]:
+    """The legend's (colour, text) entries packed into lines no wider than `width`; an entry too long for a
+    line of its own is wrapped at words, its swatch on the first line."""
+    def entry_w(colour: str, text: str) -> float:
+        return (19 * s if colour else 0) + draw.textlength(_plain(font, text), font=font)
+
+    pieces = []
+    for colour, text in legend:
+        if entry_w(colour, text) <= width:
+            pieces.append((colour, text))
+        else:
+            wrapped = _wrap(draw, text, font, width - (19 * s if colour else 0))
+            pieces += [(colour if k == 0 else "", part) for k, part in enumerate(wrapped)]
+    lines: list[list[tuple[str, str]]] = [[]]
+    used = 0.0
+    for colour, text in pieces:
+        w = entry_w(colour, text)
+        if lines[-1] and used + 18 * s + w > width:
+            lines.append([])
+            used = 0.0
+        used += (18 * s if lines[-1] else 0) + w
+        lines[-1].append((colour, text))
+    return [line for line in lines if line]
+
+
+def _draw_legend(d: Any, lines: list[list[tuple[str, str]]], x0: int, y: int, font: Any, s: int,
+                 colour_text: tuple[int, int, int], line_h: int) -> int:
+    """Draw the legend lines from (x0, y); returns the y below them."""
+    for line in lines:
+        x = x0
+        for colour, text in line:
+            if colour:
+                d.rectangle((x, y + 4 * s, x + 13 * s, y + 13 * s), fill=colour)
+                x += 19 * s
+            d.text((x, y), _plain(font, text), font=font, fill=colour_text)
+            x += d.textlength(_plain(font, text), font=font) + 18 * s
+        y += line_h
+    return y
+
+
 def _png(title: str, description: str, compounds: list[GridCompound], lay: depict.Layout, columns: int,
          notes: list[str], s: int = 2) -> bytes:
     """The figure as a PNG at `s` times its CSS pixel size."""
@@ -262,7 +329,7 @@ def _png(title: str, description: str, compounds: list[GridCompound], lay: depic
         cards.append((c, img, sub, cap, height))
     head = _wrap(measure, description, f_text, total_w - 2 * pad) if description else []
     head_title = _wrap(measure, title, f_title, total_w - 2 * pad)
-    legend = _legend(compounds, scale, any(lay.cores))
+    legend = _legend_lines(measure, _legend(compounds, scale, any(lay.cores)), f_text, total_w - 2 * pad, s)
     note_lines = [ln for n in notes for ln in _wrap(measure, "• " + n, f_text, total_w - 2 * pad)]
     labels = [b.label for c in compounds for b in c.bars]
     label_w = min(max((measure.textlength(t, font=f_text) for t in labels), default=0) + 10 * s, plate_w * 0.4)
@@ -270,7 +337,7 @@ def _png(title: str, description: str, compounds: list[GridCompound], lay: depic
     row_h = [max(c[4] for c in row) for row in rows]
     total_h = (pad + len(head_title) * lh(f_title) + len(head) * lh(f_text) + 10 * s + sum(row_h)
                + gap * (len(rows) - 1)
-               + (10 * s + lh(f_text) if legend else 0) + len(note_lines) * lh(f_text) + pad)
+               + (10 * s + len(legend) * lh(f_text) if legend else 0) + len(note_lines) * lh(f_text) + pad)
 
     image = Image.new("RGB", (total_w, total_h), (255, 255, 255))
     d = ImageDraw.Draw(image)
@@ -332,15 +399,7 @@ def _png(title: str, description: str, compounds: list[GridCompound], lay: depic
             x0 += card_w + gap
         y += height + gap
     y += 10 * s - gap
-    if legend:
-        x = pad
-        for colour, text in legend:
-            if colour:
-                d.rectangle((x, y + 4 * s, x + 13 * s, y + 13 * s), fill=colour)
-                x += 19 * s
-            d.text((x, y), _plain(f_text, text), font=f_text, fill=muted)
-            x += d.textlength(_plain(f_text, text), font=f_text) + 18 * s
-        y += lh(f_text)
+    y = _draw_legend(d, legend, pad, y, f_text, s, muted, lh(f_text))
     for text in note_lines:
         d.text((pad, y), _plain(f_text, text), font=f_text, fill=muted)
         y += lh(f_text)
@@ -446,7 +505,8 @@ _RG_CSS = """
 .rg-cell img{display:block}
 .rg-plain{color:#5c6763;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
 .rg-bars{list-style:none;margin:0;padding:0;display:grid;gap:6px}
-.rg-row{display:grid;grid-template-columns:auto minmax(TRACKpx,1fr) auto;column-gap:8px;align-items:center}
+.rg-row{display:grid;grid-template-columns:var(--rg-label,auto) minmax(TRACKpx,1fr) var(--rg-value,auto);column-gap:8px;align-items:center}
+.rg-row>span:first-child{white-space:nowrap}
 .rg-track{height:9px;background:#eceeec;border-radius:2px;overflow:hidden}
 .rg-bar{display:block;height:100%;border-radius:2px}
 .rg-faint .rg-bar{opacity:.4}
@@ -505,7 +565,8 @@ def _rg_html(title: str, description: str, core: str, caption: str, heading: str
     legend = "".join(f"<span>{swatch.format(c) if c else ''}{e(t)}</span>"
                      for c, t in _legend(rows, scale, False))
     return (
-        f'<figure class="rg"><style>{_RG_CSS}</style><h3>{e(title)}</h3>'
+        f'<figure class="rg" style="{_bar_columns([b for r in rows for b in r.bars], "rg")}">'
+        f'<style>{_RG_CSS}</style><h3>{e(title)}</h3>'
         + (f'<p class="rg-desc">{e(description)}</p>' if description else "")
         + f'<div class="rg-core">{plate(core_svg, core_size, core, "rg-plate")}'
         + f'<p class="rg-core-cap">{e(caption)}</p></div>'
@@ -565,7 +626,7 @@ def _rg_png(title: str, description: str, core: str, caption: str, heading: str,
     head_lines = _wrap(measure, description, f_text, total_w - 2 * pad) if description else []
     head_title = _wrap(measure, title, f_title, total_w - 2 * pad)
     note_lines = [ln for n in notes for ln in _wrap(measure, "• " + n, f_text, total_w - 2 * pad)]
-    legend = _legend(rows, scale, False)
+    legend = _legend_lines(measure, _legend(rows, scale, False), f_text, total_w - 2 * pad, s)
     core_img = image_of(core, True)
     core_h = (core_img.height + 12 * s + 2 * s) if core_img is not None else lh(f_text)
     core_cap = _wrap(measure, caption,
@@ -581,7 +642,8 @@ def _rg_png(title: str, description: str, core: str, caption: str, heading: str,
         row_h.append(max(picture_h, bar_h, text_h) + 2 * cellpad)
     total_h = (pad + len(head_title) * lh(f_title) + len(head_lines) * lh(f_text) + 12 * s + core_block
                + 16 * s + header_h
-               + sum(row_h) + (12 * s + lh(f_text) if legend else 0) + len(note_lines) * lh(f_text) + pad)
+               + sum(row_h) + (12 * s + len(legend) * lh(f_text) if legend else 0) + len(note_lines) * lh(f_text)
+               + pad)
 
     image = Image.new("RGB", (total_w, total_h), (255, 255, 255))
     d = ImageDraw.Draw(image)
@@ -661,15 +723,7 @@ def _rg_png(title: str, description: str, core: str, caption: str, heading: str,
             by += 4 * s
         y += height
     y += 12 * s
-    if legend:
-        x = pad
-        for colour, text in legend:
-            if colour:
-                d.rectangle((x, y + 4 * s, x + 13 * s, y + 13 * s), fill=colour)
-                x += 19 * s
-            d.text((x, y), _plain(f_text, text), font=f_text, fill=muted)
-            x += d.textlength(_plain(f_text, text), font=f_text) + 18 * s
-        y += lh(f_text)
+    y = _draw_legend(d, legend, pad, y, f_text, s, muted, lh(f_text))
     for text in note_lines:
         d.text((pad, y), _plain(f_text, text), font=f_text, fill=muted)
         y += lh(f_text)

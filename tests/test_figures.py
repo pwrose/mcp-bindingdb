@@ -1,5 +1,7 @@
 """Figure rendering that needs no database: the R-group table's columns, cells and two renderings."""
 
+import re
+
 import pytest
 
 from mcp_bindingdb import depict
@@ -53,3 +55,31 @@ def test_a_group_that_cannot_be_drawn_is_reported():
 def test_a_core_without_marked_positions_still_draws():
     html, png, labels, undrawn = figures.r_group_table("Plain", "c1ccccc1", [row({"R1": "C[*:1]"})])
     assert not undrawn and labels == ["R1"] and html.count("<img") == 2 and png[:4] == b"\x89PNG"
+
+
+def test_every_bar_in_a_figure_starts_and_ends_at_the_same_place():
+    # Each bar row is its own grid: label and value columns sized per row would shift and shorten the bars.
+    bars = [figures.GridBar(label="ABL1", value_nm=1900, type="IC50"),
+            figures.GridBar(label="PDGFR-α/β", value_nm=320, type="Kd")]
+    html, *_ = figures.r_group_table("Bars", XANTHINE, [row({"R1": "C[*:1]"}, bars=bars),
+                                                        row({"R1": "H"}, bars=bars[:1])])
+    widths = re.search(r'<figure class="rg" style="--rg-label:(\d+)px;--rg-value:(\d+)px"', html)
+    assert widths and int(widths[1]) > 60 and int(widths[2]) > 90
+    assert "grid-template-columns:var(--rg-label,auto) minmax(" in html and "var(--rg-value,auto)" in html
+    grid, *_ = figures.structure_grid("Grid", [figures.GridCompound(smiles="c1ccccc1O", title="a", bars=bars),
+                                                figures.GridCompound(smiles="c1ccccc1N", title="b")])
+    assert re.search(r'<figure class="sg" style="--sg-label:\d+px;--sg-value:\d+px"', grid)
+
+
+def test_a_legend_wider_than_the_figure_wraps():
+    from PIL import Image, ImageDraw
+
+    draw = ImageDraw.Draw(Image.new("RGB", (1, 1)))
+    font = figures._font(13)
+    legend = [("#000000", "Kd"), ("#111111", "IC50"), ("#222222", "thin evidence"),
+              ("", "Bar length: log scale, 100000 nM (empty) to 0.01 nM (full)")]
+    lines = figures._legend_lines(draw, legend, font, 220, 1)
+    assert len(lines) > 1 and [entry for line in lines for entry in line][:3] == legend[:3]
+    for line in lines:
+        width = sum((19 if c else 0) + draw.textlength(t, font=font) for c, t in line) + 18 * (len(line) - 1)
+        assert width <= 220
