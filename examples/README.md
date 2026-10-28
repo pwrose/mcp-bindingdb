@@ -1,6 +1,6 @@
 # Example queries
 
-Forty questions answered with the `mcp-bindingdb` tools against BindingDB release 202610, in eight levels from single lookups to multi-step workflows. Each is an HTML transcript written by `create_transcript`: the prompt, the answer, its figures, and structure drawings for the compounds it names (example 8.2 also lists every tool call). Some folders hold the plotting script and data behind a figure.
+These 40 examples answer questions with the `mcp-bindingdb` tools against BindingDB release 202610, in eight levels from single lookups to multi-step workflows. Each is an HTML transcript written by `create_transcript`: the prompt, the answer, its figures, and structure drawings for the compounds it names (example 8.2 also lists every tool call). Some folders hold the plotting script and data behind a figure.
 
 **[Browse the examples](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/index.html)**. GitHub shows HTML files as source, so the links below open a rendered view.
 
@@ -53,7 +53,7 @@ R-group tables, matched molecular pairs and activity cliffs: what one substituen
 
 ## Level 5 — Multi-step workflows
 
-Realistic analyses that chain several tools: repurposing, selectivity panels, hit expansion, safety, species, patents, target networks.
+Realistic analyses that chain several tools: repurposing, selectivity panels, hit expansion, safety, species, patents, target networks, scaffold selectivity clustering.
 
 | # | Example |
 |---|---|
