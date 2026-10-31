@@ -1,6 +1,6 @@
 # Example queries
 
-These 40 examples answer questions with the `mcp-bindingdb` tools against BindingDB release 202610, in eight levels from single lookups to multi-step workflows. Each is an HTML transcript written by `create_transcript`: the prompt, the answer, its figures, and structure drawings for the compounds it names (example 8.2 also lists every tool call). Some folders hold the plotting script and data behind a figure.
+These 41 examples answer questions with the `mcp-bindingdb` tools against BindingDB release 202610, in eight levels from single lookups to multi-step workflows. Each is an HTML transcript written by `create_transcript`: the prompt, the answer, its figures, and structure drawings for the compounds it names (example 8.2 also lists every tool call). Some folders hold the plotting script and data behind a figure.
 
 **[Browse the examples](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/index.html)**. GitHub shows HTML files as source, so the links below open a rendered view.
 
@@ -50,6 +50,7 @@ R-group tables, matched molecular pairs and activity cliffs: what one substituen
 | 4.2 | [Matched molecular pairs: swapping a group, not an atom](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/04-series-sar/4.2-matched-pairs/4.2-matched-pairs.html) |
 | 4.3 | [Activity cliffs: only the ones measured in the same patent](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/04-series-sar/4.3-activity-cliffs/4.3-activity-cliffs.html) |
 | 4.4 | [Transformations across seven target classes, one document at a time](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/04-series-sar/4.4-transformations-by-target/4.4-transformations-by-target.html) |
+| 4.5 | [Fragment swaps: ligands built from each other's halves](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/04-series-sar/4.5-fragment-swaps/4.5-fragment-swaps.html) |
 
 ## Level 5 — Multi-step workflows
 
