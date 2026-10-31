@@ -13,7 +13,7 @@ from pathlib import Path
 
 import duckdb
 
-# Tables holding passwords or personal contact details; excluded unless --include-pii.
+# Tables holding passwords or personal contact details; never copied.
 PII_TABLES = {"regusers", "person"}
 
 
@@ -35,7 +35,6 @@ def main() -> int:
     p.add_argument("--port", type=int, default=3307)
     p.add_argument("--user", default="root")
     p.add_argument("--database", default="bindingdb")
-    p.add_argument("--include-pii", action="store_true")
     args = p.parse_args()
 
     tmp = args.output.with_name(args.output.name + ".tmp")
@@ -57,7 +56,7 @@ def main() -> int:
             [args.database],
         ).fetchall()
     ]
-    excluded = [] if args.include_pii else sorted(PII_TABLES & set(tables))
+    excluded = sorted(PII_TABLES & set(tables))
     tables = [t for t in tables if t not in excluded]
     print(f"Copying {len(tables)} tables (excluded: {excluded or 'none'})", flush=True)
 

@@ -14,15 +14,14 @@ scripts/build_duckdb.sh --release 202611   # a later release
 The script downloads the dump, loads it into a temporary MySQL 8.4 container, copies it to DuckDB
 (`scripts/convert_to_duckdb.py`, checking row counts), adds derived query tables
 (`scripts/add_derived_tables.py`), computes standard InChIKeys (below), builds the structure-search
-index (below), and removes the container.
+index (below), and removes the container. The structure-search index is always built, and the
+`regusers` and `person` tables (passwords and contact details) are never copied.
 
 Options:
 
 | Option | Effect |
 |---|---|
 | `--release YYYYMM` | BindingDB release to build (default 202610) |
-| `--no-substructure` | Skip the structure-search index |
-| `--include-pii` | Keep the `regusers` and `person` tables (passwords and contact details), which are left out by default |
 | `--keep-mysql` | Keep the MySQL container after the build |
 
 For release 202610, `data/` holds about 4.5 GB afterwards: the downloaded dump (2.3 GB), the database
@@ -81,8 +80,8 @@ The raw tables mirror the BindingDB MySQL schema; see `schema/`.
 ## Structure-search index
 
 `substructure_search` and `similarity_search` need [RDKit](https://www.rdkit.org) (the optional
-`substructure` extra) and an index file, `data/bindingdb_<release>.sslib`. The build script creates it
-unless you pass `--no-substructure`; to build it for an existing database:
+`substructure` extra) and an index file, `data/bindingdb_<release>.sslib`. The build script always creates
+it; to rebuild it for an existing database:
 
 ```bash
 uv run --extra substructure python scripts/build_substructure_index.py data/bindingdb_202610.duckdb
