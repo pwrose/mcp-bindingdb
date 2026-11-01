@@ -8,11 +8,12 @@ protein–ligand binding affinities for 1.5M compounds and 13k targets, from a l
 
 ## Examples
 
-[Forty worked examples](examples/README.md), in eight levels, show real questions answered with these
-tools: looking up compounds and targets, exact, similarity and substructure search, selectivity profiles,
-R-group tables and matched pairs, multi-step workflows such as a clustered selectivity heat map, property
-filters and structural alerts, SQL analytics, and saving the work as a transcript. Each is an HTML
-transcript with the prompt, the answer, its figures and structure drawings
+[Worked examples](examples/README.md), grouped in levels from single lookups to multi-step analyses,
+show real questions answered with these tools: looking up compounds and targets, exact, similarity and
+substructure search, selectivity profiles, R-group tables and matched pairs, multi-step workflows such as
+a clustered selectivity heat map, 3D binding-site views, property filters and structural alerts, SQL
+analytics, and saving the work as a transcript. Each is an HTML transcript with the prompt, the answer,
+its figures and structure drawings
 ([index](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/index.html)).
 
 ## Claude setup

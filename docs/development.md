@@ -34,7 +34,7 @@ The tests run against the built database and are skipped if it is missing.
 
 ## Examples
 
-`examples/` holds HTML transcripts written by `create_transcript` in Claude sessions, grouped in eight
+`examples/` holds HTML transcripts written by `create_transcript` in Claude sessions, grouped in
 levels (see [examples/README.md](../examples/README.md)). They are not regenerated when the data release
 changes. They are written in a working folder (default `~/mcp-bindingdb-examples`, one folder per level)
 and copied here with

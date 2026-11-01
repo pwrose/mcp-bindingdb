@@ -33,8 +33,6 @@ EXAMPLES = ROOT / "examples"
 REPO_FILES_URL = "https://github.com/pwrose/mcp-bindingdb/blob/main/examples/"
 PREVIEW_URL = "https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/"
 IGNORE = shutil.ignore_patterns(".DS_Store")
-NUMBER_WORDS = dict(enumerate(["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",
-                               "eleven", "twelve"]))
 LEVEL_FOLDER = re.compile(r"^\d\d-")
 LOCAL_PATH = re.compile(rb"/Users/[A-Za-z]|/home/[A-Za-z]|/private/tmp/|[A-Z]:\\Users\\")
 
@@ -195,7 +193,7 @@ def build_index(root: Path, files_base_url: str = "") -> int:
 </head>
 <body>
 <h1>mcp-bindingdb Examples</h1>
-<p class="lede">{total} worked examples for new users of the BindingDB MCP server. They start with one-line lookups and build up to multi-step analyses. Each example is a real conversation: the prompt, the answer, a short lesson about the data, the tools that were used, and what to try next.</p>
+<p class="lede">Worked examples for new users of the BindingDB MCP server. They start with one-line lookups and build up to multi-step analyses. Each example is a real conversation: the prompt, the answer, a short lesson about the data, the tools that were used, and what to try next.</p>
 <div class="howto">
 <p><strong>How to use these.</strong> Read the transcript, then paste the quoted prompt into your own chat with mcp-bindingdb connected and compare. Transcripts show the tool calls only where the prompt asks for them{calls_note}. Tables that carry SMILES are drawn as structures.</p>
 </div>
@@ -211,16 +209,15 @@ def build_index(root: Path, files_base_url: str = "") -> int:
 def build_readme(root: Path) -> None:
     """Write root/README.md: the examples by level, each linked to its rendered view."""
     levels = collect(root)
-    total = sum(len(examples) for *_, examples in levels)
     with_calls = [e["num"] for *_, examples in levels for e in examples if "tool calls" in e["tags"]]
     calls = f" (example {', '.join(with_calls)} also lists every tool call)" if with_calls else ""
-    n_levels = NUMBER_WORDS.get(len(levels), len(levels))
     lines = [
         "# Example queries", "",
-        (f"These {total} examples answer questions with the `mcp-bindingdb` tools against BindingDB release "
-         f"202610, in {n_levels} levels from single lookups to multi-step workflows. Each is an HTML transcript "
+        (f"These examples answer questions with the `mcp-bindingdb` tools against BindingDB release "
+         f"202610, in levels from single lookups to multi-step workflows. Each is an HTML transcript "
          f"written by `create_transcript`: the prompt, the answer, its figures, and structure drawings for the "
-         f"compounds it names{calls}. Some folders hold the plotting script and data behind a figure."), "",
+         f"compounds it names{calls}. The binding-site examples also have the interactive 3D viewer of their "
+         f"overlay, and some folders hold the plotting script and data behind a figure."), "",
         (f"**[Browse the examples]({PREVIEW_URL}index.html)**. GitHub shows HTML files as source, so the links "
          "below open a rendered view."), "",
     ]

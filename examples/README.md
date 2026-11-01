@@ -1,6 +1,6 @@
 # Example queries
 
-These 43 examples answer questions with the `mcp-bindingdb` tools against BindingDB release 202610, in nine levels from single lookups to multi-step workflows. Each is an HTML transcript written by `create_transcript`: the prompt, the answer, its figures, and structure drawings for the compounds it names (example 9.2 also lists every tool call). Some folders hold the plotting script and data behind a figure.
+These examples answer questions with the `mcp-bindingdb` tools against BindingDB release 202610, in levels from single lookups to multi-step workflows. Each is an HTML transcript written by `create_transcript`: the prompt, the answer, its figures, and structure drawings for the compounds it names (example 9.2 also lists every tool call). The binding-site examples also have the interactive 3D viewer of their overlay, and some folders hold the plotting script and data behind a figure.
 
 **[Browse the examples](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/index.html)**. GitHub shows HTML files as source, so the links below open a rendered view.
 
