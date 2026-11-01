@@ -5,11 +5,16 @@ from __future__ import annotations
 import argparse
 import base64
 import html
+import json
+import math
 import os
 import re
+import shutil
 import statistics
 import sys
 import threading
+import uuid
+import webbrowser
 from datetime import date as _date
 from datetime import datetime, timezone
 from pathlib import Path
@@ -20,10 +25,11 @@ from mcp.server.mcpserver.exceptions import ToolError
 from mcp.types import CallToolResult, ImageContent, ResourceLink, TextContent, ToolAnnotations
 from pydantic import BaseModel, Field
 
-from . import depict, figures, names, sar, substructure, transcript, transcript_html
+from . import depict, figures, names, sar, structures, substructure, transcript, transcript_html
 from . import properties as compound_properties
 from .db import Database, QueryError, find_database
-from .structure_editor import FIGURE_META, EditorSearches, add_editor_results_tool, create_editor_extension
+from .structure_editor import (FIGURE_META, OVERLAY_META, EditorSearches, add_editor_results_tool,
+                               create_editor_extension, overlay_viewer_html)
 
 AffinityType = Literal["Ki", "Kd", "IC50", "EC50", "kon", "koff"]
 NameSource = Literal["bindingdb", "opsin", "pubchem"]
@@ -160,6 +166,22 @@ each substituent in its column; a fragment SMILES ('CCC[*:1]') is an input to th
 to put in a table or an answer.
 """
 
+PDB_INSTRUCTIONS = """
+Crystal structures: find_pdb_complexes lists a target's ligands that have PDB complexes (ligand code and
+entries). overlay_binding_site superposes those complexes on the binding site and shows them in a 3D
+viewer in the chat (protein chains as lines, ligands as sticks, each toggled on or off, hydrogen bonds on
+request), with the contacts and hydrogen bonds of each ligand; use it whenever the user wants to see,
+compare or overlay how compounds bind. Never build your own viewer for these structures (no artifact, HTML
+page, PyMOL/ChimeraX script or 3Dmol/NGL/Mol* code), not even after the overlay or when the user asks for more in the view: the
+panel shows them, superposed by the tool. The panel appears only in apps that show MCP Apps panels: never in
+a chat that reaches this server through a linked computer (a remote-devices bridge; you can tell from how
+your tools are named), nor in a Claude Desktop chat with a folder attached. In those chats call
+open_overlay_viewer right after overlay_binding_site, without asking, so the user sees the viewer in their
+browser; elsewhere never tell the user they see it, and if they say it did not appear, call
+open_overlay_viewer. If the user wants
+something the viewer cannot do, say so; the superposed complexes are also saved as mmCIF files.
+"""
+
 FIGURE_INSTRUCTIONS = """
 Structure figures: to show several compounds' structures together (e.g. in a grid, aligned on a shared
 substructure, with binding data), use draw_structure_grid rather than drawing them yourself; for one
@@ -272,6 +294,7 @@ class BindingDBServer(MCPServer):
         self.last_markdown: str | None = None
         self.last_html: str | None = None
         self.figure_copies: dict[str, Any] = {}  # file name of a figure copied to an output_dir -> the figure
+        self.log_figure: Any = None  # set by _add_transcript_tools, for figures other tools make
 
     async def call_tool(self, name: str, arguments: dict[str, Any], context: Context | None = None) -> Any:
         result = await super().call_tool(name, arguments, context)
@@ -323,6 +346,7 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
         title="BindingDB",
         version=VERSION,
         instructions=INSTRUCTIONS + (STRUCTURE_INSTRUCTIONS if index else "")
+        + (PDB_INSTRUCTIONS if structures.available() else "")
         + (PROPERTY_INSTRUCTIONS if has_properties else "")
         + (SAR_INSTRUCTIONS if sar.available() else "")
         + IMAGE_INSTRUCTIONS + (FIGURE_INSTRUCTIONS if depict.available() else "")
@@ -842,6 +866,8 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
         _add_sar_tools(mcp, db, property_filter)
     add_editor_results_tool(mcp, editor_searches)
     _add_transcript_tools(mcp, info.get("release", "unknown"), transcript_dir or db.path.parent / "transcripts")
+    if structures.available():
+        _add_pdb_tools(mcp, db, network)
     return mcp
 
 
@@ -938,6 +964,8 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
                                 title=title, file=file, html=html_block, data=data, spec=spec, caption=caption)
         log.figures.append(figure)
         return figure, saved
+
+    mcp.log_figure = log_figure
 
     @mcp.tool(annotations=writes)
     def add_figure(
@@ -1347,6 +1375,556 @@ def _add_exact_search(mcp: MCPServer, db: Database, run, activity_query, compute
             out["note"] = ("This database has BindingDB's own InChIKeys, which are missing or non-standard for "
                            "many compounds, so matches can be missed; run scripts/compute_inchikeys.py on it")
         return out
+
+
+PDB_LINKS_SQL = """
+WITH ligs AS (
+  SELECT DISTINCT a.monomerid, c.inchi_key, c.name
+  FROM activity a JOIN compound c USING (monomerid)
+  WHERE {where} AND a.affinity_type IN ({types}) AND a.value IS NOT NULL {compounds}),
+recs AS (
+  SELECT m.monomerid AS record, upper(trim(m.het_pdb)) AS het, c.inchi_key, m.pdb_ids_exact
+  FROM monomer m JOIN compound c USING (monomerid)
+  WHERE m.n_pdb_ids_exact > 0 AND trim(coalesce(m.het_pdb, '')) <> ''),
+links AS (
+  SELECT l.monomerid, l.name, r.record, r.het,
+         CASE WHEN l.monomerid = r.record THEN 1 WHEN l.inchi_key = r.inchi_key THEN 2 ELSE 3 END AS link,
+         upper(trim(unnest(string_split(r.pdb_ids_exact, ',')))) AS pdb_id
+  FROM ligs l JOIN recs r ON left(l.inchi_key, 14) = left(r.inchi_key, 14))
+SELECT monomerid, any_value(name) AS name, het, min(link) AS link, list(DISTINCT record ORDER BY record) AS records,
+       list(DISTINCT pdb_id ORDER BY pdb_id) AS pdb_ids
+FROM links WHERE length(pdb_id) = 4 GROUP BY monomerid, het
+"""
+POTENCY_SQL = """
+WITH m AS (
+  SELECT monomerid, affinity_type, count(*) AS n, median(value) AS median_nm, min(value) AS best_nm,
+         max(value) AS worst_nm, quantile_cont(value, 0.25) AS q1_nm, quantile_cont(value, 0.75) AS q3_nm
+  FROM activity
+  WHERE {where} AND monomerid IN (SELECT unnest(?)) AND affinity_type IN ('Ki', 'Kd', 'IC50', 'EC50')
+    AND relation = '=' AND unit = 'nM' AND value > 0
+  GROUP BY monomerid, affinity_type)
+SELECT * FROM m
+"""
+POTENCY_TYPES = ("Ki", "Kd", "IC50", "EC50")
+#: Default preference: binding constants (Ki, Kd) before functional IC50/EC50, the most measured within each.
+DEFAULT_TYPE_RANK = {"Ki": 0, "Kd": 0, "IC50": 1, "EC50": 1}
+
+
+def _type_rank(types: list[str] | None) -> dict[str, int]:
+    """Preference of each usable affinity type: the default groups, or the order the caller gave."""
+    if not types:
+        return DEFAULT_TYPE_RANK
+    return {t: k for k, t in enumerate(dict.fromkeys(t for t in types if t in POTENCY_TYPES))}
+
+
+def _pick_potency(rows: list[dict[str, Any]], rank: dict[str, int]
+                  ) -> tuple[dict[int, dict[str, Any]], dict[int, dict[str, dict[str, Any]]]]:
+    """POTENCY_SQL rows -> each compound's potency of the most preferred type in `rank` (then the most measured,
+    then Ki, Kd, IC50, EC50), and its potency for every type measured (for the viewer's affinity menu)."""
+    best: dict[int, dict[str, Any]] = {}
+    every: dict[int, dict[str, dict[str, Any]]] = {}
+    key = lambda r: (rank[r["affinity_type"]], -r["n"], POTENCY_TYPES.index(r["affinity_type"]))  # noqa: E731
+    for r in rows:
+        # median, quartiles and range of the exact values, for the viewer's bar and box plot
+        every.setdefault(r["monomerid"], {})[r["affinity_type"]] = {
+            "n": r["n"], **{k: r[f"{k}_nm"] and float(f"{r[f'{k}_nm']:.4g}") for k in ("median", "q1", "q3")},
+            "min": r["best_nm"], "max": r["worst_nm"]}
+        if r["affinity_type"] in rank and (r["monomerid"] not in best or key(r) < key(best[r["monomerid"]])):
+            best[r["monomerid"]] = r
+    return best, every
+LINK_NAMES = {1: "record", 2: "same structure", 3: "connectivity only"}
+LINK_RANK = {name: rank for rank, name in LINK_NAMES.items()}
+PDB_IN_LIST = "list_contains(list_transform(string_split(m.pdb_ids_exact, ','), x -> upper(trim(x))), ?)"
+# The compounds whose structure is the ligand with code ? in PDB entry ?, by the InChIKey of the records
+# that link them (first block, as in PDB_LINKS_SQL); `same` when the full InChIKey matches.
+LIGAND_BY_CODE_SQL = f"""
+WITH recs AS (
+  SELECT c.inchi_key FROM monomer m JOIN compound c USING (monomerid)
+  WHERE upper(trim(m.het_pdb)) = ? AND {PDB_IN_LIST})
+SELECT c.monomerid, c.name, c.inchi_key IN (SELECT inchi_key FROM recs) AS same
+FROM compound c WHERE left(c.inchi_key, 14) IN (SELECT left(inchi_key, 14) FROM recs)
+"""
+PotencyTypesArg = Annotated[list[Literal["Ki", "Kd", "IC50", "EC50"]] | None, Field(
+    description="Affinity types for each compound's potency, in order of preference; only these are used "
+                "(e.g. ['IC50'] when the user asks for IC50s). Default: Ki or Kd (whichever has more "
+                "measurements), and IC50 or EC50 only for compounds without either")]
+SAME_PROTEIN_IDENTITY = 90.0  # %, another record whose sequence is this close is the same protein
+UI_EXTENSION = "io.modelcontextprotocol/ui"  # MCP Apps: clients that can show the viewer declare it
+
+
+def _client(ctx: Context | None) -> dict[str, Any]:
+    """The calling client's name and version and whether it declared MCP Apps (UI_EXTENSION)."""
+    try:
+        caps = ctx.client_capabilities if ctx is not None else None
+        params = ctx.session.client_params if ctx is not None else None
+    except Exception:  # noqa: BLE001 - outside a request
+        caps = params = None
+    info = getattr(params, "client_info", None)
+    declared = {**(getattr(caps, "extensions", None) or {}), **(getattr(caps, "experimental", None) or {})}
+    return {"name": getattr(info, "name", None), "version": getattr(info, "version", None),
+            "apps": UI_EXTENSION in declared}
+PdbIdsArg = Annotated[list[str] | None, Field(description="PDB entries to overlay, e.g. ['3NU3', '2I4U'], "
+                                              "optionally with the ligand code, e.g. '1HVI:A77'. A ligand "
+                                              "measured only on another record of the same protein gets its "
+                                              "potency from that record")]
+
+
+def _add_pdb_tools(mcp: BindingDBServer, db: Database, network: bool) -> None:
+    """find_pdb_complexes, overlay_binding_site and the overlay viewer's overlay_data (gemmi: the 'structures'
+    extra)."""
+    cache = structures.PdbCache(db.path.parent / "pdb-cache", network=network)
+    overlays_dir = db.path.parent / "overlays"
+    overlay_id_re = re.compile(r"[0-9a-f]{12}")
+
+    def target_info(target_id: int | None, uniprot: str | None, include_variants: bool,
+                    target_kind: str) -> dict[str, Any]:
+        """The target's activity filter, name, UniProt accessions, sequences, and the PDB ids BindingDB links
+        to it or to other records of its accessions."""
+        where, params = _target_where(target_id, uniprot, include_variants, target_kind)
+        try:
+            if target_id is not None and target_kind == "complex":
+                head = db.one("SELECT display_name AS name, pdb_ids FROM complex WHERE complexid = ?", [target_id])
+                own = [r["polymerid"] for r in db.rows(
+                    "SELECT polymerid FROM complex_component WHERE complexid = ? AND polymerid IS NOT NULL",
+                    [target_id])]
+            elif target_id is not None:
+                head = db.one("SELECT display_name AS name, '' AS pdb_ids FROM polymer WHERE polymerid = ?",
+                              [target_id])
+                own = [target_id]
+            else:
+                acc = uniprot.strip().upper()
+                head = {"name": acc, "pdb_ids": ""}
+                own = [r["target_id"] for r in db.rows(
+                    "SELECT target_id FROM target WHERE target_kind = 'polymer' AND "
+                    + ("uniprot = ?" if include_variants else "uniprot_raw = ?"), [acc], limit=500)]
+            if head is None:
+                raise ToolError(f"No {target_kind} target with id {target_id}")
+            polymers = db.rows(
+                """SELECT p.polymerid, t.uniprot, p.sequence, p.pdb_ids FROM polymer p
+                   JOIN target t ON t.target_kind = 'polymer' AND t.target_id = p.polymerid
+                   WHERE p.polymerid IN (SELECT unnest(?))
+                      OR t.uniprot IN (SELECT t2.uniprot FROM target t2 WHERE t2.target_kind = 'polymer'
+                                       AND t2.target_id IN (SELECT unnest(?)) AND t2.uniprot IS NOT NULL)""",
+                [own, own], limit=5000)
+        except QueryError as e:
+            raise ToolError(str(e)) from None
+        linked = {p.strip().upper() for row in [head, *polymers] for p in (row.get("pdb_ids") or "").split(",")
+                  if p.strip()}
+        sequences = list(dict.fromkeys(p["sequence"] for p in polymers if p["polymerid"] in own and p["sequence"]))
+        return {"where": where.replace("polymerid", "a.polymerid").replace("complexid", "a.complexid")
+                .replace("uniprot", "a.uniprot"), "plain_where": where, "params": params, "name": head["name"],
+                "accessions": {p["uniprot"] for p in polymers if p["uniprot"]}, "sequences": sequences[:20],
+                "linked": linked}
+
+    def rcsb_complexes(target: dict[str, Any], compound_ids: list[int] | None, rank: dict[str, int],
+                       rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        """PDB entries of the target's UniProt accessions whose ligand is one of the target's measured compounds
+        by InChIKey (RCSB), for compounds BindingDB links to no entry or not to these: adds the entries to
+        `rows` (rows of PDB_LINKS_SQL, as `via_rcsb`) and returns the new (compound, code) rows."""
+        ligands = structures.accession_ligands(target["accessions"], cache.directory, network)
+        if not ligands:
+            return []
+        by_block: dict[str, list[dict[str, str]]] = {}
+        for lig in ligands:
+            by_block.setdefault(lig["inchi_key"][:14], []).append(lig)
+        types = ", ".join(f"'{t}'" for t in POTENCY_TYPES if t in rank)
+        measured = db.rows(
+            f"""SELECT DISTINCT a.monomerid, c.inchi_key, c.name FROM activity a JOIN compound c USING (monomerid)
+                WHERE {target["where"]} AND a.affinity_type IN ({types}) AND a.value IS NOT NULL
+                  {"AND a.monomerid IN (SELECT unnest(?))" if compound_ids else ""}
+                  AND left(c.inchi_key, 14) IN (SELECT unnest(?))""",
+            [*target["params"], *([compound_ids] if compound_ids else []), list(by_block)], limit=100000)
+        existing = {(r["monomerid"], r["het"]): r for r in rows}
+        new = []
+        for compound in measured:
+            for lig in by_block[compound["inchi_key"][:14]]:
+                link = 2 if lig["inchi_key"] == compound["inchi_key"] else 3
+                row = existing.get((compound["monomerid"], lig["het"]))
+                if row is None:
+                    row = {"monomerid": compound["monomerid"], "name": compound["name"], "het": lig["het"],
+                           "link": link, "records": [], "pdb_ids": []}
+                    existing[(compound["monomerid"], lig["het"])] = row
+                    new.append(row)
+                row["link"] = min(row["link"], link)
+                if lig["pdb_id"] not in row["pdb_ids"]:
+                    row["pdb_ids"] = sorted([*row["pdb_ids"], lig["pdb_id"]])
+                    row.setdefault("via_rcsb", []).append(lig["pdb_id"])
+        target["linked"] |= {lig["pdb_id"] for lig in ligands}  # entries of the target's own accessions
+        return new
+
+    def complexes(target: dict[str, Any], compound_ids: list[int] | None,
+                  rank: dict[str, int] = DEFAULT_TYPE_RANK) -> list[dict[str, Any]]:
+        """Every (compound, ligand code) of the target's ligands with PDB entries: those measured with the most
+        preferred affinity type first (`rank`, by default Ki/Kd before IC50/EC50), most potent first."""
+        sql = PDB_LINKS_SQL.format(where=target["where"], types=", ".join(f"'{t}'" for t in POTENCY_TYPES if t in rank),
+                                   compounds="AND a.monomerid IN (SELECT unnest(?))" if compound_ids else "")
+        try:
+            rows = db.rows(sql, [*target["params"], *([compound_ids] if compound_ids else [])], limit=100000)
+            rows += rcsb_complexes(target, compound_ids, rank, rows)
+            potency, every = _pick_potency(db.rows(POTENCY_SQL.format(where=target["plain_where"]),
+                                                   [*target["params"], [r["monomerid"] for r in rows]],
+                                                   limit=100000), rank) if rows else ({}, {})
+        except QueryError as e:
+            raise ToolError(str(e)) from None
+        for row in rows:
+            p = potency.get(row["monomerid"])
+            row["match"] = LINK_NAMES[row.pop("link")]
+            row["linked_pdb_ids"] = [x for x in row["pdb_ids"] if x in target["linked"]]
+            row["other_pdb_ids"] = [x for x in row["pdb_ids"] if x not in target["linked"]]
+            row.update({"affinity_type": p["affinity_type"], "median_nm": p["median_nm"], "best_nm": p["best_nm"],
+                        "n_measurements": p["n"]} if p else
+                       {"affinity_type": None, "median_nm": None, "best_nm": None, "n_measurements": 0})
+            row["potencies"] = every.get(row["monomerid"], {})
+        rows.sort(key=lambda r: (r["median_nm"] is None, rank.get(r["affinity_type"], 99), r["median_nm"] or 0,
+                                 r["match"] != "record", -len(r["pdb_ids"]), r["monomerid"]))
+        return rows
+
+    def affinity_text(row: dict[str, Any]) -> str | None:
+        if not row.get("median_nm"):
+            return None
+        n = row["n_measurements"]
+        notes = [f"median of {n}"] if n > 1 else []
+        if row.get("measured_on"):
+            notes.append(row["measured_on"])
+        return f"{row['affinity_type']} {figures._fmt(row['median_nm'])} nM" + (f" ({', '.join(notes)})" if notes else "")
+
+    def ligand_by_code(pdb: str, het: str, target: dict[str, Any],
+                       rank: dict[str, int] = DEFAULT_TYPE_RANK) -> dict[str, Any] | None:
+        """A row like complexes() gives, for the compound that is ligand `het` of entry `pdb` when it is not
+        among the target's measured ligands: its potency against the target, else against another record of
+        the same protein (a sequence at least SAME_PROTEIN_IDENTITY % identical). When BindingDB links no
+        compound to that code in that entry (e.g. nilotinib, NIL, in 3CS9), the compound is found by the
+        InChIKey the PDB gives the code. None if neither finds it."""
+        by_key = False
+        try:
+            candidates = db.rows(LIGAND_BY_CODE_SQL, [het, pdb], limit=500)
+            if not candidates and network and (key := structures.ligand_inchikeys([het]).get(het.upper())):
+                candidates = db.rows("SELECT monomerid, name, inchi_key = ? AS same FROM compound "
+                                     "WHERE left(inchi_key, 14) = left(?, 14)", [key, key], limit=500)
+                by_key = True
+            if not candidates:
+                return None
+            ids = [c["monomerid"] for c in candidates]
+            by_id, every = _pick_potency(db.rows(POTENCY_SQL.format(where=target["plain_where"]),
+                                                 [*target["params"], ids], limit=500), rank)
+            measured_on = None
+            if not by_id and target["sequences"]:
+                records = db.rows(
+                    """SELECT DISTINCT a.polymerid, p.sequence FROM activity a JOIN polymer p USING (polymerid)
+                       WHERE a.monomerid IN (SELECT unnest(?)) AND p.sequence IS NOT NULL
+                         AND a.affinity_type IN (SELECT unnest(?))""", [ids, list(rank)], limit=200)
+                same = [r["polymerid"] for r in records
+                        if max(structures.string_identity(r["sequence"], s) for s in target["sequences"])
+                        >= SAME_PROTEIN_IDENTITY]
+                if same:
+                    by_id, every = _pick_potency(db.rows(POTENCY_SQL.format(where="polymerid IN (SELECT unnest(?))"),
+                                                         [same, ids], limit=500), rank)
+                    measured_on = ("on record " if len(same) == 1 else "on records ") + ", ".join(map(str, same[:3]))
+        except QueryError as e:
+            raise ToolError(str(e)) from None
+        # the compound itself (same InChIKey) before stereoisomers; then the most measured
+        best = min(candidates, key=lambda c: (not c["same"], c["monomerid"] not in by_id,
+                                              -(by_id.get(c["monomerid"], {}).get("n") or 0), c["monomerid"]))
+        p = by_id.get(best["monomerid"])
+        return {"monomerid": best["monomerid"], "name": best["name"], "het": het,
+                "match": ("same structure" if best["same"] else "connectivity only")
+                + (f" (by the InChIKey of PDB ligand {het}; BindingDB does not link it to {pdb})" if by_key else ""),
+                "pdb_ids": [pdb],
+                "affinity_type": p and p["affinity_type"], "median_nm": p and p["median_nm"],
+                "n_measurements": p["n"] if p else 0, "measured_on": measured_on if p else None,
+                "potencies": every.get(best["monomerid"], {})}
+
+    @mcp.tool(annotations=ToolAnnotations(readOnlyHint=True, openWorldHint=network))
+    def find_pdb_complexes(
+        target_id: TargetIdArg = None,
+        uniprot: UniprotArg = None,
+        include_variants: IncludeVariantsArg = False,
+        target_kind: TargetKindArg = "polymer",
+        compound_ids: Annotated[list[int] | None, Field(description="Only these compounds (monomerids)")] = None,
+        only_linked: Annotated[bool, Field(description="Only PDB entries BindingDB links to the target (or to "
+                                           "other records of its UniProt accession); false also lists the "
+                                           "ligands' other entries, which may be complexes with other "
+                                           "proteins or other strains/constructs of the target")] = True,
+        limit: Annotated[int, Field(description="Max compounds (1-200)")] = 50,
+        affinity_types: PotencyTypesArg = None,
+    ) -> dict[str, Any]:
+        """A target's measured ligands that have crystal (or NMR/EM) structures in the PDB: each compound's
+        PDB ligand code, its entries, and its potency against the target (median of exact values; Ki or Kd
+        unless affinity_types says otherwise, see there), compounds with Ki/Kd first, most potent first.
+
+        BindingDB keeps PDB links on one compound record, often a duplicate of the one with the measurements,
+        and has none for some compounds (nilotinib), so entries are found two ways: BindingDB's links, and the
+        PDB's own ligands (RCSB) of the target's UniProt accessions matched by InChIKey (listed in
+        found_in_pdb_by_inchikey; needs network, cached for 30 days). Records are matched by InChIKey: `match` is 'record' (the compound itself), 'same structure'
+        (same InChIKey) or 'connectivity only' (same first InChIKey block: possibly a stereoisomer or
+        tautomer, so the PDB ligand may not be this exact compound). Pass compounds or entries from here to
+        overlay_binding_site to see them superposed in 3D."""
+        target = target_info(target_id, uniprot, include_variants, target_kind)
+        rows = complexes(target, compound_ids, _type_rank(affinity_types))
+        hidden = 0
+        if only_linked:
+            hidden = sum(1 for r in rows if not r["linked_pdb_ids"])
+            rows = [r for r in rows if r["linked_pdb_ids"]]
+        out_rows = [{"monomerid": r["monomerid"], "bdbm": f"BDBM{r['monomerid']}", "name": r["name"],
+                     "ligand_code": r["het"], "match": r["match"],
+                     "pdb_ids": r["linked_pdb_ids"] if only_linked else r["pdb_ids"],
+                     "n_pdb_ids": len(r["linked_pdb_ids"] if only_linked else r["pdb_ids"]),
+                     **({} if only_linked else {"linked_to_target": r["linked_pdb_ids"]}),
+                     "affinity_type": r["affinity_type"], "median_nm": r["median_nm"], "best_nm": r["best_nm"],
+                     "n_measurements": r["n_measurements"],
+                     "other_affinity_types": [t for t in r["potencies"] if t != r["affinity_type"]],
+                     **({"found_in_pdb_by_inchikey": sorted(r["via_rcsb"])} if r.get("via_rcsb") else {})}
+                    for r in rows]
+        limit = _clamp(limit, 1, 200)
+        out = {"target": target["name"], "n_compounds": len(out_rows), "rows": out_rows[:limit],
+               "truncated": len(out_rows) > limit}
+        if hidden:
+            out["note"] = (f"{hidden} more compound(s) have PDB entries that BindingDB links to other proteins or "
+                           "to other records of this protein (e.g. another strain or construct); pass "
+                           "only_linked=false to list them. overlay_binding_site checks each chain against the "
+                           "target's sequence.")
+        return out
+
+    @mcp.tool(annotations=ToolAnnotations(readOnlyHint=False, destructiveHint=False, openWorldHint=network),
+              meta=OVERLAY_META)
+    def overlay_binding_site(
+        target_id: TargetIdArg = None,
+        uniprot: UniprotArg = None,
+        include_variants: IncludeVariantsArg = False,
+        target_kind: TargetKindArg = "polymer",
+        compound_ids: Annotated[list[int] | None, Field(description="Compounds (monomerids) whose PDB complexes "
+                                                        "to overlay. Default: the most potent ligands with "
+                                                        "complexes")] = None,
+        pdb_ids: PdbIdsArg = None,
+        structures_per_compound: Annotated[int, Field(ge=1, le=5, description="Entries per compound, best "
+                                                      "resolution first")] = 1,
+        max_entries: Annotated[int, Field(ge=1, le=24, description="Max entries overlaid")] = 10,
+        reference: Annotated[str | None, Field(description="PDB id every entry is superposed onto. Default: "
+                                               "the best-resolution entry")] = None,
+        pocket_cutoff: Annotated[float, Field(ge=4, le=15, description="Residues within this many Å of a "
+                                              "ligand form the pocket the fit uses")] = 8.0,
+        title: Annotated[str | None, Field(description="Heading of the viewer and figure")] = None,
+        affinity_types: PotencyTypesArg = None,
+        ctx: Context | None = None,
+    ) -> CallToolResult:
+        """Superpose PDB complexes of a target's ligands on their binding site and show them in an
+        interactive 3D viewer in the chat: each entry's protein chains as lines and its ligand as sticks,
+        both toggled on or off per entry, with an option to show hydrogen bonds. Also returns each
+        ligand's contact residues and hydrogen-bond partners (named by the reference entry's residues, so
+        the same position has the same name everywhere), logs a contact-map figure for transcripts, and
+        writes the superposed complexes as mmCIF files.
+
+        Give compound_ids (e.g. from find_pdb_complexes), pdb_ids, or neither for the most potent ligands
+        with complexes. Each entry's potency is a Ki or Kd where there is one (IC50/EC50 otherwise), unless
+        affinity_types asks for other types; mention when entries have different types, which are not
+        comparable. Each entry is downloaded from PDBe (cached), its ligand found, and its binding-site
+        chains fitted to the reference on the pocket's Cα atoms, rejecting outliers; pocket_rmsd is over the
+        pocket atoms the fit kept, and `moved` lists the pocket residues more than 2 Å from their reference
+        position (a loop or helix in another conformation). Entries whose ligand sits on another protein
+        (below 40% identity to the target's sequence) are skipped with the reason.
+
+        Use it whenever the user wants to see, compare or overlay how compounds bind in 3D. The viewer
+        appears with the call in apps that show MCP Apps panels: describe what it shows (shared contacts, distinct H-bonds, poses) rather than listing
+        coordinates, and do not build another viewer, artifact or HTML page of these structures."""
+        target = target_info(target_id, uniprot, include_variants, target_kind)
+        rank = _type_rank(affinity_types)
+        rows = complexes(target, compound_ids, rank)
+        by_entry: dict[tuple[str, str], dict[str, Any]] = {}
+        # Best link first (a stereoisomer or isotope-labelled analog never takes an entry from the compound
+        # itself), then measured before unmeasured, then the most measured of equal compounds.
+        def preference(row: dict[str, Any]) -> tuple[int, bool, int]:
+            return LINK_RANK[row["match"]], row["median_nm"] is None, -row["n_measurements"]
+
+        for row in rows:
+            for pdb in row["pdb_ids"]:
+                key = (pdb, row["het"])
+                if key not in by_entry or preference(row) < preference(by_entry[key]):
+                    by_entry[key] = row
+        requests: list[structures.Request] = []
+
+        def request(pdb: str, het: str, row: dict[str, Any] | None) -> structures.Request:
+            info = {} if row is None else {"monomerid": row["monomerid"], "name": row["name"] or f"BDBM{row['monomerid']}",
+                                           "affinity": affinity_text(row), "match": row["match"],
+                                           "affinity_type": row["affinity_type"], "value_nm": row["median_nm"],
+                                           "n_measurements": row["n_measurements"],
+                                           "potencies": row.get("potencies") or {}, "measured_on": row.get("measured_on"),
+                                           "p_affinity": None if not row["median_nm"] else round(9 - math.log10(row["median_nm"]), 2)}
+            return structures.Request(pdb, het, info)
+
+        try:
+            if pdb_ids:
+                for item in pdb_ids[:24]:
+                    pdb, _, het = item.partition(":")
+                    pdb = structures.normalize_pdb_id(pdb)
+                    if het:
+                        het = het.strip().upper()
+                        row = by_entry.get((pdb, het)) or ligand_by_code(pdb, het, target, rank)
+                        requests.append(request(pdb, het, row))
+                        continue
+                    found = [(k, r) for k, r in by_entry.items() if k[0] == pdb]
+                    if not found:  # a ligand of the entry measured only on other records, or not at all
+                        codes = [r["het"] for r in db.rows(
+                            f"SELECT DISTINCT upper(trim(het_pdb)) AS het FROM monomer m WHERE {PDB_IN_LIST} "
+                            "AND trim(coalesce(het_pdb, '')) <> ''", [pdb], limit=20)]
+                        found = [((pdb, h), ligand_by_code(pdb, h, target, rank)) for h in codes]
+                    if not found and network:  # ligands of the entry that are measured compounds, by InChIKey
+                        try:
+                            ligands = structures.entry_ligands([pdb])
+                        except structures.StructureError:
+                            ligands = []
+                        found = [((pdb, lig["het"]), row) for lig in ligands
+                                 if (row := ligand_by_code(pdb, lig["het"], target, rank)) and row["median_nm"]]
+                    if not found:
+                        raise ToolError(f"No compound measured on this target is a ligand of {pdb} (by BindingDB's PDB "
+                                        "links or the PDB's InChIKeys); give its ligand code as "
+                                        f"'{pdb}:<code>'")
+                    for (p, h), r in found:
+                        requests.append(request(p, h, r))
+            else:
+                if not rows:
+                    raise ToolError("None of the target's ligands" + (" given" if compound_ids else "")
+                                    + " has a PDB entry in BindingDB")
+                wanted = rows if compound_ids else rows[:max_entries]
+                ids = sorted({p for r in wanted for p in r["pdb_ids"]})
+                res = structures.resolutions(ids) if network else {}
+                taken: set[str] = set()
+                for row in wanted:
+                    ordered = sorted(row["pdb_ids"], key=lambda p: (p not in target["linked"], res.get(p) is None,
+                                                                  res.get(p) or 0, p))
+                    picked = [p for p in ordered if p not in taken and by_entry.get((p, row["het"])) is row]
+                    for pdb in picked[:structures_per_compound]:
+                        taken.add(pdb)
+                        requests.append(request(pdb, row["het"], row))
+            requests = requests[:max_entries]
+            if not requests:
+                raise ToolError("No PDB entries to overlay")
+            overlay = structures.build_overlay(requests, cache, target["accessions"], reference, pocket_cutoff,
+                                               target["sequences"])
+        except structures.StructureError as e:
+            raise ToolError(str(e)) from None
+
+        heading = title or f"{target['name']}: superposed binding sites"
+        overlay_id = uuid.uuid4().hex[:12]
+        folder = overlays_dir / overlay_id
+        try:
+            overlay.write(folder, heading)
+            page = overlay_viewer_html(overlay.viewer_data(heading))
+            if page:
+                (folder / "overlay.html").write_text(page, encoding="utf-8")
+            for old in sorted((d for d in overlays_dir.iterdir() if d.is_dir()), key=lambda d: d.stat().st_mtime)[:-30]:
+                shutil.rmtree(old, ignore_errors=True)
+        except OSError as e:
+            raise ToolError(f"Could not write the overlay to {folder}: {e.strerror or e}") from None
+
+        def label(e: dict[str, Any]) -> str:
+            name = e["name"] or e["het"]
+            name = name if len(name) <= 32 else name[:30] + "…"
+            return f"{e['pdb_id']} · {name}" + (f" · {e['affinity']}" if e.get("affinity") else "")
+
+        figure_text = []
+        block, png = figures.contact_map(
+            heading, f"Residues within 4 Å of each ligand after superposition on {overlay.reference}, named by "
+            f"{overlay.reference}'s residues.",
+            [figures.ContactRow(label(e), e["colour"], set(e["contacts"]), set(e["hbond_partners"]))
+             for e in overlay.entries], overlay.residues, overlay.notes)
+        figure_id = None
+        if png is not None and mcp.log_figure is not None:
+            figure, saved = mcp.log_figure(f"{heading} (contacts)", png, ".png", block,
+                                           {"overlay_id": overlay_id, "entries": overlay.summary()})
+            figure_id = figure.id
+            figure_text = [f"Contact map: figure id {figure.id}. {saved}", FIGURE_ID_NOTE.format(id=figure.id)]
+
+        client = _client(ctx)
+        try:  # for telling bridged (linked-computer) calls apart later: what the call's _meta carries
+            meta = ctx.request_context.meta if ctx is not None else None
+            meta_keys = sorted((meta.model_dump(exclude_none=True) if hasattr(meta, "model_dump") else dict(meta or {})))
+        except Exception:  # noqa: BLE001
+            meta_keys = []
+        print(f"overlay {overlay_id}: client {client['name']} {client['version']}, MCP Apps "
+              f"{'declared' if client['apps'] else 'not declared'}, request _meta keys {meta_keys}", file=sys.stderr)
+        features = ("an interactive 3D viewer (toggles per entry for protein, ligand, hydrogen bonds and "
+                    "binding-site surface; protein as lines, Cα trace or cartoon; labels on the H-bond or contact "
+                    "residues)")
+        if client["apps"]:
+            viewer_note = (f"The chat shows them in {features}, in apps that display MCP Apps panels. A chat that "
+                           "reaches this server through a linked computer (a remote-devices bridge: check how your "
+                           "tools are named) or a Claude Desktop chat with a folder attached shows no panel: then "
+                           f"call open_overlay_viewer(overlay_id='{overlay_id}') now, without asking, to open the "
+                           "viewer in the user's browser. Otherwise do not claim the user sees it: say the viewer "
+                           "appears with the tool call, and if they say it did not, call open_overlay_viewer.")
+        else:
+            viewer_note = (f"This client ({client['name'] or 'unknown'}) cannot show MCP Apps panels, so the user does "
+                           f"not see {features} in the chat. Call open_overlay_viewer(overlay_id='{overlay_id}') to open "
+                           "it in their browser (on the computer running mcp-bindingdb).")
+        viewer_note += (" Do not build your own viewer, artifact or HTML page of these structures, now or later in the "
+                        "chat: describe the superposition from this result, and for anything the viewer cannot show, "
+                        "say so. Do not write a PyMOL or other script for these structures either.")
+        lines = [f"Overlay {overlay_id}: {len(overlay.entries)} {'entry' if len(overlay.entries) == 1 else 'entries'} of "
+                 f"{target['name']} superposed on {overlay.reference} (pocket Cα fit, {pocket_cutoff:g} Å). "
+                 + viewer_note, "",
+                 "| PDB | ligand | compound | potency | resolution | pocket RMSD (Å) | moved > 2 Å | H-bond partners |",
+                 "|---|---|---|---|---|---|---|---|"]
+        for e in overlay.entries:
+            name = e["name"] or ""
+            name = name if len(name) <= 40 else name[:38] + "…"
+            compound = f"{name} (BDBM{e['monomerid']})" if e.get("monomerid") else name
+            res = f"{e['resolution']:.2f} Å" if e.get("resolution") else (e.get("method") or "").lower()
+            rmsd = "reference" if e["pdb_id"] == overlay.reference else (
+                f"{e['pocket_rmsd']:.2f} ({e['n_core']}/{e['n_pocket']} Cα)" if e["pocket_rmsd"] is not None
+                else f"{e['global_rmsd']:.2f} (whole chains)")
+            moved = "" if e["pdb_id"] == overlay.reference else (", ".join(e["moved"]) or "none")
+            others = [t for t in POTENCY_TYPES if t in (e.get("potencies") or {}) and t != e.get("affinity_type")]
+            potency = (e.get("affinity") or "") + (f"; also {', '.join(others)}" if others else "")
+            lines.append(f"| {e['pdb_id']} | {e['het']} | {compound} | {potency} | {res} | {rmsd} | "
+                         f"{moved} | {', '.join(e['hbond_partners']) or 'none'} |")
+        shown_types = sorted({e["affinity_type"] for e in overlay.entries if e.get("affinity_type")},
+                             key=POTENCY_TYPES.index)
+        all_types = {t for e in overlay.entries for t in (e.get("potencies") or {})}
+        if len(shown_types) > 1:
+            lines += ["", f"The potencies above mix affinity types ({', '.join(shown_types)}), which are not comparable: "
+                      "say so when comparing them."]
+        if len(all_types) > 1:
+            lines += ["", "The viewer's Affinity menu switches the bars between "
+                      f"{', '.join(t for t in POTENCY_TYPES if t in all_types)}."]
+        if overlay.skipped:
+            lines += ["", "Skipped:", *[f"- {s['reason']}" for s in overlay.skipped]]
+        if overlay.notes:
+            lines += ["", *overlay.notes]
+        lines += ["", f"Files (on the machine running mcp-bindingdb): {folder} — one mmCIF per entry (superposed)" + (", overlay.html (the viewer, standalone)" if page else ""), *figure_text]
+        return CallToolResult(
+            content=[TextContent(type="text", text="\n".join(lines))],
+            structured_content={"overlay_id": overlay_id, "title": heading, "reference": overlay.reference,
+                                "entries": overlay.summary(), "residues": overlay.residues,
+                                "skipped": overlay.skipped, "notes": overlay.notes, "folder": str(folder),
+                                "contact_figure_id": figure_id, "client_shows_viewer": client["apps"]})
+
+    @mcp.tool(annotations=ToolAnnotations(readOnlyHint=True, openWorldHint=False))
+    def open_overlay_viewer(
+        overlay_id: Annotated[str, Field(description="The overlay_id overlay_binding_site returned")],
+    ) -> str:
+        """Open an overlay's 3D viewer (the standalone overlay.html overlay_binding_site wrote) in the default web
+        browser of the computer running mcp-bindingdb. Use it when the chat cannot show the viewer: the client
+        does not display MCP Apps panels, the chat reaches this server through a linked computer, or the user
+        says no viewer appeared."""
+        page = overlays_dir / overlay_id / "overlay.html"
+        if not overlay_id_re.fullmatch(overlay_id) or not page.is_file():
+            raise ToolError(f"No viewer for overlay {overlay_id!r} (overlays are kept for the last 30 runs)")
+        try:
+            opened = webbrowser.open(page.resolve().as_uri())
+        except webbrowser.Error:
+            opened = False
+        if not opened:
+            return f"Could not open a browser on this computer; the viewer is the file {page}."
+        return (f"Opened {page} in the default browser of the computer running mcp-bindingdb. It is the same viewer "
+                "as the chat panel, with the structures included, so it works offline and can be shared as one file.")
+
+    @mcp.tool(annotations=READ_ONLY, meta={"ui": {**OVERLAY_META["ui"], "visibility": ["app"]}})
+    def overlay_data(overlay_id: str) -> dict[str, Any]:
+        """For the overlay viewer: the superposed structures overlay_binding_site wrote, by its overlay_id."""
+        path = overlays_dir / overlay_id / "overlay.json"
+        if not overlay_id_re.fullmatch(overlay_id) or not path.is_file():
+            raise ToolError(f"No overlay {overlay_id!r}")
+        return json.loads(path.read_text())
 
 
 def _add_sar_tools(mcp: MCPServer, db: Database, property_filter) -> None:

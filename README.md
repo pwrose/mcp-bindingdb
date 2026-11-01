@@ -44,7 +44,7 @@ transcript with the prompt, the answer, its figures and structure drawings
        "mcp-bindingdb": {
          "command": "uv",
          "args": ["--directory", "/path/to/mcp-bindingdb", "run", "--extra", "substructure", "--extra", "name",
-                  "mcp-bindingdb"]
+                  "--extra", "structures", "mcp-bindingdb"]
        }
      }
    }
@@ -54,7 +54,7 @@ transcript with the prompt, the answer, its figures and structure drawings
    folder. To use it from any folder:
 
    ```bash
-   claude mcp add --scope user mcp-bindingdb -- uv --directory /path/to/mcp-bindingdb run --extra substructure --extra name mcp-bindingdb
+   claude mcp add --scope user mcp-bindingdb -- uv --directory /path/to/mcp-bindingdb run --extra substructure --extra name --extra structures mcp-bindingdb
    ```
 
 If some tools are missing in a chat, check that they are switched on in the chat's tools menu.
@@ -66,6 +66,15 @@ molecule, paste SMILES/SMARTS, or resolve a chemical name with the existing name
 substructure or similarity search (default threshold 0.7), optionally restrict affinity in nM, and
 choose **Run query** to see the results in the editor. The assistant fetches them (`get_editor_results`) when you ask about them. The sketcher and chemistry engines are bundled
 with the server. See [setup and testing](docs/structure-editor.md).
+
+## Binding-site overlays
+
+Ask e.g. **"Overlay the crystal structures of the most potent HIV-1 protease inhibitors"**. The server
+finds the target's ligands that have PDB complexes (`find_pdb_complexes`), downloads the entries from PDBe,
+superposes their binding sites on the pocket's Cα atoms, and shows them in a 3D viewer in the chat:
+protein chains as lines and ligands as sticks, each switched on or off per entry, with hydrogen bonds on
+request and a table of the residues each ligand touches. It also writes the superposed complexes as mmCIF
+files. See [Tools](docs/tools.md#find_pdb_complexes-and-overlay_binding_site).
 
 ## Tools
 
@@ -87,6 +96,9 @@ with the server. See [setup and testing](docs/structure-editor.md).
 | `decompose_r_groups` | SAR table of a series: a target's ligands containing a core, each R-group position in its own column |
 | `matched_molecular_pairs` | Pairs of a target's ligands differing by one group, and what the change did to potency |
 | `activity_cliffs` | Near-identical ligands of a target with very different potency |
+| `find_pdb_complexes` | A target's ligands with structures in the PDB: ligand code, entries and potency |
+| `overlay_binding_site` | PDB complexes of a target's ligands superposed on the binding site, in a 3D viewer in the chat, with each ligand's contacts and hydrogen bonds |
+| `open_overlay_viewer` | Opens an overlay's 3D viewer in the browser on the computer running the server, for chats that cannot show the panel (e.g. reached through a linked computer) |
 | `describe_tables` | Table list with descriptions, or the columns of one table |
 | `run_sql` | Any read-only SQL query |
 | `create_transcript` | A record of the session as Markdown, or as an HTML page with structure drawings: your prompts and Claude's answers, and, if you ask, every BindingDB tool call with its result |
@@ -103,7 +115,7 @@ Ask for a transcript at the end of a chat, e.g. "create a transcript of this ses
 (change this with `--transcript-dir` or `MCP_BINDINGDB_TRANSCRIPT_DIR`).
 Add "with the tool calls" to include every BindingDB lookup and its result.
 
-All tools are read-only, apart from the transcripts and figures, which are written to files. Only `chemical_name_to_smiles` uses the network, to look names up in PubChem.
+All tools are read-only, apart from the transcripts and figures, which are written to files. Only `chemical_name_to_smiles` (PubChem) and `overlay_binding_site` (PDBe, RCSB) use the network.
 See [Tools](docs/tools.md) for how the searches work and notes on the data.
 
 ## More

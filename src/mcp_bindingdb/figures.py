@@ -783,3 +783,121 @@ def image_html(title: str, data: bytes, ext: str) -> str:
     and caption follow as text in the transcript."""
     uri = f"data:{IMAGE_TYPES[ext]};base64,{base64.b64encode(data).decode()}"
     return f'<p><img class="figure" alt="{html.escape(title)}" src="{uri}"></p>\n'
+
+
+# --- binding-site contact map (overlay_binding_site) -------------------------------------------------------
+
+CONTACT_COLOUR, HBOND_COLOUR = "#9ecae1", "#08519c"
+_CM_CSS = """
+.cm{margin:1.5em 0;font:14px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;color:#1c2321}
+.cm h3{margin:0 0 4px;font-size:1.3em}
+.cm-desc{margin:0 0 12px;color:#5c6763;max-width:75ch}
+.cm-wrap{overflow-x:auto}
+.cm table{border-collapse:collapse;font-size:12px}
+.cm th{font-weight:normal;color:#5c6763}
+.cm thead th{height:5.5em;vertical-align:bottom;padding:0}
+.cm thead th span{display:inline-block;writing-mode:vertical-rl;transform:rotate(180deg);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;padding:2px 0}
+.cm tbody th{text-align:left;padding:2px 10px 2px 0;white-space:nowrap;color:#1c2321}
+.cm tbody th i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.cm td{width:16px;height:16px;padding:0;border:1px solid #fff;background:#eceeec}
+.cm td.c{background:#9ecae1}.cm td.h{background:#08519c}
+.cm-legend{display:flex;gap:18px;margin:10px 0 0;font-size:12px;color:#5c6763}
+.cm-legend span{display:inline-flex;align-items:center;gap:6px}
+.cm-sw{width:13px;height:11px;border-radius:2px;display:inline-block}
+.cm-notes{margin:10px 0 0;padding-left:1.2em;font-size:13px;color:#5c6763}
+"""
+
+
+@dataclass
+class ContactRow:
+    """One ligand of a contact map: its label, entry colour, and the residues it touches or H-bonds to."""
+    label: str
+    colour: str
+    contacts: set[str]
+    hbonds: set[str]
+
+
+def _cell(row: ContactRow, residue: str) -> str:
+    return "h" if residue in row.hbonds else "c" if residue in row.contacts else ""
+
+
+def contact_map(title: str, description: str, rows: list[ContactRow], residues: list[str],
+                notes: list[str] | None = None) -> tuple[str, bytes | None]:
+    """A ligands × residues map of binding-site contacts, H-bonded residues darker: an HTML block, and a PNG
+    (None without Pillow)."""
+    esc = html.escape
+    head = "".join(f'<th scope="col"><span>{esc(r)}</span></th>' for r in residues)
+    body = "".join(
+        f'<tr><th scope="row"><i style="background:{esc(row.colour)}"></i>{esc(row.label)}</th>'
+        + "".join(f'<td class="{_cell(row, r)}" title="{esc(r)}"></td>' for r in residues) + "</tr>"
+        for row in rows)
+    block = (f'<figure class="cm"><style>{_CM_CSS}</style><h3>{esc(title)}</h3>'
+             + (f'<p class="cm-desc">{esc(description)}</p>' if description else "")
+             + f'<div class="cm-wrap"><table><thead><tr><th></th>{head}</tr></thead><tbody>{body}</tbody></table></div>'
+             + '<p class="cm-legend"><span><i class="cm-sw" style="background:#9ecae1"></i>contact (≤ 4 Å)</span>'
+             + '<span><i class="cm-sw" style="background:#08519c"></i>hydrogen bond (N/O–N/O ≤ 3.5 Å)</span></p>'
+             + (f'<ul class="cm-notes">{"".join(f"<li>{esc(n)}</li>" for n in notes)}</ul>' if notes else "")
+             + "</figure>\n")
+    try:
+        png = _contact_png(title, description, rows, residues, notes or [])
+    except ImportError:
+        png = None
+    return block, png
+
+
+def _contact_png(title: str, description: str, rows: list[ContactRow], residues: list[str], notes: list[str],
+                 s: int = 2) -> bytes:
+    from PIL import Image, ImageDraw
+
+    ink, muted, empty = (28, 35, 33), (92, 103, 99), (236, 238, 236)
+    f_title, f_text, f_small = _font(20 * s), _font(13 * s), _font(11 * s)
+    pad, cell, gap = 14 * s, 16 * s, 1 * s
+    measure = ImageDraw.Draw(Image.new("RGB", (1, 1)))
+    lh = lambda font: round(font.size * 1.35)  # noqa: E731
+    label_w = int(max((measure.textlength(_plain(f_text, r.label), font=f_text) for r in rows), default=0)) + 22 * s
+    head_h = int(max((measure.textlength(r, font=f_small) for r in residues), default=0)) + 6 * s
+    grid_w = len(residues) * (cell + gap)
+    width = max(pad * 2 + label_w + grid_w, 420 * s)
+    desc = _wrap(measure, description, f_text, width - 2 * pad) if description else []
+    note_lines = [line for n in notes for line in _wrap(measure, n, f_text, width - 2 * pad)]
+    height = (pad + lh(f_title) + len(desc) * lh(f_text) + 8 * s + head_h + len(rows) * (cell + gap)
+              + 12 * s + lh(f_text) + len(note_lines) * lh(f_text) + pad)
+    image = Image.new("RGB", (width, height), "white")
+    d = ImageDraw.Draw(image)
+    y = pad
+    d.text((pad, y), _plain(f_title, title), font=f_title, fill=ink)
+    y += lh(f_title)
+    for line in desc:
+        d.text((pad, y), _plain(f_text, line), font=f_text, fill=muted)
+        y += lh(f_text)
+    y += 8 * s
+    x0 = pad + label_w
+    for k, residue in enumerate(residues):  # column labels, rotated to read bottom-up
+        w = int(measure.textlength(residue, font=f_small)) + 2 * s
+        label = Image.new("RGBA", (w, lh(f_small)), (255, 255, 255, 0))
+        ImageDraw.Draw(label).text((0, 0), residue, font=f_small, fill=muted)
+        label = label.rotate(90, expand=True)
+        image.paste(label, (x0 + k * (cell + gap) + (cell - label.width) // 2, y + head_h - label.height - 3 * s), label)
+    y += head_h
+    for row in rows:
+        d.rounded_rectangle((pad, y + 3 * s, pad + 10 * s, y + 13 * s), radius=2 * s, fill=row.colour)
+        d.text((pad + 16 * s, y + (cell - lh(f_text)) // 2), _plain(f_text, row.label), font=f_text, fill=ink)
+        for k, residue in enumerate(residues):
+            kind = _cell(row, residue)
+            fill = HBOND_COLOUR if kind == "h" else CONTACT_COLOUR if kind == "c" else empty
+            x = x0 + k * (cell + gap)
+            d.rectangle((x, y, x + cell - 1, y + cell - 1), fill=fill)
+        y += cell + gap
+    y += 12 * s
+    x = pad
+    for colour, text in ((CONTACT_COLOUR, "contact (≤ 4 Å)"), (HBOND_COLOUR, "hydrogen bond (N/O–N/O ≤ 3.5 Å)")):
+        d.rounded_rectangle((x, y + 4 * s, x + 13 * s, y + 15 * s), radius=2 * s, fill=colour)
+        d.text((x + 19 * s, y), _plain(f_text, text), font=f_text, fill=muted)
+        x += 19 * s + int(d.textlength(_plain(f_text, text), font=f_text)) + 18 * s
+    y += lh(f_text)
+    for line in note_lines:
+        d.text((pad, y), _plain(f_text, line), font=f_text, fill=muted)
+        y += lh(f_text)
+    out = io.BytesIO()
+    image.save(out, format="PNG", optimize=True)
+    return out.getvalue()

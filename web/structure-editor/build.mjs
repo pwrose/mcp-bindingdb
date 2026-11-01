@@ -54,3 +54,11 @@ await build({configFile:false,build:{lib:{entry:path.resolve('ui/figure.js'),nam
 const figure=fs.readFileSync('ui/figure.html','utf8').replace('/*FIGURE*/',()=>fs.readFileSync('.bridge/figure.js','utf8').replace(/<\/script/gi,'<\\/script'));
 fs.writeFileSync(path.resolve('../../src/mcp_bindingdb/assets/figure-viewer.html.gz'),gzipSync(Buffer.from(figure),{level:9}));
 console.log('Built figure panel ('+(Buffer.byteLength(figure)/1024).toFixed(0)+' KB)');
+
+// Overlay viewer: overlay_binding_site's superposed complexes in 3D (src/mcp_bindingdb/structure_editor.py, OVERLAY_URI).
+await build({configFile:false,build:{lib:{entry:path.resolve('ui/overlay.js'),name:'BindingDBOverlay',formats:['iife'],fileName:()=> 'overlay.js'},outDir:'.bridge',emptyOutDir:false,minify:true}});
+const overlay=fs.readFileSync('ui/overlay.html','utf8')
+  .replace('/*3DMOL*/',()=>fs.readFileSync(require.resolve('3dmol/build/3Dmol-min.js'),'utf8').replace(/<\/script/gi,'<\\/script'))
+  .replace('/*OVERLAY*/',()=>fs.readFileSync('.bridge/overlay.js','utf8').replace(/<\/script/gi,'<\\/script'));
+fs.writeFileSync(path.resolve('../../src/mcp_bindingdb/assets/overlay-viewer.html.gz'),gzipSync(Buffer.from(overlay),{level:9}));
+console.log('Built overlay viewer ('+(Buffer.byteLength(overlay)/1024).toFixed(0)+' KB)');

@@ -3,9 +3,9 @@
 ## Run the server
 
 ```bash
-uv run --extra substructure --extra name mcp-bindingdb   # stdio
-uv run --extra substructure --extra name mcp-bindingdb --transport streamable-http --port 8000
-uv run mcp-bindingdb                                     # without RDKit and OPSIN
+uv run --extra substructure --extra name --extra structures mcp-bindingdb   # stdio
+uv run --extra substructure --extra name --extra structures mcp-bindingdb --transport streamable-http --port 8000
+uv run mcp-bindingdb                                     # without RDKit, OPSIN and gemmi
 ```
 
 | Option | Effect |
@@ -14,19 +14,20 @@ uv run mcp-bindingdb                                     # without RDKit and OPS
 | `--transport stdio\|streamable-http` | Transport (default stdio) |
 | `--host`, `--port` | Address for streamable-http (default 127.0.0.1:8000) |
 | `--timeout SECONDS` | Per-query time limit (default 30) |
-| `--no-network` | Do not look names up in PubChem (`chemical_name_to_smiles`) |
+| `--no-network` | Do not look names up in PubChem (`chemical_name_to_smiles`) or download PDB entries (`overlay_binding_site` then uses only `data/pdb-cache/`) |
 
 The `substructure` extra (RDKit) enables `substructure_search` and `similarity_search`, which also
 need the index, and `exact_structure_search`, `draw_structure_grid`, `draw_r_group_table` and the SAR tools
 (`decompose_r_groups`, `matched_molecular_pairs`, `activity_cliffs`), which do not; the `name`
-extra (pyopsin, needs Java) enables OPSIN in `chemical_name_to_smiles`. See
+extra (pyopsin, needs Java) enables OPSIN in `chemical_name_to_smiles`; the `structures` extra (gemmi)
+enables `find_pdb_complexes` and `overlay_binding_site`. See
 [Building the database](building-the-database.md).
 
 ## Tests
 
 ```bash
 uv run pytest
-uv run pytest -m "not network"   # without the live PubChem test
+uv run pytest -m "not network"   # without the live PubChem and PDBe tests
 ```
 
 The tests run against the built database and are skipped if it is missing.

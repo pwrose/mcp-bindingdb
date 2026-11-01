@@ -7,6 +7,7 @@ The generated HTML embeds these components; retain their license notices when re
 | JSME | vendored from `jsme-editor/jsme-editor.github.io`, commit `74de5c7b3a594bd9cef753c6391819a656a3335a` | BSD-3-Clause |
 | RDKit.js | `@rdkit/rdkit` 2026.9.1, pinned in package-lock.json | BSD-3-Clause |
 | MCP Apps SDK | `@modelcontextprotocol/ext-apps` 2.0.3, pinned in package-lock.json | MIT |
+| 3Dmol.js (overlay viewer) | `3dmol` 2.5.5, pinned in package-lock.json | BSD-3-Clause |
 
 Full notices are packaged under `src/mcp_bindingdb/assets/licenses/`. The app's source follows the
 repository's BSD-3-Clause license. The generated asset contains bundled JavaScript/WebAssembly;

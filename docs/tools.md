@@ -18,6 +18,9 @@
 | `decompose_r_groups` | SAR table of one series: a target's ligands containing a core, with each R-group position in its own column and the compound's potency (needs RDKit) |
 | `matched_molecular_pairs` | Pairs of a target's ligands differing by one group, with the effect on potency; or one row per transformation (needs RDKit) |
 | `activity_cliffs` | Pairs of a target's ligands that are structurally close but far apart in potency, by SALI (needs RDKit) |
+| `find_pdb_complexes` | A target's measured ligands with PDB complexes: ligand code, entries, how the PDB record was matched, and potency; also entries found in the PDB by the compounds' InChIKeys (RCSB) |
+| `overlay_binding_site` | PDB complexes of a target's ligands superposed on the binding site, shown in a 3D viewer in the chat, with contacts, hydrogen bonds and a contact-map figure (needs gemmi, the `structures` extra; downloads from PDBe) |
+| `open_overlay_viewer` | Opens an overlay's 3D viewer in the browser on the computer running the server, for chats that cannot show the panel (e.g. reached through a linked computer) |
 | `get_editor_results` | Results of the searches the user ran in the structure editor ([structure-editor.md](structure-editor.md)): the tool, its arguments and its result, by `editor_id` |
 | `create_transcript` | Markdown, HTML (with structure drawings) or JSON transcript of the session: prompts and answers, optionally followed by the logged tool calls with their results |
 | `draw_structure_grid` | Compounds side by side, aligned on a shared core that is highlighted, with binding bars per target; shown in the chat and included in transcripts (needs RDKit) |
@@ -271,6 +274,77 @@ the image was made where the server cannot read it, `data` (the image base64-enc
 through the chat), plus a `title` and optional `caption`. The server copies the image into
 `transcripts/figures/` and returns its figure id. HTML transcripts embed the image; Markdown transcripts
 link to the copy. It needs no RDKit.
+
+## find_pdb_complexes and overlay_binding_site
+
+`find_pdb_complexes` lists a target's ligands (by `target_id` or `uniprot`, like `find_ligands_for_target`)
+whose BindingDB record carries PDB entries (`monomer.pdb_ids_exact`) and a ligand code
+(`monomer.het_pdb`). Those links often sit on a duplicate record (amprenavir's measurements are on
+BDBM577, its PDB ids on BDBM50163391), so records are matched on the InChIKey's first block; `match` says
+whether the PDB record is the compound itself (`record`), has the same InChIKey (`same structure`) or only
+the same connectivity (`connectivity only`: possibly a stereoisomer). By default only entries that
+BindingDB links to the target, or to another record of its UniProt accession, are listed;
+`only_linked=false` adds the ligands' other entries. BindingDB has no PDB link at all for some compounds
+(nilotinib, though 3CS9 is its complex with ABL1), so with network access the tool also asks RCSB for the
+ligands (with InChIKeys) of every PDB entry of the target's UniProt accessions and adds those that are the
+target's measured compounds by InChIKey (`found_in_pdb_by_inchikey`; cached in
+`data/pdb-cache/rcsb-ligands-*.json` for 30 days). An entry with no BindingDB accession in the PDB (HIV-1
+protease is P04585 in BindingDB, P03366 in the PDB) is not found this way. Potency is the median of
+the Ki or Kd values where there are any, otherwise of IC50 or EC50 (see `affinity_types`).
+
+`overlay_binding_site` takes compounds, PDB ids (`'3NU3'`, optionally with the ligand code, `'1HVI:A77'`)
+or neither (the most potent ligands with complexes, the best resolution entry of each by the RCSB Data
+API). An entry's ligand that was not measured on the target record (BindingDB splits HIV-1 protease over
+many records, some without a UniProt accession) is found by its ligand code, and its potency is taken
+from another record of the same protein, one whose sequence is at least 90% identical to the target's;
+the potency then says which record ("on record 7501"). A ligand code BindingDB does not link to the
+entry at all (nilotinib, `NIL`, in 3CS9) is matched to compounds by the InChIKey the RCSB Data API gives
+the code. When several compounds match one entry's ligand, the compound itself wins over a stereoisomer
+or isotope-labelled analog (same connectivity only), and the most measured of equal compounds is used.
+For each entry it
+(`src/mcp_bindingdb/structures.py`):
+
+1. Downloads the PDBe "updated" mmCIF (with SIFTS UniProt numbering on every atom), or the RCSB file, into
+   `data/pdb-cache/`. Only the first model is used, without hydrogens, waters or alternative conformations.
+2. Picks the instance of the ligand code with the most protein atoms within 4.5 Å, and as binding-site
+   chains the protein chains it touches (a chain with under a tenth of the top chain's contacts, such as a
+   crystal-packing neighbour, is left out). When some chains map to the target's accessions in SIFTS, only
+   those are used.
+3. Skips the entry if that chain is under 40% identical to the target's BindingDB sequence: the ligand
+   is then bound to another protein. The identity is checked against the sequence, not the accession,
+   because they often differ (BindingDB's HIV-1 protease is P04585, SIFTS maps the PDB chains to P03366).
+4. Pairs its residues with the reference entry's (default: best resolution) by sequence alignment,
+   trying every assignment of chains to reference chains for homo-oligomers, and fits the paired Cα
+   atoms. The pocket is then the reference residues within `pocket_cutoff` Å (default 8) of either
+   ligand, and the final fit uses only their Cα atoms. Both fits reject outliers as PyMOL's `align`
+   does, so a loop that moved (CDK2's activation loop moves up to 30 Å between entries) does not drag
+   the rest. `pocket_rmsd` is over the pocket atoms the fit kept; `moved` lists the pocket residues more
+   than 2 Å from their reference position.
+5. Lists the residues within 4 Å of the ligand and its hydrogen bonds, as polar contacts: ligand N/O to
+   protein N/O 2.5–3.5 Å apart, no angle check (the files have no hydrogens). Residues are named after
+   their reference counterpart (`D25:A`), so the same position has the same name in every entry.
+
+The viewer (`ui://bindingdb/overlay.html`, built from `web/structure-editor/ui/overlay.*` with
+3Dmol.js) loads the structures with the viewer-only tool `overlay_data`, because they are too large for
+the model's context (about 150 kB per entry). It draws each entry's chains as lines (or a Cα trace,
+also as lines, or a cartoon) and its ligand as sticks, in the entry's colour, with double and triple bonds
+from the entry's chemical component dictionary (aromatic rings in Kekulé form; entries fetched from RCSB,
+whose files lack that table, show single bonds only). Each entry has its own
+checkboxes for its protein, its ligand, its hydrogen bonds (dashed lines in the entry's colour, with
+distances) and its binding-site surface (a transparent molecular surface of the residues within 5 Å of
+its ligand; on for the first entry, the reference, only), and a bar for the ligand's potency against the
+target (log scale, coloured by affinity type, fainter for fewer than 3 measurements, as in
+`draw_structure_grid`), with a box plot under it when there are several values (whiskers: range; box: middle
+half; tick: median). The potency is a Ki or Kd where the compound has one (the more measured of the two),
+otherwise IC50 or EC50; `affinity_types` changes that, and when the entries have several types an Affinity
+menu switches all bars to one type. Under the viewer are the protein style, residue labels (none, the residues
+hydrogen-bonded to the ligands shown, or all their contact residues, named as in the reference entry), a
+surface-opacity slider and a contact
+table. Surfaces are computed without web
+workers, which the chat's sandbox may block. The tool also writes, in
+`data/overlays/<overlay_id>/`, an mmCIF file per superposed entry,
+`overlay.json` and `overlay.html` (the viewer with the data inlined, which opens in any browser), and
+logs a contact-map figure (ligands × residues) for transcripts. The 30 most recent overlays are kept.
 
 ## Data notes
 

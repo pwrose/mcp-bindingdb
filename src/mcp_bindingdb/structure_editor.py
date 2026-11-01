@@ -24,6 +24,11 @@ URI = "ui://bindingdb/structure-editor.html"
 # Shows a figure tool's image in the chat; hosts show an image in a tool result only as a small thumbnail.
 FIGURE_URI = "ui://bindingdb/figure.html"
 FIGURE_META = {"ui": {"resourceUri": FIGURE_URI}}
+# Shows overlay_binding_site's superposed complexes in 3D (web/structure-editor/ui/overlay.js).
+OVERLAY_URI = "ui://bindingdb/overlay.html"
+OVERLAY_META = {"ui": {"resourceUri": OVERLAY_URI}}
+OVERLAY_ASSET = Path(__file__).parent / "assets" / "overlay-viewer.html.gz"
+OVERLAY_DATA_SLOT = "window.__OVERLAY_DATA__=null"
 READ_ONLY = ToolAnnotations(
     readOnlyHint=True, destructiveHint=False, idempotentHint=True, openWorldHint=False
 )
@@ -103,6 +108,18 @@ def add_editor_results_tool(mcp: MCPServer, searches: EditorSearches) -> None:
         return {"editor_id": editor_id, "searches": runs if all_searches else runs[-1:], "n_searches": len(runs)}
 
 
+def overlay_viewer_html(data: dict[str, Any] | None = None) -> str | None:
+    """The overlay viewer page; with `data` (overlay_binding_site's viewer data) inlined, a standalone page
+    that needs no MCP host. None when the viewer has not been built."""
+    if not OVERLAY_ASSET.is_file():
+        return None
+    page = gzip.decompress(OVERLAY_ASSET.read_bytes()).decode("utf-8")
+    if data is None:
+        return page
+    payload = json.dumps(data).replace("</", "<\\/")
+    return page.replace(OVERLAY_DATA_SLOT, "window.__OVERLAY_DATA__=" + payload, 1)
+
+
 def create_editor_extension(network: bool = True, searches: EditorSearches | None = None) -> Apps:
     apps = Apps()
     bundle_dir = Path(__file__).parent / "assets" / "structure-editor"
@@ -123,6 +140,10 @@ def create_editor_extension(network: bool = True, searches: EditorSearches | Non
         title="BindingDB figure",
         csp=ResourceCsp(resource_domains=["data:"]),
     )
+    viewer = overlay_viewer_html()
+    if viewer is not None:
+        apps.add_html_resource(OVERLAY_URI, viewer, title="BindingDB binding-site overlay",
+                               csp=ResourceCsp(resource_domains=["data:", "blob:"]))
 
     @apps.tool(resource_uri=URI, annotations=READ_ONLY, title="Chemical structure editor (draw a molecule)")
     def open_structure_editor(

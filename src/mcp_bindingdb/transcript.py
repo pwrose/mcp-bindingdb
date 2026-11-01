@@ -13,7 +13,7 @@ from typing import Any
 #: Not logged: schema lookups, and the transcript tools themselves.
 UNLOGGED_TOOLS = {"describe_tables", "create_transcript", "transcript_to_html", "reset_tool_log", "get_tool_log",
                   "draw_structure_grid", "add_figure",  # figures are logged separately
-                  "editor_search", "figure_image"}  # the panels' own calls; get_editor_results is logged
+                  "editor_search", "figure_image", "overlay_data", "open_overlay_viewer"}  # the panels' own calls; get_editor_results is logged
 
 
 class ToolLog:

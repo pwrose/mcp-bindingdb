@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Binding-site overlay</title>
+<style>
+:root{--bg:#fff;--ink:#1c2321;--muted:#5c6763;--line:#dfe3e0;--soft:#f3f5f3;--accent:#0b6e99;--hb:#d6267d}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d2120;--ink:#e6ebe8;--muted:#9aa5a0;--line:#39403d;--soft:#262b29;--accent:#5cb8e0;--hb:#ff6fb5}}
+:root[data-theme="dark"]{--bg:#1d2120;--ink:#e6ebe8;--muted:#9aa5a0;--line:#39403d;--soft:#262b29;--accent:#5cb8e0;--hb:#ff6fb5}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:13px/1.4 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+header{padding:10px 14px 6px}
+h1{font-size:15px;margin:0 0 2px}
+.sub{color:var(--muted);margin:0}
+.main{display:grid;grid-template-columns:minmax(0,1fr) 210px;gap:10px;padding:6px 14px 10px}
+@media (max-width:720px){.main{grid-template-columns:minmax(0,1fr)}}
+#stage{position:relative;height:480px;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff}
+#tip{position:absolute;left:8px;bottom:8px;padding:3px 7px;border-radius:4px;background:rgba(28,35,33,.82);color:#fff;font-size:12px;pointer-events:none}
+.panel{display:flex;flex-direction:column;gap:10px;min-width:0}
+.box{border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+.box h2{font-size:12px;margin:0 0 6px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+.view{min-width:0}
+.opts{display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px;margin-top:8px}
+.opts label{display:flex;align-items:center;gap:6px;cursor:pointer}
+.opts select{font:inherit;color:inherit;background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:1px 4px}
+.opts input[type=range]{width:120px;accent-color:var(--accent)}
+.opts output{font-variant-numeric:tabular-nums;color:var(--muted);min-width:3ch}
+.opts .btn{margin-left:auto}
+table.entries{width:100%;border-collapse:collapse}
+.entries th{font-weight:600;color:var(--muted);font-size:11px;text-align:left;padding:0 0 3px;white-space:nowrap}
+.entries th.c{text-align:center;width:16px}
+.entries td{padding:0 0 4px;vertical-align:middle}
+.entries tr.head td{padding:4px 0 1px;border-top:1px solid var(--line)}
+.entries td.c{text-align:center;width:16px}
+.entries td.c input{margin:0;width:13px;height:13px}
+.entries input:disabled{opacity:.3}
+.bar{position:relative;height:15px;margin:1px 0;background:var(--soft);border-radius:2px;overflow:hidden}
+.bar i{position:absolute;left:0;top:0;bottom:0;border-radius:2px;opacity:.5}
+.bar.faint i{opacity:.25}
+.spread{display:block;width:100%;height:8px;overflow:visible}
+.spread line,.spread rect{stroke:var(--ink);stroke-opacity:.7;stroke-width:1;vector-effect:non-scaling-stroke}
+.bar span{position:absolute;left:5px;top:0;line-height:15px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10.5px;color:var(--ink);white-space:nowrap}
+.legend,.key{display:flex;flex-wrap:wrap;gap:3px 10px;margin:6px 0 0;color:var(--muted);font-size:11px;line-height:1.35}
+.key b{font-weight:600;color:var(--ink)}
+.atype select{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:0 3px;max-width:150px}
+.entries .who{cursor:pointer}
+.entries .who b{font-weight:600}
+.entries .who small{display:block;color:var(--muted);font-size:11px;line-height:1.3}
+.entries .who .line{white-space:nowrap}
+.entries .who .meta{display:inline;font-size:10px;margin-left:3px}
+.entries .who .meta abbr{text-decoration:underline dotted;cursor:help}
+.sw{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:0}
+.all{font:inherit;font-size:11px;font-weight:600;color:var(--accent);background:none;border:0;padding:0 2px;cursor:pointer}
+button.btn{font:inherit;color:var(--ink);background:var(--soft);border:1px solid var(--line);border-radius:5px;padding:3px 9px;cursor:pointer}
+.skipped,.notes{color:var(--muted);font-size:12px;margin:0;padding-left:1.1em}
+details{padding:0 14px 12px}
+summary{cursor:pointer;color:var(--muted);font-weight:600}
+.cm{overflow-x:auto;margin-top:8px}
+.cm table{border-collapse:collapse;font-size:11px}
+.cm thead th{height:5.2em;vertical-align:bottom;padding:0;font-weight:normal;color:var(--muted)}
+.cm thead th span{display:inline-block;writing-mode:vertical-rl;transform:rotate(180deg);font-family:ui-monospace,Menlo,monospace}
+.cm tbody th{text-align:left;font-weight:normal;padding:1px 8px 1px 0;white-space:nowrap}
+.cm td{width:14px;height:14px;padding:0;border:1px solid var(--bg);background:var(--soft)}
+.cm td.c{background:#9ecae1}.cm td.h{background:#08519c}
+#status{padding:14px;color:var(--muted)}
+[hidden]{display:none!important}
+</style></head>
+<body>
+<p id="status">Loading the superposed structures…</p>
+<div id="app" hidden>
+<header><h1 id="title"></h1><p class="sub" id="subtitle"></p></header>
+<div class="main">
+  <div class="view">
+    <div id="stage"><div id="tip" hidden></div></div>
+    <div class="opts">
+      <label>Protein <select id="proteinStyle"><option value="line">lines</option><option value="trace">Cα trace</option><option value="cartoon">cartoon</option></select></label>
+      <label>Labels <select id="labels"><option value="none">none</option><option value="hbonds">H-bond residues</option><option value="contacts">contact residues</option></select></label>
+      <label>Surface opacity <input type="range" id="opacity" min="0.05" max="1" step="0.05" value="0.65"><output id="opacityValue">65%</output></label>
+      <button class="btn" id="reset">Reset view</button>
+    </div>
+  </div>
+  <div class="panel">
+    <div class="box">
+      <table class="entries"><thead><tr><th>Entries</th>
+        <th class="c"><button class="all" data-col="protein" title="Protein chains: show or hide all">P</button></th>
+        <th class="c"><button class="all" data-col="ligand" title="Ligands: show or hide all">L</button></th>
+        <th class="c"><button class="all" data-col="hbonds" title="Hydrogen bonds: show or hide all">H</button></th>
+        <th class="c"><button class="all" data-col="surface" title="Binding-site surfaces: show or hide all">S</button></th></tr></thead><tbody id="rows"></tbody></table>
+      <p class="key atype" id="atypeBox" hidden><label>Affinity <select id="atype"></select></label></p>
+      <p class="key"><span><b>P</b> protein</span><span><b>L</b> ligand</span><span><b>H</b> H-bonds</span><span><b>S</b> surface</span><span>(click a letter for all)</span></p>
+      <p class="key" id="rmsdNote"></p>
+      <p class="legend" id="legend"></p>
+    </div>
+    <div class="box" id="skippedBox" hidden><h2>Skipped</h2><ul class="skipped" id="skipped"></ul></div>
+  </div>
+</div>
+<details id="contacts"><summary>Contacts and hydrogen bonds by residue</summary><div class="cm" id="cm"></div><ul class="notes" id="notes"></ul></details>
+</div>
+<script>window.__OVERLAY_DATA__=null</script>
+<script>/*3DMOL*/</script>
+<script>/*OVERLAY*/</script>
+</body></html>

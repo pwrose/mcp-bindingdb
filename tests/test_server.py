@@ -56,9 +56,10 @@ async def test_lists_all_tools(server):
         "add_figure", "open_structure_editor", "editor_pubchem_candidates", "editor_search", "get_editor_results",
         "figure_image",
         "exact_structure_search", "decompose_r_groups", "matched_molecular_pairs", "activity_cliffs",
+        "find_pdb_complexes", "overlay_binding_site", "overlay_data", "open_overlay_viewer",
     }
     writes = {"reset_tool_log", "transcript_to_html", "create_transcript", "draw_structure_grid",
-              "draw_r_group_table", "add_figure"}  # write files
+              "draw_r_group_table", "add_figure", "overlay_binding_site"}  # write files
     assert all(t.annotations.read_only_hint for name, t in tools.items() if name not in writes)
 
 
@@ -564,3 +565,104 @@ def test_pubchem_lookup_live():
     found = names.pubchem_lookup("Ibrance")
     assert found.inchi_key == "AHJRHEGDXFFMBM-UHFFFAOYSA-N" and found.cid == 5330286
     assert names.pubchem_lookup("not a compound xyzzy") is None
+
+
+HIV_PROTEASE = 223  # polymer 'Gag-Pol polyprotein [489-587]' (P04585)
+AMPRENAVIR = 577  # its PDB ids (ligand code 478) are on another record, BDBM50163391
+TMC126_ENTRY = "2I4U:DJR"  # TMC-126 (BDBM9236) is measured only on other HIV-1 protease records
+
+
+async def test_find_pdb_complexes_matches_records_by_inchikey(server):
+    out = await ok(server, "find_pdb_complexes", target_id=HIV_PROTEASE, limit=200)
+    assert out["rows"] and all(r["ligand_code"] and r["pdb_ids"] for r in out["rows"])
+    assert {r["match"] for r in out["rows"]} <= {"record", "same structure", "connectivity only"}
+    measured = [r for r in out["rows"] if r["median_nm"] is not None]
+    binding = [r["affinity_type"] in ("Ki", "Kd") for r in measured]
+    assert binding == sorted(binding, reverse=True)  # compounds with Ki/Kd first
+    for group in (True, False):  # then most potent first
+        potencies = [r["median_nm"] for r, b in zip(measured, binding) if b == group]
+        assert potencies == sorted(potencies)
+    linked = next(r for r in out["rows"] if r["monomerid"] == AMPRENAVIR)
+    every = await ok(server, "find_pdb_complexes", target_id=HIV_PROTEASE, compound_ids=[AMPRENAVIR],
+                     only_linked=False)
+    (row,) = every["rows"]
+    assert row["ligand_code"] == "478" and "3NU3" in row["pdb_ids"] and row["match"] != "record"
+    assert set(linked["pdb_ids"]) <= set(row["pdb_ids"]) and set(row["linked_to_target"]) == set(linked["pdb_ids"])
+
+
+async def test_overlay_needs_known_entries(server):
+    result = await call(server, "overlay_binding_site", target_id=HIV_PROTEASE, pdb_ids=["9XYZ"])
+    assert result.is_error and "9XYZ:<code>" in result.content[0].text
+    result = await call(server, "overlay_data", overlay_id="../../etc")
+    assert result.is_error
+
+
+@pytest.mark.network
+async def test_overlay_binding_site_live(server):
+    out = await ok(server, "overlay_binding_site", target_id=HIV_PROTEASE, pdb_ids=["3NU3", TMC126_ENTRY])
+    assert [e["pdb_id"] for e in out["entries"]] == ["3NU3", "2I4U"]  # best resolution is the reference
+    amprenavir, tmc126 = out["entries"]
+    assert amprenavir["monomerid"] in (AMPRENAVIR, 50163391) and tmc126["monomerid"] == 9236 and "on record" in tmc126["affinity"]
+    assert tmc126["pocket_rmsd"] < 1.0
+    assert all(any(p.startswith("D25:") for p in e["hbond_partners"]) for e in out["entries"])
+    data = await ok(server, "overlay_data", overlay_id=out["overlay_id"])
+    assert all(e["protein_pdb"] and e["ligand_pdb"] for e in data["entries"])
+
+
+async def test_overlay_finds_ligands_measured_on_other_records(server):
+    """6CDJ's ligand (BDBM50457611) is measured only on polymer 7501, another HIV-1 protease record."""
+    result = await call(server, "overlay_binding_site", target_id=HIV_PROTEASE, pdb_ids=["6CDJ:GR8"])
+    if result.is_error and "network" in result.content[0].text:
+        pytest.skip("6CDJ not cached and no network")
+    assert not result.is_error, result.content
+    (entry,) = result.structured_content["entries"]
+    assert entry["monomerid"] == 50457611 and "on record 7501" in entry["affinity"]
+    # The test client declares no MCP Apps support: the result says the chat cannot show the viewer.
+    assert result.structured_content["client_shows_viewer"] is False
+    assert "cannot show MCP Apps panels" in result.content[0].text
+
+
+async def test_open_overlay_viewer_needs_a_known_overlay(server):
+    result = await call(server, "open_overlay_viewer", overlay_id="../etc/passwd")
+    assert result.is_error and "No viewer" in result.content[0].text
+
+
+@pytest.mark.network
+async def test_overlay_picks_the_compound_itself_and_finds_unlinked_ligands(server):
+    """2HYY's imatinib (STI) is the compound itself, not imatinib-CD3 (same connectivity); BindingDB links
+    no compound to 3CS9's nilotinib (NIL), which is found by the InChIKey RCSB gives the code."""
+    result = await call(server, "overlay_binding_site", uniprot="P00519", pdb_ids=["2HYY:STI", "3CS9:NIL"])
+    if result.is_error and "network" in result.content[0].text:
+        pytest.skip("structures not cached and no network")
+    assert not result.is_error, result.content
+    entries = {e["pdb_id"]: e for e in result.structured_content["entries"]}
+    assert "CD3" not in (entries["2HYY"]["name"] or "") and entries["2HYY"]["affinity"]
+    assert entries["3CS9"]["monomerid"] == 50237710 and entries["3CS9"]["affinity"].startswith("Kd")  # Kd before IC50
+    assert {"Kd", "IC50"} <= set(entries["3CS9"]["potencies"])  # every type, for the viewer's affinity menu
+
+
+def test_potency_prefers_ki_kd_unless_types_are_given():
+    from mcp_bindingdb.server import _pick_potency, _type_rank
+    spread = {"q1_nm": 1.0, "q3_nm": 2.0, "best_nm": 0.5, "worst_nm": 9.0}
+    rows = [{"monomerid": 1, "affinity_type": "IC50", "n": 40, "median_nm": 300.0, **spread},
+            {"monomerid": 1, "affinity_type": "Ki", "n": 2, "median_nm": 50.0, **spread},
+            {"monomerid": 1, "affinity_type": "Kd", "n": 30, "median_nm": 35.0, **spread},
+            {"monomerid": 2, "affinity_type": "IC50", "n": 5, "median_nm": 1.0, **spread}]
+    best, every = _pick_potency(rows, _type_rank(None))
+    assert best[1]["affinity_type"] == "Kd" and best[2]["affinity_type"] == "IC50"  # most measured of Ki/Kd
+    assert set(every[1]) == {"IC50", "Ki", "Kd"}
+    assert every[1]["Kd"] == {"n": 30, "median": 35.0, "q1": 1.0, "q3": 2.0, "min": 0.5, "max": 9.0}  # box plot
+    best, _ = _pick_potency(rows, _type_rank(["IC50"]))
+    assert best[1]["affinity_type"] == "IC50"
+    best, _ = _pick_potency(rows, _type_rank(["Ki"]))
+    assert best[1]["affinity_type"] == "Ki" and 2 not in best
+
+
+@pytest.mark.network
+async def test_find_pdb_complexes_finds_entries_by_pdb_inchikeys(server):
+    """BindingDB links nilotinib to no PDB entry; RCSB's ligands of ABL1's entries (by InChIKey) find 3CS9."""
+    out = await ok(server, "find_pdb_complexes", uniprot="P00519", compound_ids=[50237710])
+    if not out["rows"]:
+        pytest.skip("RCSB not reachable")
+    (row,) = out["rows"]
+    assert row["ligand_code"] == "NIL" and "3CS9" in row["found_in_pdb_by_inchikey"]
