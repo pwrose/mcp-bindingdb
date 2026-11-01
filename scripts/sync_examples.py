@@ -51,12 +51,15 @@ LEVELS = [
     ("05-workflows", "Level 5 — Multi-step workflows",
      ("Realistic analyses that chain several tools: repurposing, selectivity panels, hit expansion, safety, species, "
       "patents, target networks, scaffold selectivity clustering.")),
-    ("06-properties", "Level 6 — Properties, efficiency and alerts",
+    ("06-binding-sites", "Level 6 — Binding sites in 3D",
+     ("PDB complexes of a target's ligands superposed on the binding site: poses, shared contacts and hydrogen "
+      "bonds next to the measured potency. Each example has the transcript and the interactive 3D viewer.")),
+    ("07-properties", "Level 7 — Properties, efficiency and alerts",
      ("Computed compound properties: drug-likeness, ligand efficiency, Bemis-Murcko scaffolds and structural "
       "alerts, as filters and as answers.")),
-    ("07-sql-analytics", "Level 7 — SQL analytics",
+    ("08-sql-analytics", "Level 8 — SQL analytics",
      "Direct SQL over the BindingDB tables, for questions the curated tools do not cover."),
-    ("08-deliverables", "Level 8 — Deliverables",
+    ("09-deliverables", "Level 9 — Deliverables",
      "Saving the work: a Markdown transcript, and a reproducible record with every tool call."),
 ]
 
@@ -79,6 +82,7 @@ a.title { font-weight:600; font-size:1.05em; }
 blockquote { margin:.35em 0 .5em; padding:0 0 0 .8em; border-left:3px solid var(--line); color:var(--fg); font-style:italic; }
 .tag { display:inline-block; font-size:12px; background:var(--tag); color:var(--tagfg); border-radius:999px; padding:1px 9px; margin:0 6px 4px 0; }
 .files { font-size:12.5px; color:var(--muted); margin-top:2px; }
+.viewer { font-size:13px; margin-top:4px; font-weight:600; }
 .howto { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:12px 16px; margin-top:1.4em; }
 .howto p { margin:.4em 0; }
 footer { margin-top:3em; color:var(--muted); font-size:12.5px; }
@@ -135,7 +139,9 @@ def collect(root: Path) -> list[tuple[str, str, str, list[dict]]]:
                 "prompt": prompt, "tags": tags,
                 "href": f"{folder}/{ex.name}/{main}",
                 "extras": [f"{folder}/{ex.name}/{f.name}" for f in sorted(ex.iterdir())
-                           if f.is_file() and f.name != main and not f.name.startswith(".")],
+                           if f.is_file() and f.name != main and not f.name.startswith(".") and f.suffix != ".html"],
+                # other HTML pages (an overlay's 3D viewer): linked like the transcript, so they open rendered
+                "pages": [f"{folder}/{ex.name}/{name}" for name in pages if name != main],
             })
         if examples:
             levels.append((folder, heading, intro, examples))
@@ -144,6 +150,11 @@ def collect(root: Path) -> list[tuple[str, str, str, list[dict]]]:
     if unknown:
         print(f"warning: level folders not in LEVELS, left out of the index: {', '.join(unknown)}", file=sys.stderr)
     return levels
+
+
+def page_label(path: str) -> str:
+    """How the index names an example's second HTML page."""
+    return "Interactive 3D viewer" if path.endswith("overlay-viewer.html") else "Interactive page"
 
 
 def build_index(root: Path, files_base_url: str = "") -> int:
@@ -155,11 +166,12 @@ def build_index(root: Path, files_base_url: str = "") -> int:
         cards = []
         for e in examples:
             tags = "".join(f'<span class="tag">{html.escape(t)}</span>' for t in e["tags"])
-            files = ""
+            files = "".join(f'<div class="viewer">{page_label(page)}: <a href="{html.escape(page)}">'
+                            f'{html.escape(page.rsplit("/", 1)[1])}</a></div>' for page in e["pages"])
             if e["extras"]:
                 links = ", ".join(f'<a href="{html.escape(files_base_url + f)}">{html.escape(f.rsplit("/", 1)[1])}</a>'
                                   for f in e["extras"])
-                files = f'<div class="files">Also in this folder: {links}</div>'
+                files += f'<div class="files">Also in this folder: {links}</div>'
             cards.append(f'''<li class="card">
   <div class="num">{html.escape(e["num"])}</div>
   <div class="body">
@@ -214,7 +226,9 @@ def build_readme(root: Path) -> None:
     ]
     for _, heading, intro, examples in levels:
         lines += [f"## {heading}", "", intro, "", "| # | Example |", "|---|---|"]
-        lines += [f"| {e['num']} | [{e['title']}]({PREVIEW_URL}{e['href']}) |" for e in examples]
+        lines += [f"| {e['num']} | [{e['title']}]({PREVIEW_URL}{e['href']})"
+                  + "".join(f" · [{page_label(page)[0].lower() + page_label(page)[1:]}]({PREVIEW_URL}{page})" for page in e["pages"]) + " |"
+                  for e in examples]
         lines.append("")
     lines += [("The answers point out data-quality issues where the results show them (duplicate records, values at "
                "detection limits, probable unit errors, re-reported values). Check these before relying on a single "

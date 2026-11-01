@@ -23,6 +23,7 @@ a.title { font-weight:600; font-size:1.05em; }
 blockquote { margin:.35em 0 .5em; padding:0 0 0 .8em; border-left:3px solid var(--line); color:var(--fg); font-style:italic; }
 .tag { display:inline-block; font-size:12px; background:var(--tag); color:var(--tagfg); border-radius:999px; padding:1px 9px; margin:0 6px 4px 0; }
 .files { font-size:12.5px; color:var(--muted); margin-top:2px; }
+.viewer { font-size:13px; margin-top:4px; font-weight:600; }
 .howto { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:12px 16px; margin-top:1.4em; }
 .howto p { margin:.4em 0; }
 footer { margin-top:3em; color:var(--muted); font-size:12.5px; }
@@ -30,9 +31,9 @@ footer { margin-top:3em; color:var(--muted); font-size:12.5px; }
 </head>
 <body>
 <h1>mcp-bindingdb Examples</h1>
-<p class="lede">41 worked examples for new users of the BindingDB MCP server. They start with one-line lookups and build up to multi-step analyses. Each example is a real conversation: the prompt, the answer, a short lesson about the data, the tools that were used, and what to try next.</p>
+<p class="lede">43 worked examples for new users of the BindingDB MCP server. They start with one-line lookups and build up to multi-step analyses. Each example is a real conversation: the prompt, the answer, a short lesson about the data, the tools that were used, and what to try next.</p>
 <div class="howto">
-<p><strong>How to use these.</strong> Read the transcript, then paste the quoted prompt into your own chat with mcp-bindingdb connected and compare. Transcripts show the tool calls only where the prompt asks for them (Example 8.2). Tables that carry SMILES are drawn as structures.</p>
+<p><strong>How to use these.</strong> Read the transcript, then paste the quoted prompt into your own chat with mcp-bindingdb connected and compare. Transcripts show the tool calls only where the prompt asks for them (Example 9.2). Tables that carry SMILES are drawn as structures.</p>
 </div>
 <section><h2>Level 1 — Simple lookups</h2><p class="intro">One question, one or two tools: find a compound or a target and read its record.</p><ol class="cards"><li class="card">
   <div class="num">1.1</div>
@@ -258,106 +259,122 @@ footer { margin-top:3em; color:var(--muted); font-size:12.5px; }
     <div class="tags"><span class="tag">1 plot</span></div>
     <div class="files">Also in this folder: <a href="https://github.com/pwrose/mcp-bindingdb/blob/main/examples/05-workflows/5.8-scaffold-selectivity-clustering/heatmap_data_long.csv">heatmap_data_long.csv</a>, <a href="https://github.com/pwrose/mcp-bindingdb/blob/main/examples/05-workflows/5.8-scaffold-selectivity-clustering/heatmap_matrix.csv">heatmap_matrix.csv</a>, <a href="https://github.com/pwrose/mcp-bindingdb/blob/main/examples/05-workflows/5.8-scaffold-selectivity-clustering/kinase_selectivity_heatmap.png">kinase_selectivity_heatmap.png</a>, <a href="https://github.com/pwrose/mcp-bindingdb/blob/main/examples/05-workflows/5.8-scaffold-selectivity-clustering/rgroup_table.csv">rgroup_table.csv</a></div>
   </div>
-</li></ol></section><section><h2>Level 6 — Properties, efficiency and alerts</h2><p class="intro">Computed compound properties: drug-likeness, ligand efficiency, Bemis-Murcko scaffolds and structural alerts, as filters and as answers.</p><ol class="cards"><li class="card">
+</li></ol></section><section><h2>Level 6 — Binding sites in 3D</h2><p class="intro">PDB complexes of a target&#x27;s ligands superposed on the binding site: poses, shared contacts and hydrogen bonds next to the measured potency. Each example has the transcript and the interactive 3D viewer.</p><ol class="cards"><li class="card">
   <div class="num">6.1</div>
   <div class="body">
-    <a class="title" href="06-properties/6.1-drug-likeness-radar/6.1-drug-likeness-radar.html">Drug-likeness radar: the DPP-4 inhibitors</a>
-    <blockquote>How drug-like are the DPP-4 inhibitors, the gliptins? Compare their properties in radar plots, and show their structures with how potent and selective they are.</blockquote>
-    <div class="tags"><span class="tag">structure grid</span><span class="tag">1 plot</span></div>
-    <div class="files">Also in this folder: <a href="https://github.com/pwrose/mcp-bindingdb/blob/main/examples/06-properties/6.1-drug-likeness-radar/gliptin_drug_likeness_radar.png">gliptin_drug_likeness_radar.png</a>, <a href="https://github.com/pwrose/mcp-bindingdb/blob/main/examples/06-properties/6.1-drug-likeness-radar/gliptin_properties.csv">gliptin_properties.csv</a>, <a href="https://github.com/pwrose/mcp-bindingdb/blob/main/examples/06-properties/6.1-drug-likeness-radar/plot_gliptin_radar.py">plot_gliptin_radar.py</a></div>
+    <a class="title" href="06-binding-sites/6.1-hiv1-protease-inhibitor-overlay/6.1-hiv1-protease-inhibitor-overlay.html">HIV-1 Protease Inhibitors with PDB Structures: Overlay of the Four Most Potent</a>
+    <blockquote>Which HIV-1 protease inhibitors in BindingDB have crystal structures in the PDB? Overlay the structures of the 4 most potent ones and show me how they bind.</blockquote>
+    <div class="tags"></div>
+    <div class="viewer">Interactive 3D viewer: <a href="06-binding-sites/6.1-hiv1-protease-inhibitor-overlay/overlay-viewer.html">overlay-viewer.html</a></div>
   </div>
 </li><li class="card">
   <div class="num">6.2</div>
   <div class="body">
-    <a class="title" href="06-properties/6.2-ligand-efficiency/6.2-ligand-efficiency.html">Ligand efficiency over time: BACE1 inhibitors</a>
+    <a class="title" href="06-binding-sites/6.2-imatinib-abl-overlay/6.2-imatinib-abl-overlay.html">Imatinib and approved ABL inhibitors: co-crystals, binding-site overlay and affinities</a>
+    <blockquote>Look up imatinib and 3 close analog approved drugs in BindingDB, pull their ABL co-crystal structures with Ki/Kd data, then overlay the binding sites and visualize them with the affinity data.</blockquote>
+    <div class="tags"><span class="tag">structure grid</span></div>
+    <div class="viewer">Interactive 3D viewer: <a href="06-binding-sites/6.2-imatinib-abl-overlay/overlay-viewer.html">overlay-viewer.html</a></div>
+  </div>
+</li></ol></section><section><h2>Level 7 — Properties, efficiency and alerts</h2><p class="intro">Computed compound properties: drug-likeness, ligand efficiency, Bemis-Murcko scaffolds and structural alerts, as filters and as answers.</p><ol class="cards"><li class="card">
+  <div class="num">7.1</div>
+  <div class="body">
+    <a class="title" href="07-properties/7.1-drug-likeness-radar/7.1-drug-likeness-radar.html">Drug-likeness radar: the DPP-4 inhibitors</a>
+    <blockquote>How drug-like are the DPP-4 inhibitors, the gliptins? Compare their properties in radar plots, and show their structures with how potent and selective they are.</blockquote>
+    <div class="tags"><span class="tag">structure grid</span><span class="tag">1 plot</span></div>
+    <div class="files">Also in this folder: <a href="https://github.com/pwrose/mcp-bindingdb/blob/main/examples/07-properties/7.1-drug-likeness-radar/gliptin_drug_likeness_radar.png">gliptin_drug_likeness_radar.png</a>, <a href="https://github.com/pwrose/mcp-bindingdb/blob/main/examples/07-properties/7.1-drug-likeness-radar/gliptin_properties.csv">gliptin_properties.csv</a>, <a href="https://github.com/pwrose/mcp-bindingdb/blob/main/examples/07-properties/7.1-drug-likeness-radar/plot_gliptin_radar.py">plot_gliptin_radar.py</a></div>
+  </div>
+</li><li class="card">
+  <div class="num">7.2</div>
+  <div class="body">
+    <a class="title" href="07-properties/7.2-ligand-efficiency/7.2-ligand-efficiency.html">Ligand efficiency over time: BACE1 inhibitors</a>
     <blockquote>For BACE1, how has ligand efficiency changed over the years? Rank the most efficient inhibitors, and plot potency against size per period.</blockquote>
     <div class="tags"><span class="tag">structure grid</span><span class="tag">1 plot</span></div>
-    <div class="files">Also in this folder: <a href="https://github.com/pwrose/mcp-bindingdb/blob/main/examples/06-properties/6.2-ligand-efficiency/bace1_best_affinity.csv">bace1_best_affinity.csv</a>, <a href="https://github.com/pwrose/mcp-bindingdb/blob/main/examples/06-properties/6.2-ligand-efficiency/bace1_efficiency_by_period.png">bace1_efficiency_by_period.png</a>, <a href="https://github.com/pwrose/mcp-bindingdb/blob/main/examples/06-properties/6.2-ligand-efficiency/plot_bace1_efficiency.py">plot_bace1_efficiency.py</a></div>
+    <div class="files">Also in this folder: <a href="https://github.com/pwrose/mcp-bindingdb/blob/main/examples/07-properties/7.2-ligand-efficiency/bace1_best_affinity.csv">bace1_best_affinity.csv</a>, <a href="https://github.com/pwrose/mcp-bindingdb/blob/main/examples/07-properties/7.2-ligand-efficiency/bace1_efficiency_by_period.png">bace1_efficiency_by_period.png</a>, <a href="https://github.com/pwrose/mcp-bindingdb/blob/main/examples/07-properties/7.2-ligand-efficiency/plot_bace1_efficiency.py">plot_bace1_efficiency.py</a></div>
   </div>
 </li><li class="card">
-  <div class="num">6.3</div>
+  <div class="num">7.3</div>
   <div class="body">
-    <a class="title" href="06-properties/6.3-scaffold-landscape/6.3-scaffold-landscape.html">Scaffold landscape and chemical space: PDE2A inhibitors</a>
+    <a class="title" href="07-properties/7.3-scaffold-landscape/7.3-scaffold-landscape.html">Scaffold landscape and chemical space: PDE2A inhibitors</a>
     <blockquote>Which chemical series bind PDE2A at 10 nM or better? Group them by scaffold, and map the chemical space with a t-SNE plot.</blockquote>
     <div class="tags"><span class="tag">structure grid</span><span class="tag">1 plot</span><span class="tag">2 turns</span></div>
-    <div class="files">Also in this folder: <a href="https://github.com/pwrose/mcp-bindingdb/blob/main/examples/06-properties/6.3-scaffold-landscape/pde2a_chemical_space_tsne.png">pde2a_chemical_space_tsne.png</a>, <a href="https://github.com/pwrose/mcp-bindingdb/blob/main/examples/06-properties/6.3-scaffold-landscape/pde2a_potent_ligands.csv">pde2a_potent_ligands.csv</a>, <a href="https://github.com/pwrose/mcp-bindingdb/blob/main/examples/06-properties/6.3-scaffold-landscape/plot_pde2a_tsne.py">plot_pde2a_tsne.py</a></div>
+    <div class="files">Also in this folder: <a href="https://github.com/pwrose/mcp-bindingdb/blob/main/examples/07-properties/7.3-scaffold-landscape/pde2a_chemical_space_tsne.png">pde2a_chemical_space_tsne.png</a>, <a href="https://github.com/pwrose/mcp-bindingdb/blob/main/examples/07-properties/7.3-scaffold-landscape/pde2a_potent_ligands.csv">pde2a_potent_ligands.csv</a>, <a href="https://github.com/pwrose/mcp-bindingdb/blob/main/examples/07-properties/7.3-scaffold-landscape/plot_pde2a_tsne.py">plot_pde2a_tsne.py</a></div>
   </div>
 </li><li class="card">
-  <div class="num">6.4</div>
+  <div class="num">7.4</div>
   <div class="body">
-    <a class="title" href="06-properties/6.4-pains-triage/6.4-pains-triage.html">PAINS triage: 5-lipoxygenase inhibitors</a>
+    <a class="title" href="07-properties/7.4-pains-triage/7.4-pains-triage.html">PAINS triage: 5-lipoxygenase inhibitors</a>
     <blockquote>5-lipoxygenase has a long literature of natural-product inhibitors and I don&#x27;t trust much of it. How many of its reported inhibitors carry PAINS alerts, which alerts, and does that track with potency?</blockquote>
     <div class="tags"><span class="tag">structure grid</span><span class="tag">3 turns</span></div>
     
   </div>
 </li><li class="card">
-  <div class="num">6.5</div>
+  <div class="num">7.5</div>
   <div class="body">
-    <a class="title" href="06-properties/6.5-property-filtered-analogues/6.5-property-filtered-analogues.html">Property-filtered analogue search: ibrutinib and BTK</a>
+    <a class="title" href="07-properties/7.5-property-filtered-analogues/7.5-property-filtered-analogues.html">Property-filtered analogue search: ibrutinib and BTK</a>
     <blockquote>I want analogues of ibrutinib that are potent on BTK but smaller and free of problem groups. Search by similarity with property filters and show me what survives.</blockquote>
     <div class="tags"><span class="tag">structure grid</span></div>
     
   </div>
-</li></ol></section><section><h2>Level 7 — SQL analytics</h2><p class="intro">Direct SQL over the BindingDB tables, for questions the curated tools do not cover.</p><ol class="cards"><li class="card">
-  <div class="num">7.1</div>
+</li></ol></section><section><h2>Level 8 — SQL analytics</h2><p class="intro">Direct SQL over the BindingDB tables, for questions the curated tools do not cover.</p><ol class="cards"><li class="card">
+  <div class="num">8.1</div>
   <div class="body">
-    <a class="title" href="07-sql-analytics/7.1-schema-discovery/7.1-schema-discovery.html">Schema discovery: what tables are in BindingDB?</a>
+    <a class="title" href="08-sql-analytics/8.1-schema-discovery/8.1-schema-discovery.html">Schema discovery: what tables are in BindingDB?</a>
     <blockquote>What tables are in the BindingDB database, and which ones should I start with?</blockquote>
     <div class="tags"></div>
     
   </div>
 </li><li class="card">
-  <div class="num">7.2</div>
+  <div class="num">8.2</div>
   <div class="body">
-    <a class="title" href="07-sql-analytics/7.2-aggregate-counts/7.2-aggregate-counts.html">Aggregate counts: the most-studied human targets</a>
+    <a class="title" href="08-sql-analytics/8.2-aggregate-counts/8.2-aggregate-counts.html">Aggregate counts: the most-studied human targets</a>
     <blockquote>Which 10 human targets have the most distinct compounds measured?</blockquote>
     <div class="tags"></div>
     
   </div>
 </li><li class="card">
-  <div class="num">7.3</div>
+  <div class="num">8.3</div>
   <div class="body">
-    <a class="title" href="07-sql-analytics/7.3-patent-landscape/7.3-patent-landscape.html">Patent landscape in BindingDB</a>
+    <a class="title" href="08-sql-analytics/8.3-patent-landscape/8.3-patent-landscape.html">Patent landscape in BindingDB</a>
     <blockquote>Analyze the patent landscape in BindingDB.</blockquote>
     <div class="tags"><span class="tag">4 plots</span></div>
-    <div class="files">Also in this folder: <a href="https://github.com/pwrose/mcp-bindingdb/blob/main/examples/07-sql-analytics/7.3-patent-landscape/plot_patent_landscape.py">plot_patent_landscape.py</a></div>
+    <div class="files">Also in this folder: <a href="https://github.com/pwrose/mcp-bindingdb/blob/main/examples/08-sql-analytics/8.3-patent-landscape/plot_patent_landscape.py">plot_patent_landscape.py</a></div>
   </div>
 </li><li class="card">
-  <div class="num">7.4</div>
+  <div class="num">8.4</div>
   <div class="body">
-    <a class="title" href="07-sql-analytics/7.4-data-quality-censored-values/7.4-data-quality-censored-values.html">Data quality: censored values</a>
+    <a class="title" href="08-sql-analytics/8.4-data-quality-censored-values/8.4-data-quality-censored-values.html">Data quality: censored values</a>
     <blockquote>How many measurements are censored (&#x27;&gt;&#x27; or &#x27;&lt;&#x27;), broken down by affinity type? Why does that matter?</blockquote>
     <div class="tags"></div>
     
   </div>
 </li><li class="card">
-  <div class="num">7.5</div>
+  <div class="num">8.5</div>
   <div class="body">
-    <a class="title" href="07-sql-analytics/7.5-itc-thermodynamics/7.5-itc-thermodynamics.html">ITC thermodynamics: ΔG, ΔH and −TΔS</a>
+    <a class="title" href="08-sql-analytics/8.5-itc-thermodynamics/8.5-itc-thermodynamics.html">ITC thermodynamics: ΔG, ΔH and −TΔS</a>
     <blockquote>Show isothermal titration calorimetry (ITC) results for carbonic anhydrase II ligands: ΔG, ΔH and −TΔS.</blockquote>
     <div class="tags"><span class="tag">structures</span></div>
     
   </div>
 </li><li class="card">
-  <div class="num">7.6</div>
+  <div class="num">8.6</div>
   <div class="body">
-    <a class="title" href="07-sql-analytics/7.6-pdb-cross-links/7.6-pdb-cross-links.html">PDB cross-links: HIV-1 protease ligands with crystal structures</a>
+    <a class="title" href="08-sql-analytics/8.6-pdb-cross-links/8.6-pdb-cross-links.html">PDB cross-links: HIV-1 protease ligands with crystal structures</a>
     <blockquote>Which compounds measured against HIV-1 protease also have a crystal structure in the PDB?</blockquote>
     <div class="tags"><span class="tag">structure grid</span></div>
     
   </div>
-</li></ol></section><section><h2>Level 8 — Deliverables</h2><p class="intro">Saving the work: a Markdown transcript, and a reproducible record with every tool call.</p><ol class="cards"><li class="card">
-  <div class="num">8.1</div>
+</li></ol></section><section><h2>Level 9 — Deliverables</h2><p class="intro">Saving the work: a Markdown transcript, and a reproducible record with every tool call.</p><ol class="cards"><li class="card">
+  <div class="num">9.1</div>
   <div class="body">
-    <a class="title" href="08-deliverables/8.1-markdown-transcript/8.1-markdown-transcript.html">Save a conversation as a Markdown transcript</a>
+    <a class="title" href="09-deliverables/9.1-markdown-transcript/9.1-markdown-transcript.html">Save a conversation as a Markdown transcript</a>
     <blockquote>Which targets does palbociclib bind at 100 nM or better?</blockquote>
     <div class="tags"><span class="tag">2 turns</span></div>
-    <div class="files">Also in this folder: <a href="https://github.com/pwrose/mcp-bindingdb/blob/main/examples/08-deliverables/8.1-markdown-transcript/8.1-markdown-transcript.md">8.1-markdown-transcript.md</a></div>
+    <div class="files">Also in this folder: <a href="https://github.com/pwrose/mcp-bindingdb/blob/main/examples/09-deliverables/9.1-markdown-transcript/9.1-markdown-transcript.md">9.1-markdown-transcript.md</a></div>
   </div>
 </li><li class="card">
-  <div class="num">8.2</div>
+  <div class="num">9.2</div>
   <div class="body">
-    <a class="title" href="08-deliverables/8.2-reproducible-record/8.2-reproducible-record.html">A reproducible record with every tool call</a>
+    <a class="title" href="09-deliverables/9.2-reproducible-record/9.2-reproducible-record.html">A reproducible record with every tool call</a>
     <blockquote>How selective are palbociclib, ribociclib and abemaciclib for CDK4/6 over the other CDKs? Make an HTML transcript that includes every query and its results, so a colleague can rerun the analysis.</blockquote>
     <div class="tags"><span class="tag">tool calls</span><span class="tag">structures</span></div>
     

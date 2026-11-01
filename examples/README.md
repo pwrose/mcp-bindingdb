@@ -1,6 +1,6 @@
 # Example queries
 
-These 41 examples answer questions with the `mcp-bindingdb` tools against BindingDB release 202610, in eight levels from single lookups to multi-step workflows. Each is an HTML transcript written by `create_transcript`: the prompt, the answer, its figures, and structure drawings for the compounds it names (example 8.2 also lists every tool call). Some folders hold the plotting script and data behind a figure.
+These 43 examples answer questions with the `mcp-bindingdb` tools against BindingDB release 202610, in nine levels from single lookups to multi-step workflows. Each is an HTML transcript written by `create_transcript`: the prompt, the answer, its figures, and structure drawings for the compounds it names (example 9.2 also lists every tool call). Some folders hold the plotting script and data behind a figure.
 
 **[Browse the examples](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/index.html)**. GitHub shows HTML files as source, so the links below open a rendered view.
 
@@ -67,38 +67,47 @@ Realistic analyses that chain several tools: repurposing, selectivity panels, hi
 | 5.7 | [Imatinib's targets and the network they form](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/05-workflows/5.7-imatinib-target-network/5.7-imatinib-target-network.html) |
 | 5.8 | [Clustered selectivity heat map and R-groups of the imatinib core](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/05-workflows/5.8-scaffold-selectivity-clustering/5.8-scaffold-selectivity-clustering.html) |
 
-## Level 6 — Properties, efficiency and alerts
+## Level 6 — Binding sites in 3D
+
+PDB complexes of a target's ligands superposed on the binding site: poses, shared contacts and hydrogen bonds next to the measured potency. Each example has the transcript and the interactive 3D viewer.
+
+| # | Example |
+|---|---|
+| 6.1 | [HIV-1 Protease Inhibitors with PDB Structures: Overlay of the Four Most Potent](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/06-binding-sites/6.1-hiv1-protease-inhibitor-overlay/6.1-hiv1-protease-inhibitor-overlay.html) · [interactive 3D viewer](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/06-binding-sites/6.1-hiv1-protease-inhibitor-overlay/overlay-viewer.html) |
+| 6.2 | [Imatinib and approved ABL inhibitors: co-crystals, binding-site overlay and affinities](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/06-binding-sites/6.2-imatinib-abl-overlay/6.2-imatinib-abl-overlay.html) · [interactive 3D viewer](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/06-binding-sites/6.2-imatinib-abl-overlay/overlay-viewer.html) |
+
+## Level 7 — Properties, efficiency and alerts
 
 Computed compound properties: drug-likeness, ligand efficiency, Bemis-Murcko scaffolds and structural alerts, as filters and as answers.
 
 | # | Example |
 |---|---|
-| 6.1 | [Drug-likeness radar: the DPP-4 inhibitors](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/06-properties/6.1-drug-likeness-radar/6.1-drug-likeness-radar.html) |
-| 6.2 | [Ligand efficiency over time: BACE1 inhibitors](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/06-properties/6.2-ligand-efficiency/6.2-ligand-efficiency.html) |
-| 6.3 | [Scaffold landscape and chemical space: PDE2A inhibitors](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/06-properties/6.3-scaffold-landscape/6.3-scaffold-landscape.html) |
-| 6.4 | [PAINS triage: 5-lipoxygenase inhibitors](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/06-properties/6.4-pains-triage/6.4-pains-triage.html) |
-| 6.5 | [Property-filtered analogue search: ibrutinib and BTK](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/06-properties/6.5-property-filtered-analogues/6.5-property-filtered-analogues.html) |
+| 7.1 | [Drug-likeness radar: the DPP-4 inhibitors](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/07-properties/7.1-drug-likeness-radar/7.1-drug-likeness-radar.html) |
+| 7.2 | [Ligand efficiency over time: BACE1 inhibitors](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/07-properties/7.2-ligand-efficiency/7.2-ligand-efficiency.html) |
+| 7.3 | [Scaffold landscape and chemical space: PDE2A inhibitors](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/07-properties/7.3-scaffold-landscape/7.3-scaffold-landscape.html) |
+| 7.4 | [PAINS triage: 5-lipoxygenase inhibitors](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/07-properties/7.4-pains-triage/7.4-pains-triage.html) |
+| 7.5 | [Property-filtered analogue search: ibrutinib and BTK](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/07-properties/7.5-property-filtered-analogues/7.5-property-filtered-analogues.html) |
 
-## Level 7 — SQL analytics
+## Level 8 — SQL analytics
 
 Direct SQL over the BindingDB tables, for questions the curated tools do not cover.
 
 | # | Example |
 |---|---|
-| 7.1 | [Schema discovery: what tables are in BindingDB?](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/07-sql-analytics/7.1-schema-discovery/7.1-schema-discovery.html) |
-| 7.2 | [Aggregate counts: the most-studied human targets](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/07-sql-analytics/7.2-aggregate-counts/7.2-aggregate-counts.html) |
-| 7.3 | [Patent landscape in BindingDB](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/07-sql-analytics/7.3-patent-landscape/7.3-patent-landscape.html) |
-| 7.4 | [Data quality: censored values](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/07-sql-analytics/7.4-data-quality-censored-values/7.4-data-quality-censored-values.html) |
-| 7.5 | [ITC thermodynamics: ΔG, ΔH and −TΔS](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/07-sql-analytics/7.5-itc-thermodynamics/7.5-itc-thermodynamics.html) |
-| 7.6 | [PDB cross-links: HIV-1 protease ligands with crystal structures](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/07-sql-analytics/7.6-pdb-cross-links/7.6-pdb-cross-links.html) |
+| 8.1 | [Schema discovery: what tables are in BindingDB?](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/08-sql-analytics/8.1-schema-discovery/8.1-schema-discovery.html) |
+| 8.2 | [Aggregate counts: the most-studied human targets](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/08-sql-analytics/8.2-aggregate-counts/8.2-aggregate-counts.html) |
+| 8.3 | [Patent landscape in BindingDB](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/08-sql-analytics/8.3-patent-landscape/8.3-patent-landscape.html) |
+| 8.4 | [Data quality: censored values](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/08-sql-analytics/8.4-data-quality-censored-values/8.4-data-quality-censored-values.html) |
+| 8.5 | [ITC thermodynamics: ΔG, ΔH and −TΔS](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/08-sql-analytics/8.5-itc-thermodynamics/8.5-itc-thermodynamics.html) |
+| 8.6 | [PDB cross-links: HIV-1 protease ligands with crystal structures](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/08-sql-analytics/8.6-pdb-cross-links/8.6-pdb-cross-links.html) |
 
-## Level 8 — Deliverables
+## Level 9 — Deliverables
 
 Saving the work: a Markdown transcript, and a reproducible record with every tool call.
 
 | # | Example |
 |---|---|
-| 8.1 | [Save a conversation as a Markdown transcript](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/08-deliverables/8.1-markdown-transcript/8.1-markdown-transcript.html) |
-| 8.2 | [A reproducible record with every tool call](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/08-deliverables/8.2-reproducible-record/8.2-reproducible-record.html) |
+| 9.1 | [Save a conversation as a Markdown transcript](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/09-deliverables/9.1-markdown-transcript/9.1-markdown-transcript.html) |
+| 9.2 | [A reproducible record with every tool call](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/09-deliverables/9.2-reproducible-record/9.2-reproducible-record.html) |
 
 The answers point out data-quality issues where the results show them (duplicate records, values at detection limits, probable unit errors, re-reported values). Check these before relying on a single number.
