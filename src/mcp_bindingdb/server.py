@@ -285,6 +285,21 @@ class Exchange(BaseModel):
                                "numbers its figures 1, 2, … in order")
 
 
+async def _log_initialize(ctx: Any, call_next: Any) -> Any:
+    """Log each connection's client and whether it declared MCP Apps: a client may open several connections
+    (one for listing, another for tool calls), and panels show only where the extension was declared."""
+    if ctx.method == "initialize":
+        params = ctx.params or {}
+        info = params.get("clientInfo") or {}
+        caps = params.get("capabilities") or {}
+        declared = {**(caps.get("extensions") or {}), **(caps.get("experimental") or {})}
+        print(f"mcp-bindingdb: initialize from {info.get('name')} {info.get('version')} (pid {os.getpid()}), "
+              f"protocol {params.get('protocolVersion')}, MCP Apps "
+              f"{'declared' if UI_EXTENSION in declared else 'not declared'}, extensions {sorted(declared)}",
+              file=sys.stderr)
+    return await call_next(ctx)
+
+
 class BindingDBServer(MCPServer):
     """MCPServer that records every successful tool call for create_transcript."""
 
@@ -295,8 +310,12 @@ class BindingDBServer(MCPServer):
         self.last_html: str | None = None
         self.figure_copies: dict[str, Any] = {}  # file name of a figure copied to an output_dir -> the figure
         self.log_figure: Any = None  # set by _add_transcript_tools, for figures other tools make
+        self.middleware.append(_log_initialize)
 
     async def call_tool(self, name: str, arguments: dict[str, Any], context: Context | None = None) -> Any:
+        client = _client(context)  # which process and client each call reached: panels show in some chats only
+        print(f"mcp-bindingdb: {name} from {client['name']} (pid {os.getpid()}), MCP Apps "
+              f"{'declared' if client['apps'] else 'not declared'}", file=sys.stderr)
         result = await super().call_tool(name, arguments, context)
         if name not in transcript.UNLOGGED_TOOLS and isinstance(result, CallToolResult) and not result.is_error:
             content = result.structured_content
