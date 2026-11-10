@@ -53,7 +53,7 @@ async def test_lists_all_tools(server):
         "find_targets_for_compound", "get_activity", "describe_tables", "run_sql", "chemical_name_to_smiles",
         "create_transcript", "transcript_to_html", "reset_tool_log", "get_tool_log", "draw_structure_grid",
         "draw_r_group_table",
-        "add_figure", "open_structure_editor", "editor_pubchem_candidates", "editor_search", "get_editor_results",
+        "add_figure", "open_structure_editor", "editor_pubchem_candidates", "editor_opened", "check_editor_shown", "editor_search", "get_editor_results",
         "figure_image",
         "exact_structure_search", "decompose_r_groups", "matched_molecular_pairs", "activity_cliffs",
         "find_pdb_complexes", "overlay_binding_site", "overlay_data", "open_overlay_viewer",

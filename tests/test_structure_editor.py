@@ -237,6 +237,65 @@ async def test_editor_searches_are_kept_for_the_assistant(server):
 
 
 @pytest.mark.anyio
+async def test_editor_reports_whether_it_appeared(tmp_path):
+    # A chat app may show no panel for a call; the page reports itself with editor_opened, possibly to another
+    # server process than the assistant's.
+    from mcp_bindingdb.server import build_server
+
+    db = fixture_database(tmp_path / "fixture.duckdb")
+    editor, assistant = (build_server(db, network=False) for _ in range(2))
+    async with Client(assistant, extensions=[advertise(EXTENSION_ID, {"mimeTypes": [APP_MIME_TYPE]})]) as client:
+        tools = {t.name: t for t in (await client.list_tools()).tools}
+        assert tools["editor_opened"].meta["ui"]["visibility"] == ["app"]  # hidden from the assistant
+        opened = (await client.call_tool("open_structure_editor", {})).structured_content
+        assert "again" in opened["instructions"]
+    editor_id = opened["editor_id"]
+    missing = await call(assistant, "get_editor_results", editor_id=editor_id)
+    assert missing["editor_shown"] is False and "open_structure_editor again" in missing["note"]
+    async with Client(editor) as client:
+        assert not (await client.call_tool("editor_opened", {"editor_id": editor_id})).is_error
+        assert (await client.call_tool("editor_opened", {"editor_id": "../x"})).is_error
+    shown = await call(assistant, "get_editor_results", editor_id=editor_id)
+    assert shown["editor_shown"] is True and "Run query" in shown["note"]
+
+
+@pytest.mark.anyio
+async def test_editor_that_does_not_appear_is_opened_once_more(tmp_path, monkeypatch):
+    # Workaround for Claude Desktop showing no panel in a new chat's first turn: the assistant checks, asks for
+    # another message, and opens it again once without a check.
+    from mcp_bindingdb import structure_editor
+    from mcp_bindingdb.server import build_server
+
+    monkeypatch.setattr(structure_editor, "WAIT_FOR_EDITOR", 0.5)
+    db = fixture_database(tmp_path / "fixture.duckdb")
+    editor, assistant = (build_server(db, network=False) for _ in range(2))
+    async with Client(assistant, extensions=[advertise(EXTENSION_ID, {"mimeTypes": [APP_MIME_TYPE]})]) as client:
+        async def call(name, **args):
+            result = await client.call_tool(name, args)
+            assert not result.is_error, result.content
+            return result.structured_content
+
+        first = await call("open_structure_editor", initial_query="CCO")
+        assert f'check_editor_shown(editor_id="{first["editor_id"]}")' in first["instructions"]
+        missed = await call("check_editor_shown", editor_id=first["editor_id"])
+        assert missed["shown"] is False and module.NEXT_MESSAGE_REPLY in missed["instructions"]
+        assert "Do not call open_structure_editor again in this reply" in missed["instructions"]
+        retry = await call("open_structure_editor", initial_query="CCO")
+        assert "check_editor_shown" not in retry["instructions"]  # one retry only
+        assert module.EDITOR_REPLY in retry["instructions"]
+        later = await call("open_structure_editor")
+        assert "check_editor_shown" in later["instructions"]
+        async with Client(editor) as page:  # the page may report to the other server process
+            await page.call_tool("editor_opened", {"editor_id": later["editor_id"]})
+        assert (await call("check_editor_shown", editor_id=later["editor_id"]))["shown"] is True
+        assert "check_editor_shown" in (await call("open_structure_editor"))["instructions"]
+        assert (await client.call_tool("check_editor_shown", {"editor_id": "../x"})).is_error
+    async with Client(assistant) as client:  # a client that cannot show panels has nothing to check
+        plain = (await client.call_tool("open_structure_editor", {})).structured_content
+        assert "check_editor_shown" not in plain["instructions"]
+
+
+@pytest.mark.anyio
 async def test_editor_results_reach_another_server_process(tmp_path):
     # Claude Desktop sends the editor's calls and the assistant's to different server processes.
     from mcp_bindingdb.server import build_server

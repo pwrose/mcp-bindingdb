@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import asyncio
 import gzip
 import json
 import os
@@ -15,7 +16,7 @@ from pathlib import Path
 from typing import Annotated, Any, Literal
 
 from mcp.server.apps import Apps, ResourceCsp, ResourcePermissions
-from mcp.server.mcpserver import MCPServer
+from mcp.server.mcpserver import Context, MCPServer
 from mcp.server.mcpserver.exceptions import ToolError
 from mcp.types import CallToolResult, ToolAnnotations
 from pydantic import Field
@@ -34,10 +35,35 @@ READ_ONLY = ToolAnnotations(
 )
 
 
-EDITOR_REPLY = ("The structure editor is open. If you don't see it, start a new chat without a folder attached "
-                "(the editor doesn't appear in chats with a folder), or give me a compound name or SMILES and "
-                "I'll run an exact, substructure or similarity search.")
+EDITOR_REPLY = ("The structure editor is open. If it doesn't appear, ask me to open it again. It never appears in "
+                "a chat with a folder attached: start a new chat without one, or give me a compound name or SMILES "
+                "and I'll run an exact, substructure or similarity search.")
+# Claude Desktop 4.23118.0 shows no panel for a call in the first turn of a new chat that runs through this
+# computer (a remote_cowork session), not even for a second call in that turn; the first call of the next turn
+# shows it (docs/structure-editor.md). The server cannot tell from the call, so the editor page reports itself
+# with editor_opened once it loads (EditorSearches.mark_opened), and check_editor_shown waits for that.
+NOT_SHOWN = ("The editor has not appeared in the chat: its page never loaded. This is the chat app not showing the "
+             "panel, not something you did. Call open_structure_editor again with the same arguments, without "
+             "asking; in a chat with a folder attached it never appears.")
+NEXT_MESSAGE_REPLY = ("The editor didn't appear: Claude Desktop doesn't show it in the first reply of a new chat. "
+                      "Send any message, for example \"show it\", and I'll open it again.")
+WAIT_FOR_EDITOR = 10  # seconds check_editor_shown waits for the page; it reports itself about 1 s after the call
+RETRY_WITHIN = 30 * 60  # seconds after a missed editor in which open_structure_editor counts as the retry
+UI_EXTENSION = "io.modelcontextprotocol/ui"  # MCP Apps: clients that can show panels declare it
 _EDITOR_ID = re.compile(r"[0-9a-z]{1,32}")
+
+
+def client_info(ctx: Context | None) -> dict[str, Any]:
+    """The calling client's name and version and whether it declared MCP Apps (UI_EXTENSION)."""
+    try:
+        caps = ctx.client_capabilities if ctx is not None else None
+        params = ctx.session.client_params if ctx is not None else None
+    except Exception:  # noqa: BLE001 - outside a request
+        caps = params = None
+    info = getattr(params, "client_info", None)
+    declared = {**(getattr(caps, "extensions", None) or {}), **(getattr(caps, "experimental", None) or {})}
+    return {"name": getattr(info, "name", None), "version": getattr(info, "version", None),
+            "apps": UI_EXTENSION in declared}
 SearchTool = Literal["exact_structure_search", "substructure_search", "similarity_search"]
 
 
@@ -64,6 +90,42 @@ class EditorSearches:
             return json.loads(self._file(editor_id).read_text())
         except FileNotFoundError:
             return []
+
+    def mark_opened(self, editor_id: str) -> None:
+        """Record that the editor's page loaded in the chat (kept with its searches, for every server process)."""
+        marker = self._file(editor_id).with_suffix(".opened")
+        self.directory.mkdir(parents=True, exist_ok=True)
+        marker.write_text(time.strftime("%Y-%m-%d %H:%M:%S"))
+        for old in sorted(self.directory.glob("*.opened"), key=lambda f: f.stat().st_mtime)[:-self.EDITORS]:
+            old.unlink(missing_ok=True)
+
+    def opened(self, editor_id: str) -> bool:
+        return self._file(editor_id).with_suffix(".opened").is_file()
+
+    async def wait_opened(self, editor_id: str, seconds: float) -> bool:
+        """Whether the editor's page reports itself (mark_opened, from any server process) within `seconds`."""
+        deadline = time.monotonic() + seconds
+        while not self.opened(editor_id):
+            if time.monotonic() >= deadline:
+                return False
+            await asyncio.sleep(0.25)
+        return True
+
+    # Workaround for Claude Desktop showing no panel for some calls (docs/structure-editor.md): when an editor
+    # does not appear, the assistant opens it once more, and that call must not ask for another check.
+    def note_missed(self) -> None:
+        self.directory.mkdir(parents=True, exist_ok=True)
+        (self.directory / "missed").write_text(str(time.time()))
+
+    def take_missed(self) -> bool:
+        """Whether an editor was missed in the last RETRY_WITHIN seconds; forgets it, so only one retry follows."""
+        marker = self.directory / "missed"
+        try:
+            missed = float(marker.read_text())
+            marker.unlink(missing_ok=True)
+        except (FileNotFoundError, ValueError):
+            return False
+        return time.time() - missed < RETRY_WITHIN
 
     def latest_editor(self) -> str | None:
         files = sorted(self.directory.glob("*.json"), key=lambda f: f.stat().st_mtime)
@@ -99,13 +161,41 @@ def add_editor_results_tool(mcp: MCPServer, searches: EditorSearches) -> None:
     ) -> dict[str, Any]:
         """Results of searches the user ran in the structure editor (Run query). You do not see the editor, so
         call this when the user asks about, or follows up on, what they searched there. Each search has the tool
-        and arguments it ran with and that tool's result."""
+        and arguments it ran with and that tool's result. editor_shown tells whether the editor appeared in the
+        chat at all."""
         editor_id = editor_id or searches.latest_editor()
         runs = searches.searches(editor_id) if editor_id else []
+        shown = bool(runs) or (editor_id is not None and searches.opened(editor_id))
         if not runs:
-            return {"editor_id": editor_id, "searches": [],
-                    "note": "No searches have been run in this editor yet; the user runs them with Run query."}
-        return {"editor_id": editor_id, "searches": runs if all_searches else runs[-1:], "n_searches": len(runs)}
+            return {"editor_id": editor_id, "editor_shown": shown, "searches": [],
+                    "note": NOT_SHOWN if editor_id and not shown else
+                    "No searches have been run in this editor yet; the user runs them with Run query."}
+        return {"editor_id": editor_id, "editor_shown": True, "searches": runs if all_searches else runs[-1:],
+                "n_searches": len(runs)}
+
+
+def add_editor_check_tool(mcp: MCPServer, searches: EditorSearches) -> None:
+    """check_editor_shown: the workaround for chats that show no panel for a call (open_structure_editor)."""
+
+    @mcp.tool(annotations=READ_ONLY)
+    async def check_editor_shown(
+        editor_id: Annotated[str, Field(description="The editor_id open_structure_editor returned")],
+    ) -> dict[str, Any]:
+        """Wait until the structure editor open_structure_editor just opened has appeared in the chat (at most
+        about 10 s). Call it right after open_structure_editor when its instructions say so."""
+        searches._file(editor_id)  # validates the id
+        if await searches.wait_opened(editor_id, WAIT_FOR_EDITOR):
+            return {"editor_id": editor_id, "shown": True,
+                    "instructions": "The editor appeared. Reply as open_structure_editor's instructions say."}
+        searches.note_missed()
+        return {"editor_id": editor_id, "shown": False,
+                "instructions": "The editor did not appear: the chat app showed no panel for this call, which "
+                                "is not something you did. Do not call open_structure_editor again in this reply: "
+                                "Claude Desktop shows no editor in the first reply of a new chat, not even for a "
+                                "second call. Reply with exactly this and nothing else: \"" + NEXT_MESSAGE_REPLY
+                                + "\" When the user sends their next message, whatever it says, call "
+                                "open_structure_editor first, with the same arguments as before, and follow its "
+                                "instructions."}
 
 
 def overlay_viewer_html(data: dict[str, Any] | None = None) -> str | None:
@@ -155,6 +245,7 @@ def create_editor_extension(network: bool = True, searches: EditorSearches | Non
         mode: Annotated[Literal["exact", "substructure", "similarity"], Field(
             description="The search the editor starts with: substructure for a fragment or core, similarity "
                         "for analogues")] = "exact",
+        ctx: Context | None = None,
     ) -> dict[str, Any]:
         """Open the chemical structure editor in the chat: a sketcher where the user draws or edits a molecule
         (or loads one from SMILES, SMARTS or a compound name) and searches BindingDB with it by exact
@@ -171,6 +262,16 @@ def create_editor_extension(network: bool = True, searches: EditorSearches | Non
         if len(initial_query) > 20000:
             raise ToolError("Initial query is too long")
         editor_id = uuid.uuid4().hex[:12]
+        reply = ("Reply with exactly this and nothing else: \"" + EDITOR_REPLY + "\" Your reply stays in the chat "
+                 "after the user runs searches, so do not say no search has run. The user sees the results in the "
+                 "editor; you do not. When the user asks about them or follows up, call "
+                 f"get_editor_results(editor_id=\"{editor_id}\") first. If the user says the editor did not "
+                 "appear, call open_structure_editor again with the same arguments right away, without asking: "
+                 "the chat app sometimes shows no panel for a call, though the call worked. Do not guess why or "
+                 "blame yourself.")
+        # Claude Desktop sometimes shows no panel for a call, and a second call shows it: unless this call is
+        # that retry, the assistant checks that the editor appeared and otherwise opens it once more.
+        check = searches is not None and client_info(ctx)["apps"] and not searches.take_missed()
         return {
             "initial_query": initial_query,
             "input_type": input_type,
@@ -179,12 +280,18 @@ def create_editor_extension(network: bool = True, searches: EditorSearches | Non
             "executed": False,
             # Claude Desktop shows no editor in chats with a folder attached, and the server cannot tell
             # (docs/structure-editor.md), so the reply always says what to do then.
-            "instructions": "The editor explains itself. Reply with exactly this and nothing else: \""
-                            + EDITOR_REPLY + "\" Your reply stays in the chat after the user runs searches, "
-                            "so do not say no search has run. The user sees the results in the editor; you do "
-                            "not. When the user asks about them or follows up, call "
-                            f"get_editor_results(editor_id=\"{editor_id}\") first.",
+            "instructions": "The editor explains itself. " + (
+                f"Before replying, call check_editor_shown(editor_id=\"{editor_id}\"), without telling the user: "
+                "it waits until the editor has appeared in the chat. If it reports shown: false, follow its "
+                "instructions instead. If it is shown, " + reply[0].lower() + reply[1:] if check else reply),
         }
+
+    @apps.tool(resource_uri=URI, visibility=["app"], annotations=READ_ONLY)
+    def editor_opened(editor_id: str) -> dict[str, Any]:
+        """The editor's page reports that it loaded in the chat, so get_editor_results can tell whether it appeared."""
+        if searches is not None:
+            searches.mark_opened(editor_id)
+        return {"editor_id": editor_id}
 
     @apps.tool(resource_uri=URI, visibility=["app"], annotations=READ_ONLY)
     async def editor_search(editor_id: str, tool: SearchTool, arguments: dict[str, Any]) -> dict[str, Any]:

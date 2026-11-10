@@ -28,8 +28,10 @@ from pydantic import BaseModel, Field
 from . import depict, figures, names, sar, structures, substructure, transcript, transcript_html
 from . import properties as compound_properties
 from .db import Database, QueryError, find_database
-from .structure_editor import (FIGURE_META, OVERLAY_META, EditorSearches, add_editor_results_tool,
+from .structure_editor import (FIGURE_META, OVERLAY_META, UI_EXTENSION, EditorSearches,
+                               add_editor_check_tool, add_editor_results_tool,
                                create_editor_extension, overlay_viewer_html)
+from .structure_editor import client_info as _client
 
 AffinityType = Literal["Ki", "Kd", "IC50", "EC50", "kon", "koff"]
 NameSource = Literal["bindingdb", "opsin", "pubchem"]
@@ -48,7 +50,9 @@ Requests to draw, sketch or edit a structure, molecule or compound, or for a str
 ("edit structure", "draw a molecule"), mean open_structure_editor: open it directly, with initial_query
 when they name a compound, rather than asking what kind of structure they mean.
 The user runs searches in the editor and sees the results there; you do not. When they ask about them,
-call get_editor_results with the editor_id open_structure_editor returned.
+call get_editor_results with the editor_id open_structure_editor returned. If the user says the editor did not
+appear, call open_structure_editor again right away: a chat app sometimes shows no panel for a call, often the
+first in a new chat.
 Use run_sql for anything the curated tools do not cover; call describe_tables first.
 
 Data notes:
@@ -884,6 +888,7 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
     if sar.available():
         _add_sar_tools(mcp, db, property_filter)
     add_editor_results_tool(mcp, editor_searches)
+    add_editor_check_tool(mcp, editor_searches)
     _add_transcript_tools(mcp, info.get("release", "unknown"), transcript_dir or db.path.parent / "transcripts")
     if structures.available():
         _add_pdb_tools(mcp, db, network)
@@ -1468,20 +1473,6 @@ PotencyTypesArg = Annotated[list[Literal["Ki", "Kd", "IC50", "EC50"]] | None, Fi
                 "(e.g. ['IC50'] when the user asks for IC50s). Default: Ki or Kd (whichever has more "
                 "measurements), and IC50 or EC50 only for compounds without either")]
 SAME_PROTEIN_IDENTITY = 90.0  # %, another record whose sequence is this close is the same protein
-UI_EXTENSION = "io.modelcontextprotocol/ui"  # MCP Apps: clients that can show the viewer declare it
-
-
-def _client(ctx: Context | None) -> dict[str, Any]:
-    """The calling client's name and version and whether it declared MCP Apps (UI_EXTENSION)."""
-    try:
-        caps = ctx.client_capabilities if ctx is not None else None
-        params = ctx.session.client_params if ctx is not None else None
-    except Exception:  # noqa: BLE001 - outside a request
-        caps = params = None
-    info = getattr(params, "client_info", None)
-    declared = {**(getattr(caps, "extensions", None) or {}), **(getattr(caps, "experimental", None) or {})}
-    return {"name": getattr(info, "name", None), "version": getattr(info, "version", None),
-            "apps": UI_EXTENSION in declared}
 PdbIdsArg = Annotated[list[str] | None, Field(description="PDB entries to overlay, e.g. ['3NU3', '2I4U'], "
                                               "optionally with the ligand code, e.g. '1HVI:A77'. A ligand "
                                               "measured only on another record of the same protein gets its "
