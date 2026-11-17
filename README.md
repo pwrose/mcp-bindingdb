@@ -36,20 +36,38 @@ its figures and structure drawings
 
 3. **Add the server to Claude.**
 
-   **Claude Desktop:** add this to `claude_desktop_config.json` (Settings → Developer → Edit Config) and
-   restart Claude:
+   **Claude Desktop:** let Claude do it. Paste this prompt into a new Claude Desktop chat, and allow
+   Claude to change the file when it asks:
 
-   ```json
-   {
-     "mcpServers": {
-       "mcp-bindingdb": {
-         "command": "uv",
-         "args": ["--directory", "/path/to/mcp-bindingdb", "run", "--extra", "substructure", "--extra", "name",
-                  "--extra", "structures", "mcp-bindingdb"]
-       }
-     }
-   }
+   ```text
+   Add the mcp-bindingdb MCP server to my Claude Desktop configuration.
+
+   1. Find the mcp-bindingdb folder I cloned from GitHub: it contains a pyproject.toml with
+      name = "mcp-bindingdb". If you find none, or more than one, ask me which folder to use.
+   2. Find the full path of the uv program (`which uv` on macOS, `where uv` on Windows). Claude
+      Desktop may not find "uv" by name, so use the full path.
+   3. Open Claude Desktop's config file: ~/Library/Application Support/Claude/claude_desktop_config.json
+      on macOS, %APPDATA%\Claude\claude_desktop_config.json on Windows. If it exists, save a backup copy
+      next to it first; if it does not exist, create it.
+   4. Inside "mcpServers" (create it if missing), add or replace only this entry, keeping every other
+      server and setting exactly as it is:
+        "mcp-bindingdb": {
+          "command": "<full path of uv>",
+          "args": ["--directory", "<the mcp-bindingdb folder>", "run", "--extra", "substructure",
+                   "--extra", "name", "--extra", "structures", "mcp-bindingdb"]
+        }
+   5. Check that the file is still valid JSON, then show me the mcp-bindingdb entry and where the
+      backup is. Do not restart Claude yourself.
    ```
+
+   Then:
+
+   1. **Restart Claude Desktop:** quit it completely (⌘Q on macOS; on Windows, quit it from the system
+      tray) and open it again. Closing the window is not enough.
+   2. **Allow the BindingDB tools:** open Claude → Settings → Plugins → mcp-bindingdb and set its tools
+      to **Always allow**, so Claude can look things up without asking you before every search. If you
+      skip this, choose **Always allow** the first time Claude asks to use a BindingDB tool.
+   3. **Check it works:** in a new chat, ask "Look up imatinib in BindingDB."
 
    **Claude Code:** the repository's `.mcp.json` registers the server when you run `claude` in this
    folder. To use it from any folder:
@@ -58,7 +76,8 @@ its figures and structure drawings
    claude mcp add --scope user mcp-bindingdb -- uv --directory /path/to/mcp-bindingdb run --extra substructure --extra name --extra structures mcp-bindingdb
    ```
 
-If some tools are missing in a chat, check that they are switched on in the chat's tools menu.
+If some tools are missing in a chat, check that they are switched on: in Claude Desktop, under Claude →
+Settings → Plugins → mcp-bindingdb, or in the chat's tools menu.
 
 ## Interactive structure editor
 
