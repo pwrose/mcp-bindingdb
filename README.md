@@ -96,6 +96,63 @@ protein chains as lines and ligands as sticks, each switched on or off per entry
 request and a table of the residues each ligand touches. It also writes the superposed complexes as mmCIF
 files. See [Tools](docs/tools.md#find_pdb_complexes-and-overlay_binding_site).
 
+## Jupyter notebooks
+
+A notebook turns a chat into a record that anyone can rerun, check and cite. It holds each of your
+prompts, the BindingDB tool calls behind each answer with their results as recorded, Claude's answers,
+the figures, and where the results came from: the BindingDB release (with the checksum of the download
+the database was built from), the mcp-bindingdb version and commit, the model, and the software versions.
+
+### Create a notebook in a chat
+
+At the end of an analysis, or in the same prompt, ask for one and name the folder to put it in:
+
+```text
+Create a Jupyter notebook named imatinib-analogues that reruns this analysis, in ~/results
+```
+
+Claude picks this chat's tool calls, places each under the answer it was made for, and the server writes
+the notebook, here `~/results/imatinib-analogues.ipynb`, and tells you where it is. Without a folder it
+goes to `data/transcripts/` in the mcp-bindingdb folder. The notebook opens with the results as they
+were recorded, so it can be read without running anything.
+
+### Run a notebook
+
+Jupyter has to run in mcp-bindingdb's Python environment, so start it from the mcp-bindingdb folder:
+
+```bash
+cd /path/to/mcp-bindingdb
+uv run --all-extras --with jupyterlab jupyter lab ~/results/imatinib-analogues.ipynb
+```
+
+Then choose **Run → Run All Cells**. Each tool call runs again on your copy of the database and is
+marked ✅ when its result matches the recorded one, ⚠️ when it differs, or ❌ when it fails; structure
+grids and R-group tables are drawn again, and a table at the end sums up the checks. To rerun a
+notebook without opening Jupyter, writing a copy with the new results:
+
+```bash
+cd /path/to/mcp-bindingdb
+uv run --all-extras --with nbconvert jupyter nbconvert --to notebook --execute \
+  --output imatinib-analogues-rerun.ipynb ~/results/imatinib-analogues.ipynb
+```
+
+The database is found in the folder's `data/`; if it is elsewhere, start the commands with
+`BINDINGDB_DUCKDB=/path/to/bindingdb_<release>.duckdb`. VS Code works too, with the folder's `.venv`
+as the kernel.
+
+### Share and cite a notebook
+
+Someone without mcp-bindingdb can rerun a notebook after cloning this repository at the commit the
+notebook names and building the same BindingDB release; the notebook's **How to rerun** section has the
+exact commands, and its first cell warns if the database is a different release or build. Its **How to
+cite** section lists the data, software and analysis to cite with it, for example when it is deposited
+with a DOI.
+
+Some things are not recomputed: Claude's answers are text and are kept as written, images made with other
+tools (e.g. a matplotlib plot added with `add_figure`) are kept as recorded, and results from PubChem,
+RCSB or PDBe can change as those services change. See
+[create_jupyter_notebook](docs/tools.md#create_jupyter_notebook) for how results are compared.
+
 ## Tools
 
 | Tool | Purpose |
@@ -136,12 +193,7 @@ Ask for a transcript at the end of a chat, e.g. "create a transcript of this ses
 (change this with `--transcript-dir` or `MCP_BINDINGDB_TRANSCRIPT_DIR`).
 Add "with the tool calls" to include every BindingDB lookup and its result.
 
-To let others rerun and check the work, ask for a notebook: "create a Jupyter notebook that reruns this
-analysis". It records each prompt, the tool calls behind each answer with their results, the figures, the
-BindingDB release (with the checksum of the download it was built from) and the server's commit; run in
-Jupyter, it calls the same tools on your copy of the database and marks each result ✅ when it matches the
-recorded one (install the `notebook` extra for the Jupyter kernel). See
-[Reproducible notebooks](docs/tools.md#create_jupyter_notebook).
+To let others rerun and check the work, ask for a [Jupyter notebook](#jupyter-notebooks) instead.
 
 All tools are read-only, apart from the transcripts, notebooks and figures, which are written to files. Only `chemical_name_to_smiles` (PubChem) and `overlay_binding_site` (PDBe, RCSB) use the network.
 See [Tools](docs/tools.md) for how the searches work and notes on the data.
