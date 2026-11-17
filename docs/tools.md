@@ -23,6 +23,7 @@
 | `open_overlay_viewer` | Opens an overlay's 3D viewer in the browser on the computer running the server, for chats that cannot show the panel (e.g. the first reply of a new Claude Desktop chat) |
 | `get_editor_results` | Results of the searches the user ran in the structure editor ([structure-editor.md](structure-editor.md)): the tool, its arguments and its result, by `editor_id` |
 | `create_transcript` | Markdown, HTML (with structure drawings) or JSON transcript of the session: prompts and answers, optionally followed by the logged tool calls with their results |
+| `create_jupyter_notebook` | Jupyter notebook that reruns the session: prompts, answers, each BindingDB tool call with its recorded result and digest, figures, and the BindingDB release, server commit and software versions ([below](#create_jupyter_notebook)) |
 | `draw_structure_grid` | Compounds side by side, aligned on a shared core that is highlighted, with binding bars per target; shown in the chat and included in transcripts (needs RDKit) |
 | `draw_r_group_table` | An R-group table of one series: the core with its positions named R1, R2, …, then a row per compound whose cells are its substituents, drawn, with binding bars (needs RDKit) |
 | `add_figure` | Adds an image made with other tools (e.g. a matplotlib plot) as a figure for transcripts |
@@ -32,7 +33,7 @@
 
 ## Safety
 
-All tools are read-only, except that `create_transcript`, `transcript_to_html`, `draw_structure_grid`,
+All tools are read-only, except that `create_transcript`, `transcript_to_html`, `create_jupyter_notebook`, `draw_structure_grid`,
 `draw_r_group_table` and `add_figure` write transcript and figure files (`add_figure` reads the image file it is given, and accepts only
 images). The database connection is opened read-only with file, network and extension access
 disabled and settings locked, so `run_sql` cannot write data or read anything outside the database.
@@ -227,6 +228,50 @@ RDKit there are no drawings. Answer text and data are shown as text, never as HT
 20 KB, too much to pass through the chat, so the server writes the page itself (see
 [Where transcripts are written](#where-transcripts-are-written)) and returns the path plus a link to the resource
 `transcript://session/latest.html` for clients of a remote server.
+
+## create_jupyter_notebook
+
+A transcript shows what was found; a notebook lets someone else find it again. `create_jupyter_notebook`
+writes an `.ipynb` (to `output_dir`, like transcripts) with, in order:
+
+- a header: title, date, model, BindingDB release with the download's file name and SHA-256 (from the
+  database's `_build_info`), the build date, derived data (InChIKeys, properties), the server version and
+  git commit (flagged when the checkout has uncommitted changes), software versions, and how to rerun;
+- a setup cell, `replay = Replay(release=..., source_zip_sha256=...)`, which builds this server in the
+  kernel on the local database (`BINDINGDB_DUCKDB` or `data/`) and warns when its release or source
+  checksum differs from the recorded one;
+- per exchange: the prompt, a code cell per tool call made for it (`await replay.call(n, tool, arguments,
+  sha256=...)`, `run_sql`'s SQL as a text block), its figures, and the answer (figures come before the
+  answer, as the chat showed them);
+- a verification cell (`replay.summary()`) and a "How to cite" cell.
+
+To run a notebook, start Jupyter from the mcp-bindingdb folder, so its kernel has this project's
+packages (the `notebook` extra provides ipykernel):
+
+```bash
+cd /path/to/mcp-bindingdb
+uv run --all-extras --with jupyterlab jupyter lab /path/to/analysis.ipynb      # then Run All Cells
+uv run --all-extras --with nbconvert jupyter nbconvert --to notebook --execute \
+  --output analysis-rerun.ipynb /path/to/analysis.ipynb                       # without opening Jupyter
+```
+
+The notebook's own "How to rerun" section gives these commands with its file name, and the steps for a
+computer without mcp-bindingdb (clone at the recorded commit, `scripts/build_duckdb.sh --release ...`).
+
+The model lists each answer's calls by their `get_tool_log` index in the exchange's `calls`; without any,
+every logged call goes in a section after the conversation. Before it is run, each call cell shows the
+result as recorded (all rows unless `max_result_rows` is given). Run, it calls the tool again through an
+in-process MCP client, exactly as a chat would, shows the new result, and compares the SHA-256 of the
+result's canonical JSON with the recorded digest: ✅ same, ⚠️ differs, ❌ failed. The digest covers the
+whole result, with keys sorted, floats rounded to 10 significant digits (parallel sums differ in the last
+bits) and run-specific values left out (overlay, editor and figure ids, output folders). Row order counts.
+Calls to PubChem, RCSB or PDBe are marked, since those services' answers change.
+
+`get_editor_results` calls become the searches the user ran in the structure editor (their tool, arguments
+and result), and `open_structure_editor` is noted but not rerun. Structure grids and R-group tables are
+drawn again from the arguments they were drawn with (images are shown, not compared); images added with
+`add_figure` are embedded as cell attachments and kept as recorded, and an overlay's contact map is drawn
+again by its `overlay_binding_site` call. The prose answers are the model's and are not recomputed.
 
 ## draw_structure_grid
 

@@ -15,6 +15,7 @@ dependencies = [
 substructure = ["rdkit>=2024.3"]
 name = ["pyopsin>=1.1.0"]  # OPSIN IUPAC-name parser; needs a Java runtime
 structures = ["gemmi>=0.7.5"]  # find_pdb_complexes, overlay_binding_site
+notebook = ["ipykernel>=6"]  # running notebooks from create_jupyter_notebook
 
 [project.scripts]
 mcp-bindingdb = "mcp_bindingdb.server:main"

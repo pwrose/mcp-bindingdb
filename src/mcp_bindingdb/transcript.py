@@ -12,6 +12,7 @@ from typing import Any
 
 #: Not logged: schema lookups, and the transcript tools themselves.
 UNLOGGED_TOOLS = {"describe_tables", "create_transcript", "transcript_to_html", "reset_tool_log", "get_tool_log",
+                  "create_jupyter_notebook",
                   "draw_structure_grid", "add_figure",  # figures are logged separately
                   "check_editor_shown",  # opening the editor, not data
                   "editor_search", "editor_opened", "figure_image", "overlay_data", "open_overlay_viewer"}  # the panels' own calls; get_editor_results is logged
@@ -153,14 +154,14 @@ def _render_call(call: dict[str, Any], k: int, max_rows: int | None) -> list[str
         lines += ["```sql", sql.strip(), "```", ""]
     else:
         lines += ["```python", signature(call), "```", ""]
-    return lines + _render_result(call.get("result"), max_rows)
+    return lines + render_result(call.get("result"), max_rows)
 
 
 def _is_table(key: str, value: Any) -> bool:
     return isinstance(value, list) and (key == "rows" or bool(value) and all(isinstance(r, dict) for r in value))
 
 
-def _render_result(result: Any, max_rows: int | None) -> list[str]:
+def render_result(result: Any, max_rows: int | None) -> list[str]:
     """Lists of rows as Markdown tables (capped at max_rows); everything else as one JSON block."""
     if not isinstance(result, dict):
         return ["```", str(result).strip(), "```", ""]

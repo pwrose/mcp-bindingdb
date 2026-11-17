@@ -103,6 +103,7 @@ files. See [Tools](docs/tools.md#find_pdb_complexes-and-overlay_binding_site).
 | `describe_tables` | Table list with descriptions, or the columns of one table |
 | `run_sql` | Any read-only SQL query |
 | `create_transcript` | A record of the session as Markdown, or as an HTML page with structure drawings: your prompts and Claude's answers, and, if you ask, every BindingDB tool call with its result |
+| `create_jupyter_notebook` | A Jupyter notebook that reruns the analysis: prompts, answers, each BindingDB tool call with its recorded result, figures, the BindingDB release and software versions; run, it checks every result against the recorded one |
 | `draw_structure_grid` | Compounds side by side, aligned on a shared substructure, with binding bars for their main targets |
 | `draw_r_group_table` | An R-group table of one series: the core drawn with R1, R2, … named, then a row per compound with its substituents drawn and its potency |
 | `add_figure` | Adds an image made with other tools (e.g. a matplotlib plot) as a figure for transcripts |
@@ -116,7 +117,14 @@ Ask for a transcript at the end of a chat, e.g. "create a transcript of this ses
 (change this with `--transcript-dir` or `MCP_BINDINGDB_TRANSCRIPT_DIR`).
 Add "with the tool calls" to include every BindingDB lookup and its result.
 
-All tools are read-only, apart from the transcripts and figures, which are written to files. Only `chemical_name_to_smiles` (PubChem) and `overlay_binding_site` (PDBe, RCSB) use the network.
+To let others rerun and check the work, ask for a notebook: "create a Jupyter notebook that reruns this
+analysis". It records each prompt, the tool calls behind each answer with their results, the figures, the
+BindingDB release (with the checksum of the download it was built from) and the server's commit; run in
+Jupyter, it calls the same tools on your copy of the database and marks each result ✅ when it matches the
+recorded one (install the `notebook` extra for the Jupyter kernel). See
+[Reproducible notebooks](docs/tools.md#create_jupyter_notebook).
+
+All tools are read-only, apart from the transcripts, notebooks and figures, which are written to files. Only `chemical_name_to_smiles` (PubChem) and `overlay_binding_site` (PDBe, RCSB) use the network.
 See [Tools](docs/tools.md) for how the searches work and notes on the data.
 
 ## More

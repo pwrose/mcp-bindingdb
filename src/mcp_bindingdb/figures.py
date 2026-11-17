@@ -80,6 +80,7 @@ class Figure:
     data: bytes  # the image file's content
     spec: dict[str, Any] = field(default_factory=dict)
     caption: str | None = None  # image figures: shown under the image in transcripts (grids have their own)
+    call: dict[str, Any] | None = None  # {"tool", "arguments"} that draws it again (notebooks), if a tool drew it
 
 
 def _fmt(nm: float) -> str:

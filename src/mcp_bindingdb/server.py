@@ -25,7 +25,7 @@ from mcp.server.mcpserver.exceptions import ToolError
 from mcp.types import CallToolResult, ImageContent, ResourceLink, TextContent, ToolAnnotations
 from pydantic import BaseModel, Field
 
-from . import depict, figures, names, sar, structures, substructure, transcript, transcript_html
+from . import depict, figures, names, notebook, sar, structures, substructure, transcript, transcript_html
 from . import properties as compound_properties
 from .db import Database, QueryError, find_database
 from .structure_editor import (FIGURE_META, OVERLAY_META, UI_EXTENSION, EditorSearches,
@@ -146,6 +146,11 @@ IMAGE_INSTRUCTIONS = """
 Figures in transcripts: create_transcript includes only figures in its log. For an image you made with
 other tools (e.g. a matplotlib plot saved as PNG), call add_figure with its path and list the figure id
 it returns in the exchange; never add images to a transcript, or edit its files, yourself.
+
+Reproducible notebooks: when the user wants the analysis as a Jupyter notebook, or wants it rerunnable,
+verifiable or citable (e.g. "a notebook that reruns this", "so others can reproduce it"), call
+create_jupyter_notebook: it records the prompts, answers, BindingDB tool calls with their results, figures
+and the database release, as cells that rerun every call and check its result against the recorded one.
 """
 
 PROPERTY_INSTRUCTIONS = """
@@ -290,6 +295,11 @@ class Exchange(BaseModel):
     figures: list[int] = Field(default_factory=list, description="Ids of the figures (from "
                                "draw_structure_grid or add_figure) shown with this answer; the transcript "
                                "numbers its figures 1, 2, … in order")
+
+
+class NotebookExchange(Exchange):
+    calls: list[int] = Field(default_factory=list, description="The BindingDB tool calls made for this answer, "
+                             "by the 1-based index get_tool_log shows, in the order they ran")
 
 
 def _now() -> str:
@@ -925,13 +935,14 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
         _add_sar_tools(mcp, db, property_filter)
     add_editor_results_tool(mcp, editor_searches)
     add_editor_check_tool(mcp, editor_searches)
-    _add_transcript_tools(mcp, info.get("release", "unknown"), transcript_dir or db.path.parent / "transcripts")
+    _add_transcript_tools(mcp, info, transcript_dir or db.path.parent / "transcripts")
     if structures.available():
         _add_pdb_tools(mcp, db, network)
     return mcp
 
 
-def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Path) -> None:
+def _add_transcript_tools(mcp: BindingDBServer, build_info: dict[str, str], transcript_dir: Path) -> None:
+    release = build_info.get("release", "unknown")
     figures_dir = transcript_dir / "figures"
     writes = ToolAnnotations(readOnlyHint=False, destructiveHint=False, openWorldHint=False)
     replaces = ToolAnnotations(readOnlyHint=False, destructiveHint=True, openWorldHint=False)  # same-name files
@@ -945,7 +956,7 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
         if not folder.is_absolute():
             raise ToolError(f"output_dir must be an absolute path (or start with ~), not {output_dir!r}")
         stem = Path(file_name).name if file_name else _slug(title)
-        stem = stem[:-len(Path(stem).suffix)] if Path(stem).suffix.lower() in (".md", ".html", ".htm") else stem
+        stem = stem[:-len(Path(stem).suffix)] if Path(stem).suffix.lower() in (".md", ".html", ".htm", ".ipynb") else stem
         if not stem.strip(" ."):
             raise ToolError(f"file_name {file_name!r} is not a usable file name")
         return folder / f"{stem}{ext}"
@@ -1009,7 +1020,7 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
                                       figures.png_smiles(data) if path.suffix == ".png" else [])
 
     def log_figure(title: str, data: bytes, ext: str, html_block: str, spec: dict[str, Any],
-                   caption: str | None = None) -> tuple[figures.Figure, str]:
+                   caption: str | None = None, call: dict[str, Any] | None = None) -> tuple[figures.Figure, str]:
         """Log a figure with the next id and save its image in figures/; returns it and where it was saved."""
         log = mcp.tool_log
         figure_id, log.next_figure_id = log.next_figure_id, log.next_figure_id + 1
@@ -1021,7 +1032,8 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
         except OSError as e:
             saved = f"Could not save the image in {figures_dir}: {e}; HTML transcripts still include it."
         figure = figures.Figure(id=figure_id, timestamp=datetime.now(timezone.utc).isoformat(timespec="seconds"),
-                                title=title, file=file, html=html_block, data=data, spec=spec, caption=caption)
+                                title=title, file=file, html=html_block, data=data, spec=spec, caption=caption,
+                                call=call)
         log.figures.append(figure)
         return figure, saved
 
@@ -1130,7 +1142,12 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
                 raise ToolError(f"align_to {align_to!r} is not valid SMILES or SMARTS")
             block, png, lay = figures.structure_grid(title, compounds, align_to, columns, description, notes)
             figure, saved = log_figure(title, png, ".png", block, {"compounds": [c.model_dump() for c in compounds],
-                                                                   "align_to": align_to})
+                                                                   "align_to": align_to},
+                                       call={"tool": "draw_structure_grid", "arguments": {
+                                           "title": title, "compounds": [c.model_dump(exclude_defaults=True)
+                                                                         for c in compounds],
+                                           "align_to": align_to, "columns": columns, "description": description,
+                                           "notes": notes}})
             if any(lay.cores):
                 alignment = f"aligned on {align_to}" if align_to else "aligned on their largest common substructure"
             elif align_to:
@@ -1193,7 +1210,13 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
                 raise ToolError("No row has an R-group: give each row's substituents as "
                                 "r_groups, e.g. {'R1': 'CCC[*:1]', 'R2': 'H'}")
             figure, saved = log_figure(title, png, ".png", block,
-                                       {"core": core, "rows": [r.model_dump() for r in rows]})
+                                       {"core": core, "rows": [r.model_dump() for r in rows]},
+                                       call={"tool": "draw_r_group_table", "arguments": {
+                                           "title": title, "core": core,
+                                           "rows": [r.model_dump(exclude_defaults=True) for r in rows],
+                                           "description": description, "column_notes": column_notes,
+                                           "notes": notes, "core_caption": core_caption,
+                                           "row_heading": row_heading}})
             text = [f"Figure id {figure.id}: '{title}', {transcript.plural(len(rows), 'compound')} over "
                     f"{', '.join(labels)}.",
                     *([f"Not drawn (not understood as a substituent): {', '.join(undrawn)}."]
@@ -1347,6 +1370,95 @@ def _add_transcript_tools(mcp: BindingDBServer, release: str, transcript_dir: Pa
         except OSError as e:
             note = f"Could not save the transcript next to its figures in {transcript_dir}: {e}."
         return [TextContent(type="text", text=mcp.last_markdown), TextContent(type="text", text=note)]
+
+    @mcp.tool(annotations=replaces)
+    def create_jupyter_notebook(
+        model: Annotated[str, Field(description="The exact model id that produced the analysis (e.g. "
+                                    "'claude-opus-5-5'), from session metadata or the user; never a family "
+                                    "name like 'Claude' or a guess. Ask the user if you do not know it")],
+        exchanges: Annotated[list[NotebookExchange], Field(min_length=1, description="The conversation turns, "
+                                                           "in order: each prompt with your full, verbatim "
+                                                           "answer, the indices of the tool calls made for "
+                                                           "it and the ids of its figures")],
+        title: Annotated[str, Field(description="Heading of the notebook")] = "BindingDB analysis",
+        date: Annotated[str | None, Field(description="ISO date of the session (default: today)")] = None,
+        max_result_rows: Annotated[int | None, Field(description="Rows shown per recorded result table; the "
+                                                     "digest that verifies a rerun covers the whole result. "
+                                                     "null (default) shows all")] = None,
+        skills: Annotated[list[str] | None, Field(description="Agent skills that shaped the analysis, as "
+                                                  "'<name> v<version>'; only ones actually followed")] = None,
+        external_mcp_servers: Annotated[list[str] | None, Field(description="Other MCP servers this session "
+                                                                "actually called for evidence, e.g. "
+                                                                "['PubMed']")] = None,
+        output_dir: Annotated[str | None, OUTPUT_DIR_FIELD] = None,
+        file_name: Annotated[str | None, FILE_NAME_FIELD] = None,
+    ) -> str:
+        """Write a Jupyter notebook (.ipynb) that reruns this session's BindingDB analysis, so every finding
+        can be rerun, verified and cited: each prompt, then a code cell per BindingDB tool call made for it
+        (arguments verbatim, SQL as text) showing the result as recorded, then your answer and its figures.
+        It records the BindingDB release and the checksum of the download it was built from, the server
+        version and git commit, the model and the software versions, with instructions to rerun and a
+        citation. Run in Jupyter, the cells call the same tools on a local copy of the database and mark
+        each result ✅ when it matches the recorded one (SHA-256 digest) or ⚠️ when it differs; structure
+        grids and R-group tables are drawn again, images added with add_figure are kept as recorded.
+
+        Call get_tool_log first and list in each exchange's `calls` the indices of the calls made for that
+        answer (the log is shared by every chat this server process has served, so it can hold calls from
+        other chats). Calls of get_editor_results become the searches the user ran in the structure editor.
+        Only if no exchange lists calls does the notebook take every logged call, after the conversation.
+        Pass each answer in full, verbatim; the server cannot see your prose.
+
+        The notebook can be large, so the server writes it (to output_dir, if given: pass the folder the
+        user wants it in) and returns its path. Deliver that file as is; never write, edit or copy a
+        notebook of this analysis yourself."""
+        log = mcp.tool_log
+        turns = [e.model_dump() for e in exchanges]
+        listed_calls = [i for t in turns for i in t["calls"]]
+        if bad := sorted({i for i in listed_calls if not 1 <= i <= len(log.entries)}):
+            raise ToolError(f"calls {bad} are not in the log, which has {len(log.entries)} calls; "
+                            "see get_tool_log")
+        listed_figures = [i for t in turns for i in t["figures"]]
+        if missing := sorted({i for i in listed_figures if log.figure(i) is None}):
+            raise ToolError(f"figures {missing} are not in the log; it has "
+                            f"{[f.id for f in log.figures] or 'none'} (see get_tool_log)")
+        for t in turns:
+            t["calls"] = [log.entries[i - 1] for i in t["calls"]]
+            t["figures"] = [log.figure(i) for i in dict.fromkeys(t["figures"])]
+        leftover = [] if listed_calls else list(log.entries)
+        unplaced = [] if listed_figures else list(log.figures)
+        path = destination(output_dir, file_name, title, ".ipynb")
+        nb, counts = notebook.build_notebook(
+            title=title, when=date or _date.today().isoformat(), model=model, build_info=build_info,
+            generated_by=f"{mcp.name} v{VERSION}", exchanges=turns, leftover_calls=leftover,
+            unplaced_figures=unplaced, skills=transcript.clean_entries(skills),
+            mcp_servers=transcript.clean_entries(external_mcp_servers),
+            max_rows=None if max_result_rows is None else max(max_result_rows, 0), file_name=path.name)
+        text = json.dumps(nb, indent=1, ensure_ascii=False) + "\n"
+        replaced = write(path, text)
+        parts = [transcript.plural(counts["exchanges"], "exchange"), transcript.plural(counts["calls"], "tool call")]
+        if counts["figures"]:
+            parts.append(transcript.plural(counts["figures"], "figure")
+                         + (f" ({counts['redrawn_figures']} redrawn on rerun)" if counts["redrawn_figures"] else ""))
+        source = nb["metadata"]["bindingdb"].get("source") or {}
+        lines = [f"Jupyter notebook '{title}' written ({len(text):,} bytes; {', '.join(parts)}).",
+                 f"- File: {path}{replaced} (on the machine running mcp-bindingdb)",
+                 f"- BindingDB release {release}"
+                 + (f", source SHA-256 {build_info['source_zip_sha256'][:16]}…" if build_info.get("source_zip_sha256") else "")
+                 + f"; {mcp.name} v{VERSION}" + (f", commit {source['commit'][:12]}" if source.get("commit") else "")]
+        if source.get("uncommitted_changes"):
+            lines.append("- The server runs from a checkout with uncommitted changes, so the commit the notebook "
+                         "names may not reproduce these results until they are committed: tell the user.")
+        if counts["skipped_calls"]:
+            lines.append(f"- {transcript.plural(counts['skipped_calls'], 'call')} only opened a panel and "
+                         "are noted, not rerun.")
+        if not listed_calls:
+            lines.append("- No exchange listed its calls, so every logged call is in a section after the "
+                         "conversation" + (" (none were logged)." if not leftover else "."))
+        lines.append("To rerun it, open it in Jupyter in mcp-bindingdb's environment with the database of the same "
+                     "release and run all cells (instructions are in the notebook). Deliver this file as is; do "
+                     "not write, edit or copy it yourself" + ("." if output_dir else
+                     " (pass output_dir to have it written where the user wants it)."))
+        return "\n".join(lines)
 
     @mcp.tool(annotations=replaces)
     def transcript_to_html(
