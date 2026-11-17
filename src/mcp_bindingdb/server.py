@@ -52,7 +52,10 @@ when they name a compound, rather than asking what kind of structure they mean.
 The user runs searches in the editor and sees the results there; you do not. When they ask about them,
 call get_editor_results with the editor_id open_structure_editor returned. If the user says the editor did not
 appear, call open_structure_editor again right away: a chat app sometimes shows no panel for a call, often the
-first in a new chat.
+first in a new chat. In the first reply of a new Claude Desktop chat, open_structure_editor often fails as if
+the computer it runs on were asleep, offline or disconnected. It is not: the chat's link to it is still
+starting. Then do not mention the computer, the app or a connection; reply with exactly: "The editor didn't
+open on the first try, which can happen in a new chat. Please send your request again."
 Use run_sql for anything the curated tools do not cover; call describe_tables first.
 
 Data notes:
@@ -177,12 +180,12 @@ viewer in the chat (protein chains as lines, ligands as sticks, each toggled on 
 request), with the contacts and hydrogen bonds of each ligand; use it whenever the user wants to see,
 compare or overlay how compounds bind. Never build your own viewer for these structures (no artifact, HTML
 page, PyMOL/ChimeraX script or 3Dmol/NGL/Mol* code), not even after the overlay or when the user asks for more in the view: the
-panel shows them, superposed by the tool. The panel appears only in apps that show MCP Apps panels: never in
-a chat that reaches this server through a linked computer (a remote-devices bridge; you can tell from how
-your tools are named), nor in a Claude Desktop chat with a folder attached. In those chats call
-open_overlay_viewer right after overlay_binding_site, without asking, so the user sees the viewer in their
-browser; elsewhere never tell the user they see it, and if they say it did not appear, call
-open_overlay_viewer. If the user wants
+panel shows them, superposed by the tool. The panel appears only in apps that show MCP Apps panels. Claude
+Desktop shows them also in chats with a folder attached and in chats that reach this server through a linked
+computer (remote-devices tool names), except in the first reply of a new chat: if you call
+overlay_binding_site in that reply, call open_overlay_viewer right after it, without asking, so the user sees
+the viewer in their browser. Otherwise never tell the user they see it, and if they say it did not appear,
+call open_overlay_viewer. If the user wants
 something the viewer cannot do, say so; the superposed complexes are also saved as mmCIF files.
 """
 
@@ -289,6 +292,11 @@ class Exchange(BaseModel):
                                "numbers its figures 1, 2, … in order")
 
 
+def _now() -> str:
+    """UTC time to the millisecond, as Claude Desktop's logs write it, to line up these lines with them."""
+    return datetime.now(timezone.utc).isoformat(timespec="milliseconds").replace("+00:00", "Z")
+
+
 async def _log_initialize(ctx: Any, call_next: Any) -> Any:
     """Log each connection's client and whether it declared MCP Apps: a client may open several connections
     (one for listing, another for tool calls), and panels show only where the extension was declared."""
@@ -297,11 +305,39 @@ async def _log_initialize(ctx: Any, call_next: Any) -> Any:
         info = params.get("clientInfo") or {}
         caps = params.get("capabilities") or {}
         declared = {**(caps.get("extensions") or {}), **(caps.get("experimental") or {})}
-        print(f"mcp-bindingdb: initialize from {info.get('name')} {info.get('version')} (pid {os.getpid()}), "
+        print(f"{_now()} mcp-bindingdb: initialize from {info.get('name')} {info.get('version')} (pid {os.getpid()}), "
               f"protocol {params.get('protocolVersion')}, MCP Apps "
               f"{'declared' if UI_EXTENSION in declared else 'not declared'}, extensions {sorted(declared)}",
               file=sys.stderr)
-    return await call_next(ctx)
+    result = await call_next(ctx)
+    try:
+        _log_exchange(ctx, result)
+    except Exception as e:  # noqa: BLE001 - diagnostics must never break a request
+        print(f"{_now()} mcp-bindingdb: could not log {ctx.method}: {e!r}", file=sys.stderr)
+    return result
+
+
+def _log_exchange(ctx: Any, result: Any) -> None:
+    """Log every request each connection sends and, for tools/list and tools/call, the MCP Apps metadata in
+    the reply: which tools carry _meta.ui.resourceUri, and the serialized _meta of each tool result."""
+    if ctx.method in ("initialize", "ping") or ctx.method.startswith("notifications/"):
+        return
+    info = getattr(getattr(ctx.session, "client_params", None), "client_info", None)
+    who = f"{getattr(info, 'name', None)} (pid {os.getpid()})"
+    data = result.model_dump(mode="json", by_alias=True, exclude_none=True) if isinstance(result, BaseModel) \
+        else (result or {})
+    params = ctx.params or {}
+    detail = ""
+    if ctx.method == "tools/list":
+        apps = {t["name"]: (t.get("_meta") or {}).get("ui", {}).get("resourceUri") or
+                (t.get("_meta") or {}).get("ui/resourceUri") for t in data.get("tools", [])}
+        detail = f": {len(apps)} tools, with ui resourceUri: {{{', '.join(f'{k}: {v}' for k, v in apps.items() if v)}}}"
+    elif ctx.method == "tools/call":
+        detail = (f" {params.get('name')}: result keys {sorted(data)}, isError {data.get('isError', False)}, "
+                  f"_meta {json.dumps(data.get('_meta'))[:500]}")
+    elif ctx.method == "resources/read":
+        detail = f" {params.get('uri')}"
+    print(f"{_now()} mcp-bindingdb: {ctx.method} from {who}{detail}", file=sys.stderr)
 
 
 class BindingDBServer(MCPServer):
@@ -318,7 +354,7 @@ class BindingDBServer(MCPServer):
 
     async def call_tool(self, name: str, arguments: dict[str, Any], context: Context | None = None) -> Any:
         client = _client(context)  # which process and client each call reached: panels show in some chats only
-        print(f"mcp-bindingdb: {name} from {client['name']} (pid {os.getpid()}), MCP Apps "
+        print(f"{_now()} mcp-bindingdb: {name} from {client['name']} (pid {os.getpid()}), MCP Apps "
               f"{'declared' if client['apps'] else 'not declared'}", file=sys.stderr)
         result = await super().call_tool(name, arguments, context)
         if name not in transcript.UNLOGGED_TOOLS and isinstance(result, CallToolResult) and not result.is_error:
@@ -1856,12 +1892,11 @@ def _add_pdb_tools(mcp: BindingDBServer, db: Database, network: bool) -> None:
                     "binding-site surface; protein as lines, Cα trace or cartoon; labels on the H-bond or contact "
                     "residues)")
         if client["apps"]:
-            viewer_note = (f"The chat shows them in {features}, in apps that display MCP Apps panels. A chat that "
-                           "reaches this server through a linked computer (a remote-devices bridge: check how your "
-                           "tools are named) or a Claude Desktop chat with a folder attached shows no panel: then "
-                           f"call open_overlay_viewer(overlay_id='{overlay_id}') now, without asking, to open the "
-                           "viewer in the user's browser. Otherwise do not claim the user sees it: say the viewer "
-                           "appears with the tool call, and if they say it did not, call open_overlay_viewer.")
+            viewer_note = (f"The chat shows them in {features}, in apps that display MCP Apps panels. Claude Desktop "
+                           "shows no panel in the first reply of a new chat: if this is that reply, call "
+                           f"open_overlay_viewer(overlay_id='{overlay_id}') now, without asking, to open the viewer "
+                           "in the user's browser. Otherwise do not claim the user sees it: say the viewer appears "
+                           "with the tool call, and if they say it did not, call open_overlay_viewer.")
         else:
             viewer_note = (f"This client ({client['name'] or 'unknown'}) cannot show MCP Apps panels, so the user does "
                            f"not see {features} in the chat. Call open_overlay_viewer(overlay_id='{overlay_id}') to open "
@@ -1914,8 +1949,8 @@ def _add_pdb_tools(mcp: BindingDBServer, db: Database, network: bool) -> None:
     ) -> str:
         """Open an overlay's 3D viewer (the standalone overlay.html overlay_binding_site wrote) in the default web
         browser of the computer running mcp-bindingdb. Use it when the chat cannot show the viewer: the client
-        does not display MCP Apps panels, the chat reaches this server through a linked computer, or the user
-        says no viewer appeared."""
+        does not display MCP Apps panels, this is the first reply of a new Claude Desktop chat, or the user says
+        no viewer appeared."""
         page = overlays_dir / overlay_id / "overlay.html"
         if not overlay_id_re.fullmatch(overlay_id) or not page.is_file():
             raise ToolError(f"No viewer for overlay {overlay_id!r} (overlays are kept for the last 30 runs)")

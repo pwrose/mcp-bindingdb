@@ -99,7 +99,7 @@ files. See [Tools](docs/tools.md#find_pdb_complexes-and-overlay_binding_site).
 | `activity_cliffs` | Near-identical ligands of a target with very different potency |
 | `find_pdb_complexes` | A target's ligands with structures in the PDB: ligand code, entries and potency |
 | `overlay_binding_site` | PDB complexes of a target's ligands superposed on the binding site, in a 3D viewer in the chat, with each ligand's contacts and hydrogen bonds |
-| `open_overlay_viewer` | Opens an overlay's 3D viewer in the browser on the computer running the server, for chats that cannot show the panel (e.g. reached through a linked computer) |
+| `open_overlay_viewer` | Opens an overlay's 3D viewer in the browser on the computer running the server, for chats that cannot show the panel (e.g. the first reply of a new Claude Desktop chat) |
 | `describe_tables` | Table list with descriptions, or the columns of one table |
 | `run_sql` | Any read-only SQL query |
 | `create_transcript` | A record of the session as Markdown, or as an HTML page with structure drawings: your prompts and Claude's answers, and, if you ask, every BindingDB tool call with its result |

@@ -293,6 +293,12 @@ async def test_editor_that_does_not_appear_is_opened_once_more(tmp_path, monkeyp
     async with Client(assistant) as client:  # a client that cannot show panels has nothing to check
         plain = (await client.call_tool("open_structure_editor", {})).structured_content
         assert "check_editor_shown" not in plain["instructions"]
+        # In a new chat's first turn the call may not reach the server at all: the tool's description and the
+        # server instructions give the assistant the same reply for that case.
+        tool = next(t for t in (await client.list_tools()).tools if t.name == "open_structure_editor")
+        from mcp_bindingdb.server import INSTRUCTIONS
+        for text in (tool.description, INSTRUCTIONS):
+            assert module.NEXT_MESSAGE_REPLY in " ".join(text.split())
 
 
 @pytest.mark.anyio

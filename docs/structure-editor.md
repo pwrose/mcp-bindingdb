@@ -7,14 +7,9 @@ under `assets/structure-editor/` and assembled in memory by the server. These fi
 Node.js and the private Sites workspace are not needed to run the server.
 
 The editor and the figure panel need a chat client that displays MCP Apps. Claude Desktop displays them in
-ordinary chats but not in chats with a folder attached (its "local agent mode"): there the tools run, but no
-panel appears. The server cannot tell the two apart, because Desktop connects to it the same way for both
-and advertises MCP Apps support in each, so use a chat without a folder for the editor. The assistant's
-reply on opening the editor says so, and offers to search from a compound name or SMILES instead.
-
-Desktop 4.23118.0 also shows no panel in the first turn of a new chat. Such chats run as cloud sessions that
-reach this server through the Mac (`remote_cowork` in Desktop's logs; the tool calls come from the
-`local-agent-mode-mcp-bindingdb` connection). The call works and its text result reaches the chat, but Desktop
+chats with or without a folder attached, but 4.23118.0 shows no panel in the first turn of a new chat. Both
+kinds of chat run as cloud sessions that reach this server through the Mac (`remote_cowork` in Desktop's
+logs; the tool calls come from the `local-agent-mode-mcp-bindingdb` connection). The call works and its text result reaches the chat, but Desktop
 never reads the `ui://` page. A second call in the same turn shows nothing either. The first call in the next
 turn shows the editor, about 0.3 s after the call. Desktop's chat code marks a bridged call as an app only
 when the cloud attaches the call's app details (`linkedComputerMcpApp`) and the chat is already known to be
@@ -25,13 +20,17 @@ and the server cannot change either. Until Desktop is fixed, the server works ar
    in `data/editor-searches/`, which both server processes see).
 2. `open_structure_editor`'s result tells the assistant to call `check_editor_shown` before replying. It
    waits up to 10 s for that marker; an editor that appears reports itself in about 1 s.
-3. If the editor did not appear, the assistant asks the user to send any message. On that message it calls
-   `open_structure_editor` again, which shows the editor. The server remembers the miss for 30 minutes and
+3. If the editor did not appear, the assistant replies "The editor didn't open on the first try, which can
+   happen in a new chat. Please send your request again." On the next message it calls
+   `open_structure_editor` again, which shows the editor. The tool's description and the server instructions
+   give the same reply for a call that fails: in a chat's first turn the call sometimes never reaches the
+   Mac, because Desktop's bridge is still connecting. The server remembers the miss for 30 minutes and
    leaves the check out of that call, so the assistant doesn't ask twice.
 
-The check is skipped for clients that do not declare MCP Apps. In a chat with a folder attached the editor
-never appears, so there the workaround costs the 10 s wait and one extra message. `get_editor_results` also
-returns `editor_shown`. To remove the workaround, drop `check_editor_shown` and the check from
+The check is skipped for clients that do not declare MCP Apps, and after the first turn it returns in about
+1 s. `get_editor_results` also returns `editor_shown`. The 3D overlay viewer has no such check: when
+`overlay_binding_site` runs in a chat's first reply, the assistant opens the viewer in the browser with
+`open_overlay_viewer`. To remove the workaround, drop `check_editor_shown` and the check from
 `open_structure_editor`'s instructions.
 
 ## Add it to an existing installation

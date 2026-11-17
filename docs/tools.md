@@ -20,7 +20,7 @@
 | `activity_cliffs` | Pairs of a target's ligands that are structurally close but far apart in potency, by SALI (needs RDKit) |
 | `find_pdb_complexes` | A target's measured ligands with PDB complexes: ligand code, entries, how the PDB record was matched, and potency; also entries found in the PDB by the compounds' InChIKeys (RCSB) |
 | `overlay_binding_site` | PDB complexes of a target's ligands superposed on the binding site, shown in a 3D viewer in the chat, with contacts, hydrogen bonds and a contact-map figure (needs gemmi, the `structures` extra; downloads from PDBe) |
-| `open_overlay_viewer` | Opens an overlay's 3D viewer in the browser on the computer running the server, for chats that cannot show the panel (e.g. reached through a linked computer) |
+| `open_overlay_viewer` | Opens an overlay's 3D viewer in the browser on the computer running the server, for chats that cannot show the panel (e.g. the first reply of a new Claude Desktop chat) |
 | `get_editor_results` | Results of the searches the user ran in the structure editor ([structure-editor.md](structure-editor.md)): the tool, its arguments and its result, by `editor_id` |
 | `create_transcript` | Markdown, HTML (with structure drawings) or JSON transcript of the session: prompts and answers, optionally followed by the logged tool calls with their results |
 | `draw_structure_grid` | Compounds side by side, aligned on a shared core that is highlighted, with binding bars per target; shown in the chat and included in transcripts (needs RDKit) |

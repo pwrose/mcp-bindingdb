@@ -35,18 +35,18 @@ READ_ONLY = ToolAnnotations(
 )
 
 
-EDITOR_REPLY = ("The structure editor is open. If it doesn't appear, ask me to open it again. It never appears in "
-                "a chat with a folder attached: start a new chat without one, or give me a compound name or SMILES "
-                "and I'll run an exact, substructure or similarity search.")
+EDITOR_REPLY = "The structure editor is open. If it doesn't appear, ask me to open it again."
 # Claude Desktop 4.23118.0 shows no panel for a call in the first turn of a new chat that runs through this
 # computer (a remote_cowork session), not even for a second call in that turn; the first call of the next turn
 # shows it (docs/structure-editor.md). The server cannot tell from the call, so the editor page reports itself
 # with editor_opened once it loads (EditorSearches.mark_opened), and check_editor_shown waits for that.
 NOT_SHOWN = ("The editor has not appeared in the chat: its page never loaded. This is the chat app not showing the "
              "panel, not something you did. Call open_structure_editor again with the same arguments, without "
-             "asking; in a chat with a folder attached it never appears.")
-NEXT_MESSAGE_REPLY = ("The editor didn't appear: Claude Desktop doesn't show it in the first reply of a new chat. "
-                      "Send any message, for example \"show it\", and I'll open it again.")
+             "asking.")
+# Also in open_structure_editor's description and the server instructions, for when the call never reaches the
+# server: in the first turn of a new chat the linked computer may not be connected yet.
+NEXT_MESSAGE_REPLY = ("The editor didn't open on the first try, which can happen in a new chat. "
+                      "Please send your request again.")
 WAIT_FOR_EDITOR = 10  # seconds check_editor_shown waits for the page; it reports itself about 1 s after the call
 RETRY_WITHIN = 30 * 60  # seconds after a missed editor in which open_structure_editor counts as the retry
 UI_EXTENSION = "io.modelcontextprotocol/ui"  # MCP Apps: clients that can show panels declare it
@@ -252,13 +252,20 @@ def create_editor_extension(network: bool = True, searches: EditorSearches | Non
         structure, substructure or similarity, optionally only compounds with a Ki/Kd/IC50/EC50 in an
         affinity range. The results appear in the editor.
 
+        In the first reply of a new Claude Desktop chat, this call often fails as if the computer it runs on
+        were asleep, offline or disconnected. It is not: the chat's link to it is still starting. If the call
+        fails, do not mention the computer, the app or a connection, and do not suggest checking them; reply
+        with exactly: "The editor didn't open on the first try, which can happen in a new chat. Please send
+        your request again."
+
         Use it whenever the user wants to draw, sketch, edit, modify or build a chemical structure,
         molecule, compound, fragment or scaffold, or asks for a structure, molecule or chemical editor or
         sketcher, e.g. "edit structure", "draw a molecule", "let me sketch a compound", "edit imatinib". Open
         it directly rather than asking what kind of structure is meant. When the user names or gives a
         compound, pass it as initial_query.
 
-        In clients that cannot show the editor, use the regular BindingDB tools instead."""
+        Claude Desktop shows it also in chats with a folder attached and in chats whose tools come through a
+        linked computer (remote-devices tool names): open it there too. In clients that cannot show the editor, use the regular BindingDB tools instead."""
         if len(initial_query) > 20000:
             raise ToolError("Initial query is too long")
         editor_id = uuid.uuid4().hex[:12]
@@ -278,8 +285,6 @@ def create_editor_extension(network: bool = True, searches: EditorSearches | Non
             "mode": mode,
             "editor_id": editor_id,
             "executed": False,
-            # Claude Desktop shows no editor in chats with a folder attached, and the server cannot tell
-            # (docs/structure-editor.md), so the reply always says what to do then.
             "instructions": "The editor explains itself. " + (
                 f"Before replying, call check_editor_shown(editor_id=\"{editor_id}\"), without telling the user: "
                 "it waits until the editor has appeared in the chat. If it reports shown: false, follow its "
