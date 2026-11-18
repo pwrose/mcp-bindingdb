@@ -226,8 +226,9 @@ If you use this server in your work, please cite it:
 }
 ```
 
-Please also cite BindingDB, the source of the data, and RDKit, which the server uses for structure
-search, properties and drawings (add the RDKit version you used, e.g. `version={2026.03}`):
+Please also cite BindingDB, the source of the data; RDKit, which the server uses for structure search,
+properties and drawings (add the RDKit version you used, e.g. `version={2026.03}`); 3Dmol.js, the 3D
+viewer of binding-site overlays; and JSME, the structure editor's drawing widget:
 
 ```bibtex
 @article{liu2025bindingdb,
@@ -246,5 +247,26 @@ search, properties and drawings (add the RDKit version you used, e.g. `version={
   author={Landrum, G. and others},
   url={https://www.rdkit.org},
   doi={10.5281/zenodo.591637}
+}
+
+@article{rego2015_3dmol,
+  title={3Dmol.js: molecular visualization with WebGL},
+  author={Rego, N. and Koes, D.},
+  journal={Bioinformatics},
+  volume={31},
+  number={8},
+  pages={1322--1324},
+  year={2015},
+  doi={10.1093/bioinformatics/btu829}
+}
+
+@article{bienfait2013jsme,
+  title={JSME: a free molecule editor in JavaScript},
+  author={Bienfait, B. and Ertl, P.},
+  journal={Journal of Cheminformatics},
+  volume={5},
+  pages={24},
+  year={2013},
+  doi={10.1186/1758-2946-5-24}
 }
 ```
