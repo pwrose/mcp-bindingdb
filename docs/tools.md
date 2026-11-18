@@ -266,7 +266,7 @@ uv run --all-extras --with nbconvert jupyter nbconvert --to notebook --execute \
 
 The notebook's own "How to rerun" section gives these commands with its file name, and the steps for a
 computer without mcp-bindingdb (clone at the recorded commit, `scripts/build_duckdb.sh --release ...`).
-The tool's reply gives them with the actual paths, for the model to show the user.
+The tool's reply gives the JupyterLab command with the actual paths, for the model to show the user.
 
 It also writes an HTML copy of the notebook as written, with the recorded results and figures, as
 `<name>.html` next to it (`html=true`, the default), with `jupyter nbconvert --to html` run by the server's

@@ -126,7 +126,7 @@ async def test_notebook_records_and_reruns_the_session(tmp_path, monkeypatch):
     assert "BDBM13530" in page and "Find imatinib." in page and "data:image/png;base64," in page
     assert "attachment:figure-2.png" not in page  # the add_figure image is embedded too
     assert not (tmp_path / "check-html.log").exists()
-    assert f"jupyter lab {tmp_path / 'check.ipynb'}\n```" in reply and "--output check-rerun.ipynb" in reply
+    assert f"jupyter lab {tmp_path / 'check.ipynb'}\n```" in reply and "nbconvert --to notebook" not in reply
 
     nb = json.loads((tmp_path / "check.ipynb").read_text())
     assert nb["nbformat"] == 4 and nb["nbformat_minor"] == 5

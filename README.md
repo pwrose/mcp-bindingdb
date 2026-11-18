@@ -118,7 +118,7 @@ without running anything.
 
 Next to it the server saves an HTML copy, here `~/results/imatinib-analogues.html`, to read or share in any
 web browser. Code Claude wrote is in the notebook if it is short; longer code is saved as `.py` files in the
-same folder, which the notebook imports, so keep them together. Claude's reply gives the commands to run the notebook, with your paths filled in.
+same folder, which the notebook imports, so keep them together. Claude's reply gives the command to open the notebook in JupyterLab, with your paths filled in.
 
 ### Run a notebook
 

@@ -1516,11 +1516,10 @@ def _add_transcript_tools(mcp: BindingDBServer, build_info: dict[str, str], tran
             lines.append(await _html_copy(path, project))
         if project:
             commands = notebook.run_commands(path, project, db_path, meta.get("python_packages", ()))
-            lines += ["Show the user how to run the notebook: include both commands below in your reply, each in "
-                      "its own bash code block, as given. To open it in JupyterLab (then choose Run → Run All "
-                      "Cells):", "", "```bash", commands["jupyter"], "```", "",
-                      "To rerun it without opening Jupyter, writing the new results to "
-                      f"{notebook.rerun_path(path).name}:", "", "```bash", commands["nbconvert"], "```"]
+            lines += ["Show the user how to run the notebook: include this command in your reply, in a bash code "
+                      "block, as given, and say to choose Run → Run All Cells once JupyterLab opens. Give no other "
+                      "way to run it" + (" (the HTML copy is already written)" if html else "") + ":", "",
+                      "```bash", commands["jupyter"], "```"]
         lines.append("Deliver the notebook as is; do not write, edit or copy it yourself" + ("." if output_dir else
                      " (pass output_dir to have it written where the user wants it)."))
         return "\n".join(lines)
