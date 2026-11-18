@@ -2764,6 +2764,18 @@ def _add_structure_tools(mcp: MCPServer, db: Database, index: substructure.Subst
         return finish(about, result, hits.searched, hits.total)
 
 
+def _transcript_dir(setting: str | None, db_path: Path) -> Path | None:
+    """Where transcripts go unless a call names a folder: the setting, if there is one (a bundle's unfilled
+    ${user_config...} or empty value counts as none); else, for a database built in the hidden user data folder
+    (the Claude Desktop bundle), Documents/BindingDB, where the user finds them; else None (transcripts/ next to
+    the database)."""
+    if setting and setting.strip() and "${" not in setting:
+        return Path(setting.strip()).expanduser()
+    if db_path.parent.resolve() == local_build.data_dir().resolve():
+        return Path.home() / "Documents" / "BindingDB"
+    return None
+
+
 def main() -> None:
     p = argparse.ArgumentParser(prog="mcp-bindingdb", description="BindingDB MCP server")
     p.add_argument("--db", help="DuckDB file (default: $BINDINGDB_DUCKDB, else the newest data/bindingdb_*.duckdb, "
@@ -2777,10 +2789,9 @@ def main() -> None:
                    help="Do not look names up in PubChem (chemical_name_to_smiles)")
     p.add_argument("--transcript-dir", default=os.environ.get("MCP_BINDINGDB_TRANSCRIPT_DIR"),
                    help="Where transcripts and figures go unless a call gives output_dir (default: "
-                   "$MCP_BINDINGDB_TRANSCRIPT_DIR, else transcripts/ next to the database)")
+                   "$MCP_BINDINGDB_TRANSCRIPT_DIR, else transcripts/ next to the database; Documents/BindingDB "
+                   "for the database built in the user data folder)")
     args = p.parse_args()
-    if args.transcript_dir and "${" in args.transcript_dir:  # a bundle setting the host left unsubstituted
-        args.transcript_dir = None
 
     db_path, pending = local_build.locate(args.db)
     if pending is None:
@@ -2797,7 +2808,7 @@ def main() -> None:
         if index is not None:  # loading takes several seconds; start now so the first search does not wait
             threading.Thread(target=index.preload, daemon=True).start()
     server = build_server(db, index, network=not args.no_network,
-                          transcript_dir=Path(args.transcript_dir).expanduser() if args.transcript_dir else None)
+                          transcript_dir=_transcript_dir(args.transcript_dir, db_path))
     if args.transport == "stdio":
         server.run("stdio")
     else:

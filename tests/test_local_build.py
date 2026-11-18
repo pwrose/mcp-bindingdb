@@ -155,3 +155,19 @@ async def test_structure_search_says_the_index_is_being_built(tmp_path):
     async with Client(mcp) as client:
         result = await client.call_tool("substructure_search", {"query": "c1ccccc1", "count_only": True})
     assert result.is_error and "index is being built (step 6 of 6)" in result.content[0].text
+
+
+def test_transcripts_of_a_first_use_build_go_to_documents(tmp_path, monkeypatch):
+    from pathlib import Path
+
+    from mcp_bindingdb.server import _transcript_dir
+
+    monkeypatch.setenv("MCP_BINDINGDB_DATA_DIR", str(tmp_path / "data"))
+    built = tmp_path / "data" / "bindingdb_202610.duckdb"
+    built.parent.mkdir()
+    documents = Path.home() / "Documents" / "BindingDB"
+    assert _transcript_dir(None, built) == documents
+    assert _transcript_dir("${user_config.results_dir}", built) == documents  # left unfilled by the host
+    assert _transcript_dir("  ", built) == documents
+    assert _transcript_dir("~/results", built) == Path.home() / "results"
+    assert _transcript_dir(None, tmp_path / "repo" / "data" / "bindingdb_202610.duckdb") is None  # a clone's data/

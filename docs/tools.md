@@ -218,8 +218,10 @@ and `transcript_to_html` write the transcript there as `<file_name>.md` or `.htm
 the title), replacing a file of the same name. A Markdown transcript's figures go into
 `<output_dir>/figures/` as `<file_name>-figure-<n>.png` (or `.svg`, …), so regenerating the transcript
 replaces them and removes copies of figures it no longer has; other files there are left alone. The model is told to pass the user's folder rather than copy files afterwards.
-Without `output_dir`, files go to `transcripts/` next to the database, time-stamped; `--transcript-dir` or
-the environment variable `MCP_BINDINGDB_TRANSCRIPT_DIR` changes that folder. Because they can replace
+Without `output_dir`, files go to `transcripts/` next to the database, time-stamped (to `Documents/BindingDB`
+when the server built its database in the user data folder, as the Claude Desktop bundle does);
+`--transcript-dir`, the environment variable `MCP_BINDINGDB_TRANSCRIPT_DIR` or the bundle's Results folder
+setting changes that folder. Because they can replace
 files, both tools are annotated as destructive.
 
 In a tool call's result, the molecules it is about (the query of a substructure or similarity search, a

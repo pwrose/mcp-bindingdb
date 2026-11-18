@@ -217,8 +217,9 @@ RCSB or PDBe can change as those services change. See
 
 Ask for a transcript at the end of a chat, e.g. "create a transcript of this session as a .md file", or
 "create an HTML transcript" for a page with the structures drawn. Name a folder ("... in
-~/results/heatmap") and the server writes the files there; otherwise they go to `data/transcripts/`
-(change this with `--transcript-dir` or `MCP_BINDINGDB_TRANSCRIPT_DIR`).
+~/results/heatmap") and the server writes the files there; otherwise they go to `data/transcripts/`, or to
+`Documents/BindingDB` with the Claude Desktop bundle (change this with `--transcript-dir`,
+`MCP_BINDINGDB_TRANSCRIPT_DIR` or the bundle's Results folder setting).
 Add "with the tool calls" to include every BindingDB lookup and its result.
 
 To let others rerun and check the work, ask for a [Jupyter notebook](#jupyter-notebooks) instead.
