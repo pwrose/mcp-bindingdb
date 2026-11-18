@@ -208,3 +208,39 @@ See [Tools](docs/tools.md) for how the searches work and notes on the data.
 
 BSD 3-Clause; see [LICENSE](LICENSE). BindingDB data are subject to
 [BindingDB's own terms](https://www.bindingdb.org).
+
+## Citation
+
+If you use this server in your work, please cite it:
+
+```bibtex
+@software{rose2026mcp-bindingdb,
+  title={MCP BindingDB Server},
+  author={Rose, P.W.},
+  year={2026},
+  url={https://github.com/pwrose/mcp-bindingdb}
+}
+```
+
+Please also cite BindingDB, the source of the data, and RDKit, which the server uses for structure
+search, properties and drawings (add the RDKit version you used, e.g. `version={2026.03}`):
+
+```bibtex
+@article{liu2025bindingdb,
+  title={BindingDB in 2024: a FAIR knowledgebase of protein-small molecule binding data},
+  author={Liu, T. and Hwang, L. and Burley, S.K. and Nitsche, C.I. and Southan, C. and Walters, W.P. and Gilson, M.K.},
+  journal={Nucleic Acids Research},
+  volume={53},
+  number={D1},
+  pages={D1633--D1644},
+  year={2025},
+  doi={10.1093/nar/gkae1075}
+}
+
+@software{rdkit,
+  title={RDKit: Open-source cheminformatics},
+  author={Landrum, G. and others},
+  url={https://www.rdkit.org},
+  doi={10.5281/zenodo.591637}
+}
+```
