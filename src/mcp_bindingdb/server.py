@@ -298,9 +298,35 @@ class Exchange(BaseModel):
                                "numbers its figures 1, 2, … in order")
 
 
+class NotebookCode(BaseModel):
+    code: str = Field(description="The analysis code you wrote and ran for this answer (e.g. to compute a "
+                      "statistic or make a plot), verbatim apart from where its data comes from: to use a "
+                      "BindingDB call's result, read it as replay.result(i), i being the call's get_tool_log "
+                      "index (the notebook reruns that call first; e.g. replay.result(3)['rows']), instead of "
+                      "values copied into the code. Up to 40 lines go in a notebook cell; longer code goes "
+                      "to a .py file next to the notebook, which a cell imports (from <module> import *), so "
+                      "write long code as functions and call them in `run`")
+    run: str | None = Field(None, description="For long code: the lines the notebook runs after importing it, "
+                            "e.g. \"plot_potency(replay.result(3)['rows'])\"")
+    description: str | None = Field(None, description="What the code does, in a few words")
+    module_name: str | None = Field(None, description="For long code: the .py file's name, e.g. "
+                                    "'potency_plot' (default: from the notebook's name)")
+    packages: list[Annotated[str, Field(pattern=r"^[A-Za-z0-9][A-Za-z0-9._-]*(\[[A-Za-z0-9._,-]+\])?"
+                                        r"([<>=!~]=?[A-Za-z0-9.*+!-]+)?$")]] = Field(
+        default_factory=list, description="PyPI packages the code imports beyond the standard library, "
+        "mcp-bindingdb, RDKit, DuckDB and numpy, e.g. ['matplotlib', 'pandas']; added to the run commands")
+    figures: list[int] = Field(default_factory=list, description="Ids of the figures this code made (from "
+                               "add_figure): shown as the cell's output and drawn again when it runs")
+    output: str | None = Field(None, description="What the code printed, if anything, as it printed it")
+    language: str = Field("python", description="Only Python runs in the notebook; code in another "
+                          "language is shown, not run")
+
+
 class NotebookExchange(Exchange):
     calls: list[int] = Field(default_factory=list, description="The BindingDB tool calls made for this answer, "
                              "by the 1-based index get_tool_log shows, in the order they ran")
+    code: list[NotebookCode] = Field(default_factory=list, description="Analysis code you wrote and ran for "
+                                     "this answer, in the order it ran; none if you only called tools")
 
 
 def _now() -> str:
@@ -1421,7 +1447,8 @@ def _add_transcript_tools(mcp: BindingDBServer, build_info: dict[str, str], tran
         answer (the log is shared by every chat this server process has served, so it can hold calls from
         other chats). Calls of get_editor_results become the searches the user ran in the structure editor.
         Only if no exchange lists calls does the notebook take every logged call, after the conversation.
-        Pass each answer in full, verbatim; the server cannot see your prose.
+        Pass each answer in full, verbatim; the server cannot see your prose. If you wrote and ran code for an
+        answer (a plot, a statistic, a table), pass it in that exchange's `code`, so the notebook reruns it too.
 
         The notebook can be large, so the server writes it (to output_dir, if given: pass the folder the
         user wants it in) and returns its path, with the commands that run it, and writes an HTML copy
@@ -1432,35 +1459,50 @@ def _add_transcript_tools(mcp: BindingDBServer, build_info: dict[str, str], tran
         if bad := sorted({i for i in listed_calls if not 1 <= i <= len(log.entries)}):
             raise ToolError(f"calls {bad} are not in the log, which has {len(log.entries)} calls; "
                             "see get_tool_log")
-        listed_figures = [i for t in turns for i in t["figures"]]
+        listed_figures = [i for t in turns for i in [*t["figures"], *(f for c in t["code"] for f in c["figures"])]]
         if missing := sorted({i for i in listed_figures if log.figure(i) is None}):
             raise ToolError(f"figures {missing} are not in the log; it has "
                             f"{[f.id for f in log.figures] or 'none'} (see get_tool_log)")
         for t in turns:
             t["calls"] = [log.entries[i - 1] for i in t["calls"]]
             t["figures"] = [log.figure(i) for i in dict.fromkeys(t["figures"])]
+            for c in t["code"]:
+                c["figures"] = [log.figure(i) for i in dict.fromkeys(c["figures"])]
         leftover = [] if listed_calls else list(log.entries)
         unplaced = [] if listed_figures else list(log.figures)
         path = destination(output_dir, file_name, title, ".ipynb")
         project = notebook.project_dir()
-        nb, counts = notebook.build_notebook(
-            title=title, when=date or _date.today().isoformat(), model=model, build_info=build_info,
-            generated_by=f"{mcp.name} v{VERSION}", exchanges=turns, leftover_calls=leftover,
-            unplaced_figures=unplaced, skills=transcript.clean_entries(skills),
-            mcp_servers=transcript.clean_entries(external_mcp_servers),
-            max_rows=None if max_result_rows is None else max(max_result_rows, 0), file_name=path.name)
+        try:
+            nb, counts, code_files = notebook.build_notebook(
+                title=title, when=date or _date.today().isoformat(), model=model, build_info=build_info,
+                generated_by=f"{mcp.name} v{VERSION}", exchanges=turns, leftover_calls=leftover,
+                unplaced_figures=unplaced, skills=transcript.clean_entries(skills),
+                mcp_servers=transcript.clean_entries(external_mcp_servers),
+                max_rows=None if max_result_rows is None else max(max_result_rows, 0), file_name=path.name,
+                model_name=model, log_entries=log.entries)
+        except ValueError as e:
+            raise ToolError(str(e)) from None
         text = json.dumps(nb, indent=1, ensure_ascii=False) + "\n"
         replaced = write(path, text)
+        for name, code_text in code_files.items():
+            write(path.parent / name, code_text)
         parts = [transcript.plural(counts["exchanges"], "exchange"), transcript.plural(counts["calls"], "tool call")]
         if counts["figures"]:
             parts.append(transcript.plural(counts["figures"], "figure")
                          + (f" ({counts['redrawn_figures']} redrawn on rerun)" if counts["redrawn_figures"] else ""))
-        source = nb["metadata"]["bindingdb"].get("source") or {}
+        if counts["code_cells"]:
+            parts.append(transcript.plural(counts["code_cells"], "code cell"))
+        meta = nb["metadata"]["bindingdb"]
+        source = meta.get("source") or {}
         lines = [f"Jupyter notebook '{title}' written ({len(text):,} bytes; {', '.join(parts)}).",
                  f"- File: {path}{replaced} (on the machine running mcp-bindingdb)",
                  f"- BindingDB release {release}"
                  + (f", source SHA-256 {build_info['source_zip_sha256'][:16]}…" if build_info.get("source_zip_sha256") else "")
                  + f"; {mcp.name} v{VERSION}" + (f", commit {source['commit'][:12]}" if source.get("commit") else "")]
+        if code_files:
+            lines.append(f"- Code {'files' if len(code_files) > 1 else 'file'} the notebook imports, next to it: "
+                         + ", ".join(str(path.parent / n) for n in code_files)
+                         + f" (deliver {'them' if len(code_files) > 1 else 'it'} with the notebook)")
         if source.get("uncommitted_changes"):
             lines.append("- The server runs from a checkout with uncommitted changes, so the commit the notebook "
                          "names may not reproduce these results until they are committed: tell the user.")
@@ -1473,7 +1515,7 @@ def _add_transcript_tools(mcp: BindingDBServer, build_info: dict[str, str], tran
         if html:
             lines.append(await _html_copy(path, project))
         if project:
-            commands = notebook.run_commands(path, project, db_path)
+            commands = notebook.run_commands(path, project, db_path, meta.get("python_packages", ()))
             lines += ["Show the user how to run the notebook: include both commands below in your reply, each in "
                       "its own bash code block, as given. To open it in JupyterLab (then choose Run → Run All "
                       "Cells):", "", "```bash", commands["jupyter"], "```", "",

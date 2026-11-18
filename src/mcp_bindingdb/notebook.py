@@ -9,6 +9,7 @@ SHA-256 digest of the result, see `digest`).
 
 from __future__ import annotations
 
+import ast
 import base64
 import contextlib
 import hashlib
@@ -17,6 +18,7 @@ import json
 import math
 import os
 import platform
+import re
 import shlex
 import shutil
 import subprocess
@@ -68,6 +70,9 @@ NETWORK_TOOLS = {"chemical_name_to_smiles": "PubChem", "find_pdb_complexes": "RC
 UI_TOOLS = {"open_structure_editor"}
 FIGURE_TOOLS = {"draw_structure_grid", "draw_r_group_table"}
 SIGNIFICANT_DIGITS = 10  # floats are compared to this precision: parallel sums differ in the last bits
+#: Analysis code longer than this many lines goes to a .py file next to the notebook, which a cell imports.
+INLINE_CODE_LINES = 40
+_RESULT_REF = re.compile(r"\breplay\.result\(\s*(\d+)\s*\)")
 
 
 # --------------------------------------------------------------------------------------------------- digests
@@ -150,12 +155,19 @@ def _db_setting(project: Path, db_path: Path | None) -> str:
     return "" if same else f"BINDINGDB_DUCKDB={shlex.quote(str(db_path))} "
 
 
-def run_commands(path: Path, project: Path, db_path: Path | None = None) -> dict[str, str]:
-    """Shell commands that open the notebook in JupyterLab, and that rerun it with nbconvert."""
+def with_packages(packages: list[str] | tuple[str, ...] = ()) -> str:
+    """' --with pkg' for each extra package the notebook's code needs."""
+    return "".join(f" --with {shlex.quote(p)}" for p in packages)
+
+
+def run_commands(path: Path, project: Path, db_path: Path | None = None,
+                 packages: list[str] | tuple[str, ...] = ()) -> dict[str, str]:
+    """Shell commands that open the notebook in JupyterLab, and that rerun it with nbconvert; `packages` are
+    the PyPI packages its analysis code needs beyond mcp-bindingdb's."""
     q = lambda p: shlex.quote(str(p))  # noqa: E731
-    cd, env = f"cd {q(project)}", _db_setting(project, db_path)
-    return {"jupyter": f"{cd}\n{env}uv run --all-extras --with jupyterlab jupyter lab {q(path)}",
-            "nbconvert": f"{cd}\n{env}uv run --all-extras --with nbconvert jupyter nbconvert --to notebook "
+    cd, env, extra = f"cd {q(project)}", _db_setting(project, db_path), with_packages(packages)
+    return {"jupyter": f"{cd}\n{env}uv run --all-extras --with jupyterlab{extra} jupyter lab {q(path)}",
+            "nbconvert": f"{cd}\n{env}uv run --all-extras --with nbconvert{extra} jupyter nbconvert --to notebook "
                          f"--execute --output {q(rerun_path(path).name)} {q(path)}"}
 
 
@@ -241,26 +253,42 @@ def _literal(value: Any, indent: int = 0) -> str:
 def build_notebook(*, title: str, when: str, model: str, build_info: dict[str, str], generated_by: str,
                    exchanges: list[dict[str, Any]], leftover_calls: list[dict[str, Any]],
                    unplaced_figures: list[Any], skills: list[str], mcp_servers: list[str],
-                   max_rows: int | None, file_name: str = "notebook.ipynb") -> tuple[dict[str, Any], dict[str, int]]:
-    """The notebook (nbformat 4.5, as a dict) and counts of what it holds.
+                   max_rows: int | None, file_name: str = "notebook.ipynb", model_name: str | None = None,
+                   log_entries: list[dict[str, Any]] = ()) -> tuple[dict[str, Any], dict[str, int], dict[str, str]]:
+    """The notebook (nbformat 4.5, as a dict), counts of what it holds, and the .py files of its longer
+    analysis code ({file name: text}), to write next to it.
 
-    `exchanges` are dicts with prompt, answer, `calls` (logged entries, see ToolLog) and `figures`
-    (figures.Figure); `leftover_calls` go in a section after the conversation (when no exchange lists its
-    calls), as do `unplaced_figures`."""
+    `exchanges` are dicts with prompt, answer, `calls` (logged entries, see ToolLog), `figures`
+    (figures.Figure) and `code` (analysis code the model wrote: dicts with code, run, description,
+    module_name, packages, output, language and the `figures` it made); `leftover_calls` go in a section
+    after the conversation (when no exchange lists its calls), as do `unplaced_figures`. `log_entries` is
+    the whole tool log, whose 1-based indices `replay.result(i)` in the code refers to; they become the
+    notebook's call numbers. Raises ValueError for code that reads a call not in the notebook."""
     nb = _Notebook(max_rows)
     release = build_info.get("release", "unknown")
     source = source_version()
     env = environment()
-    numbers = transcript.figure_numbers([{"figures": [f.id for f in e["figures"]]} for e in exchanges],
-                                        unplaced_figures)
+    for exchange in exchanges:
+        exchange.setdefault("code", [])
+    code_figures = [{f.id for b in e["code"] for f in b.get("figures") or []} for e in exchanges]
+    numbers = transcript.figure_numbers(
+        [{"figures": [*(f.id for b in e["code"] for f in b.get("figures") or []),
+                      *(f.id for f in e["figures"] if f.id not in made)]}
+         for e, made in zip(exchanges, code_figures)], unplaced_figures)
+    call_numbers = _call_numbers([c for e in exchanges for c in e["calls"]] + list(leftover_calls), log_entries)
+    stem = _module_stem(file_name)
+    files: dict[str, str] = {}
 
     body_start = len(nb.cells)
-    for k, exchange in enumerate(exchanges, start=1):
+    for k, (exchange, made) in enumerate(zip(exchanges, code_figures), start=1):
         nb.markdown(f"## Exchange {k}\n\n**👤 User**\n\n{(exchange.get('prompt') or '(no prompt)').strip()}")
         for entry in exchange["calls"]:
             nb.calls(entry)
+        for block in exchange["code"]:
+            nb.analysis(block, call_numbers, numbers, stem, files, file_name, model_name)
         for figure in exchange["figures"]:  # before the answer, as the chat showed them
-            nb.figure(figure, numbers[figure.id])
+            if figure.id not in made:
+                nb.figure(figure, numbers[figure.id])
         nb.markdown("**🧠 Assistant**\n\n" + ((exchange.get("answer") or "").strip() or "_(no answer recorded)_"))
     if leftover_calls:
         nb.markdown("## BindingDB tool calls\n\nThe calls of this session, in the order they ran.")
@@ -274,12 +302,16 @@ def build_notebook(*, title: str, when: str, model: str, build_info: dict[str, s
     nb.cells[body_start:] = []
 
     counts = {"exchanges": len(exchanges), "calls": nb.n_calls, "figures": len(numbers),
-              "redrawn_figures": nb.n_redrawn, "skipped_calls": nb.n_skipped}
+              "redrawn_figures": nb.n_redrawn, "skipped_calls": nb.n_skipped, "code_cells": nb.n_code,
+              "code_files": len(files)}
+    packages = sorted({p for e in exchanges for b in e["code"] for p in b.get("packages") or []})
     meta = {"title": title, "date": when, "model": model, "bindingdb_release": release,
             "bindingdb_build": {k: v for k, v in build_info.items() if k != "table_row_counts"},
             "generated_by": generated_by, "generated_at": _utc_now(), **({"source": source} if source else {}),
             "environment": env, **({"skills": skills} if skills else {}),
-            **({"external_mcp_servers": mcp_servers} if mcp_servers else {}), "contents": counts}
+            **({"external_mcp_servers": mcp_servers} if mcp_servers else {}),
+            **({"python_packages": packages} if packages else {}),
+            **({"code_files": sorted(files)} if files else {}), "contents": counts}
     nb.markdown(_header(meta, counts, file_name))
     nb.code(_setup_source(build_info), [_stream(_recorded_environment(meta))])
     nb.cells += body
@@ -293,14 +325,67 @@ def build_notebook(*, title: str, when: str, model: str, build_info: dict[str, s
     notebook = {"cells": nb.cells, "metadata": {
         "kernelspec": {"display_name": "Python 3", "language": "python", "name": "python3"},
         "language_info": {"name": "python"}, "bindingdb": meta}, "nbformat": 4, "nbformat_minor": 5}
-    return notebook, counts
+    return notebook, counts, files
+
+
+def _call_numbers(entries: list[dict[str, Any]], log_entries: list[dict[str, Any]]) -> dict[int, int]:
+    """Tool-log index -> the notebook's number of that call (its first, for editor searches), numbered as
+    _Notebook.calls numbers them."""
+    index_of = {id(e): i for i, e in enumerate(log_entries, start=1)}
+    numbers: dict[int, int] = {}
+    n = 0
+    for entry in entries:
+        if expanded := expand_call(entry):
+            if id(entry) in index_of:
+                numbers.setdefault(index_of[id(entry)], n + 1)
+            n += len(expanded)
+    return numbers
+
+
+def _module_stem(file_name: str) -> str:
+    """A Python identifier from the notebook's file name, for its code files: 'imatinib_analogues'."""
+    stem = re.sub(r"\W+", "_", Path(file_name).stem).strip("_").lower() or "analysis"
+    return stem if stem[0].isalpha() else f"nb_{stem}"
+
+
+def _module_name(name: str | None, default: str, taken: dict[str, str]) -> str:
+    """A module name for a code file: the model's, made an identifier, or `default`; unique in `taken`."""
+    base = re.sub(r"\W+", "_", (name or "").removesuffix(".py")).strip("_").lower() or default
+    base = base if base[0].isalpha() else f"code_{base}"
+    module, k = base, 2
+    while f"{module}.py" in taken:
+        module, k = f"{base}_{k}", k + 1
+    return module
+
+
+def resolve_results(code: str, call_numbers: dict[int, int]) -> str:
+    """replay.result(i) with a tool-log index i -> replay.result(n), the notebook's number of that call."""
+    def number(match: re.Match[str]) -> str:
+        index = int(match.group(1))
+        if index not in call_numbers:
+            raise ValueError(f"the code reads replay.result({index}), but call {index} is not in the notebook "
+                             "(list it in an exchange's calls)")
+        return f"replay.result({call_numbers[index]})"
+    return _RESULT_REF.sub(number, code)
+
+
+def _is_python(code: str) -> bool:
+    try:
+        ast.parse(code)
+    except SyntaxError:
+        return False
+    return True
+
+
+def _caption(figure: Any, number: int) -> str:
+    return f"**Figure {number}: {figure.title.strip().rstrip('.')}.**" + (f" {figure.caption}" if figure.caption else "")
 
 
 class _Notebook:
     def __init__(self, max_rows: int | None) -> None:
         self.cells: list[dict[str, Any]] = []
         self.max_rows = max_rows
-        self.n_calls = self.n_redrawn = self.n_skipped = 0
+        self.n_calls = self.n_redrawn = self.n_skipped = self.n_code = 0
 
     def markdown(self, source: str, attachments: dict[str, Any] | None = None) -> None:
         cell = {"cell_type": "markdown", "metadata": {}, "source": _lines(source)}
@@ -338,9 +423,50 @@ class _Notebook:
                       {"bindingdb": {"call": n, "tool": call["tool"], "recorded_at": call.get("timestamp", ""),
                                      "sha256": sha}})
 
+    def analysis(self, block: dict[str, Any], call_numbers: dict[int, int], figure_numbers: dict[int, int],
+                 stem: str, files: dict[str, str], file_name: str, model: str | None) -> None:
+        """A cell of the model's analysis code: inline when short, else a .py file (added to `files`) that the
+        cell imports; the figures the code made are the cell's recorded output."""
+        self.n_code += 1
+        n = self.n_code
+        code = block["code"].strip("\n")
+        run = (block.get("run") or "").strip("\n")
+        description = " ".join((block.get("description") or "").split())
+        title = f"Code {n}" + (f": {description}" if description else "")
+        language = (block.get("language") or "python").strip().lower()
+        made = [(f, figure_numbers[f.id]) for f in block.get("figures") or []]
+        if language != "python" or not _is_python(code) or (run and not _is_python(run)):
+            self.markdown(f"**{title}** _({language}, shown as written and not run: only Python code runs in "
+                          f"this notebook)_\n\n```{language}\n{code}\n```")
+            for figure, number in made:
+                self.figure(figure, number)
+            return
+        code, run = resolve_results(code, call_numbers), resolve_results(run, call_numbers)
+        outputs = [_stream(block["output"].rstrip("\n") + "\n")] if block.get("output") else []
+        for figure, number in made:
+            outputs += [_markdown_output(_caption(figure, number) + " _(as recorded; running this cell draws it "
+                                         "again)_"), _image_output(figure.data, _mime(figure.file))]
+        meta: dict[str, Any] = {"code": n}
+        lines = len(code.splitlines())
+        if lines > INLINE_CODE_LINES:
+            module = _module_name(block.get("module_name"), f"{stem}_code_{n}", files)
+            files[f"{module}.py"] = "\n".join([
+                f'"""{title}, from the notebook {file_name}.',
+                "",
+                f"Written by {model or 'the model'} during the analysis. The notebook imports this file, so keep",
+                'it in the same folder as the notebook."""',
+                "", code, ""])
+            source = (f"# {title}\n# The code is in {module}.py, next to this notebook ({lines} lines).\n"
+                      f"from {module} import *")
+            meta["module"] = f"{module}.py"
+        else:
+            source = f"# {title}\n{code}"
+        if run:
+            source += f"\n\n{run}"
+        self.code(source, outputs, {"bindingdb": meta})
+
     def figure(self, figure: Any, number: int) -> None:
-        caption = f"**Figure {number}: {figure.title.strip().rstrip('.')}.**" + \
-                  (f" {figure.caption}" if figure.caption else "")
+        caption = _caption(figure, number)
         mime = _mime(figure.file)
         if figure.call and figure.call.get("tool") in FIGURE_TOOLS:
             self.n_redrawn += 1
@@ -391,6 +517,8 @@ def _header(meta: dict[str, Any], counts: dict[str, int], file_name: str) -> str
     contents = [transcript.plural(counts["exchanges"], "exchange"), transcript.plural(counts["calls"], "tool call")]
     if counts["figures"]:
         contents.append(transcript.plural(counts["figures"], "figure"))
+    if counts.get("code_cells"):
+        contents.append(transcript.plural(counts["code_cells"], "code cell"))
     lines = [
         f"# {meta['title']}", "",
         "A reproducible record of an AI-assisted BindingDB analysis: each prompt, the BindingDB tool calls that "
@@ -417,7 +545,10 @@ def _header(meta: dict[str, Any], counts: dict[str, int], file_name: str) -> str
         "when it matches the recorded one (SHA-256 of the result, floats to "
         f"{SIGNIFICANT_DIGITS} significant digits, ids of viewers and files left out). Calls to PubChem, RCSB "
         "or PDBe depend on those services and may differ. The prose answers are the model's and are not "
-        "recomputed.",
+        "recomputed."
+        + (" Code cells hold the analysis code the model wrote; they run as written (reading rerun results "
+           "with `replay.result(n)`, the result of Call n) and draw their figures again, which are not "
+           "compared." if counts.get("code_cells") else ""),
     ]
     return "\n".join(lines)
 
@@ -428,21 +559,26 @@ def _rerun_steps(meta: dict[str, Any], file_name: str) -> list[str]:
     commit = (meta.get("source") or {}).get("commit")
     stem = file_name[:-len(".ipynb")] if file_name.endswith(".ipynb") else file_name
     checks = "release" + (" and source checksum" if meta["bindingdb_build"].get("source_zip_sha256") else "")
+    extra = with_packages(meta.get("python_packages", ()))
+    files = meta.get("code_files") or []
     return [
         "### How to rerun", "",
         "Jupyter must run in mcp-bindingdb's Python environment, so start it from the mcp-bindingdb folder "
         "with `uv run` (replace the paths with yours):", "",
         "```bash",
         "cd /path/to/mcp-bindingdb",
-        f"uv run --all-extras --with jupyterlab jupyter lab /path/to/{file_name}",
+        f"uv run --all-extras --with jupyterlab{extra} jupyter lab /path/to/{file_name}",
         "```", "",
         "and choose Run → Run All Cells. To rerun it without opening Jupyter, writing a copy with the new "
         "results:", "",
         "```bash",
         "cd /path/to/mcp-bindingdb",
-        f"uv run --all-extras --with nbconvert jupyter nbconvert --to notebook --execute --output "
+        f"uv run --all-extras --with nbconvert{extra} jupyter nbconvert --to notebook --execute --output "
         f"{stem}-rerun.ipynb /path/to/{file_name}",
         "```", "",
+        *([f"The notebook imports its code from {', '.join(f'`{f}`' for f in files)}: keep "
+           f"{'these files' if len(files) > 1 else 'that file'} in the same folder as the notebook.", ""]
+          if files else []),
         "The database is found in the folder's `data/`; if it is elsewhere, put "
         f"`BINDINGDB_DUCKDB=/path/to/bindingdb_{release}.duckdb` before `uv run`. VS Code works too, with the "
         "folder's `.venv` as the kernel.", "",
@@ -584,6 +720,7 @@ class Replay:
         info = self.db.build_info()
         self.max_rows = max_rows
         self.checks: list[tuple[str, str, str]] = []  # (label, tool, status)
+        self.results: dict[int, Any] = {}  # call number -> its rerun result
         self._figure_dir = Path(tempfile.mkdtemp(prefix="bindingdb-replay-"))
         self.server = build_server(self.db, load_substructure_index(self.db), network=network,
                                    transcript_dir=self._figure_dir)
@@ -638,7 +775,14 @@ class Replay:
             if service := NETWORK_TOOLS.get(tool):
                 message += f"; {tool} uses {service}, whose answers change over time"
         self.checks.append((label, tool, status))
+        self.results[number] = result
         return Rerun(label, tool, result, status, message, images, self.max_rows)
+
+    def result(self, number: int) -> Any:
+        """The rerun result of call `number` (e.g. a dict with 'rows'), for the notebook's analysis code."""
+        if number not in self.results:
+            raise KeyError(f"Call {number} has not been rerun: run its cell first")
+        return self.results[number]
 
     async def figure(self, number: int, tool: str, arguments: dict[str, Any]) -> Rerun:
         """Draw recorded figure `number` again with the tool that drew it (images are not compared)."""

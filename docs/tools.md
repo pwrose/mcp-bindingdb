@@ -243,6 +243,14 @@ writes an `.ipynb` (to `output_dir`, like transcripts) with, in order:
 - per exchange: the prompt, a code cell per tool call made for it (`await replay.call(n, tool, arguments,
   sha256=...)`, `run_sql`'s SQL as a text block), its figures, and the answer (figures come before the
   answer, as the chat showed them);
+- per exchange, after its calls: the analysis code the model wrote and ran for it (the exchange's `code`),
+  such as a plot or a statistic. Code of up to 40 lines is a cell; longer code is written to a `.py` file
+  next to the notebook (`module_name`, else from the notebook's name), and the cell imports it
+  (`from <module> import *`) and runs the model's `run` lines. The code reads a rerun call's result as
+  `replay.result(i)`: the model writes the call's `get_tool_log` index, the server renumbers it to the
+  notebook's call number. Figures the code made (`figures`, from `add_figure`) are the cell's recorded
+  output and are drawn again when it runs; what it printed (`output`) is too. The PyPI packages it needs
+  (`packages`) are added to the run commands as `--with`. Code in another language is shown, not run;
 - a verification cell (`replay.summary()`) and a "How to cite" cell, with BibTeX for the server, BindingDB and
   RDKit (with the RDKit version the notebook was made with).
 

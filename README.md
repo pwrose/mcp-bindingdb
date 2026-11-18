@@ -99,8 +99,8 @@ files. See [Tools](docs/tools.md#find_pdb_complexes-and-overlay_binding_site).
 ## Jupyter notebooks
 
 A notebook turns a chat into a record that anyone can rerun, check and cite. It holds each of your
-prompts, the BindingDB tool calls behind each answer with their results as recorded, Claude's answers,
-the figures, and where the results came from: the BindingDB release (with the checksum of the download
+prompts, the BindingDB tool calls behind each answer with their results as recorded, any code Claude wrote
+for the analysis (e.g. for a plot), Claude's answers, the figures, and where the results came from: the BindingDB release (with the checksum of the download
 the database was built from), the mcp-bindingdb version and commit, the model, and the software versions.
 
 ### Create a notebook in a chat
@@ -117,7 +117,8 @@ in the mcp-bindingdb folder. The notebook opens with the results as they were re
 without running anything.
 
 Next to it the server saves an HTML copy, here `~/results/imatinib-analogues.html`, to read or share in any
-web browser. Claude's reply gives the commands to run the notebook, with your paths filled in.
+web browser. Code Claude wrote is in the notebook if it is short; longer code is saved as `.py` files in the
+same folder, which the notebook imports, so keep them together. Claude's reply gives the commands to run the notebook, with your paths filled in.
 
 ### Run a notebook
 

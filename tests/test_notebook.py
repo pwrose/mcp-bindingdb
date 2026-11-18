@@ -184,3 +184,54 @@ async def test_notebook_without_listed_calls_takes_the_whole_log(tmp_path):
     nb = json.loads(path.read_text())
     assert any("".join(c["source"]).startswith("## BindingDB tool calls") for c in nb["cells"])
     assert any("'search_targets'" in "".join(c["source"]) for c in nb["cells"] if c["cell_type"] == "code")
+
+
+@needs_db
+@pytest.mark.anyio
+async def test_notebook_includes_the_models_code_inline_or_as_a_module(tmp_path, monkeypatch):
+    srv = build_server(Database(DB_PATH), transcript_dir=tmp_path / "t")
+    plot = tmp_path / "plot.png"
+    plot.write_bytes(base64.b64decode(
+        "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="))
+    long_code = "\n".join(["def count_rows(result):", '    """How many rows a result has."""',
+                           *(f"    x{k} = {k}" for k in range(45)), "    return len(result['rows'])"])
+    async with Client(srv) as client:
+        await client.call_tool("search_targets", {"query": "CDK2", "limit": 2})  # log 1: not in the notebook
+        await client.call_tool("search_compounds", {"query": "imatinib", "limit": 3})  # log 2: notebook Call 1
+        await client.call_tool("add_figure", {"title": "Row count", "path": str(plot)})  # figure 1
+        args = {"model": "m", "output_dir": str(tmp_path), "file_name": "with-code", "html": False}
+        unknown = await client.call_tool("create_jupyter_notebook", {**args, "exchanges": [
+            {"prompt": "p", "calls": [2], "code": [{"code": "replay.result(1)"}]}]})
+        made = await client.call_tool("create_jupyter_notebook", {**args, "exchanges": [{
+            "prompt": "How many hits?", "answer": "Three.", "calls": [2], "code": [
+                {"code": "rows = replay.result(2)['rows']\nprint(len(rows), 'rows')", "description": "Count hits",
+                 "output": "3 rows"},
+                {"code": long_code, "run": "n = count_rows(replay.result(2))\nn", "module_name": "Row Count.py",
+                 "packages": ["matplotlib"], "figures": [1]},
+                {"code": "console.log(1)", "language": "javascript"}]}]})
+    assert unknown.is_error and "replay.result(1), but call 1 is not in the notebook" in unknown.content[0].text
+    assert not made.is_error, made.content
+    reply = made.content[0].text
+    assert "1 figure, 3 code cells" in reply and f"{tmp_path / 'row_count.py'}" in reply
+    assert "--with jupyterlab --with matplotlib jupyter lab" in reply
+
+    nb = json.loads((tmp_path / "with-code.ipynb").read_text())
+    text = ["".join(c["source"]) for c in nb["cells"]]
+    inline = next(c for c in nb["cells"] if c["metadata"].get("bindingdb", {}).get("code") == 1)
+    assert "".join(inline["source"]) == "# Code 1: Count hits\nrows = replay.result(1)['rows']\nprint(len(rows), 'rows')"
+    assert inline["outputs"][0]["text"] == ["3 rows\n"]
+    module = next(c for c in nb["cells"] if c["metadata"].get("bindingdb", {}).get("module") == "row_count.py")
+    assert "from row_count import *\n\nn = count_rows(replay.result(1))\nn" in "".join(module["source"])
+    assert "image/png" in module["outputs"][1]["data"]  # the figure the code made, as recorded
+    assert not any("attachment:" in t for t in text)  # ... and not also as a figure cell
+    assert any("**Code 3** _(javascript, shown as written and not run" in t for t in text)
+    assert "--with matplotlib jupyter lab" in text[0] and "imports its code from `row_count.py`" in text[0]
+    assert (tmp_path / "row_count.py").read_text().startswith('"""Code 2, from the notebook with-code.ipynb.')
+
+    monkeypatch.setenv("BINDINGDB_DUCKDB", str(DB_PATH))
+    monkeypatch.chdir(tmp_path)  # Jupyter runs a notebook in its folder, where the module is
+    monkeypatch.syspath_prepend(str(tmp_path))
+    namespace: dict = {}
+    values = await run_cells(nb, namespace)
+    assert [v.status for v in values if isinstance(v, notebook.Rerun)] == ["same"]
+    assert namespace["n"] == 3 and len(namespace["rows"]) == 3
