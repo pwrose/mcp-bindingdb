@@ -243,7 +243,8 @@ writes an `.ipynb` (to `output_dir`, like transcripts) with, in order:
 - per exchange: the prompt, a code cell per tool call made for it (`await replay.call(n, tool, arguments,
   sha256=...)`, `run_sql`'s SQL as a text block), its figures, and the answer (figures come before the
   answer, as the chat showed them);
-- a verification cell (`replay.summary()`) and a "How to cite" cell.
+- a verification cell (`replay.summary()`) and a "How to cite" cell, with BibTeX for the server, BindingDB and
+  RDKit (with the RDKit version the notebook was made with).
 
 To run a notebook, start Jupyter from the mcp-bindingdb folder, so its kernel has this project's
 packages (the `notebook` extra provides ipykernel):
@@ -257,6 +258,12 @@ uv run --all-extras --with nbconvert jupyter nbconvert --to notebook --execute \
 
 The notebook's own "How to rerun" section gives these commands with its file name, and the steps for a
 computer without mcp-bindingdb (clone at the recorded commit, `scripts/build_duckdb.sh --release ...`).
+The tool's reply gives them with the actual paths, for the model to show the user.
+
+It also writes an HTML copy of the notebook as written, with the recorded results and figures, as
+`<name>.html` next to it (`html=true`, the default), with `jupyter nbconvert --to html` run by the server's
+`uv` (`$UV`, else `uv` on the PATH) in the mcp-bindingdb folder. If nbconvert fails, its output is saved as
+`<name>-html.log`.
 
 The model lists each answer's calls by their `get_tool_log` index in the exchange's `calls`; without any,
 every logged call goes in a section after the conversation. Before it is run, each call cell shows the

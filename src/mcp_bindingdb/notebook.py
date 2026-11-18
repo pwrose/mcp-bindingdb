@@ -15,7 +15,10 @@ import hashlib
 import io
 import json
 import math
+import os
 import platform
+import shlex
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -27,7 +30,33 @@ from . import transcript
 
 REPO_URL = "https://github.com/pwrose/mcp-bindingdb"
 BINDINGDB_CITATION = ("Liu T, Hwang L, Burley SK, Nitsche CI, Southan C, Walters WP, Gilson MK. BindingDB in 2024: "
-                      "a FAIR knowledgebase of protein-small molecule binding data. Nucleic Acids Research 53(D1), 2025.")
+                      "a FAIR knowledgebase of protein-small molecule binding data. Nucleic Acids Research 53(D1):D1633-D1644, "
+                      "2025. https://doi.org/10.1093/nar/gkae1075")
+#: BibTeX for the server, BindingDB and RDKit, as in the README's Citation section; {rdkit_version} is filled in.
+BIBTEX = """@software{rose2026mcp-bindingdb,
+  title={MCP BindingDB Server},
+  author={Rose, P.W.},
+  year={2026},
+  url={https://github.com/pwrose/mcp-bindingdb}
+}
+
+@article{liu2025bindingdb,
+  title={BindingDB in 2024: a FAIR knowledgebase of protein-small molecule binding data},
+  author={Liu, T. and Hwang, L. and Burley, S.K. and Nitsche, C.I. and Southan, C. and Walters, W.P. and Gilson, M.K.},
+  journal={Nucleic Acids Research},
+  volume={53},
+  number={D1},
+  pages={D1633--D1644},
+  year={2025},
+  doi={10.1093/nar/gkae1075}
+}
+
+@software{rdkit,
+  title={RDKit: Open-source cheminformatics},
+  author={Landrum, G. and others},{rdkit_version}
+  url={https://www.rdkit.org},
+  doi={10.5281/zenodo.591637}
+}"""
 
 #: Parts of results that differ from run to run by design: ids of viewers, editors and figures, file locations.
 VOLATILE_KEYS = {"overlay_id", "editor_id", "figure_id", "figure_file", "contact_figure_id", "folder",
@@ -97,6 +126,57 @@ def _dist_version(name: str) -> str:
         return version(name)
     except PackageNotFoundError:
         return ""
+
+
+# ------------------------------------------------------------------------------------- running notebooks
+
+def project_dir() -> Path | None:
+    """The mcp-bindingdb folder this package runs from, where `uv run` finds its environment."""
+    folder = Path(__file__).resolve().parents[2]
+    return folder if (folder / "pyproject.toml").is_file() else None
+
+
+def rerun_path(path: Path) -> Path:
+    """Where nbconvert writes the executed copy of a notebook: <name>-rerun.ipynb next to it."""
+    return path.with_name(f"{path.stem}-rerun.ipynb")
+
+
+def _db_setting(project: Path, db_path: Path | None) -> str:
+    """'BINDINGDB_DUCKDB=... ' when the notebook would not find db_path by itself in the folder's data/."""
+    if db_path is None:
+        return ""
+    found = sorted((project / "data").glob("bindingdb_*.duckdb"))
+    same = bool(found) and found[-1].resolve() == Path(db_path).resolve()
+    return "" if same else f"BINDINGDB_DUCKDB={shlex.quote(str(db_path))} "
+
+
+def run_commands(path: Path, project: Path, db_path: Path | None = None) -> dict[str, str]:
+    """Shell commands that open the notebook in JupyterLab, and that rerun it with nbconvert."""
+    q = lambda p: shlex.quote(str(p))  # noqa: E731
+    cd, env = f"cd {q(project)}", _db_setting(project, db_path)
+    return {"jupyter": f"{cd}\n{env}uv run --all-extras --with jupyterlab jupyter lab {q(path)}",
+            "nbconvert": f"{cd}\n{env}uv run --all-extras --with nbconvert jupyter nbconvert --to notebook "
+                         f"--execute --output {q(rerun_path(path).name)} {q(path)}"}
+
+
+def to_html(path: Path, project: Path, timeout: float = 120) -> Path:
+    """Convert the notebook, as written (not run), to <name>.html next to it with nbconvert; returns its
+    path. On failure, nbconvert's output goes to <name>-html.log and RuntimeError says so."""
+    uv = os.environ.get("UV") or shutil.which("uv")  # `uv run` sets UV to its own path
+    if not uv:
+        raise RuntimeError("uv was not found")
+    out, log = path.with_suffix(".html"), path.with_name(f"{path.stem}-html.log")
+    out.unlink(missing_ok=True)
+    command = [uv, "run", "--with", "nbconvert", "jupyter", "nbconvert", "--to", "html", str(path)]
+    try:
+        done = subprocess.run(command, cwd=project, capture_output=True, text=True, timeout=timeout)
+    except subprocess.TimeoutExpired:
+        raise RuntimeError(f"nbconvert took over {timeout:.0f} s and was stopped") from None
+    if done.returncode or not out.is_file():
+        log.write_text(f"$ {shlex.join(command)}\n\n{done.stdout}{done.stderr}")
+        raise RuntimeError(f"nbconvert failed (exit code {done.returncode}); its output is in {log}")
+    log.unlink(missing_ok=True)
+    return out
 
 
 # ------------------------------------------------------------------------------------------------- calls
@@ -404,7 +484,18 @@ def _citation(meta: dict[str, Any]) -> str:
         f"- Software: {server}",
         f"- Analysis: {meta['title']}, {meta['date']}, with {meta['model']}",
         f"- BindingDB: {BINDINGDB_CITATION}",
+        "",
+        "As BibTeX, for this server, BindingDB and RDKit (used for structure search, properties and drawings):",
+        "",
+        "```bibtex",
+        bibtex(meta["environment"].get("rdkit")),
+        "```",
     ])
+
+
+def bibtex(rdkit_version: str | None = None) -> str:
+    """The BibTeX entries to cite, with the RDKit version when known."""
+    return BIBTEX.replace("{rdkit_version}", f"\n  version={{{rdkit_version}}}," if rdkit_version else "")
 
 
 def _first_line(text: str, limit: int = 80) -> str:

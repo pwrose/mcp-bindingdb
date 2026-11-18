@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import asyncio
 import base64
 import html
 import json
@@ -935,13 +936,25 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
         _add_sar_tools(mcp, db, property_filter)
     add_editor_results_tool(mcp, editor_searches)
     add_editor_check_tool(mcp, editor_searches)
-    _add_transcript_tools(mcp, info, transcript_dir or db.path.parent / "transcripts")
+    _add_transcript_tools(mcp, info, transcript_dir or db.path.parent / "transcripts", db.path)
     if structures.available():
         _add_pdb_tools(mcp, db, network)
     return mcp
 
 
-def _add_transcript_tools(mcp: BindingDBServer, build_info: dict[str, str], transcript_dir: Path) -> None:
+async def _html_copy(path: Path, project: Path | None) -> str:
+    """Convert the notebook to HTML (notebook.to_html) off the event loop, and say how it went."""
+    if project is None:
+        return "- No HTML copy: the server does not run from an mcp-bindingdb folder."
+    try:
+        html_path = await asyncio.to_thread(notebook.to_html, path, project)
+    except RuntimeError as e:
+        return f"- HTML copy: not written: {e}. Tell the user."
+    return f"- HTML copy: {html_path} (opens in a web browser; shows the results as recorded)"
+
+
+def _add_transcript_tools(mcp: BindingDBServer, build_info: dict[str, str], transcript_dir: Path,
+                          db_path: Path | None = None) -> None:
     release = build_info.get("release", "unknown")
     figures_dir = transcript_dir / "figures"
     writes = ToolAnnotations(readOnlyHint=False, destructiveHint=False, openWorldHint=False)
@@ -1372,7 +1385,7 @@ def _add_transcript_tools(mcp: BindingDBServer, build_info: dict[str, str], tran
         return [TextContent(type="text", text=mcp.last_markdown), TextContent(type="text", text=note)]
 
     @mcp.tool(annotations=replaces)
-    def create_jupyter_notebook(
+    async def create_jupyter_notebook(
         model: Annotated[str, Field(description="The exact model id that produced the analysis (e.g. "
                                     "'claude-opus-5-5'), from session metadata or the user; never a family "
                                     "name like 'Claude' or a guess. Ask the user if you do not know it")],
@@ -1392,6 +1405,8 @@ def _add_transcript_tools(mcp: BindingDBServer, build_info: dict[str, str], tran
                                                                 "['PubMed']")] = None,
         output_dir: Annotated[str | None, OUTPUT_DIR_FIELD] = None,
         file_name: Annotated[str | None, FILE_NAME_FIELD] = None,
+        html: Annotated[bool, Field(description="Also write an HTML copy of the notebook next to it "
+                                    "(<file>.html, made with nbconvert), for reading in a web browser")] = True,
     ) -> str:
         """Write a Jupyter notebook (.ipynb) that reruns this session's BindingDB analysis, so every finding
         can be rerun, verified and cited: each prompt, then a code cell per BindingDB tool call made for it
@@ -1409,8 +1424,8 @@ def _add_transcript_tools(mcp: BindingDBServer, build_info: dict[str, str], tran
         Pass each answer in full, verbatim; the server cannot see your prose.
 
         The notebook can be large, so the server writes it (to output_dir, if given: pass the folder the
-        user wants it in) and returns its path. Deliver that file as is; never write, edit or copy a
-        notebook of this analysis yourself."""
+        user wants it in) and returns its path, with the commands that run it, and writes an HTML copy
+        (<file>.html) next to it. Deliver those files as is; never write, edit or copy a notebook of this analysis yourself."""
         log = mcp.tool_log
         turns = [e.model_dump() for e in exchanges]
         listed_calls = [i for t in turns for i in t["calls"]]
@@ -1427,6 +1442,7 @@ def _add_transcript_tools(mcp: BindingDBServer, build_info: dict[str, str], tran
         leftover = [] if listed_calls else list(log.entries)
         unplaced = [] if listed_figures else list(log.figures)
         path = destination(output_dir, file_name, title, ".ipynb")
+        project = notebook.project_dir()
         nb, counts = notebook.build_notebook(
             title=title, when=date or _date.today().isoformat(), model=model, build_info=build_info,
             generated_by=f"{mcp.name} v{VERSION}", exchanges=turns, leftover_calls=leftover,
@@ -1454,9 +1470,16 @@ def _add_transcript_tools(mcp: BindingDBServer, build_info: dict[str, str], tran
         if not listed_calls:
             lines.append("- No exchange listed its calls, so every logged call is in a section after the "
                          "conversation" + (" (none were logged)." if not leftover else "."))
-        lines.append("To rerun it, open it in Jupyter in mcp-bindingdb's environment with the database of the same "
-                     "release and run all cells (instructions are in the notebook). Deliver this file as is; do "
-                     "not write, edit or copy it yourself" + ("." if output_dir else
+        if html:
+            lines.append(await _html_copy(path, project))
+        if project:
+            commands = notebook.run_commands(path, project, db_path)
+            lines += ["Show the user how to run the notebook: include both commands below in your reply, each in "
+                      "its own bash code block, as given. To open it in JupyterLab (then choose Run → Run All "
+                      "Cells):", "", "```bash", commands["jupyter"], "```", "",
+                      "To rerun it without opening Jupyter, writing the new results to "
+                      f"{notebook.rerun_path(path).name}:", "", "```bash", commands["nbconvert"], "```"]
+        lines.append("Deliver the notebook as is; do not write, edit or copy it yourself" + ("." if output_dir else
                      " (pass output_dir to have it written where the user wants it)."))
         return "\n".join(lines)
 

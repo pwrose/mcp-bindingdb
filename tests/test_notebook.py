@@ -22,6 +22,24 @@ def test_digest_ignores_volatile_keys_and_float_noise():
     assert notebook.digest({"rows": [1, 2]}) != notebook.digest({"rows": [2, 1]})  # order matters
 
 
+def test_bibtex_names_the_rdkit_version_when_known():
+    assert "  author={Landrum, G. and others},\n  version={2026.03.6},\n  url=" in notebook.bibtex("2026.03.6")
+    assert "version=" not in notebook.bibtex(None) and "{rdkit_version}" not in notebook.bibtex(None)
+
+
+def test_run_commands_quote_paths_and_name_a_database_outside_data(tmp_path):
+    (tmp_path / "data").mkdir()
+    db = tmp_path / "data" / "bindingdb_202610.duckdb"
+    db.touch()
+    path = tmp_path / "my results" / "a.ipynb"
+    commands = notebook.run_commands(path, tmp_path, db)
+    assert commands["jupyter"] == (f"cd {tmp_path}\nuv run --all-extras --with jupyterlab jupyter lab "
+                                   f"'{tmp_path}/my results/a.ipynb'")
+    assert "--execute --output a-rerun.ipynb '" in commands["nbconvert"]
+    elsewhere = notebook.run_commands(path, tmp_path, tmp_path / "other.duckdb")
+    assert f"\nBINDINGDB_DUCKDB={tmp_path}/other.duckdb uv run" in elsewhere["jupyter"]
+
+
 def test_call_source_writes_sql_as_text():
     source = notebook.call_source(2, "run_sql", {"sql": "SELECT 1\nFROM t", "limit": 5}, "ab" * 32, "Call 2")
     assert 'sql = """\nSELECT 1\nFROM t\n"""' in source
@@ -100,7 +118,15 @@ async def test_notebook_records_and_reruns_the_session(tmp_path, monkeypatch):
     assert bad_call.is_error and "calls [9] are not in the log" in bad_call.content[0].text
     assert bad_figure.is_error and "figures [9] are not in the log" in bad_figure.content[0].text
     assert not made.is_error, made.content
-    assert "2 exchanges, 2 tool calls, 2 figures (1 redrawn on rerun)" in made.content[0].text
+    reply = made.content[0].text
+    assert "2 exchanges, 2 tool calls, 2 figures (1 redrawn on rerun)" in reply
+    # An HTML copy next to it, with the recorded results and the figures; and the commands to run it.
+    assert f"HTML copy: {tmp_path / 'check.html'} (" in reply
+    page = (tmp_path / "check.html").read_text()
+    assert "BDBM13530" in page and "Find imatinib." in page and "data:image/png;base64," in page
+    assert "attachment:figure-2.png" not in page  # the add_figure image is embedded too
+    assert not (tmp_path / "check-html.log").exists()
+    assert f"jupyter lab {tmp_path / 'check.ipynb'}\n```" in reply and "--output check-rerun.ipynb" in reply
 
     nb = json.loads((tmp_path / "check.ipynb").read_text())
     assert nb["nbformat"] == 4 and nb["nbformat_minor"] == 5
@@ -115,6 +141,9 @@ async def test_notebook_records_and_reruns_the_session(tmp_path, monkeypatch):
     assert any(t.startswith("# Figure 1 · draw_structure_grid") for t in text)
     assert "jupyter lab /path/to/check.ipynb" in header and "--output check-rerun.ipynb" in header
     assert "scripts/build_duckdb.sh --release" in header
+    cite = text[-1]
+    assert cite.startswith("## How to cite") and "@software{rose2026mcp-bindingdb," in cite
+    assert "doi={10.1093/nar/gkae1075}" in cite and "doi={10.5281/zenodo.591637}" in cite
     figure_at = next(i for i, t in enumerate(text) if t.startswith("# Figure 1"))
     answer_at = next(i for i, t in enumerate(text) if "It is **BDBM13530**." in t)
     assert figure_at < answer_at  # figures come before the answer, as the chat showed them
@@ -147,8 +176,10 @@ async def test_notebook_without_listed_calls_takes_the_whole_log(tmp_path):
     srv = build_server(Database(DB_PATH), transcript_dir=tmp_path)
     async with Client(srv) as client:
         await client.call_tool("search_targets", {"query": "CDK2", "limit": 2})
-        made = await client.call_tool("create_jupyter_notebook", {"model": "m", "exchanges": [{"prompt": "CDK2?"}]})
+        made = await client.call_tool("create_jupyter_notebook", {"model": "m", "html": False,
+                                                                  "exchanges": [{"prompt": "CDK2?"}]})
     assert not made.is_error and "every logged call is in a section after the conversation" in made.content[0].text
+    assert "HTML copy" not in made.content[0].text and "jupyter lab" in made.content[0].text
     [path] = tmp_path.glob("bindingdb-analysis-*.ipynb")
     nb = json.loads(path.read_text())
     assert any("".join(c["source"]).startswith("## BindingDB tool calls") for c in nb["cells"])

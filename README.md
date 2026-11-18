@@ -112,9 +112,12 @@ Create a Jupyter notebook named imatinib-analogues that reruns this analysis, in
 ```
 
 Claude picks this chat's tool calls, places each under the answer it was made for, and the server writes
-the notebook, here `~/results/imatinib-analogues.ipynb`, and tells you where it is. Without a folder it
-goes to `data/transcripts/` in the mcp-bindingdb folder. The notebook opens with the results as they
-were recorded, so it can be read without running anything.
+the notebook, here `~/results/imatinib-analogues.ipynb`. Without a folder it goes to `data/transcripts/`
+in the mcp-bindingdb folder. The notebook opens with the results as they were recorded, so it can be read
+without running anything.
+
+Next to it the server saves an HTML copy, here `~/results/imatinib-analogues.html`, to read or share in any
+web browser. Claude's reply gives the commands to run the notebook, with your paths filled in.
 
 ### Run a notebook
 
