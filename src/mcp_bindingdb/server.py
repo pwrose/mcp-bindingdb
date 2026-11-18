@@ -19,16 +19,18 @@ import webbrowser
 from datetime import date as _date
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Annotated, Any, Literal
+from typing import Annotated, Any, Callable, Literal
 
 from mcp.server.mcpserver import Context, MCPServer
 from mcp.server.mcpserver.exceptions import ToolError
 from mcp.types import CallToolResult, ImageContent, ResourceLink, TextContent, ToolAnnotations
 from pydantic import BaseModel, Field
 
-from . import depict, figures, names, notebook, sar, structures, substructure, transcript, transcript_html
+from . import depict, figures, local_build, names, notebook, sar, structures, substructure, transcript
+from . import transcript_html
 from . import properties as compound_properties
-from .db import Database, QueryError, find_database, order_warning
+from .builder import DEFAULT_RELEASE
+from .db import Database, QueryError, order_warning
 from .structure_editor import (FIGURE_META, OVERLAY_META, UI_EXTENSION, EditorSearches,
                                add_editor_check_tool, add_editor_results_tool,
                                create_editor_extension, overlay_viewer_html)
@@ -424,6 +426,34 @@ def load_substructure_index(db: Database) -> substructure.SubstructureIndex | No
               f"{rebuild}. {disabled}", file=sys.stderr)
         return None
     return index
+
+
+class PendingIndex:
+    """Stands in for the SubstructureIndex while its file downloads: `ready` raises (download.NotReady) until
+    the file is there; the index is then loaded on first use and every attribute comes from it."""
+
+    def __init__(self, path: Path, ready: Callable[[], None], release: str | None) -> None:
+        self._path, self._ready_check, self._release = path, ready, release
+        self._index: substructure.SubstructureIndex | None = None
+        self._lock = threading.Lock()
+
+    def _get(self) -> substructure.SubstructureIndex:
+        if self._index is None:
+            self._ready_check()
+            with self._lock:
+                if self._index is None:
+                    index = substructure.SubstructureIndex(self._path)
+                    if index.release != self._release:
+                        raise ToolError(f"{self._path.name} is for release {index.release}, the database is "
+                                        f"{self._release}; structure searches are unavailable")
+                    self._index = index
+        return self._index
+
+    def preload(self) -> None:
+        self._get().preload()
+
+    def __getattr__(self, name: str) -> Any:
+        return getattr(self._get(), name)
 
 
 def build_server(db: Database, index: substructure.SubstructureIndex | None = None,
@@ -2736,7 +2766,9 @@ def _add_structure_tools(mcp: MCPServer, db: Database, index: substructure.Subst
 
 def main() -> None:
     p = argparse.ArgumentParser(prog="mcp-bindingdb", description="BindingDB MCP server")
-    p.add_argument("--db", help="DuckDB file (default: $BINDINGDB_DUCKDB or newest data/bindingdb_*.duckdb)")
+    p.add_argument("--db", help="DuckDB file (default: $BINDINGDB_DUCKDB, else the newest data/bindingdb_*.duckdb, "
+                   "else release " + DEFAULT_RELEASE + " in $MCP_BINDINGDB_DATA_DIR or the user data folder, built "
+                   "there on first use)")
     p.add_argument("--transport", choices=["stdio", "streamable-http"], default="stdio")
     p.add_argument("--host", default="127.0.0.1")
     p.add_argument("--port", type=int, default=8000)
@@ -2747,11 +2779,23 @@ def main() -> None:
                    help="Where transcripts and figures go unless a call gives output_dir (default: "
                    "$MCP_BINDINGDB_TRANSCRIPT_DIR, else transcripts/ next to the database)")
     args = p.parse_args()
+    if args.transcript_dir and "${" in args.transcript_dir:  # a bundle setting the host left unsubstituted
+        args.transcript_dir = None
 
-    db = Database(Path(args.db) if args.db else find_database(), timeout_s=args.timeout)
-    index = load_substructure_index(db)
-    if index is not None:  # loading takes several seconds; start now so the first search does not wait
-        threading.Thread(target=index.preload, daemon=True).start()
+    db_path, pending = local_build.locate(args.db)
+    if pending is None:
+        db = Database(db_path, timeout_s=args.timeout)
+    else:  # being built: open the database on first use, once it is there
+        print(f"mcp-bindingdb: {pending.message()}", file=sys.stderr)
+        db = Database(db_path, timeout_s=args.timeout, ready=lambda: pending.require(db_path),
+                      build_info=pending.build_info if not db_path.is_file() else None)
+    index_file = substructure.index_path(db_path)
+    if pending is not None and not index_file.is_file() and substructure.rdkit_available():
+        index = PendingIndex(index_file, lambda: pending.require(index_file), db.build_info().get("release"))
+    else:
+        index = load_substructure_index(db)
+        if index is not None:  # loading takes several seconds; start now so the first search does not wait
+            threading.Thread(target=index.preload, daemon=True).start()
     server = build_server(db, index, network=not args.no_network,
                           transcript_dir=Path(args.transcript_dir).expanduser() if args.transcript_dir else None)
     if args.transport == "stdio":

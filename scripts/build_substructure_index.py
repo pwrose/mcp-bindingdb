@@ -1,43 +1,17 @@
-"""Build the RDKit substructure index for a BindingDB DuckDB file.
+"""Build the RDKit substructure and similarity index for a BindingDB DuckDB file; see
+mcp_bindingdb.builder.structure_index.
 
     uv run --extra substructure python scripts/build_substructure_index.py data/bindingdb_202610.duckdb
 
-Writes data/bindingdb_<release>.sslib next to the DuckDB file (or --output). Every compound with a
-SMILES that RDKit can parse is indexed: its canonical SMILES (searched with a trusted-SMILES holder),
-a pattern fingerprint for substructure screening, and a Morgan fingerprint of its largest fragment for
-similarity search. Compounds are ordered by number of measurements, most
-first, so a search that stops at its result limit returns the best-characterized compounds.
+Writes data/bindingdb_<release>.sslib next to the DuckDB file (or --output).
 """
 
 import argparse
 import sys
 import time
-from multiprocessing import Pool
 from pathlib import Path
 
-import duckdb
-import numpy as np
-from rdkit import Chem, DataStructs, RDLogger
-from rdkit.Chem import rdSubstructLibrary
-
-from mcp_bindingdb.substructure import index_path, morgan_fingerprint, write_index
-
-BATCH = 5000
-
-
-def _prepare(rows: list[tuple[int, str]]) -> list[tuple[int, str, bytes, bytes] | None]:
-    """Canonical SMILES, pattern and Morgan fingerprints per compound; None where the SMILES does not parse."""
-    RDLogger.DisableLog("rdApp.*")
-    fps = rdSubstructLibrary.PatternHolder()
-    out = []
-    for monomerid, smiles in rows:
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            out.append(None)
-        else:
-            fp = DataStructs.BitVectToBinaryText(fps.MakeFingerprint(mol))  # raw bits, 256 bytes
-            out.append((monomerid, Chem.MolToSmiles(mol), fp, morgan_fingerprint(mol)))
-    return out
+from mcp_bindingdb.builder.structure_index import build
 
 
 def main() -> int:
@@ -46,46 +20,12 @@ def main() -> int:
     p.add_argument("--output", type=Path, help="Index file (default: the database path with .sslib)")
     p.add_argument("--workers", type=int, default=None, help="Worker processes (default: all CPUs)")
     args = p.parse_args()
-    out = args.output or index_path(args.database)
 
     t0 = time.time()
-    con = duckdb.connect(str(args.database), read_only=True)
-    release = con.execute("SELECT value FROM _build_info WHERE key = 'release'").fetchone()
-    rows = con.execute(
-        "SELECT monomerid, smiles FROM compound WHERE smiles IS NOT NULL AND trim(smiles) <> '' "
-        "ORDER BY n_activities DESC, monomerid"
-    ).fetchall()
-    con.close()
-    print(f"  {len(rows):,} compounds with SMILES")
-
-    ids: list[int] = []
-    smiles_out: list[str] = []
-    fps: list[bytes] = []
-    morgan: list[bytes] = []
-    failed: list[int] = []
-    batches = [rows[i:i + BATCH] for i in range(0, len(rows), BATCH)]
-    with Pool(args.workers) as pool:
-        for batch, prepared in zip(batches, pool.imap(_prepare, batches)):  # imap keeps batch order
-            for (monomerid, _), item in zip(batch, prepared):
-                if item is None:
-                    failed.append(monomerid)
-                    continue
-                _, smiles, fp, mfp = item
-                ids.append(monomerid)
-                smiles_out.append(smiles)
-                fps.append(fp)
-                morgan.append(mfp)
-    fp_array = np.frombuffer(b"".join(fps), dtype=np.uint8).reshape(len(fps), -1)
-    morgan_array = np.frombuffer(b"".join(morgan), dtype=np.uint8).reshape(len(morgan), -1)
-
-    building = out.with_name(out.name + ".building")
-    meta = {"release": release[0] if release else None, "database": args.database.name,
-            "n_compounds": len(ids), "n_unparseable": len(failed)}
-    write_index(building, meta, np.asarray(ids, dtype=np.int64), smiles_out, fp_array, morgan_array)
-    building.replace(out)
-    print(f"  {len(ids):,} indexed, {len(failed):,} SMILES RDKit could not parse"
-          + (f" (e.g. BDBM{failed[0]})" if failed else ""))
-    print(f"Substructure index {out} ({out.stat().st_size / 1e6:.0f} MB) built in {time.time() - t0:.0f}s")
+    r = build(args.database, args.output, args.workers)
+    print(f"  {r['indexed']:,} of {r['compounds']:,} compounds with SMILES indexed, {r['unparseable']:,} SMILES "
+          "RDKit could not parse" + (f" (e.g. BDBM{r['example_unparseable']})" if r["example_unparseable"] else ""))
+    print(f"Substructure index {r['path']} ({r['path'].stat().st_size / 1e6:.0f} MB) built in {time.time() - t0:.0f}s")
     return 0
 
 

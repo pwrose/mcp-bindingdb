@@ -16,23 +16,47 @@ analytics, and saving the work as a transcript. Each is an HTML transcript with 
 its figures and structure drawings
 ([index](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/index.html)).
 
+## Quick install: Claude Desktop bundle
+
+The easiest way to try it: no terminal, Docker or clone needed.
+
+1. **Download** [mcp-bindingdb.mcpb](https://github.com/pwrose/mcp-bindingdb/releases/latest/download/mcp-bindingdb.mcpb)
+   (about 4 MB).
+2. **Install it:** double-click the file, or drag it onto Claude Desktop's Settings → Extensions page, then
+   click **Install**. The first start takes a minute or two while Claude Desktop installs the Python
+   packages the server needs.
+3. **Allow the BindingDB tools:** set them to **Always allow** in the extension's settings, or choose
+   **Always allow** the first time Claude asks to use one.
+4. **Ask a question** in a new chat, e.g. "Look up imatinib in BindingDB." The first time, the server builds
+   its database on your computer: it downloads BindingDB's data (258 MB) from bindingdb.org and converts it in
+   the background, which takes about half an hour (longer on a computer with few cores). Until it is done,
+   Claude tells you how far it has got; ask again when it is finished. This happens only once.
+
+The database needs about 3 GB of free disk space while it is built and 2.2 GB afterwards, in
+`~/Library/Application Support/mcp-bindingdb` on macOS, `%LOCALAPPDATA%\mcp-bindingdb` on Windows and
+`~/.local/share/mcp-bindingdb` on Linux. Transcripts, figures and notebooks go to `Documents/BindingDB`
+(changeable in the extension's settings). The bundle leaves out OPSIN's offline IUPAC-name parsing, which
+needs Java; names are still looked up in PubChem. To build the bundle yourself, run
+`scripts/build_bundle.sh` (see [Building the database](docs/building-the-database.md#claude-desktop-bundle)).
+
 ## Claude setup
 
-1. **Install** [uv](https://docs.astral.sh/uv/) and [Docker](https://www.docker.com) (needed only to build
-   the database), and optionally a Java runtime (for IUPAC-name parsing). Then clone the repository:
+1. **Install** [uv](https://docs.astral.sh/uv/), and optionally a Java runtime (for IUPAC-name parsing).
+   Then clone the repository:
 
    ```bash
    git clone https://github.com/pwrose/mcp-bindingdb.git
    cd mcp-bindingdb
    ```
 
-2. **Build the database** (downloads the BindingDB dump; needs about 5 GB of disk space):
+2. **Build the database** (downloads BindingDB's dump; about half an hour, and 2.4 GB of disk space):
 
    ```bash
    scripts/build_duckdb.sh
    ```
 
-   See [Building the database](docs/building-the-database.md) for releases and options.
+   You can also skip this step: without a database, the server builds the same one on first use, in the
+   per-user folder above. See [Building the database](docs/building-the-database.md) for releases and options.
 
 3. **Add the server to Claude.**
 

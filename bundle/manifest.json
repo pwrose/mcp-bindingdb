@@ -1,0 +1,45 @@
+{
+  "manifest_version": "0.4",
+  "name": "mcp-bindingdb",
+  "display_name": "BindingDB",
+  "version": "0.1.0",
+  "description": "Query BindingDB's 3.2 million measured protein-ligand binding affinities: compounds, targets, structure searches, SAR and PDB binding-site overlays.",
+  "long_description": "Answers questions about BindingDB from a local copy of the database. On first use the server builds that copy on your computer: it downloads BindingDB's dump (258 MB) from bindingdb.org and converts it in the background, in about half an hour, into your user data folder (2.2 GB). Until it is done, the tools say how far it has got. Includes substructure and similarity search (RDKit), a structure editor, PDB binding-site overlays, transcripts and Jupyter notebooks of your sessions.",
+  "author": {
+    "name": "Rose, P.W."
+  },
+  "homepage": "https://github.com/pwrose/mcp-bindingdb",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pwrose/mcp-bindingdb.git"
+  },
+  "license": "BSD-3-Clause",
+  "keywords": ["bindingdb", "chemistry", "drug discovery", "binding affinity", "cheminformatics"],
+  "server": {
+    "type": "uv",
+    "entry_point": "src/mcp_bindingdb/server.py",
+    "mcp_config": {
+      "command": "uv",
+      "args": ["run", "--directory", "${__dirname}", "--frozen", "--extra", "substructure", "--extra", "structures",
+               "mcp-bindingdb"],
+      "env": {
+        "MCP_BINDINGDB_TRANSCRIPT_DIR": "${user_config.results_dir}"
+      }
+    }
+  },
+  "user_config": {
+    "results_dir": {
+      "type": "directory",
+      "title": "Results folder",
+      "description": "Where transcripts, figures and notebooks go unless you name another folder in the chat.",
+      "default": "${DOCUMENTS}/BindingDB",
+      "required": false
+    }
+  },
+  "compatibility": {
+    "platforms": ["darwin", "win32", "linux"],
+    "runtimes": {
+      "python": ">=3.11"
+    }
+  }
+}

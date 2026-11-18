@@ -10,7 +10,7 @@ uv run mcp-bindingdb                                     # without RDKit, OPSIN 
 
 | Option | Effect |
 |---|---|
-| `--db PATH` | DuckDB file (default: `$BINDINGDB_DUCKDB` or the newest `data/bindingdb_*.duckdb`) |
+| `--db PATH` | DuckDB file (default: `$BINDINGDB_DUCKDB`, else the newest `data/bindingdb_*.duckdb`, else the database it [builds on first use](building-the-database.md#build-on-first-use) in the user data folder) |
 | `--transport stdio\|streamable-http` | Transport (default stdio) |
 | `--host`, `--port` | Address for streamable-http (default 127.0.0.1:8000) |
 | `--timeout SECONDS` | Per-query time limit (default 30) |

@@ -4,31 +4,73 @@ The server reads a local, read-only DuckDB build of BindingDB's monthly MySQL du
 
 ## Build
 
-Requires Docker (daemon running) and [uv](https://docs.astral.sh/uv/).
+Requires [uv](https://docs.astral.sh/uv/); no Docker or MySQL.
 
 ```bash
 scripts/build_duckdb.sh                    # release 202610 -> data/bindingdb_202610.duckdb
 scripts/build_duckdb.sh --release 202611   # a later release
 ```
 
-The script downloads the dump, loads it into a temporary MySQL 8.4 container, copies it to DuckDB
-(`scripts/convert_to_duckdb.py`, checking row counts), adds derived query tables
-(`scripts/add_derived_tables.py`), computes standard InChIKeys (below), builds the structure-search
-index (below), and removes the container. The structure-search index is always built, and the
-`regusers` and `person` tables (passwords and contact details) are never copied.
+The script runs `python -m mcp_bindingdb.builder` (`src/mcp_bindingdb/builder/`), which:
+
+1. downloads the dump from bindingdb.org (`BDB-mySQL_All_<release>_dmp.zip`, 258 MB for release 202610,
+   resumed if interrupted);
+2. loads it into DuckDB without MySQL (`builder/mysqldump.py`): it reads the dump straight from the zip,
+   creates each table with the column types DuckDB's MySQL extension would give it, and turns each
+   extended INSERT into CSV lines that DuckDB's CSV reader loads. The tables come out identical, row for
+   row, to a copy through MySQL. The `regusers` and `person` tables (passwords and contact details) are
+   never copied;
+3. adds the derived query tables (`builder/derived.py`, below);
+4. computes standard InChIKeys (`builder/inchikeys.py`, below);
+5. computes compound properties (`builder/compound_properties.py`, below);
+6. builds the structure-search index (`builder/structure_index.py`, below).
+
+On 10 cores it takes about 25 minutes, nearly all of it RDKit (steps 4 to 6). Progress goes to
+`data/build-<release>.json` and the log to the terminal. A build that stops resumes where it ended: the
+download continues and finished steps are skipped. The file is built as `bindingdb_<release>.duckdb.building`
+and renamed when complete, so a running server keeps using the old file until it is restarted.
 
 Options:
 
 | Option | Effect |
 |---|---|
-| `--release YYYYMM` | BindingDB release to build (default 202610) |
-| `--keep-mysql` | Keep the MySQL container after the build |
+| `--release YYYYMM` | BindingDB release to build (default 202610, `builder.DEFAULT_RELEASE`) |
+| `--workers N` | Worker processes for the RDKit steps (default: all CPUs) |
 
-For release 202610, `data/` holds about 4.5 GB afterwards: the downloaded dump (2.3 GB), the database
-(1.2 GB) and the structure-search index (0.8 GB).
+For release 202610, `data/` holds about 2.4 GB afterwards: the downloaded dump (0.26 GB, kept for
+rebuilds), the database (1.3 GB) and the structure-search index (0.85 GB).
 
-The server uses the newest `data/bindingdb_*.duckdb`, or the file given with `--db PATH` or
-`$BINDINGDB_DUCKDB`.
+The server uses the file given with `--db PATH` or `$BINDINGDB_DUCKDB`, else the newest
+`data/bindingdb_*.duckdb`, else the database it builds on first use (below).
+
+## Build on first use
+
+When the server finds no database, it builds release `builder.DEFAULT_RELEASE` itself, in
+`$MCP_BINDINGDB_DATA_DIR`, else the per-user data folder: `~/Library/Application Support/mcp-bindingdb` on
+macOS, `%LOCALAPPDATA%\mcp-bindingdb` on Windows, `$XDG_DATA_HOME` or `~/.local/share/mcp-bindingdb` on
+Linux (`src/mcp_bindingdb/local_build.py`). Nothing is downloaded but BindingDB's own dump, and the files stay
+on that computer. The server starts at once and runs the builder as a separate process at low priority,
+leaving one CPU free. Until the database is there, the tools that need it return how far the build has got
+(step, percentage, time left), and Claude passes that on; the tools that do not need it (transcripts, the tool
+log) work meanwhile. The database becomes usable before the index, so only substructure and similarity search
+wait for the last step. The builder keeps running if the server exits; a server started meanwhile waits for it
+instead of starting another, and a build that stopped resumes the next time a tool needs the database. Its
+log is `build-<release>.log` in the data folder. The dump is deleted after a successful build. Notebook
+reruns (`Replay`) build the database the same way when they find none, and wait for it.
+
+Each version of the server builds one release, so its results and notebooks stay reproducible. A new
+release is built under a new file name; delete old `bindingdb_*` files from the data folder by hand.
+
+## Claude Desktop bundle
+
+`scripts/build_bundle.sh` builds `dist/mcp-bindingdb.mcpb`, an
+[MCP bundle](https://github.com/modelcontextprotocol/mcpb) of about 4 MB (needs Node.js). It holds the
+source, `pyproject.toml`, `uv.lock` and `bundle/manifest.json`, and no database or Python environment.
+Claude Desktop runs it with uv (manifest server type `uv`), which installs the `substructure` and
+`structures` extras from the lock file, and the server builds the database on first use as above. Keep the
+version in `bundle/manifest.json` equal to `pyproject.toml`'s; the script checks. The README links
+`releases/latest/download/mcp-bindingdb.mcpb`, so attach the file, under that name, to each GitHub release
+(`gh release create v<version> dist/mcp-bindingdb.mcpb`).
 
 ## InChIKeys
 

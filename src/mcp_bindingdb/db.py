@@ -9,7 +9,7 @@ import os
 import threading
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
 
 import duckdb
 
@@ -86,21 +86,44 @@ class Result:
 class Database:
     """One read-only DuckDB connection; each query runs on its own cursor (thread-safe)."""
 
-    def __init__(self, path: Path, timeout_s: float = DEFAULT_TIMEOUT_S, memory_limit: str = "4GB"):
+    def __init__(self, path: Path, timeout_s: float = DEFAULT_TIMEOUT_S, memory_limit: str = "4GB",
+                 ready: Callable[[], None] | None = None, build_info: dict[str, str] | None = None):
+        """`ready`, for a file that is still being built (local_build.LocalBuild.require), is called before the
+        connection is opened, on first use, and raises until the file is there; without it the connection is
+        opened now. `build_info` stands in for the file's _build_info table until then."""
         self.path = path
         self.timeout_s = timeout_s
-        self._con = duckdb.connect(
-            str(path),
-            read_only=True,
-            config={
-                # No file, network, or extension access from SQL; settings cannot be changed back.
-                "enable_external_access": False,
-                "autoinstall_known_extensions": False,
-                "autoload_known_extensions": False,
-                "memory_limit": memory_limit,
-                "lock_configuration": True,
-            },
-        )
+        self._ready = ready
+        self._build_info = build_info
+        self._config = {
+            # No file, network, or extension access from SQL; settings cannot be changed back.
+            "enable_external_access": False,
+            "autoinstall_known_extensions": False,
+            "autoload_known_extensions": False,
+            "memory_limit": memory_limit,
+            "lock_configuration": True,
+        }
+        self._connection: duckdb.DuckDBPyConnection | None = None
+        self._connect_lock = threading.Lock()
+        if ready is None:
+            self._connect()
+
+    def _connect(self) -> duckdb.DuckDBPyConnection:
+        if self._connection is None:
+            if self._ready is not None:
+                self._ready()
+            with self._connect_lock:
+                if self._connection is None:
+                    self._connection = duckdb.connect(str(self.path), read_only=True, config=self._config)
+                    if self._build_info is not None:  # now the file's own, in the dict callers already hold
+                        actual = self._read_build_info()
+                        self._build_info.clear()
+                        self._build_info.update(actual)
+        return self._connection
+
+    @property
+    def _con(self) -> duckdb.DuckDBPyConnection:
+        return self._connect()
 
     def query(self, sql: str, params: list[Any] | None = None, limit: int = 100) -> Result:
         cur = self._con.cursor()
@@ -160,6 +183,13 @@ class Database:
         return keys
 
     def build_info(self) -> dict[str, str]:
+        """The file's _build_info table; before a pending file is opened, the `build_info` given (the same dict,
+        filled in from the file once it is opened)."""
+        if self._build_info is not None:
+            return self._build_info
+        return self._read_build_info()
+
+    def _read_build_info(self) -> dict[str, str]:
         try:
             return {r["key"]: r["value"] for r in self.rows("SELECT key, value FROM _build_info", limit=100)}
         except QueryError:

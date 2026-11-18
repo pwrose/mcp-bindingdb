@@ -496,7 +496,7 @@ def _setup_source(build_info: dict[str, str]) -> str:
     return "\n".join([
         "# Reruns this session's BindingDB tool calls on a local copy of the same BindingDB release (see",
         "# 'How to rerun' above). The database is the one in BINDINGDB_DUCKDB, else in mcp-bindingdb's data/",
-        "# folder; or pass db_path='/path/to/bindingdb_<release>.duckdb' here.",
+        "# folder, else the one it builds on first use; or pass db_path='/path/to/bindingdb_<release>.duckdb'.",
         "from mcp_bindingdb.notebook import Replay",
         "",
         f"replay = Replay({', '.join(args)})",
@@ -579,11 +579,12 @@ def _rerun_steps(meta: dict[str, Any], file_name: str) -> list[str]:
         *([f"The notebook imports its code from {', '.join(f'`{f}`' for f in files)}: keep "
            f"{'these files' if len(files) > 1 else 'that file'} in the same folder as the notebook.", ""]
           if files else []),
-        "The database is found in the folder's `data/`; if it is elsewhere, put "
+        "The database is found in the folder's `data/`, else in the folder where mcp-bindingdb builds it on "
+        "first use (built there if it is missing, which takes about half an hour); if it is elsewhere, put "
         f"`BINDINGDB_DUCKDB=/path/to/bindingdb_{release}.duckdb` before `uv run`. VS Code works too, with the "
         "folder's `.venv` as the kernel.", "",
-        f"**Without mcp-bindingdb** (needs [uv](https://docs.astral.sh/uv/) and Docker), first get the code "
-        f"and build the database of release {release} (about 4.5 GB in `data/`; see "
+        f"**Without mcp-bindingdb** (needs [uv](https://docs.astral.sh/uv/)), first get the code "
+        f"and build the database of release {release} (about half an hour and 2.4 GB in `data/`; see "
         "`docs/building-the-database.md`):", "",
         "```bash",
         f"git clone {REPO_URL}.git",
@@ -712,10 +713,13 @@ class Replay:
 
     def __init__(self, release: str, source_zip_sha256: str | None = None, db_path: str | Path | None = None,
                  network: bool = True, max_rows: int | None = None) -> None:
-        from .db import Database, find_database
+        from .db import Database
+        from .local_build import locate
         from .server import VERSION, build_server, load_substructure_index
 
-        path = Path(db_path).expanduser() if db_path else find_database()
+        path, pending = locate(str(db_path) if db_path else None)
+        if pending is not None:  # no database on this computer yet: build it (once), as the server does
+            pending.wait()
         self.db = Database(path)
         info = self.db.build_info()
         self.max_rows = max_rows
