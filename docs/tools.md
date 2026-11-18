@@ -40,6 +40,20 @@ disabled and settings locked, so `run_sql` cannot write data or read anything ou
 Queries time out after 30 s (`--timeout`). The only tool that uses the network is
 `chemical_name_to_smiles`, for PubChem; `--no-network` turns that off.
 
+## Deterministic results
+
+A notebook's rerun check covers the whole result, row order included, so every tool must return the same
+rows in the same order each time. DuckDB gives no order to a GROUP BY's groups or to rows that tie on the
+ORDER BY (they come back in whatever order its threads finish), so the server's queries end every ORDER BY
+with a unique key (`monomerid`; `target_kind, target_id`; `ki_result_id, affinity_type` for measurements,
+since `ki_result_id` alone repeats) and pick values with `min()` or `arg_max(x, [value, -monomerid])`, never
+`any_value()`.
+
+`run_sql`'s description asks the model to do the same. The server also checks each `run_sql` result, using
+DuckDB's parse of the query (`json_serialize_sql`). If a query that returns several rows has no ORDER BY,
+or two returned rows tie on every ORDER BY column but differ elsewhere, the result has an `order_warning`
+that says how to fix it. Sorts on expressions are not checked.
+
 ## chemical_name_to_smiles
 
 It tries three sources in order and stops at the first that knows the name: an exact (case-insensitive)

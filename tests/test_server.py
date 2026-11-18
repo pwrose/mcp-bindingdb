@@ -195,6 +195,20 @@ async def test_run_sql_limit_and_truncation(server):
     assert out["row_count"] == 3 and out["truncated"]
 
 
+async def test_run_sql_warns_when_the_row_order_is_not_fixed(server):
+    ties = "SELECT x % 2 AS parity, x FROM range(6) t(x) ORDER BY parity"
+    out = await ok(server, "run_sql", sql=ties)
+    assert out["order_warning"].startswith("Rows 1 and 2 tie on every ORDER BY column (parity)")
+    for total in [ties + ", x", "SELECT x % 2 AS parity, x AS n FROM range(6) t(x) ORDER BY 1, t.x",
+                  "SELECT count(*) AS n FROM activity", "DESCRIBE activity",
+                  "SELECT x % 2 AS p FROM range(6) t(x) ORDER BY p"]:  # ties of identical rows cannot swap
+        assert "order_warning" not in await ok(server, "run_sql", sql=total), total
+    unordered = await ok(server, "run_sql", sql="SELECT x FROM range(5) t(x)")
+    assert unordered["order_warning"].startswith("The query has no ORDER BY, so its 5 rows")
+    expression = await ok(server, "run_sql", sql="SELECT x FROM range(5) t(x) ORDER BY x % 2")
+    assert "order_warning" not in expression  # a sort on an expression is not checked
+
+
 @pytest.mark.parametrize("sql", [
     "CREATE TABLE x AS SELECT 1",
     "DROP TABLE activity",

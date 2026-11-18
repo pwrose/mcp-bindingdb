@@ -28,7 +28,7 @@ from pydantic import BaseModel, Field
 
 from . import depict, figures, names, notebook, sar, structures, substructure, transcript, transcript_html
 from . import properties as compound_properties
-from .db import Database, QueryError, find_database
+from .db import Database, QueryError, find_database, order_warning
 from .structure_editor import (FIGURE_META, OVERLAY_META, UI_EXTENSION, EditorSearches,
                                add_editor_check_tool, add_editor_results_tool,
                                create_editor_extension, overlay_viewer_html)
@@ -526,7 +526,7 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
         if _INCHIKEY.match(q.upper()):
             return run(
                 f"SELECT {cols} FROM compound c WHERE inchi_key = ? OR inchi_key LIKE ? || '-%' "
-                "ORDER BY n_activities DESC",
+                "ORDER BY n_activities DESC, monomerid",
                 [q.upper(), q.upper()[:14]],
                 limit,
             )
@@ -638,7 +638,7 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
         if _UNIPROT.match(q.upper()):
             return run(
                 f"SELECT {cols} FROM target t WHERE t.uniprot = ? {org_clause} "
-                "ORDER BY t.uniprot_raw = t.uniprot DESC, t.n_activities DESC",
+                "ORDER BY t.uniprot_raw = t.uniprot DESC, t.n_activities DESC, t.target_kind, t.target_id",
                 [q.upper(), *org_params],
                 limit,
             )
@@ -683,8 +683,8 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
                 limit=_clamp(max_synonyms, 0, 200),
             )
             targets = db.rows(
-                """SELECT polymerid, complexid, any_value(target_name) AS target_name,
-                          any_value(uniprot_raw) AS uniprot_raw, any_value(organism) AS organism,
+                """SELECT polymerid, complexid, min(target_name) AS target_name,
+                          min(uniprot_raw) AS uniprot_raw, min(organism) AS organism,
                           count(*) AS n_measurements, max(p_affinity) AS best_p_affinity,
                           list(DISTINCT affinity_type ORDER BY affinity_type) AS affinity_types
                    FROM activity WHERE monomerid = ?
@@ -732,7 +732,8 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
                     """SELECT cc.type, cc.polymerid, p.display_name AS polymer_name, p.unpid1 AS uniprot_raw,
                               cc.monomerid
                        FROM complex_component cc LEFT JOIN polymer p USING (polymerid)
-                       WHERE cc.complexid = ?""",
+                       WHERE cc.complexid = ?
+                       ORDER BY cc.type, cc.polymerid NULLS LAST, cc.monomerid NULLS LAST""",
                     [target_id],
                 )
                 id_col = "complexid"
@@ -744,7 +745,7 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
             by_type = db.rows(
                 f"""SELECT affinity_type, count(*) AS n_measurements, count(DISTINCT monomerid) AS n_compounds,
                            max(p_affinity) AS best_p_affinity
-                    FROM activity WHERE {id_col} = ? GROUP BY affinity_type ORDER BY n_measurements DESC""",
+                    FROM activity WHERE {id_col} = ? GROUP BY affinity_type ORDER BY n_measurements DESC, affinity_type""",
                 [target_id],
             )
         except QueryError as e:
@@ -803,14 +804,15 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
         column = "generic_scaffold" if generic else "scaffold"
         result = run(
             f"""WITH best AS (  -- each compound's most potent measurement
-                  SELECT monomerid, any_value(compound_name) AS compound_name, max(p_affinity) AS p_affinity,
-                         count(*) AS n_measurements, any_value(cp.{column}) AS scaffold
+                  SELECT monomerid, min(compound_name) AS compound_name, max(p_affinity) AS p_affinity,
+                         count(*) AS n_measurements, min(cp.{column}) AS scaffold
                   FROM {ACTIVITY_WITH_PROPERTIES} WHERE {where} AND {pf} GROUP BY monomerid
                 )
                 SELECT scaffold AS scaffold_smiles, count(*) AS n_compounds, sum(n_measurements) AS n_measurements,
                        max(p_affinity) AS best_p_affinity, round(median(p_affinity), 2) AS median_p_affinity,
-                       arg_max(monomerid, p_affinity) AS best_monomerid,
-                       arg_max(compound_name, p_affinity) AS best_compound_name,
+                       arg_max(monomerid, [p_affinity, -monomerid]) FILTER (p_affinity IS NOT NULL) AS best_monomerid,
+                       arg_max(compound_name, [p_affinity, -monomerid]) FILTER (p_affinity IS NOT NULL)
+                           AS best_compound_name,
                        count(*) OVER () AS n_scaffolds, sum(count(*)) OVER () AS n_compounds_total
                 FROM best GROUP BY scaffold
                 ORDER BY n_compounds DESC, best_p_affinity DESC NULLS LAST, scaffold_smiles NULLS LAST""",
@@ -859,7 +861,7 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
         efficiency = efficiency and has_properties
         cols = ACTIVITY_COLUMNS + (EFFICIENCY_COLUMNS if efficiency else "")
         source = ACTIVITY_WITH_PROPERTIES if efficiency else source
-        order = "(relation = '>'), p_affinity DESC NULLS LAST, value, ki_result_id"
+        order = "(relation = '>'), p_affinity DESC NULLS LAST, value, ki_result_id, affinity_type"  # a total order
         ranked = order if order_by == "potency" else f"{order_by} DESC NULLS LAST, {order}"
         if best_per:
             sql = f"""
@@ -951,8 +953,20 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
         """Run a read-only DuckDB SQL query against BindingDB and return up to `limit` rows.
 
         Text comparisons are case-sensitive: use ILIKE or lower(). Queries time out after 30 s.
-        Prefer aggregating in SQL over fetching many rows."""
-        return run(sql, None, _clamp(limit, 1, 1000))
+        Prefer aggregating in SQL over fetching many rows.
+
+        Make the result deterministic, so a rerun (e.g. in a notebook, whose check covers row order) gives
+        the same rows in the same order: give every query that returns rows an ORDER BY, and end it with a
+        unique key after the ranking columns (compound: monomerid; target: target_kind, target_id, or
+        polymerid/complexid; measurement: ki_result_id, affinity_type), e.g. ORDER BY best_p_affinity DESC,
+        monomerid. Without one, rows that tie (and every GROUP BY's groups) come back in any order. Order
+        inside aggregates too (list(x ORDER BY x), string_agg(x, ', ' ORDER BY x)), and use min()/max() or
+        arg_max(x, [value, -id]) rather than any_value() or first(). If the result has an order_warning,
+        fix the query and run it again."""
+        result = run(sql, None, _clamp(limit, 1, 1000))
+        if warning := order_warning(db.order_keys(sql), result["rows"]):
+            result["order_warning"] = warning
+        return result
 
     if index is not None:
         _add_structure_tools(mcp, db, index, run, _activity_query, measurement_filter)
@@ -1590,7 +1604,8 @@ def _add_exact_search(mcp: MCPServer, db: Database, run, activity_query, compute
                  "match": "same canonical isomeric SMILES (salts, stereo, charges and isotopes included)"}
         limit = _clamp(limit, 1, 500)
         # Same molecule implies the same InChIKey connectivity block; tautomers and stereoisomers share it too.
-        candidates = run("SELECT monomerid, smiles FROM compound WHERE inchi_key LIKE ?", [key[:14] + "-%"],
+        candidates = run("SELECT monomerid, smiles FROM compound WHERE inchi_key LIKE ? ORDER BY monomerid",
+                         [key[:14] + "-%"],
                          10_000)["rows"]
         ids = [r["monomerid"] for r in candidates if substructure.canonical_smiles(r["smiles"] or "") == want]
         filtered = affinity_types is not None or max_value_nm is not None or bool(min_value_nm)
@@ -1627,9 +1642,10 @@ links AS (
          CASE WHEN l.monomerid = r.record THEN 1 WHEN l.inchi_key = r.inchi_key THEN 2 ELSE 3 END AS link,
          upper(trim(unnest(string_split(r.pdb_ids_exact, ',')))) AS pdb_id
   FROM ligs l JOIN recs r ON left(l.inchi_key, 14) = left(r.inchi_key, 14))
-SELECT monomerid, any_value(name) AS name, het, min(link) AS link, list(DISTINCT record ORDER BY record) AS records,
+SELECT monomerid, min(name) AS name, het, min(link) AS link, list(DISTINCT record ORDER BY record) AS records,
        list(DISTINCT pdb_id ORDER BY pdb_id) AS pdb_ids
 FROM links WHERE length(pdb_id) = 4 GROUP BY monomerid, het
+ORDER BY monomerid, het
 """
 POTENCY_SQL = """
 WITH m AS (
@@ -1639,7 +1655,7 @@ WITH m AS (
   WHERE {where} AND monomerid IN (SELECT unnest(?)) AND affinity_type IN ('Ki', 'Kd', 'IC50', 'EC50')
     AND relation = '=' AND unit = 'nM' AND value > 0
   GROUP BY monomerid, affinity_type)
-SELECT * FROM m
+SELECT * FROM m ORDER BY monomerid, affinity_type
 """
 POTENCY_TYPES = ("Ki", "Kd", "IC50", "EC50")
 #: Default preference: binding constants (Ki, Kd) before functional IC50/EC50, the most measured within each.
@@ -1679,6 +1695,7 @@ WITH recs AS (
   WHERE upper(trim(m.het_pdb)) = ? AND {PDB_IN_LIST})
 SELECT c.monomerid, c.name, c.inchi_key IN (SELECT inchi_key FROM recs) AS same
 FROM compound c WHERE left(c.inchi_key, 14) IN (SELECT left(inchi_key, 14) FROM recs)
+ORDER BY c.monomerid
 """
 PotencyTypesArg = Annotated[list[Literal["Ki", "Kd", "IC50", "EC50"]] | None, Field(
     description="Affinity types for each compound's potency, in order of preference; only these are used "
@@ -1707,7 +1724,8 @@ def _add_pdb_tools(mcp: BindingDBServer, db: Database, network: bool) -> None:
             if target_id is not None and target_kind == "complex":
                 head = db.one("SELECT display_name AS name, pdb_ids FROM complex WHERE complexid = ?", [target_id])
                 own = [r["polymerid"] for r in db.rows(
-                    "SELECT polymerid FROM complex_component WHERE complexid = ? AND polymerid IS NOT NULL",
+                    "SELECT polymerid FROM complex_component WHERE complexid = ? AND polymerid IS NOT NULL "
+                    "ORDER BY polymerid",
                     [target_id])]
             elif target_id is not None:
                 head = db.one("SELECT display_name AS name, '' AS pdb_ids FROM polymer WHERE polymerid = ?",
@@ -1718,7 +1736,8 @@ def _add_pdb_tools(mcp: BindingDBServer, db: Database, network: bool) -> None:
                 head = {"name": acc, "pdb_ids": ""}
                 own = [r["target_id"] for r in db.rows(
                     "SELECT target_id FROM target WHERE target_kind = 'polymer' AND "
-                    + ("uniprot = ?" if include_variants else "uniprot_raw = ?"), [acc], limit=500)]
+                    + ("uniprot = ?" if include_variants else "uniprot_raw = ?") + " ORDER BY target_id",
+                    [acc], limit=500)]
             if head is None:
                 raise ToolError(f"No {target_kind} target with id {target_id}")
             polymers = db.rows(
@@ -1726,7 +1745,8 @@ def _add_pdb_tools(mcp: BindingDBServer, db: Database, network: bool) -> None:
                    JOIN target t ON t.target_kind = 'polymer' AND t.target_id = p.polymerid
                    WHERE p.polymerid IN (SELECT unnest(?))
                       OR t.uniprot IN (SELECT t2.uniprot FROM target t2 WHERE t2.target_kind = 'polymer'
-                                       AND t2.target_id IN (SELECT unnest(?)) AND t2.uniprot IS NOT NULL)""",
+                                       AND t2.target_id IN (SELECT unnest(?)) AND t2.uniprot IS NOT NULL)
+                   ORDER BY p.polymerid""",
                 [own, own], limit=5000)
         except QueryError as e:
             raise ToolError(str(e)) from None
@@ -1754,7 +1774,8 @@ def _add_pdb_tools(mcp: BindingDBServer, db: Database, network: bool) -> None:
             f"""SELECT DISTINCT a.monomerid, c.inchi_key, c.name FROM activity a JOIN compound c USING (monomerid)
                 WHERE {target["where"]} AND a.affinity_type IN ({types}) AND a.value IS NOT NULL
                   {"AND a.monomerid IN (SELECT unnest(?))" if compound_ids else ""}
-                  AND left(c.inchi_key, 14) IN (SELECT unnest(?))""",
+                  AND left(c.inchi_key, 14) IN (SELECT unnest(?))
+                ORDER BY a.monomerid""",
             [*target["params"], *([compound_ids] if compound_ids else []), list(by_block)], limit=100000)
         existing = {(r["monomerid"], r["het"]): r for r in rows}
         new = []
@@ -1822,7 +1843,8 @@ def _add_pdb_tools(mcp: BindingDBServer, db: Database, network: bool) -> None:
             candidates = db.rows(LIGAND_BY_CODE_SQL, [het, pdb], limit=500)
             if not candidates and network and (key := structures.ligand_inchikeys([het]).get(het.upper())):
                 candidates = db.rows("SELECT monomerid, name, inchi_key = ? AS same FROM compound "
-                                     "WHERE left(inchi_key, 14) = left(?, 14)", [key, key], limit=500)
+                                     "WHERE left(inchi_key, 14) = left(?, 14) ORDER BY monomerid", [key, key],
+                                     limit=500)
                 by_key = True
             if not candidates:
                 return None
@@ -1834,7 +1856,8 @@ def _add_pdb_tools(mcp: BindingDBServer, db: Database, network: bool) -> None:
                 records = db.rows(
                     """SELECT DISTINCT a.polymerid, p.sequence FROM activity a JOIN polymer p USING (polymerid)
                        WHERE a.monomerid IN (SELECT unnest(?)) AND p.sequence IS NOT NULL
-                         AND a.affinity_type IN (SELECT unnest(?))""", [ids, list(rank)], limit=200)
+                         AND a.affinity_type IN (SELECT unnest(?))
+                       ORDER BY a.polymerid""", [ids, list(rank)], limit=200)
                 same = [r["polymerid"] for r in records
                         if max(structures.string_identity(r["sequence"], s) for s in target["sequences"])
                         >= SAME_PROTEIN_IDENTITY]
@@ -1987,7 +2010,7 @@ def _add_pdb_tools(mcp: BindingDBServer, db: Database, network: bool) -> None:
                     if not found:  # a ligand of the entry measured only on other records, or not at all
                         codes = [r["het"] for r in db.rows(
                             f"SELECT DISTINCT upper(trim(het_pdb)) AS het FROM monomer m WHERE {PDB_IN_LIST} "
-                            "AND trim(coalesce(het_pdb, '')) <> ''", [pdb], limit=20)]
+                            "AND trim(coalesce(het_pdb, '')) <> '' ORDER BY het", [pdb], limit=20)]
                         found = [((pdb, h), ligand_by_code(pdb, h, target, rank)) for h in codes]
                     if not found and network:  # ligands of the entry that are measured compounds, by InChIKey
                         try:
@@ -2185,7 +2208,7 @@ def _add_sar_tools(mcp: MCPServer, db: Database, property_filter) -> None:
             values.append(max_value_nm)
         try:
             result = db.query(
-                f"""SELECT monomerid, any_value(compound_name) AS compound_name, any_value(smiles) AS smiles,
+                f"""SELECT monomerid, min(compound_name) AS compound_name, min(smiles) AS smiles,
                            round(max(p_affinity), 2) AS p_affinity, min(value) AS value_nm,
                            count(*) AS n_measurements
                     FROM {source} WHERE {' AND '.join(clauses)}
@@ -2481,7 +2504,8 @@ def _add_structure_tools(mcp: MCPServer, db: Database, index: substructure.Subst
         pf, pparams, source = measurement_filter(affinity_types, max_value_nm, min_value_nm, props)
         where, params = (pf, pparams) if id_col is None else (f"{id_col} = ? AND {pf}", [target_id, *pparams])
         try:
-            rows = db.rows(f"SELECT DISTINCT monomerid FROM {source} WHERE {where}", params, limit=10_000_000)
+            rows = db.rows(f"SELECT DISTINCT monomerid FROM {source} WHERE {where} ORDER BY monomerid", params,
+                           limit=10_000_000)
         except QueryError as e:
             raise ToolError(str(e)) from None
         return id_col, [r["monomerid"] for r in rows]
@@ -2511,8 +2535,8 @@ def _add_structure_tools(mcp: MCPServer, db: Database, index: substructure.Subst
         rows = run(
             f"""SELECT CASE WHEN complexid IS NULL THEN 'polymer' ELSE 'complex' END AS target_kind,
                        coalesce(polymerid, complexid) AS target_id,
-                       any_value(target_name) AS target_name, any_value(uniprot_raw) AS uniprot_raw,
-                       any_value(organism) AS organism, count(DISTINCT monomerid) AS n_compounds,
+                       min(target_name) AS target_name, min(uniprot_raw) AS uniprot_raw,
+                       min(organism) AS organism, count(DISTINCT monomerid) AS n_compounds,
                        count(*) AS n_measurements,
                        list(DISTINCT affinity_type ORDER BY affinity_type) AS affinity_types,
                        max(p_affinity) AS best_p_affinity

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import datetime as dt
 import decimal
+import json
 import os
 import threading
 from dataclasses import dataclass
@@ -35,6 +36,25 @@ def find_database() -> Path:
             f"No bindingdb_*.duckdb in {data_dir}; run scripts/build_duckdb.sh or set BINDINGDB_DUCKDB"
         )
     return candidates[-1]
+
+
+def order_warning(keys: list[str] | None, rows: list[dict[str, Any]]) -> str | None:
+    """Why the rows' order may change from run to run: no ORDER BY, or two rows that tie on every ORDER BY
+    column (e.g. a GROUP BY's groups come out in whatever order its threads finish). None if it holds."""
+    if keys is None or len(rows) < 2:
+        return None
+    fix = ("with a unique column (e.g. monomerid; ki_result_id, affinity_type for measurements) so the result "
+           "is the same on every run and a notebook's rerun check passes.")
+    if not keys:
+        return (f"The query has no ORDER BY, so its {len(rows)} rows can come back in a different order. Add an "
+                f"ORDER BY that ends {fix}")
+    if any(k not in rows[0] for k in keys):
+        return None
+    for k, (a, b) in enumerate(zip(rows, rows[1:]), start=1):
+        if all(a[c] == b[c] for c in keys) and a != b:
+            return (f"Rows {k} and {k + 1} tie on every ORDER BY column ({', '.join(keys)}), so rows like them "
+                    f"can swap places from run to run. End the ORDER BY {fix}")
+    return None
 
 
 def _jsonable(v: Any) -> Any:
@@ -108,6 +128,36 @@ class Database:
     def one(self, sql: str, params: list[Any] | None = None) -> dict[str, Any] | None:
         rows = self.query(sql, params, limit=1).rows
         return rows[0] if rows else None
+
+    def order_keys(self, sql: str) -> list[str] | None:
+        """The output columns a query's outer ORDER BY sorts on, from DuckDB's parse of it: [] when it has no
+        ORDER BY; None when that cannot be told (not one SELECT, ORDER BY ALL, or a sort on an expression)."""
+        try:
+            parsed = json.loads(self._con.execute("SELECT json_serialize_sql(?)", [sql]).fetchone()[0])
+        except (duckdb.Error, TypeError, ValueError):
+            return None
+        statements = parsed.get("statements") or []
+        if parsed.get("error") or len(statements) != 1:
+            return None
+        node = statements[0].get("node") or {}
+        if (node.get("from_table") or {}).get("type") == "SHOW_REF":  # DESCRIBE, SHOW, SUMMARIZE: fixed order
+            return None
+        orders = [o for m in node.get("modifiers") or [] if m.get("type") == "ORDER_MODIFIER" for o in m["orders"]]
+        names = {tuple(e["column_names"]): e.get("alias") or e["column_names"][-1]
+                 for e in node.get("select_list") or [] if e.get("class") == "COLUMN_REF"}
+        aliases = [e.get("alias") or (e["column_names"][-1] if e.get("class") == "COLUMN_REF" else None)
+                   for e in node.get("select_list") or []]
+        keys = []
+        for order in orders:
+            expr = order.get("expression") or {}
+            if expr.get("class") == "COLUMN_REF":
+                keys.append(names.get(tuple(expr["column_names"]), expr["column_names"][-1]))
+            elif expr.get("class") == "CONSTANT" and isinstance(v := (expr.get("value") or {}).get("value"), int) \
+                    and 1 <= v <= len(aliases) and aliases[v - 1]:
+                keys.append(aliases[v - 1])
+            else:
+                return None
+        return keys
 
     def build_info(self) -> dict[str, str]:
         try:
