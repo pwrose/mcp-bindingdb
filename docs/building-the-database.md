@@ -67,7 +67,16 @@ release is built under a new file name; delete old `bindingdb_*` files from the 
 [MCP bundle](https://github.com/modelcontextprotocol/mcpb) of about 4 MB (needs Node.js). It holds the
 source, `pyproject.toml`, `uv.lock` and `bundle/manifest.json`, and no database or Python environment.
 Claude Desktop runs it with uv (manifest server type `uv`), which installs the `substructure` and
-`structures` extras from the lock file, and the server builds the database on first use as above. Keep the
+`structures` extras from the lock file, and the server builds the database on first use as above.
+
+Claude Desktop installs only from wheels in practice (no compilers on users' computers), so every locked
+package needs a wheel for each platform. `[tool.uv]` in `pyproject.toml` lists the platforms
+(`required-environments`) and holds Intel Macs (macOS x86_64) back to the last RDKit and cryptography
+releases with wheels for them (RDKit 2025.9, cryptography 48); newer releases dropped those wheels.
+`uv lock` enforces `required-environments` only for packages without a source distribution, so the
+script also checks that the lock installs from wheels alone on each platform. Re-lock with a recent uv
+(older ones, such as 0.7, mis-resolve `required-environments`; `uvx uv@latest lock` works); the lock it
+writes still installs with older uv. Keep the
 version in `bundle/manifest.json` equal to `pyproject.toml`'s; the script checks. The README links
 `releases/latest/download/mcp-bindingdb.mcpb`, so attach the file, under that name, to each GitHub release
 (`gh release create v<version> dist/mcp-bindingdb.mcpb`).

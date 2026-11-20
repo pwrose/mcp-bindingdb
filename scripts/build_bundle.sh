@@ -17,6 +17,22 @@ OUT="$ROOT/dist/mcp-bindingdb.mcpb"  # a fixed name, so releases/latest/download
 grep -q "\"version\": \"$VERSION\"" "$ROOT/bundle/manifest.json" || {
   echo "bundle/manifest.json's version differs from pyproject.toml's ($VERSION)" >&2; exit 1; }
 
+# Claude Desktop installs the lock with no compilers at hand, so each platform must get a wheel of every package
+# (uv lock's required-environments lets packages with a source distribution through). Intel Macs are the usual
+# casualty: see [tool.uv] in pyproject.toml.
+REQS="$(mktemp -d)"
+trap 'rm -rf "$REQS"' EXIT
+(cd "$ROOT" && uv export --frozen --extra substructure --extra structures --no-hashes --no-emit-project \
+  > "$REQS/requirements.txt")
+for platform in aarch64-apple-darwin x86_64-apple-darwin x86_64-pc-windows-msvc \
+                x86_64-manylinux_2_28 aarch64-manylinux_2_28; do
+  for python in 3.11 3.14; do
+    uv pip install --dry-run --quiet --no-deps --only-binary :all: --python-platform "$platform" \
+      --python-version "$python" --target "$REQS/target" -r "$REQS/requirements.txt" || {
+      echo "uv.lock has no wheel for some package on $platform, Python $python" >&2; exit 1; }
+  done
+done
+
 # Stage only what the server needs, so data/, .venv/ and the rest of the repository stay out.
 rm -rf "$STAGE"
 mkdir -p "$STAGE"

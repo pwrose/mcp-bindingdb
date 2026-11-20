@@ -1,6 +1,6 @@
 [project]
 name = "mcp-bindingdb"
-version = "0.1.0"
+version = "0.1.1"
 description = "MCP server for querying BindingDB from a local DuckDB build"
 requires-python = ">=3.11"
 license = "BSD-3-Clause"
@@ -12,7 +12,11 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-substructure = ["rdkit>=2024.3"]
+# RDKit 2026.3 and later have no wheels for Intel Macs, so those get the last release that does.
+substructure = [
+    "rdkit>=2024.3; sys_platform != 'darwin' or platform_machine != 'x86_64'",
+    "rdkit>=2024.3,<2026.3; sys_platform == 'darwin' and platform_machine == 'x86_64'",
+]
 name = ["pyopsin>=1.1.0"]  # OPSIN IUPAC-name parser; needs a Java runtime
 structures = ["gemmi>=0.7.5"]  # find_pdb_complexes, overlay_binding_site
 notebook = ["ipykernel>=6"]  # running notebooks from create_jupyter_notebook
@@ -25,12 +29,30 @@ dev = [
     "gemmi>=0.7.5",
     "pyopsin>=1.1.0",
     "pytest>=8",
-    "rdkit>=2024.3",
+    "rdkit>=2024.3; sys_platform != 'darwin' or platform_machine != 'x86_64'",
+    "rdkit>=2024.3,<2026.3; sys_platform == 'darwin' and platform_machine == 'x86_64'",
 ]
 
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+[tool.uv]
+# The Claude Desktop bundle installs from uv.lock with --frozen, so every locked package needs a wheel for each
+# of these platforms. uv lock fails if a package with no source distribution lacks one; scripts/build_bundle.sh
+# checks the rest.
+required-environments = [
+    "sys_platform == 'darwin' and platform_machine == 'arm64'",
+    "sys_platform == 'darwin' and platform_machine == 'x86_64'",
+    "sys_platform == 'linux' and platform_machine == 'x86_64'",
+    "sys_platform == 'linux' and platform_machine == 'aarch64'",
+    "sys_platform == 'win32' and platform_machine == 'AMD64'",
+]
+# Packages that have stopped publishing Intel-Mac wheels but still have a source distribution, which
+# required-environments accepts but which would need a compiler (and for cryptography, Rust) to install.
+constraint-dependencies = [
+    "cryptography<49; sys_platform == 'darwin' and platform_machine == 'x86_64'",
+]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/mcp_bindingdb"]
