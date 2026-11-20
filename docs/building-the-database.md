@@ -66,8 +66,8 @@ release is built under a new file name; delete old `bindingdb_*` files from the 
 `scripts/build_bundle.sh` builds `dist/mcp-bindingdb.mcpb`, an
 [MCP bundle](https://github.com/modelcontextprotocol/mcpb) of about 4 MB (needs Node.js). It holds the
 source, `pyproject.toml`, `uv.lock` and `bundle/manifest.json`, and no database or Python environment.
-Claude Desktop runs it with uv (manifest server type `uv`), which installs the `substructure` and
-`structures` extras from the lock file, and the server builds the database on first use as above.
+Claude Desktop runs it with uv (manifest server type `uv`), which installs the `substructure`,
+`structures` and `name` extras from the lock file, and the server builds the database on first use as above.
 
 Claude Desktop installs only from wheels in practice (no compilers on users' computers), so every locked
 package needs a wheel for each platform. `[tool.uv]` in `pyproject.toml` lists the platforms
@@ -149,5 +149,6 @@ version, the server runs without the two structure-search tools.
 
 `chemical_name_to_smiles` parses systematic (IUPAC) names with [OPSIN](https://github.com/dan2097/opsin),
 through the optional `name` extra ([pyopsin](https://pypi.org/project/pyopsin/), which bundles the OPSIN
-jar and needs a Java runtime). Without it the tool still uses BindingDB synonyms and PubChem. It needs
-no build step.
+jar, and [jdk4py](https://pypi.org/project/jdk4py/), a Java runtime packaged as a Python wheel of about
+30 MB, so no installed Java is needed; without jdk4py, an installed Java is used). Without the extra the
+tool still uses BindingDB synonyms and PubChem. It needs no build step.

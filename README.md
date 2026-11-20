@@ -35,14 +35,14 @@ The easiest way to try it: no terminal, Docker or clone needed.
 The database needs about 3 GB of free disk space while it is built and 2.2 GB afterwards, in
 `~/Library/Application Support/mcp-bindingdb` on macOS, `%LOCALAPPDATA%\mcp-bindingdb` on Windows and
 `~/.local/share/mcp-bindingdb` on Linux. Transcripts, figures and notebooks go to `Documents/BindingDB`
-(changeable in the extension's settings). The bundle leaves out OPSIN's offline IUPAC-name parsing, which
-needs Java; names are still looked up in PubChem. To build the bundle yourself, run
+(changeable in the extension's settings). The bundle brings its own Java runtime for OPSIN's IUPAC-name
+parsing, so you need not install Java. To build the bundle yourself, run
 `scripts/build_bundle.sh` (see [Building the database](docs/building-the-database.md#claude-desktop-bundle)).
 
 ## Claude setup
 
-1. **Install** [uv](https://docs.astral.sh/uv/), and optionally a Java runtime (for IUPAC-name parsing).
-   Then clone the repository:
+1. **Install** [uv](https://docs.astral.sh/uv/). (The `name` extra brings a Java runtime for IUPAC-name
+   parsing.) Then clone the repository:
 
    ```bash
    git clone https://github.com/pwrose/mcp-bindingdb.git

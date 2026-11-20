@@ -576,8 +576,13 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
             limit,
         )
 
-    unavailable = {"opsin": names.opsin_unavailable_reason(),
-                   "pubchem": None if network else "network lookups disabled (--no-network)"}
+    def unavailable_reason(source: str) -> str | None:
+        # OPSIN's is worked out on first use, not at start-up: probing for Java can be slow or fail.
+        if source == "opsin":
+            return names.opsin_unavailable_reason()
+        if source == "pubchem" and not network:
+            return "network lookups disabled (--no-network)"
+        return None
 
     def name_in_bindingdb(name: str) -> dict[str, Any] | None:
         result = run(
@@ -634,7 +639,7 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
         out: dict[str, Any] = {"query": q, "resolved": False}
         tried = []
         for source in dict.fromkeys(sources or ["bindingdb", "opsin", "pubchem"]):
-            if reason := unavailable.get(source):
+            if reason := unavailable_reason(source):
                 tried.append({"source": source, "status": "unavailable", "detail": reason})
                 continue
             try:

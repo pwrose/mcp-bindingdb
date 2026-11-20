@@ -46,7 +46,7 @@ The check is skipped for clients that do not declare MCP Apps, and after the fir
    `uv run --extra substructure python scripts/compute_inchikeys.py /path/to/bindingdb.duckdb` once
    on an existing database ([InChIKeys](building-the-database.md#inchikeys)). Reuse your existing database and index. If the index
    is missing, follow [Structure-search index](building-the-database.md#structure-search-index).
-   OPSIN is optional and uses the `name` extra and Java already described in that guide.
+   OPSIN is optional and uses the `name` extra described in that guide.
 
 2. Run the automated checks without downloading a BindingDB database:
 

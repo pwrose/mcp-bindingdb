@@ -1,6 +1,6 @@
 [project]
 name = "mcp-bindingdb"
-version = "0.1.1"
+version = "0.1.2"
 description = "MCP server for querying BindingDB from a local DuckDB build"
 requires-python = ">=3.11"
 license = "BSD-3-Clause"
@@ -17,7 +17,8 @@ substructure = [
     "rdkit>=2024.3; sys_platform != 'darwin' or platform_machine != 'x86_64'",
     "rdkit>=2024.3,<2026.3; sys_platform == 'darwin' and platform_machine == 'x86_64'",
 ]
-name = ["pyopsin>=1.1.0"]  # OPSIN IUPAC-name parser; needs a Java runtime
+# OPSIN IUPAC-name parser, and a Java runtime for it (jdk4py), so it needs no installed Java
+name = ["pyopsin>=1.1.0", "jdk4py>=21"]
 structures = ["gemmi>=0.7.5"]  # find_pdb_complexes, overlay_binding_site
 notebook = ["ipykernel>=6"]  # running notebooks from create_jupyter_notebook
 
@@ -27,6 +28,7 @@ mcp-bindingdb = "mcp_bindingdb.server:main"
 [dependency-groups]
 dev = [
     "gemmi>=0.7.5",
+    "jdk4py>=21",
     "pyopsin>=1.1.0",
     "pytest>=8",
     "rdkit>=2024.3; sys_platform != 'darwin' or platform_machine != 'x86_64'",

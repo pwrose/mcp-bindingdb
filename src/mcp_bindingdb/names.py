@@ -1,18 +1,22 @@
 """Chemical name to structure with OPSIN (systematic IUPAC names, offline) and PubChem (any name, network).
 
 OPSIN is optional: install it with the `name` extra (pyopsin, which bundles the OPSIN jar and runs it
-in-process through JPype; it needs a Java runtime). The JVM starts on the first OPSIN lookup (about 1 s).
+in-process through JPype, and jdk4py, a Java runtime packaged for Python, so no installed Java is needed;
+without jdk4py an installed Java is used). The JVM starts on the first OPSIN lookup (about 1 s).
 """
 
 from __future__ import annotations
 
 import functools
 import json
+import os
+import sys
 import threading
 import urllib.error
 import urllib.parse
 import urllib.request
 from dataclasses import dataclass, field
+from pathlib import Path
 from typing import Any
 
 try:
@@ -21,6 +25,10 @@ try:
     from pyopsin.jar import packaged_jar_path
 except ImportError:  # the `name` extra is not installed
     jpype = None
+try:
+    import jdk4py
+except ImportError:
+    jdk4py = None
 
 PUBCHEM_URL = "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/property/SMILES,InChIKey,Title/JSON"
 
@@ -39,16 +47,40 @@ class NameLookupError(RuntimeError):
     """The service could not be asked (as opposed to: it does not know the name)."""
 
 
+def _bundled_jvm() -> Path | None:
+    """The JVM library of jdk4py's Java runtime, if jdk4py is installed."""
+    if jdk4py is None:
+        return None
+    for library in ("lib/server/libjvm.dylib", "lib/server/libjvm.so", "bin/server/jvm.dll"):
+        if (path := jdk4py.JAVA_HOME / library).is_file():
+            return path
+    return None
+
+
+def _no_macos_jdk() -> bool:
+    """True on macOS when no JDK is installed where /usr/libexec/java_home looks and JAVA_HOME is unset.
+
+    JPype finds the JVM there with java_home, which fails without a JDK (and may ask the user to install
+    Java), so OPSIN's availability is settled without running it."""
+    if sys.platform != "darwin" or os.environ.get("JAVA_HOME"):
+        return False
+    roots = [Path("/Library/Java/JavaVirtualMachines"), Path.home() / "Library/Java/JavaVirtualMachines"]
+    return not any(root.is_dir() and any(root.iterdir()) for root in roots)
+
+
+@functools.cache
 def opsin_unavailable_reason() -> str | None:
-    """None if OPSIN can be used, else why not."""
+    """None if OPSIN can be used, else why not. Cached: probing for Java can take a while."""
     if jpype is None:
         return "pyopsin not installed (install the 'name' extra)"
     if not packaged_jar_path().is_file():
         return "the installed pyopsin has no bundled OPSIN jar (needs pyopsin >= 1.1)"
-    if not jpype.isJVMStarted():
+    if not jpype.isJVMStarted() and _bundled_jvm() is None:
+        if _no_macos_jdk():
+            return "no Java runtime found"
         try:
             jpype.getDefaultJVMPath()
-        except jpype.JVMNotFoundException:
+        except Exception:  # JVMNotFoundException, or java_home failing on macOS (CalledProcessError)
             return "no Java runtime found"
     return None
 
@@ -65,7 +97,9 @@ def _opsin_parser() -> tuple[Any, Any, Any]:
                 # Tool calls run in worker threads, and destroying a JVM started outside the main thread
                 # hangs at interpreter exit; the process is ending anyway, so skip it.
                 jpype.config.destroy_jvm = False
-                jpype.startJVM("--enable-native-access=ALL-UNNAMED", classpath=[str(packaged_jar_path())])
+                bundled = _bundled_jvm()
+                jpype.startJVM("--enable-native-access=ALL-UNNAMED", classpath=[str(packaged_jar_path())],
+                               jvmpath=str(bundled) if bundled else None)
             from uk.ac.cam.ch.wwmm import opsin
             _opsin = opsin.NameToStructure.getInstance(), opsin.NameToStructureConfig(), opsin.NameToInchi
         return _opsin

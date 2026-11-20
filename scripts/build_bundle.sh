@@ -22,7 +22,7 @@ grep -q "\"version\": \"$VERSION\"" "$ROOT/bundle/manifest.json" || {
 # casualty: see [tool.uv] in pyproject.toml.
 REQS="$(mktemp -d)"
 trap 'rm -rf "$REQS"' EXIT
-(cd "$ROOT" && uv export --frozen --extra substructure --extra structures --no-hashes --no-emit-project \
+(cd "$ROOT" && uv export --frozen --extra substructure --extra structures --extra name --no-hashes --no-emit-project \
   > "$REQS/requirements.txt")
 for platform in aarch64-apple-darwin x86_64-apple-darwin x86_64-pc-windows-msvc \
                 x86_64-manylinux_2_28 aarch64-manylinux_2_28; do
@@ -40,5 +40,6 @@ cp "$ROOT/bundle/manifest.json" "$ROOT/pyproject.toml" "$ROOT/uv.lock" "$ROOT/RE
 rsync -a --exclude '__pycache__' --exclude '*.pyc' "$ROOT/src" "$STAGE/"
 
 npx -y @anthropic-ai/mcpb@2 validate "$STAGE/manifest.json"
+rm -f "$OUT"  # a new file rather than an overwrite, so its creation date (which Finder shows) is the build's
 npx -y @anthropic-ai/mcpb@2 pack "$STAGE" "$OUT"
 echo "Built $OUT"
