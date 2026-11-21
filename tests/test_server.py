@@ -515,14 +515,19 @@ async def test_figures_numbered_in_transcript_order(tmp_path):
             await client.call_tool("add_figure", {"title": title, "path": str(plot)})
         md = await client.call_tool("create_transcript", {"model": "m", "exchanges": [
             {"prompt": "1", "figures": [5]}, {"prompt": "2", "figures": [3, 5]}]})
-        unplaced = await client.call_tool("create_transcript", {"model": "m", "exchanges": [{"prompt": "1"}]})
+        # Figures no exchange lists (here all three) are left out: they may come from another chat.
+        unlisted = await client.call_tool("create_transcript", {"model": "m", "exchanges": [{"prompt": "1"}]})
+        unlisted_json = await client.call_tool("create_transcript", {"model": "m", "format": "json",
+                                                                     "exchanges": [{"prompt": "1"}]})
         record = await client.call_tool("create_transcript", {"model": "m", "format": "json", "exchanges": [
             {"prompt": "1", "figures": [4]}]})
     markdown = md.content[0].text
     assert "![Figure 1: C]" in markdown and "![Figure 2: A]" in markdown and "**Figure 2: A.**" in markdown
     assert "Figure 3" not in markdown and "- **Contents:** 2 exchanges · 2 figures" in markdown
-    assert [line[:13] for line in unplaced.content[0].text.splitlines() if line.startswith("![")] == [
-        "![Figure 1: A", "![Figure 2: B", "![Figure 3: C"]
+    assert "![" not in unlisted.content[0].text and "figure" not in unlisted.content[0].text.lower()
+    assert unlisted.content[1].text.startswith("Left out 3 logged figures no exchange lists (ids 3, 4, 5)")
+    record_unlisted = json.loads(unlisted_json.content[0].text)
+    assert "figures" not in record_unlisted and record_unlisted["left_out_figures"] == [3, 4, 5]
     assert [(f["number"], f["id"]) for f in json.loads(record.content[0].text)["figures"]] == [(1, 4)]
 
 
@@ -548,7 +553,7 @@ async def test_transcripts_written_to_output_dir(tmp_path):
                                                             "output_dir": str(results), "exchanges": [
                                                                 {"prompt": "1", "figures": [3]}]})
         relative = await client.call_tool("create_transcript", {"model": "m", "output_dir": "results"})
-    markdown, note = md.content
+    markdown, note, left_out = md.content
     async with Client(build_server(Database(DB_PATH), transcript_dir=tmp_path / "other")) as client:
         await client.call_tool("transcript_to_html", {"markdown": markdown.text, "output_dir": str(results),
                                                       "file_name": "report"})
@@ -557,6 +562,8 @@ async def test_transcripts_written_to_output_dir(tmp_path):
     assert (results / "report.md").read_text() == markdown.text
     assert "![Figure 1: Plot](figures/report-figure-1.png)" in markdown.text
     assert "report.md (replaced an existing file), with its 1 figure in" in note.text
+    assert left_out.text.startswith("Left out 2 logged figures no exchange lists (ids 1, 2)")
+    assert "Left out 2 logged figures" in page.content[-1].text
     assert (results / "my-plot.html").is_file() and f"{results / 'my-plot.html'} (on the" in page.content[0].text
     assert "data:image/png;base64," in (results / "report.html").read_text()  # found in results/figures
     assert relative.is_error and "absolute path" in relative.content[0].text

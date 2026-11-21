@@ -210,8 +210,9 @@ server cannot tell them apart. When including tool calls, the model therefore li
 `include_tool_calls`, `calls` is ignored, so a transcript never shows tool calls the user did not ask for.
 
 Figures made with `draw_structure_grid` or added with `add_figure` are placed under the answer whose
-`figures` lists their ids (or, if no answer lists any, in a Figures section), numbered 1, 2, … in the
-order they appear; the ids themselves keep counting across `reset_tool_log` and chats. The Markdown links to each
+`figures` lists their ids, numbered 1, 2, … in the order they appear; the ids themselves keep counting
+across `reset_tool_log` and chats. A logged figure no answer lists is left out, since it may come from
+another chat; the reply names the ones left out, so the model can add any it forgot to list. The Markdown links to each
 figure's image in `figures/`, with the title and caption of an added image under it;
 when a transcript has figures, the server also saves the `.md` next to that folder so the links work.
 
@@ -293,8 +294,10 @@ It also writes an HTML copy of the notebook as written, with the recorded result
 `uv` (`$UV`, else `uv` on the PATH) in the mcp-bindingdb folder. If nbconvert fails, its output is saved as
 `<name>-html.log`.
 
-The model lists each answer's calls by their `get_tool_log` index in the exchange's `calls`; without any,
-every logged call goes in a section after the conversation. Before it is run, each call cell shows the
+The model lists each answer's calls by their `get_tool_log` index in the exchange's `calls`, and its
+figures by id in `figures`; with neither, every logged call and figure goes in a section after the
+conversation. Once calls are listed, the notebook holds only the figures the exchanges list (none, if the
+chat made none), and the reply names the logged figures left out. Before it is run, each call cell shows the
 result as recorded (all rows unless `max_result_rows` is given). Run, it calls the tool again through an
 in-process MCP client, exactly as a chat would, shows the new result, and compares the SHA-256 of the
 result's canonical JSON with the recorded digest: ✅ same, ⚠️ differs, ❌ failed. The digest covers the

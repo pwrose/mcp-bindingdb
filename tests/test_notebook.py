@@ -115,6 +115,15 @@ async def test_notebook_records_and_reruns_the_session(tmp_path, monkeypatch):
             "model": "test-model", "title": "Imatinib check", "output_dir": str(tmp_path), "file_name": "check.ipynb",
             "exchanges": [{"prompt": "Find imatinib.", "answer": "It is **BDBM13530**.", "calls": [1], "figures": [1]},
                           {"prompt": "Counts per type?", "answer": "IC50 leads.", "calls": [2], "figures": [2]}]})
+        # A chat that made no figures: the two in the log came from another chat and stay out.
+        no_figures = await client.call_tool("create_jupyter_notebook", {
+            "model": "m", "html": False, "output_dir": str(tmp_path), "file_name": "plain.ipynb",
+            "exchanges": [{"prompt": "Counts per type?", "answer": "IC50 leads.", "calls": [2]}]})
+    assert not no_figures.is_error, no_figures.content
+    assert "1 exchange, 1 tool call)" in no_figures.content[0].text
+    assert "Left out 2 logged figures no exchange lists (ids 1, 2)" in no_figures.content[0].text
+    plain = (tmp_path / "plain.ipynb").read_text()
+    assert "Figures" not in plain and "image/png" not in plain
     assert bad_call.is_error and "calls [9] are not in the log" in bad_call.content[0].text
     assert bad_figure.is_error and "figures [9] are not in the log" in bad_figure.content[0].text
     assert not made.is_error, made.content

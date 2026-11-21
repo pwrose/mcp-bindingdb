@@ -1410,6 +1410,14 @@ def _add_transcript_tools(mcp: BindingDBServer, build_info: dict[str, str], tran
             return {"mime_type": figures.IMAGE_TYPES[path.suffix.lower()],
                     "data": base64.b64encode(path.read_bytes()).decode()}
 
+    def left_out_figures_note(left_out: list[int]) -> str | None:
+        """For the reply: the logged figures a transcript or notebook leaves out because no exchange lists them."""
+        if not left_out:
+            return None
+        return (f"Left out {transcript.plural(len(left_out), 'logged figure')} no exchange lists "
+                f"(ids {', '.join(map(str, left_out))}); the log is shared with other chats. If any were made "
+                "in this chat, call again with their ids in that exchange's `figures`.")
+
     @mcp.tool(annotations=replaces)
     def create_transcript(
         model: Annotated[str, Field(description="The exact model id that produced the analysis (e.g. "
@@ -1443,8 +1451,8 @@ def _add_transcript_tools(mcp: BindingDBServer, build_info: dict[str, str], tran
         """Build a transcript of this session: each user prompt with your answer and its figures. The
         server cannot see your prose, so pass each answer in full via `exchanges`, not a summary.
 
-        Figures appear under the answer whose `figures` lists their ids. If no exchange lists any, every
-        logged figure is added in a Figures section. Only logged figures can be included: structure grids
+        Figures appear under the answer whose `figures` lists their ids; a figure no exchange lists is left
+        out (the reply names the logged figures left out). Only logged figures can be included: structure grids
         from draw_structure_grid, and images made with other tools (e.g. matplotlib plots) once added with
         add_figure. Interactive pages or artifacts you built cannot be included.
 
@@ -1492,18 +1500,23 @@ def _add_transcript_tools(mcp: BindingDBServer, build_info: dict[str, str], tran
             raise ToolError(f"figures {missing} are not in the log; it has "
                             f"{[f.id for f in log.figures] or 'none'} (see get_tool_log)")
         placed = [log.figure(i) for i in dict.fromkeys(listed)]
-        unplaced = [] if listed else list(log.figures)
+        # Only the listed figures: the log is shared by every chat this server has served, so the others
+        # may belong to another chat. Name them, in case this chat made some and forgot to list them.
+        left_out = [f.id for f in log.figures if f.id not in set(listed)]
+        left_out_note = left_out_figures_note(left_out)
         skill_list = transcript.clean_entries(skills)
         server_list = transcript.clean_entries(external_mcp_servers)
         generated_by = f"{mcp.name} v{VERSION}"
         if format == "json":
             out: dict[str, Any] = {"title": title, "date": when, "model": model, "bindingdb_release": release,
                                    "exchanges": turns, "tool_calls": selected, "generated_by": generated_by}
-            if placed or unplaced:
-                numbers = transcript.figure_numbers(turns, unplaced)
+            if placed:
+                numbers = transcript.figure_numbers(turns)
                 out["figures"] = [{"number": numbers[f.id], "id": f.id, "timestamp": f.timestamp, "title": f.title,
                                    "file": f.file, **({"caption": f.caption} if f.caption else {}), **f.spec}
-                                  for f in placed + unplaced]
+                                  for f in placed]
+            if left_out:
+                out["left_out_figures"] = left_out
             if skill_list:
                 out["skills"] = skill_list
             if server_list:
@@ -1512,16 +1525,17 @@ def _add_transcript_tools(mcp: BindingDBServer, build_info: dict[str, str], tran
         copies: dict[str, figures.Figure] = {}  # Markdown in an output_dir: figures named after the transcript
         if format == "markdown" and output_dir:
             path = destination(output_dir, file_name, title, ".md")
-            by_id = {f.id: f for f in placed + unplaced}
+            by_id = {f.id: f for f in placed}
             copies = {f"{path.stem}-figure-{n}{Path(by_id[i].file).suffix}": by_id[i]
-                      for i, n in transcript.figure_numbers(turns, unplaced).items()}
+                      for i, n in transcript.figure_numbers(turns).items()}
         mcp.last_markdown = transcript.render_transcript(
             title=title, when=when, model=model, release=release, generated_by=generated_by, exchanges=turns,
             calls=selected, max_rows=None if max_result_rows is None else max(max_result_rows, 0),
-            skills=skill_list, mcp_servers=server_list, figures=placed, unplaced_figures=unplaced,
+            skills=skill_list, mcp_servers=server_list, figures=placed,
             figure_files={f.id: name for name, f in copies.items()})
+        notes = [TextContent(type="text", text=left_out_note)] if left_out_note else []
         if format == "html":
-            return write_html(mcp.last_markdown, output_dir, file_name)
+            return write_html(mcp.last_markdown, output_dir, file_name) + notes
         if output_dir:
             replaced = write(path, mcp.last_markdown)
             copy_figures(copies, path.parent, path.stem)
@@ -1529,9 +1543,9 @@ def _add_transcript_tools(mcp: BindingDBServer, build_info: dict[str, str], tran
                     + (f", with its {transcript.plural(len(copies), 'figure')} in {path.parent / 'figures'}"
                        if copies else "")
                     + ". Deliver this file as is; do not rewrite or copy it.")
-            return [TextContent(type="text", text=mcp.last_markdown), TextContent(type="text", text=note)]
-        if not (placed or unplaced):
-            return mcp.last_markdown
+            return [TextContent(type="text", text=mcp.last_markdown), TextContent(type="text", text=note), *notes]
+        if not placed:
+            return [TextContent(type="text", text=mcp.last_markdown), *notes] if notes else mcp.last_markdown
         path = destination(None, None, title, ".md")
         try:
             path.write_text(mcp.last_markdown, encoding="utf-8")
@@ -1539,7 +1553,7 @@ def _add_transcript_tools(mcp: BindingDBServer, build_info: dict[str, str], tran
                     "point to; a copy saved elsewhere shows the figures only if that folder is copied along.")
         except OSError as e:
             note = f"Could not save the transcript next to its figures in {transcript_dir}: {e}."
-        return [TextContent(type="text", text=mcp.last_markdown), TextContent(type="text", text=note)]
+        return [TextContent(type="text", text=mcp.last_markdown), TextContent(type="text", text=note), *notes]
 
     @mcp.tool(annotations=replaces)
     async def create_jupyter_notebook(
@@ -1577,7 +1591,8 @@ def _add_transcript_tools(mcp: BindingDBServer, build_info: dict[str, str], tran
         Call get_tool_log first and list in each exchange's `calls` the indices of the calls made for that
         answer (the log is shared by every chat this server process has served, so it can hold calls from
         other chats). Calls of get_editor_results become the searches the user ran in the structure editor.
-        Only if no exchange lists calls does the notebook take every logged call, after the conversation.
+        Only if no exchange lists calls or figures does the notebook take every logged call and figure, after
+        the conversation; otherwise it holds only the figures the exchanges list (none, if this chat made none).
         Pass each answer in full, verbatim; the server cannot see your prose. If you wrote and ran code for an
         answer (a plot, a statistic, a table), pass it in that exchange's `code`, so the notebook reruns it too.
 
@@ -1600,7 +1615,11 @@ def _add_transcript_tools(mcp: BindingDBServer, build_info: dict[str, str], tran
             for c in t["code"]:
                 c["figures"] = [log.figure(i) for i in dict.fromkeys(c["figures"])]
         leftover = [] if listed_calls else list(log.entries)
-        unplaced = [] if listed_figures else list(log.figures)
+        # The log is shared by every chat this server has served: once the exchanges name their calls, the
+        # figures they list are this chat's (none, if it made none), and the others likely belong to another chat.
+        unplaced = [] if listed_figures or listed_calls else list(log.figures)
+        left_out = [f.id for f in log.figures if f.id not in set(listed_figures)] if listed_calls else []
+        left_out_note = left_out_figures_note(left_out)
         path = destination(output_dir, file_name, title, ".ipynb")
         project = notebook.project_dir()
         try:
@@ -1643,6 +1662,8 @@ def _add_transcript_tools(mcp: BindingDBServer, build_info: dict[str, str], tran
         if not listed_calls:
             lines.append("- No exchange listed its calls, so every logged call is in a section after the "
                          "conversation" + (" (none were logged)." if not leftover else "."))
+        if left_out_note:
+            lines.append(f"- {left_out_note}")
         if html:
             lines.append(await _html_copy(path, project))
         if project:
