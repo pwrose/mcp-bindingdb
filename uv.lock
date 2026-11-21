@@ -540,14 +540,14 @@ wheels = [
 
 [[package]]
 name = "jdk4py"
-version = "25.0.5.0"
+version = "25.0.5.1"
 source = { registry = "https://pypi.org/simple" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/33/7f/a53bd315f13dc3c5761144ce3116a8dfb0561dd79fb77126e8e65fb444f3/jdk4py-25.0.5.0-py3-none-macosx_11_0_arm64.whl", hash = "sha256:43cf2400447d1982c65c5d2c0117f643af8799e91f8801849c76ea5728f01bbb", size = 29995455, upload-time = "2026-11-13T16:59:55.079Z" },
-    { url = "https://files.pythonhosted.org/packages/93/ad/70244c273f62aaf6c0861ecab630730a7775ab48fd7317c313d70903f67e/jdk4py-25.0.5.0-py3-none-macosx_11_0_x86_64.whl", hash = "sha256:626c10c7def6aded5b83aac134e13f32b96d0384c5d795ee3f9f614bf5bc6a77", size = 31350339, upload-time = "2026-11-13T16:59:58.307Z" },
-    { url = "https://files.pythonhosted.org/packages/ad/17/e237ec6a467dc112d2a999f84c1cc6f9f3972a174a024861d4243c74fb92/jdk4py-25.0.5.0-py3-none-manylinux_2_17_aarch64.whl", hash = "sha256:4c11daff8de5b25289fc84eba2947a39520e86d8271dff4117e464448410ff61", size = 34736054, upload-time = "2026-11-13T17:00:01.364Z" },
-    { url = "https://files.pythonhosted.org/packages/d7/40/2ead979633b86b571c042cc15c78fac5a310a33f1b36a2585a1586b4efa1/jdk4py-25.0.5.0-py3-none-manylinux_2_17_x86_64.whl", hash = "sha256:c19842f9d22035f212aef197255dafbcc94e2460b6819a37f34a0eb6727953c5", size = 35684241, upload-time = "2026-11-13T17:00:04.873Z" },
-    { url = "https://files.pythonhosted.org/packages/d3/c5/4c8ef8f6a7d84b63111f372427c762d363953e05ecbdb3d6cb2d6418f815/jdk4py-25.0.5.0-py3-none-win_amd64.whl", hash = "sha256:979626fbdfb41055e501b4b183f28248465b99dd03aeca7bbf3df37f2f081caf", size = 31107752, upload-time = "2026-11-13T17:00:08.046Z" },
+    { url = "https://files.pythonhosted.org/packages/e1/d4/d997fc7a5d82878016d6fedae66e4cd9a7013f195ff92625ad719656c73d/jdk4py-25.0.5.1-py3-none-macosx_11_0_arm64.whl", hash = "sha256:13a20f55a743fc5cc211980915549f63c68830d188a16e79eb1e68eee107bca2", size = 30002896, upload-time = "2026-11-20T19:39:19.649Z" },
+    { url = "https://files.pythonhosted.org/packages/b5/c1/0188ec35a603662272274da2644b3601c1c9aa5c266e18c5bccbdd25bf4f/jdk4py-25.0.5.1-py3-none-macosx_11_0_x86_64.whl", hash = "sha256:b128a1d959a8d0a5b24502d672655af0e80ebf57565c1c7786c5be2a675e5d72", size = 31359441, upload-time = "2026-11-20T19:39:22.981Z" },
+    { url = "https://files.pythonhosted.org/packages/21/63/b62fcdbc1a186330c45beb60ba0db4ec827a387eb850b0c42b90503938f9/jdk4py-25.0.5.1-py3-none-manylinux_2_17_aarch64.whl", hash = "sha256:c301be7519ab32b10b40fe8b541167dce2e3ea19d575af236d86932cdabf0d94", size = 34746808, upload-time = "2026-11-20T19:39:26.215Z" },
+    { url = "https://files.pythonhosted.org/packages/6b/7f/6647eb46d22167085af910f11776630f3027f67447104b857054bfb769b4/jdk4py-25.0.5.1-py3-none-manylinux_2_17_x86_64.whl", hash = "sha256:b989b35d24f704cb40b402a82003d131056bf2b9794c33acb84bf42b5ebffd34", size = 35695265, upload-time = "2026-11-20T19:39:29.363Z" },
+    { url = "https://files.pythonhosted.org/packages/ca/14/4baef08289d39b90bf31229b194b517c46e4b50dc5037ce54fa23db5fbb6/jdk4py-25.0.5.1-py3-none-win_amd64.whl", hash = "sha256:faeb2e188e003a67c0b91a17a00f95ae0cf0e2f0803892d1e44c410eca0a08db", size = 31117266, upload-time = "2026-11-20T19:39:32.084Z" },
 ]
 
 [[package]]
