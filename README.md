@@ -29,8 +29,9 @@ analytics, and saving the work as a transcript or a reproducible, rerunnable Jup
 >
 > **The server builds its database on your computer.** It downloads BindingDB's data from
 > bindingdb.org and converts it in the background, which takes about half an hour (longer on
-> a computer with few cores). Until it is done, Claude tells you how far it has got; ask again when it is
-> finished. This happens only once; to get newer data later, see [Updating](#updating).
+> a computer with few cores). Until it is done, Claude tells you how far it has got: ask **"Build status?"**
+> in the chat at any time to see which step it is on. This happens only once; to get newer data later, see
+> [Updating](#updating).
 >
 > The database needs about 3 GB of free disk space while it is built and 1.8 GB afterwards, in
 > `~/Library/Application Support/mcp-bindingdb` on macOS, `%LOCALAPPDATA%\mcp-bindingdb` on Windows and
