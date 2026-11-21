@@ -10,3 +10,4 @@ __pycache__/
 web/structure-editor/node_modules/
 web/structure-editor/.bridge/
 dist/
+src/mcp_bindingdb/_build.json

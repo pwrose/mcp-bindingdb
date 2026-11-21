@@ -20,8 +20,8 @@ The `substructure` extra (RDKit) enables `substructure_search` and `similarity_s
 need the index, and `exact_structure_search`, `draw_structure_grid`, `draw_r_group_table` and the SAR tools
 (`decompose_r_groups`, `matched_molecular_pairs`, `activity_cliffs`), which do not; the `name`
 extra (pyopsin, and jdk4py for a Java runtime) enables OPSIN in `chemical_name_to_smiles`; the `structures` extra (gemmi)
-enables `find_pdb_complexes` and `overlay_binding_site`; the `notebook` extra (ipykernel) lets Jupyter
-run the notebooks `create_jupyter_notebook` writes, in this project's environment. See
+enables `find_pdb_complexes` and `overlay_binding_site`; the `notebook` extra (ipykernel) is installed with
+the other extras in the environment of a notebook `create_jupyter_notebook` writes. See
 [Building the database](building-the-database.md).
 
 ## Tests

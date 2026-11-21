@@ -68,22 +68,23 @@ the left sidebar → **mcp-bindingdb**, or in the chat's tools menu.
 
 ## Run a notebook
 
-Notebooks from [create_jupyter_notebook](tools.md#create_jupyter_notebook) run in mcp-bindingdb's Python
-environment, so start Jupyter from the mcp-bindingdb folder:
+A notebook from [create_jupyter_notebook](tools.md#create_jupyter_notebook) comes in a folder with its own
+`requirements.txt`, so it runs in an environment uv builds for it, not in this checkout's:
 
 ```bash
-cd /path/to/mcp-bindingdb
-uv run --all-extras --with jupyterlab jupyter lab ~/results/imatinib-analogues.ipynb
+cd ~/results/imatinib-analogues
+uv run --no-project --with-requirements requirements.txt --with jupyterlab jupyter lab imatinib-analogues.ipynb
 ```
 
-To rerun a notebook without opening Jupyter, writing a copy with the new results:
+To rerun every call on your database without opening Jupyter, writing a copy with the new results:
 
 ```bash
-cd /path/to/mcp-bindingdb
-uv run --all-extras --with nbconvert jupyter nbconvert --to notebook --execute \
-  --output imatinib-analogues-rerun.ipynb ~/results/imatinib-analogues.ipynb
+cd ~/results/imatinib-analogues
+BINDINGDB_RERUN=1 BINDINGDB_DUCKDB=/path/to/mcp-bindingdb/data/bindingdb_<release>.duckdb \
+  uv run --no-project --with-requirements requirements.txt --with nbconvert jupyter nbconvert --to notebook \
+  --execute --output imatinib-analogues-rerun.ipynb imatinib-analogues.ipynb
 ```
 
-The database is found in the folder's `data/`; if it is elsewhere, start the commands with
-`BINDINGDB_DUCKDB=/path/to/bindingdb_<release>.duckdb`. VS Code works too, with the folder's `.venv` as the
-kernel.
+The environment installs mcp-bindingdb from GitHub at the notebook's commit, so it does not see this
+checkout's `data/`: name the database with `BINDINGDB_DUCKDB` (Claude's reply does). A notebook made while
+the checkout has uncommitted changes, or a commit that is not pushed, gets a copy of the package instead.

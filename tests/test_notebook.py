@@ -27,17 +27,29 @@ def test_bibtex_names_the_rdkit_version_when_known():
     assert "version=" not in notebook.bibtex(None) and "{rdkit_version}" not in notebook.bibtex(None)
 
 
-def test_run_commands_quote_paths_and_name_a_database_outside_data(tmp_path):
-    (tmp_path / "data").mkdir()
-    db = tmp_path / "data" / "bindingdb_202610.duckdb"
-    db.touch()
+def test_run_commands_run_in_the_notebook_folder(tmp_path):
     path = tmp_path / "my results" / "a.ipynb"
-    commands = notebook.run_commands(path, tmp_path, db)
-    assert commands["jupyter"] == (f"cd {tmp_path}\nuv run --all-extras --with jupyterlab jupyter lab "
-                                   f"'{tmp_path}/my results/a.ipynb'")
-    assert "--execute --output a-rerun.ipynb '" in commands["nbconvert"]
-    elsewhere = notebook.run_commands(path, tmp_path, tmp_path / "other.duckdb")
-    assert f"\nBINDINGDB_DUCKDB={tmp_path}/other.duckdb uv run" in elsewhere["jupyter"]
+    commands = notebook.run_commands(path, tmp_path / "bindingdb_202610.duckdb")
+    assert commands["jupyter"] == (f"cd '{tmp_path}/my results'\nuv run --no-project --with-requirements "
+                                   "requirements.txt --with jupyterlab jupyter lab a.ipynb")
+    assert commands["rerun"].startswith(f"cd '{tmp_path}/my results'\nBINDINGDB_RERUN=1 "
+                                        f"BINDINGDB_DUCKDB={tmp_path}/bindingdb_202610.duckdb uv run --no-project")
+    assert commands["rerun"].endswith("--execute --output a-rerun.ipynb a.ipynb")
+
+
+def test_requirements_pin_a_published_clean_commit_only():
+    commit = "ab" * 20
+    line = notebook.server_requirement({"commit": commit, "uncommitted_changes": False, "published": True})
+    assert line == f"mcp-bindingdb[substructure,structures,opsin,notebook] @ git+{notebook.REPO_URL}.git@{commit}"
+    assert notebook.server_requirement({"commit": commit, "uncommitted_changes": True, "published": True}) is None
+    assert notebook.server_requirement({"commit": commit, "uncommitted_changes": False, "published": False}) is None
+    assert notebook.server_requirement({}) is None
+
+
+def test_package_copy_leaves_out_compiled_files_and_build_record():
+    files = notebook.package_files()
+    assert "mcp_bindingdb/notebook.py" in files and "mcp_bindingdb/builder/__init__.py" in files
+    assert not any("__pycache__" in f or f.endswith((".pyc", notebook.BUILD_FILE)) for f in files)
 
 
 def test_call_source_writes_sql_as_text():
@@ -93,9 +105,14 @@ async def run_cells(nb, namespace):
     return values
 
 
+PUBLISHED = {"commit": "c0ffee" * 6 + "c0ff", "uncommitted_changes": False, "published": True}
+
+
 @needs_db
 @pytest.mark.anyio
 async def test_notebook_records_and_reruns_the_session(tmp_path, monkeypatch):
+    monkeypatch.setattr(notebook, "source_version", lambda: PUBLISHED)
+    monkeypatch.delenv("BINDINGDB_RERUN", raising=False)
     srv = build_server(Database(DB_PATH), transcript_dir=tmp_path / "t")
     plot = tmp_path / "plot.png"
     plot.write_bytes(base64.b64decode(
@@ -122,22 +139,34 @@ async def test_notebook_records_and_reruns_the_session(tmp_path, monkeypatch):
     assert not no_figures.is_error, no_figures.content
     assert "1 exchange, 1 tool call)" in no_figures.content[0].text
     assert "Left out 2 logged figures no exchange lists (ids 1, 2)" in no_figures.content[0].text
-    plain = (tmp_path / "plain.ipynb").read_text()
+    plain = (tmp_path / "plain" / "plain.ipynb").read_text()
     assert "Figures" not in plain and "image/png" not in plain
     assert bad_call.is_error and "calls [9] are not in the log" in bad_call.content[0].text
     assert bad_figure.is_error and "figures [9] are not in the log" in bad_figure.content[0].text
     assert not made.is_error, made.content
     reply = made.content[0].text
     assert "2 exchanges, 2 tool calls, 2 figures (1 redrawn on rerun)" in reply
-    # An HTML copy next to it, with the recorded results and the figures; and the commands to run it.
-    assert f"HTML copy: {tmp_path / 'check.html'} (" in reply
-    page = (tmp_path / "check.html").read_text()
+    # Its own folder, with what it needs to run: requirements, recorded results, figures, a README, an HTML copy.
+    folder = tmp_path / "check"
+    assert f"- Folder: {folder} (" in reply and f"- Notebook: {folder / 'check.ipynb'}" in reply
+    assert f"HTML copy: {folder / 'check.html'} (" in reply
+    page = (folder / "check.html").read_text()
     assert "BDBM13530" in page and "Find imatinib." in page and "data:image/png;base64," in page
     assert "attachment:figure-2.png" not in page  # the add_figure image is embedded too
-    assert not (tmp_path / "check-html.log").exists()
-    assert f"jupyter lab {tmp_path / 'check.ipynb'}\n```" in reply and "nbconvert --to notebook" not in reply
+    assert not (folder / "check-html.log").exists()
+    assert (f"cd {folder}\nuv run --no-project --with-requirements requirements.txt --with jupyterlab jupyter lab "
+            "check.ipynb\n```") in reply and "nbconvert --to notebook" not in reply
+    requirements = (folder / "requirements.txt").read_text().splitlines()
+    assert f"mcp-bindingdb[substructure,structures,opsin,notebook] @ git+{notebook.REPO_URL}.git@{PUBLISHED['commit']}" \
+        in requirements and any(r.startswith("duckdb==") for r in requirements)
+    assert not (folder / "mcp_bindingdb").exists() and "copy of mcp-bindingdb" not in reply
+    assert sorted(p.name for p in (folder / "data").iterdir()) == ["call-01.json", "call-02.json"]
+    assert sorted(p.name for p in (folder / "figures").iterdir()) == ["figure-1.png", "figure-2.png"]
+    readme = (folder / "README.md").read_text()
+    assert readme.startswith("# Imatinib check") and "- `data/`: the result each call returned" in readme
+    assert "- `figures/figure-2.png`" in readme and "BINDINGDB_RERUN=1 uv run" in readme
 
-    nb = json.loads((tmp_path / "check.ipynb").read_text())
+    nb = json.loads((folder / "check.ipynb").read_text())
     assert nb["nbformat"] == 4 and nb["nbformat_minor"] == 5
     assert len({c["id"] for c in nb["cells"]}) == len(nb["cells"])
     meta = nb["metadata"]["bindingdb"]
@@ -148,8 +177,9 @@ async def test_notebook_records_and_reruns_the_session(tmp_path, monkeypatch):
     assert any("**👤 User**\n\nFind imatinib." in t for t in text)
     assert any("**🧠 Assistant**\n\nIt is **BDBM13530**." in t for t in text)
     assert any(t.startswith("# Figure 1 · draw_structure_grid") for t in text)
-    assert "jupyter lab /path/to/check.ipynb" in header and "--output check-rerun.ipynb" in header
-    assert "scripts/build_duckdb.sh --release" in header
+    assert "cd /path/to/check\nuv run --no-project --with-requirements requirements.txt --with jupyterlab " \
+        "jupyter lab check.ipynb" in header and "--output check-rerun.ipynb check.ipynb" in header
+    assert "scripts/build_duckdb.sh --release" in header and "### How to rerun the calls" in header
     cite = text[-1]
     assert cite.startswith("## How to cite") and "@software{rose2026mcp-bindingdb," in cite
     assert "doi={10.1093/nar/gkae1075}" in cite and "doi={10.5281/zenodo.591637}" in cite
@@ -162,8 +192,20 @@ async def test_notebook_records_and_reruns_the_session(tmp_path, monkeypatch):
     assert [c["metadata"]["bindingdb"]["tool"] for c in calls] == ["search_compounds", "run_sql"]
     assert "BDBM13530" in "".join(calls[0]["outputs"][0]["data"]["text/markdown"])  # the recorded result
 
+    # Run as it is (in its folder, as Jupyter does): the recorded results and figure, no database needed.
+    monkeypatch.chdir(folder)
+    monkeypatch.setenv("BINDINGDB_DUCKDB", str(tmp_path / "missing.duckdb"))  # never opened
+    values = await run_cells(nb, {})
+    assert [v.status for v in values if isinstance(v, notebook.Rerun)] == ["recorded", "figure", "recorded"]
+    assert values[-1].counts() == {"recorded": 2, "shown": 1} and "set `RERUN = True`" in values[-1].markdown
+    recorded = next(v for v in values if isinstance(v, notebook.Rerun) and v.status == "recorded")
+    assert "BDBM13530" in recorded.markdown and "recorded result (`data/call-01.json`)" in recorded.markdown
+    shown = next(v for v in values if isinstance(v, notebook.Rerun) and v.status == "figure")
+    assert shown.images[0] == ((folder / "figures" / "figure-1.png").read_bytes(), "image/png")
+
     # Rerun: every call matches its recorded digest; then a tampered digest is reported as different.
     monkeypatch.setenv("BINDINGDB_DUCKDB", str(DB_PATH))
+    monkeypatch.setenv("BINDINGDB_RERUN", "1")
     values = await run_cells(nb, {})
     statuses = [v.status for v in values if isinstance(v, notebook.Rerun)]
     assert statuses == ["same", "figure", "same"]
@@ -189,7 +231,8 @@ async def test_notebook_without_listed_calls_takes_the_whole_log(tmp_path):
                                                                   "exchanges": [{"prompt": "CDK2?"}]})
     assert not made.is_error and "every logged call is in a section after the conversation" in made.content[0].text
     assert "HTML copy" not in made.content[0].text and "jupyter lab" in made.content[0].text
-    [path] = tmp_path.glob("bindingdb-analysis-*.ipynb")
+    [path] = tmp_path.glob("bindingdb-analysis-*/bindingdb-analysis-*.ipynb")
+    assert path.parent.name == path.stem
     nb = json.loads(path.read_text())
     assert any("".join(c["source"]).startswith("## BindingDB tool calls") for c in nb["cells"])
     assert any("'search_targets'" in "".join(c["source"]) for c in nb["cells"] if c["cell_type"] == "code")
@@ -198,6 +241,12 @@ async def test_notebook_without_listed_calls_takes_the_whole_log(tmp_path):
 @needs_db
 @pytest.mark.anyio
 async def test_notebook_includes_the_models_code_inline_or_as_a_module(tmp_path, monkeypatch):
+    # An unpushed commit: the folder gets a copy of the package, which the notebook imports from its folder.
+    monkeypatch.setattr(notebook, "source_version", lambda: {**PUBLISHED, "published": False})
+    monkeypatch.delenv("BINDINGDB_RERUN", raising=False)
+    stale = tmp_path / "with-code" / "data" / "call-07.json"  # left by an earlier notebook of the same name
+    stale.parent.mkdir(parents=True)
+    stale.write_text("{}")
     srv = build_server(Database(DB_PATH), transcript_dir=tmp_path / "t")
     plot = tmp_path / "plot.png"
     plot.write_bytes(base64.b64decode(
@@ -221,10 +270,16 @@ async def test_notebook_includes_the_models_code_inline_or_as_a_module(tmp_path,
     assert unknown.is_error and "replay.result(1), but call 1 is not in the notebook" in unknown.content[0].text
     assert not made.is_error, made.content
     reply = made.content[0].text
-    assert "1 figure, 3 code cells" in reply and f"{tmp_path / 'row_count.py'}" in reply
-    assert "--with jupyterlab --with matplotlib jupyter lab" in reply
+    folder = tmp_path / "with-code"
+    assert "1 figure, 3 code cells" in reply and "the analysis code it imports" in reply
+    assert "it is not pushed to GitHub" in reply and "holds a copy of mcp-bindingdb (mcp_bindingdb/)" in reply
+    assert json.loads((folder / "mcp_bindingdb" / "_build.json").read_text())["commit"] == PUBLISHED["commit"]
+    assert (folder / "mcp_bindingdb" / "notebook.py").is_file() and not stale.exists()
+    requirements = (folder / "requirements.txt").read_text()
+    assert "mcp-bindingdb[" not in requirements and "copy in mcp_bindingdb/" in requirements
+    assert requirements.endswith("# Imported by the analysis code:\nmatplotlib\n")
 
-    nb = json.loads((tmp_path / "with-code.ipynb").read_text())
+    nb = json.loads((folder / "with-code.ipynb").read_text())
     text = ["".join(c["source"]) for c in nb["cells"]]
     inline = next(c for c in nb["cells"] if c["metadata"].get("bindingdb", {}).get("code") == 1)
     assert "".join(inline["source"]) == "# Code 1: Count hits\nrows = replay.result(1)['rows']\nprint(len(rows), 'rows')"
@@ -234,13 +289,17 @@ async def test_notebook_includes_the_models_code_inline_or_as_a_module(tmp_path,
     assert "image/png" in module["outputs"][1]["data"]  # the figure the code made, as recorded
     assert not any("attachment:" in t for t in text)  # ... and not also as a figure cell
     assert any("**Code 3** _(javascript, shown as written and not run" in t for t in text)
-    assert "--with matplotlib jupyter lab" in text[0] and "imports its code from `row_count.py`" in text[0]
-    assert (tmp_path / "row_count.py").read_text().startswith('"""Code 2, from the notebook with-code.ipynb.')
+    assert "the analysis code the notebook imports (`row_count.py`)" in text[0]
+    assert "a copy of the mcp-bindingdb code it ran with in `mcp_bindingdb/`" in text[0]
+    assert (folder / "row_count.py").read_text().startswith('"""Code 2, from the notebook with-code.ipynb.')
 
-    monkeypatch.setenv("BINDINGDB_DUCKDB", str(DB_PATH))
-    monkeypatch.chdir(tmp_path)  # Jupyter runs a notebook in its folder, where the module is
-    monkeypatch.syspath_prepend(str(tmp_path))
-    namespace: dict = {}
-    values = await run_cells(nb, namespace)
-    assert [v.status for v in values if isinstance(v, notebook.Rerun)] == ["same"]
-    assert namespace["n"] == 3 and len(namespace["rows"]) == 3
+    monkeypatch.chdir(folder)  # Jupyter runs a notebook in its folder, where the module is
+    monkeypatch.syspath_prepend(str(folder))
+    for rerun, status in ((None, "recorded"), ("1", "same")):  # the code reads recorded and rerun results alike
+        if rerun:
+            monkeypatch.setenv("BINDINGDB_RERUN", rerun)
+            monkeypatch.setenv("BINDINGDB_DUCKDB", str(DB_PATH))
+        namespace: dict = {}
+        values = await run_cells(nb, namespace)
+        assert [v.status for v in values if isinstance(v, notebook.Rerun)] == [status]
+        assert namespace["n"] == 3 and len(namespace["rows"]) == 3

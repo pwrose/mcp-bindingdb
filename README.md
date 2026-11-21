@@ -94,25 +94,30 @@ checksum, mcp-bindingdb version and commit, model and software versions.
 Create a Jupyter notebook named imatinib-analogues that reruns this analysis, in ~/results
 ```
 
-The server writes `imatinib-analogues.ipynb` and an HTML copy to read in a browser. Longer code goes into
-`.py` files next to them, so keep the folder together. The notebook opens with the recorded results, so it
-can be read without running it.
+The server writes the folder `~/results/imatinib-analogues/`, with everything the notebook needs to run on
+any computer: the notebook `imatinib-analogues.ipynb` and an HTML copy to read in a browser,
+`requirements.txt` (mcp-bindingdb at the commit that made it, and the exact versions of the packages it
+needs), the recorded results (`data/`), the figures (`figures/`), any longer code Claude wrote as `.py`
+files, and a `README.md`. Keep the folder together.
 
-**Run.** Claude's reply gives the command to open the notebook in JupyterLab, with your paths filled in.
-For a [source install](docs/install-from-source.md#run-a-notebook) it is:
+**Run.** You need only [uv](https://docs.astral.sh/uv/), not mcp-bindingdb. Claude's reply gives the command
+with your paths filled in:
 
 ```bash
-cd /path/to/mcp-bindingdb
-uv run --all-extras --with jupyterlab jupyter lab ~/results/imatinib-analogues.ipynb
+cd ~/results/imatinib-analogues
+uv run --no-project --with-requirements requirements.txt --with jupyterlab jupyter lab imatinib-analogues.ipynb
 ```
 
-Choose **Run → Run All Cells**. Each tool call runs again on your database and is marked ✅ (same result),
-⚠️ (different) or ❌ (failed); a table at the end sums up the checks. If the database is not in the
-folder's `data/`, start the command with `BINDINGDB_DUCKDB=/path/to/bindingdb_<release>.duckdb`.
+Choose **Run → Run All Cells**. The cells show the recorded results, and Claude's code runs on them, so
+no database is needed. **To rerun every call** on your own copy of BindingDB, set `RERUN = True` in the
+first code cell (or start the command with `BINDINGDB_RERUN=1`): each call runs again and is marked
+✅ (same result), ⚠️ (different) or ❌ (failed), and a table at the end sums up the checks. A rerun uses
+the database in `BINDINGDB_DUCKDB=/path/to/bindingdb_<release>.duckdb`, else the one mcp-bindingdb built on
+the computer, else it builds one first (about half an hour).
 
-**Share and cite.** The notebook's **How to rerun** section tells others how to rerun it (clone this
-repository at the commit it names and build the same BindingDB release); its first cell warns if the
-release differs. Its **How to cite** section lists what to cite, e.g. when you deposit it with a DOI.
+**Share and cite.** Send the folder: the notebook's **How to run** section tells others how to run and rerun
+it; its first cell warns if their database's release differs. Its **How to cite** section lists what to
+cite, e.g. when you deposit the folder with a DOI.
 
 **Not recomputed:** Claude's answers, images made with other tools (e.g. a plot added with `add_figure`),
 and results from PubChem, RCSB or PDBe, which can change. See
@@ -145,7 +150,7 @@ and results from PubChem, RCSB or PDBe, which can change. See
 | `update_database` | Checks bindingdb.org for a newer monthly release and, if you agree, builds it in the background |
 | `run_sql` | Any read-only SQL query |
 | `create_transcript` | A record of the session as Markdown, or as an HTML page with structure drawings: your prompts and Claude's answers, and, if you ask, every BindingDB tool call with its result |
-| `create_jupyter_notebook` | A Jupyter notebook that reruns the analysis: prompts, answers, each BindingDB tool call with its recorded result, figures, the BindingDB release and software versions; run, it checks every result against the recorded one |
+| `create_jupyter_notebook` | A Jupyter notebook that reruns the analysis: prompts, answers, each BindingDB tool call with its recorded result, figures, the BindingDB release and software versions, in a folder that runs anywhere with uv; rerun, it checks every result against the recorded one |
 | `draw_structure_grid` | Compounds side by side, aligned on a shared substructure, with binding bars for their main targets |
 | `draw_r_group_table` | An R-group table of one series: the core drawn with R1, R2, … named, then a row per compound with its substituents drawn and its potency |
 | `add_figure` | Adds an image made with other tools (e.g. a matplotlib plot) as a figure for transcripts |

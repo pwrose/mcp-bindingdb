@@ -24,7 +24,7 @@
 | `open_overlay_viewer` | Opens an overlay's 3D viewer in the browser on the computer running the server, for chats that cannot show the panel (e.g. the first reply of a new Claude Desktop chat) |
 | `get_editor_results` | Results of the searches the user ran in the structure editor ([structure-editor.md](structure-editor.md)): the tool, its arguments and its result, by `editor_id` |
 | `create_transcript` | Markdown, HTML (with structure drawings) or JSON transcript of the session: prompts and answers, optionally followed by the logged tool calls with their results |
-| `create_jupyter_notebook` | Jupyter notebook that reruns the session: prompts, answers, each BindingDB tool call with its recorded result and digest, figures, and the BindingDB release, server commit and software versions ([below](#create_jupyter_notebook)) |
+| `create_jupyter_notebook` | Jupyter notebook that reruns the session: prompts, answers, each BindingDB tool call with its recorded result and digest, figures, and the BindingDB release, server commit and software versions, in a self-contained folder ([below](#create_jupyter_notebook)) |
 | `draw_structure_grid` | Compounds side by side, aligned on a shared core that is highlighted, with binding bars per target; shown in the chat and included in transcripts (needs RDKit) |
 | `draw_r_group_table` | An R-group table of one series: the core with its positions named R1, R2, …, then a row per compound whose cells are its substituents, drawn, with binding bars (needs RDKit) |
 | `add_figure` | Adds an image made with other tools (e.g. a matplotlib plot) as a figure for transcripts |
@@ -253,14 +253,34 @@ RDKit there are no drawings. Answer text and data are shown as text, never as HT
 ## create_jupyter_notebook
 
 A transcript shows what was found; a notebook lets someone else find it again. `create_jupyter_notebook`
-writes an `.ipynb` (to `output_dir`, like transcripts) with, in order:
+writes a folder, `<output_dir>/<name>/` (else a time-stamped one in the transcript folder), that holds
+everything the notebook needs to run on any computer with uv:
+
+- `<name>.ipynb`, and `<name>.html`, the notebook as written, for a browser;
+- `requirements.txt`: mcp-bindingdb with the `substructure`, `structures`, `opsin` and `notebook` extras,
+  installed from GitHub at the server's commit (`git+https://github.com/pwrose/mcp-bindingdb.git@<commit>`),
+  then every dependency at the version `uv.lock` pins (`uv export --frozen`), then the packages the analysis
+  code imports. When pip could not install the commit from GitHub (the package has uncommitted changes, the
+  commit is not on a remote branch, or it is unknown), the folder gets a copy of the package instead
+  (`mcp_bindingdb/`, with a `_build.json` naming the commit), which the kernel imports from the folder;
+- `data/call-NN.json`: each call's recorded result; `figures/figure-N.<ext>`: each figure as recorded;
+- the `.py` files of the analysis code, and a `README.md` on running and rerunning it.
+
+An installed bundle knows its commit from the `_build.json` `scripts/build_bundle.sh` writes into it; a
+checkout asks git; a package pip installed from git, its `direct_url.json`. Files of an earlier notebook of
+the same name in `data/` and `figures/`, and a copied package, are removed first.
+
+The notebook holds, in order:
 
 - a header: title, date, model, BindingDB release with the download's file name and SHA-256 (from the
   database's `_build_info`), the build date, derived data (InChIKeys, properties), the server version and
   git commit (flagged when the checkout has uncommitted changes), software versions, and how to rerun;
-- a setup cell, `replay = Replay(release=..., source_zip_sha256=...)`, which builds this server in the
-  kernel on the local database (`BINDINGDB_DUCKDB` or `data/`) and warns when its release or source
-  checksum differs from the recorded one;
+- a setup cell, `replay = Replay(release=..., source_zip_sha256=..., rerun=RERUN)` with `RERUN = False`.
+  By default the calls show their recorded results, read from `data/` and checked against the digest in
+  each cell, so the notebook runs anywhere in seconds. With `RERUN = True` (or `BINDINGDB_RERUN=1`), it
+  builds this server in the kernel on the local database (`BINDINGDB_DUCKDB`, else the newest one in
+  mcp-bindingdb's data folder, else one it builds first) and warns when its release or source checksum
+  differs from the recorded one;
 - per exchange: the prompt, a code cell per tool call made for it (`await replay.call(n, tool, arguments,
   sha256=...)`, `run_sql`'s SQL as a text block), its figures, and the answer (figures come before the
   answer, as the chat showed them);
@@ -271,34 +291,33 @@ writes an `.ipynb` (to `output_dir`, like transcripts) with, in order:
   `replay.result(i)`: the model writes the call's `get_tool_log` index, the server renumbers it to the
   notebook's call number. Figures the code made (`figures`, from `add_figure`) are the cell's recorded
   output and are drawn again when it runs; what it printed (`output`) is too. The PyPI packages it needs
-  (`packages`) are added to the run commands as `--with`. Code in another language is shown, not run;
+  (`packages`) are added to `requirements.txt`. Code in another language is shown, not run;
 - a verification cell (`replay.summary()`) and a "How to cite" cell, with BibTeX for the server, BindingDB and
   RDKit (with the RDKit version the notebook was made with).
 
-To run a notebook, start Jupyter from the mcp-bindingdb folder, so its kernel has this project's
-packages (the `notebook` extra provides ipykernel):
+To run a notebook, from its folder (`--no-project` keeps uv from using a project the folder sits in):
 
 ```bash
-cd /path/to/mcp-bindingdb
-uv run --all-extras --with jupyterlab jupyter lab /path/to/analysis.ipynb      # then Run All Cells
-uv run --all-extras --with nbconvert jupyter nbconvert --to notebook --execute \
-  --output analysis-rerun.ipynb /path/to/analysis.ipynb                       # without opening Jupyter
+cd /path/to/analysis
+uv run --no-project --with-requirements requirements.txt --with jupyterlab jupyter lab analysis.ipynb
+BINDINGDB_RERUN=1 uv run --no-project --with-requirements requirements.txt --with nbconvert \
+  jupyter nbconvert --to notebook --execute --output analysis-rerun.ipynb analysis.ipynb   # rerun every call
 ```
 
-The notebook's own "How to rerun" section gives these commands with its file name, and the steps for a
-computer without mcp-bindingdb (clone at the recorded commit, `scripts/build_duckdb.sh --release ...`).
-The tool's reply gives the JupyterLab command with the actual paths, for the model to show the user.
+The notebook's own "How to run" and "How to rerun the calls" sections, and the folder's README, give these
+commands with its file name, and the steps to build the exact release with a clone (`git checkout <commit>`,
+`scripts/build_duckdb.sh --release ...`). The tool's reply gives the JupyterLab command with the actual
+path, for the model to show the user.
 
-It also writes an HTML copy of the notebook as written, with the recorded results and figures, as
-`<name>.html` next to it (`html=true`, the default), with `jupyter nbconvert --to html` run by the server's
-`uv` (`$UV`, else `uv` on the PATH) in the mcp-bindingdb folder. If nbconvert fails, its output is saved as
+The HTML copy (`html=true`, the default) is made with `jupyter nbconvert --to html`, run by the server's `uv`
+(`$UV`, else `uv` on the PATH) in the notebook's folder. If nbconvert fails, its output is saved as
 `<name>-html.log`.
 
 The model lists each answer's calls by their `get_tool_log` index in the exchange's `calls`, and its
 figures by id in `figures`; with neither, every logged call and figure goes in a section after the
 conversation. Once calls are listed, the notebook holds only the figures the exchanges list (none, if the
 chat made none), and the reply names the logged figures left out. Before it is run, each call cell shows the
-result as recorded (all rows unless `max_result_rows` is given). Run, it calls the tool again through an
+result as recorded (all rows unless `max_result_rows` is given). Rerun, it calls the tool again through an
 in-process MCP client, exactly as a chat would, shows the new result, and compares the SHA-256 of the
 result's canonical JSON with the recorded digest: ✅ same, ⚠️ differs, ❌ failed. The digest covers the
 whole result, with keys sorted, floats rounded to 10 significant digits (parallel sums differ in the last

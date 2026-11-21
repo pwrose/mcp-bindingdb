@@ -291,7 +291,7 @@ MaxCompoundsArg = Annotated[int, Field(description="Compounds to work on, most p
                                        "number is faster, a higher one covers more of the target")]
 EXACT_MEASUREMENT = "relation = '=' AND unit = 'nM' AND p_affinity IS NOT NULL"
 
-VERSION = "0.1.0"
+VERSION = notebook.package_version()
 LATEST_HTML_URI = "transcript://session/latest.html"
 FIGURE_ID_NOTE = ("Transcripts include it under the exchange whose `figures` lists id {id}. They number "
                   "their figures 1, 2, … in the order they appear, whatever the ids: in your answer, refer to "
@@ -1104,12 +1104,20 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
     return mcp
 
 
-async def _html_copy(path: Path, project: Path | None) -> str:
+def _clear_notebook_folder(folder: Path) -> None:
+    """Remove what an earlier notebook of the same name left in its folder that this one may not replace:
+    recorded results, figures, and a copy of the package (only one with the build record a copy carries)."""
+    for pattern in ("data/call-*.json", "figures/figure-*"):
+        for old in folder.glob(pattern):
+            old.unlink(missing_ok=True)
+    if (folder / "mcp_bindingdb" / notebook.BUILD_FILE).is_file():
+        shutil.rmtree(folder / "mcp_bindingdb", ignore_errors=True)
+
+
+async def _html_copy(path: Path) -> str:
     """Convert the notebook to HTML (notebook.to_html) off the event loop, and say how it went."""
-    if project is None:
-        return "- No HTML copy: the server does not run from an mcp-bindingdb folder."
     try:
-        html_path = await asyncio.to_thread(notebook.to_html, path, project)
+        html_path = await asyncio.to_thread(notebook.to_html, path)
     except RuntimeError as e:
         return f"- HTML copy: not written: {e}. Tell the user."
     return f"- HTML copy: {html_path} (opens in a web browser; shows the results as recorded)"
@@ -1589,8 +1597,14 @@ def _add_transcript_tools(mcp: BindingDBServer, build_info: dict[str, str], tran
         (arguments verbatim, SQL as text) showing the result as recorded, then your answer and its figures.
         It records the BindingDB release and the checksum of the download it was built from, the server
         version and git commit, the model and the software versions, with instructions to rerun and a
-        citation. Run in Jupyter, the cells call the same tools on a local copy of the database and mark
-        each result ✅ when it matches the recorded one (SHA-256 digest) or ⚠️ when it differs; structure
+        citation.
+
+        The notebook goes in a folder of its own that holds everything it needs, so it runs on any computer
+        with uv, without mcp-bindingdb installed: requirements.txt (this server at its GitHub commit and the
+        pinned versions of its dependencies), the recorded results (data/), the figures (figures/), the
+        analysis code it imports, a README and an HTML copy. Run as it is, the cells show the recorded results
+        (no database needed); with RERUN = True they call the same tools on a local copy of the database and
+        mark each result ✅ when it matches the recorded one (SHA-256 digest) or ⚠️ when it differs; structure
         grids and R-group tables are drawn again, images added with add_figure are kept as recorded.
 
         Call get_tool_log first and list in each exchange's `calls` the indices of the calls made for that
@@ -1601,9 +1615,9 @@ def _add_transcript_tools(mcp: BindingDBServer, build_info: dict[str, str], tran
         Pass each answer in full, verbatim; the server cannot see your prose. If you wrote and ran code for an
         answer (a plot, a statistic, a table), pass it in that exchange's `code`, so the notebook reruns it too.
 
-        The notebook can be large, so the server writes it (to output_dir, if given: pass the folder the
-        user wants it in) and returns its path, with the commands that run it, and writes an HTML copy
-        (<file>.html) next to it. Deliver those files as is; never write, edit or copy a notebook of this analysis yourself."""
+        The server writes the folder (<output_dir>/<file_name>/, if given: pass the folder the user wants it
+        in) and returns its path, with the command that runs it. Deliver the folder as is; never write, edit or
+        copy a notebook of this analysis yourself."""
         log = mcp.tool_log
         turns = [e.model_dump() for e in exchanges]
         listed_calls = [i for t in turns for i in t["calls"]]
@@ -1625,22 +1639,29 @@ def _add_transcript_tools(mcp: BindingDBServer, build_info: dict[str, str], tran
         unplaced = [] if listed_figures or listed_calls else list(log.figures)
         left_out = [f.id for f in log.figures if f.id not in set(listed_figures)] if listed_calls else []
         left_out_note = left_out_figures_note(left_out)
-        path = destination(output_dir, file_name, title, ".ipynb")
-        project = notebook.project_dir()
+        named = destination(output_dir, file_name, title, ".ipynb")
+        folder = named.parent / named.stem  # the notebook's own folder: <stem>/<stem>.ipynb
+        path = folder / named.name
         try:
-            nb, counts, code_files = notebook.build_notebook(
+            nb, counts, files = notebook.build_notebook(
                 title=title, when=date or _date.today().isoformat(), model=model, build_info=build_info,
                 generated_by=f"{mcp.name} v{VERSION}", exchanges=turns, leftover_calls=leftover,
                 unplaced_figures=unplaced, skills=transcript.clean_entries(skills),
                 mcp_servers=transcript.clean_entries(external_mcp_servers),
                 max_rows=None if max_result_rows is None else max(max_result_rows, 0), file_name=path.name,
-                model_name=model, log_entries=log.entries)
+                model_name=model, log_entries=log.entries, project=notebook.project_dir())
         except ValueError as e:
             raise ToolError(str(e)) from None
         text = json.dumps(nb, indent=1, ensure_ascii=False) + "\n"
+        _clear_notebook_folder(folder)
         replaced = write(path, text)
-        for name, code_text in code_files.items():
-            write(path.parent / name, code_text)
+        for name, content in files.items():
+            target = folder / name
+            try:
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_bytes(content) if isinstance(content, bytes) else target.write_text(content, encoding="utf-8")
+            except OSError as e:
+                raise ToolError(f"Could not write {target}: {e.strerror or e}") from None
         parts = [transcript.plural(counts["exchanges"], "exchange"), transcript.plural(counts["calls"], "tool call")]
         if counts["figures"]:
             parts.append(transcript.plural(counts["figures"], "figure")
@@ -1650,17 +1671,20 @@ def _add_transcript_tools(mcp: BindingDBServer, build_info: dict[str, str], tran
         meta = nb["metadata"]["bindingdb"]
         source = meta.get("source") or {}
         lines = [f"Jupyter notebook '{title}' written ({len(text):,} bytes; {', '.join(parts)}).",
-                 f"- File: {path}{replaced} (on the machine running mcp-bindingdb)",
+                 f"- Folder: {folder} (on the machine running mcp-bindingdb), with everything the notebook needs to "
+                 "run on any computer with uv: requirements.txt, the recorded results (data/)"
+                 + (", the figures (figures/)" if counts["figures"] else "")
+                 + (", the analysis code it imports" if meta.get("code_files") else "") + " and a README.md",
+                 f"- Notebook: {path}{replaced}",
                  f"- BindingDB release {release}"
                  + (f", source SHA-256 {build_info['source_zip_sha256'][:16]}…" if build_info.get("source_zip_sha256") else "")
                  + f"; {mcp.name} v{VERSION}" + (f", commit {source['commit'][:12]}" if source.get("commit") else "")]
-        if code_files:
-            lines.append(f"- Code {'files' if len(code_files) > 1 else 'file'} the notebook imports, next to it: "
-                         + ", ".join(str(path.parent / n) for n in code_files)
-                         + f" (deliver {'them' if len(code_files) > 1 else 'it'} with the notebook)")
-        if source.get("uncommitted_changes"):
-            lines.append("- The server runs from a checkout with uncommitted changes, so the commit the notebook "
-                         "names may not reproduce these results until they are committed: tell the user.")
+        if meta["server_install"] == "copy":
+            why = ("it has uncommitted changes" if source.get("uncommitted_changes") else
+                   "it is not pushed to GitHub" if source.get("commit") else "its commit is not known")
+            lines.append(f"- requirements.txt cannot install this server's commit from GitHub ({why}), so the folder "
+                         "holds a copy of mcp-bindingdb (mcp_bindingdb/): tell the user, and that committing and "
+                         "pushing, then making the notebook again, pins the commit instead.")
         if counts["skipped_calls"]:
             lines.append(f"- {transcript.plural(counts['skipped_calls'], 'call')} only opened a panel and "
                          "are noted, not rerun.")
@@ -1670,14 +1694,14 @@ def _add_transcript_tools(mcp: BindingDBServer, build_info: dict[str, str], tran
         if left_out_note:
             lines.append(f"- {left_out_note}")
         if html:
-            lines.append(await _html_copy(path, project))
-        if project:
-            commands = notebook.run_commands(path, project, db_path, meta.get("python_packages", ()))
-            lines += ["Show the user how to run the notebook: include this command in your reply, in a bash code "
-                      "block, as given, and say to choose Run → Run All Cells once JupyterLab opens. Give no other "
-                      "way to run it" + (" (the HTML copy is already written)" if html else "") + ":", "",
-                      "```bash", commands["jupyter"], "```"]
-        lines.append("Deliver the notebook as is; do not write, edit or copy it yourself" + ("." if output_dir else
+            lines.append(await _html_copy(path))
+        commands = notebook.run_commands(path, db_path)
+        lines += ["Show the user how to run the notebook: include this command in your reply, in a bash code block, "
+                  "as given, and say to choose Run → Run All Cells once JupyterLab opens; the cells show the recorded "
+                  "results, and setting RERUN = True in the setup cell reruns every call on the local database. Give "
+                  "no other way to run it" + (" (the HTML copy is already written)" if html else "") + ":", "",
+                  "```bash", commands["jupyter"], "```"]
+        lines.append("Deliver the folder as is; do not write, edit or copy the notebook yourself" + ("." if output_dir else
                      " (pass output_dir to have it written where the user wants it)."))
         return "\n".join(lines)
 

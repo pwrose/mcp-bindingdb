@@ -2,8 +2,13 @@
 
 `build_notebook` writes the notebook: the prompts and answers, a code cell per tool call with the result as
 it was recorded, the figures, and the provenance (BindingDB release and source checksum, server version and
-commit, model). `Replay` is what those cells run: it builds this server in-process on a local copy of the
-database, calls each tool again, shows the result and reports whether it matches the recorded one (by a
+commit, model). It goes in a folder of its own with everything it needs (`study_files`): requirements.txt,
+which pins this server's GitHub commit and the versions of its dependencies in uv.lock (or, when the commit is
+not on GitHub, a copy of the package), the recorded results (data/) and figures (figures/), and a README.
+
+`Replay` is what the cells run. By default it shows the recorded results from data/, so the notebook runs
+anywhere in seconds; with `rerun` (or BINDINGDB_RERUN=1) it builds this server in-process on a local copy of
+the database, calls each tool again, shows the result and reports whether it matches the recorded one (by a
 SHA-256 digest of the result, see `digest`).
 """
 
@@ -72,6 +77,13 @@ FIGURE_TOOLS = {"draw_structure_grid", "draw_r_group_table"}
 SIGNIFICANT_DIGITS = 10  # floats are compared to this precision: parallel sums differ in the last bits
 #: Analysis code longer than this many lines goes to a .py file next to the notebook, which a cell imports.
 INLINE_CODE_LINES = 40
+#: The extras a notebook's environment installs: structure search and drawing, PDB complexes, OPSIN, the kernel.
+EXTRAS = ("substructure", "structures", "opsin", "notebook")
+#: Written into the package by scripts/build_bundle.sh, and into a copy of it in a notebook folder: the commit
+#: the code is from, which a bundle or a copy cannot ask git for.
+BUILD_FILE = "_build.json"
+#: Turns reruns on in Replay when set to 1 (or true/yes), as RERUN = True in the setup cell does.
+RERUN_ENV = "BINDINGDB_RERUN"
 _RESULT_REF = re.compile(r"\breplay\.result\(\s*(\d+)\s*\)")
 
 
@@ -102,16 +114,64 @@ def digest(value: Any) -> str:
 # ------------------------------------------------------------------------------------------- environment
 
 def source_version() -> dict[str, Any]:
-    """The git commit of this package's checkout, if it is one, and whether it has uncommitted changes."""
+    """The commit this package's code is from: `commit`, `uncommitted_changes` (in the package), and
+    `published` (the commit is on a branch of the GitHub repository, so pip can install it from there).
+
+    Read from the _build.json a bundle or a copied package carries, else from the package's own git checkout,
+    else from the record pip keeps of a package it installed from git; {} if none says."""
     folder = Path(__file__).resolve().parent
-    try:
-        commit = subprocess.run(["git", "-C", str(folder), "rev-parse", "HEAD"], capture_output=True,
-                                text=True, timeout=5, check=True).stdout.strip()
-        status = subprocess.run(["git", "-C", str(folder), "status", "--porcelain", "--", "."],
-                                capture_output=True, text=True, timeout=5, check=True).stdout
+    with contextlib.suppress(OSError, ValueError):
+        recorded = json.loads((folder / BUILD_FILE).read_text())
+        if isinstance(recorded, dict):
+            return {k: recorded[k] for k in ("commit", "uncommitted_changes", "published") if recorded.get(k) is not None}
+
+    def git(*args: str) -> str:
+        return subprocess.run(["git", "-C", str(folder), *args], capture_output=True, text=True, timeout=5,
+                              check=True).stdout.strip()
+    try:  # only mcp-bindingdb's own checkout: not a repository the package happens to sit in
+        if Path(git("rev-parse", "--show-toplevel")).resolve() == folder.parents[1]:
+            commit = git("rev-parse", "HEAD")
+            return {"commit": commit, "uncommitted_changes": bool(git("status", "--porcelain", "--", ".")),
+                    "published": bool(git("branch", "-r", "--contains", commit))}
     except (OSError, subprocess.SubprocessError):
-        return {}
-    return {"commit": commit, "uncommitted_changes": bool(status.strip())} if commit else {}
+        pass
+    from importlib.metadata import PackageNotFoundError, distribution
+    with contextlib.suppress(PackageNotFoundError, OSError, ValueError, TypeError, AttributeError):
+        direct = json.loads(distribution("mcp-bindingdb").read_text("direct_url.json") or "{}")
+        if commit := (direct.get("vcs_info") or {}).get("commit_id"):
+            return {"commit": commit, "uncommitted_changes": False, "published": True}
+    return {}
+
+
+def server_requirement(source: dict[str, Any]) -> str | None:
+    """requirements.txt's line for this server at its commit on GitHub; None when pip could not install that
+    commit from there (it has uncommitted changes, is not pushed, or is unknown): then the folder gets a copy."""
+    if source.get("commit") and source.get("published") and not source.get("uncommitted_changes"):
+        return f"mcp-bindingdb[{','.join(EXTRAS)}] @ git+{REPO_URL}.git@{source['commit']}"
+    return None
+
+
+def locked_requirements(project: Path | None) -> list[str]:
+    """Pinned requirements for this server's dependencies and EXTRAS, as its uv.lock has them (uv export); if
+    that fails, the versions installed here of the packages it needs directly."""
+    uv = os.environ.get("UV") or shutil.which("uv")
+    if project is not None and uv and (project / "uv.lock").is_file():
+        command = [uv, "export", "--frozen", "--no-hashes", "--no-header", "--no-annotate", "--no-emit-project",
+                   "--no-dev", *(a for e in EXTRAS for a in ("--extra", e))]
+        with contextlib.suppress(OSError, subprocess.SubprocessError):
+            done = subprocess.run(command, cwd=project, capture_output=True, text=True, timeout=60, check=True)
+            if lines := [line for line in done.stdout.splitlines() if line.strip() and not line.startswith("#")]:
+                return lines
+    names = ("duckdb", "markdown-it-py", "mcp", "rdkit", "gemmi", "pyopsin", "jdk4py", "ipykernel")
+    return [f"{name}=={v}" for name in names if (v := _dist_version(name))]
+
+
+def package_files() -> dict[str, bytes]:
+    """This package's files, by path relative to the folder holding it (mcp_bindingdb/...), for a notebook
+    folder whose commit pip cannot install from GitHub. Compiled files and the build record are left out."""
+    folder = Path(__file__).resolve().parent
+    return {f"{folder.name}/{p.relative_to(folder).as_posix()}": p.read_bytes() for p in sorted(folder.rglob("*"))
+            if p.is_file() and "__pycache__" not in p.parts and p.suffix != ".pyc" and p.name != BUILD_FILE}
 
 
 def environment() -> dict[str, str]:
@@ -123,6 +183,15 @@ def environment() -> dict[str, str]:
         except ImportError:
             continue
     return {k: v for k, v in versions.items() if v}
+
+
+def package_version() -> str:
+    """This package's version: from its installed metadata, else from the build record a copy carries."""
+    if version := _dist_version("mcp-bindingdb"):
+        return version
+    with contextlib.suppress(OSError, ValueError, AttributeError):
+        return str(json.loads((Path(__file__).resolve().parent / BUILD_FILE).read_text()).get("version") or "unknown")
+    return "unknown"
 
 
 def _dist_version(name: str) -> str:
@@ -146,32 +215,19 @@ def rerun_path(path: Path) -> Path:
     return path.with_name(f"{path.stem}-rerun.ipynb")
 
 
-def _db_setting(project: Path, db_path: Path | None) -> str:
-    """'BINDINGDB_DUCKDB=... ' when the notebook would not find db_path by itself in the folder's data/."""
-    if db_path is None:
-        return ""
-    found = sorted((project / "data").glob("bindingdb_*.duckdb"))
-    same = bool(found) and found[-1].resolve() == Path(db_path).resolve()
-    return "" if same else f"BINDINGDB_DUCKDB={shlex.quote(str(db_path))} "
-
-
-def with_packages(packages: list[str] | tuple[str, ...] = ()) -> str:
-    """' --with pkg' for each extra package the notebook's code needs."""
-    return "".join(f" --with {shlex.quote(p)}" for p in packages)
-
-
-def run_commands(path: Path, project: Path, db_path: Path | None = None,
-                 packages: list[str] | tuple[str, ...] = ()) -> dict[str, str]:
-    """Shell commands that open the notebook in JupyterLab, and that rerun it with nbconvert; `packages` are
-    the PyPI packages its analysis code needs beyond mcp-bindingdb's."""
+def run_commands(path: Path, db_path: Path | None = None) -> dict[str, str]:
+    """Shell commands, run in the notebook's folder, that open it in JupyterLab (showing the recorded results),
+    and that rerun every call with nbconvert, writing <name>-rerun.ipynb; `db_path` is the database to rerun on.
+    `--no-project` keeps uv from using a project the folder happens to sit in."""
     q = lambda p: shlex.quote(str(p))  # noqa: E731
-    cd, env, extra = f"cd {q(project)}", _db_setting(project, db_path), with_packages(packages)
-    return {"jupyter": f"{cd}\n{env}uv run --all-extras --with jupyterlab{extra} jupyter lab {q(path)}",
-            "nbconvert": f"{cd}\n{env}uv run --all-extras --with nbconvert{extra} jupyter nbconvert --to notebook "
-                         f"--execute --output {q(rerun_path(path).name)} {q(path)}"}
+    cd, uv = f"cd {q(path.parent)}", "uv run --no-project --with-requirements requirements.txt"
+    db = f"BINDINGDB_DUCKDB={q(db_path)} " if db_path else ""
+    return {"jupyter": f"{cd}\n{uv} --with jupyterlab jupyter lab {q(path.name)}",
+            "rerun": f"{cd}\n{RERUN_ENV}=1 {db}{uv} --with nbconvert jupyter nbconvert --to notebook --execute "
+                     f"--output {q(rerun_path(path).name)} {q(path.name)}"}
 
 
-def to_html(path: Path, project: Path, timeout: float = 120) -> Path:
+def to_html(path: Path, timeout: float = 120) -> Path:
     """Convert the notebook, as written (not run), to <name>.html next to it with nbconvert; returns its
     path. On failure, nbconvert's output goes to <name>-html.log and RuntimeError says so."""
     uv = os.environ.get("UV") or shutil.which("uv")  # `uv run` sets UV to its own path
@@ -179,9 +235,9 @@ def to_html(path: Path, project: Path, timeout: float = 120) -> Path:
         raise RuntimeError("uv was not found")
     out, log = path.with_suffix(".html"), path.with_name(f"{path.stem}-html.log")
     out.unlink(missing_ok=True)
-    command = [uv, "run", "--with", "nbconvert", "jupyter", "nbconvert", "--to", "html", str(path)]
+    command = [uv, "run", "--no-project", "--with", "nbconvert", "jupyter", "nbconvert", "--to", "html", path.name]
     try:
-        done = subprocess.run(command, cwd=project, capture_output=True, text=True, timeout=timeout)
+        done = subprocess.run(command, cwd=path.parent, capture_output=True, text=True, timeout=timeout)
     except subprocess.TimeoutExpired:
         raise RuntimeError(f"nbconvert took over {timeout:.0f} s and was stopped") from None
     if done.returncode or not out.is_file():
@@ -254,9 +310,13 @@ def build_notebook(*, title: str, when: str, model: str, build_info: dict[str, s
                    exchanges: list[dict[str, Any]], leftover_calls: list[dict[str, Any]],
                    unplaced_figures: list[Any], skills: list[str], mcp_servers: list[str],
                    max_rows: int | None, file_name: str = "notebook.ipynb", model_name: str | None = None,
-                   log_entries: list[dict[str, Any]] = ()) -> tuple[dict[str, Any], dict[str, int], dict[str, str]]:
-    """The notebook (nbformat 4.5, as a dict), counts of what it holds, and the .py files of its longer
-    analysis code ({file name: text}), to write next to it.
+                   log_entries: list[dict[str, Any]] = (), project: Path | None = None,
+                   ) -> tuple[dict[str, Any], dict[str, int], dict[str, str | bytes]]:
+    """The notebook (nbformat 4.5, as a dict), counts of what it holds, and the other files of its folder,
+    by path relative to it: requirements.txt, README.md, the recorded results (data/call-NN.json), the figures
+    (figures/figure-N.<ext>), the .py files of its longer analysis code, and, when this server's commit
+    cannot be installed from GitHub, a copy of the package (mcp_bindingdb/). `project` is the mcp-bindingdb
+    folder whose uv.lock pins the requirements.
 
     `exchanges` are dicts with prompt, answer, `calls` (logged entries, see ToolLog), `figures`
     (figures.Figure) and `code` (analysis code the model wrote: dicts with code, run, description,
@@ -277,7 +337,7 @@ def build_notebook(*, title: str, when: str, model: str, build_info: dict[str, s
          for e, made in zip(exchanges, code_figures)], unplaced_figures)
     call_numbers = _call_numbers([c for e in exchanges for c in e["calls"]] + list(leftover_calls), log_entries)
     stem = _module_stem(file_name)
-    files: dict[str, str] = {}
+    files: dict[str, str] = {}  # the analysis code's modules
 
     body_start = len(nb.cells)
     for k, (exchange, made) in enumerate(zip(exchanges, code_figures), start=1):
@@ -305,13 +365,19 @@ def build_notebook(*, title: str, when: str, model: str, build_info: dict[str, s
               "redrawn_figures": nb.n_redrawn, "skipped_calls": nb.n_skipped, "code_cells": nb.n_code,
               "code_files": len(files)}
     packages = sorted({p for e in exchanges for b in e["code"] for p in b.get("packages") or []})
+    server = server_requirement(source)
+    figure_files = {}
+    for figure in [*(f for e in exchanges for f in e["figures"]),
+                   *(f for e in exchanges for b in e["code"] for f in b.get("figures") or []), *unplaced_figures]:
+        figure_files[f"figures/figure-{numbers[figure.id]}{Path(figure.file).suffix.lower()}"] = figure.data
     meta = {"title": title, "date": when, "model": model, "bindingdb_release": release,
             "bindingdb_build": {k: v for k, v in build_info.items() if k != "table_row_counts"},
             "generated_by": generated_by, "generated_at": _utc_now(), **({"source": source} if source else {}),
             "environment": env, **({"skills": skills} if skills else {}),
             **({"external_mcp_servers": mcp_servers} if mcp_servers else {}),
             **({"python_packages": packages} if packages else {}),
-            **({"code_files": sorted(files)} if files else {}), "contents": counts}
+            **({"code_files": sorted(files)} if files else {}),
+            "server_install": "github" if server else "copy", "contents": counts}
     nb.markdown(_header(meta, counts, file_name))
     nb.code(_setup_source(build_info), [_stream(_recorded_environment(meta))])
     nb.cells += body
@@ -325,7 +391,38 @@ def build_notebook(*, title: str, when: str, model: str, build_info: dict[str, s
     notebook = {"cells": nb.cells, "metadata": {
         "kernelspec": {"display_name": "Python 3", "language": "python", "name": "python3"},
         "language_info": {"name": "python"}, "bindingdb": meta}, "nbformat": 4, "nbformat_minor": 5}
-    return notebook, counts, files
+    folder: dict[str, str | bytes] = {"requirements.txt": _requirements(server, source, project, packages),
+                                      "README.md": _readme(meta, counts, file_name, figure_files),
+                                      **nb.data, **figure_files, **files}
+    if server is None:
+        folder.update(package_files())
+        folder[f"mcp_bindingdb/{BUILD_FILE}"] = json.dumps(
+            {"commit": source.get("commit"), "uncommitted_changes": source.get("uncommitted_changes", False),
+             "published": False, "version": package_version(), "copied_by": generated_by, "copied_at": meta["generated_at"]}, indent=1) + "\n"
+    return notebook, counts, folder
+
+
+def _requirements(server: str | None, source: dict[str, Any], project: Path | None, packages: list[str]) -> str:
+    """requirements.txt: this server from GitHub (or a note that the folder holds a copy), the pinned
+    versions of its dependencies, and the packages the analysis code imports."""
+    commit = (source.get("commit") or "")[:12]
+    if server:
+        head = [f"# mcp-bindingdb at commit {commit}, with the versions of its dependencies its uv.lock pins.",
+                server]
+    else:
+        why = ("its commit has uncommitted changes" if source.get("uncommitted_changes") else
+               f"commit {commit} is not on GitHub" if commit else "its commit is not known")
+        head = ["# The dependencies of mcp-bindingdb, at the versions its uv.lock pins. mcp-bindingdb itself is the",
+                f"# copy in mcp_bindingdb/ next to the notebook, since {why}."]
+    lines = [*head, *locked_requirements(project)]
+    if packages:
+        lines += ["# Imported by the analysis code:", *packages]
+    return "\n".join(lines) + "\n"
+
+
+def data_file(number: int) -> str:
+    """Where a notebook folder keeps the recorded result of call `number`."""
+    return f"data/call-{number:02d}.json"
 
 
 def _call_numbers(entries: list[dict[str, Any]], log_entries: list[dict[str, Any]]) -> dict[int, int]:
@@ -384,6 +481,7 @@ def _caption(figure: Any, number: int) -> str:
 class _Notebook:
     def __init__(self, max_rows: int | None) -> None:
         self.cells: list[dict[str, Any]] = []
+        self.data: dict[str, str] = {}  # data/call-NN.json: each call's recorded result
         self.max_rows = max_rows
         self.n_calls = self.n_redrawn = self.n_skipped = self.n_code = 0
 
@@ -412,6 +510,7 @@ class _Notebook:
             self.n_calls += 1
             n = self.n_calls
             sha = digest(call.get("result"))
+            self.data[data_file(n)] = json.dumps(call.get("result"), indent=1, ensure_ascii=False, default=str) + "\n"
             stamp = _stamp(call.get("timestamp", ""))
             comment = f"Call {n} · {call['tool']}" + (f" · ran {stamp}" if stamp else "") + \
                       (" · from the structure editor" if call.get("from_editor") else "")
@@ -493,17 +592,48 @@ def _setup_source(build_info: dict[str, str]) -> str:
     args = [f"release={build_info.get('release', 'unknown')!r}"]
     if sha := build_info.get("source_zip_sha256"):
         args.append(f"source_zip_sha256={sha!r}")
+    args.append("rerun=RERUN")
     return "\n".join([
-        "# Reruns this session's BindingDB tool calls on a local copy of the same BindingDB release (see",
-        "# 'How to rerun' above). The database is the one in BINDINGDB_DUCKDB, else in mcp-bindingdb's data/",
-        "# folder, else the one it builds on first use; or pass db_path='/path/to/bindingdb_<release>.duckdb'.",
+        "# Shows the results recorded during the session (data/), so the notebook runs without a database. Set",
+        "# RERUN = True (or start Jupyter with BINDINGDB_RERUN=1) to rerun every BindingDB call on a local copy of",
+        "# the database instead and check it against its recorded result: see 'How to rerun the calls' above.",
         "from mcp_bindingdb.notebook import Replay",
         "",
+        "RERUN = False",
         f"replay = Replay({', '.join(args)})",
     ])
 
 
 def _header(meta: dict[str, Any], counts: dict[str, int], file_name: str) -> str:
+    contents = [transcript.plural(counts["exchanges"], "exchange"), transcript.plural(counts["calls"], "tool call")]
+    if counts["figures"]:
+        contents.append(transcript.plural(counts["figures"], "figure"))
+    if counts.get("code_cells"):
+        contents.append(transcript.plural(counts["code_cells"], "code cell"))
+    lines = [
+        f"# {meta['title']}", "",
+        "A reproducible record of an AI-assisted BindingDB analysis: each prompt, the BindingDB tool calls that "
+        "answered it with their recorded results, the answer, and its figures. Run all cells to show the recorded "
+        "results, or rerun every call on your own copy of the database and check each result against the "
+        "recorded one.", "",
+        *_provenance(meta),
+        f"- **Contents:** {' · '.join(contents)}",
+        "",
+        *_run_steps(meta, file_name, "###"),
+        "Run as it is, each call cell shows its recorded result, read from `data/` and checked against the "
+        "SHA-256 digest recorded in the cell. Rerun, it shows the new result with ✅ when it matches the recorded "
+        f"one (floats to {SIGNIFICANT_DIGITS} significant digits, ids of viewers and files left out). Calls to "
+        "PubChem, RCSB or PDBe depend on those services and may differ. The prose answers are the model's and are "
+        "not recomputed."
+        + (" Code cells hold the analysis code the model wrote; they run as written (reading the results with "
+           "`replay.result(n)`, the result of Call n) and draw their figures again, which are not compared."
+           if counts.get("code_cells") else ""),
+    ]
+    return "\n".join(lines)
+
+
+def _provenance(meta: dict[str, Any]) -> list[str]:
+    """The header's list of what the analysis ran on and when."""
     build = meta["bindingdb_build"]
     source = meta.get("source") or {}
     commit = source.get("commit")
@@ -514,16 +644,8 @@ def _header(meta: dict[str, Any], counts: dict[str, int], file_name: str) -> str
     if build.get("source_zip"):
         data += f" (`{build['source_zip']}`"
         data += f", SHA-256 `{build['source_zip_sha256']}`)" if build.get("source_zip_sha256") else ")"
-    contents = [transcript.plural(counts["exchanges"], "exchange"), transcript.plural(counts["calls"], "tool call")]
-    if counts["figures"]:
-        contents.append(transcript.plural(counts["figures"], "figure"))
-    if counts.get("code_cells"):
-        contents.append(transcript.plural(counts["code_cells"], "code cell"))
-    lines = [
-        f"# {meta['title']}", "",
-        "A reproducible record of an AI-assisted BindingDB analysis: each prompt, the BindingDB tool calls that "
-        "answered it with their recorded results, the answer, and its figures. Run all cells to rerun every "
-        "call on your own copy of the database and check each result against the recorded one.", "",
+    derived = [build[k] for k in ("inchi_keys", "properties") if build.get(k)]
+    return [
         f"- **Date:** {meta['date']}",
         f"- **Model:** {meta['model']}",
         *([f"- **Skills:** {' · '.join(meta['skills'])}"] if meta.get("skills") else []),
@@ -533,68 +655,93 @@ def _header(meta: dict[str, Any], counts: dict[str, int], file_name: str) -> str
         *([f"- **Database build:** {build['built_at']}" + (f", DuckDB {build['duckdb_version']}"
                                                             if build.get("duckdb_version") else "")]
           if build.get("built_at") else []),
-        *([f"- **Derived data:** {'; '.join(derived)}"] if (derived := [build[k] for k in ("inchi_keys", "properties")
-                                                                         if build.get(k)]) else []),
+        *([f"- **Derived data:** {'; '.join(derived)}"] if derived else []),
         f"- **Server:** {server}",
         f"- **Software:** {', '.join(f'{k} {v}' for k, v in meta['environment'].items())}",
         f"- **Notebook generated:** {meta['generated_at']}",
-        f"- **Contents:** {' · '.join(contents)}",
-        "",
-        *_rerun_steps(meta, file_name),
-        "Each call cell shows its result as recorded until it is run; running it shows the new result with ✅ "
-        "when it matches the recorded one (SHA-256 of the result, floats to "
-        f"{SIGNIFICANT_DIGITS} significant digits, ids of viewers and files left out). Calls to PubChem, RCSB "
-        "or PDBe depend on those services and may differ. The prose answers are the model's and are not "
-        "recomputed."
-        + (" Code cells hold the analysis code the model wrote; they run as written (reading rerun results "
-           "with `replay.result(n)`, the result of Call n) and draw their figures again, which are not "
-           "compared." if counts.get("code_cells") else ""),
     ]
-    return "\n".join(lines)
 
 
-def _rerun_steps(meta: dict[str, Any], file_name: str) -> list[str]:
-    """'How to rerun': the commands for a computer that runs mcp-bindingdb, then the setup from scratch."""
+def _run_steps(meta: dict[str, Any], file_name: str, heading: str) -> list[str]:
+    """'How to run' and 'How to rerun the calls', with commands run in the notebook's folder."""
     release = meta["bindingdb_release"]
     commit = (meta.get("source") or {}).get("commit")
     stem = file_name[:-len(".ipynb")] if file_name.endswith(".ipynb") else file_name
     checks = "release" + (" and source checksum" if meta["bindingdb_build"].get("source_zip_sha256") else "")
-    extra = with_packages(meta.get("python_packages", ()))
-    files = meta.get("code_files") or []
+    held = ["`requirements.txt` (" + ("mcp-bindingdb at its commit and " if meta.get("server_install") == "github"
+                                      else "") + "the versions of the packages it needs)",
+            "the recorded results in `data/`"]
+    if meta["contents"].get("figures"):
+        held.append("the figures in `figures/`")
+    if files := meta.get("code_files"):
+        held.append("the analysis code the notebook imports (" + ", ".join(f"`{f}`" for f in files) + ")")
+    if meta.get("server_install") == "copy":
+        held.append("a copy of the mcp-bindingdb code it ran with in `mcp_bindingdb/`, which cannot be "
+                    "installed from GitHub")
+    uv = "uv run --no-project --with-requirements requirements.txt"
     return [
-        "### How to rerun", "",
-        "Jupyter must run in mcp-bindingdb's Python environment, so start it from the mcp-bindingdb folder "
-        "with `uv run` (replace the paths with yours):", "",
+        f"{heading} How to run", "",
+        f"Keep the notebook in its folder, which holds everything it needs: {', '.join(held[:-1])} and {held[-1]}. "
+        "With [uv](https://docs.astral.sh/uv/), from that folder (replace the path with yours):", "",
         "```bash",
-        "cd /path/to/mcp-bindingdb",
-        f"uv run --all-extras --with jupyterlab{extra} jupyter lab /path/to/{file_name}",
+        f"cd /path/to/{stem}",
+        f"{uv} --with jupyterlab jupyter lab {file_name}",
         "```", "",
-        "and choose Run → Run All Cells. To rerun it without opening Jupyter, writing a copy with the new "
-        "results:", "",
+        "then choose Run → Run All Cells. The first start installs the packages, which takes a minute or two; "
+        "the cells show the recorded results, so no database is needed. Without uv: "
+        f"`pip install -r requirements.txt jupyterlab`, then `jupyter lab {file_name}` in the folder.", "",
+        f"{heading} How to rerun the calls", "",
+        f"To rerun every BindingDB call on your own copy of release {release} and check each result against the "
+        "recorded one, set `RERUN = True` in the setup cell and run all cells, or rerun the notebook without "
+        "opening Jupyter, writing a copy with the new results:", "",
         "```bash",
-        "cd /path/to/mcp-bindingdb",
-        f"uv run --all-extras --with nbconvert{extra} jupyter nbconvert --to notebook --execute --output "
-        f"{stem}-rerun.ipynb /path/to/{file_name}",
+        f"cd /path/to/{stem}",
+        f"{RERUN_ENV}=1 {uv} --with nbconvert jupyter nbconvert --to notebook --execute "
+        f"--output {stem}-rerun.ipynb {file_name}",
         "```", "",
-        *([f"The notebook imports its code from {', '.join(f'`{f}`' for f in files)}: keep "
-           f"{'these files' if len(files) > 1 else 'that file'} in the same folder as the notebook.", ""]
-          if files else []),
-        "The database is found in the folder's `data/`, else in the folder where mcp-bindingdb builds it on "
-        "first use (built there if it is missing, which takes about half an hour); if it is elsewhere, put "
-        f"`BINDINGDB_DUCKDB=/path/to/bindingdb_{release}.duckdb` before `uv run`. VS Code works too, with the "
-        "folder's `.venv` as the kernel.", "",
-        f"**Without mcp-bindingdb** (needs [uv](https://docs.astral.sh/uv/)), first get the code "
-        f"and build the database of release {release} (about half an hour and 2.4 GB in `data/`; see "
-        "`docs/building-the-database.md`):", "",
+        f"A rerun needs the database: the one `BINDINGDB_DUCKDB=/path/to/bindingdb_{release}.duckdb` names (put it "
+        "before `uv run`), else the newest one mcp-bindingdb built on this computer, for example for Claude Desktop. "
+        "With neither, the first rerun builds one, which takes about half an hour and 2.4 GB. To build exactly "
+        f"release {release}, with a clone of mcp-bindingdb:", "",
         "```bash",
         f"git clone {REPO_URL}.git",
         "cd mcp-bindingdb",
         *([f"git checkout {commit}"] if commit else []),
         f"scripts/build_duckdb.sh --release {release}",
         "```", "",
-        f"then run the commands above. The setup cell checks the database's {checks} against the recorded "
-        "ones.", "",
+        f"The setup cell checks the database's {checks} against the recorded ones.", "",
     ]
+
+
+def _readme(meta: dict[str, Any], counts: dict[str, int], file_name: str, figure_files: dict[str, bytes]) -> str:
+    """README.md of the notebook's folder: what it is, how to run and rerun it, and what each file holds."""
+    stem = file_name[:-len(".ipynb")] if file_name.endswith(".ipynb") else file_name
+    contents = [
+        f"- `{file_name}`: the notebook: each prompt, a cell per BindingDB tool call with its recorded result, "
+        "the answer and its figures, with the provenance and how to cite it",
+        f"- `{stem}.html`: the notebook as a web page, with the results as recorded (when it was written)",
+        "- `requirements.txt`: the Python packages it runs with, at pinned versions",
+        f"- `data/`: the result each call returned during the session (`call-NN.json`, for Call NN)",
+        *(f"- `{name}`" for name in figure_files),
+        *(f"- `{name}`: analysis code the notebook imports" for name in meta.get("code_files") or []),
+        *(["- `mcp_bindingdb/`: the mcp-bindingdb code the notebook ran with, which cannot be installed from GitHub "
+           "(see requirements.txt for why)"]
+          if meta.get("server_install") == "copy" else []),
+    ]
+    return "\n".join([
+        f"# {meta['title']}", "",
+        f"A reproducible record of an AI-assisted BindingDB analysis with {transcript.plural(counts['calls'], 'tool call')}, "
+        f"made by {meta['generated_by']}.", "",
+        *_provenance(meta), "",
+        *_run_steps(meta, file_name, "##"),
+        "## Contents", "",
+        *contents, "",
+        "## Caveats", "",
+        "- The recorded results are what this BindingDB release returned during the session. A rerun on another "
+        "release, or of a call that reads PubChem, RCSB or PDBe, can differ; the notebook marks each such result ⚠️.",
+        "- Figures drawn by mcp-bindingdb are drawn again on a rerun; other images are kept as recorded.",
+        "",
+    ])
 
 
 def _recorded_environment(meta: dict[str, Any]) -> str:
@@ -705,26 +852,43 @@ class Rerun:
             display(SVG(data=data) if mime == "image/svg+xml" else Image(data=data))
 
 
-class Replay:
-    """Reruns tool calls in a notebook made by create_jupyter_notebook, on a server built in this process.
+def _rerun_from_env() -> bool:
+    return os.environ.get(RERUN_ENV, "").strip().lower() in ("1", "true", "yes")
 
-    `release` and `source_zip_sha256` are the recorded database's; a database that differs is used anyway,
-    with a warning, since its results may then differ."""
+
+class Replay:
+    """Runs the tool calls of a notebook made by create_jupyter_notebook.
+
+    By default it shows each call's recorded result, from data/ in `folder` (the notebook's folder, where
+    Jupyter runs it). With `rerun` (or BINDINGDB_RERUN=1) it reruns the calls on a server built in this process
+    on a local database: `release` and `source_zip_sha256` are the recorded database's, and a database that
+    differs is used anyway, with a warning, since its results may then differ."""
 
     def __init__(self, release: str, source_zip_sha256: str | None = None, db_path: str | Path | None = None,
-                 network: bool = True, max_rows: int | None = None) -> None:
+                 network: bool = True, max_rows: int | None = None, rerun: bool = False,
+                 folder: str | Path | None = None) -> None:
+        self.max_rows = max_rows
+        self.checks: list[tuple[str, str, str]] = []  # (label, tool, status)
+        self.results: dict[int, Any] = {}  # call number -> its result, rerun or recorded
+        self.folder = Path(folder) if folder else Path.cwd()
+        self.rerun = bool(rerun) or _rerun_from_env()
+        if not self.rerun:
+            if not (self.folder / "data").is_dir():
+                print(f"WARNING: no data/ folder in {self.folder}: run the notebook in its own folder, where its "
+                      "recorded results are", file=sys.stderr)
+            print(f"Showing the results recorded with BindingDB release {release} (data/). To rerun the calls on a "
+                  f"local database, set RERUN = True above or start Jupyter with {RERUN_ENV}=1.")
+            return
         from .db import Database
         from .local_build import locate
         from .server import VERSION, build_server, load_substructure_index
 
         path, pending = locate(str(db_path) if db_path else None)
         if pending is not None:  # no database on this computer yet: build it (once), as the server does
+            print(f"No BindingDB database found: building one in {pending.folder} (about half an hour)...")
             pending.wait()
         self.db = Database(path)
         info = self.db.build_info()
-        self.max_rows = max_rows
-        self.checks: list[tuple[str, str, str]] = []  # (label, tool, status)
-        self.results: dict[int, Any] = {}  # call number -> its rerun result
         self._figure_dir = Path(tempfile.mkdtemp(prefix="bindingdb-replay-"))
         self.server = build_server(self.db, load_substructure_index(self.db), network=network,
                                    transcript_dir=self._figure_dir)
@@ -760,8 +924,27 @@ class Replay:
         images = [(f.data, _mime(f.file)) for f in log.figures[before:]]
         return content, bool(result.is_error), images
 
+    def _recorded(self, number: int, tool: str, sha256: str | None) -> Rerun:
+        """Call `number` as recorded: its result from data/, checked against the digest in its cell."""
+        label, name = f"Call {number}", data_file(number)
+        try:
+            result = json.loads((self.folder / name).read_text(encoding="utf-8"))
+        except (OSError, ValueError) as e:
+            self.checks.append((label, tool, "error"))
+            return Rerun(label, tool, f"{type(e).__name__}: {e}", "error",
+                         f"❌ no recorded result in `{name}`: run the notebook in its folder", [], self.max_rows)
+        if sha256 is None or digest(result) == sha256:
+            status, message = "recorded", f"recorded result (`{name}`)"
+        else:
+            status, message = "differs", f"⚠️ `{name}` differs from the recorded result (sha256 `{sha256[:12]}…`)"
+        self.checks.append((label, tool, status))
+        self.results[number] = result
+        return Rerun(label, tool, result, status, message, [], self.max_rows)
+
     async def call(self, number: int, tool: str, arguments: dict[str, Any], sha256: str | None = None) -> Rerun:
-        """Rerun recorded call `number` and compare its result with the recorded digest."""
+        """Recorded call `number`: rerun and compared with the recorded digest, or as recorded (see Replay)."""
+        if not self.rerun:
+            return self._recorded(number, tool, sha256)
         label = f"Call {number}"
         try:
             result, failed, images = await self._run(tool, arguments)
@@ -789,8 +972,18 @@ class Replay:
         return self.results[number]
 
     async def figure(self, number: int, tool: str, arguments: dict[str, Any]) -> Rerun:
-        """Draw recorded figure `number` again with the tool that drew it (images are not compared)."""
+        """Draw recorded figure `number` again with the tool that drew it (images are not compared); without
+        reruns, show the image recorded in figures/."""
         label = f"Figure {number}"
+        if not self.rerun:
+            found = sorted((self.folder / "figures").glob(f"figure-{number}.*"))
+            if not found:
+                self.checks.append((label, tool, "error"))
+                return Rerun(label, tool, "", "error", f"❌ no recorded image `figures/figure-{number}.*`", [],
+                             self.max_rows)
+            self.checks.append((label, tool, "shown"))
+            return Rerun(label, tool, None, "figure", f"as recorded (`figures/{found[0].name}`)",
+                         [(found[0].read_bytes(), _mime(found[0].name))], self.max_rows)
         try:
             result, failed, images = await self._run(tool, arguments)
         except Exception as e:  # noqa: BLE001
@@ -807,7 +1000,7 @@ class Replay:
 
 class Summary:
     ICONS = {"same": "✅ same", "differs": "⚠️ differs", "error": "❌ failed", "unchecked": "not checked",
-             "redrawn": "redrawn"}
+             "redrawn": "redrawn", "recorded": "recorded (not rerun)", "shown": "shown as recorded"}
 
     def __init__(self, checks: list[tuple[str, str, str]]) -> None:
         self.checks = list(checks)
@@ -826,7 +1019,9 @@ class Summary:
         head = ", ".join(f"{n} {self.ICONS.get(s, s)}" for s, n in counts.items())
         rows = ["| | tool | result |", "|---|---|---|",
                 *(f"| {label} | `{tool}` | {self.ICONS.get(status, status)} |" for label, tool, status in self.checks)]
-        return "\n".join([f"**{head}**", "", *rows])
+        note = ([f"_These are the recorded results. To rerun the calls and compare, set `RERUN = True` in the setup "
+                 f"cell (or start Jupyter with {RERUN_ENV}=1)._", ""] if "recorded" in counts else [])
+        return "\n".join([f"**{head}**", "", *note, *rows])
 
     def __repr__(self) -> str:
         return self.markdown

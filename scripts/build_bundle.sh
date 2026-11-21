@@ -38,6 +38,15 @@ rm -rf "$STAGE"
 mkdir -p "$STAGE"
 cp "$ROOT/bundle/manifest.json" "$ROOT/pyproject.toml" "$ROOT/uv.lock" "$ROOT/README.md" "$ROOT/LICENSE" "$STAGE/"
 rsync -a --exclude '__pycache__' --exclude '*.pyc' "$ROOT/src" "$STAGE/"
+# The commit the bundle is built from, which an installed bundle cannot ask git for: a notebook folder's
+# requirements.txt pins it, when it is on GitHub and the package has no uncommitted changes (notebook.source_version).
+COMMIT=$(git -C "$ROOT" rev-parse HEAD)
+UNCOMMITTED=$([ -n "$(git -C "$ROOT" status --porcelain -- src/mcp_bindingdb)" ] && echo true || echo false)
+PUBLISHED=$([ -n "$(git -C "$ROOT" branch -r --contains "$COMMIT" 2>/dev/null)" ] && echo true || echo false)
+printf '{"commit": "%s", "uncommitted_changes": %s, "published": %s}\n' "$COMMIT" "$UNCOMMITTED" "$PUBLISHED" \
+  > "$STAGE/src/mcp_bindingdb/_build.json"
+[ "$UNCOMMITTED" = false ] && [ "$PUBLISHED" = true ] || echo "Note: commit ${COMMIT:0:12} is not on GitHub or src/ has \
+uncommitted changes, so notebooks made with this bundle will carry a copy of the package" >&2
 
 npx -y @anthropic-ai/mcpb@2 validate "$STAGE/manifest.json"
 rm -f "$OUT"  # a new file rather than an overwrite, so its creation date (which Finder shows) is the build's
