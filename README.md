@@ -42,10 +42,11 @@ the left sidebar → **mcp-bindingdb**, or in the chat's tools menu.
 
 ## Updating
 
-**BindingDB data.** BindingDB publishes a new release every month. Ask Claude **"Update the BindingDB
-database"**: it checks bindingdb.org and, if you agree, downloads the new release (about 260 MB) and builds
-it in the background, in about half an hour, with about 3 GB of free disk space. Claude keeps answering from
-the current release meanwhile; ask again to see how far the build has got. When it is done, quit and reopen
+**BindingDB data.** BindingDB publishes a new release every month. Ask **"BindingDB version?"** to see which
+release you have and whether a newer one is out. To update, ask Claude **"Update the BindingDB database"**:
+it checks bindingdb.org and, if you agree, downloads the new release (about 260 MB) and builds it in the
+background, in about half an hour, with about 3 GB of free disk space. Claude keeps answering from the
+current release meanwhile; ask **"Build status?"** to see how far the build has got. When it is done, quit and reopen
 Claude Desktop to switch to the new release; the old release's files are then deleted.
 
 **mcp-bindingdb.** To install a new version, download
