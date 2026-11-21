@@ -2,7 +2,7 @@
   "manifest_version": "0.4",
   "name": "mcp-bindingdb",
   "display_name": "mcp-bindingdb",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Query BindingDB's 3.2 million measured protein-ligand binding affinities: compounds, targets, structure searches, SAR and PDB binding-site overlays.",
   "long_description": "Answers questions about BindingDB from a local copy of the database. On first use the server builds that copy on your computer: it downloads BindingDB's dump (about 260 MB) from bindingdb.org and converts it in the background, in about half an hour, into your user data folder (1.8 GB). BindingDB publishes a new release every month; ask Claude to update the database to build it. Until it is done, the tools say how far it has got. Includes substructure and similarity search (RDKit), IUPAC-name parsing (OPSIN, with its own Java runtime), a structure editor, PDB binding-site overlays, transcripts and Jupyter notebooks of your sessions.",
   "author": {
