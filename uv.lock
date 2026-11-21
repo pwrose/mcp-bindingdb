@@ -717,7 +717,7 @@ cli = [
 
 [[package]]
 name = "mcp-bindingdb"
-version = "0.1.3"
+version = "0.1.4"
 source = { editable = "." }
 dependencies = [
     { name = "duckdb" },

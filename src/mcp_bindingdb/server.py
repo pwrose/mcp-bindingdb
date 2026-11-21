@@ -49,6 +49,8 @@ Workflow: resolve names to ids first (search_compounds / search_targets), then u
 find_ligands_for_target, find_targets_for_compound, get_compound, get_target, get_activity.
 chemical_name_to_smiles turns any compound name (trade name, IUPAC name, CAS number) into a structure
 and the BindingDB compounds with that structure, also when the name is not a BindingDB synonym.
+When the user names a compound, resolve it with search_compounds or chemical_name_to_smiles; never write
+its SMILES from memory (a SMILES recalled from memory can have wrong atoms or stereochemistry).
 Requests to draw, sketch or edit a structure, molecule or compound, or for a structure editor or sketcher
 ("edit structure", "draw a molecule"), mean open_structure_editor: open it directly, with initial_query
 when they name a compound, rather than asking what kind of structure they mean.
