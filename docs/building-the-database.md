@@ -25,7 +25,24 @@ The script runs `python -m mcp_bindingdb.builder` (`src/mcp_bindingdb/builder/`)
 5. computes compound properties (`builder/compound_properties.py`, below);
 6. builds the structure-search index (`builder/structure_index.py`, below).
 
-On 10 cores it takes about 25 minutes, nearly all of it RDKit (steps 4 to 6). Progress goes to
+On 10 cores it takes about 25 minutes, nearly all of it RDKit (steps 4 to 6). Measured on an Apple M1 Max
+(10 cores, all used, foreground) for release 202611 on 2026-11-20:
+
+| Step | Time |
+|---|---|
+| 1. Download (261 MB) | 70 s (depends on the connection) |
+| 2. Load into DuckDB | 17 s |
+| 3. Query tables | 3 s |
+| 4. InChIKeys | 3.7 min |
+| 5. Compound properties | 19.7 min |
+| 6. Structure-search index | 1.5 min |
+| Total | 26.4 min |
+
+The server's own build runs at low priority with one core left free, so it takes a little longer (24.8 min
+wall time for release 202610 on the same machine, with other work running). Time grows with fewer cores,
+roughly in proportion for steps 4 to 6. Each build records its step times and the machine it ran on
+(cores, workers, background or not) in `build-<release>.json` (`step_seconds`, `build_seconds`, `machine`),
+and `update_database` quotes the last build's time as the estimate for the next. Progress goes to
 `data/build-<release>.json` and the log to the terminal. A build that stops resumes where it ended: the
 download continues and finished steps are skipped. The file is built as `bindingdb_<release>.duckdb.building`
 and renamed when complete, so a running server keeps using the old file until it is restarted.
@@ -37,8 +54,9 @@ Options:
 | `--release YYYYMM` | BindingDB release to build (default 202610, `builder.DEFAULT_RELEASE`) |
 | `--workers N` | Worker processes for the RDKit steps (default: all CPUs) |
 
-For release 202610, `data/` holds about 2.4 GB afterwards: the downloaded dump (0.26 GB, kept for
-rebuilds), the database (1.3 GB) and the structure-search index (0.85 GB).
+For release 202611, a build holds about 2.1 GB afterwards: the downloaded dump (0.26 GB, kept in `data/`
+for rebuilds, deleted by the server's own build), the database (0.96 GB) and the structure-search index
+(0.86 GB). A database changed in place by the scripts below grows (1.4 GB for the 202610 copy in `data/`).
 
 The server uses the file given with `--db PATH` or `$BINDINGDB_DUCKDB`, else the newest
 `data/bindingdb_*.duckdb`, else the database it builds on first use (below).
@@ -58,8 +76,45 @@ instead of starting another, and a build that stopped resumes the next time a to
 log is `build-<release>.log` in the data folder. The dump is deleted after a successful build. Notebook
 reruns (`Replay`) build the database the same way when they find none, and wait for it.
 
-Each version of the server builds one release, so its results and notebooks stay reproducible. A new
-release is built under a new file name; delete old `bindingdb_*` files from the data folder by hand.
+## Updating to a newer release
+
+BindingDB publishes a release every month, named by year and month (`202611`), with the dump at
+`https://www.bindingdb.org/rwd/bind/BDB-mySQL_All_<release>_dmp.zip`. `DEFAULT_RELEASE` in
+`src/mcp_bindingdb/builder/__init__.py` is the release a new installation builds first; after that the
+server uses the newest complete release in its folder (a database with its `.sslib` index).
+
+**From a chat.** `update_database` finds the newest release on bindingdb.org (it tries this month's dump
+and the three before, newest first, with HEAD requests), reports it with its download size, and with
+`start=true`, which the model sends only after the user agrees, starts the same background build as on
+first use, in the folder of the loaded database. The loaded database stays open and answers meanwhile;
+calling the tool again reports the build's progress, or that it is done. The new release is used from the
+next server start (quitting and reopening Claude Desktop), which then deletes the older releases' files
+(database, index, status, log, lock and dump) from the user data folder, skipping a release whose build is
+still running. A build that stopped (the computer slept, the app quit) resumes at the next server start.
+This works in the user data folder and in a clone's `data/` (which the server reads the newest complete
+database from, and where nothing is deleted); a database named with `--db` or `$BINDINGDB_DUCKDB` is
+updated by hand.
+
+**By hand.** In a clone, `scripts/build_duckdb.sh --release 202611` builds a release into `data/`, and the
+server uses the newest complete one at its next start. Delete older `data/bindingdb_*` files when you no
+longer need them.
+
+**A new version of the server with a newer `DEFAULT_RELEASE`** builds it the same way, in the background,
+answering from the newest older complete release meanwhile; its instructions tell the model so. A notebook
+rerun does not fall back to an older release: it waits for the build.
+
+## Database format
+
+The builder records `db_format` in `_build_info`: `DB_FORMAT` in `src/mcp_bindingdb/builder/__init__.py`,
+the layout of the tables and columns the server reads (databases built before it was recorded count as 1).
+A version of the server that changes the layout bumps it. At its first start, the server then rebuilds the
+newest release in the user data folder, the same release so that results stay comparable: it deletes that
+release's old database, index and build status, and builds it again in the background (about half an hour,
+downloading the dump again), with the usual progress messages, worded as a one-time rebuild. A usable release
+of the current layout, if there is one, answers meanwhile; an old layout is not used, since this version's
+tools may fail on it. A database in a clone's `data/` or named with `--db` or `$BINDINGDB_DUCKDB` is not
+rebuilt: the server's instructions then say it is of an older layout, and `scripts/build_duckdb.sh` rebuilds
+it (delete the old file first, or build another release).
 
 ## Claude Desktop bundle
 
@@ -67,7 +122,7 @@ release is built under a new file name; delete old `bindingdb_*` files from the 
 [MCP bundle](https://github.com/modelcontextprotocol/mcpb) of about 4 MB (needs Node.js). It holds the
 source, `pyproject.toml`, `uv.lock` and `bundle/manifest.json`, and no database or Python environment.
 Claude Desktop runs it with uv (manifest server type `uv`), which installs the `substructure`,
-`structures` and `name` extras from the lock file, and the server builds the database on first use as above.
+`structures` and `opsin` extras from the lock file, and the server builds the database on first use as above.
 
 Claude Desktop installs only from wheels in practice (no compilers on users' computers), so every locked
 package needs a wheel for each platform. `[tool.uv]` in `pyproject.toml` lists the platforms
@@ -148,7 +203,7 @@ version, the server runs without the two structure-search tools.
 ## Name-to-structure lookup
 
 `chemical_name_to_smiles` parses systematic (IUPAC) names with [OPSIN](https://github.com/dan2097/opsin),
-through the optional `name` extra ([pyopsin](https://pypi.org/project/pyopsin/), which bundles the OPSIN
+through the optional `opsin` extra ([pyopsin](https://pypi.org/project/pyopsin/), which bundles the OPSIN
 jar, and [jdk4py](https://pypi.org/project/jdk4py/), a Java runtime packaged as a Python wheel of about
 30 MB, so no installed Java is needed; without jdk4py, an installed Java is used). Without the extra the
 tool still uses BindingDB synonyms and PubChem. It needs no build step.

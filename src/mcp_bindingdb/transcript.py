@@ -15,6 +15,7 @@ UNLOGGED_TOOLS = {"describe_tables", "create_transcript", "transcript_to_html", 
                   "create_jupyter_notebook",
                   "draw_structure_grid", "add_figure",  # figures are logged separately
                   "check_editor_shown",  # opening the editor, not data
+                  "update_database",  # the database itself, not data from it
                   "editor_search", "editor_opened", "figure_image", "overlay_data", "open_overlay_viewer"}  # the panels' own calls; get_editor_results is logged
 
 

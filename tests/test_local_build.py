@@ -171,3 +171,229 @@ def test_transcripts_of_a_first_use_build_go_to_documents(tmp_path, monkeypatch)
     assert _transcript_dir("  ", built) == documents
     assert _transcript_dir("~/results", built) == Path.home() / "results"
     assert _transcript_dir(None, tmp_path / "repo" / "data" / "bindingdb_202610.duckdb") is None  # a clone's data/
+
+
+def _release_files(folder, release, complete=True, db_format=None):
+    """Stand-ins for a release's files: database (with its _build_info) and index when complete, else a status file
+    and a partial dump. `db_format` None: not recorded, as in databases built before it was."""
+    folder.mkdir(parents=True, exist_ok=True)
+    names = ([f"bindingdb_{release}.duckdb", f"bindingdb_{release}.sslib", f"build-{release}.json",
+              f"build-{release}.log", f".build-{release}.lock"] if complete
+             else [f"build-{release}.json", f"BDB-mySQL_All_{release}_dmp.zip.part"])
+    for name in names:
+        if name.endswith(".duckdb"):
+            con = duckdb.connect(str(folder / name))
+            con.execute("CREATE TABLE _build_info (key VARCHAR, value VARCHAR)")
+            con.execute("INSERT INTO _build_info VALUES ('release', ?)", [release])
+            if db_format is not None:
+                con.execute("INSERT INTO _build_info VALUES ('db_format', ?)", [str(db_format)])
+            con.close()
+        else:
+            (folder / name).write_bytes(b"x")
+    return [folder / name for name in names]
+
+
+def _no_clone_database(monkeypatch, folder):
+    monkeypatch.setenv("MCP_BINDINGDB_DATA_DIR", str(folder))
+    monkeypatch.delenv("BINDINGDB_DUCKDB", raising=False)
+    monkeypatch.setattr(local_build, "find_database", lambda: (_ for _ in ()).throw(FileNotFoundError()))
+
+
+def test_server_answers_from_the_previous_release_while_the_new_one_builds(tmp_path, monkeypatch):
+    folder = tmp_path / "data"
+    _no_clone_database(monkeypatch, folder)
+    _release_files(folder, "202512")
+    _release_files(folder, "202601")
+    _release_files(folder, "202610", complete=False)
+    started = []
+    monkeypatch.setattr(local_build.LocalBuild, "start", lambda self: started.append(self.release))
+
+    path, build = local_build.locate(use_previous=True)
+    assert path == folder / "bindingdb_202601.duckdb"  # the newest complete older release
+    assert build is not None and build.database == folder / "bindingdb_202610.duckdb"
+    if local_build.rdkit_available():
+        assert started == ["202610"]
+    assert (folder / "bindingdb_202512.duckdb").is_file()  # nothing is deleted until the new release is done
+
+    path, build = local_build.locate()  # a notebook rerun waits for the release this version builds
+    assert path == folder / "bindingdb_202610.duckdb" and build.database == path
+    assert "to replace release 202601" in build.message()
+
+
+def test_older_releases_are_removed_once_the_new_one_is_complete(tmp_path, monkeypatch):
+    folder = tmp_path / "data"
+    _no_clone_database(monkeypatch, folder)
+    old = _release_files(folder, "202512") + _release_files(folder, "202601", complete=False)
+    current = _release_files(folder, "202610")
+    newer = _release_files(folder, "202701", complete=False)  # an update that stopped (e.g. the computer slept)
+    (folder / "transcripts").mkdir()
+    (folder / "notes.txt").write_text("mine")
+    started = []
+    monkeypatch.setattr(local_build.LocalBuild, "start", lambda self: started.append(self.release))
+
+    assert local_build.locate(use_previous=True) == (folder / "bindingdb_202610.duckdb", None)
+    assert not any(p.exists() for p in old)
+    assert all(p.exists() for p in current + newer)
+    if local_build.rdkit_available():
+        assert started == ["202701"]  # the stopped update is resumed
+    assert (folder / "transcripts").is_dir() and (folder / "notes.txt").is_file()
+
+
+def test_a_release_still_being_built_is_not_removed(tmp_path):
+    folder = tmp_path / "data"
+    building = _release_files(folder, "202601", complete=False)
+    _release_files(folder, "202610")
+    with pipeline.lock(pipeline.lock_path(folder, "202601")):
+        assert local_build.remove_old_releases(folder, "202610") == []
+    assert all(p.exists() for p in building)
+    assert len(local_build.remove_old_releases(folder, "202610")) == 3  # status, partial dump and lock file
+
+
+def test_instructions_say_a_newer_release_is_being_built(tmp_path):
+    path = tmp_path / "bindingdb_202601.duckdb"
+    con = duckdb.connect(str(path))
+    con.execute("CREATE TABLE _build_info AS SELECT 'release' AS key, '202601' AS value")
+    con.close()
+    db = Database(path)
+    assert "being built" not in build_server(db, transcript_dir=tmp_path / "t").instructions
+    instructions = build_server(db, transcript_dir=tmp_path / "t", building_release="202610").instructions
+    assert "release 202610 is being built" in instructions and "answer from release 202601" in instructions
+
+
+def test_the_newest_complete_release_is_used(tmp_path, monkeypatch):
+    folder = tmp_path / "data"
+    _no_clone_database(monkeypatch, folder)
+    old = _release_files(folder, "202610")
+    _release_files(folder, "202611")  # built by update_database
+    assert local_build.locate() == (folder / "bindingdb_202611.duckdb", None)
+    assert not any(p.exists() for p in old)
+
+
+def test_latest_release_tries_this_month_and_the_ones_before(monkeypatch):
+    from datetime import date
+
+    asked = []
+
+    def size(release):
+        asked.append(release)
+        return {"202610": 257_801_530, "202609": 251_842_538}.get(release)
+
+    monkeypatch.setattr(local_build, "release_size", size)
+    assert local_build.latest_release(date(2026, 11, 20)) == ("202610", 257_801_530)
+    assert asked == ["202611", "202610"]
+    asked.clear()
+    assert local_build.latest_release(date(2027, 1, 2), months=2) is None and asked == ["202701", "202612"]
+
+
+def _database(path, release):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    con = duckdb.connect(str(path))
+    con.execute(f"CREATE TABLE _build_info AS SELECT 'release' AS key, '{release}' AS value")
+    con.close()
+    path.with_suffix(".sslib").write_bytes(b"x")
+    return Database(path)
+
+
+async def test_update_database(tmp_path, monkeypatch):
+    folder = tmp_path / "data"
+    db = _database(folder / "bindingdb_202610.duckdb", "202610")
+    monkeypatch.setattr(local_build, "latest_release", lambda: ("202611", 260_827_759))
+    from mcp_bindingdb import substructure
+
+    monkeypatch.setattr(substructure, "rdkit_available", lambda: True)  # as in the bundle
+    monkeypatch.setattr(local_build, "rdkit_available", lambda: True)
+    started = []
+    monkeypatch.setattr(local_build.LocalBuild, "start", lambda self: started.append(self.release))
+
+    async def update(server, **args):
+        async with Client(server) as client:
+            result = await client.call_tool("update_database", args)
+        assert not result.is_error, result.content
+        return result.structured_content
+
+    fixed = await update(build_server(db, transcript_dir=tmp_path / "t"))  # a database named in the configuration
+    assert "cannot update it itself" in fixed["message"]
+
+    server = build_server(db, transcript_dir=tmp_path / "t", update_folder=folder)
+    found = await update(server)
+    assert found["latest_release"] == "202611" and found["download_mb"] == 261 and "Ask the user" in found["message"]
+    assert not started
+    building = await update(server, start=True)
+    assert started == ["202611"] and building["building_release"] == "202611"
+
+    _release_files(folder, "202611")  # the build finishes
+    ready = await update(server)
+    assert ready["ready_release"] == "202611" and "quit and reopen" in ready["message"].lower()
+
+    monkeypatch.setattr(local_build, "latest_release", lambda: ("202610", 257_801_530))
+    current = await update(build_server(db, transcript_dir=tmp_path / "t", update_folder=tmp_path / "other"))
+    assert "up to date" in current["message"]
+
+
+def test_db_format(tmp_path):
+    folder = tmp_path / "data"
+    _release_files(folder, "202610")
+    _release_files(folder, "202611", db_format=2)
+    (folder / "bindingdb_202612.duckdb").write_bytes(b"not a database")
+    assert local_build.db_format(folder / "bindingdb_202610.duckdb") == 1  # not recorded: the first layout
+    assert local_build.db_format(folder / "bindingdb_202611.duckdb") == 2
+    assert local_build.db_format(folder / "bindingdb_202612.duckdb") == 0
+
+
+def test_a_database_of_an_older_layout_is_rebuilt(tmp_path, monkeypatch):
+    folder = tmp_path / "data"
+    _no_clone_database(monkeypatch, folder)
+    monkeypatch.setattr(local_build, "DB_FORMAT", 2)  # as if this version changed the layout
+    _release_files(folder, "202611")  # format 1, updated to after DEFAULT_RELEASE
+    started = []
+    monkeypatch.setattr(local_build.LocalBuild, "start", lambda self: started.append(self.release))
+
+    path, build = local_build.locate(use_previous=True)
+    assert path == folder / "bindingdb_202611.duckdb" and build is not None and build.rebuild
+    assert build.database == path and not path.exists()  # the same release, built again from the start
+    assert not (folder / "bindingdb_202611.sslib").exists() and not (folder / "build-202611.json").exists()
+    if local_build.rdkit_available():
+        assert started == ["202611"]
+    assert "rebuilt on this computer for this version" in build.message()
+
+    _release_files(folder, "202611", db_format=2)  # the rebuild finishes
+    assert local_build.locate(use_previous=True) == (path, None)
+
+
+def test_a_usable_release_answers_while_an_older_layout_is_rebuilt(tmp_path, monkeypatch):
+    folder = tmp_path / "data"
+    _no_clone_database(monkeypatch, folder)
+    monkeypatch.setattr(local_build, "DB_FORMAT", 2)
+    _release_files(folder, "202610", db_format=2)
+    _release_files(folder, "202611")  # format 1
+    monkeypatch.setattr(local_build.LocalBuild, "start", lambda self: None)
+    path, build = local_build.locate(use_previous=True)
+    assert path == folder / "bindingdb_202610.duckdb" and build.release == "202611" and build.rebuild
+
+
+def test_instructions_warn_about_an_older_layout(tmp_path, monkeypatch):
+    from mcp_bindingdb import server
+
+    db = _database(tmp_path / "bindingdb_202610.duckdb", "202610")
+    assert "older version of mcp-bindingdb" not in build_server(db, transcript_dir=tmp_path / "t").instructions
+    monkeypatch.setattr(server, "DB_FORMAT", 2)
+    assert "older version of mcp-bindingdb" in build_server(db, transcript_dir=tmp_path / "t").instructions
+
+
+def test_build_times_are_recorded_and_used_for_estimates(tmp_path):
+    folder = tmp_path / "data"
+    folder.mkdir()
+    assert local_build.build_time(folder) == "about half an hour"
+    status = pipeline.Status(folder, "202610", pipeline.machine_info(9, True))
+    for key, seconds in [("download", 70), ("load", 17), ("derived", 3), ("inchikeys", 220),
+                         ("properties", 1100), ("index", 90)]:
+        status.step(key)
+        status.finish_step(key, seconds)
+    status.end("done")
+    recorded = pipeline.read_status(folder, "202610")
+    assert recorded["build_seconds"] == 1500 and recorded["step_seconds"]["inchikeys"] == 220
+    assert recorded["machine"]["workers"] == 9 and recorded["machine"]["background"] is True
+    assert local_build.build_time(folder).startswith("about 25 minutes (as long as the last build")
+
+    resumed = pipeline.Status(folder, "202610")  # a resumed run keeps the steps already timed
+    assert resumed.data["step_seconds"]["properties"] == 1100

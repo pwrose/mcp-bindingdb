@@ -22,7 +22,8 @@ class QueryError(Exception):
 
 
 def find_database() -> Path:
-    """Resolve the DuckDB file: $BINDINGDB_DUCKDB, else the newest data/bindingdb_*.duckdb."""
+    """Resolve the DuckDB file: $BINDINGDB_DUCKDB, else the newest data/bindingdb_*.duckdb that has its structure
+    index (a newer one may still be being built), else the newest data/bindingdb_*.duckdb."""
     env = os.environ.get("BINDINGDB_DUCKDB")
     if env:
         path = Path(env).expanduser()
@@ -35,7 +36,8 @@ def find_database() -> Path:
         raise FileNotFoundError(
             f"No bindingdb_*.duckdb in {data_dir}; run scripts/build_duckdb.sh or set BINDINGDB_DUCKDB"
         )
-    return candidates[-1]
+    indexed = [c for c in candidates if c.with_suffix(".sslib").is_file()]
+    return (indexed or candidates)[-1]
 
 
 def order_warning(keys: list[str] | None, rows: list[dict[str, Any]]) -> str | None:

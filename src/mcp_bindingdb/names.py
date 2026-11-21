@@ -1,6 +1,6 @@
 """Chemical name to structure with OPSIN (systematic IUPAC names, offline) and PubChem (any name, network).
 
-OPSIN is optional: install it with the `name` extra (pyopsin, which bundles the OPSIN jar and runs it
+OPSIN is optional: install it with the `opsin` extra (pyopsin, which bundles the OPSIN jar and runs it
 in-process through JPype, and jdk4py, a Java runtime packaged for Python, so no installed Java is needed;
 without jdk4py an installed Java is used). The JVM starts on the first OPSIN lookup (about 1 s).
 """
@@ -23,7 +23,7 @@ try:
     import jpype
     import jpype.config
     from pyopsin.jar import packaged_jar_path
-except ImportError:  # the `name` extra is not installed
+except ImportError:  # the `opsin` extra is not installed
     jpype = None
 try:
     import jdk4py

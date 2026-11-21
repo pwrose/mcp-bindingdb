@@ -29,7 +29,7 @@ from pydantic import BaseModel, Field
 from . import depict, figures, local_build, names, notebook, sar, structures, substructure, transcript
 from . import transcript_html
 from . import properties as compound_properties
-from .builder import DEFAULT_RELEASE
+from .builder import DB_FORMAT, DEFAULT_RELEASE
 from .db import Database, QueryError, order_warning
 from .structure_editor import (FIGURE_META, OVERLAY_META, UI_EXTENSION, EditorSearches,
                                add_editor_check_tool, add_editor_results_tool,
@@ -60,6 +60,8 @@ the computer it runs on were asleep, offline or disconnected. It is not: the cha
 starting. Then do not mention the computer, the app or a connection; reply with exactly: "The editor didn't
 open on the first try, which can happen in a new chat. Please send your request again."
 Use run_sql for anything the curated tools do not cover; call describe_tables first.
+BindingDB publishes a new release every month. When the user asks to update the database or for the newest
+data, or asks which release this is, call update_database.
 
 Data notes:
 - Ki/Kd/IC50/EC50 values are in nM; kon in M^-1 s^-1; koff in s^-1. p_affinity = 9 - log10(nM).
@@ -457,10 +459,13 @@ class PendingIndex:
 
 
 def build_server(db: Database, index: substructure.SubstructureIndex | None = None,
-                 network: bool = True, transcript_dir: Path | None = None) -> BindingDBServer:
+                 network: bool = True, transcript_dir: Path | None = None,
+                 building_release: str | None = None, update_folder: Path | None = None) -> BindingDBServer:
     """`index` enables substructure_search and similarity_search (see load_substructure_index);
     `network` lets chemical_name_to_smiles ask PubChem; HTML transcripts are written to `transcript_dir`
-    (default: transcripts/ next to the database)."""
+    (default: transcripts/ next to the database); `building_release` is a newer release being built in the
+    background while `db` (the previous one) answers; update_database builds newer releases in `update_folder`
+    (None: the database was named with --db or $BINDINGDB_DUCKDB, and is updated by hand)."""
     info = db.build_info()
     has_properties = "properties" in info  # compound_property (scripts/compute_properties.py)
     # Not logged here (BindingDBServer.call_tool) but where the assistant fetches it: get_editor_results.
@@ -469,14 +474,22 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
     mcp = BindingDBServer(
         name="mcp-bindingdb",
         extensions=[create_editor_extension(network=network, searches=editor_searches)],
-        title="BindingDB",
+        title="mcp-bindingdb",
         version=VERSION,
         instructions=INSTRUCTIONS + (STRUCTURE_INSTRUCTIONS if index else "")
         + (PDB_INSTRUCTIONS if structures.available() else "")
         + (PROPERTY_INSTRUCTIONS if has_properties else "")
         + (SAR_INSTRUCTIONS if sar.available() else "")
         + IMAGE_INSTRUCTIONS + (FIGURE_INSTRUCTIONS if depict.available() else "")
-        + f"\nLoaded release: {info.get('release', 'unknown')}.",
+        + f"\nLoaded release: {info.get('release', 'unknown')}."
+        + (f"\nThis database was built by an older version of mcp-bindingdb (database layout "
+           f"{info.get('db_format', '1')}, this version needs {DB_FORMAT}), so some tools may fail on it. If they do, "
+           "tell the user to rebuild it with scripts/build_duckdb.sh."
+           if str(info.get("db_format", "1")) != str(DB_FORMAT) else "")
+        + (f"\nBindingDB release {building_release} is being built on this computer in the background (about "
+           f"half an hour); until it is done and Claude is restarted, the tools answer from release "
+           f"{info.get('release', 'unknown')}. Tell the user once, when they first ask about the data or the "
+           "release." if building_release else ""),
     )
 
     def run(sql: str, params: list[Any] | None = None, limit: int = 100) -> dict[str, Any]:
@@ -979,6 +992,69 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
         except QueryError as e:
             raise ToolError(str(e)) from None
         return {"table": table, "description": TABLE_DOCS.get(table, ""), "columns": cols, "sample_rows": sample}
+
+    @mcp.tool(annotations=ToolAnnotations(readOnlyHint=False, destructiveHint=False, openWorldHint=True))
+    def update_database(
+        start: Annotated[bool, Field(description="Start building the newest release. Only after the user has "
+                                     "agreed to it, having been told the download size and time")] = False,
+    ) -> dict[str, Any]:
+        """Check bindingdb.org for a BindingDB release newer than the loaded one (BindingDB publishes one every
+        month), and with start=true build it on this computer: it downloads the release (about 260 MB) and
+        builds the database and structure-search index in the background, in about half an hour, with about
+        3 GB of free disk space. The tools keep answering from the loaded release meanwhile; once the build is
+        done, the user quits and reopens Claude to switch to it, and the older release's files are deleted then.
+        Call it without start first, tell the user what it found, and start only if they agree. Also reports
+        on a build that is running or done."""
+        loaded = db.build_info().get("release") or "unknown"
+        out: dict[str, Any] = {"loaded_release": loaded}
+        if update_folder is None:
+            out["message"] = ("This server uses a database named in its configuration (--db or BINDINGDB_DUCKDB), "
+                              "so it cannot update it itself. Build a newer release with scripts/build_duckdb.sh "
+                              "--release <YYYYMM> in an mcp-bindingdb clone and point the configuration at it.")
+            return out
+        newer = [r for r in local_build.current_releases(update_folder) if r > loaded]
+        if newer:
+            out.update(ready_release=newer[-1], message=f"Release {newer[-1]} is built and ready. Quit and reopen "
+                       "Claude (closing the window is not enough) to switch to it; the older release's files are "
+                       "deleted then.")
+            return out
+        if (pending := local_build.unfinished_release(update_folder, loaded)) is not None:
+            build = local_build.LocalBuild(update_folder, pending)
+            if build.running() or start:
+                build.start()
+                out.update(building_release=pending, message=build.message())
+                return out
+        if not network:
+            raise ToolError("This server runs without network access (--no-network), so it cannot check "
+                            "bindingdb.org for a newer release.")
+        try:
+            latest = local_build.latest_release()
+        except OSError as e:
+            raise ToolError(f"Could not reach bindingdb.org to look for a newer release: {e}") from None
+        if latest is None:
+            raise ToolError("Found no BindingDB release on bindingdb.org for the last few months.")
+        release, size = latest
+        out.update(latest_release=release, download_mb=round(size / 1e6))
+        if release <= loaded:
+            out["message"] = f"Release {loaded} is the newest; the database is up to date."
+            return out
+        if not start:
+            out["message"] = (f"Release {release} is available (the loaded release is {loaded}). Updating downloads "
+                              f"{size / 1e6:.0f} MB and builds the new database in the background, in "
+                              f"{local_build.build_time(update_folder)}, with about 3 GB of free disk space; the "
+                              "tools keep working meanwhile. Ask the user, and call update_database(start=true) if "
+                              "they agree.")
+            return out
+        if not substructure.rdkit_available():
+            raise ToolError("The update needs RDKit (uv's --extra substructure), which this server does not have.")
+        free = shutil.disk_usage(update_folder).free
+        if free < 4e9:
+            raise ToolError(f"Only {free / 1e9:.1f} GB is free in {update_folder}; the update needs about 3 GB "
+                            "(4 GB to be safe). Tell the user.")
+        build = local_build.LocalBuild(update_folder, release)
+        build.start()
+        out.update(building_release=release, message=build.message())
+        return out
 
     @mcp.tool(annotations=READ_ONLY)
     def run_sql(
@@ -2798,7 +2874,11 @@ def main() -> None:
                    "for the database built in the user data folder)")
     args = p.parse_args()
 
-    db_path, pending = local_build.locate(args.db)
+    db_path, pending = local_build.locate(args.db, use_previous=True)
+    building_release = None
+    if pending is not None and db_path != pending.database:  # the previous release answers meanwhile
+        building_release, pending = pending.release, None
+    update_folder = None if args.db or os.environ.get("BINDINGDB_DUCKDB") else db_path.parent
     if pending is None:
         db = Database(db_path, timeout_s=args.timeout)
     else:  # being built: open the database on first use, once it is there
@@ -2813,7 +2893,11 @@ def main() -> None:
         if index is not None:  # loading takes several seconds; start now so the first search does not wait
             threading.Thread(target=index.preload, daemon=True).start()
     server = build_server(db, index, network=not args.no_network,
-                          transcript_dir=_transcript_dir(args.transcript_dir, db_path))
+                          transcript_dir=_transcript_dir(args.transcript_dir, db_path),
+                          building_release=building_release or (
+                              local_build.unfinished_release(update_folder, db.build_info().get("release") or "")
+                              if pending is None and update_folder is not None else None),
+                          update_folder=update_folder)
     if args.transport == "stdio":
         server.run("stdio")
     else:

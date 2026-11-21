@@ -11,6 +11,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import platform
 import sys
 import time
 import urllib.request
@@ -84,15 +85,17 @@ def is_locked(path: Path) -> bool:
 
 
 class Status:
-    """build-<release>.json: the current step, its progress, the finished steps and any error."""
+    """build-<release>.json: the current step, its progress, the finished steps and any error; and, to estimate
+    build times, how long each step took (step_seconds, kept across resumed runs) on what machine."""
 
-    def __init__(self, folder: Path, release: str) -> None:
+    def __init__(self, folder: Path, release: str, machine: dict[str, Any] | None = None) -> None:
         self.path = status_path(folder, release)
         previous = read_status(folder, release)
         self.data: dict[str, Any] = {"release": release, "state": "running", "pid": os.getpid(),
                                      "started_at": time.time(), "steps": [s[0] for s in STEPS],
                                      "done_steps": previous.get("done_steps", []), "step": None,
-                                     "done": 0, "total": 0, "error": None}
+                                     "done": 0, "total": 0, "error": None,
+                                     "step_seconds": previous.get("step_seconds", {}), "machine": machine or {}}
         self._written = 0.0
         self._write()
 
@@ -112,14 +115,26 @@ class Status:
         if time.monotonic() - self._written >= 1.0 or done >= total:
             self._write()
 
-    def finish_step(self, key: str) -> None:
+    def finish_step(self, key: str, seconds: float | None = None) -> None:
         if key not in self.data["done_steps"]:
             self.data["done_steps"].append(key)
+        if seconds is not None:
+            self.data["step_seconds"][key] = round(seconds, 1)
         self._write()
 
     def end(self, state: str, error: str | None = None) -> None:
         self.data.update(state=state, error=error, step=None if state == "done" else self.data["step"])
+        if state == "done":
+            self.data["build_seconds"] = round(sum(self.data["step_seconds"].values()), 1)
         self._write()
+
+
+def machine_info(workers: int | None, background: bool) -> dict[str, Any]:
+    """What a build ran on, recorded with its step times."""
+    return {"system": platform.system(), "release": platform.release(), "machine": platform.machine(),
+            "processor": platform.processor(), "cpu_count": os.cpu_count(),
+            "workers": workers or os.cpu_count(), "background": background,
+            "python": platform.python_version(), "duckdb": duckdb.__version__}
 
 
 def sha256(path: Path) -> str:
@@ -160,10 +175,10 @@ def download(url: str, dest: Path, progress: Callable[[int, int], None]) -> None
 
 
 def build(release: str, folder: Path, workers: int | None = None, keep_zip: bool = False,
-          log: Callable[[str], None] = print) -> Path:
+          log: Callable[[str], None] = print, background: bool = False) -> Path:
     """Build bindingdb_<release>.duckdb and its .sslib index in `folder`; returns the database path.
     Raises AlreadyRunning if another process is building the release."""
-    from . import compound_properties, derived, inchikeys, mysqldump, structure_index
+    from . import DB_FORMAT, compound_properties, derived, inchikeys, mysqldump, structure_index
 
     folder.mkdir(parents=True, exist_ok=True)
     held = lock(lock_path(folder, release))
@@ -175,7 +190,7 @@ def build(release: str, folder: Path, workers: int | None = None, keep_zip: bool
     zip_path = folder / f"BDB-mySQL_All_{release}_dmp.zip"
     url = SOURCE_URL.format(release=release)
     with held:
-        status = Status(folder, release)
+        status = Status(folder, release, machine_info(workers, background))
         done = status.data["done_steps"]
         if not building.is_file() and not target.is_file():
             done[:] = [s for s in done if s == "download"]  # nothing built yet: redo the database steps
@@ -192,7 +207,7 @@ def build(release: str, folder: Path, workers: int | None = None, keep_zip: bool
                     building.unlink(missing_ok=True)
                     con = duckdb.connect(str(building))
                     counts = mysqldump.load(zip_path, con, lambda d, t, _table: status.progress(d, t))
-                    info = {"release": release, "source_url": url, "source_zip": zip_path.name,
+                    info = {"release": release, "db_format": DB_FORMAT, "source_url": url, "source_zip": zip_path.name,
                             "source_zip_bytes": zip_path.stat().st_size, "source_zip_sha256": sha256(zip_path),
                             "built_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
                             "duckdb_version": duckdb.__version__,
@@ -214,11 +229,13 @@ def build(release: str, folder: Path, workers: int | None = None, keep_zip: bool
                     building.replace(target)  # usable from here on; the index follows
                 elif key == "index":
                     structure_index.build(target, index, workers, status.progress)
-                status.finish_step(key)
+                status.finish_step(key, time.time() - t0)
                 log(f"  done in {time.time() - t0:.0f}s")
             if not keep_zip:
                 zip_path.unlink(missing_ok=True)
             status.end("done")
+            log(f"Build time {status.data['build_seconds'] / 60:.1f} min: "
+                + ", ".join(f"{k} {v:.0f}s" for k, v in status.data["step_seconds"].items()))
         except BaseException as e:
             status.end("failed", f"{type(e).__name__}: {e}" if str(e) else type(e).__name__)
             raise
@@ -250,7 +267,7 @@ def main(argv: list[str] | None = None) -> int:
         print(f"[{datetime.now().strftime('%H:%M:%S')}] {line}", flush=True)
 
     try:
-        build(args.release, args.dir, workers, args.keep_zip, log)
+        build(args.release, args.dir, workers, args.keep_zip, log, background=args.background)
     except AlreadyRunning as e:
         print(e, file=sys.stderr)
         return 3

@@ -56,10 +56,11 @@ async def test_lists_all_tools(server):
         "add_figure", "open_structure_editor", "editor_pubchem_candidates", "editor_opened", "check_editor_shown", "editor_search", "get_editor_results",
         "figure_image",
         "exact_structure_search", "decompose_r_groups", "matched_molecular_pairs", "activity_cliffs",
-        "find_pdb_complexes", "overlay_binding_site", "overlay_data", "open_overlay_viewer",
+        "find_pdb_complexes", "overlay_binding_site", "overlay_data", "open_overlay_viewer", "update_database",
     }
     writes = {"reset_tool_log", "transcript_to_html", "create_transcript", "create_jupyter_notebook", "draw_structure_grid",
-              "draw_r_group_table", "add_figure", "overlay_binding_site"}  # write files
+              "draw_r_group_table", "add_figure", "overlay_binding_site",  # write files
+              "update_database"}  # builds a newer release
     assert all(t.annotations.read_only_hint for name, t in tools.items() if name not in writes)
 
 

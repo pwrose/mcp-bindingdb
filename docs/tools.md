@@ -12,6 +12,7 @@
 | `get_activity` | Full record of one measurement, with assay description and citation |
 | `describe_tables` | Table list with descriptions, or columns and sample rows of one table |
 | `run_sql` | Arbitrary read-only DuckDB SQL |
+| `update_database` | Checks bindingdb.org for a release newer than the loaded one and, with `start=true` (after the user agrees), builds it in the background next to the database; reports on a build that is running or done ([building-the-database.md](building-the-database.md#updating-to-a-newer-release)) |
 | `exact_structure_search` | BindingDB entries of the same molecule (all fragments, stereo, charges, isotopes), optionally only those with a measurement in an affinity range (needs RDKit, not the index) |
 | `substructure_search` | Compounds containing a SMILES/SMARTS fragment, optionally only those with a measurement in an affinity range, with given properties, or measured against a target; every target the matching compounds hit, with compounds per target; or a count of matches (needs the structure-search index) |
 | `similarity_search` | Compounds similar to a molecule (Tanimoto on Morgan fingerprints) above a threshold, with the same affinity, property and target filters and per-target summary (needs the structure-search index) |
@@ -37,8 +38,11 @@ All tools are read-only, except that `create_transcript`, `transcript_to_html`, 
 `draw_r_group_table` and `add_figure` write transcript and figure files (`add_figure` reads the image file it is given, and accepts only
 images). The database connection is opened read-only with file, network and extension access
 disabled and settings locked, so `run_sql` cannot write data or read anything outside the database.
-Queries time out after 30 s (`--timeout`). The only tool that uses the network is
-`chemical_name_to_smiles`, for PubChem; `--no-network` turns that off.
+Queries time out after 30 s (`--timeout`). `update_database` downloads a newer BindingDB release from
+bindingdb.org and builds it next to the database, in a separate process, only with `start=true`; it never
+changes the database the server has open. The tools that use the network are `chemical_name_to_smiles`
+(PubChem; `--no-network` turns that off), `overlay_binding_site` and `find_pdb_complexes` (PDBe, RCSB), and
+`update_database` (bindingdb.org; `--no-network` turns off its check).
 
 ## Deterministic results
 

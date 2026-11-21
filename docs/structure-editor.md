@@ -38,7 +38,7 @@ The check is skipped for clients that do not declare MCP Apps, and after the fir
 1. Check out this change in a separate working copy or branch, then install dependencies:
 
    ```bash
-   uv sync --extra substructure --extra name
+   uv sync --extra substructure --extra opsin
    ```
 
    All three search modes use RDKit. Substructure and similarity also need the existing `.sslib` index
@@ -46,7 +46,7 @@ The check is skipped for clients that do not declare MCP Apps, and after the fir
    `uv run --extra substructure python scripts/compute_inchikeys.py /path/to/bindingdb.duckdb` once
    on an existing database ([InChIKeys](building-the-database.md#inchikeys)). Reuse your existing database and index. If the index
    is missing, follow [Structure-search index](building-the-database.md#structure-search-index).
-   OPSIN is optional and uses the `name` extra described in that guide.
+   OPSIN is optional and uses the `opsin` extra described in that guide.
 
 2. Run the automated checks without downloading a BindingDB database:
 
@@ -64,7 +64,7 @@ The check is skipped for clients that do not declare MCP Apps, and after the fir
 3. Start the server with your existing database, initially as a test instance:
 
    ```bash
-   uv run --extra substructure --extra name mcp-bindingdb --db /path/to/bindingdb.duckdb
+   uv run --extra substructure --extra opsin mcp-bindingdb --db /path/to/bindingdb.duckdb
    ```
 
    Keep your existing Claude Desktop stdio configuration, or your authenticated remote MCP connection

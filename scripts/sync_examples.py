@@ -1,4 +1,4 @@
-"""Copy the example transcripts from the working folder into examples/ and rebuild its index and README.
+"""Copy the example transcripts from the working folder into examples/ and rebuild its index.
 
     python3 scripts/sync_examples.py                          # from ~/mcp-bindingdb-examples
     python3 scripts/sync_examples.py --source /path/to/folder
@@ -8,8 +8,8 @@
 The examples are written in Claude sessions into a working folder (default ~/mcp-bindingdb-examples, or the
 environment variable MCP_BINDINGDB_EXAMPLES) with one folder per level ('01-simple-lookups', ...) and one
 folder per example inside it. Syncing replaces examples/<level>/ with the working copy (examples removed
-there are removed here too), leaves out .DS_Store files, then writes examples/index.html and
-examples/README.md. Files other than the level folders, index.html and README.md are left alone.
+there are removed here too), leaves out .DS_Store files, then writes examples/index.html. Files other
+than the level folders and index.html are left alone.
 
 The index links each example page relatively, which htmlpreview.github.io rewrites to a rendered view. It
 does not rewrite links to other files (CSV, PNG, scripts), so in the repository those point at GitHub.
@@ -31,7 +31,6 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 EXAMPLES = ROOT / "examples"
 REPO_FILES_URL = "https://github.com/pwrose/mcp-bindingdb/blob/main/examples/"
-PREVIEW_URL = "https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/"
 IGNORE = shutil.ignore_patterns(".DS_Store")
 LEVEL_FOLDER = re.compile(r"^\d\d-")
 LOCAL_PATH = re.compile(rb"/Users/[A-Za-z]|/home/[A-Za-z]|/private/tmp/|[A-Z]:\\Users\\")
@@ -193,9 +192,10 @@ def build_index(root: Path, files_base_url: str = "") -> int:
 </head>
 <body>
 <h1>mcp-bindingdb Examples</h1>
-<p class="lede">Worked examples for new users of the BindingDB MCP server. They start with one-line lookups and build up to multi-step analyses. Each example is a real conversation: the prompt, the answer, a short lesson about the data, the tools that were used, and what to try next.</p>
+<p class="lede">Worked examples for new users of the BindingDB MCP server. They start with one-line lookups and build up to multi-step analyses. Each example is a real conversation: the prompt, the answer, a short lesson about the data, the tools that were used, and what to try next. They were run against BindingDB release 202610; a newer release can give somewhat different numbers.</p>
 <div class="howto">
 <p><strong>How to use these.</strong> Read the transcript, then paste the quoted prompt into your own chat with mcp-bindingdb connected and compare. Transcripts show the tool calls only where the prompt asks for them{calls_note}. Tables that carry SMILES are drawn as structures.</p>
+<p><strong>Check the data.</strong> The answers point out data-quality issues where the results show them (duplicate records, values at detection limits, probable unit errors, re-reported values). Check these before relying on a single number.</p>
 </div>
 {"".join(sections)}
 <footer>Generated from the transcripts in this folder · BindingDB release 202610 · mcp-bindingdb v0.1.0</footer>
@@ -204,33 +204,6 @@ def build_index(root: Path, files_base_url: str = "") -> int:
 '''
     (root / "index.html").write_text(page, encoding="utf-8")
     return total
-
-
-def build_readme(root: Path) -> None:
-    """Write root/README.md: the examples by level, each linked to its rendered view."""
-    levels = collect(root)
-    with_calls = [e["num"] for *_, examples in levels for e in examples if "tool calls" in e["tags"]]
-    calls = f" (example {', '.join(with_calls)} also lists every tool call)" if with_calls else ""
-    lines = [
-        "# Example queries", "",
-        (f"These examples answer questions with the `mcp-bindingdb` tools against BindingDB release "
-         f"202610, in levels from single lookups to multi-step workflows. Each is an HTML transcript "
-         f"written by `create_transcript`: the prompt, the answer, its figures, and structure drawings for the "
-         f"compounds it names{calls}. The binding-site examples also have the interactive 3D viewer of their "
-         f"overlay, and some folders hold the plotting script and data behind a figure."), "",
-        (f"**[Browse the examples]({PREVIEW_URL}index.html)**. GitHub shows HTML files as source, so the links "
-         "below open a rendered view."), "",
-    ]
-    for _, heading, intro, examples in levels:
-        lines += [f"## {heading}", "", intro, "", "| # | Example |", "|---|---|"]
-        lines += [f"| {e['num']} | [{e['title']}]({PREVIEW_URL}{e['href']})"
-                  + "".join(f" · [{page_label(page)[0].lower() + page_label(page)[1:]}]({PREVIEW_URL}{page})" for page in e["pages"]) + " |"
-                  for e in examples]
-        lines.append("")
-    lines += [("The answers point out data-quality issues where the results show them (duplicate records, values at "
-               "detection limits, probable unit errors, re-reported values). Check these before relying on a single "
-               "number."), ""]
-    (root / "README.md").write_text("\n".join(lines), encoding="utf-8")
 
 
 def differences(src: Path, dst: Path) -> tuple[list[str], list[str], list[str]]:
@@ -310,8 +283,7 @@ def main() -> None:
             shutil.rmtree(EXAMPLES / level)
         shutil.copytree(source / level, EXAMPLES / level, ignore=IGNORE)
     total = build_index(EXAMPLES, files_base_url=REPO_FILES_URL)
-    build_readme(EXAMPLES)
-    print(f"wrote examples/index.html and examples/README.md ({total} examples); nothing committed")
+    print(f"wrote examples/index.html ({total} examples); nothing committed")
 
 
 if __name__ == "__main__":

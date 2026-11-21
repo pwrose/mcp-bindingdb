@@ -22,7 +22,7 @@ grep -q "\"version\": \"$VERSION\"" "$ROOT/bundle/manifest.json" || {
 # casualty: see [tool.uv] in pyproject.toml.
 REQS="$(mktemp -d)"
 trap 'rm -rf "$REQS"' EXIT
-(cd "$ROOT" && uv export --frozen --extra substructure --extra structures --extra name --no-hashes --no-emit-project \
+(cd "$ROOT" && uv export --frozen --extra substructure --extra structures --extra opsin --no-hashes --no-emit-project \
   > "$REQS/requirements.txt")
 for platform in aarch64-apple-darwin x86_64-apple-darwin x86_64-pc-windows-msvc \
                 x86_64-manylinux_2_28 aarch64-manylinux_2_28; do
