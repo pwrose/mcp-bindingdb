@@ -55,6 +55,11 @@ look names up with run_sql instead.
 Every tool named here is available in this chat, even when it is not loaded yet: if your tools are loaded
 on demand (for example with a tool search), load the one you need rather than working around it with
 run_sql or your own knowledge, and never tell the user a tool is unavailable without having tried to load it.
+Do not conclude from your tool list or from earlier turns that this server is out of reach, e.g. because the
+chat's link to the computer running it might have dropped: load the tool you need and call it, and only a
+failed call shows that it is. A notebook of the session means create_jupyter_notebook, and a transcript of it
+create_transcript: only this server holds the session's tool calls and figures, so never build either
+yourself (in a sandbox or by hand).
 Requests to draw, sketch or edit a structure, molecule or compound, or for a structure editor or sketcher
 ("edit structure", "draw a molecule"), mean open_structure_editor: open it directly, with initial_query
 when they name a compound, rather than asking what kind of structure they mean.
