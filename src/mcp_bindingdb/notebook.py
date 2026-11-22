@@ -77,6 +77,44 @@ FIGURE_TOOLS = {"draw_structure_grid", "draw_r_group_table"}
 SIGNIFICANT_DIGITS = 10  # floats are compared to this precision: parallel sums differ in the last bits
 #: Analysis code longer than this many lines goes to a .py file next to the notebook, which a cell imports.
 INLINE_CODE_LINES = 40
+#: An analysis code cell longer than this opens with its source folded (its output stays visible). Call and
+#: figure cells always open folded: their outputs say what they ran.
+FOLD_MIN_LINES = 10
+#: Code cell metadata that JupyterLab, Notebook 7 and VS Code open with the source folded.
+SOURCE_HIDDEN = {"jupyter": {"source_hidden": True}}
+#: nbconvert template for to_html: the default lab page, with each folded cell's source under a one-line
+#: summary (its first comment line) that opens on click. nbconvert has no fold of its own, and GitHub's
+#: notebook view ignores the metadata, so the source shows in full there.
+HTML_TEMPLATE = """\
+{%- extends 'lab/index.html.j2' -%}
+{#- mcp-bindingdb: folds code cells marked jupyter.source_hidden, as JupyterLab does. -#}
+{% block extra_css %}
+{{ super() }}
+<style>
+details.bdb-fold { display: table-cell; width: 100%; }
+details.bdb-fold > summary {
+  cursor: pointer; padding: 4px 6px; color: var(--jp-ui-font-color2);
+  font-family: var(--jp-code-font-family); font-size: var(--jp-code-font-size);
+  background: var(--jp-cell-editor-background);
+  border: var(--jp-border-width) solid var(--jp-cell-editor-border-color);
+}
+details.bdb-fold[open] > summary { border-bottom: 0; }
+</style>
+{% endblock extra_css %}
+{% block input %}
+{%- if cell.metadata.get('jupyter', {}).get('source_hidden') -%}
+{%- set lines = cell.source.splitlines() -%}
+{%- set n = lines | length -%}
+{%- set first = lines[0] if lines else '' -%}
+<details class="bdb-fold"><summary>{{ first[1:].strip() if first.startswith('#') else 'Python' }} \
+({{ n }} line{{ 's' if n != 1 }})</summary>
+{{ super() }}
+</details>
+{%- else -%}
+{{ super() }}
+{%- endif -%}
+{% endblock input %}
+"""
 #: The extras a notebook's environment installs: structure search and drawing, PDB complexes, OPSIN, the kernel.
 EXTRAS = ("substructure", "structures", "opsin", "notebook")
 #: Written into the package by scripts/build_bundle.sh, and into a copy of it in a notebook folder: the commit
@@ -235,11 +273,15 @@ def to_html(path: Path, timeout: float = 120) -> Path:
         raise RuntimeError("uv was not found")
     out, log = path.with_suffix(".html"), path.with_name(f"{path.stem}-html.log")
     out.unlink(missing_ok=True)
-    command = [uv, "run", "--no-project", "--with", "nbconvert", "jupyter", "nbconvert", "--to", "html", path.name]
-    try:
-        done = subprocess.run(command, cwd=path.parent, capture_output=True, text=True, timeout=timeout)
-    except subprocess.TimeoutExpired:
-        raise RuntimeError(f"nbconvert took over {timeout:.0f} s and was stopped") from None
+    with tempfile.TemporaryDirectory(prefix="bindingdb-html-") as tmp:
+        template = Path(tmp) / "bindingdb_notebook.html.j2"  # folds the cells JupyterLab opens folded
+        template.write_text(HTML_TEMPLATE, encoding="utf-8")
+        command = [uv, "run", "--no-project", "--with", "nbconvert", "jupyter", "nbconvert", "--to", "html",
+                   "--template-file", str(template), path.name]
+        try:
+            done = subprocess.run(command, cwd=path.parent, capture_output=True, text=True, timeout=timeout)
+        except subprocess.TimeoutExpired:
+            raise RuntimeError(f"nbconvert took over {timeout:.0f} s and was stopped") from None
     if done.returncode or not out.is_file():
         log.write_text(f"$ {shlex.join(command)}\n\n{done.stdout}{done.stderr}")
         raise RuntimeError(f"nbconvert failed (exit code {done.returncode}); its output is in {log}")
@@ -514,13 +556,13 @@ class _Notebook:
             stamp = _stamp(call.get("timestamp", ""))
             comment = f"Call {n} · {call['tool']}" + (f" · ran {stamp}" if stamp else "") + \
                       (" · from the structure editor" if call.get("from_editor") else "")
-            status = f"**Call {n}** · recorded result · sha256 `{sha[:12]}…`"
+            status = f"**Call {n}** · `{call['tool']}` · recorded result · sha256 `{sha[:12]}…`"
             if service := NETWORK_TOOLS.get(call["tool"]):
                 status += f" · uses {service}, whose answers can change"
             text = "\n".join([status, "", *transcript.render_result(call.get("result"), self.max_rows)])
             self.code(call_source(n, call["tool"], call["arguments"], sha, comment), [_markdown_output(text)],
                       {"bindingdb": {"call": n, "tool": call["tool"], "recorded_at": call.get("timestamp", ""),
-                                     "sha256": sha}})
+                                     "sha256": sha}, **SOURCE_HIDDEN})
 
     def analysis(self, block: dict[str, Any], call_numbers: dict[int, int], figure_numbers: dict[int, int],
                  stem: str, files: dict[str, str], file_name: str, model: str | None) -> None:
@@ -562,7 +604,8 @@ class _Notebook:
             source = f"# {title}\n{code}"
         if run:
             source += f"\n\n{run}"
-        self.code(source, outputs, {"bindingdb": meta})
+        fold = len(source.splitlines()) > FOLD_MIN_LINES
+        self.code(source, outputs, {"bindingdb": meta, **(SOURCE_HIDDEN if fold else {})})
 
     def figure(self, figure: Any, number: int) -> None:
         caption = _caption(figure, number)
@@ -577,7 +620,7 @@ class _Notebook:
                 literal = "arguments"
             source += f"await replay.figure({number}, {figure.call['tool']!r}, {literal})"
             self.code(source, [_markdown_output(caption + " _(as recorded)_"), _image_output(figure.data, mime)],
-                      {"bindingdb": {"figure": number, "tool": figure.call["tool"]}})
+                      {"bindingdb": {"figure": number, "tool": figure.call["tool"]}, **SOURCE_HIDDEN})
             return
         how = ("Drawn by overlay_binding_site, whose call reruns above and draws it again."
                if "overlay_id" in figure.spec else
@@ -837,7 +880,7 @@ class Rerun:
 
     @property
     def markdown(self) -> str:
-        lines = [f"**{self.label}** · {self.message}", ""]
+        lines = [f"**{self.label}** · `{self.tool}` · {self.message}", ""]
         if self.status != "figure":
             lines += transcript.render_result(self.result, self.max_rows)
         return "\n".join(lines)

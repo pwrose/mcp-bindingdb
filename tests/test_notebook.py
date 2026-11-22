@@ -191,6 +191,16 @@ async def test_notebook_records_and_reruns_the_session(tmp_path, monkeypatch):
     calls = [c for c in nb["cells"] if c["cell_type"] == "code" and "call" in c["metadata"].get("bindingdb", {})]
     assert [c["metadata"]["bindingdb"]["tool"] for c in calls] == ["search_compounds", "run_sql"]
     assert "BDBM13530" in "".join(calls[0]["outputs"][0]["data"]["text/markdown"])  # the recorded result
+    # Call and figure cells open with their source folded (the SQL too), their outputs naming the tool; the
+    # setup cell, with its RERUN switch, stays open.
+    hidden = lambda c: c["metadata"].get("jupyter", {}).get("source_hidden", False)  # noqa: E731
+    redraw = next(c for c in nb["cells"] if "figure" in c["metadata"].get("bindingdb", {}))
+    assert all(hidden(c) for c in [*calls, redraw])
+    assert "**Call 1** · `search_compounds` · recorded result" in "".join(calls[0]["outputs"][0]["data"]["text/markdown"])
+    setup = next(c for c in nb["cells"] if c["cell_type"] == "code")
+    assert "RERUN = False" in "".join(setup["source"]) and not hidden(setup)
+    # The HTML copy folds them under their first comment line, as JupyterLab does.
+    assert page.count('<details class="bdb-fold">') == 3 and "<summary>Call 2 · run_sql" in page
 
     # Run as it is (in its folder, as Jupyter does): the recorded results and figure, no database needed.
     monkeypatch.chdir(folder)
@@ -283,6 +293,7 @@ async def test_notebook_includes_the_models_code_inline_or_as_a_module(tmp_path,
     text = ["".join(c["source"]) for c in nb["cells"]]
     inline = next(c for c in nb["cells"] if c["metadata"].get("bindingdb", {}).get("code") == 1)
     assert "".join(inline["source"]) == "# Code 1: Count hits\nrows = replay.result(1)['rows']\nprint(len(rows), 'rows')"
+    assert "jupyter" not in inline["metadata"]  # short analysis code stays open
     assert inline["outputs"][0]["text"] == ["3 rows\n"]
     module = next(c for c in nb["cells"] if c["metadata"].get("bindingdb", {}).get("module") == "row_count.py")
     assert "from row_count import *\n\nn = count_rows(replay.result(1))\nn" in "".join(module["source"])

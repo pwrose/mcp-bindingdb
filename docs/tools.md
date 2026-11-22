@@ -295,6 +295,11 @@ The notebook holds, in order:
 - a verification cell (`replay.summary()`) and a "How to cite" cell, with BibTeX for the server, BindingDB and
   RDKit (with the RDKit version the notebook was made with).
 
+Call and figure-redraw cells, and analysis code cells longer than 10 lines, open with their source folded
+(`jupyter.source_hidden`, which JupyterLab, Notebook 7 and VS Code honor), so the notebook reads as results;
+a cell's output names its call and tool, and clicking the fold shows the code and SQL. The setup cell, with
+its `RERUN` switch, stays open.
+
 To run a notebook, from its folder (`--no-project` keeps uv from using a project the folder sits in):
 
 ```bash
@@ -310,8 +315,10 @@ commands with its file name, and the steps to build the exact release with a clo
 path, for the model to show the user.
 
 The HTML copy (`html=true`, the default) is made with `jupyter nbconvert --to html`, run by the server's `uv`
-(`$UV`, else `uv` on the PATH) in the notebook's folder. If nbconvert fails, its output is saved as
-`<name>-html.log`.
+(`$UV`, else `uv` on the PATH) in the notebook's folder, with a template (`notebook.HTML_TEMPLATE`) that folds
+the same cells under their first comment line (e.g. "Call 2 · run_sql · ran ..."), since nbconvert ignores
+`source_hidden`. GitHub's notebook view ignores it too and shows every cell open. If nbconvert fails, its
+output is saved as `<name>-html.log`.
 
 The model lists each answer's calls by their `get_tool_log` index in the exchange's `calls`, and its
 figures by id in `figures`; with neither, every logged call and figure goes in a section after the
