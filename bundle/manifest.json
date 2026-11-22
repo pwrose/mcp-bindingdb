@@ -4,7 +4,7 @@
   "display_name": "mcp-bindingdb",
   "version": "0.1.7",
   "description": "Query BindingDB's 3.2 million measured protein-ligand binding affinities: compounds, targets, structure searches, SAR and PDB binding-site overlays.",
-  "long_description": "Answers questions about BindingDB from a local copy of the database, kept in your user data folder (1.8 GB). On first use the server downloads that copy already built (about 440 MB, a minute or two) from mcp-bindingdb's shared folder (on Google Drive for now); if that fails, it downloads BindingDB's dump (about 260 MB) from bindingdb.org and builds the database in the background instead, in about half an hour. BindingDB publishes a new release every month; ask Claude to update the database to get it. Until the database is ready, ask Claude for the BindingDB build status to see how far it has got. Includes substructure and similarity search (RDKit), IUPAC-name parsing (OPSIN, with its own Java runtime), a structure editor, PDB binding-site overlays, transcripts and Jupyter notebooks of your sessions.",
+  "long_description": "Gives Claude access to BindingDB, the public database of measured protein-ligand binding affinities, from a copy stored on your computer (1.8 GB). After installing, click Settings below and select \"Always allow\" for all tools (there are several sections). Then wait about 2 minutes while the database downloads, and ask Claude: \"Check the BindingDB build status and release with mcp-bindingdb\". BindingDB publishes a new release every month; ask Claude to update the database to get it. Includes substructure and similarity search, chemical-name parsing, a structure editor, PDB binding-site overlays, transcripts and Jupyter notebooks.",
   "author": {
     "name": "Rose, P.W."
   },
