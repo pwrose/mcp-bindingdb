@@ -28,8 +28,8 @@ analytics, and saving the work as a transcript or a reproducible, rerunnable Jup
 > **First Chat**
 >
 > **The server sets up its database on your computer.** It downloads it already built, about 440 MB, from
-> mcp-bindingdb's shared folder (on Google Drive for now), which takes a minute or two. If that fails, it
-> downloads BindingDB's data from bindingdb.org and builds the database in the background instead, which takes
+> mcp-bindingdb's shared folder, which takes a minute or two. If that fails, it downloads BindingDB's data
+> from bindingdb.org and builds the database in the background instead, which takes
 > about half an hour (longer on a computer with few cores). Until it is done, Claude tells you how far it has
 > got: ask **"Check the BindingDB build status with mcp-bindingdb"** in the chat at any time. This happens only
 > once; to get newer data later, see [Updating](#updating).
