@@ -72,7 +72,8 @@ starting. Then do not mention the computer, the app or a connection; reply with 
 open on the first try, which can happen in a new chat. Please send your request again."
 Use run_sql for anything the curated tools do not cover; call describe_tables first.
 BindingDB publishes a new release every month. When the user asks to update the database or for the newest
-data, or asks which release this is, call update_database.
+data, asks which release this is, or asks for the build status (e.g. "Build status?": how the database's build or
+download is going), call update_database.
 
 Data notes:
 - Ki/Kd/IC50/EC50 values are in nM; kon in M^-1 s^-1; koff in s^-1. p_affinity = 9 - log10(nM).
@@ -1015,7 +1016,12 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
         3 GB of free disk space. The tools keep answering from the loaded release meanwhile; once the build is
         done, the user quits and reopens Claude to switch to it, and the older release's files are deleted then.
         Call it without start first, tell the user what it found, and start only if they agree. Also reports
-        on a build that is running or done."""
+        on a build (or download of a prebuilt database) that is running or done, including the first one, before
+        the database is there: call it for the build status."""
+        try:
+            db.rows("SELECT 1 AS ok", limit=1)  # opens a database still being built or downloaded: NotReady
+        except local_build.NotReady as e:
+            return {"building_release": db.build_info().get("release"), "message": str(e)}
         loaded = db.build_info().get("release") or "unknown"
         out: dict[str, Any] = {"loaded_release": loaded}
         if update_folder is None:

@@ -120,6 +120,9 @@ async def test_tools_say_the_database_is_being_built(tmp_path, monkeypatch):
         assert result.is_error
         assert "step 4 of 6, computing standard InChIKeys (10%)" in result.content[0].text
         assert started  # a call (re)starts a build that is not running
+        status = await client.call_tool("update_database", {})  # "Build status?" before the database is there
+        assert not status.is_error and status.structured_content["building_release"] == "202610"
+        assert "step 4 of 6, computing standard InChIKeys" in status.structured_content["message"]
 
         con = duckdb.connect(str(path))  # the build finishes
         con.execute("CREATE TABLE _build_info AS SELECT * FROM (VALUES ('release', '202610'), "
