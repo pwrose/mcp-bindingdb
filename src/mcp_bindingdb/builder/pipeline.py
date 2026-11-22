@@ -124,8 +124,9 @@ class Status:
 
     def end(self, state: str, error: str | None = None) -> None:
         self.data.update(state=state, error=error, step=None if state == "done" else self.data["step"])
-        if state == "done":
-            self.data["build_seconds"] = round(sum(self.data["step_seconds"].values()), 1)
+        if state == "done":  # the build's own steps: a prebuilt download says nothing about build times
+            self.data["build_seconds"] = round(sum(v for k, v in self.data["step_seconds"].items()
+                                                   if k != "prebuilt"), 1)
         self._write()
 
 
@@ -175,10 +176,13 @@ def download(url: str, dest: Path, progress: Callable[[int, int], None]) -> None
 
 
 def build(release: str, folder: Path, workers: int | None = None, keep_zip: bool = False,
-          log: Callable[[str], None] = print, background: bool = False) -> Path:
-    """Build bindingdb_<release>.duckdb and its .sslib index in `folder`; returns the database path.
-    Raises AlreadyRunning if another process is building the release."""
-    from . import DB_FORMAT, compound_properties, derived, inchikeys, mysqldump, structure_index
+          log: Callable[[str], None] = print, background: bool = False, mirror: str | None = None) -> Path:
+    """Build bindingdb_<release>.duckdb and its .sslib index in `folder`; returns the database path. With a
+    `mirror` (a folder of prebuilt releases: see prebuilt; default $MCP_BINDINGDB_MIRROR, "" for none) that has
+    the release, they
+    are downloaded prebuilt instead, and built here if that fails. Raises AlreadyRunning if another process is
+    building the release."""
+    from . import DB_FORMAT, compound_properties, derived, inchikeys, mysqldump, prebuilt, structure_index
 
     folder.mkdir(parents=True, exist_ok=True)
     held = lock(lock_path(folder, release))
@@ -191,6 +195,9 @@ def build(release: str, folder: Path, workers: int | None = None, keep_zip: bool
     url = SOURCE_URL.format(release=release)
     with held:
         status = Status(folder, release, machine_info(workers, background))
+        mirror = prebuilt.mirror_url() if mirror is None else mirror
+        if mirror and not target.is_file() and _fetch_prebuilt(mirror, release, folder, target, index, status, log):
+            return target
         done = status.data["done_steps"]
         if not building.is_file() and not target.is_file():
             done[:] = [s for s in done if s == "download"]  # nothing built yet: redo the database steps
@@ -243,6 +250,36 @@ def build(release: str, folder: Path, workers: int | None = None, keep_zip: bool
     return target
 
 
+def _fetch_prebuilt(mirror: str, release: str, folder: Path, target: Path, index: Path, status: Status,
+                    log: Callable[[str], None]) -> bool:
+    """Download the release prebuilt from `mirror` (see build); False, after logging why, if the mirror does not
+    have it or the download fails, so the caller builds it."""
+    from . import DB_FORMAT, prebuilt
+
+    where = prebuilt.mirror_host(mirror)
+    try:
+        item = prebuilt.Mirror(mirror).release(release, DB_FORMAT)
+        if item is None:
+            log(f"the mirror ({where}) has no prebuilt release {release} for this version; building it here")
+            return False
+        status.data["source"] = "prebuilt"
+        status.step("prebuilt")
+        log(f"downloading the prebuilt release {release} from {where} "
+            f"({prebuilt.download_size(item) / 1e6:.0f} MB)")
+        t0 = time.time()
+        prebuilt.fetch(item, release, folder, {"duckdb": target, "sslib": index}, DB_FORMAT, status.progress, log)
+    except Exception as e:  # noqa: BLE001 - any failure: build it here instead
+        status.data.pop("source", None)
+        log(f"the prebuilt download failed ({type(e).__name__}: {e}); building release {release} here instead")
+        return False
+    status.data["done_steps"] = [key for key, _, _ in STEPS]
+    status.finish_step("prebuilt", time.time() - t0)
+    status.end("done")
+    log(f"  done in {time.time() - t0:.0f}s")
+    log(f"Downloaded {target} and {index.name} from {where}")
+    return True
+
+
 def main(argv: list[str] | None = None) -> int:
     import argparse
 
@@ -254,6 +291,10 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--dir", type=Path, required=True, help="Output folder")
     p.add_argument("--workers", type=int, default=None, help="Worker processes (default: all CPUs)")
     p.add_argument("--keep-zip", action="store_true", help="Keep the downloaded dump")
+    p.add_argument("--mirror", default=None,
+                   help="Folder of prebuilt releases to download instead of building (default "
+                        "$MCP_BINDINGDB_MIRROR; '' for none): a shared Google Drive folder's link, a web "
+                        "address or a path")
     p.add_argument("--background", action="store_true",
                    help="Run at low priority, leaving one CPU free (as the server does on first use)")
     args = p.parse_args(argv)
@@ -267,7 +308,7 @@ def main(argv: list[str] | None = None) -> int:
         print(f"[{datetime.now().strftime('%H:%M:%S')}] {line}", flush=True)
 
     try:
-        build(args.release, args.dir, workers, args.keep_zip, log, background=args.background)
+        build(args.release, args.dir, workers, args.keep_zip, log, background=args.background, mirror=args.mirror)
     except AlreadyRunning as e:
         print(e, file=sys.stderr)
         return 3

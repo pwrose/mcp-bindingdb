@@ -29,7 +29,7 @@ from pydantic import BaseModel, Field
 from . import depict, figures, local_build, names, notebook, sar, structures, substructure, transcript
 from . import transcript_html
 from . import properties as compound_properties
-from .builder import DB_FORMAT, DEFAULT_RELEASE
+from .builder import DB_FORMAT, DEFAULT_RELEASE, prebuilt
 from .db import Database, QueryError, order_warning
 from .structure_editor import (FIGURE_META, OVERLAY_META, UI_EXTENSION, EditorSearches,
                                add_editor_check_tool, add_editor_results_tool,
@@ -1050,11 +1050,20 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
             out["message"] = f"Release {loaded} is the newest; the database is up to date."
             return out
         if not start:
-            out["message"] = (f"Release {release} is available (the loaded release is {loaded}). Updating downloads "
-                              f"{size / 1e6:.0f} MB and builds the new database in the background, in "
-                              f"{local_build.build_time(update_folder)}, with about 3 GB of free disk space; the "
-                              "tools keep working meanwhile. Ask the user, and call update_database(start=true) if "
-                              "they agree.")
+            mirrored = None
+            if mirror := prebuilt.mirror_url():
+                try:
+                    mirrored = prebuilt.Mirror(mirror).release(release, DB_FORMAT)
+                except (OSError, ValueError):
+                    pass
+            how = (f"downloads it already built from {prebuilt.mirror_host(mirror)} "
+                   f"({prebuilt.download_size(mirrored) / 1e6:.0f} MB, a minute or two) in the background"
+                   if mirrored else
+                   f"downloads {size / 1e6:.0f} MB and builds the new database in the background, in "
+                   f"{local_build.build_time(update_folder)}")
+            out["message"] = (f"Release {release} is available (the loaded release is {loaded}). Updating {how}, "
+                              "with about 3 GB of free disk space; the tools keep working meanwhile. Ask the user, "
+                              "and call update_database(start=true) if they agree.")
             return out
         if not substructure.rdkit_available():
             raise ToolError("The update needs RDKit (uv's --extra substructure), which this server does not have.")

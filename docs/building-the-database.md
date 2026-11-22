@@ -76,6 +76,59 @@ instead of starting another, and a build that stopped resumes the next time a to
 log is `build-<release>.log` in the data folder. The dump is deleted after a successful build. Notebook
 reruns (`Replay`) build the database the same way when they find none, and wait for it.
 
+## Prebuilt databases from a mirror (test)
+
+Instead of building a release, the builder can download it already built: the database and index of a
+finished build, compressed with zstd (about 440 MB for release 202611, against 1.7 GB uncompressed and half an
+hour of building). This is being tried out with a shared Google Drive folder; the local build stays the default
+and the fallback (`src/mcp_bindingdb/builder/prebuilt.py`).
+
+**The mirror** is a folder with three files per release, named after it:
+
+| File | What it is |
+|---|---|
+| `202611.duckdb.zst` | the database, compressed with zstd |
+| `202611.sslib.zst` | the structure-search index, compressed with zstd |
+| `202611.json` | `release`, `db_format`, `built_at`, `source_zip_sha256`, `packaged_by`, and for `duckdb` and `sslib` the compressed `size` and `sha256` and the `raw_size` |
+
+Adding a release is adding its three files, so the folder's link stays the same, and older releases stay
+downloadable (for notebook reruns of the release they were made with).
+
+**Using a mirror.** Set `$MCP_BINDINGDB_MIRROR` to the folder: a shared Google Drive folder's link
+(`https://drive.google.com/drive/folders/<id>`), a web address the files are under (`<address>/202611.json`,
+...), or a local path. In Claude Desktop, it is the extension setting **Prebuilt database folder**; the builder
+also takes `--mirror`. A Google Drive folder is listed through its embedded view
+(`drive.google.com/embeddedfolderview?id=<id>`, which needs no API key, only that the folder is shared with
+"Anyone with the link"), and its files are downloaded from `drive.usercontent.google.com` with `confirm=t`,
+which skips Drive's virus-scan page for large files. A local folder is listed too; under a web address, which
+cannot be listed, a release is looked for by name (for the newest: this month's and the three before).
+
+With a mirror, a first use takes the newest release on it that is newer than `DEFAULT_RELEASE` and in this
+version's `DB_FORMAT` (read with a 5 s timeout; no mirror or no answer leaves `DEFAULT_RELEASE`). For whatever
+release the builder is asked for (first use, `update_database`, a rebuild after a layout change), it first tries
+the mirror: it downloads the two `.zst` files into the data folder (resuming a partial download), checks each
+against the SHA-256 in the release's `.json`, decompresses them (zstd checks its own checksum; the size is
+checked against `raw_size`), checks that the database is the release and layout expected, and renames the
+index, then the database, into place, so a release is never complete half-written. The `.zst` files are then
+deleted. If the mirror does not have the release, or anything fails, the builder logs why and builds the release
+itself as usual, so a mirror only saves time. Meanwhile the tools say the database is being downloaded, with the
+MB so far, and `update_database` says when an update comes from the mirror. The database is the uploaded build
+itself, so its `_build_info` (release, source checksum, build date) is the build's, and notebooks check it as
+usual.
+
+**Publishing a release** (monthly, after building it):
+
+```bash
+uv run python scripts/package_prebuilt.py compress --out ~/bindingdb-mirror   # about 2 minutes
+# upload 202611.duckdb.zst, 202611.sslib.zst and 202611.json to the shared folder
+uv run python scripts/package_prebuilt.py check <link of the shared folder>    # lists it as the server does
+```
+
+Upload each file once: Google Drive allows two files of the same name, and the server takes the first one it
+lists. Google Drive also limits how often a shared file can be downloaded in a day, which is fine for a test,
+not for many users; the same files under a web address next to BindingDB's dump on bindingdb.org would work
+without changes.
+
 ## Updating to a newer release
 
 BindingDB publishes a release every month, named by year and month (`202611`), with the dump at

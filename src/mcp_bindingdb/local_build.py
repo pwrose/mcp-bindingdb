@@ -13,6 +13,10 @@ latest_release), answering from the release it has meanwhile. A newer DEFAULT_RE
 server is built the same way (locate(use_previous=True)). Once a newer release is complete, the next server start
 uses it and deletes the older releases' files (remove_old_releases). A database of an older layout (db_format
 below builder.DB_FORMAT, after an update of the server) is rebuilt, same release, before it is used.
+
+With a folder of prebuilt releases ($MCP_BINDINGDB_MIRROR, builder.prebuilt), the builder downloads a release
+already built instead of building it, and builds it if that fails; a first use then takes the mirror's newest
+release.
 """
 
 from __future__ import annotations
@@ -33,7 +37,7 @@ from mcp.server.mcpserver.exceptions import ToolError
 
 import duckdb
 
-from .builder import DB_FORMAT, DEFAULT_RELEASE
+from .builder import DB_FORMAT, DEFAULT_RELEASE, prebuilt
 from .builder.pipeline import SOURCE_URL, STEPS, database_path, is_locked, lock_path, read_status, status_path
 from .db import QueryError, find_database
 from .substructure import index_path, rdkit_available
@@ -63,8 +67,9 @@ def data_dir() -> Path:
 
 
 # The files of one release in the data folder: the database (and its unfinished .building copy), the index,
-# the build's status, log and lock files, and the downloaded dump (and its partial download).
-RELEASE_FILE = re.compile(r"(?:bindingdb_(?P<a>\w+?)\.(?:duckdb|duckdb\.building|sslib)"
+# the build's status, log and lock files, and the downloaded dump (and its partial download); or, downloaded
+# prebuilt, the compressed files (and partial downloads) and their unfinished .download copies.
+RELEASE_FILE = re.compile(r"(?:bindingdb_(?P<a>\w+?)\.(?:duckdb|sslib)(?:\.building|\.download|\.zst(?:\.part)?)?"
                           r"|\.?build-(?P<b>\w+?)\.(?:json|log|lock)"
                           r"|BDB-mySQL_All_(?P<c>\w+?)_dmp\.zip(?:\.part)?)")
 
@@ -240,6 +245,13 @@ class LocalBuild:
         status = read_status(self.folder, self.release)
         what = ("The structure-search index" if path is not None and path == self.index
                 else f"The BindingDB database (release {self.release})")
+        if status.get("step") == "prebuilt" and status.get("state") == "running":
+            mirror = prebuilt.mirror_url()
+            line = (f"{what} is being downloaded, already built, from "
+                    f"{prebuilt.mirror_host(mirror) if mirror else 'a mirror'} (it takes a minute or two)")
+            if status.get("total"):
+                line += f": {status['done'] / 1e6:.0f} of {status['total'] / 1e6:.0f} MB"
+            return line + ". Tell the user, and that the BindingDB tools work once it is done."
         if status.get("state") == "failed" and not self.running():
             return (f"{what} could not be built: {status.get('error')}. The build starts again with this call "
                     "and resumes where it stopped; try again in a few minutes. If this keeps happening, tell the "
@@ -322,8 +334,11 @@ def locate(explicit: str | None = None, use_previous: bool = False) -> tuple[Pat
         if (update := unfinished_release(folder, newest)) is not None and rdkit_available():
             LocalBuild(folder, update).start()  # resumes an update that stopped (e.g. the computer slept)
         return database_path(folder, newest), None
-    # Build DEFAULT_RELEASE, or rebuild the newest release on the computer if it is newer and in an older layout.
+    # Build DEFAULT_RELEASE, or rebuild the newest release on the computer if it is newer and in an older layout;
+    # or, with a mirror of prebuilt releases, its newest if that is newer (downloaded rather than built).
     release = outdated[-1] if outdated and outdated[-1] > DEFAULT_RELEASE else DEFAULT_RELEASE
+    if (mirrored := prebuilt.newest_release(DB_FORMAT)) is not None and mirrored > release:
+        release = mirrored
     rebuild = release in outdated
     if rebuild and not _discard(folder, release):
         print(f"mcp-bindingdb: release {release} needs rebuilding for this version (database layout "
