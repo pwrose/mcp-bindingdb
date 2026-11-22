@@ -1010,15 +1010,19 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
         start: Annotated[bool, Field(description="Start building the newest release. Only after the user has "
                                      "agreed to it, having been told the download size and time")] = False,
     ) -> dict[str, Any]:
-        """Check bindingdb.org for a BindingDB release newer than the loaded one (BindingDB publishes one every
-        month), and with start=true build it on this computer: it downloads the release (about 260 MB) and
+        """BindingDB database status, release and updates: the build status (how a build or download of the
+        database is going, e.g. "BindingDB build status?"), which release is loaded, and whether a newer one is out.
+        Only this tool knows: do not look for build logs or files yourself.
+
+        Checks bindingdb.org for a BindingDB release newer than the loaded one (BindingDB publishes one every
+        month), and with start=true builds it on this computer: it downloads the release (about 260 MB) and
         builds the database and structure-search index in the background, in about half an hour, with about
         3 GB of free disk space; or, with a folder of prebuilt databases set up that has the release, downloads
-        it already built (about 440 MB, a minute or two). Its message says which. The tools keep answering from the loaded release meanwhile; once the build is
-        done, the user quits and reopens Claude to switch to it, and the older release's files are deleted then.
-        Call it without start first, tell the user what it found, and start only if they agree. Also reports
-        on a build (or download of a prebuilt database) that is running or done, including the first one, before
-        the database is there: call it for the build status."""
+        it already built (about 440 MB, a minute or two); its message says which. The tools keep answering from
+        the loaded release meanwhile; once the build is done, the user quits and reopens Claude to switch to it,
+        and the older release's files are deleted then. Call it without start first, tell the user what it
+        found, and start only if they agree. Also reports on a build (or download of a prebuilt database) that is
+        running or done, including the first one, before the database is there."""
         try:
             db.rows("SELECT 1 AS ok", limit=1)  # opens a database still being built or downloaded: NotReady
         except local_build.NotReady as e:
