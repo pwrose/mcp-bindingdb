@@ -39,6 +39,18 @@ class AlreadyRunning(RuntimeError):
     pass
 
 
+class Superseded(RuntimeError):
+    """A newer release became complete in the folder (e.g. downloaded prebuilt) while this one was built."""
+
+
+def newer_complete(folder: Path, release: str) -> str | None:
+    """The newest release in `folder` newer than `release` with both its database and index, if any."""
+    newer = sorted(p.name[len("bindingdb_"):-len(".duckdb")] for p in folder.glob("bindingdb_*.duckdb")
+                   if p.with_suffix(".sslib").is_file())
+    newer = [r for r in newer if r > release]
+    return newer[-1] if newer else None
+
+
 def database_path(folder: Path, release: str) -> Path:
     return folder / f"bindingdb_{release}.duckdb"
 
@@ -97,6 +109,8 @@ class Status:
                                      "done": 0, "total": 0, "error": None,
                                      "step_seconds": previous.get("step_seconds", {}), "machine": machine or {}}
         self._written = 0.0
+        self.check: Callable[[], None] | None = None  # raises to stop the build (see build); called now and then
+        self._checked = time.monotonic()
         self._write()
 
     def _write(self) -> None:
@@ -107,6 +121,8 @@ class Status:
         self._written = time.monotonic()
 
     def step(self, key: str) -> None:
+        if self.check:
+            self.check()
         self.data.update(step=key, done=0, total=0, step_started_at=time.time())
         self._write()
 
@@ -114,6 +130,9 @@ class Status:
         self.data.update(done=done, total=total)
         if time.monotonic() - self._written >= 1.0 or done >= total:
             self._write()
+        if self.check and time.monotonic() - self._checked >= 30:
+            self._checked = time.monotonic()
+            self.check()
 
     def finish_step(self, key: str, seconds: float | None = None) -> None:
         if key not in self.data["done_steps"]:
@@ -195,6 +214,14 @@ def build(release: str, folder: Path, workers: int | None = None, keep_zip: bool
     url = SOURCE_URL.format(release=release)
     with held:
         status = Status(folder, release, machine_info(workers, background))
+        if background:  # the server's build: pointless once a newer release is complete (one it downloaded)
+
+            def check() -> None:
+                if (newer := newer_complete(folder, release)) is not None:
+                    raise Superseded(f"release {newer} is complete in {folder}, so release {release} is not "
+                                     "needed; stopped building it")
+
+            status.check = check
         mirror = prebuilt.mirror_url() if mirror is None else mirror
         if mirror and not target.is_file() and _fetch_prebuilt(mirror, release, folder, target, index, status, log):
             return target
@@ -243,6 +270,12 @@ def build(release: str, folder: Path, workers: int | None = None, keep_zip: bool
             status.end("done")
             log(f"Build time {status.data['build_seconds'] / 60:.1f} min: "
                 + ", ".join(f"{k} {v:.0f}s" for k, v in status.data["step_seconds"].items()))
+        except Superseded as e:
+            building.unlink(missing_ok=True)
+            zip_path.unlink(missing_ok=True)
+            Path(str(zip_path) + ".part").unlink(missing_ok=True)
+            status.end("superseded", str(e))
+            raise
         except BaseException as e:
             status.end("failed", f"{type(e).__name__}: {e}" if str(e) else type(e).__name__)
             raise
@@ -312,6 +345,9 @@ def main(argv: list[str] | None = None) -> int:
     except AlreadyRunning as e:
         print(e, file=sys.stderr)
         return 3
+    except Superseded as e:
+        log(str(e))
+        return 0
     except Exception as e:  # noqa: BLE001 - recorded in the status file too
         print(f"Build failed: {type(e).__name__}: {e}", file=sys.stderr)
         return 1

@@ -189,3 +189,21 @@ def test_old_releases_downloads_are_removed_too(tmp_path):
     for name in names:
         (folder / name).write_bytes(b"x")
     assert sorted(p.name for p in local_build.remove_old_releases(folder, "202611")) == sorted(names)
+
+
+def test_a_background_build_stops_once_a_newer_release_is_complete(tmp_path):
+    folder = tmp_path / "data"
+    folder.mkdir()
+    (folder / "bindingdb_202610.duckdb.building").write_bytes(b"partial")
+    (folder / "BDB-mySQL_All_202610_dmp.zip").write_bytes(b"dump")
+    for name in (f"bindingdb_{RELEASE}.duckdb", f"bindingdb_{RELEASE}.sslib"):  # downloaded meanwhile
+        (folder / name).write_bytes(b"x")
+    with pytest.raises(pipeline.Superseded, match=f"release {RELEASE} is complete"):
+        pipeline.build("202610", folder, background=True, mirror="", log=lambda _s: None)
+    assert pipeline.read_status(folder, "202610")["state"] == "superseded"
+    assert not (folder / "bindingdb_202610.duckdb.building").exists()
+    assert not (folder / "BDB-mySQL_All_202610_dmp.zip").exists()
+    assert pipeline.newer_complete(folder, RELEASE) is None
+    # A build run by hand (not in the background) of an older release is left to run: it may be wanted.
+    status = pipeline.Status(folder, "202609")
+    assert status.check is None
