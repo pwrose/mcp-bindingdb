@@ -1013,7 +1013,8 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
         """Check bindingdb.org for a BindingDB release newer than the loaded one (BindingDB publishes one every
         month), and with start=true build it on this computer: it downloads the release (about 260 MB) and
         builds the database and structure-search index in the background, in about half an hour, with about
-        3 GB of free disk space. The tools keep answering from the loaded release meanwhile; once the build is
+        3 GB of free disk space; or, with a folder of prebuilt databases set up that has the release, downloads
+        it already built (about 440 MB, a minute or two). Its message says which. The tools keep answering from the loaded release meanwhile; once the build is
         done, the user quits and reopens Claude to switch to it, and the older release's files are deleted then.
         Call it without start first, tell the user what it found, and start only if they agree. Also reports
         on a build (or download of a prebuilt database) that is running or done, including the first one, before
@@ -1054,6 +1055,10 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
         out.update(latest_release=release, download_mb=round(size / 1e6))
         if release <= loaded:
             out["message"] = f"Release {loaded} is the newest; the database is up to date."
+            if mirror := prebuilt.mirror_url():
+                out["message"] += (f" Updates are downloaded already built from {prebuilt.mirror_host(mirror)} "
+                                   "(about 440 MB, a minute or two) when it has the new release, and built here "
+                                   "otherwise.")
             return out
         if not start:
             mirrored = None
