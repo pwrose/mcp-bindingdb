@@ -18,8 +18,9 @@ analytics, and saving the work as a transcript or a reproducible, rerunnable Jup
 
 1. **Download** [mcp-bindingdb.mcpb](https://github.com/pwrose/mcp-bindingdb/releases/latest/download/mcp-bindingdb.mcpb)
    (about 4 MB).
-2. **Install it:** double-click the file. The first start takes a minute or two while Claude Desktop
-   installs the Python packages the server needs.
+2. **Install it:** double-click the file. The first start takes about 2 minutes: Claude Desktop installs the
+   Python packages the server needs, and the server then downloads the BindingDB database (see **First Chat**
+   below).
 3. **Allow the mcp-bindingdb tools:** select **Plugins** in the left sidebar. Click **mcp-bindingdb**, then
    **Settings**. Select **Always allow** for all tools (there are several sections).
 4. **Enable mcp-bindingdb in a chat:** in a new chat, click the **+** button and enable **mcp-bindingdb**.
@@ -28,7 +29,7 @@ analytics, and saving the work as a transcript or a reproducible, rerunnable Jup
 > **First Chat**
 >
 > **The server sets up its database on your computer.** It downloads it already built, about 440 MB, from
-> mcp-bindingdb's shared folder, which takes a minute or two. If that fails, it downloads BindingDB's data
+> mcp-bindingdb's shared folder, which takes about 2 minutes. If that fails, it downloads BindingDB's data
 > from bindingdb.org and builds the database in the background instead, which takes
 > about half an hour (longer on a computer with few cores). Until it is done, Claude tells you how far it has
 > got: ask **"Check the BindingDB build status with mcp-bindingdb"** in the chat at any time. This happens only
