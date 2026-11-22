@@ -314,7 +314,7 @@ commands with its file name, and the steps to build the exact release with a clo
 `scripts/build_duckdb.sh --release ...`). The tool's reply gives the JupyterLab command with the actual
 path, for the model to show the user.
 
-The HTML copy (`html=true`, the default) is made with `jupyter nbconvert --to html`, run by the server's `uv`
+The folder always gets an HTML copy, made with `jupyter nbconvert --to html`, run by the server's `uv`
 (`$UV`, else `uv` on the PATH) in the notebook's folder, with a template (`notebook.HTML_TEMPLATE`) that folds
 the same cells under their first comment line (e.g. "Call 2 · run_sql · ran ..."), since nbconvert ignores
 `source_hidden`. GitHub's notebook view ignores it too and shows every cell open. If nbconvert fails, its

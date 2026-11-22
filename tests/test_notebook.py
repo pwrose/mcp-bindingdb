@@ -134,7 +134,7 @@ async def test_notebook_records_and_reruns_the_session(tmp_path, monkeypatch):
                           {"prompt": "Counts per type?", "answer": "IC50 leads.", "calls": [2], "figures": [2]}]})
         # A chat that made no figures: the two in the log came from another chat and stay out.
         no_figures = await client.call_tool("create_jupyter_notebook", {
-            "model": "m", "html": False, "output_dir": str(tmp_path), "file_name": "plain.ipynb",
+            "model": "m", "output_dir": str(tmp_path), "file_name": "plain.ipynb",
             "exchanges": [{"prompt": "Counts per type?", "answer": "IC50 leads.", "calls": [2]}]})
     assert not no_figures.is_error, no_figures.content
     assert "1 exchange, 1 tool call)" in no_figures.content[0].text
@@ -237,10 +237,10 @@ async def test_notebook_without_listed_calls_takes_the_whole_log(tmp_path):
     srv = build_server(Database(DB_PATH), transcript_dir=tmp_path)
     async with Client(srv) as client:
         await client.call_tool("search_targets", {"query": "CDK2", "limit": 2})
-        made = await client.call_tool("create_jupyter_notebook", {"model": "m", "html": False,
+        made = await client.call_tool("create_jupyter_notebook", {"model": "m",
                                                                   "exchanges": [{"prompt": "CDK2?"}]})
     assert not made.is_error and "every logged call is in a section after the conversation" in made.content[0].text
-    assert "HTML copy" not in made.content[0].text and "jupyter lab" in made.content[0].text
+    assert "- HTML copy: " in made.content[0].text and "jupyter lab" in made.content[0].text
     [path] = tmp_path.glob("bindingdb-analysis-*/bindingdb-analysis-*.ipynb")
     assert path.parent.name == path.stem
     nb = json.loads(path.read_text())
@@ -267,7 +267,7 @@ async def test_notebook_includes_the_models_code_inline_or_as_a_module(tmp_path,
         await client.call_tool("search_targets", {"query": "CDK2", "limit": 2})  # log 1: not in the notebook
         await client.call_tool("search_compounds", {"query": "imatinib", "limit": 3})  # log 2: notebook Call 1
         await client.call_tool("add_figure", {"title": "Row count", "path": str(plot)})  # figure 1
-        args = {"model": "m", "output_dir": str(tmp_path), "file_name": "with-code", "html": False}
+        args = {"model": "m", "output_dir": str(tmp_path), "file_name": "with-code"}
         unknown = await client.call_tool("create_jupyter_notebook", {**args, "exchanges": [
             {"prompt": "p", "calls": [2], "code": [{"code": "replay.result(1)"}]}]})
         made = await client.call_tool("create_jupyter_notebook", {**args, "exchanges": [{

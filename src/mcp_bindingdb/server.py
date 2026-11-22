@@ -1589,8 +1589,6 @@ def _add_transcript_tools(mcp: BindingDBServer, build_info: dict[str, str], tran
                                                                 "['PubMed']")] = None,
         output_dir: Annotated[str | None, OUTPUT_DIR_FIELD] = None,
         file_name: Annotated[str | None, FILE_NAME_FIELD] = None,
-        html: Annotated[bool, Field(description="Also write an HTML copy of the notebook next to it "
-                                    "(<file>.html, made with nbconvert), for reading in a web browser")] = True,
     ) -> str:
         """Write a Jupyter notebook (.ipynb) that reruns this session's BindingDB analysis, so every finding
         can be rerun, verified and cited: each prompt, then a code cell per BindingDB tool call made for it
@@ -1693,13 +1691,12 @@ def _add_transcript_tools(mcp: BindingDBServer, build_info: dict[str, str], tran
                          "conversation" + (" (none were logged)." if not leftover else "."))
         if left_out_note:
             lines.append(f"- {left_out_note}")
-        if html:
-            lines.append(await _html_copy(path))
+        lines.append(await _html_copy(path))  # always: a copy anyone can read in a web browser
         commands = notebook.run_commands(path, db_path)
         lines += ["Show the user how to run the notebook: include this command in your reply, in a bash code block, "
                   "as given, and say to choose Run → Run All Cells once JupyterLab opens; the cells show the recorded "
                   "results, and setting RERUN = True in the setup cell reruns every call on the local database. Give "
-                  "no other way to run it" + (" (the HTML copy is already written)" if html else "") + ":", "",
+                  "no other way to run it (the HTML copy is already written):", "",
                   "```bash", commands["jupyter"], "```"]
         lines.append("Deliver the folder as is; do not write, edit or copy the notebook yourself" + ("." if output_dir else
                      " (pass output_dir to have it written where the user wants it)."))
