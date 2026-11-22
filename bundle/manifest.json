@@ -39,7 +39,7 @@
     "mirror_url": {
       "type": "string",
       "title": "Prebuilt database folder (optional)",
-      "description": "The link of a shared folder of prebuilt BindingDB databases (a Google Drive folder or a web address). With it, the database is downloaded already built (about 440 MB, a minute or two) instead of built on this computer (about half an hour). Leave empty to build it here.",
+      "description": "Where the BindingDB database is downloaded already built (about 440 MB, a minute or two) instead of built on this computer (about half an hour): the link of a shared folder of prebuilt databases (a Google Drive folder or a web address). Leave empty for mcp-bindingdb's own folder; enter none to always build it here.",
       "default": "",
       "required": false
     }

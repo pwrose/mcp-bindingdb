@@ -222,7 +222,8 @@ def build(release: str, folder: Path, workers: int | None = None, keep_zip: bool
                                      "needed; stopped building it")
 
             status.check = check
-        mirror = prebuilt.mirror_url() if mirror is None else mirror
+        mirror = prebuilt.mirror_url() if mirror is None else (None if mirror.lower() in prebuilt.NO_MIRROR
+                                                                  else mirror)
         if mirror and not target.is_file() and _fetch_prebuilt(mirror, release, folder, target, index, status, log):
             return target
         done = status.data["done_steps"]
@@ -326,8 +327,8 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--keep-zip", action="store_true", help="Keep the downloaded dump")
     p.add_argument("--mirror", default=None,
                    help="Folder of prebuilt releases to download instead of building (default "
-                        "$MCP_BINDINGDB_MIRROR; '' for none): a shared Google Drive folder's link, a web "
-                        "address or a path")
+                        "$MCP_BINDINGDB_MIRROR, else the project's folder; '' or none to build): a shared "
+                        "Google Drive folder's link, a web address or a path")
     p.add_argument("--background", action="store_true",
                    help="Run at low priority, leaving one CPU free (as the server does on first use)")
     args = p.parse_args(argv)

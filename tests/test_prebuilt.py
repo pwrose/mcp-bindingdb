@@ -95,11 +95,18 @@ def test_a_web_address_is_looked_up_by_release_name(tmp_path, monkeypatch):
     assert tried == ["202612", "202611", "202610"]
 
 
-def test_mirror_setting_left_unfilled_by_the_host_is_no_mirror(monkeypatch):
-    monkeypatch.setenv(prebuilt.MIRROR_ENV, "${user_config.mirror_url}")
-    assert prebuilt.mirror_url() is None
-    monkeypatch.setenv(prebuilt.MIRROR_ENV, " ")
-    assert prebuilt.mirror_url() is None
+def test_without_a_mirror_setting_the_default_folder_is_used(monkeypatch):
+    monkeypatch.delenv(prebuilt.MIRROR_ENV)
+    assert prebuilt.mirror_url() == prebuilt.DEFAULT_MIRROR
+    for unset in ("${user_config.mirror_url}", " "):  # left unfilled by the host, or empty
+        monkeypatch.setenv(prebuilt.MIRROR_ENV, unset)
+        assert prebuilt.mirror_url() == prebuilt.DEFAULT_MIRROR
+    for off in ("none", "OFF", "0"):
+        monkeypatch.setenv(prebuilt.MIRROR_ENV, off)
+        assert prebuilt.mirror_url() is None
+    monkeypatch.setenv(prebuilt.MIRROR_ENV, "https://www.bindingdb.org/prebuilt/")
+    assert prebuilt.mirror_url() == "https://www.bindingdb.org/prebuilt/"
+    assert prebuilt.mirror_host(prebuilt.DEFAULT_MIRROR) == "Google Drive"
 
 
 def test_build_downloads_a_prebuilt_release(tmp_path):

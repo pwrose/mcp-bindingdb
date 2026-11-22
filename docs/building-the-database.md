@@ -80,8 +80,10 @@ reruns (`Replay`) build the database the same way when they find none, and wait 
 
 Instead of building a release, the builder can download it already built: the database and index of a
 finished build, compressed with zstd (about 440 MB for release 202611, against 1.7 GB uncompressed and half an
-hour of building). This is being tried out with a shared Google Drive folder; the local build stays the default
-and the fallback (`src/mcp_bindingdb/builder/prebuilt.py`).
+hour of building). For now the server uses a shared Google Drive folder by default (`DEFAULT_MIRROR` in
+`src/mcp_bindingdb/builder/prebuilt.py`), until the prebuilt databases have a permanent home; the local build
+is the fallback, and `$MCP_BINDINGDB_MIRROR=none` (or `none` in the Claude Desktop setting) turns the download
+off. `scripts/build_duckdb.sh` always builds from the dump.
 
 **The mirror** is a folder with three files per release, named after it:
 
@@ -94,10 +96,10 @@ and the fallback (`src/mcp_bindingdb/builder/prebuilt.py`).
 Adding a release is adding its three files, so the folder's link stays the same, and older releases stay
 downloadable (for notebook reruns of the release they were made with).
 
-**Using a mirror.** Set `$MCP_BINDINGDB_MIRROR` to the folder: a shared Google Drive folder's link
+**Using another mirror.** Set `$MCP_BINDINGDB_MIRROR` to the folder: a shared Google Drive folder's link
 (`https://drive.google.com/drive/folders/<id>`), a web address the files are under (`<address>/202611.json`,
-...), or a local path. In Claude Desktop, it is the extension setting **Prebuilt database folder**; the builder
-also takes `--mirror`. A Google Drive folder is listed through its embedded view
+...), or a local path. In Claude Desktop, it is the extension setting **Prebuilt database folder** (empty: the
+default folder); the builder also takes `--mirror`. A Google Drive folder is listed through its embedded view
 (`drive.google.com/embeddedfolderview?id=<id>`, which needs no API key, only that the folder is shared with
 "Anyone with the link"), and its files are downloaded from `drive.usercontent.google.com` with `confirm=t`,
 which skips Drive's virus-scan page for large files. A local folder is listed too; under a web address, which

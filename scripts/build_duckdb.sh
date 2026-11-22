@@ -19,4 +19,4 @@ while [[ $# -gt 0 ]]; do
 done
 
 exec uv run --project "$ROOT" --extra substructure python -m mcp_bindingdb.builder \
-  --dir "$ROOT/data" --keep-zip ${ARGS[@]+"${ARGS[@]}"}
+  --dir "$ROOT/data" --keep-zip --mirror none ${ARGS[@]+"${ARGS[@]}"}  # builds from the dump, not prebuilt

@@ -27,13 +27,14 @@ analytics, and saving the work as a transcript or a reproducible, rerunnable Jup
 
 > **First Chat**
 >
-> **The server builds its database on your computer.** It downloads BindingDB's data from
-> bindingdb.org and converts it in the background, which takes about half an hour (longer on
-> a computer with few cores). Until it is done, Claude tells you how far it has got: ask
-> **"Check the BindingDB build status with mcp-bindingdb"** in the chat at any time to see which step it is on.
-> This happens only once; to get newer data later, see [Updating](#updating).
+> **The server sets up its database on your computer.** It downloads it already built, about 440 MB, from
+> mcp-bindingdb's shared folder (on Google Drive for now), which takes a minute or two. If that fails, it
+> downloads BindingDB's data from bindingdb.org and builds the database in the background instead, which takes
+> about half an hour (longer on a computer with few cores). Until it is done, Claude tells you how far it has
+> got: ask **"Check the BindingDB build status with mcp-bindingdb"** in the chat at any time. This happens only
+> once; to get newer data later, see [Updating](#updating).
 >
-> The database needs about 3 GB of free disk space while it is built and 1.8 GB afterwards, in
+> The database needs about 3 GB of free disk space while it is set up and 1.8 GB afterwards, in
 > `~/Library/Application Support/mcp-bindingdb` on macOS, `%LOCALAPPDATA%\mcp-bindingdb` on Windows and
 > `~/.local/share/mcp-bindingdb` on Linux.
 
@@ -45,8 +46,9 @@ the left sidebar → **mcp-bindingdb**, or in the chat's tools menu.
 **BindingDB data.** BindingDB publishes a new release every month. Ask
 **"Which BindingDB release does mcp-bindingdb have?"** to see which release you have and whether a newer one is
 out. To update, ask Claude **"Update the BindingDB database with mcp-bindingdb"**: it checks bindingdb.org and,
-if you agree, downloads the new release (about 260 MB) and builds it in the background, in about half an hour,
-with about 3 GB of free disk space. Claude keeps answering from the current release meanwhile; ask
+if you agree, downloads the new release already built (about 440 MB, a minute or two) when mcp-bindingdb's
+shared folder has it, and otherwise downloads it from bindingdb.org (about 260 MB) and builds it in the
+background, in about half an hour, with about 3 GB of free disk space. Claude keeps answering from the current release meanwhile; ask
 **"Check the BindingDB build status with mcp-bindingdb"** to see how far the build has got. When it is done,
 quit and reopen Claude Desktop to switch to the new release; the old release's files are then deleted.
 

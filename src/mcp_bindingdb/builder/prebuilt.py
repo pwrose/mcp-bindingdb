@@ -7,7 +7,7 @@ A mirror is a folder with three files per release, named after it:
     202611.json         what they are: {"release", "db_format", "built_at", "source_zip_sha256", "packaged_by",
                         "files": {"duckdb": {"size", "sha256", "raw_size"}, "sslib": {...}}}
 
-$MCP_BINDINGDB_MIRROR (or the builder's --mirror) names the folder: a shared Google Drive folder's link, a web
+$MCP_BINDINGDB_MIRROR (or the builder's --mirror; DEFAULT_MIRROR if unset, "none" for none) names the folder: a shared Google Drive folder's link, a web
 address the files are under (<address>/202611.json, ...), or a local path. A Google Drive folder or a local one is
 listed, so the mirror's releases are known; under a web address, a release is looked for by name. Adding a
 release is adding its three files, so the folder's link stays the same. scripts/package_prebuilt.py writes them
@@ -37,6 +37,10 @@ from typing import Any, Callable
 import duckdb
 
 MIRROR_ENV = "MCP_BINDINGDB_MIRROR"
+#: The mirror used when $MCP_BINDINGDB_MIRROR is not set: a shared Google Drive folder, for now, until the
+#: prebuilt databases have a permanent home. "none" in $MCP_BINDINGDB_MIRROR turns mirrors off.
+DEFAULT_MIRROR = "https://drive.google.com/drive/folders/1TjCVRiUdS_iJWtGZBjzVIoYQZoTFB7MO"
+NO_MIRROR = ("none", "off", "no", "false", "0")
 KINDS = ("duckdb", "sslib")  # the files of a release, by suffix; the database is renamed into place last
 #: zstd settings of package_prebuilt.py: level 19 with long-distance matching in a 128 MB window, which
 #: decompresses with zstd's default memory limit (a larger window would need about as much memory as it spans).
@@ -56,9 +60,12 @@ def file_names(release: str) -> dict[str, str]:
 
 
 def mirror_url() -> str | None:
-    """$MCP_BINDINGDB_MIRROR, unless unset or a bundle setting the host left unsubstituted."""
+    """$MCP_BINDINGDB_MIRROR; DEFAULT_MIRROR if it is unset, empty or a bundle setting the host left
+    unsubstituted; None if it is "none" (or off, no, false, 0)."""
     url = os.environ.get(MIRROR_ENV, "").strip()
-    return url if url and "${" not in url else None
+    if url.lower() in NO_MIRROR:
+        return None
+    return url if url and "${" not in url else DEFAULT_MIRROR
 
 
 def drive_download(file_id: str) -> str:
