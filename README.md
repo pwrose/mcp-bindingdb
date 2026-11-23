@@ -151,6 +151,7 @@ and results from PubChem, RCSB or PDBe, which can change. See
 | `decompose_r_groups` | SAR table of a series: a target's ligands containing a core, each R-group position in its own column |
 | `matched_molecular_pairs` | Pairs of a target's ligands differing by one group, and what the change did to potency |
 | `activity_cliffs` | Near-identical ligands of a target with very different potency |
+| `cluster_ligands` | A target's ligands grouped into chemotypes, largest series first |
 | `find_pdb_complexes` | A target's ligands with structures in the PDB: ligand code, entries and potency |
 | `overlay_binding_site` | PDB complexes of a target's ligands superposed on the binding site, in a 3D viewer in the chat, with each ligand's contacts and hydrogen bonds |
 | `open_overlay_viewer` | Opens an overlay's 3D viewer in the browser on the computer running the server, for chats that cannot show the panel (e.g. the first reply of a new Claude Desktop chat) |

@@ -20,6 +20,7 @@
 | `decompose_r_groups` | SAR table of one series: a target's ligands containing a core, with each R-group position in its own column and the compound's potency (needs RDKit) |
 | `matched_molecular_pairs` | Pairs of a target's ligands differing by one group, with the effect on potency; or one row per transformation (needs RDKit) |
 | `activity_cliffs` | Pairs of a target's ligands that are structurally close but far apart in potency, by SALI (needs RDKit) |
+| `cluster_ligands` | A target's ligands grouped into chemotypes (Taylor-Butina on Morgan fingerprints): how many distinct series hit it, each one's size, centroid and most potent compound (needs RDKit) |
 | `find_pdb_complexes` | A target's measured ligands with PDB complexes: ligand code, entries, how the PDB record was matched, and potency; also entries found in the PDB by the compounds' InChIKeys (RCSB) |
 | `overlay_binding_site` | PDB complexes of a target's ligands superposed on the binding site, shown in a 3D viewer in the chat, with contacts, hydrogen bonds and a contact-map figure (needs gemmi, the `structures` extra; downloads from PDBe) |
 | `open_overlay_viewer` | Opens an overlay's 3D viewer in the browser on the computer running the server, for chats that cannot show the panel (e.g. the first reply of a new Claude Desktop chat) |
@@ -135,7 +136,8 @@ themselves to doubt a measurement.
 
 ## SAR tools
 
-`decompose_r_groups`, `matched_molecular_pairs` and `activity_cliffs` work on one target at a time and
+`decompose_r_groups`, `matched_molecular_pairs`, `activity_cliffs` and `cluster_ligands` work on one
+target at a time and
 need RDKit (the `substructure` extra), but not the structure-search index. All three read the same
 ligand set, built so that a difference between two compounds is a difference in chemistry rather than in
 assay:
@@ -187,6 +189,21 @@ fingerprints are identical have no defined SALI; they are listed first, and `sam
 whether they are literally the same molecule under two monomerids — one compound curated twice with
 different reported values, which is a data-quality finding rather than SAR. A cliff resting on a single
 measurement is worth confirming with `get_activity` before being believed.
+
+**`cluster_ligands`** groups the ligand set into chemotypes by Taylor-Butina clustering on Morgan
+fingerprints: the compound with the most neighbours at or above `min_similarity` (0.7) becomes a
+centroid and takes every unclustered neighbour with it, then the densest compound left, until none is
+unclustered. The clusters are a partition, largest first, each with its centroid, its most potent
+compound, the median potency of its members and `member_monomerids` (`members_per_cluster`, 5) to pass
+to `draw_structure_grid`. The implementation reproduces RDKit's `Butina.ClusterData` cluster for
+cluster, which `tests/test_sar.py` checks, but computes neighbour counts in blocks and each centroid's
+row on demand, so it never holds a distance matrix.
+
+Clustering answers a different question from `find_ligands_for_target(group_by_scaffold=True)`, which
+keys on the exact Bemis-Murcko scaffold: clustering keeps a series together when its members differ in
+a ring substitution, and separates scaffolds that merely look alike. A singleton cluster is a chemotype
+represented once, not an error; `n_singletons` says how many there are, and a lower `min_similarity`
+gives fewer, broader clusters.
 
 ## create_transcript
 

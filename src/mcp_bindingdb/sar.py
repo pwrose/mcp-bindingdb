@@ -184,6 +184,19 @@ def matched_pairs(variants: list[list[tuple[str, str]]],
     return {k: v[1:] for k, v in pairs.items()}, False
 
 
+def _bit_matrix(fingerprints: list[bytes]) -> tuple[Any, Any]:
+    """The fingerprints as a 2-D array of 64-bit words, with each one's number of set bits."""
+    fps = np.frombuffer(b"".join(fingerprints), dtype=np.uint64).reshape(len(fingerprints), -1)
+    return fps, np.bitwise_count(fps).sum(axis=1, dtype=np.int32)
+
+
+def _similarity_block(fps: Any, bits: Any, rows: Any, row_bits: Any) -> Any:
+    """Tanimoto of every fingerprint in `rows` against every one in `fps` (a len(rows) x len(fps) array)."""
+    common = np.bitwise_count(rows[:, None, :] & fps[None, :, :]).sum(axis=2, dtype=np.int32)
+    union = row_bits[:, None] + bits[None, :] - common
+    return np.divide(common, union, out=np.zeros(common.shape), where=union > 0)
+
+
 def similar_pairs(fingerprints: list[bytes], min_similarity: float,
                   max_pairs: int = MAX_PAIRS) -> tuple[list[tuple[int, int, float]], bool]:
     """(i, j, Tanimoto) for every pair of fingerprints at or above min_similarity, with i < j.
@@ -193,14 +206,11 @@ def similar_pairs(fingerprints: list[bytes], min_similarity: float,
     """
     if len(fingerprints) < 2:
         return [], False
-    fps = np.frombuffer(b"".join(fingerprints), dtype=np.uint64).reshape(len(fingerprints), -1)
-    bits = np.bitwise_count(fps).sum(axis=1, dtype=np.int32)
+    fps, bits = _bit_matrix(fingerprints)
     found: list[tuple[int, int, float]] = []
     for start in range(0, len(fps), SIMILARITY_BLOCK):
         block = fps[start:start + SIMILARITY_BLOCK]
-        common = np.bitwise_count(block[:, None, :] & fps[None, :, :]).sum(axis=2, dtype=np.int32)
-        union = bits[start:start + len(block), None] + bits[None, :] - common
-        similarity = np.divide(common, union, out=np.zeros(common.shape), where=union > 0)
+        similarity = _similarity_block(fps, bits, block, bits[start:start + len(block)])
         rows, cols = np.nonzero(similarity >= min_similarity)
         keep = (rows + start) < cols
         rows, cols = rows[keep], cols[keep]
@@ -208,6 +218,42 @@ def similar_pairs(fingerprints: list[bytes], min_similarity: float,
         if len(found) >= max_pairs:
             return found[:max_pairs], True
     return found, False
+
+
+def butina_clusters(fingerprints: list[bytes], min_similarity: float) -> list[list[int]]:
+    """Taylor-Butina clusters of the fingerprints, by index: the compound with the most neighbours above
+    min_similarity becomes a centroid and takes every unclustered neighbour with it, then the next
+    densest compound left, until none is unclustered. A compound no other one reaches is its own cluster.
+
+    Each cluster lists its centroid first, then its members by index; the clusters come most populous
+    first. Neighbour counts are computed in blocks and each centroid's row on demand, so nothing of the
+    size of the pair list is ever held: memory stays flat in the number of compounds.
+
+    Compounds with equally many neighbours are taken in descending index order, as RDKit's
+    Butina.ClusterData does, so the clusters are the ones its reference implementation gives (which
+    tests/test_sar.py checks) while the result stays the same from run to run.
+    """
+    n = len(fingerprints)
+    if n < 2:
+        return [[0]] if n else []
+    fps, bits = _bit_matrix(fingerprints)
+    counts = np.zeros(n, dtype=np.int64)
+    for start in range(0, n, SIMILARITY_BLOCK):
+        block = fps[start:start + SIMILARITY_BLOCK]
+        similarity = _similarity_block(fps, bits, block, bits[start:start + len(block)])
+        counts[start:start + len(block)] = (similarity >= min_similarity).sum(axis=1)
+    unclustered = np.ones(n, dtype=bool)
+    clusters: list[list[int]] = []
+    for centroid in np.lexsort((-np.arange(n), -counts)).tolist():  # densest first, ties by index
+        if not unclustered[centroid]:
+            continue
+        similarity = _similarity_block(fps, bits, fps[centroid:centroid + 1], bits[centroid:centroid + 1])[0]
+        members = np.nonzero(unclustered & (similarity >= min_similarity))[0]
+        unclustered[members] = False
+        unclustered[centroid] = False  # it is its own neighbour unless min_similarity is above 1
+        clusters.append([centroid, *(i for i in members.tolist() if i != centroid)])
+    clusters.sort(key=lambda members: (-len(members), members[0]))
+    return clusters
 
 
 def same_molecule(a: Any, b: Any) -> bool:

@@ -101,6 +101,52 @@ def test_similar_pairs_and_sali():
     assert sar.sali(2.0, 0.9) == 20.0 and sar.sali(1.0, 1.0) is None
 
 
+CHEMOTYPES = [  # three series a chemist would call distinct, in no particular order
+    "CCCCCCCCO", "c1ccccc1Nc1ncnc2ccccc12", "CCCCCCCCCO", "C1CC2CCC1C2",
+    "COc1cc2ncnc(Nc3ccccc3)c2cc1", "CCCCCCCCCCO",
+]
+
+
+def test_butina_clusters_group_a_series_and_leave_the_odd_one_out():
+    fingerprints = [substructure.morgan_fingerprint(m) for m in molecules(CHEMOTYPES)]
+    clusters = sar.butina_clusters(fingerprints, 0.3)
+    members = sorted(sorted(c) for c in clusters)
+    assert members == [[0, 2, 5], [1, 4], [3]]  # alcohols, anilinoquinazolines, the lone cage
+    assert [len(c) for c in clusters] == [3, 2, 1]  # most populous first
+    assert clusters[0][0] in (0, 2, 5)  # the centroid comes first, and belongs to its own cluster
+    assert sorted(i for c in clusters for i in c) == list(range(6))  # a partition: no compound twice
+    assert sar.butina_clusters(fingerprints, 1.01) == [[i] for i in range(len(fingerprints))]
+    assert sar.butina_clusters([], 0.5) == [] and sar.butina_clusters(fingerprints[:1], 0.5) == [[0]]
+
+
+def test_butina_clusters_match_rdkits_reference_implementation():
+    from rdkit import DataStructs
+    from rdkit.ML.Cluster import Butina
+
+    smiles = [row["smiles"] for row in _clustering_sample()]
+    fingerprints = [substructure.morgan_fingerprint(m) for m in molecules(smiles) if m is not None]
+    n = len(fingerprints)
+    vectors = [DataStructs.CreateFromBinaryText(f) for f in fingerprints]
+    distances = []  # RDKit wants the lower triangle of the distance matrix, row by row
+    for i in range(1, n):
+        distances += [1 - s for s in DataStructs.BulkTanimotoSimilarity(vectors[i], vectors[:i])]
+    for cutoff in (0.5, 0.65, 0.8):
+        reference = Butina.ClusterData(distances, n, 1 - cutoff, isDistData=True)
+        ours = sar.butina_clusters(fingerprints, cutoff)
+        assert sorted(sorted(c) for c in ours) == sorted(sorted(c) for c in reference)
+        assert sorted(c[0] for c in ours) == sorted(c[0] for c in reference)  # the same centroids
+        sizes = [len(c) for c in ours]  # ours are ordered by size, RDKit's in the order it found them
+        assert sizes == sorted(sizes, reverse=True)
+
+
+def _clustering_sample(limit=300):
+    if DB is None:
+        pytest.skip("BindingDB DuckDB file not built")
+    return DB.query("SELECT monomerid, smiles FROM activity JOIN compound USING (monomerid) "
+                    f"WHERE polymerid = {EGFR} AND smiles IS NOT NULL "
+                    "GROUP BY monomerid, smiles ORDER BY monomerid", None, limit).rows
+
+
 def test_fold_change_and_same_molecule():
     assert sar.fold_change(0) == 1.0 and sar.fold_change(3) == 1000
     assert sar.fold_change(0.5) == 3.2 and sar.fold_change(-2.7) == 0.002
@@ -229,3 +275,36 @@ async def test_sar_tools_honour_an_explicit_affinity_type(server):
     empty = await call(server, "matched_molecular_pairs", target_id=EGFR, affinity_type="EC50",
                        max_value_nm=0.0001)
     assert empty.is_error and "exact EC50" in empty.content[0].text
+
+
+async def test_cluster_ligands_partitions_the_ligand_set(server):
+    out = await ok(server, "cluster_ligands", target_id=EGFR, max_value_nm=100, max_compounds=400,
+                   limit=10)
+    assert out["affinity_type"] == "IC50"  # EGFR's most measured exact type
+    assert 0 < out["n_compounds"] <= 400 and out["n_clusters"] >= out["row_count"] == len(out["rows"])
+    assert out["truncated"] == (out["n_clusters"] > 10)
+    sizes = [row["n_compounds"] for row in out["rows"]]
+    assert sizes == sorted(sizes, reverse=True) and sizes[0] > 1  # largest series first
+    assert sum(sizes) <= out["n_compounds"]  # the clusters are a partition of the ligand set
+    assert [row["cluster"] for row in out["rows"]] == list(range(1, len(out["rows"]) + 1))
+    seen = set()
+    for row in out["rows"]:
+        assert row["centroid_smiles"] and row["best_p_affinity"] >= row["median_p_affinity"]
+        assert len(row["member_monomerids"]) == min(5, row["n_compounds"])
+        assert row["best_monomerid"] == row["member_monomerids"][0]  # members are most potent first
+        assert not seen & set(row["member_monomerids"])  # no compound in two clusters
+        seen |= set(row["member_monomerids"])
+    whole = await ok(server, "cluster_ligands", target_id=EGFR, max_value_nm=100, max_compounds=400,
+                     limit=200, members_per_cluster=50)
+    assert sum(row["n_compounds"] for row in whole["rows"]) == whole["n_compounds"]
+    assert len({i for row in whole["rows"] for i in row["member_monomerids"]}) == whole["n_compounds"]
+    assert whole["n_singletons"] == sum(row["n_compounds"] == 1 for row in whole["rows"])
+
+
+async def test_cluster_ligands_similarity_controls_how_coarse_the_clusters_are(server):
+    coarse, fine = [await ok(server, "cluster_ligands", target_id=EGFR, max_value_nm=100,
+                             max_compounds=400, min_similarity=cutoff, limit=1)
+                    for cutoff in (0.4, 0.9)]
+    assert coarse["n_clusters"] < fine["n_clusters"]  # a lower cutoff merges chemotypes
+    assert coarse["rows"][0]["n_compounds"] > fine["rows"][0]["n_compounds"]
+    assert "0.4" in coarse["note"] and coarse["min_similarity"] == 0.4

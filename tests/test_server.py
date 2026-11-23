@@ -57,7 +57,7 @@ async def test_lists_all_tools(server):
         "figure_image",
         "exact_structure_search", "decompose_r_groups", "matched_molecular_pairs", "activity_cliffs",
         "find_pdb_complexes", "overlay_binding_site", "overlay_data", "open_overlay_viewer", "update_database",
-        "selectivity_matrix",
+        "selectivity_matrix", "cluster_ligands",
     }
     writes = {"reset_tool_log", "transcript_to_html", "create_transcript", "create_jupyter_notebook", "draw_structure_grid",
               "draw_r_group_table", "add_figure", "overlay_binding_site",  # write files

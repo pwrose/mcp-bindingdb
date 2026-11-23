@@ -191,7 +191,8 @@ Structure-activity relationships, one target at a time: decompose_r_groups tabul
 target's ligands containing a core, with each R-group position in its own column);
 matched_molecular_pairs finds compounds that differ by one group and what the change did to potency, or
 aggregates those transformations; activity_cliffs finds near-identical compounds with very different
-potency. All three use exact ('=') measurements of a single affinity type, picked as the target's most
+potency; cluster_ligands groups the target's ligands into chemotypes (Butina clustering), for "how many
+distinct series hit this target" and for picking one representative per series. All three use exact ('=') measurements of a single affinity type, picked as the target's most
 measured type unless you name one, so the potency differences are comparable. Show a series from
 decompose_r_groups with draw_r_group_table, which draws the core with its positions named R1, R2, ... and
 each substituent in its column; a fragment SMILES ('CCC[*:1]') is an input to that tool, never something
@@ -2809,6 +2810,75 @@ def _add_sar_tools(mcp: MCPServer, db: Database, property_filter) -> None:
         return _with_notes({"affinity_type": affinity_type, "n_compounds": len(measured),
                             "n_cliffs": len(rows), "row_count": min(len(rows), limit),
                             "truncated": len(rows) > limit, "rows": rows[:limit]}, notes)
+
+    @mcp.tool(annotations=READ_ONLY)
+    def cluster_ligands(
+        target_id: TargetIdArg = None,
+        uniprot: UniprotArg = None,
+        include_variants: IncludeVariantsArg = False,
+        target_kind: TargetKindArg = "polymer",
+        affinity_type: OneAffinityTypeArg = None,
+        max_value_nm: Annotated[float | None, Field(ge=0, description="Only cluster compounds with a "
+                                                    "measurement this potent or better (nM)")] = None,
+        properties: Annotated[PropertyFilter | None, PROPERTIES_FIELD] = None,
+        min_similarity: Annotated[float, Field(gt=0, le=1, description="Tanimoto on Morgan fingerprints "
+                                               "two compounds need to reach to land in the same cluster; "
+                                               "0.7 separates chemotypes, lower merges them")] = 0.7,
+        max_compounds: MaxCompoundsArg = 2000,
+        members_per_cluster: Annotated[int, Field(ge=0, le=50, description="How many of each cluster's "
+                                                  "compounds to list, most potent first")] = 5,
+        limit: Annotated[int, Field(description="Max clusters (1-200)")] = 25,
+    ) -> dict[str, Any]:
+        """Group a target's ligands into chemotypes (Taylor-Butina clustering on Morgan fingerprints),
+        largest cluster first: how many distinct chemical series hit the target, how big each one is and
+        how potent its best compound.
+
+        Each cluster is a centroid (the compound with the most neighbours) and everything within
+        min_similarity of it. Unlike group_by_scaffold in find_ligands_for_target, which keys on the exact
+        Bemis-Murcko scaffold, clustering keeps a series together when its members differ in a ring
+        substitution and separates scaffolds that only look alike. A cluster of one compound is a
+        chemotype on its own, not an error. Draw the centroids with draw_structure_grid to see the
+        chemotypes."""
+        where, params = _target_where(target_id, uniprot, include_variants, target_kind)
+        affinity_type = affinity_type_for(where, params, affinity_type)
+        compounds, truncated = ligand_set(where, params, affinity_type, max_value_nm, properties,
+                                          _clamp(max_compounds, 2, 5000))
+        # ligand_set is ordered by potency, so the lowest index in a cluster is its most potent compound.
+        parsed = [(c, mol) for c, mol in zip(compounds, sar.molecules([c["smiles"] for c in compounds]))
+                  if mol is not None]
+        measured = [c for c, _ in parsed]
+        clusters = sar.butina_clusters([substructure.morgan_fingerprint(mol) for _, mol in parsed],
+                                       min_similarity)
+        limit = _clamp(limit, 1, 200)
+        rows = []
+        for rank, members in enumerate(clusters[:limit], start=1):
+            by_potency = sorted(members)
+            centroid, best = measured[members[0]], measured[by_potency[0]]
+            potencies = [measured[i]["p_affinity"] for i in members]
+            rows.append({
+                "cluster": rank, "n_compounds": len(members),
+                "centroid_monomerid": centroid["monomerid"], "centroid_name": centroid["compound_name"],
+                "centroid_scaffold_smiles": (compound_properties.murcko_scaffold(centroid["smiles"])
+                                             if compound_properties.Chem is not None else None),
+                "best_monomerid": best["monomerid"], "best_compound_name": best["compound_name"],
+                "best_p_affinity": best["p_affinity"], "best_value_nm": best["value_nm"],
+                "median_p_affinity": round(statistics.median(potencies), 2),
+                "member_monomerids": [measured[i]["monomerid"] for i in by_potency[:members_per_cluster]],
+                "centroid_smiles": centroid["smiles"],
+            })
+        singletons = sum(len(members) == 1 for members in clusters)
+        notes = [scanned_note(compounds, truncated, "clustered"),
+                 f"Clustered at Tanimoto >= {min_similarity:g} on Morgan fingerprints (radius 2, 2048 "
+                 "bits) of each compound's largest fragment; a lower min_similarity gives fewer, broader "
+                 "clusters.",
+                 f"{singletons:,} of the {len(clusters):,} clusters hold a single compound."
+                 if singletons else None,
+                 f"{len(compounds) - len(measured)} compound(s) were left out: RDKit could not read their "
+                 "structure." if len(measured) < len(compounds) else None]
+        return _with_notes({"affinity_type": affinity_type, "n_compounds": len(measured),
+                            "n_clusters": len(clusters), "n_singletons": singletons,
+                            "min_similarity": min_similarity, "row_count": len(rows),
+                            "truncated": len(clusters) > limit, "rows": rows}, notes)
 
 
 def _matrix_row(row: dict[str, Any], targets: list[dict[str, Any]]) -> dict[str, Any]:
