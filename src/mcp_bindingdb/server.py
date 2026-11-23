@@ -2834,7 +2834,9 @@ def _add_sar_tools(mcp: MCPServer, db: Database, property_filter) -> None:
         how potent its best compound.
 
         Each cluster is a centroid (the compound with the most neighbours) and everything within
-        min_similarity of it. Unlike group_by_scaffold in find_ligands_for_target, which keys on the exact
+        min_similarity of it. The centroid comes with its structure and its own potency, so it can go
+        straight into draw_structure_grid as the series' representative. Unlike group_by_scaffold in
+        find_ligands_for_target, which keys on the exact
         Bemis-Murcko scaffold, clustering keeps a series together when its members differ in a ring
         substitution and separates scaffolds that only look alike. A cluster of one compound is a
         chemotype on its own, not an error. Draw the centroids with draw_structure_grid to see the
@@ -2858,6 +2860,7 @@ def _add_sar_tools(mcp: MCPServer, db: Database, property_filter) -> None:
             rows.append({
                 "cluster": rank, "n_compounds": len(members),
                 "centroid_monomerid": centroid["monomerid"], "centroid_name": centroid["compound_name"],
+                "centroid_p_affinity": centroid["p_affinity"], "centroid_value_nm": centroid["value_nm"],
                 "centroid_scaffold_smiles": (compound_properties.murcko_scaffold(centroid["smiles"])
                                              if compound_properties.Chem is not None else None),
                 "best_monomerid": best["monomerid"], "best_compound_name": best["compound_name"],

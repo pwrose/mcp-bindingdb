@@ -290,6 +290,8 @@ async def test_cluster_ligands_partitions_the_ligand_set(server):
     seen = set()
     for row in out["rows"]:
         assert row["centroid_smiles"] and row["best_p_affinity"] >= row["median_p_affinity"]
+        assert row["best_p_affinity"] >= row["centroid_p_affinity"]  # drawable without a second lookup
+        assert row["centroid_value_nm"] == pytest.approx(10 ** (9 - row["centroid_p_affinity"]), rel=0.02)
         assert len(row["member_monomerids"]) == min(5, row["n_compounds"])
         assert row["best_monomerid"] == row["member_monomerids"][0]  # members are most potent first
         assert not seen & set(row["member_monomerids"])  # no compound in two clusters

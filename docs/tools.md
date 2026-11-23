@@ -195,7 +195,8 @@ fingerprints: the compound with the most neighbours at or above `min_similarity`
 centroid and takes every unclustered neighbour with it, then the densest compound left, until none is
 unclustered. The clusters are a partition, largest first, each with its centroid, its most potent
 compound, the median potency of its members and `member_monomerids` (`members_per_cluster`, 5) to pass
-to `draw_structure_grid`. The implementation reproduces RDKit's `Butina.ClusterData` cluster for
+to `draw_structure_grid`. The centroid carries its own structure and potency, so one row per cluster is
+enough to draw a representative of every series without a second lookup. The implementation reproduces RDKit's `Butina.ClusterData` cluster for
 cluster, which `tests/test_sar.py` checks, but computes neighbour counts in blocks and each centroid's
 row on demand, so it never holds a distance matrix.
 
