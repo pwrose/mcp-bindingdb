@@ -9,6 +9,7 @@ from mcp import Client
 
 from mcp_bindingdb import notebook
 from mcp_bindingdb.db import Database, find_database
+from conftest import built_database
 from mcp_bindingdb.server import build_server
 
 IMATINIB = "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cccnc2)n1"
@@ -71,7 +72,7 @@ def test_editor_results_become_their_searches_and_panels_are_skipped():
 
 
 try:
-    DB_PATH = find_database()
+    DB_PATH = built_database()
 except FileNotFoundError:
     DB_PATH = None
 needs_db = pytest.mark.skipif(DB_PATH is None, reason="BindingDB DuckDB file not built")

@@ -400,3 +400,39 @@ def test_build_times_are_recorded_and_used_for_estimates(tmp_path):
 
     resumed = pipeline.Status(folder, "202610")  # a resumed run keeps the steps already timed
     assert resumed.data["step_seconds"]["properties"] == 1100
+
+
+def test_an_unpacked_dump_of_an_old_release_is_removed_too(tmp_path):
+    # An older version of this package unpacked the dump beside the zip; the pattern missed the .dmp, so
+    # 2.2 GB of a superseded release stayed behind.
+    folder = tmp_path / "data"
+    _release_files(folder, "202610")
+    _release_files(folder, "202611")
+    for name in ("BDB-mySQL_All_202610.dmp", "BDB-mySQL_All_202610_dmp.zip"):
+        (folder / name).write_bytes(b"dump")
+    removed = {p.name for p in local_build.remove_old_releases(folder, "202611")}
+    assert "BDB-mySQL_All_202610.dmp" in removed and "BDB-mySQL_All_202610_dmp.zip" in removed
+    assert not list(folder.glob("*202610*"))
+    assert (folder / "bindingdb_202611.duckdb").is_file()  # the release in use is untouched
+
+
+def test_locate_sweeps_a_clones_data_folder(tmp_path, monkeypatch):
+    # The clone's data/ outranks data_dir() but used never to be cleaned, so a clone stayed on an old release
+    # while the user data folder moved on, with nothing saying so.
+    folder = tmp_path / "clone" / "data"
+    _release_files(folder, "202610", db_format=local_build.DB_FORMAT)
+    _release_files(folder, "202611", db_format=local_build.DB_FORMAT)
+    monkeypatch.delenv("BINDINGDB_DUCKDB", raising=False)
+    monkeypatch.setattr(local_build, "find_database", lambda: folder / "bindingdb_202611.duckdb")
+    path, build = local_build.locate()
+    assert path == folder / "bindingdb_202611.duckdb" and build is None
+    assert not list(folder.glob("*202610*"))
+
+
+def test_locate_leaves_a_hand_named_database_alone(tmp_path, monkeypatch):
+    folder = tmp_path / "elsewhere"
+    _release_files(folder, "202610", db_format=local_build.DB_FORMAT)
+    _release_files(folder, "202611", db_format=local_build.DB_FORMAT)
+    monkeypatch.setenv("BINDINGDB_DUCKDB", str(folder / "bindingdb_202611.duckdb"))
+    local_build.locate()
+    assert (folder / "bindingdb_202610.duckdb").is_file()  # --db / $BINDINGDB_DUCKDB is hand-managed

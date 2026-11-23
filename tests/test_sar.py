@@ -11,6 +11,7 @@ from mcp import Client  # noqa: E402
 
 from mcp_bindingdb import substructure  # noqa: E402
 from mcp_bindingdb.db import Database, find_database  # noqa: E402
+from conftest import built_database
 from mcp_bindingdb.server import build_server  # noqa: E402
 
 QUINAZOLINE = "c1ncnc2ccccc12"
@@ -157,7 +158,7 @@ def test_fold_change_and_same_molecule():
 # --- the tools, against the real build ---
 
 try:
-    DB = Database(find_database())
+    DB = Database(built_database())
 except FileNotFoundError:
     DB = None
 needs_db = pytest.mark.skipif(DB is None, reason="BindingDB DuckDB file not built")

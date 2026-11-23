@@ -23,7 +23,6 @@ from __future__ import annotations
 
 import json
 import os
-import re
 import subprocess
 import sys
 import time
@@ -38,7 +37,8 @@ from mcp.server.mcpserver.exceptions import ToolError
 import duckdb
 
 from .builder import DB_FORMAT, DEFAULT_RELEASE, prebuilt
-from .builder.pipeline import SOURCE_URL, STEPS, database_path, is_locked, lock_path, read_status, status_path
+from .builder.pipeline import (RELEASE_FILE, SOURCE_URL, STEPS, database_path, is_locked, lock_path,
+                               read_status, remove_old_releases, status_path)
 from .db import QueryError, find_database
 from .substructure import index_path, rdkit_available
 
@@ -64,14 +64,6 @@ def data_dir() -> Path:
     if os.name == "nt":
         return Path(os.environ.get("LOCALAPPDATA") or home / "AppData" / "Local") / "mcp-bindingdb"
     return Path(os.environ.get("XDG_DATA_HOME") or home / ".local" / "share") / "mcp-bindingdb"
-
-
-# The files of one release in the data folder: the database (and its unfinished .building copy), the index,
-# the build's status, log and lock files, and the downloaded dump (and its partial download); or, downloaded
-# prebuilt, the compressed files (and partial downloads) and their unfinished .download copies.
-RELEASE_FILE = re.compile(r"(?:bindingdb_(?P<a>\w+?)\.(?:duckdb|sslib)(?:\.building|\.download|\.zst(?:\.part)?)?"
-                          r"|\.?build-(?P<b>\w+?)\.(?:json|log|lock)"
-                          r"|BDB-mySQL_All_(?P<c>\w+?)_dmp\.zip(?:\.part)?)")
 
 
 def complete_releases(folder: Path) -> list[str]:
@@ -137,31 +129,6 @@ def latest_release(today: date | None = None, months: int = 4) -> tuple[str, int
             return release, size
         year, month = (year, month - 1) if month > 1 else (year - 1, 12)
     return None
-
-
-def remove_old_releases(folder: Path, release: str = DEFAULT_RELEASE) -> list[Path]:
-    """Delete the files of releases older than `release` from `folder`, now that `release` is complete. A release
-    still being built is skipped, and a file still in use (on Windows) is left for the next time. Returns the files
-    deleted."""
-    by_release: dict[str, list[Path]] = {}
-    for path in folder.iterdir() if folder.is_dir() else []:
-        match = RELEASE_FILE.fullmatch(path.name)
-        if match and path.is_file() and (old := match["a"] or match["b"] or match["c"]) < release:
-            by_release.setdefault(old, []).append(path)
-    removed = []
-    for old, paths in sorted(by_release.items()):
-        if lock_path(folder, old).is_file() and is_locked(lock_path(folder, old)):
-            continue
-        for path in sorted(paths):
-            try:
-                path.unlink()
-                removed.append(path)
-            except OSError:
-                pass
-    if removed:
-        print(f"mcp-bindingdb: removed {len(removed)} files of older BindingDB releases from {folder}",
-              file=sys.stderr)
-    return removed
 
 
 def _minutes(seconds: float) -> str:
@@ -315,15 +282,19 @@ def locate(explicit: str | None = None, use_previous: bool = False) -> tuple[Pat
     Meanwhile, with `use_previous` (the server, not a notebook rerun, which waits for it), the newest older usable
     release is returned if there is one, with the LocalBuild (whose `database` is then not the path returned). A
     newer release whose build was started (update_database) but stopped is resumed. Releases older than the one
-    returned are deleted from data_dir()."""
+    returned are deleted, from a clone's data/ as from data_dir(); a database named with --db or
+    $BINDINGDB_DUCKDB is hand-managed, so nothing beside it is touched."""
     if explicit:
         return Path(explicit).expanduser(), None
     if os.environ.get("BINDINGDB_DUCKDB"):
-        return find_database(), None  # raises if the file is missing
+        return find_database(), None  # raises if the file is missing, and is hand-managed: nothing is deleted
     try:
-        return find_database(), None
+        clone = find_database()
     except FileNotFoundError:
         pass
+    else:  # a clone's data/ is swept like data_dir(), so a rebuilt clone keeps no trace of the release before
+        remove_old_releases(clone.parent, clone.name[len("bindingdb_"):-len(".duckdb")])
+        return clone, None
     folder = data_dir()
     complete = complete_releases(folder) if folder.is_dir() else []
     current = [r for r in complete if db_format(database_path(folder, r)) == DB_FORMAT]

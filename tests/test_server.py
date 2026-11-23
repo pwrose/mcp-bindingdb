@@ -9,10 +9,11 @@ from mcp import Client
 
 from mcp_bindingdb import names, properties
 from mcp_bindingdb.db import Database, find_database
+from conftest import built_database
 from mcp_bindingdb.server import build_server
 
 try:
-    DB_PATH = find_database()
+    DB_PATH = built_database()
 except FileNotFoundError:
     pytest.skip("BindingDB DuckDB file not built", allow_module_level=True)
 

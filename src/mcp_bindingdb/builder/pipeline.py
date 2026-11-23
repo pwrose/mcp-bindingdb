@@ -12,6 +12,7 @@ import hashlib
 import json
 import os
 import platform
+import re
 import sys
 import time
 import urllib.request
@@ -94,6 +95,40 @@ def is_locked(path: Path) -> bool:
         return True
     held.close()
     return False
+
+
+# The files of one release in a data folder: the database (and its unfinished .building copy), the index, the
+# build's status, log and lock files, and the downloaded dump (its partial download, and the .dmp an older
+# version of this package unpacked beside it); or, downloaded prebuilt, the compressed files (and partial
+# downloads) and their unfinished .download copies.
+RELEASE_FILE = re.compile(r"(?:bindingdb_(?P<a>\w+?)\.(?:duckdb|sslib)(?:\.building|\.download|\.zst(?:\.part)?)?"
+                          r"|\.?build-(?P<b>\w+?)\.(?:json|log|lock)"
+                          r"|BDB-mySQL_All_(?P<c>\w+?)(?:_dmp\.zip(?:\.part)?|\.dmp))")
+
+
+def remove_old_releases(folder: Path, release: str) -> list[Path]:
+    """Delete the files of releases older than `release` from `folder`, now that `release` is complete. A release
+    still being built is skipped, and a file still in use (on Windows) is left for the next time. Returns the files
+    deleted."""
+    by_release: dict[str, list[Path]] = {}
+    for path in folder.iterdir() if folder.is_dir() else []:
+        match = RELEASE_FILE.fullmatch(path.name)
+        if match and path.is_file() and (old := match["a"] or match["b"] or match["c"]) < release:
+            by_release.setdefault(old, []).append(path)
+    removed = []
+    for old, paths in sorted(by_release.items()):
+        if lock_path(folder, old).is_file() and is_locked(lock_path(folder, old)):
+            continue
+        for path in sorted(paths):
+            try:
+                path.unlink()
+                removed.append(path)
+            except OSError:
+                pass
+    if removed:
+        print(f"mcp-bindingdb: removed {len(removed)} files of older BindingDB releases from {folder}",
+              file=sys.stderr)
+    return removed
 
 
 class Status:
@@ -225,6 +260,7 @@ def build(release: str, folder: Path, workers: int | None = None, keep_zip: bool
         mirror = prebuilt.mirror_url() if mirror is None else (None if mirror.lower() in prebuilt.NO_MIRROR
                                                                   else mirror)
         if mirror and not target.is_file() and _fetch_prebuilt(mirror, release, folder, target, index, status, log):
+            remove_old_releases(folder, release)  # an upgrade leaves nothing of the release it replaces
             return target
         done = status.data["done_steps"]
         if not building.is_file() and not target.is_file():
@@ -280,6 +316,7 @@ def build(release: str, folder: Path, workers: int | None = None, keep_zip: bool
         except BaseException as e:
             status.end("failed", f"{type(e).__name__}: {e}" if str(e) else type(e).__name__)
             raise
+    remove_old_releases(folder, release)  # an upgrade leaves nothing of the release it replaces
     log(f"Built {target} and {index.name}")
     return target
 

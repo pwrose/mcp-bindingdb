@@ -9,6 +9,7 @@ if not substructure.rdkit_available():
     pytest.skip("RDKit not installed (substructure extra)", allow_module_level=True)
 
 from mcp_bindingdb.db import Database, find_database  # noqa: E402
+from conftest import built_database
 from mcp_bindingdb.server import build_server, load_substructure_index  # noqa: E402
 
 IMATINIB = 13530
@@ -37,7 +38,7 @@ def test_parse_query_errors():
 
 
 try:
-    DB = Database(find_database())
+    DB = Database(built_database())
     INDEX = load_substructure_index(DB)
 except FileNotFoundError:
     INDEX = None
