@@ -31,7 +31,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 EXAMPLES = ROOT / "examples"
 REPO_FILES_URL = "https://github.com/pwrose/mcp-bindingdb/blob/main/examples/"
-IGNORE = shutil.ignore_patterns(".DS_Store", ".ipynb_checkpoints")
+SKIP = (".DS_Store", ".ipynb_checkpoints")  # neither copied into the repository nor compared
+IGNORE = shutil.ignore_patterns(*SKIP)
 LEVEL_FOLDER = re.compile(r"^\d\d-")
 LOCAL_PATH = re.compile(rb"/Users/[A-Za-z]|/home/[A-Za-z]|/private/tmp/|[A-Z]:\\Users\\")
 
@@ -221,11 +222,12 @@ def build_index(root: Path, files_base_url: str = "") -> int:
 
 
 def differences(src: Path, dst: Path) -> tuple[list[str], list[str], list[str]]:
-    """Files added, changed and removed going from dst to src (relative paths, .DS_Store ignored)."""
+    """Files added, changed and removed going from dst to src (relative paths, SKIP ignored)."""
     def files(d: Path) -> set[str]:
         if not d.exists():
             return set()
-        return {str(p.relative_to(d)) for p in d.rglob("*") if p.is_file() and p.name != ".DS_Store"}
+        paths = (p.relative_to(d) for p in d.rglob("*") if p.is_file())
+        return {str(rel) for rel in paths if not any(part in SKIP for part in rel.parts)}
     a, b = files(src), files(dst)
     changed = [f for f in sorted(a & b) if not filecmp.cmp(src / f, dst / f, shallow=False)]
     return sorted(a - b), changed, sorted(b - a)
