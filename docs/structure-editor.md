@@ -33,45 +33,6 @@ The check is skipped for clients that do not declare MCP Apps, and after the fir
 `open_overlay_viewer`. To remove the workaround, drop `check_editor_shown` and the check from
 `open_structure_editor`'s instructions.
 
-## Add it to an existing installation
-
-1. Check out this change in a separate working copy or branch, then install dependencies:
-
-   ```bash
-   uv sync --extra substructure --extra opsin
-   ```
-
-   All three search modes use RDKit. Substructure and similarity also need the existing `.sslib` index
-   beside your DuckDB file, for the same release. Exact needs standard InChIKeys: run
-   `uv run --extra substructure python scripts/compute_inchikeys.py /path/to/bindingdb.duckdb` once
-   on an existing database ([InChIKeys](building-the-database.md#inchikeys)). Reuse your existing database and index. If the index
-   is missing, follow [Structure-search index](building-the-database.md#structure-search-index).
-   OPSIN is optional and uses the `opsin` extra described in that guide.
-
-2. Run the automated checks without downloading a BindingDB database:
-
-   ```bash
-   uv run pytest tests/test_structure_editor.py
-   uv run pytest -m "not network"
-   ```
-
-   The editor tests use a tiny DuckDB fixture and the repository's actual RDKit index format. They
-   cover MCP Apps discovery/resources, registration in `build_server`, seed input, exact stereo/salt
-   equality and computed InChIKeys, affinity endpoints/types/censored values, filtering before result
-   limits, similarity scores, tool logging and disabled-network behavior. Existing tests that need a complete
-   BindingDB database are skipped when it is absent.
-
-3. Start the server with your existing database, initially as a test instance:
-
-   ```bash
-   uv run --extra substructure --extra opsin mcp-bindingdb --db /path/to/bindingdb.duckdb
-   ```
-
-   Keep your existing Claude Desktop stdio configuration, or your authenticated remote MCP connection
-   for clients that use HTTP. Restart the test server and refresh its tools in the chat client. The
-   private Site URL is not needed: the UI resource is served by this MCP server. A client must support
-   MCP Apps to render the editor; a text-only client can keep using the ordinary chemistry tools.
-
 ## Manual chat checks
 
 - Ask: **Open the BindingDB structure editor with aspirin.** Resolve the name, review the candidates,
@@ -136,5 +97,4 @@ The build also writes the figure panel that shows `draw_structure_grid`'s figure
 `src/mcp_bindingdb/assets/structure-editor/*.gz.part` and `figure-viewer.html.gz` together.
 The bridge and RDKit versions are pinned by `package-lock.json`. JSME is vendored; its license and
 provenance are documented in [third-party notices](../web/structure-editor/THIRD_PARTY_NOTICES.md).
-The app loads no scripts from a CDN. Chemistry/name operations go through the MCP server; this PR
-adds no external hosting, deployment configuration, credentials, or authentication changes.
+The app loads no scripts from a CDN. Chemistry/name operations go through the MCP server.
