@@ -57,6 +57,7 @@ async def test_lists_all_tools(server):
         "figure_image",
         "exact_structure_search", "decompose_r_groups", "matched_molecular_pairs", "activity_cliffs",
         "find_pdb_complexes", "overlay_binding_site", "overlay_data", "open_overlay_viewer", "update_database",
+        "selectivity_matrix",
     }
     writes = {"reset_tool_log", "transcript_to_html", "create_transcript", "create_jupyter_notebook", "draw_structure_grid",
               "draw_r_group_table", "add_figure", "overlay_binding_site",  # write files
@@ -174,6 +175,70 @@ async def test_find_targets_for_compound(server):
     assert "P00519" in uniprots
     ps = [r["p_affinity"] for r in out["rows"]]
     assert ps == sorted(ps, reverse=True)
+
+
+HER2 = "P04626"
+HER4 = "Q15303"
+
+
+async def test_selectivity_matrix(server):
+    out = await ok(server, "selectivity_matrix", uniprots=["P00533", HER2, HER4], limit=25)
+    assert [t["key"] for t in [out["primary_target"], *out["other_targets"]]] == ["P00533", HER2, HER4]
+    assert out["primary_target"]["target_name"] == "Epidermal growth factor receptor"
+    rows = out["rows"]
+    assert rows and all({"p_P00533", f"p_{HER2}", f"p_{HER4}"} <= set(r) for r in rows)
+    logs = [r["selectivity_log"] for r in rows]
+    assert logs == sorted(logs, reverse=True)  # most selective first
+    for r in rows:
+        assert r["selectivity_log"] == round(r["primary_p_affinity"] - r["off_target_p_affinity"], 2)
+        assert r["selectivity_fold"] == pytest.approx(10 ** r["selectivity_log"], rel=0.01)
+        assert r["p_P00533"] == r["primary_p_affinity"]  # the primary target's column
+        assert r[f"p_{r['off_target']}"] == r["off_target_p_affinity"]
+        assert r["n_targets_measured"] >= 2  # the primary and at least one other, by default
+    top = rows[0]
+    check = await ok(server, "run_sql", sql=f"""
+        SELECT uniprot, max(p_affinity) AS p FROM activity
+        WHERE monomerid = {top['monomerid']} AND uniprot IN ('P00533', '{HER2}', '{HER4}')
+          AND affinity_type = '{out['affinity_type']}' AND unit = 'nM' AND relation <> '>'
+        GROUP BY uniprot ORDER BY uniprot""")
+    for row in check["rows"]:
+        assert top[f"p_{row['uniprot']}"] == round(row["p"], 2)
+
+
+async def test_selectivity_matrix_censored_off_target_is_a_lower_bound(server):
+    out = await ok(server, "selectivity_matrix", uniprots=["P00533", HER2], affinity_type="IC50", limit=400)
+    bounded = [r for r in out["rows"] if r["bounds"]]
+    if not bounded:
+        pytest.skip("no compound in this release is only '>' at the off-target within the limit")
+    assert "upper bound" in out["note"]
+    for r in bounded:
+        assert r["bounds"] == [HER2] and r["selectivity_is_lower_bound"]
+        only_censored = await ok(server, "run_sql", sql="SELECT count(*) FILTER (relation <> '>') AS measured, "
+                                 f"min(p_affinity) FILTER (relation = '>') AS bound FROM activity "
+                                 f"WHERE monomerid = {r['monomerid']} AND uniprot = '{HER2}' "
+                                 "AND affinity_type = 'IC50' AND unit = 'nM' AND p_affinity IS NOT NULL")
+        cell = only_censored["rows"][0]
+        assert cell["measured"] == 0 and r[f"p_{HER2}"] == round(cell["bound"], 2)
+
+
+async def test_selectivity_matrix_options(server):
+    everywhere = await ok(server, "selectivity_matrix", uniprots=["P00533", HER2, HER4],
+                          require_all_targets=True, limit=10)
+    assert everywhere["rows"] and all(r["n_targets_measured"] == 3 for r in everywhere["rows"])
+    untested = await ok(server, "selectivity_matrix", uniprots=["P00533", HER2], include_untested=True,
+                        order_by="potency", limit=50)
+    ps = [r["primary_p_affinity"] for r in untested["rows"]]
+    assert ps == sorted(ps, reverse=True)
+    unknown = [r for r in untested["rows"] if r["selectivity_log"] is None]
+    assert unknown and all(r[f"p_{HER2}"] is None and r["off_target"] is None for r in unknown)
+    assert untested["n_compounds"] > everywhere["n_compounds"]
+
+
+async def test_selectivity_matrix_rejects_targets_it_cannot_compare(server):
+    one = await call(server, "selectivity_matrix", uniprots=["P00533"])
+    assert one.is_error and "2 to 10" in one.content[0].text
+    missing = await call(server, "selectivity_matrix", uniprots=["P00533", "P99999"])
+    assert missing.is_error and "P99999" in missing.content[0].text
 
 
 async def test_get_activity(server):

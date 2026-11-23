@@ -9,6 +9,7 @@
 | `get_target` | Identifiers, synonyms, PDB ids, complex components, measurement counts |
 | `find_ligands_for_target` | Most potent compounds for a target (by id or UniProt accession, optional variants), with ligand efficiency and LipE; filtered by properties, ranked by efficiency, or grouped by scaffold |
 | `find_targets_for_compound` | Activity/selectivity profile of a compound |
+| `selectivity_matrix` | Compares 2-10 targets (a family, paralogs, a wild type and its mutants): one row per compound with its potency at each and its selectivity for the first, from one affinity type |
 | `get_activity` | Full record of one measurement, with assay description and citation |
 | `describe_tables` | Table list with descriptions, or columns and sample rows of one table |
 | `run_sql` | Arbitrary read-only DuckDB SQL |

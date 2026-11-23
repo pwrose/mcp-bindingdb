@@ -19,7 +19,7 @@ import webbrowser
 from datetime import date as _date
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Annotated, Any, Callable, Literal
+from typing import Annotated, Any, Callable, Literal, NamedTuple, Sequence
 
 from mcp.server.mcpserver import Context, MCPServer
 from mcp.server.mcpserver.exceptions import ToolError
@@ -47,6 +47,9 @@ articles, patents, PubChem and ChEMBL.
 
 Workflow: resolve names to ids first (search_compounds / search_targets), then use
 find_ligands_for_target, find_targets_for_compound, get_compound, get_target, get_activity.
+selectivity_matrix compares 2-10 targets at once (a family, its paralogs, a wild type and its mutants):
+one row per compound with its potency at each target and its selectivity for the first one. Use it for
+"selective for X over Y" questions instead of calling find_ligands_for_target once per target.
 chemical_name_to_smiles turns any compound name (trade name, IUPAC name, CAS number) into a structure
 and the BindingDB compounds with that structure, also when the name is not a BindingDB synonym.
 When the user names a compound, resolve it with search_compounds or chemical_name_to_smiles; never write
@@ -246,6 +249,15 @@ EFFICIENCY_COLUMNS = f""", round({compound_properties.LIGAND_EFFICIENCY_SQL}, 2)
        round({compound_properties.LIPE_SQL}, 2) AS lipe,
        CASE WHEN len(cp.pains) > 0 THEN cp.pains END AS pains_alerts"""
 OrderBy = Literal["potency", "ligand_efficiency", "lipe"]
+
+
+class MatrixFilter(NamedTuple):
+    """Extra conditions on the primary target's measurements in a selectivity matrix, and the table they
+    read (ACTIVITY_WITH_PROPERTIES when they are about compound properties). Empty by default."""
+    clause: str = ""
+    params: Sequence[Any] = ()
+    source: str = "activity"
+
 
 
 class PropertyFilter(BaseModel):
@@ -935,6 +947,171 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
         if with_smiles:  # structure searches: the compounds' structures, e.g. for draw_structure_grid
             sql = f"SELECT q.*, c.smiles FROM ({sql}) q LEFT JOIN compound c USING (monomerid) ORDER BY {ranked}"
         return run(sql, [*params, *pparams], limit)
+
+    def _matrix_branches(specs: list[dict[str, Any]], affinity_type: str | None,
+                         primary: MatrixFilter = MatrixFilter()) -> tuple[str, list[Any]]:
+        """UNION ALL of one SELECT per target, each row tagged with its target's index `t`.
+        `primary` holds extra conditions for the primary target (index 0) only."""
+        branches, params = [], []
+        for i, spec in enumerate(specs):
+            clauses = [spec["where"], "unit = 'nM'", "p_affinity IS NOT NULL"]
+            values = [*spec["params"]]
+            if affinity_type is not None:
+                clauses.append("affinity_type = ?")
+                values.append(affinity_type)
+            else:
+                clauses.append("affinity_type IN (SELECT unnest(?))")
+                values.append(list(POTENCY_TYPES))
+            source = "activity"
+            if i == 0 and primary.clause:
+                clauses.append(primary.clause)
+                values += primary.params
+                source = primary.source
+            branches.append(f"""SELECT {i} AS t, monomerid, affinity_type, relation, p_affinity,
+                                       target_name, organism
+                                FROM {source} WHERE {' AND '.join(clauses)}""")
+            params += values
+        return "\n UNION ALL ".join(branches), params
+
+    @mcp.tool(annotations=READ_ONLY)
+    def selectivity_matrix(
+        uniprots: Annotated[list[str] | None, Field(description="UniProt accessions of the targets to "
+                                                    "compare, e.g. ['P00533', 'P04626']; the first one is "
+                                                    "the primary target that selectivity is computed for")] = None,
+        target_ids: Annotated[list[int] | None, Field(description="polymerids (or complexids with "
+                                                      "target_kind='complex') instead of, or after, "
+                                                      "uniprots")] = None,
+        target_kind: TargetKindArg = "polymer",
+        include_variants: Annotated[bool, Field(description="With uniprots: also include each accession's "
+                                                "mutant/construct targets")] = False,
+        affinity_type: OneAffinityTypeArg = None,
+        max_value_nm: Annotated[float | None, Field(ge=0, description="Only compounds with a measurement "
+                                                    "this potent or better (nM) at the primary "
+                                                    "target")] = None,
+        properties: Annotated[PropertyFilter | None, PROPERTIES_FIELD] = None,
+        require_all_targets: Annotated[bool, Field(description="Only compounds measured against every "
+                                                   "listed target")] = False,
+        include_untested: Annotated[bool, Field(description="Also include compounds with no measurement at "
+                                                "any of the other targets; their selectivity is unknown "
+                                                "(null), so they are listed last")] = False,
+        order_by: Annotated[Literal["selectivity", "potency"], Field(
+            description="Rank by selectivity for the primary target, or by potency at it")] = "selectivity",
+        limit: Annotated[int, Field(description="Max compounds (1-500)")] = 50,
+    ) -> dict[str, Any]:
+        """Compare 2-10 targets (e.g. a family, its paralogs, or a wild type and its mutants): one row per
+        compound with its potency at each target and how selective it is for the primary (first) one.
+
+        Each row gives p_<target> for every target, the primary potency, the most potent off-target, and
+        selectivity_log (primary p_affinity minus the best off-target's) with selectivity_fold = 10 to that
+        power. All potencies come from one affinity type, since values of different types are not
+        comparable. A compound measured only at the primary target cannot be shown to be selective; such
+        compounds are left out unless include_untested. Where a target has only '>' values (inactive at the
+        highest concentration tested) the potency is an upper bound: the target is then listed in the row's
+        `bounds` and its selectivity_log is a lower bound (the compound is at least that selective)."""
+        specs: list[dict[str, Any]] = []
+        for accession in uniprots or []:
+            key = accession.strip().upper()
+            where, params = _target_where(None, key, include_variants, target_kind)
+            specs.append({"key": key, "where": where, "params": params})
+        for target_id in target_ids or []:
+            where, params = _target_where(target_id, None, False, target_kind)
+            specs.append({"key": f"{target_kind}_{target_id}", "where": where, "params": params})
+        specs = list({spec["key"]: spec for spec in specs}.values())  # first use of a key wins
+        if not 2 <= len(specs) <= 10:
+            raise ToolError(f"Give 2 to 10 distinct targets to compare, not {len(specs)}; use "
+                            "find_targets_for_compound for one compound against all its targets")
+        prf, prparams = property_filter(properties)
+        clauses, values = ([prf], [*prparams]) if prf else ([], [])
+        if max_value_nm is not None:
+            clauses.append("relation <> '>' AND value <= ?")
+            values.append(max_value_nm)
+        primary = MatrixFilter(" AND ".join(clauses), values,
+                               ACTIVITY_WITH_PROPERTIES if prf else "activity")
+
+        if affinity_type is None:  # the type the listed targets have the most compounds measured with
+            union, uparams = _matrix_branches(specs, None)
+            row = db.one(f"""WITH m AS ({union})
+                             SELECT affinity_type FROM m GROUP BY affinity_type
+                             ORDER BY count(DISTINCT monomerid) DESC, count(*) DESC, affinity_type""",
+                         uparams)
+            if row is None:
+                raise ToolError("None of those targets has a Ki, Kd, IC50 or EC50 value in nM, so there is "
+                                "nothing to compare; get_target shows what each one has")
+            affinity_type = row["affinity_type"]
+
+        union, uparams = _matrix_branches(specs, affinity_type)
+        coverage = run(f"""WITH m AS ({union})
+                           SELECT t, min(target_name) AS target_name, min(organism) AS organism,
+                                  count(DISTINCT monomerid) AS n_compounds, count(*) AS n_measurements
+                           FROM m GROUP BY t ORDER BY t""", uparams, len(specs))
+        targets = [{"key": spec["key"], "target_name": None, "organism": None, "n_compounds": 0,
+                    "n_measurements": 0} for spec in specs]
+        for row in coverage["rows"]:
+            targets[row.pop("t")].update(row)
+        if empty := [t["key"] for t in targets if not t["n_measurements"]]:
+            raise ToolError(f"No {affinity_type} value in nM for {', '.join(empty)}, so a matrix over these "
+                            "targets would have an empty column: check the accession or id with "
+                            "search_targets, name another affinity_type, or leave that target out. "
+                            "get_target shows what one target has.")
+
+        union, uparams = _matrix_branches(specs, affinity_type, primary)
+        keep = ["primary_p IS NOT NULL"]
+        if not include_untested:
+            keep.append("n_off_targets > 0")
+        if require_all_targets:
+            keep.append(f"n_targets_measured = {len(specs)}")
+        order = ("selectivity_log DESC NULLS LAST, primary_p DESC, monomerid" if order_by == "selectivity"
+                 else "primary_p DESC, selectivity_log DESC NULLS LAST, monomerid")
+        result = run(f"""
+            WITH m AS ({union}),
+            cell AS (  -- one row per compound and target: its potency there, measured or an upper bound
+              SELECT t, monomerid, count(*) AS n_measurements,
+                     coalesce(max(p_affinity) FILTER (relation <> '>'),
+                              min(p_affinity) FILTER (relation = '>')) AS p,
+                     max(p_affinity) FILTER (relation <> '>') IS NULL AS is_bound
+              FROM m GROUP BY t, monomerid
+            ),
+            agg AS (
+              SELECT monomerid,
+                     max(p) FILTER (t = 0 AND NOT is_bound) AS primary_p,
+                     max(p) FILTER (t <> 0) AS off_p,
+                     arg_max(t, [p, -t]) FILTER (t <> 0) AS off_t,
+                     arg_max(is_bound::INTEGER, [p, -t]) FILTER (t <> 0) AS off_is_bound,
+                     count(*) FILTER (t <> 0) AS n_off_targets,
+                     count(*) AS n_targets_measured,
+                     list({{'t': t, 'p': round(p, 2), 'bound': is_bound, 'n': n_measurements}} ORDER BY t)
+                         AS cells
+              FROM cell GROUP BY monomerid
+            )
+            SELECT monomerid, c.bdbm_id, c.name AS compound_name, c.smiles,
+                   round(primary_p, 2) AS primary_p_affinity, round(off_p, 2) AS off_target_p_affinity,
+                   round(primary_p - off_p, 2) AS selectivity_log,
+                   off_t, off_is_bound, n_off_targets, n_targets_measured, cells,
+                   count(*) OVER () AS n_compounds
+            FROM agg JOIN compound c USING (monomerid)
+            WHERE {' AND '.join(keep)}
+            ORDER BY {order}""", uparams, _clamp(limit, 1, 500))
+        total = 0
+        for row in result["rows"]:
+            total = int(row.pop("n_compounds"))
+        rows = [_matrix_row(row, targets) for row in result["rows"]]
+        notes = [f"Potencies are {affinity_type} p_affinity (9 - log10(nM)); p_<target> is null where the "
+                 "compound was not measured against that target.",
+                 "selectivity_log is the primary target's p_affinity minus the most potent other target's; "
+                 "selectivity_fold is 10 to that power.",
+                 "A row's `bounds` lists targets whose only values are '>' (inactive at the highest "
+                 "concentration tested), so its potency there is an upper bound; when the most potent "
+                 "off-target is one of them, selectivity_log is a lower bound."
+                 if any(row["bounds"] for row in rows) else None,
+                 "Compounds measured only against the primary target are left out, since nothing shows them "
+                 "to be selective; include_untested adds them." if not include_untested else None,
+                 f"No compound has a {affinity_type} value in nM against {targets[0]['key']} and against "
+                 "another of these targets under these filters. Try another affinity_type, a wider "
+                 "max_value_nm, or include_untested." if not rows else None]
+        return _with_notes({"affinity_type": affinity_type, "primary_target": targets[0],
+                            "other_targets": targets[1:], "n_compounds": total,
+                            "row_count": result["row_count"], "truncated": result["truncated"],
+                            "rows": rows}, notes)
 
     @mcp.tool(annotations=READ_ONLY)
     def get_activity(
@@ -2617,6 +2794,35 @@ def _add_sar_tools(mcp: MCPServer, db: Database, property_filter) -> None:
         return _with_notes({"affinity_type": affinity_type, "n_compounds": len(measured),
                             "n_cliffs": len(rows), "row_count": min(len(rows), limit),
                             "truncated": len(rows) > limit, "rows": rows[:limit]}, notes)
+
+
+def _matrix_row(row: dict[str, Any], targets: list[dict[str, Any]]) -> dict[str, Any]:
+    """One compound's row of a selectivity matrix: p_<target> for every target, then its selectivity for
+    the primary one over the most potent of the others."""
+    cells = {int(cell["t"]): cell for cell in row["cells"]}
+    off_t = row["off_t"]
+    return {
+        "monomerid": row["monomerid"], "bdbm_id": row["bdbm_id"], "compound_name": row["compound_name"],
+        **{f"p_{target['key']}": cells[i]["p"] if i in cells else None for i, target in enumerate(targets)},
+        "primary_p_affinity": row["primary_p_affinity"],
+        "off_target": targets[int(off_t)]["key"] if off_t is not None else None,
+        "off_target_p_affinity": row["off_target_p_affinity"],
+        "selectivity_log": row["selectivity_log"],
+        "selectivity_fold": _fold(row["selectivity_log"]),
+        "selectivity_is_lower_bound": bool(row["off_is_bound"]) and row["selectivity_log"] is not None,
+        "bounds": [t["key"] for i, t in enumerate(targets) if i in cells and cells[i]["bound"]],
+        "n_targets_measured": int(row["n_targets_measured"]),
+        "n_measurements": sum(int(cell["n"]) for cell in cells.values()),
+        "smiles": row["smiles"],
+    }
+
+
+def _fold(selectivity_log: float | None) -> float | None:
+    """The fold difference in potency a difference of log units stands for (None when it is unknown)."""
+    if selectivity_log is None:
+        return None
+    fold = 10 ** float(selectivity_log)
+    return round(fold, 1) if fold < 10 else round(fold)
 
 
 def _with_notes(out: dict[str, Any], notes: list[str | None]) -> dict[str, Any]:
