@@ -143,7 +143,7 @@ and results from PubChem, RCSB or PDBe, which can change. See
 | `get_target` | Identifiers, synonyms, PDB ids, complex components, measurement counts |
 | `find_ligands_for_target` | Most potent compounds for a target, with ligand efficiency and LipE; filtered by properties (e.g. MW, Ro5, no PAINS, a scaffold), ranked by efficiency, or grouped by scaffold |
 | `find_targets_for_compound` | Activity/selectivity profile of a compound |
-| `selectivity_matrix` | Compares 2-10 targets (a family, paralogs, a wild type and its mutants): one row per compound with its potency at each and its selectivity for the first, from one affinity type |
+| `selectivity_matrix` | Compares 2-10 targets (a family, paralogs, a wild type and its mutants): one row per compound with its potency at each and its selectivity for the first, from one affinity type; each column's protein and gene name in the legend |
 | `get_activity` | Full record of one measurement, with assay description and citation |
 | `exact_structure_search` | BindingDB entries of the same molecule (salts and stereo included), optionally only those with a measurement in an affinity range |
 | `substructure_search` | Compounds containing a SMILES/SMARTS fragment, optionally only those with a measurement in an affinity range or with given properties, or the targets they were measured against |

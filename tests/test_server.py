@@ -185,6 +185,7 @@ async def test_selectivity_matrix(server):
     out = await ok(server, "selectivity_matrix", uniprots=["P00533", HER2, HER4], limit=25)
     assert [t["key"] for t in [out["primary_target"], *out["other_targets"]]] == ["P00533", HER2, HER4]
     assert out["primary_target"]["target_name"] == "Epidermal growth factor receptor"
+    assert [t["gene"] for t in [out["primary_target"], *out["other_targets"]]] == ["EGFR", "ERBB2", "ERBB4"]
     rows = out["rows"]
     assert rows and all({"p_P00533", f"p_{HER2}", f"p_{HER4}"} <= set(r) for r in rows)
     logs = [r["selectivity_log"] for r in rows]

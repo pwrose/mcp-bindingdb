@@ -251,6 +251,14 @@ EFFICIENCY_COLUMNS = f""", round({compound_properties.LIGAND_EFFICIENCY_SQL}, 2)
 OrderBy = Literal["potency", "ligand_efficiency", "lipe"]
 
 
+# A target's gene name, taken from the UniProt entry name (GENE_SPECIES, e.g. EGFR_HUMAN) among its
+# synonyms; null for a complex, which has no polymerid and no single gene.
+GENE_SUBQUERY = """(SELECT min(regexp_extract(tn.name, '^([A-Z0-9]+)_[A-Z0-9]+$', 1))
+                    FROM target_name tn
+                    WHERE tn.target_kind = 'polymer' AND tn.target_id = cov.polymerid
+                      AND regexp_matches(tn.name, '^[A-Z0-9]+_[A-Z0-9]+$'))"""
+
+
 class MatrixFilter(NamedTuple):
     """Extra conditions on the primary target's measurements in a selectivity matrix, and the table they
     read (ACTIVITY_WITH_PROPERTIES when they are about compound properties). Empty by default."""
@@ -968,7 +976,7 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
                 values += primary.params
                 source = primary.source
             branches.append(f"""SELECT {i} AS t, monomerid, affinity_type, relation, p_affinity,
-                                       target_name, organism
+                                       target_name, organism, polymerid
                                 FROM {source} WHERE {' AND '.join(clauses)}""")
             params += values
         return "\n UNION ALL ".join(branches), params
@@ -1040,12 +1048,18 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
             affinity_type = row["affinity_type"]
 
         union, uparams = _matrix_branches(specs, affinity_type)
-        coverage = run(f"""WITH m AS ({union})
-                           SELECT t, min(target_name) AS target_name, min(organism) AS organism,
-                                  count(DISTINCT monomerid) AS n_compounds, count(*) AS n_measurements
-                           FROM m GROUP BY t ORDER BY t""", uparams, len(specs))
-        targets = [{"key": spec["key"], "target_name": None, "organism": None, "n_compounds": 0,
-                    "n_measurements": 0} for spec in specs]
+        coverage = run(f"""WITH m AS ({union}),
+                           cov AS (
+                             SELECT t, min(target_name) AS target_name, min(organism) AS organism,
+                                    count(DISTINCT monomerid) AS n_compounds, count(*) AS n_measurements,
+                                    min(polymerid) AS polymerid  -- a target's variants share their gene
+                             FROM m GROUP BY t
+                           )
+                           SELECT t, target_name, {GENE_SUBQUERY} AS gene, organism, n_compounds,
+                                  n_measurements
+                           FROM cov ORDER BY t""", uparams, len(specs))
+        targets = [{"key": spec["key"], "target_name": None, "gene": None, "organism": None,
+                    "n_compounds": 0, "n_measurements": 0} for spec in specs]
         for row in coverage["rows"]:
             targets[row.pop("t")].update(row)
         if empty := [t["key"] for t in targets if not t["n_measurements"]]:
@@ -1096,7 +1110,8 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
             total = int(row.pop("n_compounds"))
         rows = [_matrix_row(row, targets) for row in result["rows"]]
         notes = [f"Potencies are {affinity_type} p_affinity (9 - log10(nM)); p_<target> is null where the "
-                 "compound was not measured against that target.",
+                 "compound was not measured against that target. primary_target and other_targets give "
+                 "each column key's protein and gene name; label the targets with the gene names.",
                  "selectivity_log is the primary target's p_affinity minus the most potent other target's; "
                  "selectivity_fold is 10 to that power.",
                  "A row's `bounds` lists targets whose only values are '>' (inactive at the highest "
