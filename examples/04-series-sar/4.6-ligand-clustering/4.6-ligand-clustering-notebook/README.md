@@ -1,15 +1,15 @@
 # How many distinct chemotypes hit BRD4
 
-A reproducible record of an AI-assisted BindingDB analysis with 5 tool calls, made by mcp-bindingdb v0.1.7.
+A reproducible record of an AI-assisted BindingDB analysis with 4 tool calls, made by mcp-bindingdb v0.1.7.
 
 - **Date:** 2026-11-22
 - **Model:** claude-opus-5
 - **Data:** BindingDB release **202610** (`BDB-mySQL_All_202610_dmp.zip`, SHA-256 `923415e9d990867d9f4f43dc6e674c173eb29ea18f496dea02a011e3d2f45690`)
 - **Database build:** 2026-10-02T22:41:22+00:00, DuckDB 1.5.6
 - **Derived data:** standard InChIKeys computed from SMILES by RDKit 2026.03.6; compound_property computed from SMILES (largest fragment) by RDKit 2026.03.6
-- **Server:** mcp-bindingdb v0.1.7, commit [`4fad6d8e47a1`](https://github.com/pwrose/mcp-bindingdb/commit/4fad6d8e47a12cf81a3d235a82a744752ac14376)
+- **Server:** mcp-bindingdb v0.1.7, commit [`8b42a41f349a`](https://github.com/pwrose/mcp-bindingdb/commit/8b42a41f349a21988dcd2e1cfc7847ee93158b35)
 - **Software:** python 3.12.7, duckdb 1.5.6, rdkit 2026.03.6, mcp 2.3.0, gemmi 0.7.5
-- **Notebook generated:** 2026-11-23T05:37:41Z
+- **Notebook generated:** 2026-11-23T06:24:59Z
 
 ## How to run
 
@@ -36,7 +36,7 @@ A rerun needs the database: the one `BINDINGDB_DUCKDB=/path/to/bindingdb_202610.
 ```bash
 git clone https://github.com/pwrose/mcp-bindingdb.git
 cd mcp-bindingdb
-git checkout 4fad6d8e47a12cf81a3d235a82a744752ac14376
+git checkout 8b42a41f349a21988dcd2e1cfc7847ee93158b35
 scripts/build_duckdb.sh --release 202610
 ```
 

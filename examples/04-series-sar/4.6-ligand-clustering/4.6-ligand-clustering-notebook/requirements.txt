@@ -1,5 +1,5 @@
-# mcp-bindingdb at commit 4fad6d8e47a1, with the versions of its dependencies its uv.lock pins.
-mcp-bindingdb[substructure,structures,opsin,notebook] @ git+https://github.com/pwrose/mcp-bindingdb.git@4fad6d8e47a12cf81a3d235a82a744752ac14376
+# mcp-bindingdb at commit 8b42a41f349a, with the versions of its dependencies its uv.lock pins.
+mcp-bindingdb[substructure,structures,opsin,notebook] @ git+https://github.com/pwrose/mcp-bindingdb.git@8b42a41f349a21988dcd2e1cfc7847ee93158b35
 annotated-doc==0.0.5
 annotated-types==0.8.0
 anyio==4.15.1
