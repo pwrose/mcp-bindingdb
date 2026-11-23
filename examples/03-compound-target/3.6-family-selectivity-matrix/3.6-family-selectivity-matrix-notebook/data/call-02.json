@@ -5,8 +5,8 @@
   "target_name": "Tyrosine-protein kinase JAK1",
   "gene": "JAK1",
   "organism": "Homo sapiens",
-  "n_compounds": 9772,
-  "n_measurements": 11794
+  "n_compounds": 9773,
+  "n_measurements": 11795
  },
  "other_targets": [
   {
@@ -14,24 +14,24 @@
    "target_name": "Tyrosine-protein kinase JAK2",
    "gene": "JAK2",
    "organism": "Homo sapiens",
-   "n_compounds": 12326,
-   "n_measurements": 16053
+   "n_compounds": 12327,
+   "n_measurements": 16054
   },
   {
    "key": "P52333",
    "target_name": "Tyrosine-protein kinase JAK3",
    "gene": "JAK3",
    "organism": "Homo sapiens",
-   "n_compounds": 8396,
-   "n_measurements": 11420
+   "n_compounds": 8397,
+   "n_measurements": 11421
   },
   {
    "key": "P29597",
    "target_name": "Non-receptor tyrosine-protein kinase TYK2",
    "gene": "TYK2",
    "organism": "Homo sapiens",
-   "n_compounds": 4491,
-   "n_measurements": 5538
+   "n_compounds": 4492,
+   "n_measurements": 5539
   }
  ],
  "n_compounds": 4624,

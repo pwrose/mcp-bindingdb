@@ -1,15 +1,15 @@
 # JAK1 selectivity across the JAK family
 
-A reproducible record of an AI-assisted BindingDB analysis with 3 tool calls, made by mcp-bindingdb v0.1.8.
+A reproducible record of an AI-assisted BindingDB analysis with 3 tool calls, made by mcp-bindingdb v0.1.9.
 
-- **Date:** 2026-11-22
+- **Date:** 2026-11-23
 - **Model:** claude-opus-5
-- **Data:** BindingDB release **202610** (`BDB-mySQL_All_202610_dmp.zip`, SHA-256 `923415e9d990867d9f4f43dc6e674c173eb29ea18f496dea02a011e3d2f45690`)
-- **Database build:** 2026-10-02T22:41:22+00:00, DuckDB 1.5.6
+- **Data:** BindingDB release **202611** (`BDB-mySQL_All_202611_dmp.zip`, SHA-256 `daea9260d404919a183ce02d91bf4b9c49b410bea7eaaeba105c8e0280510381`)
+- **Database build:** 2026-11-21T01:08:15+00:00, DuckDB 1.5.6
 - **Derived data:** standard InChIKeys computed from SMILES by RDKit 2026.03.6; compound_property computed from SMILES (largest fragment) by RDKit 2026.03.6
-- **Server:** mcp-bindingdb v0.1.8, commit [`36ccad3ba0f5`](https://github.com/pwrose/mcp-bindingdb/commit/36ccad3ba0f5bf6a9216aac202a9158b80501829)
+- **Server:** mcp-bindingdb v0.1.9, commit [`5ea8c6253a4c`](https://github.com/pwrose/mcp-bindingdb/commit/5ea8c6253a4c012b3f3982669393dcdf831fca79)
 - **Software:** python 3.12.7, duckdb 1.5.6, rdkit 2026.03.6, mcp 2.3.0, gemmi 0.7.5
-- **Notebook generated:** 2026-11-23T07:53:49Z
+- **Notebook generated:** 2026-11-23T08:25:14Z
 
 ## How to run
 
@@ -24,20 +24,20 @@ then choose Run → Run All Cells. The first start installs the packages, which 
 
 ## How to rerun the calls
 
-To rerun every BindingDB call on your own copy of release 202610 and check each result against the recorded one, set `RERUN = True` in the setup cell and run all cells, or rerun the notebook without opening Jupyter, writing a copy with the new results:
+To rerun every BindingDB call on your own copy of release 202611 and check each result against the recorded one, set `RERUN = True` in the setup cell and run all cells, or rerun the notebook without opening Jupyter, writing a copy with the new results:
 
 ```bash
 cd /path/to/3.6-family-selectivity-matrix-notebook
 BINDINGDB_RERUN=1 uv run --no-project --with-requirements requirements.txt --with nbconvert jupyter nbconvert --to notebook --execute --output 3.6-family-selectivity-matrix-notebook-rerun.ipynb 3.6-family-selectivity-matrix-notebook.ipynb
 ```
 
-A rerun needs the database: the one `BINDINGDB_DUCKDB=/path/to/bindingdb_202610.duckdb` names (put it before `uv run`), else the newest one mcp-bindingdb built on this computer, for example for Claude Desktop. With neither, the first rerun builds one, which takes about half an hour and 2.4 GB. To build exactly release 202610, with a clone of mcp-bindingdb:
+A rerun needs the database: the one `BINDINGDB_DUCKDB=/path/to/bindingdb_202611.duckdb` names (put it before `uv run`), else the newest one mcp-bindingdb built on this computer, for example for Claude Desktop. With neither, the first rerun builds one, which takes about half an hour and 2.4 GB. To build exactly release 202611, with a clone of mcp-bindingdb:
 
 ```bash
 git clone https://github.com/pwrose/mcp-bindingdb.git
 cd mcp-bindingdb
-git checkout 36ccad3ba0f5bf6a9216aac202a9158b80501829
-scripts/build_duckdb.sh --release 202610
+git checkout 5ea8c6253a4c012b3f3982669393dcdf831fca79
+scripts/build_duckdb.sh --release 202611
 ```
 
 The setup cell checks the database's release and source checksum against the recorded ones.

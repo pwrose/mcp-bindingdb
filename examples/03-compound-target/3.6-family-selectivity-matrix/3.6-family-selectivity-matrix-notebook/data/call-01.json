@@ -10,8 +10,8 @@
    "uniprot_raw": "O60674",
    "organism": "Homo sapiens",
    "type": "Protein",
-   "n_activities": 20899,
-   "n_compounds": 16277,
+   "n_activities": 20900,
+   "n_compounds": 16278,
    "matched_name": "JAK2"
   },
   {
@@ -22,8 +22,8 @@
    "uniprot_raw": "P23458",
    "organism": "Homo sapiens",
    "type": "Protein",
-   "n_activities": 16476,
-   "n_compounds": 13565,
+   "n_activities": 16477,
+   "n_compounds": 13566,
    "matched_name": "JAK1"
   },
   {
@@ -34,8 +34,8 @@
    "uniprot_raw": "P52333",
    "organism": "Homo sapiens",
    "type": "Protein",
-   "n_activities": 13318,
-   "n_compounds": 9661,
+   "n_activities": 13319,
+   "n_compounds": 9662,
    "matched_name": "JAK3"
   },
   {

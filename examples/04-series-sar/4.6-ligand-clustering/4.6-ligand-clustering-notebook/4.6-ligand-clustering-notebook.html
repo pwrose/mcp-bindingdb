@@ -7814,14 +7814,14 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="How-many-distinct-chemotypes-hit-BRD4">How many distinct chemotypes hit BRD4<a class="anchor-link" href="#How-many-distinct-chemotypes-hit-BRD4">¶</a></h1><p>A reproducible record of an AI-assisted BindingDB analysis: each prompt, the BindingDB tool calls that answered it with their recorded results, the answer, and its figures. Run all cells to show the recorded results, or rerun every call on your own copy of the database and check each result against the recorded one.</p>
 <ul>
-<li><strong>Date:</strong> 2026-11-22</li>
+<li><strong>Date:</strong> 2026-11-23</li>
 <li><strong>Model:</strong> claude-opus-5</li>
-<li><strong>Data:</strong> BindingDB release <strong>202610</strong> (<code>BDB-mySQL_All_202610_dmp.zip</code>, SHA-256 <code>923415e9d990867d9f4f43dc6e674c173eb29ea18f496dea02a011e3d2f45690</code>)</li>
-<li><strong>Database build:</strong> 2026-10-02T22:41:22+00:00, DuckDB 1.5.6</li>
+<li><strong>Data:</strong> BindingDB release <strong>202611</strong> (<code>BDB-mySQL_All_202611_dmp.zip</code>, SHA-256 <code>daea9260d404919a183ce02d91bf4b9c49b410bea7eaaeba105c8e0280510381</code>)</li>
+<li><strong>Database build:</strong> 2026-11-21T01:08:15+00:00, DuckDB 1.5.6</li>
 <li><strong>Derived data:</strong> standard InChIKeys computed from SMILES by RDKit 2026.03.6; compound_property computed from SMILES (largest fragment) by RDKit 2026.03.6</li>
-<li><strong>Server:</strong> mcp-bindingdb v0.1.7, commit <a href="https://github.com/pwrose/mcp-bindingdb/commit/8b42a41f349a21988dcd2e1cfc7847ee93158b35"><code>8b42a41f349a</code></a></li>
+<li><strong>Server:</strong> mcp-bindingdb v0.1.9, commit <a href="https://github.com/pwrose/mcp-bindingdb/commit/5ea8c6253a4c012b3f3982669393dcdf831fca79"><code>5ea8c6253a4c</code></a></li>
 <li><strong>Software:</strong> python 3.12.7, duckdb 1.5.6, rdkit 2026.03.6, mcp 2.3.0, gemmi 0.7.5</li>
-<li><strong>Notebook generated:</strong> 2026-11-23T06:24:59Z</li>
+<li><strong>Notebook generated:</strong> 2026-11-23T08:25:17Z</li>
 <li><strong>Contents:</strong> 2 exchanges · 4 tool calls · 1 figure</li>
 </ul>
 <h3 id="How-to-run">How to run<a class="anchor-link" href="#How-to-run">¶</a></h3><p>Keep the notebook in its folder, which holds everything it needs: <code>requirements.txt</code> (mcp-bindingdb at its commit and the versions of the packages it needs), the recorded results in <code>data/</code> and the figures in <code>figures/</code>. With <a href="https://docs.astral.sh/uv/">uv</a>, from that folder (replace the path with yours):</p>
@@ -7829,15 +7829,15 @@ a.anchor-link {
 uv<span class="w"> </span>run<span class="w"> </span>--no-project<span class="w"> </span>--with-requirements<span class="w"> </span>requirements.txt<span class="w"> </span>--with<span class="w"> </span>jupyterlab<span class="w"> </span>jupyter<span class="w"> </span>lab<span class="w"> </span><span class="m">4</span>.6-ligand-clustering-notebook.ipynb
 </pre></div>
 <p>then choose Run → Run All Cells. The first start installs the packages, which takes a minute or two; the cells show the recorded results, so no database is needed. Without uv: <code>pip install -r requirements.txt jupyterlab</code>, then <code>jupyter lab 4.6-ligand-clustering-notebook.ipynb</code> in the folder.</p>
-<h3 id="How-to-rerun-the-calls">How to rerun the calls<a class="anchor-link" href="#How-to-rerun-the-calls">¶</a></h3><p>To rerun every BindingDB call on your own copy of release 202610 and check each result against the recorded one, set <code>RERUN = True</code> in the setup cell and run all cells, or rerun the notebook without opening Jupyter, writing a copy with the new results:</p>
+<h3 id="How-to-rerun-the-calls">How to rerun the calls<a class="anchor-link" href="#How-to-rerun-the-calls">¶</a></h3><p>To rerun every BindingDB call on your own copy of release 202611 and check each result against the recorded one, set <code>RERUN = True</code> in the setup cell and run all cells, or rerun the notebook without opening Jupyter, writing a copy with the new results:</p>
 <div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/4.6-ligand-clustering-notebook
 <span class="nv">BINDINGDB_RERUN</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>uv<span class="w"> </span>run<span class="w"> </span>--no-project<span class="w"> </span>--with-requirements<span class="w"> </span>requirements.txt<span class="w"> </span>--with<span class="w"> </span>nbconvert<span class="w"> </span>jupyter<span class="w"> </span>nbconvert<span class="w"> </span>--to<span class="w"> </span>notebook<span class="w"> </span>--execute<span class="w"> </span>--output<span class="w"> </span><span class="m">4</span>.6-ligand-clustering-notebook-rerun.ipynb<span class="w"> </span><span class="m">4</span>.6-ligand-clustering-notebook.ipynb
 </pre></div>
-<p>A rerun needs the database: the one <code>BINDINGDB_DUCKDB=/path/to/bindingdb_202610.duckdb</code> names (put it before <code>uv run</code>), else the newest one mcp-bindingdb built on this computer, for example for Claude Desktop. With neither, the first rerun builds one, which takes about half an hour and 2.4 GB. To build exactly release 202610, with a clone of mcp-bindingdb:</p>
+<p>A rerun needs the database: the one <code>BINDINGDB_DUCKDB=/path/to/bindingdb_202611.duckdb</code> names (put it before <code>uv run</code>), else the newest one mcp-bindingdb built on this computer, for example for Claude Desktop. With neither, the first rerun builds one, which takes about half an hour and 2.4 GB. To build exactly release 202611, with a clone of mcp-bindingdb:</p>
 <div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/pwrose/mcp-bindingdb.git
 <span class="nb">cd</span><span class="w"> </span>mcp-bindingdb
-git<span class="w"> </span>checkout<span class="w"> </span>8b42a41f349a21988dcd2e1cfc7847ee93158b35
-scripts/build_duckdb.sh<span class="w"> </span>--release<span class="w"> </span><span class="m">202610</span>
+git<span class="w"> </span>checkout<span class="w"> </span>5ea8c6253a4c012b3f3982669393dcdf831fca79
+scripts/build_duckdb.sh<span class="w"> </span>--release<span class="w"> </span><span class="m">202611</span>
 </pre></div>
 <p>The setup cell checks the database's release and source checksum against the recorded ones.</p>
 <p>Run as it is, each call cell shows its recorded result, read from <code>data/</code> and checked against the SHA-256 digest recorded in the cell. Rerun, it shows the new result with ✅ when it matches the recorded one (floats to 10 significant digits, ids of viewers and files left out). Calls to PubChem, RCSB or PDBe depend on those services and may differ. The prose answers are the model's and are not recomputed.</p>
@@ -7858,7 +7858,7 @@ scripts/build_duckdb.sh<span class="w"> </span>--release<span class="w"> </span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">mcp_bindingdb.notebook</span><span class="w"> </span><span class="kn">import</span> <span class="n">Replay</span>
 
 <span class="n">RERUN</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="n">replay</span> <span class="o">=</span> <span class="n">Replay</span><span class="p">(</span><span class="n">release</span><span class="o">=</span><span class="s1">'202610'</span><span class="p">,</span> <span class="n">source_zip_sha256</span><span class="o">=</span><span class="s1">'923415e9d990867d9f4f43dc6e674c173eb29ea18f496dea02a011e3d2f45690'</span><span class="p">,</span> <span class="n">rerun</span><span class="o">=</span><span class="n">RERUN</span><span class="p">)</span>
+<span class="n">replay</span> <span class="o">=</span> <span class="n">Replay</span><span class="p">(</span><span class="n">release</span><span class="o">=</span><span class="s1">'202611'</span><span class="p">,</span> <span class="n">source_zip_sha256</span><span class="o">=</span><span class="s1">'daea9260d404919a183ce02d91bf4b9c49b410bea7eaaeba105c8e0280510381'</span><span class="p">,</span> <span class="n">rerun</span><span class="o">=</span><span class="n">RERUN</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7871,7 +7871,7 @@ scripts/build_duckdb.sh<span class="w"> </span>--release<span class="w"> </span>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Recorded with BindingDB release 202610, mcp-bindingdb v0.1.7 (commit 8b42a41f349a)
+<pre>Recorded with BindingDB release 202611, mcp-bindingdb v0.1.9 (commit 5ea8c6253a4c)
 python 3.12.7, duckdb 1.5.6, rdkit 2026.03.6, mcp 2.3.0, gemmi 0.7.5
 </pre>
 </div>
@@ -7895,10 +7895,10 @@ python 3.12.7, duckdb 1.5.6, rdkit 2026.03.6, mcp 2.3.0, gemmi 0.7.5
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><details class="bdb-fold"><summary>Call 1 · search_targets · ran 2026-11-23 06:24:58 UTC (3 lines)</summary>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><details class="bdb-fold"><summary>Call 1 · search_targets · ran 2026-11-23 08:25:16 UTC (3 lines)</summary>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="c1"># Call 1 · search_targets · ran 2026-11-23 06:24:58 UTC</span>
+<div class="highlight hl-python"><pre><span></span><span class="c1"># Call 1 · search_targets · ran 2026-11-23 08:25:16 UTC</span>
 <span class="k">await</span> <span class="n">replay</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'search_targets'</span><span class="p">,</span> <span class="p">{</span><span class="s1">'query'</span><span class="p">:</span> <span class="s1">'BRD4'</span><span class="p">,</span> <span class="s1">'organism'</span><span class="p">:</span> <span class="s1">'Homo sapiens'</span><span class="p">,</span> <span class="s1">'limit'</span><span class="p">:</span> <span class="mi">6</span><span class="p">},</span>
                   <span class="n">sha256</span><span class="o">=</span><span class="s1">'0d8dc44b9f3442fba16037f4110e60a5d8e9826555f54a41911fc7a7e9418697'</span><span class="p">)</span>
 </pre></div>
@@ -8015,10 +8015,10 @@ python 3.12.7, duckdb 1.5.6, rdkit 2026.03.6, mcp 2.3.0, gemmi 0.7.5
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><details class="bdb-fold"><summary>Call 2 · cluster_ligands · ran 2026-11-23 06:24:59 UTC (11 lines)</summary>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><details class="bdb-fold"><summary>Call 2 · cluster_ligands · ran 2026-11-23 08:25:17 UTC (11 lines)</summary>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="c1"># Call 2 · cluster_ligands · ran 2026-11-23 06:24:59 UTC</span>
+<div class="highlight hl-python"><pre><span></span><span class="c1"># Call 2 · cluster_ligands · ran 2026-11-23 08:25:17 UTC</span>
 <span class="n">arguments</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">'uniprot'</span><span class="p">:</span> <span class="s1">'O60885'</span><span class="p">,</span>
     <span class="s1">'include_variants'</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
@@ -8348,10 +8348,10 @@ largest, 0.4 nM, while the highest median of the six belongs to cluster
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><details class="bdb-fold"><summary>Call 3 · run_sql · ran 2026-11-23 06:24:59 UTC (6 lines)</summary>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><details class="bdb-fold"><summary>Call 3 · run_sql · ran 2026-11-23 08:25:17 UTC (6 lines)</summary>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="c1"># Call 3 · run_sql · ran 2026-11-23 06:24:59 UTC</span>
+<div class="highlight hl-python"><pre><span></span><span class="c1"># Call 3 · run_sql · ran 2026-11-23 08:25:17 UTC</span>
 <span class="n">sql</span> <span class="o">=</span> <span class="s2">"""</span>
 <span class="s2">SELECT count(DISTINCT cp.scaffold) AS scaffolds, count(DISTINCT a.monomerid) AS compounds FROM activity a JOIN compound c USING (monomerid) JOIN compound_property cp USING (monomerid) WHERE a.uniprot = 'O60885' AND a.affinity_type = 'IC50' AND a.relation = '=' AND a.unit = 'nM' AND a.p_affinity IS NOT NULL AND a.value &lt;= 100 AND c.smiles IS NOT NULL</span>
 <span class="s2">"""</span>
@@ -8395,10 +8395,10 @@ largest, 0.4 nM, while the highest median of the six belongs to cluster
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><details class="bdb-fold"><summary>Call 4 · run_sql · ran 2026-11-23 06:24:59 UTC (6 lines)</summary>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><details class="bdb-fold"><summary>Call 4 · run_sql · ran 2026-11-23 08:25:17 UTC (6 lines)</summary>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="c1"># Call 4 · run_sql · ran 2026-11-23 06:24:59 UTC</span>
+<div class="highlight hl-python"><pre><span></span><span class="c1"># Call 4 · run_sql · ran 2026-11-23 08:25:17 UTC</span>
 <span class="n">sql</span> <span class="o">=</span> <span class="s2">"""</span>
 <span class="s2">SELECT count(DISTINCT scaffold) AS scaffolds FROM compound_property WHERE monomerid IN (502217,502288,502196,502194,502197,502216,502200,502229,502293,502204,502222,502201,502192,502198,502212,502205,502199,502210,502277,502221,502208,502214,502193,502599,502241,502228,502202,502209,502185,502203,502223,502191,502248,502195,502443,502667,502544,502605,502224,502244,502350,502601,502180,502312,502364,502150,502648,502176)</span>
 <span class="s2">"""</span>
@@ -8590,9 +8590,9 @@ so cluster 3's centroid sits at 100.0 nM while the series reaches
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="How-to-cite">How to cite<a class="anchor-link" href="#How-to-cite">¶</a></h2><p>Cite this notebook (for example deposited with a DOI) together with the data and software it ran on:</p>
 <ul>
-<li>Data: BindingDB release 202610, <a href="https://www.bindingdb.org/rwd/bind/BDB-mySQL_All_202610_dmp.zip">https://www.bindingdb.org/rwd/bind/BDB-mySQL_All_202610_dmp.zip</a> (SHA-256 923415e9d990867d9f4f43dc6e674c173eb29ea18f496dea02a011e3d2f45690)</li>
-<li>Software: mcp-bindingdb v0.1.7, commit 8b42a41f349a21988dcd2e1cfc7847ee93158b35, <a href="https://github.com/pwrose/mcp-bindingdb">https://github.com/pwrose/mcp-bindingdb</a></li>
-<li>Analysis: How many distinct chemotypes hit BRD4, 2026-11-22, with claude-opus-5</li>
+<li>Data: BindingDB release 202611, <a href="https://www.bindingdb.org/rwd/bind/BDB-mySQL_All_202611_dmp.zip">https://www.bindingdb.org/rwd/bind/BDB-mySQL_All_202611_dmp.zip</a> (SHA-256 daea9260d404919a183ce02d91bf4b9c49b410bea7eaaeba105c8e0280510381)</li>
+<li>Software: mcp-bindingdb v0.1.9, commit 5ea8c6253a4c012b3f3982669393dcdf831fca79, <a href="https://github.com/pwrose/mcp-bindingdb">https://github.com/pwrose/mcp-bindingdb</a></li>
+<li>Analysis: How many distinct chemotypes hit BRD4, 2026-11-23, with claude-opus-5</li>
 <li>BindingDB: Liu T, Hwang L, Burley SK, Nitsche CI, Southan C, Walters WP, Gilson MK. BindingDB in 2024: a FAIR knowledgebase of protein-small molecule binding data. Nucleic Acids Research 53(D1):D1633-D1644, 2025. <a href="https://doi.org/10.1093/nar/gkae1075">https://doi.org/10.1093/nar/gkae1075</a></li>
 </ul>
 <p>As BibTeX, for this server, BindingDB and RDKit (used for structure search, properties and drawings):</p>
