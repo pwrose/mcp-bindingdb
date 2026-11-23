@@ -7,7 +7,7 @@ The server reads a local, read-only DuckDB build of BindingDB's monthly MySQL du
 Requires [uv](https://docs.astral.sh/uv/); no Docker or MySQL.
 
 ```bash
-scripts/build_duckdb.sh                    # release 202610 -> data/bindingdb_202610.duckdb
+scripts/build_duckdb.sh                    # release 202611 -> data/bindingdb_202611.duckdb
 scripts/build_duckdb.sh --release 202611   # a later release
 ```
 
@@ -51,7 +51,7 @@ Options:
 
 | Option | Effect |
 |---|---|
-| `--release YYYYMM` | BindingDB release to build (default 202610, `builder.DEFAULT_RELEASE`) |
+| `--release YYYYMM` | BindingDB release to build (default 202611, `builder.DEFAULT_RELEASE`) |
 | `--workers N` | Worker processes for the RDKit steps (default: all CPUs) |
 
 For release 202611, a build holds about 2.1 GB afterwards: the downloaded dump (0.26 GB, kept in `data/`

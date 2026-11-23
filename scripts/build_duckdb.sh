@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Build data/bindingdb_${RELEASE}.duckdb and its structure-search index from BindingDB's MySQL dump.
 #
-#   scripts/build_duckdb.sh [--release 202610] [--workers N]
+#   scripts/build_duckdb.sh [--release 202611] [--workers N]
 #
 # Runs mcp_bindingdb.builder: downloads the dump from bindingdb.org (kept in data/ for rebuilds), loads it into
 # DuckDB without MySQL, adds the derived query tables, computes standard InChIKeys and compound properties, and

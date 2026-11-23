@@ -8,7 +8,7 @@ import pytest
 from mcp import Client
 
 from mcp_bindingdb import local_build
-from mcp_bindingdb.builder import mysqldump, pipeline
+from mcp_bindingdb.builder import DEFAULT_RELEASE, mysqldump, pipeline
 from mcp_bindingdb.db import Database
 from mcp_bindingdb.server import build_server
 
@@ -78,11 +78,11 @@ def test_dump_reader_reads_the_zip(tmp_path):
     assert mysqldump.load(tmp_path / "x_dmp.zip", con)["thing"] == 5
 
 
-def _status(folder, **fields):
-    data = {"release": "202610", "state": "running", "started_at": time.time() - 600, "done_steps": [],
+def _status(folder, release="202610", **fields):
+    data = {"release": release, "state": "running", "started_at": time.time() - 600, "done_steps": [],
             "step": None, "done": 0, "total": 0, **fields}
     folder.mkdir(parents=True, exist_ok=True)
-    pipeline.status_path(folder, "202610").write_text(json.dumps(data))
+    pipeline.status_path(folder, release).write_text(json.dumps(data))
 
 
 def test_progress_message(tmp_path):
@@ -106,12 +106,13 @@ async def test_tools_say_the_database_is_being_built(tmp_path, monkeypatch):
     monkeypatch.setenv("MCP_BINDINGDB_DATA_DIR", str(folder))
     monkeypatch.delenv("BINDINGDB_DUCKDB", raising=False)
     monkeypatch.setattr(local_build, "find_database", lambda: (_ for _ in ()).throw(FileNotFoundError()))
-    _status(folder, step="inchikeys", done=10, total=100, done_steps=["download", "load", "derived"])
+    _status(folder, DEFAULT_RELEASE, step="inchikeys", done=10, total=100,
+            done_steps=["download", "load", "derived"])
     started = []
     monkeypatch.setattr(local_build.LocalBuild, "start", lambda self: started.append(self.release))
 
     path, pending = local_build.locate()
-    assert path == folder / "bindingdb_202610.duckdb" and pending is not None
+    assert path == folder / f"bindingdb_{DEFAULT_RELEASE}.duckdb" and pending is not None
     db = Database(path, ready=lambda: pending.require(path), build_info=pending.build_info)
     info = db.build_info()
     mcp = build_server(db, transcript_dir=tmp_path / "transcripts")  # does not open the database
@@ -121,7 +122,7 @@ async def test_tools_say_the_database_is_being_built(tmp_path, monkeypatch):
         assert "step 4 of 6, computing standard InChIKeys (10%)" in result.content[0].text
         assert started  # a call (re)starts a build that is not running
         status = await client.call_tool("update_database", {})  # "Build status?" before the database is there
-        assert not status.is_error and status.structured_content["building_release"] == "202610"
+        assert not status.is_error and status.structured_content["building_release"] == DEFAULT_RELEASE
         assert "step 4 of 6, computing standard InChIKeys" in status.structured_content["message"]
 
         con = duckdb.connect(str(path))  # the build finishes
@@ -207,19 +208,19 @@ def test_server_answers_from_the_previous_release_while_the_new_one_builds(tmp_p
     _no_clone_database(monkeypatch, folder)
     _release_files(folder, "202512")
     _release_files(folder, "202601")
-    _release_files(folder, "202610", complete=False)
+    _release_files(folder, DEFAULT_RELEASE, complete=False)
     started = []
     monkeypatch.setattr(local_build.LocalBuild, "start", lambda self: started.append(self.release))
 
     path, build = local_build.locate(use_previous=True)
     assert path == folder / "bindingdb_202601.duckdb"  # the newest complete older release
-    assert build is not None and build.database == folder / "bindingdb_202610.duckdb"
+    assert build is not None and build.database == folder / f"bindingdb_{DEFAULT_RELEASE}.duckdb"
     if local_build.rdkit_available():
-        assert started == ["202610"]
+        assert started == [DEFAULT_RELEASE]
     assert (folder / "bindingdb_202512.duckdb").is_file()  # nothing is deleted until the new release is done
 
     path, build = local_build.locate()  # a notebook rerun waits for the release this version builds
-    assert path == folder / "bindingdb_202610.duckdb" and build.database == path
+    assert path == folder / f"bindingdb_{DEFAULT_RELEASE}.duckdb" and build.database == path
     assert "to replace release 202601" in build.message()
 
 
@@ -227,14 +228,14 @@ def test_older_releases_are_removed_once_the_new_one_is_complete(tmp_path, monke
     folder = tmp_path / "data"
     _no_clone_database(monkeypatch, folder)
     old = _release_files(folder, "202512") + _release_files(folder, "202601", complete=False)
-    current = _release_files(folder, "202610")
+    current = _release_files(folder, DEFAULT_RELEASE)
     newer = _release_files(folder, "202701", complete=False)  # an update that stopped (e.g. the computer slept)
     (folder / "transcripts").mkdir()
     (folder / "notes.txt").write_text("mine")
     started = []
     monkeypatch.setattr(local_build.LocalBuild, "start", lambda self: started.append(self.release))
 
-    assert local_build.locate(use_previous=True) == (folder / "bindingdb_202610.duckdb", None)
+    assert local_build.locate(use_previous=True) == (folder / f"bindingdb_{DEFAULT_RELEASE}.duckdb", None)
     assert not any(p.exists() for p in old)
     assert all(p.exists() for p in current + newer)
     if local_build.rdkit_available():
