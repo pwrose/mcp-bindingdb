@@ -716,23 +716,33 @@ async def test_open_overlay_viewer_needs_a_known_overlay(server):
     assert result.is_error and "No viewer" in result.content[0].text
 
 
-@pytest.mark.network
-async def test_overlay_picks_the_compound_itself_and_finds_unlinked_ligands(server):
-    """2HYY's imatinib (STI) is the compound itself, not imatinib-CD3 (same connectivity); BindingDB links
-    no compound to 3CS9's nilotinib (NIL), which is found by the InChIKey RCSB gives the code."""
-    result = await call(server, "overlay_binding_site", uniprot="P00519", pdb_ids=["2HYY:STI", "3CS9:NIL"])
+async def test_overlay_picks_the_compound_itself(server):
+    """2HYY's imatinib (STI) is the compound itself, not imatinib-CD3 (same connectivity). BindingDB links that
+    one, so nothing here asks RCSB: unmarked, to keep running under -m 'not network' from the cached structure."""
+    result = await call(server, "overlay_binding_site", uniprot="P00519", pdb_ids=["2HYY:STI"])
     if result.is_error and "network" in result.content[0].text:
         pytest.skip("structures not cached and no network")
     assert not result.is_error, result.content
-    entries = {e["pdb_id"]: e for e in result.structured_content["entries"]}
-    assert "CD3" not in (entries["2HYY"]["name"] or "") and entries["2HYY"]["affinity"]
-    if entries["3CS9"]["monomerid"] is None:
-        # 3CS9's compound is reached only through the InChIKey RCSB gives for NIL, and ligand_inchikeys returns
-        # {} for any failure, so no link here means RCSB is out of reach (as it is behind a TLS-intercepting
-        # proxy), not that the lookup broke. 2HYY is asserted above either way: it comes from BindingDB.
+    entry = result.structured_content["entries"][0]
+    assert entry["pdb_id"] == "2HYY" and entry["monomerid"] == IMATINIB
+    assert "CD3" not in (entry["name"] or "") and entry["affinity"]
+
+
+@pytest.mark.network
+async def test_overlay_finds_a_ligand_bindingdb_links_to_no_entry(server):
+    """BindingDB links no compound to 3CS9's nilotinib (NIL), which is found by the InChIKey RCSB gives the
+    code -- the one half of the overlay that needs RCSB, so it carries the marker and the reachability guard."""
+    result = await call(server, "overlay_binding_site", uniprot="P00519", pdb_ids=["3CS9:NIL"])
+    if result.is_error and "network" in result.content[0].text:
+        pytest.skip("structures not cached and no network")
+    assert not result.is_error, result.content
+    entry = result.structured_content["entries"][0]
+    if entry["monomerid"] is None:
+        # ligand_inchikeys returns {} for any failure, so no link here means RCSB is out of reach (as it is
+        # behind a TLS-intercepting proxy), not that the lookup broke.
         pytest.skip("RCSB not reachable")
-    assert entries["3CS9"]["monomerid"] == 50237710 and entries["3CS9"]["affinity"].startswith("Kd")  # Kd before IC50
-    assert {"Kd", "IC50"} <= set(entries["3CS9"]["potencies"])  # every type, for the viewer's affinity menu
+    assert entry["monomerid"] == 50237710 and entry["affinity"].startswith("Kd")  # Kd before IC50
+    assert {"Kd", "IC50"} <= set(entry["potencies"])  # every type, for the viewer's affinity menu
 
 
 def test_potency_prefers_ki_kd_unless_types_are_given():
