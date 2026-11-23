@@ -21,8 +21,9 @@ analytics, and saving the work as a transcript or a reproducible, rerunnable Jup
 2. **Install it:** double-click the file. The first start takes about 2 minutes: Claude Desktop installs the
    Python packages the server needs, and the server then downloads the BindingDB database (see **First Chat**
    below).
-3. **Allow the mcp-bindingdb tools:** select **Plugins** in the left sidebar. Click **mcp-bindingdb**, then
-   **Settings**. Select **Always allow** for all tools (there are several sections).
+3. **Allow the mcp-bindingdb tools:** wait about 2 minutes until the server has started; before then its
+   tools show as unavailable and their permissions cannot be set. Then select **Plugins** in the left sidebar.
+   Click **mcp-bindingdb**, then **Settings**. Select **Always allow** for all tools (there are several sections).
 4. **Enable mcp-bindingdb in a chat:** in a new chat, click the **+** button and enable **mcp-bindingdb**.
 5. **Ask a question** in that chat, e.g. "Look up imatinib in BindingDB."
 
