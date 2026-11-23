@@ -81,7 +81,11 @@ def _core(mols: list[Any], align_to: str | None) -> Any:
     if len(mols) < 2:
         return None
     result = rdFMCS.FindMCS(mols, timeout=MCS_TIMEOUT_S, ringMatchesRingOnly=True, completeRingsOnly=True)
-    if result.canceled or result.numAtoms < MIN_CORE_ATOMS:
+    # `canceled` says the search ran out of time before proving the core maximal, not that it found none:
+    # it still carries the largest core it reached, which a congeneric series of drug-sized molecules
+    # routinely hits (six 40-atom JAK inhibitors share 32 atoms that no timeout proves optimal). Align on
+    # it anyway; only its size decides, so a genuine lack of a shared core still returns None.
+    if result.numAtoms < MIN_CORE_ATOMS:
         return None
     return Chem.MolFromSmarts(result.smartsString)
 

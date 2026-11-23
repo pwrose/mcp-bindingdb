@@ -83,3 +83,35 @@ def test_a_legend_wider_than_the_figure_wraps():
     for line in lines:
         width = sum((19 if c else 0) + draw.textlength(t, font=font) for c, t in line) + 18 * (len(line) - 1)
         assert width <= 220
+
+
+# Six JAK1 inhibitors of about 40 atoms each, from example 3.6. rdFMCS reaches their 32-atom common core
+# in well under a second but never proves it maximal, so it reports `canceled` however long it is given.
+JAK_SERIES = [
+    "COC[C@H](C(=O)Nc1cccc2c(-c3nc(Nc4ccc(C(=O)OC)nc4)ncc3F)c[nH]c12)N1CCN(C)CC1",
+    "COC[C@H](C(=O)Nc1cccc2c(-c3nc(Nc4ccc(-c5ncco5)nc4)ncc3F)c[nH]c12)N1CCN(C)CC1",
+    "COC[C@H](C(=O)Nc1cccc2c(-c3nc(Nc4ccc(OCC(=O)OC)nc4)ncc3F)c[nH]c12)N1CCN(C)CC1",
+    "CCOC(=O)c1ccc(Nc2ncc(F)c(-c3c[nH]c4c(NC(=O)[C@@H](COC)N5CCN(C)CC5)cccc34)n2)cn1",
+    "CCOC(=O)Cc1ccc(Nc2ncc(F)c(-c3c[nH]c4c(NC(=O)[C@@H](COC)N5CCN(C)CC5)cccc34)n2)cn1",
+    "COC[C@H](C(=O)Nc1cccc2c(-c3nc(Nc4ccc5scnc5c4)ncc3F)c[nH]c12)N1CCN(C)CC1",
+]
+
+
+def test_a_series_whose_mcs_search_times_out_is_still_aligned_on_its_core():
+    # A timed-out search still carries the largest core it reached; dropping it left a congeneric series
+    # drawn in whatever orientation each molecule happened to get, with no core highlighted.
+    lay = depict.layout(JAK_SERIES)
+    assert all(len(core) >= 30 for core in lay.cores)  # every molecule matched, not just the reference
+    assert lay.lo is not None  # one shared frame, so they are drawn at the same scale
+
+    def core_start(k):
+        return lay.mols[k].GetConformer().GetAtomPosition(lay.cores[k][0])
+
+    first = core_start(0)
+    assert all(abs(core_start(k).x - first.x) < 0.1 and abs(core_start(k).y - first.y) < 0.1
+               for k in range(len(JAK_SERIES)))
+
+
+def test_molecules_with_no_shared_core_are_not_aligned():
+    lay = depict.layout(["c1ccccc1O", "C1CCCCC1C(=O)NCCN", "CCOCC"])
+    assert lay.cores == [(), (), ()] and lay.lo is None
