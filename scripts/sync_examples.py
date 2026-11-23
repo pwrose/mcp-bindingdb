@@ -30,7 +30,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 EXAMPLES = ROOT / "examples"
-REPO_FILES_URL = "https://github.com/pwrose/mcp-bindingdb/blob/main/examples/"
+REPO_FILES_URL = "https://github.com/sbl-sdsc/mcp-bindingdb/blob/main/examples/"
 SKIP = (".DS_Store", ".ipynb_checkpoints")  # neither copied into the repository nor compared
 IGNORE = shutil.ignore_patterns(*SKIP)
 LEVEL_FOLDER = re.compile(r"^\d\d-")

@@ -1,4 +1,4 @@
-"""MCP App extension for pwrose/mcp-bindingdb. No remote asset host is needed."""
+"""MCP App extension for sbl-sdsc/mcp-bindingdb. No remote asset host is needed."""
 
 from __future__ import annotations
 

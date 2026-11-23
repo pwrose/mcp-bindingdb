@@ -8,7 +8,7 @@ protein–ligand binding affinities for 1.5M compounds and 13k targets, from a l
 
 ## Examples
 
-[Worked examples](https://htmlpreview.github.io/?https://github.com/pwrose/mcp-bindingdb/blob/main/examples/index.html), grouped in levels from single lookups to multi-step analyses,
+[Worked examples](https://htmlpreview.github.io/?https://github.com/sbl-sdsc/mcp-bindingdb/blob/main/examples/index.html), grouped in levels from single lookups to multi-step analyses,
 show real questions answered with these tools: looking up compounds and targets, exact, similarity and
 substructure search, selectivity profiles, R-group tables and matched pairs, multi-step workflows such as
 a clustered selectivity heat map, 3D binding-site views, property filters and structural alerts, SQL
@@ -16,7 +16,7 @@ analytics, and saving the work as a transcript or a reproducible, rerunnable Jup
 
 ## Quick install: Claude Desktop bundle
 
-1. **Download** [mcp-bindingdb.mcpb](https://github.com/pwrose/mcp-bindingdb/releases/latest/download/mcp-bindingdb.mcpb)
+1. **Download** [mcp-bindingdb.mcpb](https://github.com/sbl-sdsc/mcp-bindingdb/releases/latest/download/mcp-bindingdb.mcpb)
    (about 4 MB).
 2. **Install it:** double-click the file. The first start takes about 2 minutes: Claude Desktop installs the
    Python packages the server needs, and the server then downloads the BindingDB database (see **First Chat**
@@ -57,9 +57,9 @@ Naming mcp-bindingdb in these questions makes Claude ask the server, which alone
 look for build files on your computer instead.
 
 **mcp-bindingdb.** To install a new version, download
-[mcp-bindingdb.mcpb](https://github.com/pwrose/mcp-bindingdb/releases/latest/download/mcp-bindingdb.mcpb)
+[mcp-bindingdb.mcpb](https://github.com/sbl-sdsc/mcp-bindingdb/releases/latest/download/mcp-bindingdb.mcpb)
 again and double-click it; it replaces the installed one and keeps your database. To hear about new
-versions, choose **Watch → Custom → Releases** on the [GitHub page](https://github.com/pwrose/mcp-bindingdb).
+versions, choose **Watch → Custom → Releases** on the [GitHub page](https://github.com/sbl-sdsc/mcp-bindingdb).
 
 ## Interactive structure editor
 
@@ -202,7 +202,7 @@ If you use this server in your work, please cite it:
   title={MCP BindingDB Server},
   author={Rose, P.W.},
   year={2026},
-  url={https://github.com/pwrose/mcp-bindingdb}
+  url={https://github.com/sbl-sdsc/mcp-bindingdb}
 }
 ```
 

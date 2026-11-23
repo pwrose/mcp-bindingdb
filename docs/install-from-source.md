@@ -6,7 +6,7 @@ Install from source to use the server from Claude Code, run a different BindingD
 1. **Install** [uv](https://docs.astral.sh/uv/), then clone the repository:
 
    ```bash
-   git clone https://github.com/pwrose/mcp-bindingdb.git
+   git clone https://github.com/sbl-sdsc/mcp-bindingdb.git
    cd mcp-bindingdb
    ```
 

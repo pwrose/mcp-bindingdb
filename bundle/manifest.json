@@ -8,10 +8,10 @@
   "author": {
     "name": "Rose, P.W."
   },
-  "homepage": "https://github.com/pwrose/mcp-bindingdb",
+  "homepage": "https://github.com/sbl-sdsc/mcp-bindingdb",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pwrose/mcp-bindingdb.git"
+    "url": "https://github.com/sbl-sdsc/mcp-bindingdb.git"
   },
   "license": "BSD-3-Clause",
   "keywords": ["bindingdb", "chemistry", "drug discovery", "binding affinity", "cheminformatics"],

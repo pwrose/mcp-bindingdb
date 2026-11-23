@@ -277,7 +277,7 @@ everything the notebook needs to run on any computer with uv:
 
 - `<name>.ipynb`, and `<name>.html`, the notebook as written, for a browser;
 - `requirements.txt`: mcp-bindingdb with the `substructure`, `structures`, `opsin` and `notebook` extras,
-  installed from GitHub at the server's commit (`git+https://github.com/pwrose/mcp-bindingdb.git@<commit>`),
+  installed from GitHub at the server's commit (`git+https://github.com/sbl-sdsc/mcp-bindingdb.git@<commit>`),
   then every dependency at the version `uv.lock` pins (`uv export --frozen`), then the packages the analysis
   code imports. When pip could not install the commit from GitHub (the package has uncommitted changes, the
   commit is not on a remote branch, or it is unknown), the folder gets a copy of the package instead

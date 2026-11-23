@@ -35,7 +35,7 @@ from typing import Any
 
 from . import transcript
 
-REPO_URL = "https://github.com/pwrose/mcp-bindingdb"
+REPO_URL = "https://github.com/sbl-sdsc/mcp-bindingdb"
 BINDINGDB_CITATION = ("Liu T, Hwang L, Burley SK, Nitsche CI, Southan C, Walters WP, Gilson MK. BindingDB in 2024: "
                       "a FAIR knowledgebase of protein-small molecule binding data. Nucleic Acids Research 53(D1):D1633-D1644, "
                       "2025. https://doi.org/10.1093/nar/gkae1075")
@@ -44,7 +44,7 @@ BIBTEX = """@software{rose2026mcp-bindingdb,
   title={MCP BindingDB Server},
   author={Rose, P.W.},
   year={2026},
-  url={https://github.com/pwrose/mcp-bindingdb}
+  url={https://github.com/sbl-sdsc/mcp-bindingdb}
 }
 
 @article{liu2025bindingdb,
