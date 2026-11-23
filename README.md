@@ -23,7 +23,7 @@ analytics, and saving the work as a transcript or a reproducible, rerunnable Jup
    below).
 3. **Allow the mcp-bindingdb tools:** wait about 2 minutes until the server has started; before then its
    tools show as unavailable and their permissions cannot be set. Then select **Plugins** in the left sidebar.
-   Click **mcp-bindingdb**, then **Settings**. Select **Always allow** for all tools (there are several sections).
+   Click **mcp-bindingdb**, then **Configure** (top right). Select **Always allow** for all tools (there are several sections).
 4. **Enable mcp-bindingdb in a chat:** in a new chat, click the **+** button and enable **mcp-bindingdb**.
 5. **Ask a question** in that chat, e.g. "Look up imatinib in BindingDB."
 
