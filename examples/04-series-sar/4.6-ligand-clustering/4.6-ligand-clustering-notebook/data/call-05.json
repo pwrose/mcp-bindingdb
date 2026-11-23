@@ -1,0 +1,30 @@
+{
+ "row_count": 6,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 480572,
+   "smiles": "CC1C(=O)N(C)Cc2c(nc(C3CC3)n12)-c1cccc2nc(-c3cnn(C)c3)c(cc12)C#N"
+  },
+  {
+   "monomerid": 502157,
+   "smiles": "CC(C)[C@H](O)C(=O)NCCCCNc1nc2ccccc2n2c(C)nnc12 |r|"
+  },
+  {
+   "monomerid": 502217,
+   "smiles": "COc1cc2nc(NCCCCNC(=O)[C@@H](O)C(C)C)c3nnc(C)n3c2cc1OC |r|"
+  },
+  {
+   "monomerid": 502377,
+   "smiles": "COc1ccc2c(c1)nc(NCCCCNC(=O)C(C)C)c1nnc(C)n21"
+  },
+  {
+   "monomerid": 502479,
+   "smiles": "COCCOc1ccc2c(c1)nc(NCCCCNC(=O)[C@@H](NC(=O)OCC(C)C)C(C)C)c1nnc(C)n21 |r|"
+  },
+  {
+   "monomerid": 50623611,
+   "smiles": "COC(=O)CNC(=O)C[C@@H]1N=C(c2ccc(Cl)cc2)c2c(sc(C)c2C)-n2c(C)nnc21"
+  }
+ ]
+}

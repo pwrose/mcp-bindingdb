@@ -1,0 +1,295 @@
+{
+ "affinity_type": "IC50",
+ "primary_target": {
+  "key": "P23458",
+  "target_name": "Tyrosine-protein kinase JAK1",
+  "gene": "JAK1",
+  "organism": "Homo sapiens",
+  "n_compounds": 9772,
+  "n_measurements": 11794
+ },
+ "other_targets": [
+  {
+   "key": "O60674",
+   "target_name": "Tyrosine-protein kinase JAK2",
+   "gene": "JAK2",
+   "organism": "Homo sapiens",
+   "n_compounds": 12326,
+   "n_measurements": 16053
+  },
+  {
+   "key": "P52333",
+   "target_name": "Tyrosine-protein kinase JAK3",
+   "gene": "JAK3",
+   "organism": "Homo sapiens",
+   "n_compounds": 8396,
+   "n_measurements": 11420
+  },
+  {
+   "key": "P29597",
+   "target_name": "Non-receptor tyrosine-protein kinase TYK2",
+   "gene": "TYK2",
+   "organism": "Homo sapiens",
+   "n_compounds": 4491,
+   "n_measurements": 5538
+  }
+ ],
+ "n_compounds": 4624,
+ "row_count": 12,
+ "truncated": true,
+ "rows": [
+  {
+   "monomerid": 801878,
+   "bdbm_id": "BDBM801878",
+   "compound_name": "methyl (R)-5-((5-fluoro-4-(7-(3-methoxy-2-(4- methylpiperazin-1-yl)propanamido)-1H-indol-3- yl)pyrimidin-2-yl)amino)picolinate",
+   "p_P23458": 9.77,
+   "p_O60674": 6.33,
+   "p_P52333": 5.0,
+   "p_P29597": 5.42,
+   "primary_p_affinity": 9.77,
+   "off_target": "O60674",
+   "off_target_p_affinity": 6.33,
+   "selectivity_log": 3.44,
+   "selectivity_fold": 2754,
+   "selectivity_is_lower_bound": false,
+   "bounds": [
+    "P52333"
+   ],
+   "n_targets_measured": 4,
+   "n_measurements": 4,
+   "smiles": "COC[C@H](C(=O)Nc1cccc2c(-c3nc(Nc4ccc(C(=O)OC)nc4)ncc3F)c[nH]c12)N1CCN(C)CC1"
+  },
+  {
+   "monomerid": 801888,
+   "bdbm_id": "BDBM801888",
+   "compound_name": "(R)-N-(3-(5-fluoro-2-((6-(oxazol-2-yl)pyridin-3-yl)amino)pyrimidin-4-yl)-1H-indol-7-yl)-3-methoxy-2-(4-methylpiperazin-1-yl)propanamide",
+   "p_P23458": 9.62,
+   "p_O60674": 6.33,
+   "p_P52333": 5.0,
+   "p_P29597": 5.28,
+   "primary_p_affinity": 9.62,
+   "off_target": "O60674",
+   "off_target_p_affinity": 6.33,
+   "selectivity_log": 3.29,
+   "selectivity_fold": 1950,
+   "selectivity_is_lower_bound": false,
+   "bounds": [
+    "P52333"
+   ],
+   "n_targets_measured": 4,
+   "n_measurements": 4,
+   "smiles": "COC[C@H](C(=O)Nc1cccc2c(-c3nc(Nc4ccc(-c5ncco5)nc4)ncc3F)c[nH]c12)N1CCN(C)CC1"
+  },
+  {
+   "monomerid": 50031738,
+   "bdbm_id": "BDBM50031738",
+   "compound_name": "CHEMBL3360355",
+   "p_P23458": 7.8,
+   "p_O60674": 4.52,
+   "p_P52333": null,
+   "p_P29597": null,
+   "primary_p_affinity": 7.8,
+   "off_target": "O60674",
+   "off_target_p_affinity": 4.52,
+   "selectivity_log": 3.28,
+   "selectivity_fold": 1905,
+   "selectivity_is_lower_bound": true,
+   "bounds": [
+    "O60674"
+   ],
+   "n_targets_measured": 2,
+   "n_measurements": 2,
+   "smiles": "FC(F)(F)C(=O)NCc1ccc(cc1)-c1cccc2nc(NC(=O)C3CC3)nn12"
+  },
+  {
+   "monomerid": 801880,
+   "bdbm_id": "BDBM801880",
+   "compound_name": "Methyl 2-([5-[(5-fluoro-4-[7-[(R)-3-methoxy-2-(4-methylpiperazin-1-yl)propanamido]-1H-indol-3-yl]pyrimidin-2-yl)amino]pyridin-2-yl]oxy)acetate",
+   "p_P23458": 9.7,
+   "p_O60674": 6.47,
+   "p_P52333": 5.0,
+   "p_P29597": 5.38,
+   "primary_p_affinity": 9.7,
+   "off_target": "O60674",
+   "off_target_p_affinity": 6.47,
+   "selectivity_log": 3.23,
+   "selectivity_fold": 1698,
+   "selectivity_is_lower_bound": false,
+   "bounds": [
+    "P52333"
+   ],
+   "n_targets_measured": 4,
+   "n_measurements": 4,
+   "smiles": "COC[C@H](C(=O)Nc1cccc2c(-c3nc(Nc4ccc(OCC(=O)OC)nc4)ncc3F)c[nH]c12)N1CCN(C)CC1"
+  },
+  {
+   "monomerid": 801900,
+   "bdbm_id": "BDBM801900",
+   "compound_name": "Ethyl 5-[(5-fluoro-4-[7-[(R)-3-methoxy-2-(4-methylpiperazin-1-yl) propanamido]-1H-indol-3-yl]pyrimidin-2-yl)amino]pyridine-2-carboxylate",
+   "p_P23458": 9.54,
+   "p_O60674": 6.31,
+   "p_P52333": 5.0,
+   "p_P29597": 5.34,
+   "primary_p_affinity": 9.54,
+   "off_target": "O60674",
+   "off_target_p_affinity": 6.31,
+   "selectivity_log": 3.23,
+   "selectivity_fold": 1698,
+   "selectivity_is_lower_bound": false,
+   "bounds": [
+    "P52333"
+   ],
+   "n_targets_measured": 4,
+   "n_measurements": 4,
+   "smiles": "CCOC(=O)c1ccc(Nc2ncc(F)c(-c3c[nH]c4c(NC(=O)[C@@H](COC)N5CCN(C)CC5)cccc34)n2)cn1"
+  },
+  {
+   "monomerid": 801895,
+   "bdbm_id": "BDBM801895",
+   "compound_name": "ethyl (R)-2-(5-((5-fluoro-4-(7-(3-methoxy-2-(4- methylpiperazin-1-yl)propanamido)-1H-indol-3- yl)pyrimidin-2-yl)amino)pyridin-2-yl)acetate",
+   "p_P23458": 9.82,
+   "p_O60674": 6.66,
+   "p_P52333": 5.0,
+   "p_P29597": 5.88,
+   "primary_p_affinity": 9.82,
+   "off_target": "O60674",
+   "off_target_p_affinity": 6.66,
+   "selectivity_log": 3.16,
+   "selectivity_fold": 1445,
+   "selectivity_is_lower_bound": false,
+   "bounds": [
+    "P52333"
+   ],
+   "n_targets_measured": 4,
+   "n_measurements": 4,
+   "smiles": "CCOC(=O)Cc1ccc(Nc2ncc(F)c(-c3c[nH]c4c(NC(=O)[C@@H](COC)N5CCN(C)CC5)cccc34)n2)cn1"
+  },
+  {
+   "monomerid": 801891,
+   "bdbm_id": "BDBM801891",
+   "compound_name": "(R)-N-(3-(2-(benzo[d]thiazol-5-ylamino)-5- fluoropyrimidin-4-yl)-1H-indol-7-yl)-3-methoxy-2- (4-methylpiperazin-1-yl)propanamide",
+   "p_P23458": 10.15,
+   "p_O60674": 7.0,
+   "p_P52333": 5.0,
+   "p_P29597": 5.9,
+   "primary_p_affinity": 10.15,
+   "off_target": "O60674",
+   "off_target_p_affinity": 7.0,
+   "selectivity_log": 3.15,
+   "selectivity_fold": 1413,
+   "selectivity_is_lower_bound": false,
+   "bounds": [
+    "P52333"
+   ],
+   "n_targets_measured": 4,
+   "n_measurements": 4,
+   "smiles": "COC[C@H](C(=O)Nc1cccc2c(-c3nc(Nc4ccc5scnc5c4)ncc3F)c[nH]c12)N1CCN(C)CC1"
+  },
+  {
+   "monomerid": 801873,
+   "bdbm_id": "BDBM801873",
+   "compound_name": "(R)-N-(3-[5-fluoro-2-[(6-propanamidopyridin-3-yl)amino]pyrimidin-4-yl]-1H-indol-7-yl)-3-methoxy-2-(4-methylpiperazin-1-yl)propanamide",
+   "p_P23458": 9.72,
+   "p_O60674": 6.57,
+   "p_P52333": 5.0,
+   "p_P29597": 6.12,
+   "primary_p_affinity": 9.72,
+   "off_target": "O60674",
+   "off_target_p_affinity": 6.57,
+   "selectivity_log": 3.15,
+   "selectivity_fold": 1413,
+   "selectivity_is_lower_bound": false,
+   "bounds": [
+    "P52333"
+   ],
+   "n_targets_measured": 4,
+   "n_measurements": 4,
+   "smiles": "CCC(=O)Nc1ccc(Nc2ncc(F)c(-c3c[nH]c4c(NC(=O)[C@@H](COC)N5CCN(C)CC5)cccc34)n2)cn1"
+  },
+  {
+   "monomerid": 801911,
+   "bdbm_id": "BDBM801911",
+   "compound_name": "(R)-N-(3-(2-((6-acetamidopyridin-3-yl)amino)-5- fluoropyrimidin-4-yl)-1H-indol-7-yl)-3-methoxy-2- (4-methylpiperazin-1-yl)propanamide",
+   "p_P23458": 9.57,
+   "p_O60674": 6.42,
+   "p_P52333": 5.0,
+   "p_P29597": 5.77,
+   "primary_p_affinity": 9.57,
+   "off_target": "O60674",
+   "off_target_p_affinity": 6.42,
+   "selectivity_log": 3.15,
+   "selectivity_fold": 1413,
+   "selectivity_is_lower_bound": false,
+   "bounds": [
+    "P52333"
+   ],
+   "n_targets_measured": 4,
+   "n_measurements": 4,
+   "smiles": "COC[C@H](C(=O)Nc1cccc2c(-c3nc(Nc4ccc(NC(C)=O)nc4)ncc3F)c[nH]c12)N1CCN(C)CC1"
+  },
+  {
+   "monomerid": 801903,
+   "bdbm_id": "BDBM801903",
+   "compound_name": "(R)-N-(3-(5-fluoro-2-((6-(2-(methylamino)-2-oxoethyl)pyridin-3-yl)amino) pyrimidin-4-yl)-1H-indol-7-yl)-3-methoxy-2-(4-methylpiperazin-1-yl)propanamide",
+   "p_P23458": 9.64,
+   "p_O60674": 6.5,
+   "p_P52333": 5.0,
+   "p_P29597": 6.01,
+   "primary_p_affinity": 9.64,
+   "off_target": "O60674",
+   "off_target_p_affinity": 6.5,
+   "selectivity_log": 3.14,
+   "selectivity_fold": 1380,
+   "selectivity_is_lower_bound": false,
+   "bounds": [
+    "P52333"
+   ],
+   "n_targets_measured": 4,
+   "n_measurements": 4,
+   "smiles": "CNC(=O)Cc1ccc(Nc2ncc(F)c(-c3c[nH]c4c(NC(=O)[C@@H](COC)N5CCN(C)CC5)cccc34)n2)cn1"
+  },
+  {
+   "monomerid": 801892,
+   "bdbm_id": "BDBM801892",
+   "compound_name": "(R)-N-(3-(5-fluoro-2-((5-hydroxypyridin-3- yl)amino)pyrimidin-4-yl)-1H-indol-7-yl)-3- methoxy-2-(4-methylpiperazin-1-yl)propanainide",
+   "p_P23458": 9.92,
+   "p_O60674": 6.79,
+   "p_P52333": 5.0,
+   "p_P29597": 5.93,
+   "primary_p_affinity": 9.92,
+   "off_target": "O60674",
+   "off_target_p_affinity": 6.79,
+   "selectivity_log": 3.13,
+   "selectivity_fold": 1349,
+   "selectivity_is_lower_bound": false,
+   "bounds": [
+    "P52333"
+   ],
+   "n_targets_measured": 4,
+   "n_measurements": 4,
+   "smiles": "COC[C@H](C(=O)Nc1cccc2c(-c3nc(Nc4cncc(O)c4)ncc3F)c[nH]c12)N1CCN(C)CC1"
+  },
+  {
+   "monomerid": 488779,
+   "bdbm_id": "BDBM488779",
+   "compound_name": "(R)-N-(3-(5-fluoro-2- (2-fluoro-3- (methylsulfonyl)phenyl amino)pyrimidin-4-yl)- 1H-indol-7-yl)-3- methoxy-2-(4- methylpiperazin-1- yl)propanamide",
+   "p_P23458": 9.27,
+   "p_O60674": 6.16,
+   "p_P52333": 4.52,
+   "p_P29597": 6.18,
+   "primary_p_affinity": 9.27,
+   "off_target": "P29597",
+   "off_target_p_affinity": 6.18,
+   "selectivity_log": 3.09,
+   "selectivity_fold": 1230,
+   "selectivity_is_lower_bound": false,
+   "bounds": [
+    "P52333"
+   ],
+   "n_targets_measured": 4,
+   "n_measurements": 7,
+   "smiles": "COC[C@H](C(=O)Nc1cccc2c(-c3nc(Nc4cccc(S(C)(=O)=O)c4F)ncc3F)c[nH]c12)N1CCN(C)CC1"
+  }
+ ],
+ "note": "Potencies are IC50 p_affinity (9 - log10(nM)); p_<target> is null where the compound was not measured against that target. primary_target and other_targets give each column key's protein and gene name; label the targets with the gene names. selectivity_log is the primary target's p_affinity minus the most potent other target's; selectivity_fold is 10 to that power. A row's `bounds` lists targets whose only values are '>' (inactive at the highest concentration tested), so its potency there is an upper bound; when the most potent off-target is one of them, selectivity_log is a lower bound. Compounds measured only against the primary target are left out, since nothing shows them to be selective; include_untested adds them."
+}

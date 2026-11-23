@@ -31,7 +31,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 EXAMPLES = ROOT / "examples"
 REPO_FILES_URL = "https://github.com/pwrose/mcp-bindingdb/blob/main/examples/"
-IGNORE = shutil.ignore_patterns(".DS_Store")
+IGNORE = shutil.ignore_patterns(".DS_Store", ".ipynb_checkpoints")
 LEVEL_FOLDER = re.compile(r"^\d\d-")
 LOCAL_PATH = re.compile(rb"/Users/[A-Za-z]|/home/[A-Za-z]|/private/tmp/|[A-Z]:\\Users\\")
 
@@ -130,6 +130,11 @@ def collect(root: Path) -> list[tuple[str, str, str, list[dict]]]:
                 continue
             main = f"{ex.name}.html" if f"{ex.name}.html" in pages else pages[0]
             title, prompt, tags = parse_transcript(ex / main)
+            # A notebook from create_jupyter_notebook sits in a folder of its own with the files it needs.
+            notebook = next((nb for sub in sorted(ex.iterdir()) if sub.is_dir()
+                             for nb in sorted(sub.glob("*.ipynb"))), None)
+            if notebook is not None:
+                tags.append("notebook")
             examples.append({
                 "num": ex.name.split("-")[0],
                 "title": re.sub(r"^Example\s+[\d.]+\s+—\s+", "", title),
@@ -139,6 +144,10 @@ def collect(root: Path) -> list[tuple[str, str, str, list[dict]]]:
                            if f.is_file() and f.name != main and not f.name.startswith(".") and f.suffix != ".html"],
                 # other HTML pages (an overlay's 3D viewer): linked like the transcript, so they open rendered
                 "pages": [f"{folder}/{ex.name}/{name}" for name in pages if name != main],
+                "notebook": None if notebook is None else {
+                    "ipynb": f"{folder}/{ex.name}/{notebook.parent.name}/{notebook.name}",
+                    "page": (f"{folder}/{ex.name}/{notebook.parent.name}/{notebook.stem}.html"
+                             if notebook.with_suffix(".html").is_file() else None)},
             })
         if examples:
             levels.append((folder, heading, intro, examples))
@@ -169,6 +178,11 @@ def build_index(root: Path, files_base_url: str = "") -> int:
                 links = ", ".join(f'<a href="{html.escape(files_base_url + f)}">{html.escape(f.rsplit("/", 1)[1])}</a>'
                                   for f in e["extras"])
                 files += f'<div class="files">Also in this folder: {links}</div>'
+            if nb := e["notebook"]:  # the .ipynb itself only renders on GitHub, not through htmlpreview
+                rendered = f'<a href="{html.escape(nb["page"])}">rendered</a> &middot; ' if nb["page"] else ""
+                files += (f'<div class="viewer">Jupyter notebook: {rendered}'
+                          f'<a href="{html.escape(files_base_url + nb["ipynb"])}">'
+                          f'{html.escape(nb["ipynb"].rsplit("/", 1)[1])}</a></div>')
             cards.append(f'''<li class="card">
   <div class="num">{html.escape(e["num"])}</div>
   <div class="body">

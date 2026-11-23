@@ -1,0 +1,126 @@
+{
+ "row_count": 10,
+ "truncated": true,
+ "rows": [
+  {
+   "target_kind": "polymer",
+   "target_id": 4918,
+   "name": "Tyrosine-protein kinase JAK2",
+   "uniprot": "O60674",
+   "uniprot_raw": "O60674",
+   "organism": "Homo sapiens",
+   "type": "Protein",
+   "n_activities": 20899,
+   "n_compounds": 16277,
+   "matched_name": "JAK2"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 4917,
+   "name": "Tyrosine-protein kinase JAK1",
+   "uniprot": "P23458",
+   "uniprot_raw": "P23458",
+   "organism": "Homo sapiens",
+   "type": "Protein",
+   "n_activities": 16476,
+   "n_compounds": 13565,
+   "matched_name": "JAK1"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 4919,
+   "name": "Tyrosine-protein kinase JAK3",
+   "uniprot": "P52333",
+   "uniprot_raw": "P52333",
+   "organism": "Homo sapiens",
+   "type": "Protein",
+   "n_activities": 13318,
+   "n_compounds": 9661,
+   "matched_name": "JAK3"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 9391,
+   "name": "Protein arginine N-methyltransferase 5",
+   "uniprot": "O14744",
+   "uniprot_raw": "O14744",
+   "organism": "Homo sapiens",
+   "type": "Enzyme",
+   "n_activities": 2905,
+   "n_compounds": 2598,
+   "matched_name": "Jak-binding protein 1"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 641,
+   "name": "Tyrosine-protein kinase JAK1 [837-1142]",
+   "uniprot": "P23458",
+   "uniprot_raw": "P23458[837-1142]",
+   "organism": "Homo sapiens",
+   "type": null,
+   "n_activities": 1745,
+   "n_compounds": 624,
+   "matched_name": "JAK1"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 642,
+   "name": "Tyrosine-protein kinase JAK2 [828-1132]",
+   "uniprot": "O60674",
+   "uniprot_raw": "O60674[828-1132]",
+   "organism": "Homo sapiens",
+   "type": null,
+   "n_activities": 1477,
+   "n_compounds": 596,
+   "matched_name": "JAK2"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 192,
+   "name": "Tyrosine-protein kinase JAK3 [781-1124]",
+   "uniprot": "P52333",
+   "uniprot_raw": "P52333[781-1124]",
+   "organism": "Homo sapiens",
+   "type": null,
+   "n_activities": 724,
+   "n_compounds": 543,
+   "matched_name": "JAK3"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 484,
+   "name": "Tyrosine-protein kinase JAK2 [808-1132]",
+   "uniprot": "O60674",
+   "uniprot_raw": "O60674[808-1132]",
+   "organism": "Homo sapiens",
+   "type": "Protein",
+   "n_activities": 595,
+   "n_compounds": 565,
+   "matched_name": "JAK2"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1448,
+   "name": "Tyrosine-protein kinase JAK2 [Y1007F,Y1008F]",
+   "uniprot": "O60674",
+   "uniprot_raw": "O60674[Y1007F,Y1008F]",
+   "organism": "Homo sapiens",
+   "type": "Enzyme Catalytic Domain",
+   "n_activities": 508,
+   "n_compounds": 498,
+   "matched_name": "Tyrosine-protein kinase JAK2 [Y1007F,Y1008F]"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 483,
+   "name": "Tyrosine-protein kinase JAK1 [866-1154]",
+   "uniprot": "P23458",
+   "uniprot_raw": "P23458[866-1154]",
+   "organism": "Homo sapiens",
+   "type": "Protein",
+   "n_activities": 497,
+   "n_compounds": 266,
+   "matched_name": "JAK1"
+  }
+ ]
+}

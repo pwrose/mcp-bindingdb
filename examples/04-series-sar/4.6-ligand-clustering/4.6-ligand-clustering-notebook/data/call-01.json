@@ -1,0 +1,78 @@
+{
+ "row_count": 6,
+ "truncated": true,
+ "rows": [
+  {
+   "target_kind": "polymer",
+   "target_id": 6885,
+   "name": "Bromodomain-containing protein 4",
+   "uniprot": "O60885",
+   "uniprot_raw": "O60885",
+   "organism": "Homo sapiens",
+   "type": "Protein",
+   "n_activities": 13085,
+   "n_compounds": 8562,
+   "matched_name": "BRD4"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 506,
+   "name": "Bromodomain-containing protein 4 [42-168]",
+   "uniprot": "O60885",
+   "uniprot_raw": "O60885[42-168]",
+   "organism": "Homo sapiens",
+   "type": "Enzyme Catalytic Domain",
+   "n_activities": 1541,
+   "n_compounds": 1142,
+   "matched_name": "BRD4"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 539,
+   "name": "Bromodomain-containing protein 4 [342-460]",
+   "uniprot": "O60885",
+   "uniprot_raw": "O60885[342-460]",
+   "organism": "Homo sapiens",
+   "type": "Enzyme Catalytic Domain",
+   "n_activities": 1473,
+   "n_compounds": 809,
+   "matched_name": "BRD4"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 383,
+   "name": "Bromodomain-containing protein 4 [75-147]",
+   "uniprot": "O60885",
+   "uniprot_raw": "O60885[75-147]",
+   "organism": "Homo sapiens",
+   "type": null,
+   "n_activities": 968,
+   "n_compounds": 825,
+   "matched_name": "BRD4"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1168,
+   "name": "Bromodomain-containing protein 4 [58-164]",
+   "uniprot": "O60885",
+   "uniprot_raw": "O60885[58-164]",
+   "organism": "Homo sapiens",
+   "type": "Enzyme Catalytic Domain",
+   "n_activities": 807,
+   "n_compounds": 792,
+   "matched_name": "BRD4"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 538,
+   "name": "Bromodomain-containing protein 4 [49-170]",
+   "uniprot": "O60885",
+   "uniprot_raw": "O60885[49-170]",
+   "organism": "Homo sapiens",
+   "type": "Enzyme Catalytic Domain",
+   "n_activities": 700,
+   "n_compounds": 671,
+   "matched_name": "BRD4"
+  }
+ ]
+}
