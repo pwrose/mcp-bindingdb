@@ -14,7 +14,6 @@ uv run mcp-bindingdb                                     # without RDKit, OPSIN 
 | `--transport stdio\|streamable-http` | Transport (default stdio) |
 | `--host`, `--port` | Address for streamable-http (default 127.0.0.1:8000) |
 | `--timeout SECONDS` | Per-query time limit (default 30) |
-| `--no-network` | Do not look names up in PubChem (`chemical_name_to_smiles`) or download PDB entries (`overlay_binding_site` then uses only `data/pdb-cache/`) |
 
 The `substructure` extra (RDKit) enables `substructure_search` and `similarity_search`, which also
 need the index, and `exact_structure_search`, `draw_structure_grid`, `draw_r_group_table` and the SAR tools

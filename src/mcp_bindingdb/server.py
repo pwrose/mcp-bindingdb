@@ -606,7 +606,7 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
         if source == "opsin":
             return names.opsin_unavailable_reason()
         if source == "pubchem" and not network:
-            return "network lookups disabled (--no-network)"
+            return "network lookups disabled"
         return None
 
     def name_in_bindingdb(name: str) -> dict[str, Any] | None:
@@ -1047,7 +1047,7 @@ def build_server(db: Database, index: substructure.SubstructureIndex | None = No
                 out.update(building_release=pending, message=build.message())
                 return out
         if not network:
-            raise ToolError("This server runs without network access (--no-network), so it cannot check "
+            raise ToolError("This server runs without network access, so it cannot check "
                             "bindingdb.org for a newer release.")
         try:
             latest = local_build.latest_release()
@@ -2943,8 +2943,6 @@ def main() -> None:
     p.add_argument("--host", default="127.0.0.1")
     p.add_argument("--port", type=int, default=8000)
     p.add_argument("--timeout", type=float, default=30.0, help="Per-query time limit in seconds")
-    p.add_argument("--no-network", action="store_true",
-                   help="Do not look names up in PubChem (chemical_name_to_smiles)")
     p.add_argument("--transcript-dir", default=os.environ.get("MCP_BINDINGDB_TRANSCRIPT_DIR"),
                    help="Where transcripts and figures go unless a call gives output_dir (default: "
                    "$MCP_BINDINGDB_TRANSCRIPT_DIR, else transcripts/ next to the database; Documents/BindingDB "
@@ -2969,8 +2967,7 @@ def main() -> None:
         index = load_substructure_index(db)
         if index is not None:  # loading takes several seconds; start now so the first search does not wait
             threading.Thread(target=index.preload, daemon=True).start()
-    server = build_server(db, index, network=not args.no_network,
-                          transcript_dir=_transcript_dir(args.transcript_dir, db_path),
+    server = build_server(db, index, transcript_dir=_transcript_dir(args.transcript_dir, db_path),
                           building_release=building_release or (
                               local_build.unfinished_release(update_folder, db.build_info().get("release") or "")
                               if pending is None and update_folder is not None else None),

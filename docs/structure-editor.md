@@ -37,7 +37,7 @@ The check is skipped for clients that do not declare MCP Apps, and after the fir
 
 - Ask: **Open the BindingDB structure editor with aspirin.** Resolve the name, review the candidates,
   and select the intended structure. Automatic resolution uses the existing BindingDB → PubChem →
-  OPSIN path. `--no-network` disables PubChem helpers, as in the rest of this server.
+  OPSIN path.
 - Paste `CC(=O)Oc1ccccc1C(=O)O` as SMILES, load it, edit a bond, then expand **Inspect result**. Confirm
   that the generated SMILES follows the drawing and that editing the input invalidates stale output.
 - Paste `[NX3][CX3](=[OX1])` as SMARTS. Confirm that Substructure is selected and the original query is

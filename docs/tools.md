@@ -41,8 +41,8 @@ disabled and settings locked, so `run_sql` cannot write data or read anything ou
 Queries time out after 30 s (`--timeout`). `update_database` downloads a newer BindingDB release from
 bindingdb.org and builds it next to the database, in a separate process, only with `start=true`; it never
 changes the database the server has open. The tools that use the network are `chemical_name_to_smiles`
-(PubChem; `--no-network` turns that off), `overlay_binding_site` and `find_pdb_complexes` (PDBe, RCSB), and
-`update_database` (bindingdb.org; `--no-network` turns off its check).
+(PubChem), `overlay_binding_site` and `find_pdb_complexes` (PDBe, RCSB), and
+`update_database` (bindingdb.org).
 
 ## Deterministic results
 

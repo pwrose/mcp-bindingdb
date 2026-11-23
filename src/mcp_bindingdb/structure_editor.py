@@ -313,7 +313,7 @@ def create_editor_extension(network: bool = True, searches: EditorSearches | Non
     def editor_pubchem_candidates(cids: list[int]) -> dict[str, Any]:
         """Retrieve every additional PubChem candidate returned by an ambiguous name lookup."""
         if not network:
-            raise ToolError("Network lookups disabled (--no-network)")
+            raise ToolError("Network lookups disabled")
         if len(cids) > 19 or any(type(v) is not int or v < 1 for v in cids):
             raise ToolError("Expected at most 19 positive PubChem CIDs")
         if not cids:
