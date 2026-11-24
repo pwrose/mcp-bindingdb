@@ -64,3 +64,16 @@ def test_code_is_left_alone():
 
 def test_overlay_viewer_is_not_a_bare_iframe():
     assert notebook.overlay_viewer("<p>x</p>").startswith("<div><iframe ")
+
+
+def test_local_paths_are_shown_relative_to_the_home_folder(tmp_path, monkeypatch):
+    monkeypatch.setenv("HOME", str(tmp_path))
+    result = {"folder": str(tmp_path / "Library" / "overlays" / "abc"), "figure_file": "/srv/figures/f.png",
+              "title": str(tmp_path / "not a path key"), "rows": [{"figure_file": str(tmp_path / "g.png")}]}
+    shown = transcript.home_relative(result)
+    assert shown == {"folder": "~/Library/overlays/abc", "figure_file": "/srv/figures/f.png",
+                     "title": result["title"], "rows": [{"figure_file": "~/g.png"}]}
+    assert result["folder"].startswith(str(tmp_path))  # the result itself is unchanged
+    assert notebook.digest(shown) == notebook.digest(result)  # volatile keys: same digest
+    text = "\n".join(transcript.render_result({"folder": result["folder"], "n": 1}, None))
+    assert '"folder": "~/Library/overlays/abc"' in text and str(tmp_path / "Library") not in text

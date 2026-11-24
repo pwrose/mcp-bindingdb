@@ -9,6 +9,7 @@ from __future__ import annotations
 import json
 import re
 from datetime import datetime, timezone
+from pathlib import Path
 from typing import Any
 
 #: Not logged: schema lookups, and the transcript tools themselves.
@@ -18,6 +19,28 @@ UNLOGGED_TOOLS = {"describe_tables", "create_transcript", "transcript_to_html", 
                   "check_editor_shown",  # opening the editor, not data
                   "update_database",  # the database itself, not data from it
                   "editor_search", "editor_opened", "figure_image", "overlay_data", "open_overlay_viewer"}  # the panels' own calls; get_editor_results is logged
+
+#: Result keys naming a file or folder on the server's computer (an overlay's folder, a saved figure).
+LOCAL_PATH_KEYS = {"folder", "figure_file"}
+
+
+def home_relative(value: Any) -> Any:
+    """A result with its local paths (LOCAL_PATH_KEYS) under the home folder written as ~/..., for the
+    transcripts and notebooks people share: the path still says where the file is, without the user's name."""
+    if isinstance(value, list):
+        return [home_relative(v) for v in value]
+    if not isinstance(value, dict):
+        return value
+    return {k: _home_relative_path(v) if k in LOCAL_PATH_KEYS else home_relative(v) for k, v in value.items()}
+
+
+def _home_relative_path(value: Any) -> Any:
+    if not isinstance(value, str) or not value:
+        return value
+    try:
+        return "~/" + Path(value).relative_to(Path.home()).as_posix()
+    except (ValueError, RuntimeError):  # not under the home folder, or no home folder
+        return value
 
 
 class ToolLog:
@@ -164,7 +187,9 @@ def _is_table(key: str, value: Any) -> bool:
 
 
 def render_result(result: Any, max_rows: int | None) -> list[str]:
-    """Lists of rows as Markdown tables (capped at max_rows); everything else as one JSON block."""
+    """Lists of rows as Markdown tables (capped at max_rows); everything else as one JSON block. Local paths
+    are shown relative to the home folder (home_relative)."""
+    result = home_relative(result)
     if not isinstance(result, dict):
         return ["```", str(result).strip(), "```", ""]
     tables = {k: v for k, v in result.items() if _is_table(k, v)}

@@ -220,7 +220,8 @@ them does the model set `include_tool_calls`, and a "BindingDB tool calls" secti
 each call's arguments verbatim (SQL in a `sql` block for `run_sql`), then its result, with lists of rows
 as tables capped at `max_result_rows` (default 5; the true row count is kept). Values show as written: the server escapes the characters Markdown would read in a
 table cell (a SMILES's brackets and asterisks), and in the prompts and answers it leaves a `[text](target)`
-whose target is no URL or file (a SMILES such as `N[C@@H](c1ccccc1)C`) as text rather than a link. The header then also gives
+whose target is no URL or file (a SMILES such as `N[C@@H](c1ccccc1)C`) as text rather than a link. Local paths in
+results (an overlay's `folder`, a figure's `figure_file`) are shown relative to the home folder (`~/...`). The header then also gives
 the active window from the first to the last call. `format="json"` returns the same fields unrendered,
 with full results.
 
@@ -286,7 +287,7 @@ everything the notebook needs to run on any computer with uv:
   code imports. When pip could not install the commit from GitHub (the package has uncommitted changes, the
   commit is not on a remote branch, or it is unknown), the folder gets a copy of the package instead
   (`mcp_bindingdb/`, with a `_build.json` naming the commit), which the kernel imports from the folder;
-- `data/call-NN.json`: each call's recorded result; `figures/figure-N.<ext>`: each figure as recorded;
+- `data/call-NN.json`: each call's recorded result (local paths written as `~/...`); `figures/figure-N.<ext>`: each figure as recorded;
 - the `.py` files of the analysis code, and a `README.md` on running and rerunning it.
 
 An installed bundle knows its commit from the `_build.json` `scripts/build_bundle.sh` writes into it; a

@@ -342,6 +342,15 @@ async def test_overlay_calls_carry_their_3d_viewer(tmp_path, monkeypatch):
     assert len(second["outputs"]) == 1
     assert "the 3D viewers of the binding-site overlays in `overlays/`" in "".join(nb["cells"][0]["source"])
     assert "- `overlays/call-01.html`: the 3D viewer of Call 1's binding-site overlay" in files["README.md"]
+    # The overlay's local folder is recorded and shown relative to the home folder, not with the user's name.
+    monkeypatch.setenv("HOME", str(tmp_path))
+    nb, _, files = notebook.build_notebook(
+        title="Overlay", when="2026-11-23", model="m", build_info={"release": "202611"}, generated_by="t",
+        exchanges=[{"prompt": "Overlay it.", "answer": "Done.", "calls": [entry, gone], "figures": []}],
+        leftover_calls=[], unplaced_figures=[], skills=[], mcp_servers=[], max_rows=None, file_name="o.ipynb")
+    assert json.loads(files["data/call-01.json"])["folder"] == "~/server/overlays/abc123"
+    assert files["overlays/call-01.html"] == page
+    assert str(tmp_path) not in json.dumps(nb) and all(str(tmp_path) not in str(c) for c in files.values())
 
     # Replayed as recorded, from the notebook's folder; a call without a viewer file shows none.
     for name, content in files.items():

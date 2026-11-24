@@ -589,7 +589,8 @@ class _Notebook:
             self.n_calls += 1
             n = self.n_calls
             sha = digest(call.get("result"))
-            self.data[data_file(n)] = json.dumps(call.get("result"), indent=1, ensure_ascii=False, default=str) + "\n"
+            self.data[data_file(n)] = json.dumps(transcript.home_relative(call.get("result")), indent=1,
+                                                 ensure_ascii=False, default=str) + "\n"
             stamp = _stamp(call.get("timestamp", ""))
             comment = f"Call {n} · {call['tool']}" + (f" · ran {stamp}" if stamp else "") + \
                       (" · from the structure editor" if call.get("from_editor") else "")
