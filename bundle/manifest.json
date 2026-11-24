@@ -2,7 +2,7 @@
   "manifest_version": "0.4",
   "name": "mcp-bindingdb",
   "display_name": "mcp-bindingdb",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "description": "Query BindingDB's 3.2 million measured protein-ligand binding affinities: compounds, targets, structure searches, SAR and PDB binding-site overlays.",
   "long_description": "Gives Claude access to BindingDB, the public database of measured protein-ligand binding affinities, from a copy stored on your computer (1.8 GB). After installing, wait about 2 minutes while the server starts and the database downloads (until the server has started, its tools show as unavailable). Then click Configure above, select \"Always allow\" for all tools (there are several sections), and ask Claude: \"Check the BindingDB build status and release with mcp-bindingdb\". BindingDB publishes a new release every month; ask Claude to update the database to get it. Includes substructure and similarity search, chemical-name parsing, a structure editor, PDB binding-site overlays, transcripts and Jupyter notebooks.",
   "author": {
@@ -23,8 +23,7 @@
       "args": ["run", "--directory", "${__dirname}", "--frozen", "--extra", "substructure", "--extra", "structures", "--extra", "opsin",
                "mcp-bindingdb"],
       "env": {
-        "MCP_BINDINGDB_TRANSCRIPT_DIR": "${user_config.results_dir}",
-        "MCP_BINDINGDB_MIRROR": "${user_config.mirror_url}"
+        "MCP_BINDINGDB_TRANSCRIPT_DIR": "${user_config.results_dir}"
       }
     }
   },
@@ -34,13 +33,6 @@
       "title": "Results folder",
       "description": "Where transcripts, figures and notebooks go unless you name another folder in the chat.",
       "default": "${DOCUMENTS}/BindingDB",
-      "required": false
-    },
-    "mirror_url": {
-      "type": "string",
-      "title": "Prebuilt database folder (optional)",
-      "description": "Where the BindingDB database is downloaded already built (about 440 MB, a minute or two) instead of built on this computer (about half an hour): the link of a shared folder of prebuilt databases (a Google Drive folder or a web address). Leave empty for mcp-bindingdb's own folder; enter none to always build it here.",
-      "default": "",
       "required": false
     }
   },
