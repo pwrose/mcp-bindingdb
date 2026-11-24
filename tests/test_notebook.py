@@ -315,3 +315,44 @@ async def test_notebook_includes_the_models_code_inline_or_as_a_module(tmp_path,
         values = await run_cells(nb, namespace)
         assert [v.status for v in values if isinstance(v, notebook.Rerun)] == [status]
         assert namespace["n"] == 3 and len(namespace["rows"]) == 3
+
+
+@pytest.mark.anyio
+async def test_overlay_calls_carry_their_3d_viewer(tmp_path, monkeypatch):
+    """An overlay_binding_site call's standalone viewer goes in the notebook's folder (overlays/) and in the
+    call's output, and Replay shows it: the recorded one, or the rerun's own."""
+    monkeypatch.setattr(notebook, "source_version", lambda: PUBLISHED)
+    overlay = tmp_path / "server" / "overlays" / "abc123"
+    overlay.mkdir(parents=True)
+    page = '<!doctype html><html><body><p class="x">3D "viewer" & co</p><script>render()</script></body></html>'
+    (overlay / "overlay.html").write_text(page)
+    result = {"overlay_id": "abc123", "title": "ABL1", "entries": [], "folder": str(overlay)}
+    entry = {"tool": "overlay_binding_site", "arguments": {"uniprot": "P00519", "pdb_ids": ["1IEP"]},
+             "result": result, "timestamp": "2026-11-23T23:52:47Z"}
+    gone = {**entry, "result": {**result, "folder": str(tmp_path / "pruned")}}  # an overlay the server dropped
+    nb, counts, files = notebook.build_notebook(
+        title="Overlay", when="2026-11-23", model="m", build_info={"release": "202611"}, generated_by="t",
+        exchanges=[{"prompt": "Overlay it.", "answer": "Done.", "calls": [entry, gone], "figures": []}],
+        leftover_calls=[], unplaced_figures=[], skills=[], mcp_servers=[], max_rows=None, file_name="o.ipynb")
+    assert files["overlays/call-01.html"] == page and "overlays/call-02.html" not in files
+    assert nb["metadata"]["bindingdb"]["overlay_files"] == ["overlays/call-01.html"]
+    first, second = [c for c in nb["cells"] if "call" in c["metadata"].get("bindingdb", {})]
+    viewer = "".join(first["outputs"][1]["data"]["text/html"])
+    assert viewer.startswith("<iframe srcdoc=\"") and "&quot;viewer&quot; &amp; co" in viewer and 'sandbox="' in viewer
+    assert len(second["outputs"]) == 1
+    assert "the 3D viewers of the binding-site overlays in `overlays/`" in "".join(nb["cells"][0]["source"])
+    assert "- `overlays/call-01.html`: the 3D viewer of Call 1's binding-site overlay" in files["README.md"]
+
+    # Replayed as recorded, from the notebook's folder; a call without a viewer file shows none.
+    for name, content in files.items():
+        path = tmp_path / "nb" / name
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(content) if isinstance(content, str) else path.write_bytes(content)
+    replay = notebook.Replay(release="202611", folder=tmp_path / "nb")
+    shown = await replay.call(1, "overlay_binding_site", entry["arguments"])
+    assert shown.status == "recorded" and shown.viewer == page
+    assert (await replay.call(2, "overlay_binding_site", gone["arguments"])).viewer is None
+    # A rerun's result names the new overlay's folder, whose viewer it shows.
+    assert notebook.overlay_page("overlay_binding_site", result) == page
+    assert notebook.overlay_page("overlay_binding_site", gone["result"]) is None
+    assert notebook.overlay_page("search_compounds", result) is None

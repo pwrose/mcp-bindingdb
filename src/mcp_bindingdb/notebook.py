@@ -18,6 +18,7 @@ import ast
 import base64
 import contextlib
 import hashlib
+import html
 import io
 import json
 import math
@@ -74,6 +75,9 @@ NETWORK_TOOLS = {"chemical_name_to_smiles": "PubChem", "find_pdb_complexes": "RC
 #: Tools that only open a panel in the chat: nothing to rerun.
 UI_TOOLS = {"open_structure_editor"}
 FIGURE_TOOLS = {"draw_structure_grid", "draw_r_group_table"}
+#: Height of an overlay's 3D viewer in a notebook cell: its 480 px stage with the header and options, and
+#: the side panel's notes beside them.
+OVERLAY_VIEWER_HEIGHT = 760
 SIGNIFICANT_DIGITS = 10  # floats are compared to this precision: parallel sums differ in the last bits
 #: Analysis code longer than this many lines goes to a .py file next to the notebook, which a cell imports.
 INLINE_CODE_LINES = 40
@@ -419,6 +423,7 @@ def build_notebook(*, title: str, when: str, model: str, build_info: dict[str, s
             **({"external_mcp_servers": mcp_servers} if mcp_servers else {}),
             **({"python_packages": packages} if packages else {}),
             **({"code_files": sorted(files)} if files else {}),
+            **({"overlay_files": sorted(nb.overlays)} if nb.overlays else {}),
             "server_install": "github" if server else "copy", "contents": counts}
     nb.markdown(_header(meta, counts, file_name))
     nb.code(_setup_source(build_info), [_stream(_recorded_environment(meta))])
@@ -435,7 +440,7 @@ def build_notebook(*, title: str, when: str, model: str, build_info: dict[str, s
         "language_info": {"name": "python"}, "bindingdb": meta}, "nbformat": 4, "nbformat_minor": 5}
     folder: dict[str, str | bytes] = {"requirements.txt": _requirements(server, source, project, packages),
                                       "README.md": _readme(meta, counts, file_name, figure_files),
-                                      **nb.data, **figure_files, **files}
+                                      **nb.data, **nb.overlays, **figure_files, **files}
     if server is None:
         folder.update(package_files())
         folder[f"mcp_bindingdb/{BUILD_FILE}"] = json.dumps(
@@ -465,6 +470,36 @@ def _requirements(server: str | None, source: dict[str, Any], project: Path | No
 def data_file(number: int) -> str:
     """Where a notebook folder keeps the recorded result of call `number`."""
     return f"data/call-{number:02d}.json"
+
+
+def overlay_file(number: int) -> str:
+    """Where a notebook folder keeps the 3D viewer of overlay_binding_site call `number`."""
+    return f"overlays/call-{number:02d}.html"
+
+
+def overlay_page(tool: str, result: Any) -> str | None:
+    """The standalone 3D viewer (overlay.html) an overlay_binding_site result names in its folder, if it is
+    still there (the server keeps the 30 most recent overlays)."""
+    if tool != "overlay_binding_site" or not isinstance(result, dict) or not result.get("folder"):
+        return None
+    try:
+        return (Path(result["folder"]) / "overlay.html").read_text(encoding="utf-8")
+    except OSError:
+        return None
+
+
+def overlay_viewer(page: str) -> str:
+    """An overlay's 3D viewer as HTML for a cell's output: the page in an iframe of its own (srcdoc), so its
+    scripts and styles stay out of the notebook's page. Jupyter shows it once the notebook is trusted, e.g.
+    after running the cell."""
+    return (f'<iframe srcdoc="{html.escape(page, quote=True)}" title="Binding-site overlay" '
+            f'style="width:100%;height:{OVERLAY_VIEWER_HEIGHT}px;border:1px solid #dfe3e0;border-radius:8px;'
+            'resize:vertical" sandbox="allow-scripts allow-downloads"></iframe>')
+
+
+def _html_output(source: str) -> dict[str, Any]:
+    return {"output_type": "display_data", "metadata": {}, "data": {"text/html": _lines(source),
+                                                                    "text/plain": ["<overlay viewer>"]}}
 
 
 def _call_numbers(entries: list[dict[str, Any]], log_entries: list[dict[str, Any]]) -> dict[int, int]:
@@ -524,6 +559,7 @@ class _Notebook:
     def __init__(self, max_rows: int | None) -> None:
         self.cells: list[dict[str, Any]] = []
         self.data: dict[str, str] = {}  # data/call-NN.json: each call's recorded result
+        self.overlays: dict[str, str] = {}  # overlays/call-NN.html: the 3D viewer of each overlay call
         self.max_rows = max_rows
         self.n_calls = self.n_redrawn = self.n_skipped = self.n_code = 0
 
@@ -560,7 +596,11 @@ class _Notebook:
             if service := NETWORK_TOOLS.get(call["tool"]):
                 status += f" · uses {service}, whose answers can change"
             text = "\n".join([status, "", *transcript.render_result(call.get("result"), self.max_rows)])
-            self.code(call_source(n, call["tool"], call["arguments"], sha, comment), [_markdown_output(text)],
+            outputs = [_markdown_output(text)]
+            if page := overlay_page(call["tool"], call.get("result")):
+                self.overlays[overlay_file(n)] = page
+                outputs.append(_html_output(overlay_viewer(page)))
+            self.code(call_source(n, call["tool"], call["arguments"], sha, comment), outputs,
                       {"bindingdb": {"call": n, "tool": call["tool"], "recorded_at": call.get("timestamp", ""),
                                      "sha256": sha}, **SOURCE_HIDDEN})
 
@@ -716,6 +756,8 @@ def _run_steps(meta: dict[str, Any], file_name: str, heading: str) -> list[str]:
             "the recorded results in `data/`"]
     if meta["contents"].get("figures"):
         held.append("the figures in `figures/`")
+    if meta.get("overlay_files"):
+        held.append("the 3D viewers of the binding-site overlays in `overlays/`")
     if files := meta.get("code_files"):
         held.append("the analysis code the notebook imports (" + ", ".join(f"`{f}`" for f in files) + ")")
     if meta.get("server_install") == "copy":
@@ -766,6 +808,8 @@ def _readme(meta: dict[str, Any], counts: dict[str, int], file_name: str, figure
         "- `requirements.txt`: the Python packages it runs with, at pinned versions",
         f"- `data/`: the result each call returned during the session (`call-NN.json`, for Call NN)",
         *(f"- `{name}`" for name in figure_files),
+        *(f"- `{name}`: the 3D viewer of Call {int(Path(name).stem.split('-')[1])}'s binding-site overlay, "
+          "which opens in any browser" for name in meta.get("overlay_files") or []),
         *(f"- `{name}`: analysis code the notebook imports" for name in meta.get("code_files") or []),
         *(["- `mcp_bindingdb/`: the mcp-bindingdb code the notebook ran with, which cannot be installed from GitHub "
            "(see requirements.txt for why)"]
@@ -873,10 +917,11 @@ class Rerun:
     """One rerun call or figure: its result, how it compares with the recording, and how it displays."""
 
     def __init__(self, label: str, tool: str, result: Any, status: str, message: str,
-                 images: list[tuple[bytes, str]], max_rows: int | None) -> None:
+                 images: list[tuple[bytes, str]], max_rows: int | None, viewer: str | None = None) -> None:
         self.label, self.tool, self.result, self.status, self.message = label, tool, result, status, message
         self.images = images
         self.max_rows = max_rows
+        self.viewer = viewer  # an overlay's standalone 3D viewer page
 
     @property
     def markdown(self) -> str:
@@ -889,8 +934,10 @@ class Rerun:
         return self.markdown
 
     def _ipython_display_(self) -> None:
-        from IPython.display import Image, Markdown, SVG, display
+        from IPython.display import HTML, Image, Markdown, SVG, display
         display(Markdown(self.markdown))
+        if self.viewer:
+            display(HTML(overlay_viewer(self.viewer)))
         for data, mime in self.images:
             display(SVG(data=data) if mime == "image/svg+xml" else Image(data=data))
 
@@ -982,7 +1029,13 @@ class Replay:
             status, message = "differs", f"⚠️ `{name}` differs from the recorded result (sha256 `{sha256[:12]}…`)"
         self.checks.append((label, tool, status))
         self.results[number] = result
-        return Rerun(label, tool, result, status, message, [], self.max_rows)
+        viewer = None
+        if tool == "overlay_binding_site":
+            try:
+                viewer = (self.folder / overlay_file(number)).read_text(encoding="utf-8")
+            except OSError:
+                pass
+        return Rerun(label, tool, result, status, message, [], self.max_rows, viewer)
 
     async def call(self, number: int, tool: str, arguments: dict[str, Any], sha256: str | None = None) -> Rerun:
         """Recorded call `number`: rerun and compared with the recorded digest, or as recorded (see Replay)."""
@@ -1006,7 +1059,8 @@ class Replay:
                 message += f"; {tool} uses {service}, whose answers change over time"
         self.checks.append((label, tool, status))
         self.results[number] = result
-        return Rerun(label, tool, result, status, message, images, self.max_rows)
+        viewer = None if failed else overlay_page(tool, result)
+        return Rerun(label, tool, result, status, message, images, self.max_rows, viewer)
 
     def result(self, number: int) -> Any:
         """The rerun result of call `number` (e.g. a dict with 'rows'), for the notebook's analysis code."""

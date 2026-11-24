@@ -354,7 +354,11 @@ Calls to PubChem, RCSB or PDBe are marked, since those services' answers change.
 and result), and `open_structure_editor` is noted but not rerun. Structure grids and R-group tables are
 drawn again from the arguments they were drawn with (images are shown, not compared); images added with
 `add_figure` are embedded as cell attachments and kept as recorded, and an overlay's contact map is drawn
-again by its `overlay_binding_site` call. The prose answers are the model's and are not recomputed.
+again by its `overlay_binding_site` call. An `overlay_binding_site` call's cell also shows the overlay's
+interactive 3D viewer, the standalone `overlay.html` the call wrote, kept in the notebook's folder as
+`overlays/call-NN.html` (it opens in any browser too); rerun, the cell shows the new overlay's viewer.
+Jupyter shows the viewer once the notebook is trusted, which running its cells does. The prose answers are
+the model's and are not recomputed.
 
 ## draw_structure_grid
 
