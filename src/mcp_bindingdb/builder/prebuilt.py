@@ -35,6 +35,7 @@ from pathlib import Path
 from typing import Any, Callable
 
 import duckdb
+from .. import net
 
 MIRROR_ENV = "MCP_BINDINGDB_MIRROR"
 #: The mirror used when $MCP_BINDINGDB_MIRROR is not set: a shared Google Drive folder, for now, until the
@@ -80,7 +81,7 @@ def open_url(url: str, timeout: float, headers: dict[str, str] | None = None) ->
     if "://" not in url:
         url = Path(url).expanduser().resolve().as_uri()
     request = urllib.request.Request(url, headers={"User-Agent": "mcp-bindingdb", **(headers or {})})
-    return urllib.request.urlopen(request, timeout=timeout)
+    return net.urlopen(request, timeout=timeout)
 
 
 def mirror_host(location: str) -> str:

@@ -1,6 +1,6 @@
 [project]
 name = "mcp-bindingdb"
-version = "0.1.16"
+version = "0.1.17"
 description = "MCP server for querying BindingDB from a local DuckDB build"
 requires-python = ">=3.11"
 license = "BSD-3-Clause"
@@ -9,6 +9,7 @@ dependencies = [
     "duckdb>=1.1",
     "markdown-it-py>=2.2",  # HTML transcripts
     "mcp[cli]>=2.3.0",
+    "truststore>=0.10",  # HTTPS verified by the operating system's trust store (net.py)
     "zstandard>=0.23",  # prebuilt databases from a mirror (builder.prebuilt)
 ]
 

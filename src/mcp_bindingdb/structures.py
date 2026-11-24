@@ -35,6 +35,7 @@ from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
+from . import net
 
 try:
     import gemmi
@@ -92,7 +93,7 @@ class PdbCache:
         errors = []
         for url in (PDBE_URL.format(id=pdb_id.lower()), RCSB_URL.format(ID=pdb_id)):
             try:
-                with urllib.request.urlopen(url, timeout=self.timeout) as response:
+                with net.urlopen(url, timeout=self.timeout) as response:
                     data = response.read()
                 if data[:2] != b"\x1f\x8b":
                     raise ValueError("not a gzip file")
@@ -116,7 +117,7 @@ def resolutions(pdb_ids: list[str], timeout: float = 20.0) -> dict[str, float | 
     request = urllib.request.Request(RCSB_GRAPHQL, data=json.dumps(query).encode(),
                                      headers={"Content-Type": "application/json"})
     try:
-        with urllib.request.urlopen(request, timeout=timeout) as response:
+        with net.urlopen(request, timeout=timeout) as response:
             entries = json.load(response)["data"]["entries"] or []
     except Exception:  # noqa: BLE001
         return {}
@@ -139,7 +140,7 @@ def ligand_inchikeys(codes: list[str], timeout: float = 20.0) -> dict[str, str]:
     request = urllib.request.Request(RCSB_GRAPHQL, data=json.dumps(query).encode(),
                                      headers={"Content-Type": "application/json"})
     try:
-        with urllib.request.urlopen(request, timeout=timeout) as response:
+        with net.urlopen(request, timeout=timeout) as response:
             comps = json.load(response)["data"]["chem_comps"] or []
     except Exception:  # noqa: BLE001
         return {}
@@ -149,7 +150,7 @@ def ligand_inchikeys(codes: list[str], timeout: float = 20.0) -> dict[str, str]:
 
 def _post_json(url: str, body: dict[str, Any], timeout: float) -> Any:
     request = urllib.request.Request(url, data=json.dumps(body).encode(), headers={"Content-Type": "application/json"})
-    with urllib.request.urlopen(request, timeout=timeout) as response:
+    with net.urlopen(request, timeout=timeout) as response:
         return json.load(response) if response.status != 204 else {}
 
 

@@ -18,6 +18,7 @@ import urllib.request
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
+from . import net
 
 try:
     import jpype
@@ -128,7 +129,7 @@ def pubchem_lookup(name: str, timeout_s: float = 10.0) -> Structure | None:
     request = urllib.request.Request(PUBCHEM_URL, data=urllib.parse.urlencode({"name": name}).encode(),
                                      headers={"User-Agent": "mcp-bindingdb"})
     try:
-        with urllib.request.urlopen(request, timeout=timeout_s) as response:
+        with net.urlopen(request, timeout=timeout_s) as response:
             properties = json.load(response)["PropertyTable"]["Properties"]
     except urllib.error.HTTPError as e:
         if e.code == 404:

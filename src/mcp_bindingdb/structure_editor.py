@@ -20,6 +20,7 @@ from mcp.server.mcpserver import Context, MCPServer
 from mcp.server.mcpserver.exceptions import ToolError
 from mcp.types import CallToolResult, ToolAnnotations
 from pydantic import Field
+from . import net
 
 URI = "ui://bindingdb/structure-editor.html"
 # Shows a figure tool's image in the chat; hosts show an image in a tool result only as a small thumbnail.
@@ -323,7 +324,7 @@ def create_editor_extension(network: bool = True, searches: EditorSearches | Non
             + ",".join(map(str, cids))
             + "/property/SMILES,InChIKey,Title/JSON"
         )
-        with urllib.request.urlopen(url, timeout=14) as response:
+        with net.urlopen(url, timeout=14) as response:
             rows = json.load(response)["PropertyTable"]["Properties"]
         return {
             "candidates": [

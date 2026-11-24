@@ -41,6 +41,7 @@ from .builder.pipeline import (RELEASE_FILE, SOURCE_URL, STEPS, database_path, i
                                read_status, remove_old_releases, status_path)
 from .db import QueryError, find_database
 from .substructure import index_path, rdkit_available
+from . import net
 
 # What the finished build's _build_info says about its contents, so the server can offer every tool before
 # the database is there (the release and the source checksum are filled in once it is).
@@ -109,7 +110,7 @@ def release_size(release: str, timeout: float = 15) -> int | None:
     request = urllib.request.Request(SOURCE_URL.format(release=release), method="HEAD",
                                      headers={"User-Agent": "mcp-bindingdb"})
     try:
-        with urllib.request.urlopen(request, timeout=timeout) as response:
+        with net.urlopen(request, timeout=timeout) as response:
             return int(response.headers.get("Content-Length") or 0) or None
     except urllib.error.HTTPError as e:
         if e.code == 404:

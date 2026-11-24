@@ -21,6 +21,7 @@ from pathlib import Path
 from typing import IO, Any, Callable
 
 import duckdb
+from .. import net
 
 SOURCE_URL = "https://www.bindingdb.org/rwd/bind/BDB-mySQL_All_{release}_dmp.zip"
 CHUNK = 1 << 20
@@ -203,7 +204,7 @@ def sha256(path: Path) -> str:
 def download(url: str, dest: Path, progress: Callable[[int, int], None]) -> None:
     """Fetch `url` to `dest`, resuming a partial file with a Range request; checks the size the server gives."""
     request = urllib.request.Request(url, method="HEAD", headers={"User-Agent": "mcp-bindingdb"})
-    with urllib.request.urlopen(request, timeout=60) as response:
+    with net.urlopen(request, timeout=60) as response:
         size = int(response.headers["Content-Length"])
     part = dest.with_name(dest.name + ".part")
     if dest.is_file() and dest.stat().st_size == size:
@@ -214,7 +215,7 @@ def download(url: str, dest: Path, progress: Callable[[int, int], None]) -> None
         have = 0
     if have < size:
         headers = {"User-Agent": "mcp-bindingdb", **({"Range": f"bytes={have}-"} if have else {})}
-        with urllib.request.urlopen(urllib.request.Request(url, headers=headers), timeout=60) as response:
+        with net.urlopen(urllib.request.Request(url, headers=headers), timeout=60) as response:
             if have and response.status != 206:  # the server ignored the Range: start over
                 have = 0
             with open(part, "ab" if have else "wb") as out:
