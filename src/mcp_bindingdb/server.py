@@ -1519,12 +1519,22 @@ def _add_transcript_tools(mcp: BindingDBServer, build_info: dict[str, str], tran
                                                                    description="The compounds, in grid order")],
             align_to: Annotated[str | None, Field(description="SMILES or SMARTS of the shared core to align "
                                                   "on and highlight, e.g. 'Nc1ccc(Cl)cc1'; its first atom is "
-                                                  "drawn on the left. Default: the compounds' largest common "
-                                                  "substructure")] = None,
+                                                  "drawn on the left. It needs at least min_core_atoms atoms: "
+                                                  "a single group (an amine, a ring) is not a shared core. "
+                                                  "Default: the compounds' largest common substructure")] = None,
             columns: Annotated[int, Field(ge=1, le=6, description="Compounds per row")] = 3,
             description: Annotated[str, Field(description="A sentence or two under the heading")] = "",
             notes: Annotated[list[str] | None, Field(description="Short notes under the figure, e.g. "
                                                      "caveats about the data")] = None,
+            min_core_atoms: Annotated[int, Field(ge=1, le=100, description="The fewest atoms (hydrogens not "
+                                                 "counted) a shared core needs; a smaller common substructure "
+                                                 "is not aligned on or highlighted. Lower it only when the user "
+                                                 "asks")] = depict.MIN_CORE_ATOMS,
+            min_core_share: Annotated[float, Field(gt=0, le=1, description="The share of the compounds the "
+                                                   "core found must be in, rounded up (0.8: one of 5 may "
+                                                   "lack it, and is drawn unaligned); 1: all of them. A core "
+                                                   "in all of them is preferred when it is big enough")]
+                                                   = depict.MIN_CORE_SHARE,
         ) -> CallToolResult:
             """Draw compounds side by side in a grid, aligned on a shared core that is highlighted, each with
             a name, subtitle, caption and bars for its binding to its main targets (log scale, coloured by
@@ -1540,22 +1550,24 @@ def _add_transcript_tools(mcp: BindingDBServer, build_info: dict[str, str], tran
             show; add a table only for data the figure lacks (e.g. other targets or measurement types)."""
             if align_to and depict.parse(align_to) is None:
                 raise ToolError(f"align_to {align_to!r} is not valid SMILES or SMARTS")
-            block, png, lay = figures.structure_grid(title, compounds, align_to, columns, description, notes)
+            if align_to and (size := depict.core_size(align_to)) < min_core_atoms:
+                raise ToolError(f"align_to {align_to!r} has {transcript.plural(size, 'atom')}, fewer than "
+                                f"min_core_atoms ({min_core_atoms}): a shared core is a larger part the compounds "
+                                "have in common. Give a larger core, leave align_to out to use their largest "
+                                "common substructure, or lower min_core_atoms if the user asks for it")
+            block, png, lay = figures.structure_grid(title, compounds, align_to, columns, description, notes,
+                                                     min_core_atoms, min_core_share)
             figure, saved = log_figure(title, png, ".png", block, {"compounds": [c.model_dump() for c in compounds],
                                                                    "align_to": align_to},
                                        call={"tool": "draw_structure_grid", "arguments": {
                                            "title": title, "compounds": [c.model_dump(exclude_defaults=True)
                                                                          for c in compounds],
                                            "align_to": align_to, "columns": columns, "description": description,
-                                           "notes": notes}})
-            if any(lay.cores):
-                alignment = f"aligned on {align_to}" if align_to else "aligned on their largest common substructure"
-            elif align_to:
-                alignment = f"not aligned: no compound contains {align_to}"
-            else:
-                alignment = "not aligned: they share no core of 6 or more atoms"
+                                           "notes": notes, "min_core_atoms": min_core_atoms,
+                                           "min_core_share": min_core_share}})
+            alignment = figures.grid_alignment(compounds, lay, align_to, min_core_atoms)
             bad = [c.title for c, mol in zip(compounds, lay.mols) if mol is None]
-            text = [f"Figure id {figure.id}: '{title}', {transcript.plural(len(compounds), 'compound')}, {alignment}.",
+            text = [f"Figure id {figure.id}: '{title}', {transcript.plural(len(compounds), 'compound')}, {alignment}",
                     *([f"Not drawn (SMILES not understood): {', '.join(bad)}."] if bad else []),
                     saved,
                     FIGURE_ID_NOTE.format(id=figure.id),

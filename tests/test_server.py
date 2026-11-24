@@ -452,6 +452,8 @@ async def test_structure_grid_figure_in_transcripts(tmp_path):
     async with Client(srv) as client:
         bad_core = await client.call_tool("draw_structure_grid", {"title": "x", "compounds": compounds,
                                                                   "align_to": "not a smiles ("})
+        small_core = await client.call_tool("draw_structure_grid", {"title": "x", "compounds": compounds,
+                                                                    "align_to": "[NX3;H2]"})
         grid = await client.call_tool("draw_structure_grid", {
             "title": "Chloroanilines", "compounds": compounds, "align_to": "Nc1ccc(Cl)cc1"})
         unknown = await client.call_tool("create_transcript", {"model": "m", "exchanges": [
@@ -462,9 +464,11 @@ async def test_structure_grid_figure_in_transcripts(tmp_path):
             {"prompt": "Grid?", "answer": "Here.", "figures": [1]}]})
         log = (await client.call_tool("get_tool_log", {})).structured_content
     assert bad_core.is_error and "not valid SMILES or SMARTS" in bad_core.content[0].text
+    assert small_core.is_error and "has 1 atom, fewer than min_core_atoms (8)" in small_core.content[0].text
     image, text = grid.content
     assert image.type == "image" and image.mime_type == "image/png"
-    assert text.text.startswith("Figure id 1: 'Chloroanilines', 3 compounds, aligned on Nc1ccc(Cl)cc1.")
+    assert text.text.startswith("Figure id 1: 'Chloroanilines', 3 compounds, aligned on Nc1ccc(Cl)cc1 (8 atoms), "
+                                "highlighted as the shared core.")
     [png] = (tmp_path / "figures").glob("chloroanilines-*-1.png")
     assert png.read_bytes()[:4] == b"\x89PNG"
     assert log["figures"][0]["id"] == 1 and log["figures"][0]["title"] == "Chloroanilines"
@@ -637,16 +641,27 @@ async def test_transcripts_written_to_output_dir(tmp_path):
     assert not list((tmp_path / "server").glob("*.md")) and not list((tmp_path / "server").glob("*.html"))
 
 
+IMATINIB_ANALOGS = ["Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cccnc2)n1",
+                    "Cc1ccc(NC(=O)c2ccc(CN3CCOCC3)cc2)cc1Nc1nccc(-c2cccnc2)n1",
+                    "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2ccccc2)n1"]
+
+
 async def test_html_table_structures_share_a_frame(tmp_path):
     srv = build_server(Database(DB_PATH), transcript_dir=tmp_path)
-    answer = f"| drug | SMILES |\n|---|---|\n| a | {SORAFENIB} |\n| b | {BOSUTINIB} |\n| c | {CLOZAPINE} |"
+    analogs = "".join(f"| {k} | {s} |\n" for k, s in enumerate(IMATINIB_ANALOGS))
+    unrelated = f"| a | {SORAFENIB} |\n| b | {BOSUTINIB} |\n| c | {CLOZAPINE} |"
     async with Client(srv) as client:
-        await client.call_tool("create_transcript", {"model": "m", "format": "html", "exchanges": [
-            {"prompt": "?", "answer": answer}]})
-    page = next(tmp_path.glob("*.html")).read_text()
-    svgs = [base64.b64decode(b).decode() for b in re.findall(r'class="structure"[^>]*base64,([^"]+)', page)]
-    sizes = {re.search(r"width='(\d+)px' height='(\d+)px'", svg).groups() for svg in svgs}
-    assert len(svgs) == 3 and len(sizes) == 1  # aligned on their common core: one frame, one scale
+        for answer in (analogs, unrelated):
+            await client.call_tool("create_transcript", {"model": "m", "format": "html", "exchanges": [
+                {"prompt": "?", "answer": f"| drug | SMILES |\n|---|---|\n{answer}"}]})
+    for page, framed in zip(sorted(tmp_path.glob("*.html"), key=lambda p: p.stat().st_mtime), (True, False)):
+        text = page.read_text()
+        svgs = [base64.b64decode(b).decode() for b in re.findall(r'class="structure"[^>]*base64,([^"]+)', text)]
+        sizes = {re.search(r"width='(\d+)px' height='(\d+)px'", svg).groups() for svg in svgs}
+        assert len(svgs) == 3
+        # The analogs: aligned on their common core, in one frame and at one scale, with it highlighted. The
+        # three unrelated drugs share no core of 8 atoms: each in its own frame, nothing highlighted.
+        assert (len(sizes) == 1) == framed and all(("<ellipse" in svg) == framed for svg in svgs)
 
 
 @pytest.mark.network

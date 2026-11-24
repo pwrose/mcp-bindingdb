@@ -2,14 +2,15 @@
 
 Molecules that share a core (given, or else their maximum common substructure) get 2D coordinates that
 put the core at the same place and orientation, and are drawn in a frame that holds all of them, so the
-core sits on the same pixels in every drawing and all are at the same scale. RDKit is optional (the
-`substructure` extra); without it nothing is drawn.
+core sits on the same pixels in every drawing and all are at the same scale. A molecule that lacks the
+core (an outlier) is drawn unaligned in a frame of the same size, so it is at that scale too. RDKit is
+optional (the `substructure` extra); without it nothing is drawn.
 """
 
 from __future__ import annotations
 
 import math
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Any
 
 try:
@@ -22,7 +23,8 @@ except ImportError:  # the `substructure` extra is not installed
 
 BOND_PX = 24  # drawing scale: the length of a bond in pixels
 MARGIN = 0.6  # frame margin around the atoms, in bond lengths (room for atom labels)
-MIN_CORE_ATOMS = 6  # a smaller common substructure (e.g. one ring) is not worth aligning on
+MIN_CORE_ATOMS = 8  # a smaller common substructure (e.g. one ring) is not worth aligning on
+MIN_CORE_SHARE = 0.8  # the share of the molecules a core found by search must be in (rounded up)
 MCS_TIMEOUT_S = 2
 HIGHLIGHT = (0.96, 0.62, 0.25, 0.55)  # the core
 
@@ -41,8 +43,13 @@ class Layout:
     hi: Any
     bond: float  # bond length in coordinate units
     attachments: bool = False  # draw '*' atoms as attachment points (a substituent of an R-group table)
+    own: dict[int, tuple[Any, Any]] = field(default_factory=dict)  # outliers: a frame of the shared size
+    core: str | None = None  # the core aligned on (SMARTS), or None
+    core_atoms: int = 0  # its atoms; with no core, those of the largest common substructure found
 
     def frame(self, k: int) -> tuple[Any, Any]:
+        if k in self.own:
+            return self.own[k]
         return (self.lo, self.hi) if self.lo is not None else _bounds([self.mols[k]], self.bond)
 
     def size(self, k: int) -> tuple[int, int]:
@@ -74,20 +81,40 @@ def canonical(text: str) -> str:
     return Chem.MolToSmiles(mol) if mol is not None else text.strip()
 
 
-def _core(mols: list[Any], align_to: str | None) -> Any:
-    """The core to align on: `align_to`, or else the molecules' maximum common substructure."""
+def core_size(text: str) -> int:
+    """The atoms of a core given as SMILES or SMARTS, hydrogens left out; 0 if it cannot be parsed."""
+    mol = parse(text) if available() else None
+    return sum(1 for a in mol.GetAtoms() if a.GetAtomicNum() != 1) if mol is not None else 0
+
+
+def _mcs(mols: list[Any], share: float) -> tuple[str, int]:
+    """The largest substructure (SMARTS, atoms) in at least `share` of the molecules (rounded up).
+
+    Bonds must match exactly, aromatic only aromatic, so a benzene ring is not one core with a cyclohexane;
+    rings match only rings and only whole. `canceled` says the search ran out of time before proving the core
+    maximal, not that it found none: it still carries the largest core it reached, which a congeneric series
+    of drug-sized molecules routinely hits (six 40-atom JAK inhibitors share 32 atoms that no timeout proves
+    optimal), so only its size decides."""
+    result = rdFMCS.FindMCS(mols, timeout=MCS_TIMEOUT_S, threshold=share, ringMatchesRingOnly=True,
+                            completeRingsOnly=True, bondCompare=rdFMCS.BondCompare.CompareOrderExact)
+    return result.smartsString, result.numAtoms
+
+
+def _core(mols: list[Any], align_to: str | None, min_atoms: int, min_share: float) -> tuple[Any, str | None, int]:
+    """The core to align on (query, SMARTS, atoms): `align_to`; else the molecules' largest common
+    substructure, if it has `min_atoms`; else the largest in `min_share` of them, if that has `min_atoms`, so
+    one unrelated molecule does not cost a series its core. With no core: (None, None, the atoms of the
+    largest common substructure found)."""
     if align_to:
-        return parse(align_to)
+        return parse(align_to), align_to, core_size(align_to)
     if len(mols) < 2:
-        return None
-    result = rdFMCS.FindMCS(mols, timeout=MCS_TIMEOUT_S, ringMatchesRingOnly=True, completeRingsOnly=True)
-    # `canceled` says the search ran out of time before proving the core maximal, not that it found none:
-    # it still carries the largest core it reached, which a congeneric series of drug-sized molecules
-    # routinely hits (six 40-atom JAK inhibitors share 32 atoms that no timeout proves optimal). Align on
-    # it anyway; only its size decides, so a genuine lack of a shared core still returns None.
-    if result.numAtoms < MIN_CORE_ATOMS:
-        return None
-    return Chem.MolFromSmarts(result.smartsString)
+        return None, None, 0
+    smarts, atoms = _mcs(mols, 1.0)
+    if atoms < min_atoms and min_share < 1 and math.ceil(min_share * len(mols) - 1e-9) < len(mols):
+        smarts, atoms = max((smarts, atoms), _mcs(mols, min_share), key=lambda found: found[1])
+    if atoms < min_atoms:
+        return None, None, atoms
+    return Chem.MolFromSmarts(smarts), smarts, atoms
 
 
 def _run_left_to_right(mol: Any, start: int, atoms: tuple[int, ...]) -> None:
@@ -148,8 +175,11 @@ def _r_group_dummies(mol: Any, label: bool) -> Any:
 
 
 def layout(texts: list[str], align_to: str | None = None, label_r_groups: bool = False,
-           attachments: bool = False) -> Layout:
-    """Parse and lay out molecules (SMILES, or SMARTS for a query), aligned on a common core if any.
+           attachments: bool = False, min_core_atoms: int = MIN_CORE_ATOMS,
+           min_core_share: float = MIN_CORE_SHARE) -> Layout:
+    """Parse and lay out molecules (SMILES, or SMARTS for a query), aligned on a common core if any: the
+    `align_to` core, or the largest common substructure of at least `min_core_atoms` atoms in all of them,
+    or else in `min_core_share` of them (see _core). Molecules without the core are drawn unaligned.
 
     `label_r_groups` names each '[*:n]' position R1, R2, ...; `attachments` draws the unnamed ones as
     attachment points. Both are for the parts of an R-group table: its core and its substituents.
@@ -159,7 +189,7 @@ def layout(texts: list[str], align_to: str | None = None, label_r_groups: bool =
     if label_r_groups or attachments:
         mols = [None if m is None else _r_group_dummies(m, label_r_groups) for m in mols]
     valid = [m for m in mols if m is not None]
-    core = _core(valid, align_to) if valid else None
+    core, core_smarts, core_atoms = _core(valid, align_to, min_core_atoms, min_core_share) if valid else (None, None, 0)
     reference, ref_match = None, ()
     cores: list[tuple[int, ...]] = []
     for mol in mols:
@@ -187,9 +217,24 @@ def layout(texts: list[str], align_to: str | None = None, label_r_groups: bool =
     bond = _bond_length(mols)
     aligned = [m for m, c in zip(mols, cores) if m is not None and c]
     lo, hi = _bounds(aligned, bond) if len(aligned) > 1 else (None, None)
-    if lo is not None and len(aligned) < len(valid):  # some molecules lack the core: own frames for all
-        lo = hi = None
-    return Layout(mols, cores, lo, hi, bond, attachments)
+    own: dict[int, tuple[Any, Any]] = {}
+    if lo is not None and len(aligned) < len(valid):
+        # The outliers get frames of one size with the shared frame, each centred on its molecule, so all
+        # are drawn at one scale wherever a drawing is shown at a fixed width.
+        outliers = [k for k, (m, c) in enumerate(zip(mols, cores)) if m is not None and not c]
+        boxes = {k: _bounds([mols[k]], bond) for k in outliers}
+        width = max([hi.x - lo.x, *(b[1].x - b[0].x for b in boxes.values())])
+        height = max([hi.y - lo.y, *(b[1].y - b[0].y for b in boxes.values())])
+        lo, hi = _resized(lo, hi, width, height)
+        own = {k: _resized(*box, width, height) for k, box in boxes.items()}
+    return Layout(mols, cores, lo, hi, bond, attachments, own, core_smarts if any(cores) else None,
+                  core_atoms)
+
+
+def _resized(lo: Any, hi: Any, width: float, height: float) -> tuple[Any, Any]:
+    """A frame of `width` x `height` with the centre of the frame lo-hi."""
+    cx, cy = (lo.x + hi.x) / 2, (lo.y + hi.y) / 2
+    return Geometry.Point2D(cx - width / 2, cy - height / 2), Geometry.Point2D(cx + width / 2, cy + height / 2)
 
 
 def _draw(drawer: Any, lay: Layout, k: int, width: int, height: int) -> None:

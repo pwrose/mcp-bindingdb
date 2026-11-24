@@ -1,6 +1,6 @@
 [project]
 name = "mcp-bindingdb"
-version = "0.1.13"
+version = "0.1.14"
 description = "MCP server for querying BindingDB from a local DuckDB build"
 requires-python = ">=3.11"
 license = "BSD-3-Clause"

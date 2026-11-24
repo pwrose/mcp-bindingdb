@@ -260,8 +260,10 @@ returned, or Markdown passed as `markdown` (e.g. a transcript the user edited).
 Figures are embedded, and every table with a column whose header contains "SMILES", in the answers as well
 as in the tool calls, gets a structure column before it, unless a figure under the same answer already
 draws all of its molecules. The molecules of a column are aligned on their
-largest common substructure (when it has at least 6 atoms), which is highlighted, and drawn in one frame,
-so the core sits in the same place in every row and all are at the same scale. RDKit draws the structures
+largest common substructure, which is highlighted, and drawn in one frame, so the core sits in the same
+place in every row and all are at the same scale. The core follows `draw_structure_grid`'s defaults: at
+least 8 atoms, with exactly matching bonds, in all of the molecules or else in 80% of them (the others are
+drawn unaligned, at the same scale). RDKit draws the structures
 on the server as SVG images embedded in
 the page, so it opens offline; cells that are not valid SMILES (or SMARTS) are left empty, and without
 RDKit there are no drawings. Answer text and data are shown as text, never as HTML. A drawing is about
@@ -364,10 +366,22 @@ the model's and are not recomputed.
 
 Draws compounds side by side, like a figure in a paper: each with a name, subtitle, structure, caption and
 bars for its binding to its main targets (log scale, coloured by Ki, Kd, IC50 or EC50, which each bar must
-give, lighter for thin evidence). The structures are aligned on `align_to` (SMILES or SMARTS; its first atom is drawn on the left)
-or else on their largest common substructure, which is highlighted, and drawn in one shared frame, so the
-core sits on the same pixels in every column. Layouts use RDKit's CoordGen, which places the rest of each
-molecule around the fixed core with few clashes.
+give, lighter for thin evidence). The structures are aligned on a shared core, which is highlighted, and
+drawn in one shared frame, so the core sits on the same pixels in every column. Layouts use RDKit's
+CoordGen, which places the rest of each molecule around the fixed core with few clashes.
+
+The shared core is `align_to` (SMILES or SMARTS; its first atom is drawn on the left), or else the
+compounds' largest common substructure. Either needs at least `min_core_atoms` atoms (default 8, hydrogens
+not counted), since a smaller part they have in common, such as a ring or an amine, says nothing about the
+series: a smaller `align_to` is refused, and a smaller common substructure leaves the compounds unaligned,
+with nothing highlighted. The search matches bonds exactly (an aromatic bond only an aromatic one, so a
+benzene ring is never one core with a cyclohexane), matches rings only with rings and only whole, and
+stops after 2 seconds with the largest core it has reached. It first looks for a core in all the
+compounds; if that is too small, for one in `min_core_share` of them (default 0.8, rounded up: one of 5
+compounds may lack it, but 4 or fewer must all have it), so one unrelated compound does not cost a series
+its core. Compounds without the core (outliers, or those lacking `align_to`) are drawn unaligned and
+without a highlight, in frames of the same size centred on each, so all are at one scale. The reply says
+which core was used (its size and SMARTS) and which compounds lack it, or why there is none.
 
 The tool returns the figure as a PNG and logs it with an id. In MCP Apps clients such as Claude Desktop,
 which would show the PNG only as a small thumbnail, the figure appears in a panel in the chat

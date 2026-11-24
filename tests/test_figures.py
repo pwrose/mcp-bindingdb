@@ -115,3 +115,60 @@ def test_a_series_whose_mcs_search_times_out_is_still_aligned_on_its_core():
 def test_molecules_with_no_shared_core_are_not_aligned():
     lay = depict.layout(["c1ccccc1O", "C1CCCCC1C(=O)NCCN", "CCOCC"])
     assert lay.cores == [(), (), ()] and lay.lo is None
+
+
+IMATINIB_SERIES = [
+    "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cccnc2)n1",
+    "Cc1ccc(NC(=O)c2ccc(CN3CCN(CC)CC3)cc2)cc1Nc1nccc(-c2cccnc2)n1",
+    "Cc1ccc(NC(=O)c2ccc(CN3CCOCC3)cc2)cc1Nc1nccc(-c2cccnc2)n1",
+    "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2ccccc2)n1",
+]
+CAFFEINE = "Cn1cnc2c1c(=O)n(C)c(=O)n2C"
+
+
+def test_a_core_needs_min_core_atoms_and_matching_bonds():
+    # A benzene and a cyclohexane ring are not one core: bonds must match, aromatic only aromatic. Each
+    # ring with its ethyl group shares 8 atoms with the other only when single and aromatic bonds match.
+    lay = depict.layout(["c1ccccc1CCO", "C1CCCCC1CCO"])
+    assert lay.cores == [(), ()] and lay.core is None and lay.core_atoms < depict.MIN_CORE_ATOMS
+    # Two phenethylamides share 12 atoms (all of the first): enough for the default minimum of 8, not for 13.
+    pair = ["c1ccccc1CCNC(=O)C", "c1ccccc1CCNC(=O)CCO"]
+    lay = depict.layout(pair)
+    assert lay.core_atoms == 12 and all(len(c) == 12 for c in lay.cores) and lay.core
+    assert depict.layout(pair, min_core_atoms=13).cores == [(), ()]
+    assert depict.core_size("[NX3;H2]") == 1 and depict.core_size("Nc1ccc(Cl)cc1") == 8
+    assert depict.core_size("[H]Nc1ccccc1") == 7 and depict.core_size("not a core (") == 0
+
+
+def test_an_outlier_does_not_cost_a_series_its_core():
+    # In all five molecules the largest common part is tiny; four of the five (0.8, rounded up) share 26
+    # atoms. The series is aligned on those, and caffeine is drawn unaligned in a frame of the same size.
+    lay = depict.layout([*IMATINIB_SERIES, CAFFEINE])
+    assert [len(c) for c in lay.cores] == [26, 26, 26, 26, 0] and lay.core_atoms == 26
+    assert lay.lo is not None and list(lay.own) == [4]
+    assert len({lay.size(k) for k in range(5)}) == 1  # one frame size, so one scale at any fixed width
+    lo, hi = lay.own[4]
+    xs = lay.mols[4].GetConformer().GetPositions()[:, 0]
+    assert lo.x < xs.min() and xs.max() < hi.x and abs((lo.x + hi.x) / 2 - (xs.min() + xs.max()) / 2) < 1e-6
+    # Required in all of them (min_core_share=1), there is no core; and with four molecules, 0.8 rounds up
+    # to all four, so one outlier among four is not tolerated.
+    assert depict.layout([*IMATINIB_SERIES, CAFFEINE], min_core_share=1).core is None
+    assert depict.layout([*IMATINIB_SERIES[:3], CAFFEINE]).core is None
+    # A core shared by all is preferred when it is big enough, even if most share a bigger one.
+    lay = depict.layout(IMATINIB_SERIES)
+    assert all(len(c) == 26 for c in lay.cores) and not lay.own
+
+
+def test_grid_alignment_says_which_core_and_who_lacks_it():
+    compounds = [figures.GridCompound(smiles=s, title=t) for s, t in
+                 zip([*IMATINIB_SERIES, CAFFEINE], ["A", "B", "C", "D", "Caffeine"])]
+    lay = depict.layout([c.smiles for c in compounds])
+    text = figures.grid_alignment(compounds, lay, None, 8)
+    assert text.startswith("aligned on their largest common substructure (26 atoms: ")
+    assert text.endswith("; Caffeine lacks it and is drawn unaligned, without a highlight.")
+    lay = depict.layout([c.smiles for c in compounds], min_core_share=1)
+    assert figures.grid_alignment(compounds, lay, None, 8).startswith(
+        "not aligned: their largest common substructure has ")
+    lay = depict.layout([c.smiles for c in compounds], "Nc1ccc(Cl)cc1")
+    assert figures.grid_alignment(compounds, lay, "Nc1ccc(Cl)cc1", 8) == \
+        "not aligned: no compound contains Nc1ccc(Cl)cc1."

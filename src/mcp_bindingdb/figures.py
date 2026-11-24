@@ -423,13 +423,38 @@ def png_smiles(png: bytes) -> list[str]:
 
 
 def structure_grid(title: str, compounds: list[GridCompound], align_to: str | None = None, columns: int = 3,
-                   description: str = "", notes: list[str] | None = None) -> tuple[str, bytes, depict.Layout]:
+                   description: str = "", notes: list[str] | None = None,
+                   min_core_atoms: int = depict.MIN_CORE_ATOMS, min_core_share: float = depict.MIN_CORE_SHARE,
+                   ) -> tuple[str, bytes, depict.Layout]:
     """The figure as (HTML block, PNG, layout)."""
-    lay = depict.layout([c.smiles for c in compounds], align_to)
+    lay = depict.layout([c.smiles for c in compounds], align_to, min_core_atoms=min_core_atoms,
+                        min_core_share=min_core_share)
     columns = max(1, min(columns, len(compounds)))
     notes = [n for n in notes or [] if n.strip()]
     return (_html(title, description, compounds, lay, columns, notes),
             _png(title, description, compounds, lay, columns, notes), lay)
+
+
+def grid_alignment(compounds: list[GridCompound], lay: depict.Layout, align_to: str | None,
+                   min_core_atoms: int) -> str:
+    """How a structure grid is aligned, for the tool's reply: the core and the compounds that lack it, or
+    why there is none. Ends with a full stop."""
+    drawn = [(c, core) for c, mol, core in zip(compounds, lay.mols, lay.cores) if mol is not None]
+    lacking = [c.title for c, core in drawn if not core]
+    atoms = f"{lay.core_atoms} atoms"
+    if lay.core is None:
+        if align_to:
+            return f"not aligned: no compound contains {align_to}."
+        if lay.core_atoms:
+            return (f"not aligned: their largest common substructure has {atoms}, fewer than min_core_atoms "
+                    f"({min_core_atoms}), so no shared core is highlighted.")
+        return "not aligned: they share no core."
+    text = (f"aligned on {align_to} ({atoms}), highlighted as the shared core" if align_to else
+            f"aligned on their largest common substructure ({atoms}: {lay.core}), highlighted as the shared core")
+    if lacking:
+        text += (f"; {', '.join(lacking)} {'lacks' if len(lacking) == 1 else 'lack'} it and "
+                 f"{'is' if len(lacking) == 1 else 'are'} drawn unaligned, without a highlight")
+    return text + "."
 
 
 RG_MISSING = "–"  # a position the compound does not have at all
