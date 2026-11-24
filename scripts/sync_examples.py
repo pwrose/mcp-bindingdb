@@ -11,8 +11,9 @@ folder per example inside it. Syncing replaces examples/<level>/ with the workin
 there are removed here too), leaves out .DS_Store files, then writes examples/index.html. Files other
 than the level folders and index.html are left alone.
 
-The index links each example page relatively, which htmlpreview.github.io rewrites to a rendered view. It
-does not rewrite links to other files (CSV, PNG, scripts), so in the repository those point at GitHub.
+The index links each example page relatively; GitHub Pages serves them from the main branch at
+https://sbl-sdsc.github.io/mcp-bindingdb/examples/ (.nojekyll at the repository root: files as they are).
+Links to other files (CSV, PNG, scripts, notebooks) point at GitHub, which shows them rendered.
 --index-only writes the index of a working folder in place, with relative links throughout.
 
 Pages are checked for absolute home-directory paths, which should not be published; any found are listed.
@@ -195,7 +196,7 @@ def build_index(root: Path, files_base_url: str = "") -> int:
                 links = ", ".join(f'<a href="{html.escape(files_base_url + f)}">{html.escape(f.rsplit("/", 1)[1])}</a>'
                                   for f in e["extras"])
                 files += f'<div class="files">Also in this folder: {links}</div>'
-            if nb := e["notebook"]:  # the .ipynb itself only renders on GitHub, not through htmlpreview
+            if nb := e["notebook"]:  # the .ipynb itself only renders on GitHub, not on Pages
                 rendered = f'<a href="{html.escape(nb["page"])}">rendered</a> &middot; ' if nb["page"] else ""
                 files += (f'<div class="viewer">Jupyter notebook: {rendered}'
                           f'<a href="{html.escape(files_base_url + nb["ipynb"])}">'

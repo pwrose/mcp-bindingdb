@@ -8,7 +8,7 @@ protein–ligand binding affinities for 1.5M compounds and 13k targets, from a l
 
 ## Examples
 
-[Worked examples](https://htmlpreview.github.io/?https://github.com/sbl-sdsc/mcp-bindingdb/blob/main/examples/index.html), grouped in levels from single lookups to multi-step analyses,
+[Worked examples](https://sbl-sdsc.github.io/mcp-bindingdb/examples/), grouped in levels from single lookups to multi-step analyses,
 show real questions answered with these tools: looking up compounds and targets, exact, similarity and
 substructure search, selectivity profiles, R-group tables and matched pairs, multi-step workflows such as
 a clustered selectivity heat map, 3D binding-site views, property filters and structural alerts, SQL

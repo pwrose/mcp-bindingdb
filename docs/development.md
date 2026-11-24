@@ -43,7 +43,7 @@ for `compound_property`, through `_build_info`) need no bump.
 ## Examples
 
 `examples/` holds HTML transcripts written by `create_transcript` in Claude sessions, grouped in
-levels (see the [index](https://htmlpreview.github.io/?https://github.com/sbl-sdsc/mcp-bindingdb/blob/main/examples/index.html)). They are not regenerated when the data release
+levels (see the [index](https://sbl-sdsc.github.io/mcp-bindingdb/examples/)). They are not regenerated when the data release
 changes. They are written in a working folder (default `~/mcp-bindingdb-examples`, one folder per level)
 and copied here with
 
