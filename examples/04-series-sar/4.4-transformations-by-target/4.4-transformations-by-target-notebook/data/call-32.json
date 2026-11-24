@@ -1,0 +1,2687 @@
+{
+ "row_count": 383,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid_from": 18751,
+   "monomerid_to": 19476,
+   "source_id": "US8846658-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": -0.0792
+  },
+  {
+   "monomerid_from": 26502,
+   "monomerid_to": 26788,
+   "source_id": "18171615",
+   "assay_name": "Enzyme Inhibition Assay",
+   "delta": -0.1249
+  },
+  {
+   "monomerid_from": 26502,
+   "monomerid_to": 26788,
+   "source_id": "19428244",
+   "assay_name": "Enzyme Inhibition Assay",
+   "delta": 0.1761
+  },
+  {
+   "monomerid_from": 116233,
+   "monomerid_to": 116236,
+   "source_id": "US10035794-B2",
+   "assay_name": "Inhibition of Human BACE-1",
+   "delta": 0.0969
+  },
+  {
+   "monomerid_from": 116233,
+   "monomerid_to": 116236,
+   "source_id": "US10683287-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": 0.0969
+  },
+  {
+   "monomerid_from": 116233,
+   "monomerid_to": 116236,
+   "source_id": "US8637508-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": 0.0969
+  },
+  {
+   "monomerid_from": 124132,
+   "monomerid_to": 124133,
+   "source_id": "US8754075-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": -0.1761
+  },
+  {
+   "monomerid_from": 124132,
+   "monomerid_to": 124138,
+   "source_id": "US8754075-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": -0.699
+  },
+  {
+   "monomerid_from": 124132,
+   "monomerid_to": 124170,
+   "source_id": "US8754075-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": -0.8751
+  },
+  {
+   "monomerid_from": 124133,
+   "monomerid_to": 124168,
+   "source_id": "US8754075-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": -0.5229
+  },
+  {
+   "monomerid_from": 124135,
+   "monomerid_to": 124136,
+   "source_id": "US8754075-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": -0.301
+  },
+  {
+   "monomerid_from": 124143,
+   "monomerid_to": 124135,
+   "source_id": "US8754075-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": 0.6021
+  },
+  {
+   "monomerid_from": 124170,
+   "monomerid_to": 124168,
+   "source_id": "US8754075-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": 0.1761
+  },
+  {
+   "monomerid_from": 124174,
+   "monomerid_to": 124177,
+   "source_id": "US8754075-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": -0.4771
+  },
+  {
+   "monomerid_from": 134360,
+   "monomerid_to": 50012653,
+   "source_id": "33844524",
+   "assay_name": "ChEMBL_2170795 (CHEMBL5055929)",
+   "delta": 0.0792
+  },
+  {
+   "monomerid_from": 134360,
+   "monomerid_to": 50012653,
+   "source_id": "US8846658-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": 0.415
+  },
+  {
+   "monomerid_from": 134445,
+   "monomerid_to": 134463,
+   "source_id": "US8846658-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": -0.6021
+  },
+  {
+   "monomerid_from": 134448,
+   "monomerid_to": 134445,
+   "source_id": "US8846658-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": 0.4771
+  },
+  {
+   "monomerid_from": 136738,
+   "monomerid_to": 136863,
+   "source_id": "US8865911-B2",
+   "assay_name": "Diluted TR-FRET Assay",
+   "delta": -0.058
+  },
+  {
+   "monomerid_from": 136739,
+   "monomerid_to": 136829,
+   "source_id": "US8865911-B2",
+   "assay_name": "Diluted TR-FRET Assay",
+   "delta": -0.1007
+  },
+  {
+   "monomerid_from": 136740,
+   "monomerid_to": 136824,
+   "source_id": "US8865911-B2",
+   "assay_name": "Diluted TR-FRET Assay",
+   "delta": -0.7295
+  },
+  {
+   "monomerid_from": 136744,
+   "monomerid_to": 136863,
+   "source_id": "US8865911-B2",
+   "assay_name": "Diluted TR-FRET Assay",
+   "delta": 0.5406
+  },
+  {
+   "monomerid_from": 136834,
+   "monomerid_to": 136859,
+   "source_id": "US8865911-B2",
+   "assay_name": "Diluted TR-FRET Assay",
+   "delta": -0.3093
+  },
+  {
+   "monomerid_from": 136849,
+   "monomerid_to": 136848,
+   "source_id": "US8865911-B2",
+   "assay_name": "Diluted TR-FRET Assay",
+   "delta": -0.3153
+  },
+  {
+   "monomerid_from": 136855,
+   "monomerid_to": 136850,
+   "source_id": "US8865911-B2",
+   "assay_name": "Diluted TR-FRET Assay",
+   "delta": -0.4181
+  },
+  {
+   "monomerid_from": 150686,
+   "monomerid_to": 150688,
+   "source_id": "US8987254-B2",
+   "assay_name": "FRET Assay",
+   "delta": 0.0418
+  },
+  {
+   "monomerid_from": 150686,
+   "monomerid_to": 150688,
+   "source_id": "US9999624-B2",
+   "assay_name": "FRET Assay",
+   "delta": 0.005
+  },
+  {
+   "monomerid_from": 150686,
+   "monomerid_to": 150691,
+   "source_id": "US8987254-B2",
+   "assay_name": "FRET Assay",
+   "delta": -0.0833
+  },
+  {
+   "monomerid_from": 150686,
+   "monomerid_to": 150691,
+   "source_id": "US9999624-B2",
+   "assay_name": "FRET Assay",
+   "delta": -0.0833
+  },
+  {
+   "monomerid_from": 150687,
+   "monomerid_to": 150689,
+   "source_id": "US8987254-B2",
+   "assay_name": "FRET Assay",
+   "delta": -0.0721
+  },
+  {
+   "monomerid_from": 150688,
+   "monomerid_to": 150693,
+   "source_id": "34081466",
+   "assay_name": "ChEMBL_2149724 (CHEMBL5034186)",
+   "delta": -0.1118
+  },
+  {
+   "monomerid_from": 150688,
+   "monomerid_to": 150693,
+   "source_id": "US8987254-B2",
+   "assay_name": "FRET Assay",
+   "delta": -0.1198
+  },
+  {
+   "monomerid_from": 150688,
+   "monomerid_to": 150693,
+   "source_id": "US9999624-B2",
+   "assay_name": "FRET Assay",
+   "delta": -0.1118
+  },
+  {
+   "monomerid_from": 150690,
+   "monomerid_to": 150692,
+   "source_id": "US8987254-B2",
+   "assay_name": "FRET Assay",
+   "delta": 0.0993
+  },
+  {
+   "monomerid_from": 150691,
+   "monomerid_to": 150693,
+   "source_id": "US8987254-B2",
+   "assay_name": "FRET Assay",
+   "delta": 0.0053
+  },
+  {
+   "monomerid_from": 150691,
+   "monomerid_to": 150693,
+   "source_id": "US9999624-B2",
+   "assay_name": "FRET Assay",
+   "delta": -0.0235
+  },
+  {
+   "monomerid_from": 153632,
+   "monomerid_to": 50457586,
+   "source_id": "29733614",
+   "assay_name": "ChEMBL_1760189 (CHEMBL4195197)",
+   "delta": 0.0487
+  },
+  {
+   "monomerid_from": 153632,
+   "monomerid_to": 50457586,
+   "source_id": "29733614",
+   "assay_name": "ChEMBL_1760190 (CHEMBL4195198)",
+   "delta": 0.0872
+  },
+  {
+   "monomerid_from": 171399,
+   "monomerid_to": 171401,
+   "source_id": "US9611261-B2",
+   "assay_name": "In Vitro Enzymatic FRET Assay",
+   "delta": 0.5283
+  },
+  {
+   "monomerid_from": 171399,
+   "monomerid_to": 171477,
+   "source_id": "US9611261-B2",
+   "assay_name": "In Vitro Enzymatic FRET Assay",
+   "delta": 0.4102
+  },
+  {
+   "monomerid_from": 171461,
+   "monomerid_to": 171462,
+   "source_id": "US9611261-B2",
+   "assay_name": "In Vitro Enzymatic FRET Assay",
+   "delta": 0.5441
+  },
+  {
+   "monomerid_from": 171461,
+   "monomerid_to": 171477,
+   "source_id": "US9611261-B2",
+   "assay_name": "In Vitro Enzymatic FRET Assay",
+   "delta": 0.2218
+  },
+  {
+   "monomerid_from": 171565,
+   "monomerid_to": 171401,
+   "source_id": "US9611261-B2",
+   "assay_name": "In Vitro Enzymatic FRET Assay",
+   "delta": 0.1383
+  },
+  {
+   "monomerid_from": 171565,
+   "monomerid_to": 171462,
+   "source_id": "US9611261-B2",
+   "assay_name": "In Vitro Enzymatic FRET Assay",
+   "delta": 0.3424
+  },
+  {
+   "monomerid_from": 171587,
+   "monomerid_to": 171581,
+   "source_id": "US9611261-B2",
+   "assay_name": "In Vitro Enzymatic FRET Assay",
+   "delta": 0.2009
+  },
+  {
+   "monomerid_from": 171645,
+   "monomerid_to": 171587,
+   "source_id": "US9611261-B2",
+   "assay_name": "In Vitro Enzymatic FRET Assay",
+   "delta": 0.3168
+  },
+  {
+   "monomerid_from": 171645,
+   "monomerid_to": 171651,
+   "source_id": "US9611261-B2",
+   "assay_name": "In Vitro Enzymatic FRET Assay",
+   "delta": 0.4058
+  },
+  {
+   "monomerid_from": 171645,
+   "monomerid_to": 171683,
+   "source_id": "US9611261-B2",
+   "assay_name": "In Vitro Enzymatic FRET Assay",
+   "delta": 0.301
+  },
+  {
+   "monomerid_from": 171651,
+   "monomerid_to": 171581,
+   "source_id": "US9611261-B2",
+   "assay_name": "In Vitro Enzymatic FRET Assay",
+   "delta": 0.112
+  },
+  {
+   "monomerid_from": 195117,
+   "monomerid_to": 195118,
+   "source_id": "US10336717-B2",
+   "assay_name": "BACE Assay",
+   "delta": 0.3979
+  },
+  {
+   "monomerid_from": 195422,
+   "monomerid_to": 195418,
+   "source_id": "US10336717-B2",
+   "assay_name": "BACE Assay",
+   "delta": 0.2382
+  },
+  {
+   "monomerid_from": 195422,
+   "monomerid_to": 195423,
+   "source_id": "US10336717-B2",
+   "assay_name": "BACE Assay",
+   "delta": -0.028
+  },
+  {
+   "monomerid_from": 204940,
+   "monomerid_to": 50462001,
+   "source_id": "29775538",
+   "assay_name": "ChEMBL_1772314 (CHEMBL4224426)",
+   "delta": -0.467
+  },
+  {
+   "monomerid_from": 204940,
+   "monomerid_to": 50462001,
+   "source_id": "29775538",
+   "assay_name": "ChEMBL_1772315 (CHEMBL4224427)",
+   "delta": -0.0348
+  },
+  {
+   "monomerid_from": 210070,
+   "monomerid_to": 116292,
+   "source_id": "33588527",
+   "assay_name": "ChEMBL_2103355 (CHEMBL4811858)",
+   "delta": -0.3098
+  },
+  {
+   "monomerid_from": 210070,
+   "monomerid_to": 116292,
+   "source_id": "33588527",
+   "assay_name": "ChEMBL_2103356 (CHEMBL4811859)",
+   "delta": -0.1627
+  },
+  {
+   "monomerid_from": 214835,
+   "monomerid_to": 214839,
+   "source_id": "US9296734-B2",
+   "assay_name": "In Vitro Enzymatic BACE FRET Assay",
+   "delta": 0.5166
+  },
+  {
+   "monomerid_from": 214835,
+   "monomerid_to": 214960,
+   "source_id": "US9296734-B2",
+   "assay_name": "In Vitro Enzymatic BACE FRET Assay",
+   "delta": 0.2156
+  },
+  {
+   "monomerid_from": 214835,
+   "monomerid_to": 215026,
+   "source_id": "US9296734-B2",
+   "assay_name": "In Vitro Enzymatic BACE FRET Assay",
+   "delta": 0.3617
+  },
+  {
+   "monomerid_from": 214839,
+   "monomerid_to": 214961,
+   "source_id": "US9296734-B2",
+   "assay_name": "In Vitro Enzymatic BACE FRET Assay",
+   "delta": -0.0944
+  },
+  {
+   "monomerid_from": 214844,
+   "monomerid_to": 214835,
+   "source_id": "US9296734-B2",
+   "assay_name": "In Vitro Enzymatic BACE FRET Assay",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 214844,
+   "monomerid_to": 214997,
+   "source_id": "US9296734-B2",
+   "assay_name": "In Vitro Enzymatic BACE FRET Assay",
+   "delta": 0.0607
+  },
+  {
+   "monomerid_from": 214960,
+   "monomerid_to": 214961,
+   "source_id": "US9296734-B2",
+   "assay_name": "In Vitro Enzymatic BACE FRET Assay",
+   "delta": 0.2066
+  },
+  {
+   "monomerid_from": 214996,
+   "monomerid_to": 214966,
+   "source_id": "US9296734-B2",
+   "assay_name": "In Vitro Enzymatic BACE FRET Assay",
+   "delta": -0.0669
+  },
+  {
+   "monomerid_from": 214996,
+   "monomerid_to": 214995,
+   "source_id": "US9296734-B2",
+   "assay_name": "In Vitro Enzymatic BACE FRET Assay",
+   "delta": -0.301
+  },
+  {
+   "monomerid_from": 214997,
+   "monomerid_to": 214960,
+   "source_id": "US9296734-B2",
+   "assay_name": "In Vitro Enzymatic BACE FRET Assay",
+   "delta": 0.1549
+  },
+  {
+   "monomerid_from": 220806,
+   "monomerid_to": 220783,
+   "source_id": "US9296759-B2",
+   "assay_name": "Fluorescence Resonance Energy Transfer (FRET) Assay",
+   "delta": 0.1761
+  },
+  {
+   "monomerid_from": 220827,
+   "monomerid_to": 220826,
+   "source_id": "US9296759-B2",
+   "assay_name": "Fluorescence Resonance Energy Transfer (FRET) Assay",
+   "delta": 0.2071
+  },
+  {
+   "monomerid_from": 220828,
+   "monomerid_to": 220825,
+   "source_id": "US9296759-B2",
+   "assay_name": "Fluorescence Resonance Energy Transfer (FRET) Assay",
+   "delta": 0.2499
+  },
+  {
+   "monomerid_from": 220836,
+   "monomerid_to": 220858,
+   "source_id": "US9296759-B2",
+   "assay_name": "Fluorescence Resonance Energy Transfer (FRET) Assay",
+   "delta": -0.5563
+  },
+  {
+   "monomerid_from": 220839,
+   "monomerid_to": 220799,
+   "source_id": "US9296759-B2",
+   "assay_name": "Fluorescence Resonance Energy Transfer (FRET) Assay",
+   "delta": 0.0263
+  },
+  {
+   "monomerid_from": 220840,
+   "monomerid_to": 220798,
+   "source_id": "US9296759-B2",
+   "assay_name": "Fluorescence Resonance Energy Transfer (FRET) Assay",
+   "delta": 0.2361
+  },
+  {
+   "monomerid_from": 220854,
+   "monomerid_to": 220856,
+   "source_id": "US9296759-B2",
+   "assay_name": "Fluorescence Resonance Energy Transfer (FRET) Assay",
+   "delta": -0.415
+  },
+  {
+   "monomerid_from": 220854,
+   "monomerid_to": 220859,
+   "source_id": "US9296759-B2",
+   "assay_name": "Fluorescence Resonance Energy Transfer (FRET) Assay",
+   "delta": -0.4624
+  },
+  {
+   "monomerid_from": 223395,
+   "monomerid_to": 223400,
+   "source_id": "29613789",
+   "assay_name": "ChEMBL_1748603 (CHEMBL4183113)",
+   "delta": 0.2065
+  },
+  {
+   "monomerid_from": 223395,
+   "monomerid_to": 223400,
+   "source_id": "29613789",
+   "assay_name": "ChEMBL_1748606 (CHEMBL4183116)",
+   "delta": 0.2452
+  },
+  {
+   "monomerid_from": 223395,
+   "monomerid_to": 223400,
+   "source_id": "29613789",
+   "assay_name": "ChEMBL_1748624 (CHEMBL4183134)",
+   "delta": -0.0762
+  },
+  {
+   "monomerid_from": 223395,
+   "monomerid_to": 223400,
+   "source_id": "US9605007-B2",
+   "assay_name": "Cell-Free Assay",
+   "delta": 0.1296
+  },
+  {
+   "monomerid_from": 228399,
+   "monomerid_to": 228414,
+   "source_id": "US9556135-B2",
+   "assay_name": "In Vivo Inhibition of Beta-Secretase",
+   "delta": 0.0227
+  },
+  {
+   "monomerid_from": 228399,
+   "monomerid_to": 228415,
+   "source_id": "US9556135-B2",
+   "assay_name": "In Vivo Inhibition of Beta-Secretase",
+   "delta": -0.3753
+  },
+  {
+   "monomerid_from": 228399,
+   "monomerid_to": 230001,
+   "source_id": "US9556135-B2",
+   "assay_name": "In Vivo Inhibition of Beta-Secretase",
+   "delta": -0.0742
+  },
+  {
+   "monomerid_from": 228400,
+   "monomerid_to": 228425,
+   "source_id": "US9556135-B2",
+   "assay_name": "In Vivo Inhibition of Beta-Secretase",
+   "delta": 0.4314
+  },
+  {
+   "monomerid_from": 228419,
+   "monomerid_to": 229990,
+   "source_id": "US9556135-B2",
+   "assay_name": "In Vivo Inhibition of Beta-Secretase",
+   "delta": 0.5528
+  },
+  {
+   "monomerid_from": 228425,
+   "monomerid_to": 229992,
+   "source_id": "US9556135-B2",
+   "assay_name": "In Vivo Inhibition of Beta-Secretase",
+   "delta": 0.5607
+  },
+  {
+   "monomerid_from": 228440,
+   "monomerid_to": 228474,
+   "source_id": "US9556135-B2",
+   "assay_name": "In Vivo Inhibition of Beta-Secretase",
+   "delta": -0.7806
+  },
+  {
+   "monomerid_from": 228473,
+   "monomerid_to": 228472,
+   "source_id": "US9556135-B2",
+   "assay_name": "In Vivo Inhibition of Beta-Secretase",
+   "delta": -0.9435
+  },
+  {
+   "monomerid_from": 228474,
+   "monomerid_to": 228476,
+   "source_id": "US9556135-B2",
+   "assay_name": "In Vivo Inhibition of Beta-Secretase",
+   "delta": 0.0933
+  },
+  {
+   "monomerid_from": 228868,
+   "monomerid_to": 229050,
+   "source_id": "US9556135-B2",
+   "assay_name": "In Vivo Inhibition of Beta-Secretase",
+   "delta": -0.434
+  },
+  {
+   "monomerid_from": 229582,
+   "monomerid_to": 230011,
+   "source_id": "US9556135-B2",
+   "assay_name": "In Vivo Inhibition of Beta-Secretase",
+   "delta": -0.0613
+  },
+  {
+   "monomerid_from": 230017,
+   "monomerid_to": 228478,
+   "source_id": "US9556135-B2",
+   "assay_name": "In Vivo Inhibition of Beta-Secretase",
+   "delta": 0.1744
+  },
+  {
+   "monomerid_from": 230018,
+   "monomerid_to": 228479,
+   "source_id": "US9556135-B2",
+   "assay_name": "In Vivo Inhibition of Beta-Secretase",
+   "delta": 0.1489
+  },
+  {
+   "monomerid_from": 312913,
+   "monomerid_to": 312921,
+   "source_id": "US9605006-B2",
+   "assay_name": "Pharmacological Assay",
+   "delta": 0.301
+  },
+  {
+   "monomerid_from": 312938,
+   "monomerid_to": 223381,
+   "source_id": "US9605007-B2",
+   "assay_name": "Cell-Free Assay",
+   "delta": -0.3468
+  },
+  {
+   "monomerid_from": 312938,
+   "monomerid_to": 312941,
+   "source_id": "US9605007-B2",
+   "assay_name": "Cell-Free Assay",
+   "delta": -0.6478
+  },
+  {
+   "monomerid_from": 338836,
+   "monomerid_to": 338843,
+   "source_id": "US9751886-B2",
+   "assay_name": "FRET Based Assay",
+   "delta": -0.0101
+  },
+  {
+   "monomerid_from": 338836,
+   "monomerid_to": 338844,
+   "source_id": "US9751886-B2",
+   "assay_name": "FRET Based Assay",
+   "delta": 0.0208
+  },
+  {
+   "monomerid_from": 372703,
+   "monomerid_to": 372734,
+   "source_id": "US10246429-B2",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assays",
+   "delta": -0.3651
+  },
+  {
+   "monomerid_from": 372742,
+   "monomerid_to": 372741,
+   "source_id": "US10246429-B2",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assays",
+   "delta": -0.002
+  },
+  {
+   "monomerid_from": 372742,
+   "monomerid_to": 372743,
+   "source_id": "US10246429-B2",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assays",
+   "delta": 0.0367
+  },
+  {
+   "monomerid_from": 372742,
+   "monomerid_to": 372921,
+   "source_id": "US10246429-B2",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assays",
+   "delta": -0.2681
+  },
+  {
+   "monomerid_from": 372811,
+   "monomerid_to": 372815,
+   "source_id": "US10246429-B2",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assays",
+   "delta": 0.4771
+  },
+  {
+   "monomerid_from": 372818,
+   "monomerid_to": 372819,
+   "source_id": "US10246429-B2",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assays",
+   "delta": 0.4284
+  },
+  {
+   "monomerid_from": 372823,
+   "monomerid_to": 372830,
+   "source_id": "US10246429-B2",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assays",
+   "delta": 0.5119
+  },
+  {
+   "monomerid_from": 372829,
+   "monomerid_to": 372833,
+   "source_id": "US10246429-B2",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assays",
+   "delta": 0.4771
+  },
+  {
+   "monomerid_from": 372881,
+   "monomerid_to": 372883,
+   "source_id": "US10246429-B2",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assays",
+   "delta": 0.3757
+  },
+  {
+   "monomerid_from": 372921,
+   "monomerid_to": 372920,
+   "source_id": "US10246429-B2",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assays",
+   "delta": -0.0746
+  },
+  {
+   "monomerid_from": 400331,
+   "monomerid_to": 400979,
+   "source_id": "30709653",
+   "assay_name": "ChEMBL_1842179 (CHEMBL4342606)",
+   "delta": -0.1058
+  },
+  {
+   "monomerid_from": 400331,
+   "monomerid_to": 400979,
+   "source_id": "US9999624-B2",
+   "assay_name": "FRET Assay",
+   "delta": -0.1058
+  },
+  {
+   "monomerid_from": 400607,
+   "monomerid_to": 400643,
+   "source_id": "US9999624-B2",
+   "assay_name": "FRET Assay",
+   "delta": 0.0993
+  },
+  {
+   "monomerid_from": 403754,
+   "monomerid_to": 195119,
+   "source_id": "US10336717-B2",
+   "assay_name": "BACE Assay",
+   "delta": 0.1871
+  },
+  {
+   "monomerid_from": 403754,
+   "monomerid_to": 195132,
+   "source_id": "US10336717-B2",
+   "assay_name": "BACE Assay",
+   "delta": 0.6198
+  },
+  {
+   "monomerid_from": 403754,
+   "monomerid_to": 195133,
+   "source_id": "US10336717-B2",
+   "assay_name": "BACE Assay",
+   "delta": 0.699
+  },
+  {
+   "monomerid_from": 404165,
+   "monomerid_to": 195379,
+   "source_id": "US10336717-B2",
+   "assay_name": "BACE Assay",
+   "delta": 0.0378
+  },
+  {
+   "monomerid_from": 477920,
+   "monomerid_to": 477924,
+   "source_id": "US10889581-B2",
+   "assay_name": "In Vitro Enzymatic FRET (Fluorescence Resonance Energy Transfer) Assays",
+   "delta": 0.1761
+  },
+  {
+   "monomerid_from": 501187,
+   "monomerid_to": 501188,
+   "source_id": "US11021493-B2",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assays",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 501187,
+   "monomerid_to": 501350,
+   "source_id": "US11021493-B2",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assays",
+   "delta": -0.301
+  },
+  {
+   "monomerid_from": 501188,
+   "monomerid_to": 501357,
+   "source_id": "US11021493-B2",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assays",
+   "delta": -0.301
+  },
+  {
+   "monomerid_from": 501192,
+   "monomerid_to": 501239,
+   "source_id": "US11021493-B2",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assays",
+   "delta": 0.4771
+  },
+  {
+   "monomerid_from": 501197,
+   "monomerid_to": 501247,
+   "source_id": "US11021493-B2",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assays",
+   "delta": -0.1249
+  },
+  {
+   "monomerid_from": 501241,
+   "monomerid_to": 501259,
+   "source_id": "US11021493-B2",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assays",
+   "delta": -0.4771
+  },
+  {
+   "monomerid_from": 501289,
+   "monomerid_to": 501280,
+   "source_id": "US11021493-B2",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assays",
+   "delta": -0.6021
+  },
+  {
+   "monomerid_from": 501323,
+   "monomerid_to": 501353,
+   "source_id": "US11021493-B2",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assays",
+   "delta": 0.0969
+  },
+  {
+   "monomerid_from": 501350,
+   "monomerid_to": 501357,
+   "source_id": "US11021493-B2",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assays",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 589192,
+   "monomerid_to": 589194,
+   "source_id": "US11548903-B2",
+   "assay_name": "n Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assay",
+   "delta": -0.4518
+  },
+  {
+   "monomerid_from": 589194,
+   "monomerid_to": 589195,
+   "source_id": "US11548903-B2",
+   "assay_name": "n Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assay",
+   "delta": 0.2349
+  },
+  {
+   "monomerid_from": 589195,
+   "monomerid_to": 589184,
+   "source_id": "US11548903-B2",
+   "assay_name": "n Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assay",
+   "delta": 0.0152
+  },
+  {
+   "monomerid_from": 589206,
+   "monomerid_to": 589202,
+   "source_id": "US11548903-B2",
+   "assay_name": "n Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assay",
+   "delta": 0.5387
+  },
+  {
+   "monomerid_from": 589207,
+   "monomerid_to": 589169,
+   "source_id": "US11548903-B2",
+   "assay_name": "n Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assay",
+   "delta": 1.2515
+  },
+  {
+   "monomerid_from": 705373,
+   "monomerid_to": 705445,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.0561
+  },
+  {
+   "monomerid_from": 705384,
+   "monomerid_to": 705378,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.0024
+  },
+  {
+   "monomerid_from": 705388,
+   "monomerid_to": 705444,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -1.0
+  },
+  {
+   "monomerid_from": 705388,
+   "monomerid_to": 50510782,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.1061
+  },
+  {
+   "monomerid_from": 705398,
+   "monomerid_to": 705413,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.1949
+  },
+  {
+   "monomerid_from": 705403,
+   "monomerid_to": 705396,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.2073
+  },
+  {
+   "monomerid_from": 705407,
+   "monomerid_to": 705425,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.2991
+  },
+  {
+   "monomerid_from": 705410,
+   "monomerid_to": 705437,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.3421
+  },
+  {
+   "monomerid_from": 705416,
+   "monomerid_to": 705414,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.2005
+  },
+  {
+   "monomerid_from": 705419,
+   "monomerid_to": 705443,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.3245
+  },
+  {
+   "monomerid_from": 705419,
+   "monomerid_to": 705450,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.0095
+  },
+  {
+   "monomerid_from": 705420,
+   "monomerid_to": 705414,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.4097
+  },
+  {
+   "monomerid_from": 705427,
+   "monomerid_to": 705450,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.1856
+  },
+  {
+   "monomerid_from": 705444,
+   "monomerid_to": 705451,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.5752
+  },
+  {
+   "monomerid_from": 705473,
+   "monomerid_to": 705527,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.0345
+  },
+  {
+   "monomerid_from": 705474,
+   "monomerid_to": 705528,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.0289
+  },
+  {
+   "monomerid_from": 705478,
+   "monomerid_to": 705529,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -1.1529
+  },
+  {
+   "monomerid_from": 705486,
+   "monomerid_to": 705863,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.3464
+  },
+  {
+   "monomerid_from": 705488,
+   "monomerid_to": 705489,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.1213
+  },
+  {
+   "monomerid_from": 705490,
+   "monomerid_to": 705491,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.0186
+  },
+  {
+   "monomerid_from": 705493,
+   "monomerid_to": 705491,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.0898
+  },
+  {
+   "monomerid_from": 705497,
+   "monomerid_to": 705489,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.3235
+  },
+  {
+   "monomerid_from": 705501,
+   "monomerid_to": 705743,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.1966
+  },
+  {
+   "monomerid_from": 705507,
+   "monomerid_to": 705808,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.0381
+  },
+  {
+   "monomerid_from": 705519,
+   "monomerid_to": 705517,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.1367
+  },
+  {
+   "monomerid_from": 705557,
+   "monomerid_to": 50510972,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.3321
+  },
+  {
+   "monomerid_from": 705558,
+   "monomerid_to": 705559,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.1151
+  },
+  {
+   "monomerid_from": 705560,
+   "monomerid_to": 705559,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.1735
+  },
+  {
+   "monomerid_from": 705564,
+   "monomerid_to": 705558,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.4568
+  },
+  {
+   "monomerid_from": 705564,
+   "monomerid_to": 705560,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.3985
+  },
+  {
+   "monomerid_from": 705564,
+   "monomerid_to": 705565,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.7932
+  },
+  {
+   "monomerid_from": 705565,
+   "monomerid_to": 705559,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.2212
+  },
+  {
+   "monomerid_from": 705566,
+   "monomerid_to": 705567,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.2559
+  },
+  {
+   "monomerid_from": 705566,
+   "monomerid_to": 705569,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.2897
+  },
+  {
+   "monomerid_from": 705569,
+   "monomerid_to": 705553,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.2039
+  },
+  {
+   "monomerid_from": 705574,
+   "monomerid_to": 705576,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.0668
+  },
+  {
+   "monomerid_from": 705590,
+   "monomerid_to": 705589,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.2773
+  },
+  {
+   "monomerid_from": 705636,
+   "monomerid_to": 705715,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.4245
+  },
+  {
+   "monomerid_from": 705654,
+   "monomerid_to": 705658,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.16
+  },
+  {
+   "monomerid_from": 705656,
+   "monomerid_to": 705662,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.3426
+  },
+  {
+   "monomerid_from": 705659,
+   "monomerid_to": 705661,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.1213
+  },
+  {
+   "monomerid_from": 705672,
+   "monomerid_to": 705880,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.4786
+  },
+  {
+   "monomerid_from": 705674,
+   "monomerid_to": 705915,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.3936
+  },
+  {
+   "monomerid_from": 705676,
+   "monomerid_to": 705740,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.0229
+  },
+  {
+   "monomerid_from": 705677,
+   "monomerid_to": 705734,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.6327
+  },
+  {
+   "monomerid_from": 705679,
+   "monomerid_to": 705742,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.4804
+  },
+  {
+   "monomerid_from": 705680,
+   "monomerid_to": 705679,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.343
+  },
+  {
+   "monomerid_from": 705682,
+   "monomerid_to": 705686,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.02
+  },
+  {
+   "monomerid_from": 705685,
+   "monomerid_to": 705677,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.0217
+  },
+  {
+   "monomerid_from": 705687,
+   "monomerid_to": 705819,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.0669
+  },
+  {
+   "monomerid_from": 705688,
+   "monomerid_to": 705488,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.639
+  },
+  {
+   "monomerid_from": 705690,
+   "monomerid_to": 705679,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.041
+  },
+  {
+   "monomerid_from": 705691,
+   "monomerid_to": 705740,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.1248
+  },
+  {
+   "monomerid_from": 705692,
+   "monomerid_to": 50510980,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.2767
+  },
+  {
+   "monomerid_from": 705693,
+   "monomerid_to": 705819,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.1068
+  },
+  {
+   "monomerid_from": 705694,
+   "monomerid_to": 705704,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.249
+  },
+  {
+   "monomerid_from": 705694,
+   "monomerid_to": 705945,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.0014
+  },
+  {
+   "monomerid_from": 705694,
+   "monomerid_to": 50510977,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.1459
+  },
+  {
+   "monomerid_from": 705695,
+   "monomerid_to": 705407,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.1182
+  },
+  {
+   "monomerid_from": 705695,
+   "monomerid_to": 705692,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.7056
+  },
+  {
+   "monomerid_from": 705695,
+   "monomerid_to": 50510978,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.367
+  },
+  {
+   "monomerid_from": 705696,
+   "monomerid_to": 705694,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.0822
+  },
+  {
+   "monomerid_from": 705696,
+   "monomerid_to": 705703,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.4683
+  },
+  {
+   "monomerid_from": 705697,
+   "monomerid_to": 705680,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.2089
+  },
+  {
+   "monomerid_from": 705697,
+   "monomerid_to": 705690,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.5108
+  },
+  {
+   "monomerid_from": 705698,
+   "monomerid_to": 705687,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.5214
+  },
+  {
+   "monomerid_from": 705698,
+   "monomerid_to": 705693,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.5613
+  },
+  {
+   "monomerid_from": 705699,
+   "monomerid_to": 705676,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.5562
+  },
+  {
+   "monomerid_from": 705699,
+   "monomerid_to": 705691,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.7039
+  },
+  {
+   "monomerid_from": 705700,
+   "monomerid_to": 705688,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.322
+  },
+  {
+   "monomerid_from": 705701,
+   "monomerid_to": 705753,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.1423
+  },
+  {
+   "monomerid_from": 705703,
+   "monomerid_to": 705704,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.137
+  },
+  {
+   "monomerid_from": 705704,
+   "monomerid_to": 705735,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.1961
+  },
+  {
+   "monomerid_from": 705705,
+   "monomerid_to": 705939,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 1.0674
+  },
+  {
+   "monomerid_from": 705705,
+   "monomerid_to": 50510985,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.5478
+  },
+  {
+   "monomerid_from": 705706,
+   "monomerid_to": 705736,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.699
+  },
+  {
+   "monomerid_from": 705707,
+   "monomerid_to": 705940,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.406
+  },
+  {
+   "monomerid_from": 705707,
+   "monomerid_to": 50510974,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.2926
+  },
+  {
+   "monomerid_from": 705707,
+   "monomerid_to": 50559903,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.1299
+  },
+  {
+   "monomerid_from": 705708,
+   "monomerid_to": 705706,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.8693
+  },
+  {
+   "monomerid_from": 705708,
+   "monomerid_to": 705917,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.0598
+  },
+  {
+   "monomerid_from": 705708,
+   "monomerid_to": 50510976,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.0371
+  },
+  {
+   "monomerid_from": 705709,
+   "monomerid_to": 705737,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.1264
+  },
+  {
+   "monomerid_from": 705710,
+   "monomerid_to": 705734,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.1208
+  },
+  {
+   "monomerid_from": 705711,
+   "monomerid_to": 705677,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.5949
+  },
+  {
+   "monomerid_from": 705711,
+   "monomerid_to": 705710,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.083
+  },
+  {
+   "monomerid_from": 705725,
+   "monomerid_to": 705724,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.3239
+  },
+  {
+   "monomerid_from": 705733,
+   "monomerid_to": 705719,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.5124
+  },
+  {
+   "monomerid_from": 705740,
+   "monomerid_to": 705762,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.3466
+  },
+  {
+   "monomerid_from": 705741,
+   "monomerid_to": 705744,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.0399
+  },
+  {
+   "monomerid_from": 705744,
+   "monomerid_to": 705760,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.1517
+  },
+  {
+   "monomerid_from": 705758,
+   "monomerid_to": 705748,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.0729
+  },
+  {
+   "monomerid_from": 705785,
+   "monomerid_to": 705794,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.509
+  },
+  {
+   "monomerid_from": 705801,
+   "monomerid_to": 705798,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.0287
+  },
+  {
+   "monomerid_from": 705802,
+   "monomerid_to": 705795,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.1474
+  },
+  {
+   "monomerid_from": 705803,
+   "monomerid_to": 50510992,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.5206
+  },
+  {
+   "monomerid_from": 705839,
+   "monomerid_to": 705883,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.051
+  },
+  {
+   "monomerid_from": 705840,
+   "monomerid_to": 705493,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -1.057
+  },
+  {
+   "monomerid_from": 705847,
+   "monomerid_to": 705575,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.3681
+  },
+  {
+   "monomerid_from": 705847,
+   "monomerid_to": 705851,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.2868
+  },
+  {
+   "monomerid_from": 705850,
+   "monomerid_to": 705876,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.5262
+  },
+  {
+   "monomerid_from": 705851,
+   "monomerid_to": 705850,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.1714
+  },
+  {
+   "monomerid_from": 705851,
+   "monomerid_to": 705914,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.2638
+  },
+  {
+   "monomerid_from": 705852,
+   "monomerid_to": 705841,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.4952
+  },
+  {
+   "monomerid_from": 705853,
+   "monomerid_to": 705789,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.1311
+  },
+  {
+   "monomerid_from": 705861,
+   "monomerid_to": 705788,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.5204
+  },
+  {
+   "monomerid_from": 705861,
+   "monomerid_to": 705891,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.2788
+  },
+  {
+   "monomerid_from": 705868,
+   "monomerid_to": 705893,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.1329
+  },
+  {
+   "monomerid_from": 705873,
+   "monomerid_to": 705846,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.7028
+  },
+  {
+   "monomerid_from": 705873,
+   "monomerid_to": 705919,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -1.3034
+  },
+  {
+   "monomerid_from": 705874,
+   "monomerid_to": 705800,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -1.4771
+  },
+  {
+   "monomerid_from": 705879,
+   "monomerid_to": 705878,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.5843
+  },
+  {
+   "monomerid_from": 705882,
+   "monomerid_to": 705888,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.729
+  },
+  {
+   "monomerid_from": 705882,
+   "monomerid_to": 705918,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.673
+  },
+  {
+   "monomerid_from": 705883,
+   "monomerid_to": 705496,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.85
+  },
+  {
+   "monomerid_from": 705886,
+   "monomerid_to": 705889,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.0954
+  },
+  {
+   "monomerid_from": 705895,
+   "monomerid_to": 705935,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.7093
+  },
+  {
+   "monomerid_from": 705899,
+   "monomerid_to": 705613,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.3964
+  },
+  {
+   "monomerid_from": 705899,
+   "monomerid_to": 50510985,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.3
+  },
+  {
+   "monomerid_from": 705910,
+   "monomerid_to": 705904,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.0636
+  },
+  {
+   "monomerid_from": 705913,
+   "monomerid_to": 705948,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.2083
+  },
+  {
+   "monomerid_from": 705914,
+   "monomerid_to": 705873,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.6752
+  },
+  {
+   "monomerid_from": 705923,
+   "monomerid_to": 705935,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.0603
+  },
+  {
+   "monomerid_from": 705927,
+   "monomerid_to": 705895,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.808
+  },
+  {
+   "monomerid_from": 705927,
+   "monomerid_to": 705923,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.0385
+  },
+  {
+   "monomerid_from": 705928,
+   "monomerid_to": 705894,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.0742
+  },
+  {
+   "monomerid_from": 705930,
+   "monomerid_to": 705902,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.1439
+  },
+  {
+   "monomerid_from": 705931,
+   "monomerid_to": 705705,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.1139
+  },
+  {
+   "monomerid_from": 705931,
+   "monomerid_to": 705899,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.1338
+  },
+  {
+   "monomerid_from": 705938,
+   "monomerid_to": 705899,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.2035
+  },
+  {
+   "monomerid_from": 50012660,
+   "monomerid_to": 228439,
+   "source_id": "US9556135-B2",
+   "assay_name": "In Vivo Inhibition of Beta-Secretase",
+   "delta": 0.1513
+  },
+  {
+   "monomerid_from": 50012660,
+   "monomerid_to": 228440,
+   "source_id": "US9556135-B2",
+   "assay_name": "In Vivo Inhibition of Beta-Secretase",
+   "delta": 0.4523
+  },
+  {
+   "monomerid_from": 50012660,
+   "monomerid_to": 228443,
+   "source_id": "US9556135-B2",
+   "assay_name": "In Vivo Inhibition of Beta-Secretase",
+   "delta": -0.0706
+  },
+  {
+   "monomerid_from": 50012660,
+   "monomerid_to": 230025,
+   "source_id": "US9556135-B2",
+   "assay_name": "In Vivo Inhibition of Beta-Secretase",
+   "delta": 0.0486
+  },
+  {
+   "monomerid_from": 50031628,
+   "monomerid_to": 50031627,
+   "source_id": "25363711",
+   "assay_name": "ChEMBL_1441677 (CHEMBL3377654)",
+   "delta": 0.1761
+  },
+  {
+   "monomerid_from": 50031628,
+   "monomerid_to": 50031627,
+   "source_id": "25363711",
+   "assay_name": "ChEMBL_1441678 (CHEMBL3377655)",
+   "delta": 0.1648
+  },
+  {
+   "monomerid_from": 50032728,
+   "monomerid_to": 50032731,
+   "source_id": "25389560",
+   "assay_name": "ChEMBL_1442550 (CHEMBL3371674)",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 50032728,
+   "monomerid_to": 50032731,
+   "source_id": "25389560",
+   "assay_name": "ChEMBL_1442551 (CHEMBL3371675)",
+   "delta": -0.0116
+  },
+  {
+   "monomerid_from": 50032728,
+   "monomerid_to": 50032733,
+   "source_id": "25389560",
+   "assay_name": "ChEMBL_1442550 (CHEMBL3371674)",
+   "delta": 0.699
+  },
+  {
+   "monomerid_from": 50032728,
+   "monomerid_to": 50032733,
+   "source_id": "25389560",
+   "assay_name": "ChEMBL_1442551 (CHEMBL3371675)",
+   "delta": 0.2782
+  },
+  {
+   "monomerid_from": 50032733,
+   "monomerid_to": 50032734,
+   "source_id": "25389560",
+   "assay_name": "ChEMBL_1442550 (CHEMBL3371674)",
+   "delta": 0.2041
+  },
+  {
+   "monomerid_from": 50032733,
+   "monomerid_to": 50032734,
+   "source_id": "25389560",
+   "assay_name": "ChEMBL_1442551 (CHEMBL3371675)",
+   "delta": -0.0621
+  },
+  {
+   "monomerid_from": 50032742,
+   "monomerid_to": 50032744,
+   "source_id": "25389560",
+   "assay_name": "ChEMBL_1442550 (CHEMBL3371674)",
+   "delta": 0.3979
+  },
+  {
+   "monomerid_from": 50032742,
+   "monomerid_to": 50032744,
+   "source_id": "25389560",
+   "assay_name": "ChEMBL_1442551 (CHEMBL3371675)",
+   "delta": 0.1249
+  },
+  {
+   "monomerid_from": 50061581,
+   "monomerid_to": 50032737,
+   "source_id": "25613679",
+   "assay_name": "ChEMBL_1461645 (CHEMBL3395114)",
+   "delta": 0.666
+  },
+  {
+   "monomerid_from": 50061581,
+   "monomerid_to": 50032737,
+   "source_id": "25613679",
+   "assay_name": "ChEMBL_1461646 (CHEMBL3395115)",
+   "delta": 0.9379
+  },
+  {
+   "monomerid_from": 50061591,
+   "monomerid_to": 50061580,
+   "source_id": "25613679",
+   "assay_name": "ChEMBL_1461645 (CHEMBL3395114)",
+   "delta": -0.1181
+  },
+  {
+   "monomerid_from": 50061591,
+   "monomerid_to": 50061580,
+   "source_id": "25613679",
+   "assay_name": "ChEMBL_1461646 (CHEMBL3395115)",
+   "delta": 0.4437
+  },
+  {
+   "monomerid_from": 50061591,
+   "monomerid_to": 50061592,
+   "source_id": "25613679",
+   "assay_name": "ChEMBL_1461645 (CHEMBL3395114)",
+   "delta": 0.028
+  },
+  {
+   "monomerid_from": 50061591,
+   "monomerid_to": 50061592,
+   "source_id": "25613679",
+   "assay_name": "ChEMBL_1461646 (CHEMBL3395115)",
+   "delta": 0.0177
+  },
+  {
+   "monomerid_from": 50061890,
+   "monomerid_to": 50061729,
+   "source_id": "25699151",
+   "assay_name": "ChEMBL_1462007 (CHEMBL3396457)",
+   "delta": -0.6021
+  },
+  {
+   "monomerid_from": 50061890,
+   "monomerid_to": 50061729,
+   "source_id": "25699151",
+   "assay_name": "ChEMBL_1462008 (CHEMBL3396458)",
+   "delta": -0.8965
+  },
+  {
+   "monomerid_from": 50061890,
+   "monomerid_to": 50061730,
+   "source_id": "25699151",
+   "assay_name": "ChEMBL_1462007 (CHEMBL3396457)",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 50061890,
+   "monomerid_to": 50061730,
+   "source_id": "25699151",
+   "assay_name": "ChEMBL_1462008 (CHEMBL3396458)",
+   "delta": -0.7602
+  },
+  {
+   "monomerid_from": 50061890,
+   "monomerid_to": 50061965,
+   "source_id": "25699151",
+   "assay_name": "ChEMBL_1462007 (CHEMBL3396457)",
+   "delta": -0.1249
+  },
+  {
+   "monomerid_from": 50061890,
+   "monomerid_to": 50061965,
+   "source_id": "25699151",
+   "assay_name": "ChEMBL_1462008 (CHEMBL3396458)",
+   "delta": -0.2596
+  },
+  {
+   "monomerid_from": 50061893,
+   "monomerid_to": 50061728,
+   "source_id": "25699151",
+   "assay_name": "ChEMBL_1462007 (CHEMBL3396457)",
+   "delta": -0.301
+  },
+  {
+   "monomerid_from": 50061893,
+   "monomerid_to": 50061728,
+   "source_id": "25699151",
+   "assay_name": "ChEMBL_1462008 (CHEMBL3396458)",
+   "delta": -0.301
+  },
+  {
+   "monomerid_from": 50061893,
+   "monomerid_to": 50061731,
+   "source_id": "25699151",
+   "assay_name": "ChEMBL_1462007 (CHEMBL3396457)",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 50061893,
+   "monomerid_to": 50061731,
+   "source_id": "25699151",
+   "assay_name": "ChEMBL_1462008 (CHEMBL3396458)",
+   "delta": -0.0348
+  },
+  {
+   "monomerid_from": 50131807,
+   "monomerid_to": 50131808,
+   "source_id": "26378740",
+   "assay_name": "ChEMBL_1525858 (CHEMBL3635177)",
+   "delta": 0.0304
+  },
+  {
+   "monomerid_from": 50131807,
+   "monomerid_to": 50131808,
+   "source_id": "26378740",
+   "assay_name": "ChEMBL_1525859 (CHEMBL3635178)",
+   "delta": 0.1975
+  },
+  {
+   "monomerid_from": 50169365,
+   "monomerid_to": 50169366,
+   "source_id": "26985314",
+   "assay_name": "ChEMBL_1577901 (CHEMBL3806438)",
+   "delta": 0.5166
+  },
+  {
+   "monomerid_from": 50264185,
+   "monomerid_to": 50264186,
+   "source_id": "29617572",
+   "assay_name": "ChEMBL_1698387 (CHEMBL4049277)",
+   "delta": -0.2596
+  },
+  {
+   "monomerid_from": 50264195,
+   "monomerid_to": 50264184,
+   "source_id": "29617572",
+   "assay_name": "ChEMBL_1698387 (CHEMBL4049277)",
+   "delta": -0.0048
+  },
+  {
+   "monomerid_from": 50383838,
+   "monomerid_to": 50392770,
+   "source_id": "24900403",
+   "assay_name": "ChEMBL_853104 (CHEMBL2154572)",
+   "delta": 0.0044
+  },
+  {
+   "monomerid_from": 50383838,
+   "monomerid_to": 50392770,
+   "source_id": "24900403",
+   "assay_name": "ChEMBL_853105 (CHEMBL2154573)",
+   "delta": -0.0872
+  },
+  {
+   "monomerid_from": 50383838,
+   "monomerid_to": 50392782,
+   "source_id": "24900403",
+   "assay_name": "ChEMBL_853104 (CHEMBL2154572)",
+   "delta": -0.301
+  },
+  {
+   "monomerid_from": 50383838,
+   "monomerid_to": 50392782,
+   "source_id": "24900403",
+   "assay_name": "ChEMBL_853105 (CHEMBL2154573)",
+   "delta": -0.1249
+  },
+  {
+   "monomerid_from": 50383839,
+   "monomerid_to": 50392782,
+   "source_id": "24900403",
+   "assay_name": "ChEMBL_853104 (CHEMBL2154572)",
+   "delta": 0.3979
+  },
+  {
+   "monomerid_from": 50383839,
+   "monomerid_to": 50392782,
+   "source_id": "24900403",
+   "assay_name": "ChEMBL_853105 (CHEMBL2154573)",
+   "delta": 0.699
+  },
+  {
+   "monomerid_from": 50383839,
+   "monomerid_to": 50392783,
+   "source_id": "24900403",
+   "assay_name": "ChEMBL_853104 (CHEMBL2154572)",
+   "delta": 0.0969
+  },
+  {
+   "monomerid_from": 50383839,
+   "monomerid_to": 50392783,
+   "source_id": "24900403",
+   "assay_name": "ChEMBL_853105 (CHEMBL2154573)",
+   "delta": 0.4164
+  },
+  {
+   "monomerid_from": 50383845,
+   "monomerid_to": 50383847,
+   "source_id": "22572583",
+   "assay_name": "ChEMBL_819409 (CHEMBL2033076)",
+   "delta": 0.757
+  },
+  {
+   "monomerid_from": 50383854,
+   "monomerid_to": 50383856,
+   "source_id": "22572583",
+   "assay_name": "ChEMBL_819409 (CHEMBL2033076)",
+   "delta": -0.1249
+  },
+  {
+   "monomerid_from": 50383854,
+   "monomerid_to": 50383856,
+   "source_id": "22572583",
+   "assay_name": "ChEMBL_819414 (CHEMBL2033081)",
+   "delta": -0.301
+  },
+  {
+   "monomerid_from": 50386515,
+   "monomerid_to": 50386513,
+   "source_id": "22380629",
+   "assay_name": "ChEMBL_826120 (CHEMBL2049561)",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 50386515,
+   "monomerid_to": 50386513,
+   "source_id": "22380629",
+   "assay_name": "ChEMBL_826122 (CHEMBL2049563)",
+   "delta": -0.4014
+  },
+  {
+   "monomerid_from": 50387054,
+   "monomerid_to": 50387056,
+   "source_id": "22698785",
+   "assay_name": "ChEMBL_827643 (CHEMBL2050682)",
+   "delta": -0.03
+  },
+  {
+   "monomerid_from": 50387054,
+   "monomerid_to": 50387056,
+   "source_id": "22698785",
+   "assay_name": "ChEMBL_827645 (CHEMBL2050684)",
+   "delta": -0.301
+  },
+  {
+   "monomerid_from": 50392776,
+   "monomerid_to": 50383838,
+   "source_id": "24900403",
+   "assay_name": "ChEMBL_853104 (CHEMBL2154572)",
+   "delta": 0.7634
+  },
+  {
+   "monomerid_from": 50392776,
+   "monomerid_to": 50383838,
+   "source_id": "24900403",
+   "assay_name": "ChEMBL_853105 (CHEMBL2154573)",
+   "delta": 0.2361
+  },
+  {
+   "monomerid_from": 50392776,
+   "monomerid_to": 50383839,
+   "source_id": "22928914",
+   "assay_name": "ChEMBL_874923 (CHEMBL2183108)",
+   "delta": -0.5229
+  },
+  {
+   "monomerid_from": 50392776,
+   "monomerid_to": 50383839,
+   "source_id": "22928914",
+   "assay_name": "ChEMBL_874925 (CHEMBL2183110)",
+   "delta": 0.0792
+  },
+  {
+   "monomerid_from": 50392776,
+   "monomerid_to": 50383839,
+   "source_id": "24900403",
+   "assay_name": "ChEMBL_853104 (CHEMBL2154572)",
+   "delta": 0.0645
+  },
+  {
+   "monomerid_from": 50392776,
+   "monomerid_to": 50383839,
+   "source_id": "24900403",
+   "assay_name": "ChEMBL_853105 (CHEMBL2154573)",
+   "delta": -0.5878
+  },
+  {
+   "monomerid_from": 50392776,
+   "monomerid_to": 50392777,
+   "source_id": "24900403",
+   "assay_name": "ChEMBL_853104 (CHEMBL2154572)",
+   "delta": 0.2071
+  },
+  {
+   "monomerid_from": 50392776,
+   "monomerid_to": 50392777,
+   "source_id": "24900403",
+   "assay_name": "ChEMBL_853105 (CHEMBL2154573)",
+   "delta": -0.2162
+  },
+  {
+   "monomerid_from": 50393088,
+   "monomerid_to": 50398268,
+   "source_id": "22924815",
+   "assay_name": "ChEMBL_874893 (CHEMBL2183078)",
+   "delta": -0.3757
+  },
+  {
+   "monomerid_from": 50393088,
+   "monomerid_to": 50398268,
+   "source_id": "22924815",
+   "assay_name": "ChEMBL_874894 (CHEMBL2183079)",
+   "delta": -0.0348
+  },
+  {
+   "monomerid_from": 50393099,
+   "monomerid_to": 136830,
+   "source_id": "US8865911-B2",
+   "assay_name": "Diluted TR-FRET Assay",
+   "delta": 0.2632
+  },
+  {
+   "monomerid_from": 50393099,
+   "monomerid_to": 50393106,
+   "source_id": "24900397",
+   "assay_name": "ChEMBL_853651 (CHEMBL2154188)",
+   "delta": -0.0193
+  },
+  {
+   "monomerid_from": 50393099,
+   "monomerid_to": 50393106,
+   "source_id": "24900397",
+   "assay_name": "ChEMBL_853652 (CHEMBL2154189)",
+   "delta": -0.4337
+  },
+  {
+   "monomerid_from": 50393099,
+   "monomerid_to": 50393106,
+   "source_id": "US8865911-B2",
+   "assay_name": "Diluted TR-FRET Assay",
+   "delta": -0.0193
+  },
+  {
+   "monomerid_from": 50393100,
+   "monomerid_to": 50393107,
+   "source_id": "24900397",
+   "assay_name": "ChEMBL_853651 (CHEMBL2154188)",
+   "delta": 0.3468
+  },
+  {
+   "monomerid_from": 50393100,
+   "monomerid_to": 50393107,
+   "source_id": "24900397",
+   "assay_name": "ChEMBL_853652 (CHEMBL2154189)",
+   "delta": 0.0865
+  },
+  {
+   "monomerid_from": 50397688,
+   "monomerid_to": 50397707,
+   "source_id": "22468684",
+   "assay_name": "ChEMBL_874113 (CHEMBL2187054)",
+   "delta": -0.1901
+  },
+  {
+   "monomerid_from": 50397688,
+   "monomerid_to": 50397707,
+   "source_id": "22468684",
+   "assay_name": "ChEMBL_874114 (CHEMBL2187055)",
+   "delta": 0.0691
+  },
+  {
+   "monomerid_from": 50397688,
+   "monomerid_to": 50397708,
+   "source_id": "22468684",
+   "assay_name": "ChEMBL_874113 (CHEMBL2187054)",
+   "delta": -0.0121
+  },
+  {
+   "monomerid_from": 50397688,
+   "monomerid_to": 50397708,
+   "source_id": "22468684",
+   "assay_name": "ChEMBL_874114 (CHEMBL2187055)",
+   "delta": 0.2527
+  },
+  {
+   "monomerid_from": 50397688,
+   "monomerid_to": 50397709,
+   "source_id": "22468684",
+   "assay_name": "ChEMBL_874113 (CHEMBL2187054)",
+   "delta": -0.2279
+  },
+  {
+   "monomerid_from": 50397688,
+   "monomerid_to": 50397709,
+   "source_id": "22468684",
+   "assay_name": "ChEMBL_874114 (CHEMBL2187055)",
+   "delta": -0.0367
+  },
+  {
+   "monomerid_from": 50397692,
+   "monomerid_to": 50397689,
+   "source_id": "22468684",
+   "assay_name": "ChEMBL_874113 (CHEMBL2187054)",
+   "delta": -0.3332
+  },
+  {
+   "monomerid_from": 50397692,
+   "monomerid_to": 50397689,
+   "source_id": "22468684",
+   "assay_name": "ChEMBL_874114 (CHEMBL2187055)",
+   "delta": -0.1431
+  },
+  {
+   "monomerid_from": 50397692,
+   "monomerid_to": 50397704,
+   "source_id": "22468684",
+   "assay_name": "ChEMBL_874113 (CHEMBL2187054)",
+   "delta": -0.0956
+  },
+  {
+   "monomerid_from": 50397692,
+   "monomerid_to": 50397704,
+   "source_id": "22468684",
+   "assay_name": "ChEMBL_874114 (CHEMBL2187055)",
+   "delta": -0.1431
+  },
+  {
+   "monomerid_from": 50397692,
+   "monomerid_to": 50397712,
+   "source_id": "22468684",
+   "assay_name": "ChEMBL_874113 (CHEMBL2187054)",
+   "delta": -0.0504
+  },
+  {
+   "monomerid_from": 50397692,
+   "monomerid_to": 50397712,
+   "source_id": "22468684",
+   "assay_name": "ChEMBL_874114 (CHEMBL2187055)",
+   "delta": 0.334
+  },
+  {
+   "monomerid_from": 50398312,
+   "monomerid_to": 50392776,
+   "source_id": "22928914",
+   "assay_name": "ChEMBL_874923 (CHEMBL2183108)",
+   "delta": 0.1249
+  },
+  {
+   "monomerid_from": 50398312,
+   "monomerid_to": 50392776,
+   "source_id": "22928914",
+   "assay_name": "ChEMBL_874925 (CHEMBL2183110)",
+   "delta": -0.0792
+  },
+  {
+   "monomerid_from": 50432608,
+   "monomerid_to": 124137,
+   "source_id": "US8754075-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": -0.301
+  },
+  {
+   "monomerid_from": 50432608,
+   "monomerid_to": 124167,
+   "source_id": "US8754075-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": 0.3979
+  },
+  {
+   "monomerid_from": 50432615,
+   "monomerid_to": 50432614,
+   "source_id": "23590342",
+   "assay_name": "ChEMBL_950722 (CHEMBL2353183)",
+   "delta": 0.3358
+  },
+  {
+   "monomerid_from": 50432615,
+   "monomerid_to": 50432614,
+   "source_id": "23590342",
+   "assay_name": "ChEMBL_951004 (CHEMBL2350618)",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 50462005,
+   "monomerid_to": 204994,
+   "source_id": "29775538",
+   "assay_name": "ChEMBL_1772314 (CHEMBL4224426)",
+   "delta": 0.028
+  },
+  {
+   "monomerid_from": 50462005,
+   "monomerid_to": 204994,
+   "source_id": "29775538",
+   "assay_name": "ChEMBL_1772315 (CHEMBL4224427)",
+   "delta": 0.1761
+  },
+  {
+   "monomerid_from": 50501811,
+   "monomerid_to": 50567456,
+   "source_id": "33588527",
+   "assay_name": "ChEMBL_2103355 (CHEMBL4811858)",
+   "delta": -0.2085
+  },
+  {
+   "monomerid_from": 50501811,
+   "monomerid_to": 50567456,
+   "source_id": "33588527",
+   "assay_name": "ChEMBL_2103356 (CHEMBL4811859)",
+   "delta": 0.0069
+  },
+  {
+   "monomerid_from": 50501819,
+   "monomerid_to": 50501816,
+   "source_id": "31021626",
+   "assay_name": "ChEMBL_1805606 (CHEMBL4304965)",
+   "delta": 0.3512
+  },
+  {
+   "monomerid_from": 50501819,
+   "monomerid_to": 50501816,
+   "source_id": "31021626",
+   "assay_name": "ChEMBL_1805609 (CHEMBL4304968)",
+   "delta": 0.4771
+  },
+  {
+   "monomerid_from": 50510782,
+   "monomerid_to": 705451,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.3188
+  },
+  {
+   "monomerid_from": 50510783,
+   "monomerid_to": 501235,
+   "source_id": "US11021493-B2",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assays",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 50510783,
+   "monomerid_to": 501285,
+   "source_id": "US11021493-B2",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET (Fluorescence Resonance Energy Transfer) Assays",
+   "delta": -0.699
+  },
+  {
+   "monomerid_from": 50510974,
+   "monomerid_to": 705409,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.0509
+  },
+  {
+   "monomerid_from": 50510976,
+   "monomerid_to": 705736,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.1332
+  },
+  {
+   "monomerid_from": 50510976,
+   "monomerid_to": 705920,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.0753
+  },
+  {
+   "monomerid_from": 50510977,
+   "monomerid_to": 705735,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.591
+  },
+  {
+   "monomerid_from": 50510978,
+   "monomerid_to": 705425,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.0503
+  },
+  {
+   "monomerid_from": 50510978,
+   "monomerid_to": 50510980,
+   "source_id": "31589043",
+   "assay_name": "ChEMBL_1842975 (CHEMBL4343402)",
+   "delta": 0.0726
+  },
+  {
+   "monomerid_from": 50510978,
+   "monomerid_to": 50510980,
+   "source_id": "31589043",
+   "assay_name": "ChEMBL_1842976 (CHEMBL4343403)",
+   "delta": -0.5229
+  },
+  {
+   "monomerid_from": 50510978,
+   "monomerid_to": 50510980,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.0619
+  },
+  {
+   "monomerid_from": 50510979,
+   "monomerid_to": 705396,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.0572
+  },
+  {
+   "monomerid_from": 50510984,
+   "monomerid_to": 50510972,
+   "source_id": "31589043",
+   "assay_name": "ChEMBL_1842975 (CHEMBL4343402)",
+   "delta": -0.4102
+  },
+  {
+   "monomerid_from": 50510984,
+   "monomerid_to": 50510972,
+   "source_id": "31589043",
+   "assay_name": "ChEMBL_1842976 (CHEMBL4343403)",
+   "delta": -0.888
+  },
+  {
+   "monomerid_from": 50510984,
+   "monomerid_to": 50510972,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.2823
+  },
+  {
+   "monomerid_from": 50510986,
+   "monomerid_to": 705737,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": -0.2645
+  },
+  {
+   "monomerid_from": 50510989,
+   "monomerid_to": 705938,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.1285
+  },
+  {
+   "monomerid_from": 50510989,
+   "monomerid_to": 50510975,
+   "source_id": "31589043",
+   "assay_name": "ChEMBL_1842975 (CHEMBL4343402)",
+   "delta": 0.5819
+  },
+  {
+   "monomerid_from": 50510989,
+   "monomerid_to": 50510975,
+   "source_id": "31589043",
+   "assay_name": "ChEMBL_1842976 (CHEMBL4343403)",
+   "delta": -0.301
+  },
+  {
+   "monomerid_from": 50510993,
+   "monomerid_to": 50510977,
+   "source_id": "31589043",
+   "assay_name": "ChEMBL_1842975 (CHEMBL4343402)",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 50510993,
+   "monomerid_to": 50510977,
+   "source_id": "31589043",
+   "assay_name": "ChEMBL_1842976 (CHEMBL4343403)",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 50545178,
+   "monomerid_to": 50545179,
+   "source_id": "32089426",
+   "assay_name": "ChEMBL_1994453 (CHEMBL4628348)",
+   "delta": -0.2218
+  },
+  {
+   "monomerid_from": 50559903,
+   "monomerid_to": 705409,
+   "source_id": "US20160046618-A1",
+   "assay_name": "In Vitro Enzymatic BACE1 and BACE2 FRET Assays",
+   "delta": 0.3717
+  },
+  {
+   "monomerid_from": 50569345,
+   "monomerid_to": 50569350,
+   "source_id": "33765486",
+   "assay_name": "ChEMBL_2108992 (CHEMBL4817667)",
+   "delta": -0.1707
+  },
+  {
+   "monomerid_from": 50569345,
+   "monomerid_to": 50569350,
+   "source_id": "33765486",
+   "assay_name": "ChEMBL_2108993 (CHEMBL4817668)",
+   "delta": 0.716
+  },
+  {
+   "monomerid_from": 50569348,
+   "monomerid_to": 50569349,
+   "source_id": "33765486",
+   "assay_name": "ChEMBL_2108992 (CHEMBL4817667)",
+   "delta": 0.1761
+  },
+  {
+   "monomerid_from": 50569348,
+   "monomerid_to": 50569349,
+   "source_id": "33765486",
+   "assay_name": "ChEMBL_2108993 (CHEMBL4817668)",
+   "delta": 0.6198
+  },
+  {
+   "monomerid_from": 50579814,
+   "monomerid_to": 50579806,
+   "source_id": "34553934",
+   "assay_name": "ChEMBL_2145460 (CHEMBL5029740)",
+   "delta": 0.1597
+  },
+  {
+   "monomerid_from": 50579814,
+   "monomerid_to": 50579806,
+   "source_id": "34553934",
+   "assay_name": "ChEMBL_2145465 (CHEMBL5029745)",
+   "delta": 0.1053
+  },
+  {
+   "monomerid_from": 50583315,
+   "monomerid_to": 50583324,
+   "source_id": "35059126",
+   "assay_name": "ChEMBL_2157065 (CHEMBL5041725)",
+   "delta": 0.1007
+  },
+  {
+   "monomerid_from": 50596248,
+   "monomerid_to": 50596252,
+   "source_id": "34838652",
+   "assay_name": "ChEMBL_2219917 (CHEMBL5133251)",
+   "delta": 0.4771
+  },
+  {
+   "monomerid_from": 50596252,
+   "monomerid_to": 50596254,
+   "source_id": "34838652",
+   "assay_name": "ChEMBL_2219917 (CHEMBL5133251)",
+   "delta": -0.4771
+  },
+  {
+   "monomerid_from": 50610551,
+   "monomerid_to": 50610552,
+   "source_id": "33984802",
+   "assay_name": "ChEMBL_2281431",
+   "delta": 0.1176
+  },
+  {
+   "monomerid_from": 50610556,
+   "monomerid_to": 50610557,
+   "source_id": "33984802",
+   "assay_name": "ChEMBL_2281431",
+   "delta": -0.1386
+  },
+  {
+   "monomerid_from": 50610558,
+   "monomerid_to": 50610559,
+   "source_id": "33984802",
+   "assay_name": "ChEMBL_2281431",
+   "delta": -0.1148
+  }
+ ]
+}

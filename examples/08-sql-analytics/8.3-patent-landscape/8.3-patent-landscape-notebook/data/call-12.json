@@ -1,0 +1,62 @@
+{
+ "row_count": 8,
+ "truncated": false,
+ "rows": [
+  {
+   "affinity_type": "EC50",
+   "source": "other",
+   "measurements": 147576,
+   "median_p_affinity": 6.42,
+   "pct_10nM_or_better": 16.8
+  },
+  {
+   "affinity_type": "EC50",
+   "source": "patent",
+   "measurements": 68909,
+   "median_p_affinity": 7.16,
+   "pct_10nM_or_better": 27.4
+  },
+  {
+   "affinity_type": "IC50",
+   "source": "other",
+   "measurements": 943051,
+   "median_p_affinity": 6.36,
+   "pct_10nM_or_better": 15.2
+  },
+  {
+   "affinity_type": "IC50",
+   "source": "patent",
+   "measurements": 808726,
+   "median_p_affinity": 7.19,
+   "pct_10nM_or_better": 26.1
+  },
+  {
+   "affinity_type": "Kd",
+   "source": "other",
+   "measurements": 60569,
+   "median_p_affinity": 6.4,
+   "pct_10nM_or_better": 17.6
+  },
+  {
+   "affinity_type": "Kd",
+   "source": "patent",
+   "measurements": 21429,
+   "median_p_affinity": 7.67,
+   "pct_10nM_or_better": 45.0
+  },
+  {
+   "affinity_type": "Ki",
+   "source": "other",
+   "measurements": 409939,
+   "median_p_affinity": 7.01,
+   "pct_10nM_or_better": 25.8
+  },
+  {
+   "affinity_type": "Ki",
+   "source": "patent",
+   "measurements": 131804,
+   "median_p_affinity": 7.63,
+   "pct_10nM_or_better": 40.7
+  }
+ ]
+}

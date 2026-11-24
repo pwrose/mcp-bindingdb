@@ -1,0 +1,61 @@
+{
+ "row_count": 5,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 11639,
+   "compound_name": "CLX",
+   "target_id": 2262,
+   "target": "COX-2",
+   "n_values": 225,
+   "n_sources": 188,
+   "best_nm": 0.52,
+   "median_nm": 80.0,
+   "worst_nm": 430000.0
+  },
+  {
+   "monomerid": 11639,
+   "compound_name": "CLX",
+   "target_id": 7854,
+   "target": "COX-1",
+   "n_values": 95,
+   "n_sources": 86,
+   "best_nm": 13.0,
+   "median_nm": 14000.0,
+   "worst_nm": 12530000.0
+  },
+  {
+   "monomerid": 91683,
+   "compound_name": "Celecoxib",
+   "target_id": 2262,
+   "target": "COX-2",
+   "n_values": 4,
+   "n_sources": 4,
+   "best_nm": 45.0,
+   "median_nm": 48.5,
+   "worst_nm": 63.0
+  },
+  {
+   "monomerid": 91683,
+   "compound_name": "Celecoxib",
+   "target_id": 7854,
+   "target": "COX-1",
+   "n_values": 1,
+   "n_sources": 1,
+   "best_nm": 8970.0,
+   "median_nm": 8970.0,
+   "worst_nm": 8970.0
+  },
+  {
+   "monomerid": 50224109,
+   "compound_name": "Celecoxib",
+   "target_id": 2262,
+   "target": "COX-2",
+   "n_values": 1,
+   "n_sources": 1,
+   "best_nm": 130.0,
+   "median_nm": 130.0,
+   "worst_nm": 130.0
+  }
+ ]
+}

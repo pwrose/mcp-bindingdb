@@ -1,0 +1,33 @@
+{
+ "query": "methadone",
+ "resolved": true,
+ "source": "bindingdb",
+ "smiles": "CCC(=O)C(CC(C)N(C)C)(c1ccccc1)c1ccccc1",
+ "inchi_key": "USSIQXCVUWKGNF-UHFFFAOYSA-N",
+ "monomerid": 82507,
+ "ambiguous": false,
+ "candidates": [
+  {
+   "monomerid": 82507,
+   "bdbm_id": "BDBM82507",
+   "name": "METHADONE",
+   "inchi_key": "USSIQXCVUWKGNF-UHFFFAOYSA-N",
+   "smiles": "CCC(=O)C(CC(C)N(C)C)(c1ccccc1)c1ccccc1",
+   "n_activities": 44
+  },
+  {
+   "monomerid": 50027393,
+   "bdbm_id": "BDBM50027393",
+   "name": "METHADONE",
+   "inchi_key": "USSIQXCVUWKGNF-UHFFFAOYSA-N",
+   "smiles": "CCC(=O)C(CC(C)N(C)C)(c1ccccc1)c1ccccc1",
+   "n_activities": 0
+  }
+ ],
+ "sources_tried": [
+  {
+   "source": "bindingdb",
+   "status": "found"
+  }
+ ]
+}

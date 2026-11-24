@@ -1,0 +1,43 @@
+{
+ "query": "masitinib",
+ "resolved": true,
+ "source": "pubchem",
+ "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nc(-c2cccnc2)cs1",
+ "inchi_key": "WJEOLQLKVOPQFV-UHFFFAOYSA-N",
+ "pubchem_name": "Masitinib",
+ "pubchem_cid": 10074640,
+ "bindingdb_matches": [
+  {
+   "monomerid": 50355495,
+   "bdbm_id": "BDBM50355495",
+   "name": "CHEMBL1908391",
+   "inchi_key": "WJEOLQLKVOPQFV-UHFFFAOYSA-N",
+   "smiles": "Cc1ccc(cc1Nc2nc(cs2)c3cccnc3)NC(=O)c4ccc(cc4)CN5CCN(CC5)C",
+   "n_activities": 452,
+   "exact_match": true
+  },
+  {
+   "monomerid": 734447,
+   "bdbm_id": "BDBM734447",
+   "name": "US20250129067, Compound Masitinib",
+   "inchi_key": "WJEOLQLKVOPQFV-UHFFFAOYSA-N",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nc(-c2cccnc2)cs1",
+   "n_activities": 1,
+   "exact_match": true
+  }
+ ],
+ "sources_tried": [
+  {
+   "source": "bindingdb",
+   "status": "not found"
+  },
+  {
+   "source": "opsin",
+   "status": "not found"
+  },
+  {
+   "source": "pubchem",
+   "status": "found"
+  }
+ ]
+}

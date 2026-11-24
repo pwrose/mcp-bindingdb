@@ -1,0 +1,10 @@
+{
+ "query": {
+  "input": "c1ncnc2ccccc12",
+  "interpreted_as": "smiles",
+  "canonical": "c1ccc2ncncc2c1"
+ },
+ "n_matching_compounds": 38987,
+ "compounds_searched": 1466457,
+ "compounds_indexed": 1466457
+}

@@ -1,0 +1,39 @@
+{
+ "row_count": 3,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 517,
+   "bdbm_id": "BDBM517",
+   "name": "Crixivan",
+   "inchi_key": "CBVCZFGXHXORBI-PXQQMZJSSA-N",
+   "smiles": "CC(C)(C)NC(=O)[C@@H]1CN(Cc2cccnc2)CCN1C[C@@H](O)C[C@@H](Cc1ccccc1)C(=O)N[C@H]1c2ccccc2C[C@H]1O",
+   "mol_weight": 613.36,
+   "n_activities": 109,
+   "n_targets": 64,
+   "matched_name": "Indinavir"
+  },
+  {
+   "monomerid": 50067593,
+   "bdbm_id": "BDBM50067593",
+   "name": "Crixivan",
+   "inchi_key": "CBVCZFGXHXORBI-PXQQMZJSSA-N",
+   "smiles": "CC(C)(C)NC(=O)[C@@H]1CN(Cc2cccnc2)CCN1C[C@@H](O)C[C@@H](Cc1ccccc1)C(=O)N[C@@H]1[C@H](O)Cc2ccccc12 |r|",
+   "mol_weight": 613.36,
+   "n_activities": 32,
+   "n_targets": 13,
+   "matched_name": "Indinavir"
+  },
+  {
+   "monomerid": 50369581,
+   "bdbm_id": "BDBM50369581",
+   "name": "Crixivan",
+   "inchi_key": "NUBQKPWHXMGDLP-GVZKYQOENA-N",
+   "smiles": "",
+   "mol_weight": null,
+   "n_activities": 0,
+   "n_targets": 0,
+   "matched_name": "INDINAVIR SULFATE"
+  }
+ ]
+}

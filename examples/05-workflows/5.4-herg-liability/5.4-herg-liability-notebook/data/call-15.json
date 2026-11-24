@@ -1,0 +1,25 @@
+{
+ "query": "risperidone",
+ "resolved": true,
+ "source": "bindingdb",
+ "smiles": "CC1=C(C(=O)N2CCCCC2=N1)CCN3CCC(CC3)c4c5ccc(cc5on4)F",
+ "inchi_key": "RAPZEAPATHNIPO-UHFFFAOYSA-N",
+ "monomerid": 50001885,
+ "ambiguous": false,
+ "candidates": [
+  {
+   "monomerid": 50001885,
+   "bdbm_id": "BDBM50001885",
+   "name": "RISPERDAL",
+   "inchi_key": "RAPZEAPATHNIPO-UHFFFAOYSA-N",
+   "smiles": "CC1=C(C(=O)N2CCCCC2=N1)CCN3CCC(CC3)c4c5ccc(cc5on4)F",
+   "n_activities": 471
+  }
+ ],
+ "sources_tried": [
+  {
+   "source": "bindingdb",
+   "status": "found"
+  }
+ ]
+}

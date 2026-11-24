@@ -1,0 +1,56 @@
+{
+ "row_count": 10,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 480133,
+   "name": "rac-(1S,2R)-2- (cyano(phenyl)(1-((1-(4- (pyridin-4- ylsulfonyl)phenyl)azetidin-3- yl)methyl)piperidin-4- yl)methyl)cyclopentyl isobutyrate",
+   "smiles": "CC(C)C(=O)O[C@H]1CCC[C@@H]1C(C#N)(C1CCN(CC2CN(C2)c2ccc(cc2)S(=O)(=O)c2ccncc2)CC1)c1ccccc1 |r|"
+  },
+  {
+   "monomerid": 480134,
+   "name": "rac-(1R,2S)-2- (cyano(phenyl)(1-((1-(4- (pyridin-4- ylsulfonyl)phenyl)azetidin-3- yl)methyl)piperidin-4- yl)methyl)cyclopentyl isobutyrate",
+   "smiles": "CC(C)C(=O)O[C@@H]1CCC[C@H]1C(C#N)(C1CCN(CC2CN(C2)c2ccc(cc2)S(=O)(=O)c2ccncc2)CC1)c1ccccc1 |r|"
+  },
+  {
+   "monomerid": 480251,
+   "name": "rac-(1S,2R)-2-(cyano(3- fluorophenyl)(1-((1-(4- (phenylsulfonyl)phenyl) azetidin-3-yl)methyl)piperidin-4- yl)methyl)cyclopentyl acetate",
+   "smiles": "CC(=O)O[C@H]1CCC[C@@H]1C(C#N)(C1CCN(CC2CN(C2)c2ccc(cc2)S(=O)(=O)c2ccccc2)CC1)c1cccc(F)c1 |r|"
+  },
+  {
+   "monomerid": 480252,
+   "name": "rac-(1R,2S)-2-(cyano(3- fluorophenyl)(1-((1-(4- (phenylsulfonyl)phenyl) azetidin-3-yl)methyl)piperidin-4- yl)methyl)cyclopentyl acetate",
+   "smiles": "CC(=O)O[C@@H]1CCC[C@H]1C(C#N)(C1CCN(CC2CN(C2)c2ccc(cc2)S(=O)(=O)c2ccccc2)CC1)c1cccc(F)c1 |r|"
+  },
+  {
+   "monomerid": 480350,
+   "name": "rac-(1S,2R)-2-(cyano(1-((1- (4-cyanophenyl)azetidin-3- yl)methyl)piperidin-4-yl)(3- fluorophenyl)methyl) cyclopentyl acetate",
+   "smiles": "CC(=O)O[C@H]1CCC[C@@H]1C(C#N)(C1CCN(CC2CN(C2)c2ccc(cc2)C#N)CC1)c1cccc(F)c1 |r|"
+  },
+  {
+   "monomerid": 480352,
+   "name": "rac-(1S,2R)-2-(cyano(1-((1- (4-cyanophenyl)azetidin-3- yl)methyl)piperidin-4-yl)(3- (trifluoromethyl)phenyl) methyl)cyclopentyl acetate",
+   "smiles": "CC(=O)O[C@H]1CCC[C@@H]1C(C#N)(C1CCN(CC2CN(C2)c2ccc(cc2)C#N)CC1)c1cccc(c1)C(F)(F)F |r|"
+  },
+  {
+   "monomerid": 480353,
+   "name": "rac-(1R,2S)-2-(cyano(1-((1- (4-cyanophenyl)azetidin-3- yl)methyl)piperidin-4-yl)(3- (trifluoromethyl)phenyl) methyl)cyclopentyl acetate",
+   "smiles": "CC(=O)O[C@@H]1CCC[C@H]1C(C#N)(C1CCN(CC2CN(C2)c2ccc(cc2)C#N)CC1)c1cccc(c1)C(F)(F)F |r|"
+  },
+  {
+   "monomerid": 787658,
+   "name": "US12473295, Compound 48",
+   "smiles": "CCN(C(=O)c1cc(F)ccc1Oc1nncnc1N1CCC2(C1)CN([C@@H](CCCO)C(C)C)C2)C(C)C"
+  },
+  {
+   "monomerid": 787682,
+   "name": "US12473295, Compound 122",
+   "smiles": "CCN(C(=O)c1cc(F)ccc1Oc1nncnc1N1CCC2(C1)CN([C@H](CCCN(C)C(C)C)C(C)C)C2)C(C)C"
+  },
+  {
+   "monomerid": 787729,
+   "name": "US12473295, Compound 215",
+   "smiles": "CCN(C(=O)c1cc(F)ccc1Oc1nncnc1N1CCC2(C1)CN([C@@H](CCO)C(C)C)C2)C(C)C"
+  }
+ ]
+}

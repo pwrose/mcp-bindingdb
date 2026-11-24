@@ -1,0 +1,48 @@
+{
+ "row_count": 6,
+ "truncated": false,
+ "rows": [
+  {
+   "affinity_type": "IC50",
+   "measurements": 2219940,
+   "gt": 281479,
+   "lt": 186577,
+   "pct_censored": 21.1
+  },
+  {
+   "affinity_type": "Ki",
+   "measurements": 622326,
+   "gt": 61828,
+   "lt": 18729,
+   "pct_censored": 12.9
+  },
+  {
+   "affinity_type": "EC50",
+   "measurements": 270429,
+   "gt": 42888,
+   "lt": 11045,
+   "pct_censored": 19.9
+  },
+  {
+   "affinity_type": "Kd",
+   "measurements": 131649,
+   "gt": 40355,
+   "lt": 9264,
+   "pct_censored": 37.7
+  },
+  {
+   "affinity_type": "koff",
+   "measurements": 1022,
+   "gt": 6,
+   "lt": 2,
+   "pct_censored": 0.8
+  },
+  {
+   "affinity_type": "kon",
+   "measurements": 1006,
+   "gt": 2,
+   "lt": 0,
+   "pct_censored": 0.2
+  }
+ ]
+}

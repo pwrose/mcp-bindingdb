@@ -1,0 +1,25 @@
+{
+ "query": "sertindole",
+ "resolved": true,
+ "source": "bindingdb",
+ "smiles": "Fc1ccc(cc1)-n1cc(C2CCN(CCN3CCNC3=O)CC2)c2cc(Cl)ccc12",
+ "inchi_key": "GZKLJWGUPQBVJQ-UHFFFAOYSA-N",
+ "monomerid": 50001786,
+ "ambiguous": false,
+ "candidates": [
+  {
+   "monomerid": 50001786,
+   "bdbm_id": "BDBM50001786",
+   "name": "Sertindole",
+   "inchi_key": "GZKLJWGUPQBVJQ-UHFFFAOYSA-N",
+   "smiles": "Fc1ccc(cc1)-n1cc(C2CCN(CCN3CCNC3=O)CC2)c2cc(Cl)ccc12",
+   "n_activities": 176
+  }
+ ],
+ "sources_tried": [
+  {
+   "source": "bindingdb",
+   "status": "found"
+  }
+ ]
+}

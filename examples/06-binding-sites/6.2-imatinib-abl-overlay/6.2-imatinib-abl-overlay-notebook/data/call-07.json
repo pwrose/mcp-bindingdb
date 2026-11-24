@@ -1,0 +1,5015 @@
+{
+ "query": {
+  "input": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)CC1",
+  "canonical": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cccnc2)n1",
+  "threshold": 0.3,
+  "fingerprint": "Morgan radius 2, 2048 bits, largest fragment"
+ },
+ "row_count": 500,
+ "truncated": true,
+ "rows": [
+  {
+   "monomerid": 13530,
+   "bdbm_id": "BDBM13530",
+   "name": "Gleevec",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)CC1",
+   "mol_weight": 493.26,
+   "n_activities": 1156,
+   "n_targets": 459,
+   "similarity": 1.0
+  },
+  {
+   "monomerid": 86734,
+   "bdbm_id": "BDBM86734",
+   "name": "Gleevec",
+   "smiles": "Cc3ccc(NC(=O)c2ccc(CN1CCN(C)CC1)cc2)cc3Nc5nccc(c4cccnc4)n5",
+   "mol_weight": 493.26,
+   "n_activities": 66,
+   "n_targets": 10,
+   "similarity": 1.0
+  },
+  {
+   "monomerid": 31341,
+   "bdbm_id": "BDBM31341",
+   "name": "IMATINIB",
+   "smiles": "Cc1ccc(cc1Nc2nccc(n2)c3cccnc3)NC(=O)c4ccc(cc4)CN5CCN(CC5)C",
+   "mol_weight": null,
+   "n_activities": 0,
+   "n_targets": 0,
+   "similarity": 1.0
+  },
+  {
+   "monomerid": 612739,
+   "bdbm_id": "BDBM612739",
+   "name": "US11725005, Compound 101",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3cccnc3)c2)CC1",
+   "mol_weight": 570.29,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.929
+  },
+  {
+   "monomerid": 50434581,
+   "bdbm_id": "BDBM50434581",
+   "name": "imatinib-CD3",
+   "smiles": "[2H]C([2H])([2H])N5CCN(Cc4ccc(C(=O)Nc3ccc(C)c(Nc2nccc(c1cccnc1)n2)c3)cc4)CC5",
+   "mol_weight": 496.58,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.9
+  },
+  {
+   "monomerid": 50634633,
+   "bdbm_id": "BDBM50634633",
+   "name": null,
+   "smiles": "[2H]C([2H])([2H])N5CCN(Cc4ccc(C(=O)Nc3ccc(C)c(Nc2nccc(c1cccnc1)n2)c3)cc4)CC5",
+   "mol_weight": 496.28,
+   "n_activities": 2,
+   "n_targets": 1,
+   "similarity": 0.9
+  },
+  {
+   "monomerid": 50444657,
+   "bdbm_id": "BDBM50444657",
+   "name": "CHEMBL3098615",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(CCO)CC3)cc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 523.63,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.886
+  },
+  {
+   "monomerid": 50444658,
+   "bdbm_id": "BDBM50444658",
+   "name": "CHEMBL3098616",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(CCF)CC3)cc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 525.62,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.873
+  },
+  {
+   "monomerid": 50444656,
+   "bdbm_id": "BDBM50444656",
+   "name": "CHEMBL3098614",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(Cc4ccc(I)cc4)CC3)cc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 695.6,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.871
+  },
+  {
+   "monomerid": 612799,
+   "bdbm_id": "BDBM612799",
+   "name": "US11725005, Compound 309",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3ccccc3)c2)CC1",
+   "mol_weight": 569.29,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.861
+  },
+  {
+   "monomerid": 50434582,
+   "bdbm_id": "BDBM50434582",
+   "name": "CHEMBL2386594",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCNCC3)cc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 575.68,
+   "n_activities": 5,
+   "n_targets": 2,
+   "similarity": 0.845
+  },
+  {
+   "monomerid": 50313640,
+   "bdbm_id": "BDBM50313640",
+   "name": "N-(4-methyl-3-(4-(6-methylpyridin-3-yl)pyrimidin-2-ylamino)phenyl)-4-((4-methylpiperazin-1-yl)methyl)benzamide",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3ccc(C)nc3)c2)CC1",
+   "mol_weight": 507.62931,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.843
+  },
+  {
+   "monomerid": 612807,
+   "bdbm_id": "BDBM612807",
+   "name": "US11725005, Compound 401",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3cccc(C)c3)c2)CC1",
+   "mol_weight": 583.31,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.827
+  },
+  {
+   "monomerid": 612740,
+   "bdbm_id": "BDBM612740",
+   "name": "US11725005, Compound 102",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3ccccn3)c2)CC1",
+   "mol_weight": 570.29,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.824
+  },
+  {
+   "monomerid": 50432866,
+   "bdbm_id": "BDBM50432866",
+   "name": "CHEMBL382605",
+   "smiles": "CN1CCN(Cc2ccc(cc2Cl)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)CC1",
+   "mol_weight": 528.05,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.824
+  },
+  {
+   "monomerid": 481130,
+   "bdbm_id": "BDBM481130",
+   "name": "US10906896, Cpd 830",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3cc(C)ccn3)c2)CC1",
+   "mol_weight": 584.3,
+   "n_activities": 6,
+   "n_targets": 3,
+   "similarity": 0.822
+  },
+  {
+   "monomerid": 612741,
+   "bdbm_id": "BDBM612741",
+   "name": "US11725005, Compound 103",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3ccncc3)c2)CC1",
+   "mol_weight": 570.29,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.822
+  },
+  {
+   "monomerid": 50290422,
+   "bdbm_id": "BDBM50290422",
+   "name": "4-(4-Methyl-piperazin-1-ylmethyl)-N-[3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-benzamide",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2cccc(Nc3nccc(n3)-c3cccnc3)c2)CC1",
+   "mol_weight": 479.57615,
+   "n_activities": 12,
+   "n_targets": 11,
+   "similarity": 0.812
+  },
+  {
+   "monomerid": 481131,
+   "bdbm_id": "BDBM481131",
+   "name": "US10906896, Cpd 832",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3ccn(C)n3)c2)CC1",
+   "mol_weight": 573.3,
+   "n_activities": 9,
+   "n_targets": 3,
+   "similarity": 0.811
+  },
+  {
+   "monomerid": 612811,
+   "bdbm_id": "BDBM612811",
+   "name": "US11725005, Compound 402",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3ccc(C)cc3)c2)CC1",
+   "mol_weight": 583.31,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.811
+  },
+  {
+   "monomerid": 481146,
+   "bdbm_id": "BDBM481146",
+   "name": "US10906896, Cpd 8300",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3ccn(C)n3)c2)CC1",
+   "mol_weight": null,
+   "n_activities": 0,
+   "n_targets": 0,
+   "similarity": 0.811
+  },
+  {
+   "monomerid": 481129,
+   "bdbm_id": "BDBM481129",
+   "name": "US10906896, Cpd 820",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3ccc(C)cn3)c2)CC1",
+   "mol_weight": 584.3,
+   "n_activities": 6,
+   "n_targets": 3,
+   "similarity": 0.8
+  },
+  {
+   "monomerid": 50178611,
+   "bdbm_id": "BDBM50178611",
+   "name": "3-bromo-N-(4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)phenyl)-4-((4-methylpiperazin-1-yl)methyl)benzamide",
+   "smiles": "CN1CCN(Cc2ccc(cc2Br)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)CC1",
+   "mol_weight": 571.17,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.8
+  },
+  {
+   "monomerid": 50178617,
+   "bdbm_id": "BDBM50178617",
+   "name": "3-fluoro-N-(4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)phenyl)-4-((4-methylpiperazin-1-yl)methyl)benzamide",
+   "smiles": "CN1CCN(Cc2ccc(cc2F)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)CC1",
+   "mol_weight": 511.25,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.8
+  },
+  {
+   "monomerid": 50432865,
+   "bdbm_id": "BDBM50432865",
+   "name": "CHEMBL203071",
+   "smiles": "CN1CCN(Cc2ccc(cc2I)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)CC1",
+   "mol_weight": 619.5,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.8
+  },
+  {
+   "monomerid": 612798,
+   "bdbm_id": "BDBM612798",
+   "name": "US11725005, Compound 305",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)N3CCCC3)c2)CC1",
+   "mol_weight": 562.32,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.789
+  },
+  {
+   "monomerid": 612893,
+   "bdbm_id": "BDBM612893",
+   "name": "US11725005, Compound 8300",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3cnn(C)c3)c2)CC1",
+   "mol_weight": 573.3,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.789
+  },
+  {
+   "monomerid": 612837,
+   "bdbm_id": "BDBM612837",
+   "name": "US11725005, Compound 404",
+   "smiles": "COc1cccc(c1)-c1cncc(c1)-c1ccnc(Nc2cc(NC(=O)c3ccc(CN4CCN(C)CC4)cc3)ccc2C)n1",
+   "mol_weight": 599.3,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.785
+  },
+  {
+   "monomerid": 481104,
+   "bdbm_id": "BDBM481104",
+   "name": "US10906896, Cpd 101",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cncc(C3=NN=C(C(=O)Nc4cccnc4)C3)c2)n1",
+   "mol_weight": 679.31,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.78
+  },
+  {
+   "monomerid": 481135,
+   "bdbm_id": "BDBM481135",
+   "name": "BDBM481139",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3ccns3)c2)CC1",
+   "mol_weight": 576.24,
+   "n_activities": 9,
+   "n_targets": 3,
+   "similarity": 0.779
+  },
+  {
+   "monomerid": 481143,
+   "bdbm_id": "BDBM481143",
+   "name": "US10906896, Cpd 8270",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3nccs3)c2)CC1",
+   "mol_weight": 576.24,
+   "n_activities": 6,
+   "n_targets": 3,
+   "similarity": 0.779
+  },
+  {
+   "monomerid": 481144,
+   "bdbm_id": "BDBM481144",
+   "name": "US10906896, Cpd 8280",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3ncc(C)s3)c2)CC1",
+   "mol_weight": 590.26,
+   "n_activities": 6,
+   "n_targets": 3,
+   "similarity": 0.779
+  },
+  {
+   "monomerid": 612764,
+   "bdbm_id": "BDBM612764",
+   "name": "US11725005, Compound 107",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cncc(-c3ccn[nH]3)c2)n1",
+   "mol_weight": 559.28,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.779
+  },
+  {
+   "monomerid": 612767,
+   "bdbm_id": "BDBM612767",
+   "name": "US11725005, Compound 108",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cncc(-c3[nH]ncc3C)c2)n1",
+   "mol_weight": 573.3,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.779
+  },
+  {
+   "monomerid": 612784,
+   "bdbm_id": "BDBM612784",
+   "name": "US11725005, Compound 118",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cncc(-c3cn[nH]c3)c2)n1",
+   "mol_weight": 559.28,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.779
+  },
+  {
+   "monomerid": 612785,
+   "bdbm_id": "BDBM612785",
+   "name": "US11725005, Compound 119",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cncc(-c3cn[nH]c3C)c2)n1",
+   "mol_weight": 573.3,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.779
+  },
+  {
+   "monomerid": 612786,
+   "bdbm_id": "BDBM612786",
+   "name": "US11725005, Compound 201",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3ncco3)c2)CC1",
+   "mol_weight": 560.26,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.779
+  },
+  {
+   "monomerid": 481139,
+   "bdbm_id": "BDBM481139",
+   "name": "US10906896, Cpd 8230",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3ccns3)c2)CC1",
+   "mol_weight": null,
+   "n_activities": 0,
+   "n_targets": 0,
+   "similarity": 0.779
+  },
+  {
+   "monomerid": 612796,
+   "bdbm_id": "BDBM612796",
+   "name": "US11725005, Compound 303",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-n3cccn3)c2)CC1",
+   "mol_weight": 559.28,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.772
+  },
+  {
+   "monomerid": 481128,
+   "bdbm_id": "BDBM481128",
+   "name": "US10906896, Cpd 809",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3oncc3C)c2)CC1",
+   "mol_weight": 574.28,
+   "n_activities": 6,
+   "n_targets": 3,
+   "similarity": 0.769
+  },
+  {
+   "monomerid": 481136,
+   "bdbm_id": "BDBM481136",
+   "name": "US10906896, Cpd 8180",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3sncc3C)c2)CC1",
+   "mol_weight": 590.26,
+   "n_activities": 6,
+   "n_targets": 3,
+   "similarity": 0.769
+  },
+  {
+   "monomerid": 481138,
+   "bdbm_id": "BDBM481138",
+   "name": "US10906896, Cpd 8200",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3cnsc3)c2)CC1",
+   "mol_weight": 576.24,
+   "n_activities": 6,
+   "n_targets": 3,
+   "similarity": 0.769
+  },
+  {
+   "monomerid": 612772,
+   "bdbm_id": "BDBM612772",
+   "name": "US11725005, Compound 113",
+   "smiles": "Cc1cc(-c2cncc(-c3ccnc(Nc4cc(NC(=O)c5ccc(CN6CCN(C)CC6)cc5)ccc4C)n3)c2)[nH]n1",
+   "mol_weight": 573.3,
+   "n_activities": 6,
+   "n_targets": 3,
+   "similarity": 0.769
+  },
+  {
+   "monomerid": 612841,
+   "bdbm_id": "BDBM612841",
+   "name": "US11725005, Compound 405",
+   "smiles": "COc1ccc(cc1)-c1cncc(c1)-c1ccnc(Nc2cc(NC(=O)c3ccc(CN4CCN(C)CC4)cc3)ccc2C)n1",
+   "mol_weight": 599.3,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.769
+  },
+  {
+   "monomerid": 50178615,
+   "bdbm_id": "BDBM50178615",
+   "name": "N-(4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)phenyl)-4-((4-methylpiperazin-1-yl)methyl)-3-(trifluoromethyl)benzamide",
+   "smiles": "CN1CCN(Cc2ccc(cc2C(F)(F)F)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)CC1",
+   "mol_weight": 561.25,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.769
+  },
+  {
+   "monomerid": 50341234,
+   "bdbm_id": "BDBM50341234",
+   "name": "4-(chloromethyl)-N-(4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)phenyl)benzamide",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CCl)cc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 429.14,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.768
+  },
+  {
+   "monomerid": 481134,
+   "bdbm_id": "BDBM481134",
+   "name": "US10906896, Cpd 8130",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3nnc(C)o3)c2)CC1",
+   "mol_weight": 575.28,
+   "n_activities": 6,
+   "n_targets": 3,
+   "similarity": 0.759
+  },
+  {
+   "monomerid": 481137,
+   "bdbm_id": "BDBM481137",
+   "name": "US10906896, Cpd 8190",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3cc(C)ns3)c2)CC1",
+   "mol_weight": 590.26,
+   "n_activities": 6,
+   "n_targets": 3,
+   "similarity": 0.759
+  },
+  {
+   "monomerid": 481142,
+   "bdbm_id": "BDBM481142",
+   "name": "US10906896, Cpd 8260",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3nnc(C)s3)c2)CC1",
+   "mol_weight": 591.25,
+   "n_activities": 6,
+   "n_targets": 3,
+   "similarity": 0.759
+  },
+  {
+   "monomerid": 481145,
+   "bdbm_id": "BDBM481145",
+   "name": "US10906896, Cpd 8290",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3nc(C)cs3)c2)CC1",
+   "mol_weight": 590.26,
+   "n_activities": 6,
+   "n_targets": 3,
+   "similarity": 0.759
+  },
+  {
+   "monomerid": 612789,
+   "bdbm_id": "BDBM612789",
+   "name": "US11725005, Compound 202",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3nc(C)co3)c2)CC1",
+   "mol_weight": 574.28,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.759
+  },
+  {
+   "monomerid": 612791,
+   "bdbm_id": "BDBM612791",
+   "name": "US11725005, Compound 207",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3cc(C)no3)c2)CC1",
+   "mol_weight": 574.28,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.759
+  },
+  {
+   "monomerid": 612865,
+   "bdbm_id": "BDBM612865",
+   "name": "US11725005, Compound 8230",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3cnns3)c2)CC1",
+   "mol_weight": 577.24,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.759
+  },
+  {
+   "monomerid": 106568,
+   "bdbm_id": "BDBM106568",
+   "name": "US8586600, II-8",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3C(=O)C=CC3=O)cc2)cc1Nc1nccc(n1)-c1cccnc1 |c:16|",
+   "mol_weight": 490.18,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.753
+  },
+  {
+   "monomerid": 481133,
+   "bdbm_id": "BDBM481133",
+   "name": "US10906896, Cpd 8120",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3nnco3)c2)CC1",
+   "mol_weight": 561.26,
+   "n_activities": 6,
+   "n_targets": 3,
+   "similarity": 0.75
+  },
+  {
+   "monomerid": 481140,
+   "bdbm_id": "BDBM481140",
+   "name": "US10906896, Cpd 8240",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3snnc3C)c2)CC1",
+   "mol_weight": 591.25,
+   "n_activities": 6,
+   "n_targets": 3,
+   "similarity": 0.75
+  },
+  {
+   "monomerid": 481141,
+   "bdbm_id": "BDBM481141",
+   "name": "US10906896, Cpd 8250",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3nncs3)c2)CC1",
+   "mol_weight": 577.24,
+   "n_activities": 6,
+   "n_targets": 3,
+   "similarity": 0.75
+  },
+  {
+   "monomerid": 50355495,
+   "bdbm_id": "BDBM50355495",
+   "name": "CHEMBL1908391",
+   "smiles": "Cc1ccc(cc1Nc2nc(cs2)c3cccnc3)NC(=O)c4ccc(cc4)CN5CCN(CC5)C",
+   "mol_weight": 498.22,
+   "n_activities": 452,
+   "n_targets": 378,
+   "similarity": 0.747
+  },
+  {
+   "monomerid": 50599045,
+   "bdbm_id": "BDBM50599045",
+   "name": "CHEMBL5207077",
+   "smiles": "CN1CCN(Cc2ccc(NC(=O)c3ccc(C)c(Nc4nccc(n4)-c4cccnc4)c3)cc2C(F)(F)F)CC1",
+   "mol_weight": 561.61,
+   "n_activities": 2,
+   "n_targets": 1,
+   "similarity": 0.747
+  },
+  {
+   "monomerid": 734447,
+   "bdbm_id": "BDBM734447",
+   "name": "US20250129067, Compound Masitinib",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nc(-c2cccnc2)cs1",
+   "mol_weight": 498.22,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.747
+  },
+  {
+   "monomerid": 50341235,
+   "bdbm_id": "BDBM50341235",
+   "name": "4-(aminomethyl)-N-(4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)phenyl)benzamide",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN)cc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 410.19,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.743
+  },
+  {
+   "monomerid": 481122,
+   "bdbm_id": "BDBM481122",
+   "name": "US10906896, Cpd 309",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cncc(C3=NN=C(C(=O)Nc4ccccc4)C3)c2)n1",
+   "mol_weight": 678.32,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.735
+  },
+  {
+   "monomerid": 612775,
+   "bdbm_id": "BDBM612775",
+   "name": "US11725005, Compound 114",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cncc(-c3cc(C(N)=O)n[nH]3)c2)n1",
+   "mol_weight": 602.29,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.732
+  },
+  {
+   "monomerid": 612779,
+   "bdbm_id": "BDBM612779",
+   "name": "US11725005, Compound 116",
+   "smiles": "CNC(=O)c1cc(-c2cncc(-c3ccnc(Nc4cc(NC(=O)c5ccc(CN6CCN(C)CC6)cc5)ccc4C)n3)c2)[nH]n1",
+   "mol_weight": 616.3,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.732
+  },
+  {
+   "monomerid": 50287090,
+   "bdbm_id": "BDBM50287090",
+   "name": "4-Chloro-N-[4-methyl-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-benzamide",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(Cl)cc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 415.87492,
+   "n_activities": 14,
+   "n_targets": 8,
+   "similarity": 0.725
+  },
+  {
+   "monomerid": 481124,
+   "bdbm_id": "BDBM481124",
+   "name": "US10906896, Cpd 402",
+   "smiles": "Cc1ccc(NC(=O)C2=NN=C(c3cncc(-c4ccnc(Nc5cc(NC(=O)c6ccc(CN7CCN(C)CC7)cc6)ccc5C)n4)c3)C2)cc1",
+   "mol_weight": 692.33,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.723
+  },
+  {
+   "monomerid": 612790,
+   "bdbm_id": "BDBM612790",
+   "name": "US11725005, Compound 203",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3nc(co3)C(N)=O)c2)CC1",
+   "mol_weight": 603.27,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.723
+  },
+  {
+   "monomerid": 50175491,
+   "bdbm_id": "BDBM50175491",
+   "name": "4-Methyl-N-[4-methyl-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-benzamide",
+   "smiles": "Cc1ccc(cc1)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 395.17,
+   "n_activities": 19,
+   "n_targets": 8,
+   "similarity": 0.721
+  },
+  {
+   "monomerid": 106558,
+   "bdbm_id": "BDBM106558",
+   "name": "US8586600, II-53",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(NC(=O)CCl)cc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 472.14,
+   "n_activities": 3,
+   "n_targets": 2,
+   "similarity": 0.718
+  },
+  {
+   "monomerid": 481123,
+   "bdbm_id": "BDBM481123",
+   "name": "US10906896, Cpd 401",
+   "smiles": "Cc1cccc(NC(=O)C2=NN=C(c3cncc(-c4ccnc(Nc5cc(NC(=O)c6ccc(CN7CCN(C)CC7)cc6)ccc5C)n4)c3)C2)c1",
+   "mol_weight": 692.33,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.718
+  },
+  {
+   "monomerid": 50341236,
+   "bdbm_id": "BDBM50341236",
+   "name": "4-((2-chloroacetamido)methyl)-N-(4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)phenyl)benzamide",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CNC(=O)CCl)cc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 486.16,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.716
+  },
+  {
+   "monomerid": 481106,
+   "bdbm_id": "BDBM481106",
+   "name": "US10906896, Cpd 103",
+   "smiles": "Cc1cc(NC(=O)C2=NN=C(c3cncc(-c4ccnc(Nc5cc(NC(=O)c6ccc(CN7CCN(C)CC7)cc6)ccc5C)n4)c3)C2)ccn1",
+   "mol_weight": 693.33,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.714
+  },
+  {
+   "monomerid": 612783,
+   "bdbm_id": "BDBM612783",
+   "name": "US11725005, Compound 117",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cncc(-c3cc(C(=O)N(C)C)n[nH]3)c2)n1",
+   "mol_weight": 630.32,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.714
+  },
+  {
+   "monomerid": 50215564,
+   "bdbm_id": "BDBM50215564",
+   "name": "4-(((2-chloroethyl)(methyl)amino)methyl)-N-(4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)phenyl)benzamide",
+   "smiles": "CN(CCCl)Cc1ccc(cc1)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 486.19,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.711
+  },
+  {
+   "monomerid": 50215560,
+   "bdbm_id": "BDBM50215560",
+   "name": "4-((bis(2-chloroethyl)amino)methyl)-N-(4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)phenyl)benzamide",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN(CCCl)CCCl)cc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 534.17,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.707
+  },
+  {
+   "monomerid": 50612382,
+   "bdbm_id": "BDBM50612382",
+   "name": "CHEMBL5269948",
+   "smiles": "CN1CCN(CCCCC(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)CC1",
+   "mol_weight": 459.6,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.707
+  },
+  {
+   "monomerid": 50240407,
+   "bdbm_id": "BDBM50240407",
+   "name": "N-(4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)phenyl)benzamide",
+   "smiles": "Cc1ccc(NC(=O)c2ccccc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 381.16,
+   "n_activities": 17,
+   "n_targets": 9,
+   "similarity": 0.706
+  },
+  {
+   "monomerid": 481121,
+   "bdbm_id": "BDBM481121",
+   "name": "US10906896, Cpd 305",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cncc(C3=NN=C(C(=O)N4CCCC4)C3)c2)n1",
+   "mol_weight": 656.33,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.706
+  },
+  {
+   "monomerid": 50155561,
+   "bdbm_id": "BDBM50155561",
+   "name": "4-Methyl-piperazine-1-carboxylic acid [4-methyl-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-amide",
+   "smiles": "CN1CCN(CC1)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 403.21,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.704
+  },
+  {
+   "monomerid": 481105,
+   "bdbm_id": "BDBM481105",
+   "name": "US10906896, Cpd 102",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cncc(C3=NN=C(C(=O)Nc4ccccn4)C3)c2)n1",
+   "mol_weight": 679.31,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.701
+  },
+  {
+   "monomerid": 50612381,
+   "bdbm_id": "BDBM50612381",
+   "name": "CHEMBL5279557",
+   "smiles": "CN1CCN(CC23CC(C2)(C3)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)CC1",
+   "mol_weight": 483.62,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.701
+  },
+  {
+   "monomerid": 481132,
+   "bdbm_id": "BDBM481132",
+   "name": "US10906896, Cpd 880",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCNCC3)cc2)cc1Nc1nccc(n1)-c1cncc(c1)-c1ccccn1",
+   "mol_weight": 556.27,
+   "n_activities": 6,
+   "n_targets": 3,
+   "similarity": 0.7
+  },
+  {
+   "monomerid": 50132709,
+   "bdbm_id": "BDBM50132709",
+   "name": "4-amino-N-(4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)phenyl)benzamide",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(N)cc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 396.17,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.7
+  },
+  {
+   "monomerid": 50612383,
+   "bdbm_id": "BDBM50612383",
+   "name": "CHEMBL5266376",
+   "smiles": "CN1CCN(CCCCCC(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)CC1",
+   "mol_weight": 473.63,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.697
+  },
+  {
+   "monomerid": 481107,
+   "bdbm_id": "BDBM481107",
+   "name": "US10906896, Cpd 107",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cncc(C3=NN=C(C(=O)Nc4ccn[nH]4)C3)c2)n1",
+   "mol_weight": 668.31,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.69
+  },
+  {
+   "monomerid": 481120,
+   "bdbm_id": "BDBM481120",
+   "name": "US10906896, Cpd 303",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cncc(C3=NN=C(C(=O)C4N=CC=N4)C3)c2)n1",
+   "mol_weight": 653.3,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.69
+  },
+  {
+   "monomerid": 481126,
+   "bdbm_id": "BDBM481126",
+   "name": "US10906896, Cpd 405",
+   "smiles": "COc1ccc(NC(=O)C2=NN=C(c3cncc(-c4ccnc(Nc5cc(NC(=O)c6ccc(CN7CCN(C)CC7)cc6)ccc5C)n4)c3)C2)cc1",
+   "mol_weight": 708.33,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.69
+  },
+  {
+   "monomerid": 50612377,
+   "bdbm_id": "BDBM50612377",
+   "name": "CHEMBL5273946",
+   "smiles": "Cc1ccc(NC(=O)[C@H]2C[C@@H](CN3CCN(C)CC3)C2)cc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 471.61,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.688
+  },
+  {
+   "monomerid": 50612378,
+   "bdbm_id": "BDBM50612378",
+   "name": "CHEMBL5282860",
+   "smiles": "Cc1ccc(NC(=O)[C@H]2C[C@H](CN3CCN(C)CC3)C2)cc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 471.61,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.688
+  },
+  {
+   "monomerid": 50612379,
+   "bdbm_id": "BDBM50612379",
+   "name": "CHEMBL5281225",
+   "smiles": "CN1CCN(C[C@@H]2C[C@H]2C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)CC1 |r|",
+   "mol_weight": 457.58,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.688
+  },
+  {
+   "monomerid": 50612380,
+   "bdbm_id": "BDBM50612380",
+   "name": "CHEMBL5271953",
+   "smiles": "CN1CCN(C[C@H]2C[C@@H]2C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)CC1 |r|",
+   "mol_weight": 457.58,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.688
+  },
+  {
+   "monomerid": 481125,
+   "bdbm_id": "BDBM481125",
+   "name": "US10906896, Cpd 404",
+   "smiles": "COc1cccc(NC(=O)C2=NN=C(c3cncc(-c4ccnc(Nc5cc(NC(=O)c6ccc(CN7CCN(C)CC7)cc6)ccc5C)n4)c3)C2)c1",
+   "mol_weight": 708.33,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.685
+  },
+  {
+   "monomerid": 481108,
+   "bdbm_id": "BDBM481108",
+   "name": "US10906896, Cpd 108",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cncc(C3=NN=C(C(=O)Nc4[nH]ncc4C)C3)c2)n1",
+   "mol_weight": 682.32,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.682
+  },
+  {
+   "monomerid": 481109,
+   "bdbm_id": "BDBM481109",
+   "name": "US10906896, Cpd 113",
+   "smiles": "Cc1cc(NC(=O)C2=NN=C(c3cncc(-c4ccnc(Nc5cc(NC(=O)c6ccc(CN7CCN(C)CC7)cc6)ccc5C)n4)c3)C2)[nH]n1",
+   "mol_weight": 682.32,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.682
+  },
+  {
+   "monomerid": 481114,
+   "bdbm_id": "BDBM481114",
+   "name": "US10906896, Cpd 118",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cncc(C3=NN=C(C(=O)Nc4cn[nH]c4)C3)c2)n1",
+   "mol_weight": 668.31,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.682
+  },
+  {
+   "monomerid": 481115,
+   "bdbm_id": "BDBM481115",
+   "name": "US10906896, Cpd 119",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cncc(C3=NN=C(C(=O)Nc4cn[nH]c4C)C3)c2)n1",
+   "mol_weight": 682.32,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.682
+  },
+  {
+   "monomerid": 481116,
+   "bdbm_id": "BDBM481116",
+   "name": "US10906896, Cpd 201",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cncc(C3=NN=C(C(=O)Nc4ncco4)C3)c2)n1",
+   "mol_weight": 669.29,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.682
+  },
+  {
+   "monomerid": 120388,
+   "bdbm_id": "BDBM120388",
+   "name": "US8703771, 1",
+   "smiles": "CN1CCN(CC1)C1CCc2cc(ccc12)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 519.27,
+   "n_activities": 6,
+   "n_targets": 3,
+   "similarity": 0.679
+  },
+  {
+   "monomerid": 120398,
+   "bdbm_id": "BDBM120398",
+   "name": "US8703771, 11",
+   "smiles": "CN1CCN(CC1)[C@H]1CCc2cc(ccc12)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1 |r|",
+   "mol_weight": 519.27,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.679
+  },
+  {
+   "monomerid": 50612375,
+   "bdbm_id": "BDBM50612375",
+   "name": "CHEMBL5287588",
+   "smiles": "Cc1ccc(NC(=O)[C@H]2CC[C@H](CN3CCN(C)CC3)CC2)cc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 499.66,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.679
+  },
+  {
+   "monomerid": 120399,
+   "bdbm_id": "BDBM120399",
+   "name": "US8703771, 12",
+   "smiles": "CN1CCN(CC1)C1CCc2cc(ccc12)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": null,
+   "n_activities": 0,
+   "n_targets": 0,
+   "similarity": 0.679
+  },
+  {
+   "monomerid": 106559,
+   "bdbm_id": "BDBM106559",
+   "name": "US8586600, II-54",
+   "smiles": "CC(Cl)C(=O)Nc1ccc(cc1)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 486.16,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.676
+  },
+  {
+   "monomerid": 50341238,
+   "bdbm_id": "BDBM50341238",
+   "name": "4-(methacrylamidomethyl)-N-(4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)phenyl)benzamide",
+   "smiles": "CC(=C)C(=O)NCc1ccc(cc1)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 478.21,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.675
+  },
+  {
+   "monomerid": 106563,
+   "bdbm_id": "BDBM106563",
+   "name": "US8586600, II-6",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CNC(=O)C=C)cc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 464.2,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.675
+  },
+  {
+   "monomerid": 50178614,
+   "bdbm_id": "BDBM50178614",
+   "name": "N-(4-methyl-3-(4-(pyrimidin-5-yl)pyrimidin-2-ylamino)phenyl)-4-((4-methylpiperazin-1-yl)methyl)-3-(trifluoromethyl)benzamide",
+   "smiles": "CN1CCN(Cc2ccc(cc2C(F)(F)F)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncnc3)c2)CC1",
+   "mol_weight": 562.24,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.671
+  },
+  {
+   "monomerid": 50215558,
+   "bdbm_id": "BDBM50215558",
+   "name": "4-(bis(2-chloroethyl)amino)-N-(4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)phenyl)benzamide",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(cc2)N(CCCl)CCCl)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 520.15,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.671
+  },
+  {
+   "monomerid": 50287091,
+   "bdbm_id": "BDBM50287091",
+   "name": "Naphthalene-2-carboxylic acid [4-methyl-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-amide",
+   "smiles": "Cc1ccc(NC(=O)c2ccc3ccccc3c2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 431.48854,
+   "n_activities": 14,
+   "n_targets": 8,
+   "similarity": 0.667
+  },
+  {
+   "monomerid": 481117,
+   "bdbm_id": "BDBM481117",
+   "name": "US10906896, Cpd 202",
+   "smiles": "Cc1coc(NC(=O)C2=NN=C(c3cncc(-c4ccnc(Nc5cc(NC(=O)c6ccc(CN7CCN(C)CC7)cc6)ccc5C)n4)c3)C2)n1",
+   "mol_weight": 683.31,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.667
+  },
+  {
+   "monomerid": 481119,
+   "bdbm_id": "BDBM481119",
+   "name": "US10906896, Cpd 207",
+   "smiles": "Cc1cc(NC(=O)C2=NN=C(c3cncc(-c4ccnc(Nc5cc(NC(=O)c6ccc(CN7CCN(C)CC7)cc6)ccc5C)n4)c3)C2)on1",
+   "mol_weight": 683.31,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.667
+  },
+  {
+   "monomerid": 50341237,
+   "bdbm_id": "BDBM50341237",
+   "name": "4-(but-2-enamidomethyl)-N-(4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)phenyl)benzamide",
+   "smiles": "C\\C=C\\C(=O)NCc1ccc(cc1)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 478.21,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.667
+  },
+  {
+   "monomerid": 106567,
+   "bdbm_id": "BDBM106567",
+   "name": "US8586600, II-1",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(NC(=O)C=C)cc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 450.18,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.662
+  },
+  {
+   "monomerid": 50612376,
+   "bdbm_id": "BDBM50612376",
+   "name": "CHEMBL5275489",
+   "smiles": "CN1CCN(C[C@H]2CC[C@H](C2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)CC1 |r|",
+   "mol_weight": 485.64,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.662
+  },
+  {
+   "monomerid": 481110,
+   "bdbm_id": "BDBM481110",
+   "name": "US10906896, Cpd 114",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cncc(C3=NN=C(C(=O)Nc4cc(C(=O)O)n[nH]4)C3)c2)n1",
+   "mol_weight": 712.3,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.659
+  },
+  {
+   "monomerid": 111450,
+   "bdbm_id": "BDBM111450",
+   "name": "N-(3, 4-dichlorophenyl)-4-methyl-3-(4-(pyridin-3-yl) pyrimidin-2-yl amino) benzamide (A3)",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1ccc(Cl)c(Cl)c1",
+   "mol_weight": 449.08,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.658
+  },
+  {
+   "monomerid": 50358831,
+   "bdbm_id": "BDBM50358831",
+   "name": "CHEMBL1923084",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(N)c(N)c2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 411.18,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.658
+  },
+  {
+   "monomerid": 481111,
+   "bdbm_id": "BDBM481111",
+   "name": "US10906896, Cpd 115",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cncc(C3=NN=C(C(=O)Nc4cc(C(N)=O)n[nH]4)C3)c2)n1",
+   "mol_weight": 711.31,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.652
+  },
+  {
+   "monomerid": 481112,
+   "bdbm_id": "BDBM481112",
+   "name": "US10906896, Cpd 116",
+   "smiles": "CNC(=O)c1cc(NC(=O)C2=NN=C(c3cncc(-c4ccnc(Nc5cc(NC(=O)c6ccc(CN7CCN(C)CC7)cc6)ccc5C)n4)c3)C2)[nH]n1",
+   "mol_weight": 725.33,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.652
+  },
+  {
+   "monomerid": 120393,
+   "bdbm_id": "BDBM120393",
+   "name": "US8703771, 6",
+   "smiles": "Cc1ccc(NC(=O)c2ccc3C(CCc3c2)N2CCN(CCO)CC2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 549.29,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.651
+  },
+  {
+   "monomerid": 50491764,
+   "bdbm_id": "BDBM50491764",
+   "name": "CHEMBL2385993",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(c2)C(=O)Nc2nccc(n2)-c2cccc(F)c2)CC1",
+   "mol_weight": 538.63,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.65
+  },
+  {
+   "monomerid": 111457,
+   "bdbm_id": "BDBM111457",
+   "name": "4-Methyl-3-(4-(pyridin-3-yl) pyrimidin-2-ylamino)-N-p-tolyl benzamide (A10)",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)cc1",
+   "mol_weight": 395.17,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.648
+  },
+  {
+   "monomerid": 481127,
+   "bdbm_id": "BDBM481127",
+   "name": "US10906896, Cpd 806",
+   "smiles": "Cc1cc(on1)-c1cncc(c1)-c1ccnc(Nc2cc(NC(=O)c3ccc(CN4CCNCC4)cc3)ccc2C)n1",
+   "mol_weight": 560.26,
+   "n_activities": 6,
+   "n_targets": 3,
+   "similarity": 0.647
+  },
+  {
+   "monomerid": 120391,
+   "bdbm_id": "BDBM120391",
+   "name": "US8703771, 4",
+   "smiles": "CCN1CCN(CC1)C1CCc2cc(ccc12)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 533.29,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.647
+  },
+  {
+   "monomerid": 50529313,
+   "bdbm_id": "BDBM50529313",
+   "name": "Flumatinib",
+   "smiles": "CN1CCN(Cc2ccc(cc2C(F)(F)F)C(=O)Nc2cnc(C)c(Nc3nccc(n3)-c3cccnc3)c2)CC1",
+   "mol_weight": 562.6,
+   "n_activities": 8,
+   "n_targets": 3,
+   "similarity": 0.643
+  },
+  {
+   "monomerid": 111471,
+   "bdbm_id": "BDBM111471",
+   "name": "4-Methyl-3-(4-(pyridin-3-yl) pyrimidin-2-ylamino)-N- (4-(2-(pyrrolidin-1-yl) ethoxy) phenyl) benzamide (A24)",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1ccc(OCCCN2CCCC2)cc1",
+   "mol_weight": 508.26,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.642
+  },
+  {
+   "monomerid": 481113,
+   "bdbm_id": "BDBM481113",
+   "name": "US10906896, Cpd 117",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cncc(C3=NN=C(C(=O)Nc4cc(C(=O)N(C)C)n[nH]4)C3)c2)n1",
+   "mol_weight": 739.35,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.638
+  },
+  {
+   "monomerid": 481118,
+   "bdbm_id": "BDBM481118",
+   "name": "US10906896, Cpd 203",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cncc(C3=NN=C(C(=O)Nc4nc(C(N)=O)co4)C3)c2)n1",
+   "mol_weight": 712.3,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.638
+  },
+  {
+   "monomerid": 106564,
+   "bdbm_id": "BDBM106564",
+   "name": "US8586600, II-23",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(NS(=O)(=O)C=C)cc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 486.15,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.636
+  },
+  {
+   "monomerid": 50132707,
+   "bdbm_id": "BDBM50132707",
+   "name": "4-3,3-dimethyltriaz-1-ene-N-[4-methyl-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-benzamide",
+   "smiles": "CN(C)\\N=N\\c1ccc(cc1)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 452.21,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.636
+  },
+  {
+   "monomerid": 50155575,
+   "bdbm_id": "BDBM50155575",
+   "name": "1-[4-Methyl-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-3-(2-pyrrolidin-1-yl-ethyl)-urea",
+   "smiles": "Cc1ccc(NC(=O)NCCN2CCCC2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 417.23,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.636
+  },
+  {
+   "monomerid": 50462213,
+   "bdbm_id": "BDBM50462213",
+   "name": "CHEMBL4247298",
+   "smiles": "CN(C)CCN(Cc1ccc(cc1)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1)C(=O)c1cccnc1",
+   "mol_weight": 586.7,
+   "n_activities": 5,
+   "n_targets": 5,
+   "similarity": 0.634
+  },
+  {
+   "monomerid": 111472,
+   "bdbm_id": "BDBM111472",
+   "name": "4-Methyl-N-(4-(2-(piperidin-1-yl) ethoxy) phenyl)-3-(4-(pyridin-3-yl) pyrimidin-2-ylamino) benzamide (A25)",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1ccc(OCCCN2CCCCC2)cc1",
+   "mol_weight": 522.27,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.634
+  },
+  {
+   "monomerid": 50467682,
+   "bdbm_id": "BDBM50467682",
+   "name": "CHEMBL4277944",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(OCCCCn3ccnc3)cc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 519.61,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.634
+  },
+  {
+   "monomerid": 50215559,
+   "bdbm_id": "BDBM50215559",
+   "name": "4-(3,methylhydroxy3-methyltriaz-1-ene)-N-[4-methyl-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-benzamide",
+   "smiles": "CN(CO)N=Nc1ccc(cc1)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 468.2,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.633
+  },
+  {
+   "monomerid": 111448,
+   "bdbm_id": "BDBM111448",
+   "name": "N-(3-chloro-4-fluorophenyl)-4-methyl-3-(4-(pyridin- 3-yl)pyrimidin-2-ylamino)benzamide (A1)",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1ccc(F)c(Cl)c1",
+   "mol_weight": 433.11,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.632
+  },
+  {
+   "monomerid": 50566594,
+   "bdbm_id": "BDBM50566594",
+   "name": "CHEMBL4875177",
+   "smiles": "COc1cc2CCN(CCc3ccc(NC(=O)c4ccc(C)c(Nc5nccc(n5)-c5cccnc5)c4)cc3)Cc2cc1OC",
+   "mol_weight": 600.72,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.632
+  },
+  {
+   "monomerid": 111452,
+   "bdbm_id": "BDBM111452",
+   "name": "N-(4-bromophenyl)-4-methyl-3-(4-(pyridin-3-yl) pyrimidin-2-ylamino) benzamide (A5)",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1ccc(Br)cc1",
+   "mol_weight": 459.07,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.63
+  },
+  {
+   "monomerid": 50105853,
+   "bdbm_id": "BDBM50105853",
+   "name": "CHEMBL3597611",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(c2)-n2cc(cn2)-c2cccnc2)CC1",
+   "mol_weight": 466.25,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.628
+  },
+  {
+   "monomerid": 106565,
+   "bdbm_id": "BDBM106565",
+   "name": "US8586600, II-45",
+   "smiles": "Cc1ccc(NC(=O)c2ccc3CN(CCc3c2)C(=O)C=C)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 490.21,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.627
+  },
+  {
+   "monomerid": 86626,
+   "bdbm_id": "BDBM86626",
+   "name": "JNK-IN-1",
+   "smiles": "CN(C)C\\C=C\\C(=O)Nc1ccc(cc1)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 507.24,
+   "n_activities": 9,
+   "n_targets": 3,
+   "similarity": 0.625
+  },
+  {
+   "monomerid": 50256927,
+   "bdbm_id": "BDBM50256927",
+   "name": "N-(2-aminophenyl)-4-((4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)phenylamino)methyl)benzamide",
+   "smiles": "Cc1ccc(NCc2ccc(cc2)C(=O)Nc2ccccc2N)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 501.58168,
+   "n_activities": 6,
+   "n_targets": 4,
+   "similarity": 0.625
+  },
+  {
+   "monomerid": 106555,
+   "bdbm_id": "BDBM106555",
+   "name": "US8586600, II-40",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(NS(=O)(=O)c3cnccc3Cl)cc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 571.12,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.625
+  },
+  {
+   "monomerid": 346114,
+   "bdbm_id": "BDBM346114",
+   "name": "{6-Methyl-2-[4-(4- methyl-piperazin-1- ylmethyl)-phenyl]- 3H-benzoimidazol-5- yl}-(4-pyridin-3-yl- pyrimidin-2-yl)- amine",
+   "smiles": "Cc1cc2nc(-c3ccc(CN4CCN(C)CC4)cc3)[nH]c2cc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 490.26,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.625
+  },
+  {
+   "monomerid": 50240406,
+   "bdbm_id": "BDBM50240406",
+   "name": "N-(4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)phenyl)acetamide",
+   "smiles": "CC(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 319.14,
+   "n_activities": 14,
+   "n_targets": 8,
+   "similarity": 0.623
+  },
+  {
+   "monomerid": 50155565,
+   "bdbm_id": "BDBM50155565",
+   "name": "Piperidine-1-carboxylic acid [4-methyl-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-amide",
+   "smiles": "Cc1ccc(NC(=O)N2CCCCC2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 388.2,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.622
+  },
+  {
+   "monomerid": 50132708,
+   "bdbm_id": "BDBM50132708",
+   "name": "4-(3,ethylchloro3-methyltriaz-1-ene)-N-[4-methyl-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-benzamide",
+   "smiles": "CN(CCCl)\\N=N\\c1ccc(cc1)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 500.18,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.622
+  },
+  {
+   "monomerid": 111473,
+   "bdbm_id": "BDBM111473",
+   "name": "4-Methyl-N-(4-(2-morpholinoethoxy) phenyl)-3-(4-(pyridin-3-yl) pyrimidin-2-ylamino) benzamide (A26)",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1ccc(OCCCN2CCOCC2)cc1",
+   "mol_weight": 524.25,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.619
+  },
+  {
+   "monomerid": 50358832,
+   "bdbm_id": "BDBM50358832",
+   "name": "CHEMBL1923082",
+   "smiles": "CSc1cccc(c1)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 427.15,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.618
+  },
+  {
+   "monomerid": 106556,
+   "bdbm_id": "BDBM106556",
+   "name": "US8586600, II-41",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(NS(=O)(=O)c3ccc(Cl)nc3)cc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 571.12,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.617
+  },
+  {
+   "monomerid": 50544971,
+   "bdbm_id": "BDBM50544971",
+   "name": "CHEMBL4635318",
+   "smiles": "CN1CCN(Cc2cc(NC(=O)c3ccc(C)c(Nc4nccc(n4)-c4ccccc4)c3)cc(c2)-n2cnc(C)c2)CC1",
+   "mol_weight": 572.72,
+   "n_activities": 4,
+   "n_targets": 4,
+   "similarity": 0.616
+  },
+  {
+   "monomerid": 111460,
+   "bdbm_id": "BDBM111460",
+   "name": "N-(3-acetylphenyl)-4-methyl-3-(4-(pyridin-3-yl) pyrimidin-2-ylamino) benzamide (A13)",
+   "smiles": "COCc1cccc(NC(=O)c2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)c1",
+   "mol_weight": 425.19,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.615
+  },
+  {
+   "monomerid": 111451,
+   "bdbm_id": "BDBM111451",
+   "name": "N-(4-methoxyphenyl)-4-methyl-3-(4-(pyridin-3-yl) pyrimidin-2-yl amino) benzamide (A4)",
+   "smiles": "COc1ccc(NC(=O)c2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)cc1",
+   "mol_weight": 411.17,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.613
+  },
+  {
+   "monomerid": 111454,
+   "bdbm_id": "BDBM111454",
+   "name": "N-(3-fluorophenyl)-4-methyl-3-(4-(pyridin-3-yl) pyrimidin-2-ylamino) benzamide (A7)",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1cccc(F)c1",
+   "mol_weight": 399.15,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.613
+  },
+  {
+   "monomerid": 111474,
+   "bdbm_id": "BDBM111474",
+   "name": "4-Methyl-N-(4-(3-morpholinopropoxy) phenyl)-3-(4-(pyridin-3-yl) pyrimidin-2-ylamino) benzamide (A27)",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1ccc(OCCCCN2CCOCC2)cc1",
+   "mol_weight": 538.27,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.612
+  },
+  {
+   "monomerid": 50215561,
+   "bdbm_id": "BDBM50215561",
+   "name": "3-chloro-N-(4-methyl-3-{[4-(pyridin-3-yl)pyrimidin-2-yl]amino}phenyl)-4-(3-methyltriaz-1-en-1-yl)benzamide",
+   "smiles": "CN=NNc1ccc(cc1Cl)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1 |w:1.0|",
+   "mol_weight": 472.15,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.612
+  },
+  {
+   "monomerid": 68208,
+   "bdbm_id": "BDBM68208",
+   "name": "Type II inhibitor, 2",
+   "smiles": "Cc1ccc(NC(=O)c2cccc(c2)C(F)(F)F)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 449.15,
+   "n_activities": 2,
+   "n_targets": 1,
+   "similarity": 0.61
+  },
+  {
+   "monomerid": 50215557,
+   "bdbm_id": "BDBM50215557",
+   "name": "4-amino-N-(4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)phenyl)-3-(trifluoromethyl)benzamide",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(N)c(c2)C(F)(F)F)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 464.16,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.608
+  },
+  {
+   "monomerid": 50155574,
+   "bdbm_id": "BDBM50155574",
+   "name": "1-[4-Methyl-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-3-pyridin-3-yl-urea",
+   "smiles": "Cc1ccc(NC(=O)Nc2cccnc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 397.17,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.606
+  },
+  {
+   "monomerid": 120390,
+   "bdbm_id": "BDBM120390",
+   "name": "US8703771, 3",
+   "smiles": "Cc1ccc(NC(=O)c2ccc3C(CCc3c2)N2CCNCC2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 505.26,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.605
+  },
+  {
+   "monomerid": 106562,
+   "bdbm_id": "BDBM106562",
+   "name": "US8586600, III-14",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1ccc(NC(=O)CCl)c(c1)C(F)(F)F",
+   "mol_weight": 540.13,
+   "n_activities": 6,
+   "n_targets": 3,
+   "similarity": 0.598
+  },
+  {
+   "monomerid": 120394,
+   "bdbm_id": "BDBM120394",
+   "name": "US8703771, 7",
+   "smiles": "CC(=O)N1CCN(CC1)C1CCc2cc(ccc12)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 547.27,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.598
+  },
+  {
+   "monomerid": 50105849,
+   "bdbm_id": "BDBM50105849",
+   "name": "CHEMBL3597615",
+   "smiles": "CN1CCCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(c2)-n2cc(cn2)-c2cccnc2)CC1",
+   "mol_weight": 480.26,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.598
+  },
+  {
+   "monomerid": 111461,
+   "bdbm_id": "BDBM111461",
+   "name": "N-(3-methoxyphenyl)-4-methyl-3-(4-(pyridin-3-yl) pyrimidin-2-yl amino) benzamide (A14)",
+   "smiles": "COc1cccc(NC(=O)c2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)c1",
+   "mol_weight": 411.17,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.597
+  },
+  {
+   "monomerid": 120392,
+   "bdbm_id": "BDBM120392",
+   "name": "US8703771, 5",
+   "smiles": "CC(C)N1CCN(CC1)C1CCc2cc(ccc12)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 547.31,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.591
+  },
+  {
+   "monomerid": 111449,
+   "bdbm_id": "BDBM111449",
+   "name": "4-Methyl-3-(4-(pyridin-3-yl) pyrimidin-2-ylamino)-N-(3-(trifluoro methyl) phenyl) benzamide (A2)",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1cccc(c1)C(F)(F)F",
+   "mol_weight": 449.15,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.59
+  },
+  {
+   "monomerid": 397156,
+   "bdbm_id": "BDBM397156",
+   "name": "US9987276, Compound I-56",
+   "smiles": "Cc1ccc(NC(=O)C=C)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 331.14,
+   "n_activities": 18,
+   "n_targets": 6,
+   "similarity": 0.589
+  },
+  {
+   "monomerid": 50287094,
+   "bdbm_id": "BDBM50287094",
+   "name": "N-[4-Chloro-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-benzamide",
+   "smiles": "Clc1ccc(NC(=O)c2ccccc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 401.84834,
+   "n_activities": 5,
+   "n_targets": 5,
+   "similarity": 0.589
+  },
+  {
+   "monomerid": 111459,
+   "bdbm_id": "BDBM111459",
+   "name": "N-(2, 6-dimethylphenyl)-4-methyl-3-(4-(pyridin-3-yl) pyrimidin-2-yl amino) benzamide (A12)",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1c(C)cccc1C",
+   "mol_weight": 409.19,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.589
+  },
+  {
+   "monomerid": 120395,
+   "bdbm_id": "BDBM120395",
+   "name": "US8703771, 8",
+   "smiles": "CN1CCN(CC1)C1CCc2cc(ccc12)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cncnc2)c1",
+   "mol_weight": 520.27,
+   "n_activities": 9,
+   "n_targets": 3,
+   "similarity": 0.588
+  },
+  {
+   "monomerid": 120400,
+   "bdbm_id": "BDBM120400",
+   "name": "US8703771, 13",
+   "smiles": "CN1CCN(CC1)C1CCc2cc(ccc12)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cncnc2)c1",
+   "mol_weight": null,
+   "n_activities": 0,
+   "n_targets": 0,
+   "similarity": 0.588
+  },
+  {
+   "monomerid": 120401,
+   "bdbm_id": "BDBM120401",
+   "name": "US8703771, 14",
+   "smiles": "CN1CCN(CC1)C1CCc2cc(ccc12)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cncnc2)c1",
+   "mol_weight": null,
+   "n_activities": 0,
+   "n_targets": 0,
+   "similarity": 0.588
+  },
+  {
+   "monomerid": 50155560,
+   "bdbm_id": "BDBM50155560",
+   "name": "1-(3-Chloro-phenyl)-3-[4-methyl-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-urea",
+   "smiles": "Cc1ccc(NC(=O)Nc2cccc(Cl)c2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 430.13,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.587
+  },
+  {
+   "monomerid": 50287096,
+   "bdbm_id": "BDBM50287096",
+   "name": "2-Methoxy-N-[4-methyl-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-benzamide",
+   "smiles": "COc1ccccc1C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 411.45584,
+   "n_activities": 14,
+   "n_targets": 8,
+   "similarity": 0.584
+  },
+  {
+   "monomerid": 111455,
+   "bdbm_id": "BDBM111455",
+   "name": "N-(3,5-bis(trifluoromethyl) phenyl)-4-methyl-3-(4-(pyridin-3-yl) pyrimidin-2-ylamino) benzamide (A8)",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1cc(cc(c1)C(F)(F)F)C(F)(F)F",
+   "mol_weight": 517.13,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.584
+  },
+  {
+   "monomerid": 50155562,
+   "bdbm_id": "BDBM50155562",
+   "name": "1-[4-Methyl-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-3-(3-pyrrolidin-1-yl-phenyl)-urea",
+   "smiles": "Cc1ccc(NC(=O)Nc2cccc(c2)N2CCCC2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 465.23,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.582
+  },
+  {
+   "monomerid": 50467680,
+   "bdbm_id": "BDBM50467680",
+   "name": "CHEMBL4288599",
+   "smiles": "Cc1ccc(NC(=O)c2cccc(OCCCCn3ccnc3)c2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 519.61,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.581
+  },
+  {
+   "monomerid": 50607529,
+   "bdbm_id": "BDBM50607529",
+   "name": "CHEMBL5218915",
+   "smiles": "CN1CCN(Cc2ccc(NC(=O)c3ccc(C)c(Nc4cc(ccn4)-c4cccnc4)c3)cc2C(F)(F)F)CC1",
+   "mol_weight": 560.62,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.581
+  },
+  {
+   "monomerid": 50467681,
+   "bdbm_id": "BDBM50467681",
+   "name": "CHEMBL4294145",
+   "smiles": "COc1ccc(cc1OCCCCn1ccnc1)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 549.64,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.58
+  },
+  {
+   "monomerid": 50467685,
+   "bdbm_id": "BDBM50467685",
+   "name": "CHEMBL4282448",
+   "smiles": "COc1cc(ccc1OCCCCn1ccnc1)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 549.64,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.58
+  },
+  {
+   "monomerid": 50467686,
+   "bdbm_id": "BDBM50467686",
+   "name": "CHEMBL4289670",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(OCCCCn3ccnc3)c(Br)c2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 598.51,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.58
+  },
+  {
+   "monomerid": 50467687,
+   "bdbm_id": "BDBM50467687",
+   "name": "CHEMBL4278991",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(OCCCCn3ccnc3)c(I)c2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 645.51,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.58
+  },
+  {
+   "monomerid": 120396,
+   "bdbm_id": "BDBM120396",
+   "name": "US8703771, 9",
+   "smiles": "CN(C)C1CCN(C1)C1CCc2cc(ccc12)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 533.29,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.578
+  },
+  {
+   "monomerid": 120397,
+   "bdbm_id": "BDBM120397",
+   "name": "US8703771, 10",
+   "smiles": "CN(C)[C@@H]1CCN(C1)C1CCc2cc(ccc12)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1 |r|",
+   "mol_weight": 533.29,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.578
+  },
+  {
+   "monomerid": 346134,
+   "bdbm_id": "BDBM346134",
+   "name": "{6-Methyl-2-[3-(4- methyl-piperazin-1- ylmethyl)-phenyl]- 3H-benzoimidazol-5- yl}-(4-pyridin-3-yl- pyrimidin-2-yl)- amine",
+   "smiles": "Cc1cc2nc(-c3cccc(CN4CCN(C)CC4)c3)[nH]c2cc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 490.26,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.578
+  },
+  {
+   "monomerid": 50265287,
+   "bdbm_id": "BDBM50265287",
+   "name": "N-(3-(isoquinolin-7-yl)-4-methylphenyl)-4-((4-methylpiperazin-1-yl)methyl)benzamide",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(c2)-c2ccc3ccncc3c2)CC1",
+   "mol_weight": 450.5747,
+   "n_activities": 10,
+   "n_targets": 10,
+   "similarity": 0.577
+  },
+  {
+   "monomerid": 50432867,
+   "bdbm_id": "BDBM50432867",
+   "name": "CHEMBL2376497",
+   "smiles": "Cc1ccc(NC(=O)NCc2cccc(Cl)c2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 444.92,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.575
+  },
+  {
+   "monomerid": 50425386,
+   "bdbm_id": "BDBM50425386",
+   "name": "CHEMBL2311808",
+   "smiles": "Cc1cn(cn1)-c1cccc(NC(=O)c2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)c1",
+   "mol_weight": 461.52,
+   "n_activities": 14,
+   "n_targets": 8,
+   "similarity": 0.573
+  },
+  {
+   "monomerid": 111463,
+   "bdbm_id": "BDBM111463",
+   "name": "4-Methyl-N-(pyridin-3-yl)-3-(4-(pyridin-3-yl) pyrimidin-2-ylamino) benzamide (A16)",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)NCc1cccnc1",
+   "mol_weight": 396.17,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.573
+  },
+  {
+   "monomerid": 111468,
+   "bdbm_id": "BDBM111468",
+   "name": "N-(4-(3-(dimethylamino)propoxy) phenyl)-4-methyl- 3-(4-(pyridin-3-yl) pyrimidin-2-ylamino) benzamide (A21)",
+   "smiles": "CN(C)CCCOc1ccc(NC(=O)c2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)cc1",
+   "mol_weight": 482.24,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.573
+  },
+  {
+   "monomerid": 106553,
+   "bdbm_id": "BDBM106553",
+   "name": "US8586600, II-2",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(NC(=O)C=C)c(c2)C(F)(F)F)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 518.17,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.571
+  },
+  {
+   "monomerid": 50155557,
+   "bdbm_id": "BDBM50155557",
+   "name": "1-(4-Diethylamino-phenyl)-3-[4-methyl-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-urea",
+   "smiles": "CCN(CC)c1ccc(NC(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)cc1",
+   "mol_weight": 467.24,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.571
+  },
+  {
+   "monomerid": 50215565,
+   "bdbm_id": "BDBM50215565",
+   "name": "N-(4-methyl-3-{[4-(pyridin-3-yl)pyrimidin-2-yl]amino}phenyl)-4-(3-methyltriaz-1-en-1-yl)-3-(trifluoromethyl)benzamide",
+   "smiles": "CN=NNc1ccc(cc1C(F)(F)F)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1 |w:1.0|",
+   "mol_weight": 506.18,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.571
+  },
+  {
+   "monomerid": 50265289,
+   "bdbm_id": "BDBM50265289",
+   "name": "N-(4-methyl-3-(quinolin-7-yl)phenyl)-4-((4-methylpiperazin-1-yl)methyl)benzamide",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(c2)-c2ccc3cccnc3c2)CC1",
+   "mol_weight": 450.5747,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.57
+  },
+  {
+   "monomerid": 50290430,
+   "bdbm_id": "BDBM50290430",
+   "name": "4-Methyl-N-[3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-benzamide",
+   "smiles": "Cc1ccc(cc1)C(=O)Nc1cccc(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 381.42986,
+   "n_activities": 6,
+   "n_targets": 6,
+   "similarity": 0.569
+  },
+  {
+   "monomerid": 50287088,
+   "bdbm_id": "BDBM50287088",
+   "name": "N-[4-Methoxy-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-benzamide",
+   "smiles": "COc1ccc(NC(=O)c2ccccc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 397.42926,
+   "n_activities": 5,
+   "n_targets": 5,
+   "similarity": 0.566
+  },
+  {
+   "monomerid": 50155559,
+   "bdbm_id": "BDBM50155559",
+   "name": "1-(4-Dimethylamino-phenyl)-3-[4-methyl-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-urea",
+   "smiles": "CN(C)c1ccc(NC(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)cc1",
+   "mol_weight": 439.21,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.566
+  },
+  {
+   "monomerid": 111453,
+   "bdbm_id": "BDBM111453",
+   "name": "N-(2-fluorophenyl)-4-methyl-3-(4-(pyridin-3-yl) pyrimidin-2-ylamino) benzamide (A6)",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1ccccc1F",
+   "mol_weight": 399.15,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.566
+  },
+  {
+   "monomerid": 111462,
+   "bdbm_id": "BDBM111462",
+   "name": "4-Methyl-3-(4-(pyridin-3-yl) pyrimidin-2-ylamino)-N- (pyridin-4-yl) benzamide (A15)",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)NCc1ccncc1",
+   "mol_weight": 396.17,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.566
+  },
+  {
+   "monomerid": 111469,
+   "bdbm_id": "BDBM111469",
+   "name": "N-(4-(2-(dimethylamino)ethoxy)phenyl)-4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)benzamide (A22)",
+   "smiles": "CN(C)CCCCOc1ccc(NC(=O)c2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)cc1",
+   "mol_weight": 496.26,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.566
+  },
+  {
+   "monomerid": 50287095,
+   "bdbm_id": "BDBM50287095",
+   "name": "4,N*1*-Dimethyl-N*3*-(4-pyridin-3-yl-pyrimidin-2-yl)-benzene-1,3-diamine",
+   "smiles": "CNc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 291.35037,
+   "n_activities": 5,
+   "n_targets": 5,
+   "similarity": 0.565
+  },
+  {
+   "monomerid": 120402,
+   "bdbm_id": "BDBM120402",
+   "name": "US8703771, 15",
+   "smiles": "CN1CCN(CC1)C1CCc2cc(ccc12)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2ccncc2)c1",
+   "mol_weight": 519.27,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.565
+  },
+  {
+   "monomerid": 50467688,
+   "bdbm_id": "BDBM50467688",
+   "name": "CHEMBL4279418",
+   "smiles": "Cc1ccc(NC(=O)c2cc(Br)cc(OCCCCn3ccnc3)c2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 598.51,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.562
+  },
+  {
+   "monomerid": 50519734,
+   "bdbm_id": "BDBM50519734",
+   "name": "CHEMBL4589974",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ncc(s2)-c2cccnc2)CC1",
+   "mol_weight": 429.98,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.56
+  },
+  {
+   "monomerid": 111470,
+   "bdbm_id": "BDBM111470",
+   "name": "N-(4-(2-(diethylamino)ethoxy)phenyl)-4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)benzamide (A23)",
+   "smiles": "CCN(CC)CCCOc1ccc(NC(=O)c2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)cc1",
+   "mol_weight": 510.27,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.56
+  },
+  {
+   "monomerid": 120389,
+   "bdbm_id": "BDBM120389",
+   "name": "US8703771, 2",
+   "smiles": "Cc1ccc(NC(=O)c2ccc3C(CCc3c2)N2CCN(CC2)C(=O)OC(C)(C)C)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 605.31,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.559
+  },
+  {
+   "monomerid": 50215563,
+   "bdbm_id": "BDBM50215563",
+   "name": "4-(3,3-dimethyltriaz-1-en-1-yl)-N-(4-methyl-3-{[4-(pyridin-3-yl)pyrimidin-2-yl]amino}phenyl)-3-(trifluoromethyl)benzamide",
+   "smiles": "CN(C)N=Nc1ccc(cc1C(F)(F)F)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 520.19,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.558
+  },
+  {
+   "monomerid": 50215562,
+   "bdbm_id": "BDBM50215562",
+   "name": "4-[3-(hydroxymethyl)-3-methyltriaz-1-en-1-yl]-N-(4-methyl-3-{[4-(pyridin-3-yl)pyrimidin-2-yl]amino}phenyl)-3-(trifluoromethyl)benzamide",
+   "smiles": "CN(CO)N=Nc1ccc(cc1C(F)(F)F)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 536.19,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.557
+  },
+  {
+   "monomerid": 50242163,
+   "bdbm_id": "BDBM50242163",
+   "name": "CHEMBL4092478",
+   "smiles": "CN1CCN(Cc2ccc(NC(=O)c3ccc(C)c(c3)C#Cc3cccnc3)cc2)CC1",
+   "mol_weight": 424.23,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.557
+  },
+  {
+   "monomerid": 50668888,
+   "bdbm_id": "BDBM50668888",
+   "name": "CHEMBL6192206",
+   "smiles": "CCOc1ccc(-c2cn(C)c3cc(NC(=O)c4ccc(C)c(Nc5nccc(-c6cccnc6)n5)c4)ccc23)cn1",
+   "mol_weight": 555.64,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.556
+  },
+  {
+   "monomerid": 50544961,
+   "bdbm_id": "BDBM50544961",
+   "name": "CHEMBL4632839",
+   "smiles": "CN1CCN(CC1)c1cccc(NC(=O)c2ccc(C)c(Nc3nccc(n3)-c3ccc(F)cc3)c2)c1",
+   "mol_weight": 496.59,
+   "n_activities": 4,
+   "n_targets": 4,
+   "similarity": 0.554
+  },
+  {
+   "monomerid": 50105846,
+   "bdbm_id": "BDBM50105846",
+   "name": "CHEMBL3597702",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(CCO)CC3)cc2)cc1-n1cc(cn1)-c1cccnc1",
+   "mol_weight": 496.26,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.554
+  },
+  {
+   "monomerid": 50467683,
+   "bdbm_id": "BDBM50467683",
+   "name": "CHEMBL4286253",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(c(OCCCCn3ccnc3)c2)[N+]([O-])=O)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 564.61,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.554
+  },
+  {
+   "monomerid": 50240218,
+   "bdbm_id": "BDBM50240218",
+   "name": "CHEMBL4059858",
+   "smiles": "CN1CCN(Cc2ccc(cc2C(F)(F)F)C(=O)Nc2ccc(C)c(NC(=O)c3cccc(c3)-c3cccnc3)c2)CC1",
+   "mol_weight": 587.25,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.553
+  },
+  {
+   "monomerid": 111466,
+   "bdbm_id": "BDBM111466",
+   "name": "4-Methyl-3-(4-(pyridin-3-yl) pyrimidin-2-ylamino)-N-(pyrimidin-2-yl) benzamide (A19)",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)NCc1ncccn1",
+   "mol_weight": 397.17,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.553
+  },
+  {
+   "monomerid": 557270,
+   "bdbm_id": "BDBM557270",
+   "name": "US11352354, Example V-c-22",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)c(C(F)(F)F)c2)cc1Nc1nc(-c2cccnc2)c2[nH]ccc2n1",
+   "mol_weight": 600.26,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.553
+  },
+  {
+   "monomerid": 50467692,
+   "bdbm_id": "BDBM50467692",
+   "name": "CHEMBL4293078",
+   "smiles": "Cc1ccc(NC(=O)c2ccccc2OCCCCn2ccnc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 519.61,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.552
+  },
+  {
+   "monomerid": 50155567,
+   "bdbm_id": "BDBM50155567",
+   "name": "1-(3-Dimethylamino-phenyl)-3-[4-methyl-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-urea",
+   "smiles": "CN(C)c1cccc(NC(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)c1",
+   "mol_weight": 439.21,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.551
+  },
+  {
+   "monomerid": 50635863,
+   "bdbm_id": "BDBM50635863",
+   "name": "CHEMBL5560052",
+   "smiles": "Cc1ccc(NC(=O)c2cn(CCNS(=O)(=O)c3ccccc3)nn2)cc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 555.62,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.551
+  },
+  {
+   "monomerid": 50155568,
+   "bdbm_id": "BDBM50155568",
+   "name": "1-(3-Diethylamino-phenyl)-3-[4-methyl-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-urea",
+   "smiles": "CCN(CC)c1cccc(NC(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)c1",
+   "mol_weight": 467.24,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.55
+  },
+  {
+   "monomerid": 50323922,
+   "bdbm_id": "BDBM50323922",
+   "name": "1-(4-chloro-3-(trifluoromethyl)phenyl)-3-(4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)phenyl)urea",
+   "smiles": "Cc1ccc(NC(=O)Nc2ccc(Cl)c(c2)C(F)(F)F)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 498.12,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.55
+  },
+  {
+   "monomerid": 111456,
+   "bdbm_id": "BDBM111456",
+   "name": "N-(3-bromo-5-(trifluoromethyl) phenyl)-4-methyl-3-(4-(pyridin-3-yl) pyrimidin-2-ylamino) benzamide (A9)",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1cc(Br)cc(c1)C(F)(F)F",
+   "mol_weight": 527.06,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.549
+  },
+  {
+   "monomerid": 50105847,
+   "bdbm_id": "BDBM50105847",
+   "name": "CHEMBL3597701",
+   "smiles": "CCN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(c2)-n2cc(cn2)-c2cccnc2)CC1",
+   "mol_weight": 480.26,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.549
+  },
+  {
+   "monomerid": 50425387,
+   "bdbm_id": "BDBM50425387",
+   "name": "CHEMBL2311806",
+   "smiles": "Cc1cn(cn1)-c1cc(C)cc(NC(=O)c2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)c1",
+   "mol_weight": 475.54,
+   "n_activities": 14,
+   "n_targets": 8,
+   "similarity": 0.548
+  },
+  {
+   "monomerid": 106560,
+   "bdbm_id": "BDBM106560",
+   "name": "US8586600, II-55",
+   "smiles": "CN(C)C\\C=C\\C(=O)Nc1ccc(cc1C(F)(F)F)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 575.23,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.544
+  },
+  {
+   "monomerid": 50566599,
+   "bdbm_id": "BDBM50566599",
+   "name": "CHEMBL4851447",
+   "smiles": "COc1cc2CCN(CCc3ccc(NC(=O)c4ccc(C)c(Nc5nccc(n5)-c5ccccc5)c4)cc3)Cc2cc1OC",
+   "mol_weight": 599.74,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.544
+  },
+  {
+   "monomerid": 50105848,
+   "bdbm_id": "BDBM50105848",
+   "name": "CHEMBL3597700",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCCC3)cc2)cc1-n1cc(cn1)-c1cccnc1",
+   "mol_weight": 437.22,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.543
+  },
+  {
+   "monomerid": 50668914,
+   "bdbm_id": "BDBM50668914",
+   "name": "CHEMBL6192551",
+   "smiles": "Cc1ccc(C(=O)Nc2ccc3c(-c4cccnc4)cn(C)c3c2)cc1Nc1nccc(-c2ccc(OC3CC3)cc2)n1",
+   "mol_weight": 566.67,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.543
+  },
+  {
+   "monomerid": 50433226,
+   "bdbm_id": "BDBM50433226",
+   "name": "CHEMBL2375974",
+   "smiles": "COc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1ccc(OCCN2CCCC2)cc1",
+   "mol_weight": 510.59,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.54
+  },
+  {
+   "monomerid": 50467690,
+   "bdbm_id": "BDBM50467690",
+   "name": "CHEMBL4289687",
+   "smiles": "Cc1ccc(OCCCCn2ccnc2)c(c1)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 533.64,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.539
+  },
+  {
+   "monomerid": 106566,
+   "bdbm_id": "BDBM106566",
+   "name": "US8586600, II-52",
+   "smiles": "Cc1cc(nc(Nc2cc(NC(=O)c3ccc(NC(=O)C=C)cc3)ccc2C)n1)-c1cccnc1",
+   "mol_weight": 464.2,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.538
+  },
+  {
+   "monomerid": 111467,
+   "bdbm_id": "BDBM111467",
+   "name": "4-Methyl-3-(4-(pyridin-3-yl) pyrimidin-2-ylamino)-N-(thiazol-2-yl) benzamide (A20)",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)NCc1nccs1",
+   "mol_weight": 402.13,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.538
+  },
+  {
+   "monomerid": 557259,
+   "bdbm_id": "BDBM557259",
+   "name": "US11352354, Example V-c-11",
+   "smiles": "Cc1ccc(C(=O)Nc2ccc(CN3CCN(C)CC3)c(C(F)(F)F)c2)cc1Nc1nc(-c2cccnc2)c2[nH]ccc2n1",
+   "mol_weight": 600.26,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.537
+  },
+  {
+   "monomerid": 86635,
+   "bdbm_id": "BDBM86635",
+   "name": "JNK-IN-10",
+   "smiles": "CN(C)C\\C=C\\C(=O)Nc1cc(ccc1C)C(=O)Nc1ccc(Nc2nccc(n2)-c2cccnc2)cc1",
+   "mol_weight": 507.24,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.536
+  },
+  {
+   "monomerid": 50425385,
+   "bdbm_id": "BDBM50425385",
+   "name": "CHEMBL2311807",
+   "smiles": "Cc1cn(cn1)-c1cc(F)cc(NC(=O)c2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)c1",
+   "mol_weight": 479.51,
+   "n_activities": 14,
+   "n_targets": 8,
+   "similarity": 0.535
+  },
+  {
+   "monomerid": 50240228,
+   "bdbm_id": "BDBM50240228",
+   "name": "CHEMBL4060882",
+   "smiles": "CN1CCN(Cc2ccc(NC(=O)c3ccc(C)c(NC(=O)c4cccc(c4)-c4cccnc4)c3)cc2C(F)(F)F)CC1",
+   "mol_weight": 587.25,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.535
+  },
+  {
+   "monomerid": 50433225,
+   "bdbm_id": "BDBM50433225",
+   "name": "CHEMBL2375975",
+   "smiles": "COc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1ccc(OCCN2CCCCC2)cc1",
+   "mol_weight": 524.61,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.534
+  },
+  {
+   "monomerid": 346132,
+   "bdbm_id": "BDBM346132",
+   "name": "{6-Methyl-2-[3-(4- methyl-piperazin-1- ylmethyl)-5- trifluoromethyl- phenyl]-3H- benzoimidazol-5-yl}- (4-pyridin-3-yl- pyrimidin-2-yl)- amine",
+   "smiles": "Cc1cc2nc(-c3cc(CN4CCN(C)CC4)cc(C(F)(F)F)c3)[nH]c2cc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 558.25,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.533
+  },
+  {
+   "monomerid": 50287098,
+   "bdbm_id": "BDBM50287098",
+   "name": "N-{4-Methyl-3-[4-(1-oxy-pyridin-3-yl)-pyrimidin-2-ylamino]-phenyl}-benzamide",
+   "smiles": "Cc1ccc(NC(=O)c2ccccc2)cc1Nc1nccc(n1)-c1ccc[n+]([O-])c1",
+   "mol_weight": 397.42926,
+   "n_activities": 5,
+   "n_targets": 5,
+   "similarity": 0.532
+  },
+  {
+   "monomerid": 111464,
+   "bdbm_id": "BDBM111464",
+   "name": "4-Methyl-N-(pyridin-2-yl)-3-(4-(pyridin-3-yl) pyrimidin-2-ylamino) benzamide (A17)",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)NCc1ccccn1",
+   "mol_weight": 396.17,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.532
+  },
+  {
+   "monomerid": 111465,
+   "bdbm_id": "BDBM111465",
+   "name": "N-(5-chloropyridin-2-yl)-4-methyl-3-(4-(pyridin-3-yl) pyrimidin-2-yl amino) benzamide (A18)",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)NCc1ccc(Cl)cn1",
+   "mol_weight": 430.13,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.531
+  },
+  {
+   "monomerid": 50256928,
+   "bdbm_id": "BDBM50256928",
+   "name": "(E)-N-hydroxy-3-(4-((4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)phenylamino)methyl)phenyl)acrylamide",
+   "smiles": "Cc1ccc(NCc2ccc(\\C=C\\C(=O)NO)cc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 452.50776,
+   "n_activities": 5,
+   "n_targets": 5,
+   "similarity": 0.53
+  },
+  {
+   "monomerid": 68207,
+   "bdbm_id": "BDBM68207",
+   "name": "Type I progenitor, 1",
+   "smiles": "Cc1ccc(Cl)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 296.08,
+   "n_activities": 2,
+   "n_targets": 1,
+   "similarity": 0.529
+  },
+  {
+   "monomerid": 50175493,
+   "bdbm_id": "BDBM50175493",
+   "name": "N-[3-(4-Pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-benzamide",
+   "smiles": "O=C(Nc1cccc(Nc2nccc(n2)-c2cccnc2)c1)c1ccccc1",
+   "mol_weight": 367.14,
+   "n_activities": 20,
+   "n_targets": 9,
+   "similarity": 0.528
+  },
+  {
+   "monomerid": 50290421,
+   "bdbm_id": "BDBM50290421",
+   "name": "N-[3-(4-Pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-isonicotinamide",
+   "smiles": "O=C(Nc1cccc(Nc2nccc(n2)-c2cccnc2)c1)c1ccncc1",
+   "mol_weight": 368.39134,
+   "n_activities": 8,
+   "n_targets": 8,
+   "similarity": 0.528
+  },
+  {
+   "monomerid": 50290412,
+   "bdbm_id": "BDBM50290412",
+   "name": "4-Fluoro-N-[3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-benzamide",
+   "smiles": "Fc1ccc(cc1)C(=O)Nc1cccc(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 385.39374,
+   "n_activities": 6,
+   "n_targets": 6,
+   "similarity": 0.527
+  },
+  {
+   "monomerid": 106561,
+   "bdbm_id": "BDBM106561",
+   "name": "US8586600, III-6",
+   "smiles": "CN(C)C\\C=C\\C(=O)Nc1ccc(NC(=O)c2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)cc1C(F)(F)F",
+   "mol_weight": 575.23,
+   "n_activities": 5,
+   "n_targets": 3,
+   "similarity": 0.527
+  },
+  {
+   "monomerid": 50132705,
+   "bdbm_id": "BDBM50132705",
+   "name": "4-Amino-N-[3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-benzamide",
+   "smiles": "Nc1ccc(cc1)C(=O)Nc1cccc(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 382.15,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.527
+  },
+  {
+   "monomerid": 50432863,
+   "bdbm_id": "BDBM50432863",
+   "name": "CHEMBL206319",
+   "smiles": "CN(C)C1CN(Cc2ccc(cc2C(F)(F)F)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncnc3)c2)C1",
+   "mol_weight": 562.59,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.527
+  },
+  {
+   "monomerid": 50467679,
+   "bdbm_id": "BDBM50467679",
+   "name": "CHEMBL4281817",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(Br)cc2OCCCCn2ccnc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 598.51,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.527
+  },
+  {
+   "monomerid": 50467684,
+   "bdbm_id": "BDBM50467684",
+   "name": "CHEMBL4278359",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(I)cc2OCCCCn2ccnc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 645.51,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.527
+  },
+  {
+   "monomerid": 50467689,
+   "bdbm_id": "BDBM50467689",
+   "name": "CHEMBL4290101",
+   "smiles": "COc1ccc(C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)c(OCCCCn2ccnc2)c1",
+   "mol_weight": 549.64,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.527
+  },
+  {
+   "monomerid": 50467691,
+   "bdbm_id": "BDBM50467691",
+   "name": "CHEMBL4286268",
+   "smiles": "Cc1ccc(NC(=O)c2cc(I)ccc2OCCCCn2ccnc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 645.51,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.527
+  },
+  {
+   "monomerid": 112253,
+   "bdbm_id": "BDBM112253",
+   "name": "US8623889, 251",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(c2)-c2ccc3cc(N)ncc3c2)CC1",
+   "mol_weight": 465.25,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.524
+  },
+  {
+   "monomerid": 50105852,
+   "bdbm_id": "BDBM50105852",
+   "name": "CHEMBL3597612",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCOCC3)cc2)cc1-n1cc(cn1)-c1cccnc1",
+   "mol_weight": 453.22,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.524
+  },
+  {
+   "monomerid": 50544972,
+   "bdbm_id": "BDBM50544972",
+   "name": "CHEMBL4642128",
+   "smiles": "CN1CCN(CC1)c1cc(NC(=O)c2ccc(C)c(Nc3nccc(n3)-c3ccccc3)c2)cc(c1)-n1cnc(C)c1",
+   "mol_weight": 558.69,
+   "n_activities": 4,
+   "n_targets": 4,
+   "similarity": 0.523
+  },
+  {
+   "monomerid": 239583,
+   "bdbm_id": "BDBM239583",
+   "name": "US9394309, 36",
+   "smiles": "CN1CCN(Cc2cc(cc(c2)S(F)(F)(F)(F)F)C(=O)Nc2ccc(C)c(c2)-n2ccn3nc(cc23)-c2cccnc2)CC1",
+   "mol_weight": 631.22,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.522
+  },
+  {
+   "monomerid": 346131,
+   "bdbm_id": "BDBM346131",
+   "name": "{6-Methyl-2-[3-(4- methyl-piperazin-1- ylmethyl)-5-oxazol- 5-yl-phenyl]-3H- benzoimidazol-5-yl}- (4-pyridin-3-yl- pyrimidin-2-yl)- amine",
+   "smiles": "Cc1cc2nc(-c3cc(CN4CCN(C)CC4)cc(-c4cnco4)c3)[nH]c2cc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 557.27,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.522
+  },
+  {
+   "monomerid": 50433228,
+   "bdbm_id": "BDBM50433228",
+   "name": "CHEMBL2375976",
+   "smiles": "COc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1ccc(OCCN2CCOCC2)cc1",
+   "mol_weight": 526.59,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.522
+  },
+  {
+   "monomerid": 50178612,
+   "bdbm_id": "BDBM50178612",
+   "name": "N-[3-(4,5'-BIPYRIMIDIN-2-YLAMINO)-4-METHYLPHENYL]-4-{[(3S)-3-(DIMETHYLAMINO)PYRROLIDIN-1-YL]METHYL}-3-(TRIFLUOROMETHYL)BENZAMIDE",
+   "smiles": "CN(C)[C@H]1CCN(Cc2ccc(cc2C(F)(F)F)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncnc3)c2)C1",
+   "mol_weight": 576.26,
+   "n_activities": 5,
+   "n_targets": 3,
+   "similarity": 0.521
+  },
+  {
+   "monomerid": 50208747,
+   "bdbm_id": "BDBM50208747",
+   "name": "(R)-4-((3-(dimethylamino)pyrrolidin-1-yl)methyl)-N-(4-methyl-3-(4-(pyrimidin-5-yl)pyrimidin-2-ylamino)phenyl)-3-(trifluoromethyl)benzamide hydrochloride",
+   "smiles": "CN(C)[C@@H]1CCN(Cc2ccc(cc2C(F)(F)F)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncnc3)c2)C1",
+   "mol_weight": 576.26,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.521
+  },
+  {
+   "monomerid": 50635864,
+   "bdbm_id": "BDBM50635864",
+   "name": "CHEMBL5557177",
+   "smiles": "Cc1ccc(NC(=O)c2cn(CCNS(=O)(=O)c3ccc(F)cc3C)nn2)cc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 587.64,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.521
+  },
+  {
+   "monomerid": 50566596,
+   "bdbm_id": "BDBM50566596",
+   "name": "CHEMBL4863144",
+   "smiles": "COc1cc2CCN(CCc3ccc(NC(=O)c4ccc(C)c(Nc5nccc(n5)-c5cccc(O)c5)c4)cc3)Cc2cc1OC",
+   "mol_weight": 615.73,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.521
+  },
+  {
+   "monomerid": 50287087,
+   "bdbm_id": "BDBM50287087",
+   "name": "N-[4-Methyl-3-(4-thiophen-2-yl-pyrimidin-2-ylamino)-phenyl]-benzamide",
+   "smiles": "Cc1ccc(NC(=O)c2ccccc2)cc1Nc1nccc(n1)-c1cccs1",
+   "mol_weight": 386.46952,
+   "n_activities": 6,
+   "n_targets": 6,
+   "similarity": 0.519
+  },
+  {
+   "monomerid": 50256976,
+   "bdbm_id": "BDBM50256976",
+   "name": "N1-(2-aminophenyl)-N4-(4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)phenyl)terephthalamide",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(cc2)C(=O)Nc2ccccc2N)cc1Nc1ncc(cn1)-c1cccnc1",
+   "mol_weight": 515.5652,
+   "n_activities": 5,
+   "n_targets": 5,
+   "similarity": 0.519
+  },
+  {
+   "monomerid": 802278,
+   "bdbm_id": "BDBM802278",
+   "name": "4-(2-((3-fluoro-4-((4- methylpiperazin-1- yl)methyl)phenyl)amino)pyrimidin- 4-yl)-N-hydroxybenzamide",
+   "smiles": "CN1CCN(Cc2ccc(Nc3nccc(-c4ccc(C(=O)NO)cc4)n3)cc2F)CC1",
+   "mol_weight": 436.2,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.519
+  },
+  {
+   "monomerid": 50599047,
+   "bdbm_id": "BDBM50599047",
+   "name": "CHEMBL5172294",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(c2)C#Cc2cnc3cccnn23)CC1",
+   "mol_weight": 464.57,
+   "n_activities": 2,
+   "n_targets": 1,
+   "similarity": 0.518
+  },
+  {
+   "monomerid": 50237710,
+   "bdbm_id": "BDBM50237710",
+   "name": "NILOTINIB",
+   "smiles": "Cc1cn(cn1)-c1cc(NC(=O)c2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)cc(c1)C(F)(F)F",
+   "mol_weight": 529.18,
+   "n_activities": 614,
+   "n_targets": 409,
+   "similarity": 0.517
+  },
+  {
+   "monomerid": 50433230,
+   "bdbm_id": "BDBM50433230",
+   "name": "CHEMBL2375977",
+   "smiles": "COc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1ccc(OCCCN2CCOCC2)cc1",
+   "mol_weight": 540.61,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.516
+  },
+  {
+   "monomerid": 50290417,
+   "bdbm_id": "BDBM50290417",
+   "name": "2-Amino-pyrimidine, 19",
+   "smiles": "O=C(Nc1cccc(Nc2nccc(n2)-c2cccnc2)c1)c1cccnc1",
+   "mol_weight": 368.39134,
+   "n_activities": 10,
+   "n_targets": 10,
+   "similarity": 0.514
+  },
+  {
+   "monomerid": 50255855,
+   "bdbm_id": "BDBM50255855",
+   "name": "N-phenyl-4-((4-(pyridin-3-yl)pyrimidin-2-ylamino)methyl)benzamide",
+   "smiles": "O=C(Nc1ccccc1)c1ccc(CNc2nccc(n2)-c2cccnc2)cc1",
+   "mol_weight": 381.42986,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.514
+  },
+  {
+   "monomerid": 50287089,
+   "bdbm_id": "BDBM50287089",
+   "name": "N-Methyl-N-[4-methyl-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-benzamide",
+   "smiles": "CN(C(=O)c1ccccc1)c1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 395.45644,
+   "n_activities": 5,
+   "n_targets": 5,
+   "similarity": 0.513
+  },
+  {
+   "monomerid": 50311009,
+   "bdbm_id": "BDBM50311009",
+   "name": "N-(4-(2-(4-((4-methylpiperazin-1-yl)methyl)phenylamino)pyrimidin-4-yl)phenyl)methanesulfonamide",
+   "smiles": "CN1CCN(Cc2ccc(Nc3nccc(n3)-c3ccc(NS(C)(=O)=O)cc3)cc2)CC1",
+   "mol_weight": 452.57241,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.513
+  },
+  {
+   "monomerid": 86631,
+   "bdbm_id": "BDBM86631",
+   "name": "JNK-IN-6",
+   "smiles": "CCC(=O)Nc1cccc(c1)C(=O)Nc1ccc(Nc2nccc(n2)-c2cccnc2)cc1",
+   "mol_weight": 438.18,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.513
+  },
+  {
+   "monomerid": 50264990,
+   "bdbm_id": "BDBM50264990",
+   "name": "N-(4'-(2-aminothiazol-4-yl)-6-methylbiphenyl-3-yl)-4-((4-methylpiperazin-1-yl)methyl)benzamide",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(c2)-c2ccc(cc2)-c2csc(N)n2)CC1",
+   "mol_weight": 497.65434,
+   "n_activities": 10,
+   "n_targets": 10,
+   "similarity": 0.512
+  },
+  {
+   "monomerid": 50323918,
+   "bdbm_id": "BDBM50323918",
+   "name": "1-(3-tert-butyl-1-p-tolyl-1H-pyrazol-5-yl)-3-(4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)phenyl)urea",
+   "smiles": "Cc1ccc(cc1)-n1nc(cc1NC(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1)C(C)(C)C",
+   "mol_weight": 532.27,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.512
+  },
+  {
+   "monomerid": 50008100,
+   "bdbm_id": "BDBM50008100",
+   "name": "CHEMBL3234736",
+   "smiles": "CN1CCN(Cc2ccc(NC(=O)c3ccc(C)c(NC(=O)c4cccnc4)c3)cc2C(F)(F)F)CC1",
+   "mol_weight": 511.22,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.512
+  },
+  {
+   "monomerid": 50433229,
+   "bdbm_id": "BDBM50433229",
+   "name": "CHEMBL2375895",
+   "smiles": "COc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1cccc(Cl)c1",
+   "mol_weight": 431.87,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.512
+  },
+  {
+   "monomerid": 50433232,
+   "bdbm_id": "BDBM50433232",
+   "name": "CHEMBL2375889",
+   "smiles": "COc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1ccc(F)c(Cl)c1",
+   "mol_weight": 449.86,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.512
+  },
+  {
+   "monomerid": 50443901,
+   "bdbm_id": "BDBM50443901",
+   "name": "CHEMBL3091567",
+   "smiles": "CN1CCN(Cc2ccc(NC(=O)c3ccc(Nc4ncc(C)c(n4)-c4ccc(OC(F)(F)F)cc4)cc3)cc2)CC1",
+   "mol_weight": 576.61,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.512
+  },
+  {
+   "monomerid": 50558782,
+   "bdbm_id": "BDBM50558782",
+   "name": "CHEMBL4781579",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(c2)-n2cc(cn2)-c2cnc3cccnn23)CC1",
+   "mol_weight": 506.61,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.511
+  },
+  {
+   "monomerid": 50566593,
+   "bdbm_id": "BDBM50566593",
+   "name": "CHEMBL4866124",
+   "smiles": "COc1cc2CCN(CCc3ccc(NC(=O)c4ccc(C)c(Nc5nccc(n5)-c5ccc(C)cc5)c4)cc3)Cc2cc1OC",
+   "mol_weight": 613.76,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.511
+  },
+  {
+   "monomerid": 50287097,
+   "bdbm_id": "BDBM50287097",
+   "name": "4-Methyl-N*3*-(4-pyridin-3-yl-pyrimidin-2-yl)-benzene-1,3-diamine",
+   "smiles": "Cc1ccc(N)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 277.3238,
+   "n_activities": 15,
+   "n_targets": 9,
+   "similarity": 0.507
+  },
+  {
+   "monomerid": 50255915,
+   "bdbm_id": "BDBM50255915",
+   "name": "N-(2-aminophenyl)-4-(4-(pyridin-3-yl)pyrimidin-2-ylamino)benzamide",
+   "smiles": "Nc1ccccc1NC(=O)c1ccc(Nc2nccc(n2)-c2cccnc2)cc1",
+   "mol_weight": 382.41792,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.507
+  },
+  {
+   "monomerid": 50290411,
+   "bdbm_id": "BDBM50290411",
+   "name": "4-Cyano-N-[3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-benzamide",
+   "smiles": "O=C(Nc1cccc(Nc2nccc(n2)-c2cccnc2)c1)c1ccc(cc1)C#N",
+   "mol_weight": 392.41274,
+   "n_activities": 8,
+   "n_targets": 8,
+   "similarity": 0.506
+  },
+  {
+   "monomerid": 50311031,
+   "bdbm_id": "BDBM50311031",
+   "name": "N-(cyanomethyl)-4-(2-(4-((4-ethylpiperazin-1-yl)methyl)phenylamino)pyrimidin-4-yl)benzamide",
+   "smiles": "CCN1CCN(Cc2ccc(Nc3nccc(n3)-c3ccc(cc3)C(=O)NCC#N)cc2)CC1",
+   "mol_weight": 455.55475,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.506
+  },
+  {
+   "monomerid": 50155563,
+   "bdbm_id": "BDBM50155563",
+   "name": "1-{2-[(Cyclohexyl-methyl-amino)-methyl]-phenyl}-3-[4-methyl-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-urea",
+   "smiles": "CN(Cc1ccccc1NC(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1)C1CCCCC1",
+   "mol_weight": 521.29,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.506
+  },
+  {
+   "monomerid": 50265032,
+   "bdbm_id": "BDBM50265032",
+   "name": "N-(6-methyl-4'-(5-methyl-1,2,4-oxadiazol-3-yl)biphenyl-3-yl)-4-((4-methylpiperazin-1-yl)methyl)benzamide",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(c2)-c2ccc(cc2)-c2noc(C)n2)CC1",
+   "mol_weight": 481.58874,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.506
+  },
+  {
+   "monomerid": 50433224,
+   "bdbm_id": "BDBM50433224",
+   "name": "CHEMBL2375898",
+   "smiles": "COc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1ccncc1",
+   "mol_weight": 398.42,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.506
+  },
+  {
+   "monomerid": 50433231,
+   "bdbm_id": "BDBM50433231",
+   "name": "CHEMBL2375891",
+   "smiles": "COc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1ccc(Br)cc1",
+   "mol_weight": 476.33,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.506
+  },
+  {
+   "monomerid": 50607531,
+   "bdbm_id": "BDBM50607531",
+   "name": "CHEMBL5219553",
+   "smiles": "CN1CCN(Cc2ccc(NC(=O)c3ccc(C)c(Nc4cc(ccn4)-c4cncnc4)c3)cc2C(F)(F)F)CC1",
+   "mol_weight": 561.61,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.506
+  },
+  {
+   "monomerid": 50432864,
+   "bdbm_id": "BDBM50432864",
+   "name": "CHEMBL2376494",
+   "smiles": "CN(C)CC1CCN(Cc2ccc(cc2C(F)(F)F)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncnc3)c2)C1",
+   "mol_weight": 590.64,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.505
+  },
+  {
+   "monomerid": 50566592,
+   "bdbm_id": "BDBM50566592",
+   "name": "CHEMBL4852415",
+   "smiles": "COc1ccc(cc1)-c1ccnc(Nc2cc(ccc2C)C(=O)Nc2ccc(CCN3CCc4cc(OC)c(OC)cc4C3)cc2)n1",
+   "mol_weight": 629.76,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.505
+  },
+  {
+   "monomerid": 86633,
+   "bdbm_id": "BDBM86633",
+   "name": "JNK-IN-8",
+   "smiles": "CN(C)C\\C=C\\C(=O)Nc1cccc(c1)C(=O)Nc1ccc(Nc2nccc(n2)-c2cccnc2)c(C)c1",
+   "mol_weight": 507.24,
+   "n_activities": 27,
+   "n_targets": 3,
+   "similarity": 0.5
+  },
+  {
+   "monomerid": 86627,
+   "bdbm_id": "BDBM86627",
+   "name": "JNK-IN-2",
+   "smiles": "CN(C)C\\C=C\\C(=O)Nc1ccc(cc1)C(=O)Nc1cccc(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 493.22,
+   "n_activities": 11,
+   "n_targets": 3,
+   "similarity": 0.5
+  },
+  {
+   "monomerid": 50287092,
+   "bdbm_id": "BDBM50287092",
+   "name": "N-Benzoyl-N-[4-methyl-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-benzamide",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)N(C(=O)c1ccccc1)C(=O)c1ccccc1",
+   "mol_weight": 485.53592,
+   "n_activities": 5,
+   "n_targets": 5,
+   "similarity": 0.5
+  },
+  {
+   "monomerid": 50666053,
+   "bdbm_id": "BDBM50666053",
+   "name": "CHEMBL6177069",
+   "smiles": "Cc1cc(NC(=O)c2cccc(NC(=O)/C=CCN(C)C)c2)ccc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 507.6,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.5
+  },
+  {
+   "monomerid": 50240225,
+   "bdbm_id": "BDBM50240225",
+   "name": "CHEMBL4072266",
+   "smiles": "CN1CCN(Cc2ccc(NC(=O)c3ccc(C)c(NC(=O)c4cccc(c4)-c4cccs4)c3)cc2)CC1",
+   "mol_weight": 524.22,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.5
+  },
+  {
+   "monomerid": 50599039,
+   "bdbm_id": "BDBM50599039",
+   "name": "CHEMBL5208448",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1ncc(s1)C(=O)Nc1c(C)cccc1Cl",
+   "mol_weight": 556.05,
+   "n_activities": 2,
+   "n_targets": 1,
+   "similarity": 0.5
+  },
+  {
+   "monomerid": 50132704,
+   "bdbm_id": "BDBM50132704",
+   "name": "4-[3-(2-methoxyethyl)triazanyl]-N-[3-(4-pyridin-3-ylpyrimidineamino)phenyl]benzamide",
+   "smiles": "COCCN=NNc1ccc(cc1)C(=O)Nc1cccc(Nc2nccc(n2)-c2cccnc2)c1 |w:4.3|",
+   "mol_weight": 468.2,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.5
+  },
+  {
+   "monomerid": 50443900,
+   "bdbm_id": "BDBM50443900",
+   "name": "CHEMBL3091568",
+   "smiles": "CN1CCN(Cc2cccc(NC(=O)c3ccc(Nc4ncc(C)c(n4)-c4ccc(OC(F)(F)F)cc4)cc3)c2)CC1",
+   "mol_weight": 576.61,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.5
+  },
+  {
+   "monomerid": 50566597,
+   "bdbm_id": "BDBM50566597",
+   "name": "CHEMBL4871513",
+   "smiles": "COc1cc2CCN(CCc3ccc(NC(=O)c4ccc(C)c(Nc5nccc(n5)-c5ccc(F)cc5)c4)cc3)Cc2cc1OC",
+   "mol_weight": 617.73,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.5
+  },
+  {
+   "monomerid": 50203452,
+   "bdbm_id": "BDBM50203452",
+   "name": "CHEMBL3972633",
+   "smiles": "CN1CCN(Cc2ccc(NC(=O)c3ccc(C)c(c3)-c3noc(n3)-c3cccnc3)cc2C(F)(F)F)CC1",
+   "mol_weight": 536.21,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.495
+  },
+  {
+   "monomerid": 50257153,
+   "bdbm_id": "BDBM50257153",
+   "name": "N1-hydroxy-N4-(4-methyl-3-(4-(pyridin-3-yl)thiazol-2-ylamino)phenyl)terephthalamide",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(cc2)C(=O)NO)cc1Nc1ncc(s1)-c1cccnc1",
+   "mol_weight": 445.49366,
+   "n_activities": 5,
+   "n_targets": 5,
+   "similarity": 0.494
+  },
+  {
+   "monomerid": 50311030,
+   "bdbm_id": "BDBM50311030",
+   "name": "N-Cyanomethyl-4-{2-[4-(1,1-dioxo-1lambda*6*-thiomorpholin-4-ylmethyl)-phenylamino]-pyrimidin-4-yl}-benzamide",
+   "smiles": "O=C(NCC#N)c1ccc(cc1)-c1ccnc(Nc2ccc(CN3CCS(=O)(=O)CC3)cc2)n1",
+   "mol_weight": 476.55075,
+   "n_activities": 4,
+   "n_targets": 2,
+   "similarity": 0.494
+  },
+  {
+   "monomerid": 86629,
+   "bdbm_id": "BDBM86629",
+   "name": "JNK-IN-4",
+   "smiles": "CN(C)C\\C=C\\C(=O)NCc1ccc(cc1)C(=O)Nc1cccc(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 507.24,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.494
+  },
+  {
+   "monomerid": 112149,
+   "bdbm_id": "BDBM112149",
+   "name": "US8623889, 147",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(c2)-c2ccc3cc(NC(=O)C4CC4)ncc3c2)CC1",
+   "mol_weight": 533.28,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.494
+  },
+  {
+   "monomerid": 50433234,
+   "bdbm_id": "BDBM50433234",
+   "name": "CHEMBL2375892",
+   "smiles": "COc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1cccc(F)c1",
+   "mol_weight": 415.42,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.494
+  },
+  {
+   "monomerid": 50566591,
+   "bdbm_id": "BDBM50566591",
+   "name": "CHEMBL4850619",
+   "smiles": "COc1cc2CCN(CCc3ccc(NC(=O)c4ccc(C)c(Nc5nccc(n5)-c5cccs5)c4)cc3)Cc2cc1OC",
+   "mol_weight": 605.76,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.49
+  },
+  {
+   "monomerid": 50240211,
+   "bdbm_id": "BDBM50240211",
+   "name": "CHEMBL4104586",
+   "smiles": "CN1CCN(Cc2ccc(cc2C(F)(F)F)C(=O)Nc2ccc(C)c(NC(=O)c3cccc(c3)-c3ccccn3)c2)CC1",
+   "mol_weight": 587.25,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.489
+  },
+  {
+   "monomerid": 50240219,
+   "bdbm_id": "BDBM50240219",
+   "name": "CHEMBL4100838",
+   "smiles": "CN1CCN(Cc2ccc(cc2C(F)(F)F)C(=O)Nc2ccc(C)c(NC(=O)c3cccc(c3)-c3cncnc3)c2)CC1",
+   "mol_weight": 588.25,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.489
+  },
+  {
+   "monomerid": 50558789,
+   "bdbm_id": "BDBM50558789",
+   "name": "CHEMBL4753215",
+   "smiles": "CN1CCCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(c2)-n2cc(cn2)-c2cnc3ccnn3c2)CC1",
+   "mol_weight": 520.64,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.489
+  },
+  {
+   "monomerid": 50566598,
+   "bdbm_id": "BDBM50566598",
+   "name": "CHEMBL4876765",
+   "smiles": "COc1cc2CCN(CCc3ccc(NC(=O)c4ccc(C)c(Nc5nccc(n5)-c5ccccn5)c4)cc3)Cc2cc1OC",
+   "mol_weight": 600.72,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.489
+  },
+  {
+   "monomerid": 50257029,
+   "bdbm_id": "BDBM50257029",
+   "name": "N2-(2-aminophenyl)-N5-(4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)phenyl)pyridine-2,5-dicarboxamide",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(nc2)C(=O)Nc2ccccc2N)cc1Nc1ncc(cn1)-c1cccnc1",
+   "mol_weight": 516.55326,
+   "n_activities": 5,
+   "n_targets": 5,
+   "similarity": 0.488
+  },
+  {
+   "monomerid": 21627,
+   "bdbm_id": "BDBM21627",
+   "name": "Phenylisothiazole-5-carboxamide, 15",
+   "smiles": "CN1CCN(Cc2cccc(c2)C(=O)Nc2cc(NC(=O)c3cc(ns3)-c3ccccc3)ccc2C)CC1",
+   "mol_weight": 525.22,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.488
+  },
+  {
+   "monomerid": 50008104,
+   "bdbm_id": "BDBM50008104",
+   "name": "CHEMBL3234740",
+   "smiles": "CN1CCN(Cc2ccc(NC(=O)c3ccc(C)c(NC(=O)c4cnccn4)c3)cc2C(F)(F)F)CC1",
+   "mol_weight": 512.21,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.488
+  },
+  {
+   "monomerid": 50242164,
+   "bdbm_id": "BDBM50242164",
+   "name": "CHEMBL4082210",
+   "smiles": "CN1CCN(Cc2ccc(NC(=O)c3ccc(C)c(c3)C#Cc3ccccn3)cc2)CC1",
+   "mol_weight": 424.23,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.488
+  },
+  {
+   "monomerid": 50433233,
+   "bdbm_id": "BDBM50433233",
+   "name": "CHEMBL2375900",
+   "smiles": "COc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1ncccn1",
+   "mol_weight": 399.41,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.487
+  },
+  {
+   "monomerid": 50068603,
+   "bdbm_id": "BDBM50068603",
+   "name": "CHEMBL3402357",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2cccc(NC(C)=O)c2)CC1",
+   "mol_weight": 366.21,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.486
+  },
+  {
+   "monomerid": 50566590,
+   "bdbm_id": "BDBM50566590",
+   "name": "CHEMBL4872789",
+   "smiles": "COc1cc2CCN(CCc3ccc(NC(=O)c4ccc(C)c(Nc5nccc(n5)-c5ccccc5O)c4)cc3)Cc2cc1OC",
+   "mol_weight": 615.73,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.484
+  },
+  {
+   "monomerid": 50668887,
+   "bdbm_id": "BDBM50668887",
+   "name": "CHEMBL6191376",
+   "smiles": "CCOc1ccc(-c2cn(C)c3cc(NC(=O)c4ccc(C)c(Nc5nccc(-c6ccccc6)n5)c4)ccc23)cn1",
+   "mol_weight": 554.65,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.484
+  },
+  {
+   "monomerid": 50599041,
+   "bdbm_id": "BDBM50599041",
+   "name": "CHEMBL5202391",
+   "smiles": "CN1CCN(Cc2ccc(NC(=O)c3ccc(C)c(c3)C#Cc3cnc4cccnn34)cc2)CC1",
+   "mol_weight": 464.57,
+   "n_activities": 2,
+   "n_targets": 1,
+   "similarity": 0.483
+  },
+  {
+   "monomerid": 346121,
+   "bdbm_id": "BDBM346121",
+   "name": "[6-Methyl-2-(3- morpholin-4- ylmethyl-phenyl)-3H- benzoimidazol-5-yl]- (4-pyridin-3-yl- pyrimidin-2-yl)- amine",
+   "smiles": "Cc1cc2nc(-c3cccc(CN4CCOCC4)c3)[nH]c2cc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 477.23,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.483
+  },
+  {
+   "monomerid": 50311026,
+   "bdbm_id": "BDBM50311026",
+   "name": "N-(cyanomethyl)-4-(2-(4-(morpholinomethyl)phenylamino)pyrimidin-4-yl)benzamide",
+   "smiles": "O=C(NCC#N)c1ccc(cc1)-c1ccnc(Nc2ccc(CN3CCOCC3)cc2)n1",
+   "mol_weight": 428.48635,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.482
+  },
+  {
+   "monomerid": 50529789,
+   "bdbm_id": "BDBM50529789",
+   "name": "CHEMBL4468582",
+   "smiles": "Cc1ccc(C(=O)Nc2ccc(CN3CCN(C)CC3)cc2)cc1-c1ccc2cn[nH]c2c1",
+   "mol_weight": 439.56,
+   "n_activities": 2,
+   "n_targets": 1,
+   "similarity": 0.482
+  },
+  {
+   "monomerid": 50311008,
+   "bdbm_id": "BDBM50311008",
+   "name": "N-(4-(2-(3-((4-methylpiperazin-1-yl)methyl)phenylamino)pyrimidin-4-yl)phenyl)methanesulfonamide",
+   "smiles": "CN1CCN(Cc2cccc(Nc3nccc(n3)-c3ccc(NS(C)(=O)=O)cc3)c2)CC1",
+   "mol_weight": 452.57241,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.481
+  },
+  {
+   "monomerid": 50287093,
+   "bdbm_id": "BDBM50287093",
+   "name": "(2-Methyl-5-nitro-phenyl)-(4-pyridin-3-yl-pyrimidin-2-yl)-amine",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)[N+]([O-])=O",
+   "mol_weight": 307.30672,
+   "n_activities": 6,
+   "n_targets": 6,
+   "similarity": 0.48
+  },
+  {
+   "monomerid": 50290428,
+   "bdbm_id": "BDBM50290428",
+   "name": "Pyridine-2-carboxylic acid [3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-amide",
+   "smiles": "O=C(Nc1cccc(Nc2nccc(n2)-c2cccnc2)c1)c1ccccn1",
+   "mol_weight": 368.39134,
+   "n_activities": 5,
+   "n_targets": 5,
+   "similarity": 0.48
+  },
+  {
+   "monomerid": 50566595,
+   "bdbm_id": "BDBM50566595",
+   "name": "CHEMBL4855618",
+   "smiles": "COc1cc2CCN(CCc3ccc(NC(=O)c4ccc(C)c(Nc5nccc(n5)-c5ccco5)c4)cc3)Cc2cc1OC",
+   "mol_weight": 589.7,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.479
+  },
+  {
+   "monomerid": 50593434,
+   "bdbm_id": "BDBM50593434",
+   "name": "CHEMBL5183850",
+   "smiles": "Cc1ccc(NC(=O)NNc2cc(-c3ccc(F)cc3)c3cnn(C)c3n2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 560.6,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.479
+  },
+  {
+   "monomerid": 50668892,
+   "bdbm_id": "BDBM50668892",
+   "name": "CHEMBL6191663",
+   "smiles": "CCOc1ccc(-c2cn(C)c3cc(NC(=O)c4ccc(C)c(Nc5nccc(-c6ccc(CC)cc6)n5)c4)ccc23)cn1",
+   "mol_weight": 582.71,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.479
+  },
+  {
+   "monomerid": 50607523,
+   "bdbm_id": "BDBM50607523",
+   "name": "CHEMBL5221049",
+   "smiles": "CN1CCN(CC1)c1cc(NC(=O)c2ccc(C)c(Nc3cc(ccn3)-c3cccnc3)c2)cc(c1)C(F)(F)F",
+   "mol_weight": 546.6,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.478
+  },
+  {
+   "monomerid": 50240217,
+   "bdbm_id": "BDBM50240217",
+   "name": "CHEMBL4063659",
+   "smiles": "CN1CCN(Cc2ccc(cc2C(F)(F)F)C(=O)Nc2ccc(C)c(NC(=O)c3cccc(c3)-c3ccncc3)c2)CC1",
+   "mol_weight": 587.25,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.477
+  },
+  {
+   "monomerid": 50600442,
+   "bdbm_id": "BDBM50600442",
+   "name": "CHEMBL5200042",
+   "smiles": "CCOP(=O)(OCC)C(Nc1ccc(C)c(Nc2nccc(-c3cccnc3)n2)c1)c1ccn[nH]1",
+   "mol_weight": 493.51,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.477
+  },
+  {
+   "monomerid": 86634,
+   "bdbm_id": "BDBM86634",
+   "name": "JNK-IN-9",
+   "smiles": "CN(C)C\\C=C\\C(=O)Nc1ccc(C)c(c1)C(=O)Nc1ccc(Nc2nccc(n2)-c2cccnc2)cc1",
+   "mol_weight": 507.24,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.477
+  },
+  {
+   "monomerid": 50433223,
+   "bdbm_id": "BDBM50433223",
+   "name": "CHEMBL2375890",
+   "smiles": "COc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1cccc(c1)C(F)(F)F",
+   "mol_weight": 465.43,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.477
+  },
+  {
+   "monomerid": 50433235,
+   "bdbm_id": "BDBM50433235",
+   "name": "CHEMBL2375972",
+   "smiles": "COc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1ccc(OCCN(C)C)cc1",
+   "mol_weight": 484.55,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.477
+  },
+  {
+   "monomerid": 50265196,
+   "bdbm_id": "BDBM50265196",
+   "name": "N-(4-methyl-3-(2-oxo-1,2-dihydroquinolin-6-yl)phenyl)-4-((4-methylpiperazin-1-yl)methyl)benzamide",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1-c1ccc2[nH]c(=O)ccc2c1",
+   "mol_weight": 466.5741,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.476
+  },
+  {
+   "monomerid": 50421671,
+   "bdbm_id": "BDBM50421671",
+   "name": "CHEMBL5266831",
+   "smiles": "CN1CCN(CC1)c1ccc(Nc2nccc(n2)-c2cccnc2)cc1C(F)(F)F",
+   "mol_weight": 414.44,
+   "n_activities": 4,
+   "n_targets": 2,
+   "similarity": 0.475
+  },
+  {
+   "monomerid": 86630,
+   "bdbm_id": "BDBM86630",
+   "name": "JNK-IN-5",
+   "smiles": "C=CC(=O)Nc1cccc(c1)C(=O)Nc1ccc(Nc2nccc(n2)-c2cccnc2)cc1",
+   "mol_weight": 436.16,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.475
+  },
+  {
+   "monomerid": 50058768,
+   "bdbm_id": "BDBM50058768",
+   "name": "CHEMBL3335413",
+   "smiles": "FC(F)(F)c1ccc(NC(=O)c2ccc(CN3CCN(Cc4cccnc4)CC3)cc2)cc1",
+   "mol_weight": 454.2,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.474
+  },
+  {
+   "monomerid": 50668906,
+   "bdbm_id": "BDBM50668906",
+   "name": "CHEMBL6191485",
+   "smiles": "CCOc1ccc(-c2cn(C)c3cc(NC(=O)c4ccc(C)c(Nc5nccc(-c6cccc(Cl)c6)n5)c4)ccc23)cn1",
+   "mol_weight": 589.1,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.474
+  },
+  {
+   "monomerid": 610239,
+   "bdbm_id": "BDBM610239",
+   "name": "N-(5-(2,3-dihydrobenzo[b][1,4]dioxine-6-carboxamido)-2-methylphenyl)-6-(34(4-methylpiperazin-1-yl)methyl)phenylamino)nicotinamide",
+   "smiles": "CN1CCN(Cc2cccc(Nc3ccc(cn3)C(=O)Nc3cc(NC(=O)c4ccc5OCCOc5c4)ccc3C)c2)CC1",
+   "mol_weight": 592.28,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.473
+  },
+  {
+   "monomerid": 50240204,
+   "bdbm_id": "BDBM50240204",
+   "name": "CHEMBL4081527",
+   "smiles": "CN1CCN(Cc2ccc(NC(=O)c3ccc(C)c(NC(=O)c4cccc(c4)-c4cncnc4)c3)cc2C(F)(F)F)CC1",
+   "mol_weight": 588.25,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.472
+  },
+  {
+   "monomerid": 50008114,
+   "bdbm_id": "BDBM50008114",
+   "name": "CHEMBL3234750",
+   "smiles": "CN1CCN(Cc2ccc(NC(=O)c3ccc(C)c(NC(=O)c4cnc(Nc5ccccc5)nc4)c3)cc2C(F)(F)F)CC1",
+   "mol_weight": 603.26,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.472
+  },
+  {
+   "monomerid": 50433237,
+   "bdbm_id": "BDBM50433237",
+   "name": "CHEMBL2375971",
+   "smiles": "COc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1ccc(OCCCN(C)C)cc1",
+   "mol_weight": 498.58,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.472
+  },
+  {
+   "monomerid": 50265069,
+   "bdbm_id": "BDBM50265069",
+   "name": "N-(2',6-dimethyl-4'-(5-methyl-1,3,4-oxadiazol-2-yl)biphenyl-3-yl)-4-((4-methylpiperazin-1-yl)methyl)benzamide",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(c2)-c2ccc(cc2C)-c2nnc(C)o2)CC1",
+   "mol_weight": 495.61532,
+   "n_activities": 10,
+   "n_targets": 10,
+   "similarity": 0.471
+  },
+  {
+   "monomerid": 571396,
+   "bdbm_id": "BDBM571396",
+   "name": "4-chloro-N-(4-((4-methylpiperazin-1-yl)methyl)phenyl)benzamide",
+   "smiles": "CN1CCN(Cc2ccc(NC(=O)c3ccc(Cl)cc3)cc2)CC1",
+   "mol_weight": 343.15,
+   "n_activities": 3,
+   "n_targets": 1,
+   "similarity": 0.471
+  },
+  {
+   "monomerid": 346118,
+   "bdbm_id": "BDBM346118",
+   "name": "{6-Methyl-2-[3-(4- methyl-piperazin-1- yl)-phenyl]-3H- benzoimidazol-5-yl}- (4-pyridin-3-yl- pyrimidin-2-yl)- amine",
+   "smiles": "Cc1cc2nc(-c3cccc(N4CCN(C)CC4)c3)[nH]c2cc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 476.24,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.471
+  },
+  {
+   "monomerid": 50242161,
+   "bdbm_id": "BDBM50242161",
+   "name": "CHEMBL4097771",
+   "smiles": "CN1CCN(Cc2ccc(NC(=O)c3ccc(C)c(c3)C#Cc3cccnc3)cc2F)CC1",
+   "mol_weight": 442.22,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.471
+  },
+  {
+   "monomerid": 50265258,
+   "bdbm_id": "BDBM50265258",
+   "name": "N-(4-methyl-3-(1-oxo-1,2-dihydroisoquinolin-7-yl)phenyl)-4-((4-methylpiperazin-1-yl)methyl)benzamide",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1-c1ccc2cc[nH]c(=O)c2c1",
+   "mol_weight": 466.5741,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.471
+  },
+  {
+   "monomerid": 50242162,
+   "bdbm_id": "BDBM50242162",
+   "name": "CHEMBL4070641",
+   "smiles": "CN1CCN(Cc2ccc(NC(=O)c3ccc(C)c(c3)C#Cc3cnc(N)nc3)cc2)CC1",
+   "mol_weight": 440.23,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.47
+  },
+  {
+   "monomerid": 50437836,
+   "bdbm_id": "BDBM50437836",
+   "name": "CHEMBL2407739",
+   "smiles": "Nc1cc2ccccc2cc1NC(=O)c1ccc(CNc2nccc(n2)-c2cccnc2)cc1",
+   "mol_weight": 446.5,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.469
+  },
+  {
+   "monomerid": 50668903,
+   "bdbm_id": "BDBM50668903",
+   "name": "CHEMBL6193066",
+   "smiles": "CCOc1ccc(-c2cn(C)c3cc(NC(=O)c4ccc(C)c(Nc5nccc(-c6cccc(C)c6)n5)c4)ccc23)cn1",
+   "mol_weight": 568.68,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.469
+  },
+  {
+   "monomerid": 24624,
+   "bdbm_id": "BDBM24624",
+   "name": "MGCD0103",
+   "smiles": "Nc1ccccc1NC(=O)c1ccc(CNc2nccc(n2)-c2cccnc2)cc1",
+   "mol_weight": 396.17,
+   "n_activities": 86,
+   "n_targets": 15,
+   "similarity": 0.468
+  },
+  {
+   "monomerid": 50544962,
+   "bdbm_id": "BDBM50544962",
+   "name": "CHEMBL4648729",
+   "smiles": "CN1CCN(CC1)c1cc(NC(=O)c2ccc(C)c(Nc3nccc(n3)-c3ccc(F)cc3)c2)cc(c1)-c1cc(C)no1",
+   "mol_weight": 577.66,
+   "n_activities": 4,
+   "n_targets": 4,
+   "similarity": 0.468
+  },
+  {
+   "monomerid": 50203449,
+   "bdbm_id": "BDBM50203449",
+   "name": "CHEMBL3925190",
+   "smiles": "CN1CCN(Cc2ccc(NC(=O)c3ccc(Cl)c(c3)-c3nc(co3)-c3cccnc3)cc2C(F)(F)F)CC1",
+   "mol_weight": 555.16,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.468
+  },
+  {
+   "monomerid": 50382420,
+   "bdbm_id": "BDBM50382420",
+   "name": "CHEMBL2022963",
+   "smiles": "CN1CCN(Cc2ccc(Nc3ncc(C)c(n3)-c3cccc(Cl)c3)cc2)CC1",
+   "mol_weight": 407.19,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.468
+  },
+  {
+   "monomerid": 50668908,
+   "bdbm_id": "BDBM50668908",
+   "name": "CHEMBL6190068",
+   "smiles": "CCOc1ccc(-c2cn(C)c3cc(NC(=O)c4ccc(C)c(Nc5nccc(-c6ccncc6)n5)c4)ccc23)cn1",
+   "mol_weight": 555.64,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.468
+  },
+  {
+   "monomerid": 50433236,
+   "bdbm_id": "BDBM50433236",
+   "name": "CHEMBL2375973",
+   "smiles": "CCN(CC)CCOc1ccc(NC(=O)c2ccc(OC)c(Nc3nccc(n3)-c3cccnc3)c2)cc1",
+   "mol_weight": 512.6,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.467
+  },
+  {
+   "monomerid": 346161,
+   "bdbm_id": "BDBM346161",
+   "name": "{1,6-Dimethyl-2-[4- (4-methyl-piperazin- 1-ylmethyl)-phenyl]- 1H-benzoimidazol-5- yl}-(4-pyridin-3-yl- thiazol-2-yl)-amine",
+   "smiles": "CN1CCN(Cc2ccc(cc2)-c2nc3cc(Nc4nc(cs4)-c4cccnc4)c(C)cc3n2C)CC1",
+   "mol_weight": 509.24,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.466
+  },
+  {
+   "monomerid": 557271,
+   "bdbm_id": "BDBM557271",
+   "name": "US11352354, Example V-c-23",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(C(F)(F)F)cc2)cc1Nc1nc(-c2cccnc2)c2[nH]ccc2n1",
+   "mol_weight": 488.16,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.466
+  },
+  {
+   "monomerid": 50432868,
+   "bdbm_id": "BDBM50432868",
+   "name": "CHEMBL2376501",
+   "smiles": "COCCN(C)\\N=N\\c1ccc(cc1)C(=O)Nc1cccc(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 482.54,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.466
+  },
+  {
+   "monomerid": 86632,
+   "bdbm_id": "BDBM86632",
+   "name": "JNK-IN-7",
+   "smiles": "CN(C)C\\C=C\\C(=O)Nc1cccc(c1)C(=O)Nc1ccc(Nc2nccc(n2)-c2cccnc2)cc1",
+   "mol_weight": 493.22,
+   "n_activities": 22,
+   "n_targets": 5,
+   "similarity": 0.465
+  },
+  {
+   "monomerid": 50265370,
+   "bdbm_id": "BDBM50265370",
+   "name": "N-(3-(3-aminobenzo[d]isoxazol-6-yl)-4-methylphenyl)-4-((4-methylpiperazin-1-yl)methyl)benzamide",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(c2)-c2ccc3c(N)noc3c2)CC1",
+   "mol_weight": 455.55146,
+   "n_activities": 10,
+   "n_targets": 10,
+   "similarity": 0.465
+  },
+  {
+   "monomerid": 68209,
+   "bdbm_id": "BDBM68209",
+   "name": "Type II inhibitor, 3",
+   "smiles": "CN(C(=O)c1cccc(c1)C(F)(F)F)c1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 463.16,
+   "n_activities": 2,
+   "n_targets": 1,
+   "similarity": 0.465
+  },
+  {
+   "monomerid": 50257077,
+   "bdbm_id": "BDBM50257077",
+   "name": "N1-(2-aminophenyl)-N4-(4-methyl-3-(4-(pyridin-3-yl)thiazol-2-ylamino)phenyl)terephthalamide",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(cc2)C(=O)Nc2ccccc2N)cc1Nc1ncc(s1)-c1cccnc1",
+   "mol_weight": 520.60486,
+   "n_activities": 5,
+   "n_targets": 5,
+   "similarity": 0.464
+  },
+  {
+   "monomerid": 445932,
+   "bdbm_id": "BDBM445932",
+   "name": "US10669240, Compound 1331",
+   "smiles": "Cc1cc2[nH]nc(C(=O)Nc3ccc(CN4CCCC4)cc3)c2cc1-c1cccnc1",
+   "mol_weight": 411.21,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.464
+  },
+  {
+   "monomerid": 50008102,
+   "bdbm_id": "BDBM50008102",
+   "name": "CHEMBL3234738",
+   "smiles": "CN1CCN(Cc2ccc(NC(=O)c3ccc(C)c(NC(=O)c4ccncc4)c3)cc2C(F)(F)F)CC1",
+   "mol_weight": 511.22,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.464
+  },
+  {
+   "monomerid": 50433227,
+   "bdbm_id": "BDBM50433227",
+   "name": "CHEMBL2375901",
+   "smiles": "COc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1nccs1",
+   "mol_weight": 404.45,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.464
+  },
+  {
+   "monomerid": 50668905,
+   "bdbm_id": "BDBM50668905",
+   "name": "CHEMBL6192640",
+   "smiles": "CCOc1ccc(-c2cn(C)c3cc(NC(=O)c4ccc(C)c(Nc5nccc(-c6cccc(F)c6)n5)c4)ccc23)cn1",
+   "mol_weight": 572.64,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.464
+  },
+  {
+   "monomerid": 50323915,
+   "bdbm_id": "BDBM50323915",
+   "name": "N-methyl-4-(4-(4-((4-methylpiperazin-1-yl)methyl)benzamido)phenoxy)picolinamide",
+   "smiles": "CNC(=O)c1cc(Oc2ccc(NC(=O)c3ccc(CN4CCN(C)CC4)cc3)cc2)ccn1",
+   "mol_weight": 459.23,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.463
+  },
+  {
+   "monomerid": 50437828,
+   "bdbm_id": "BDBM50437828",
+   "name": "CHEMBL2407729",
+   "smiles": "Nc1cc(ccc1NC(=O)c1ccc(CNc2nccc(n2)-c2cccnc2)cc1)C(O)=O",
+   "mol_weight": 440.45,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.463
+  },
+  {
+   "monomerid": 50437830,
+   "bdbm_id": "BDBM50437830",
+   "name": "CHEMBL2407727",
+   "smiles": "Nc1cc(CO)ccc1NC(=O)c1ccc(CNc2nccc(n2)-c2cccnc2)cc1",
+   "mol_weight": 426.47,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.463
+  },
+  {
+   "monomerid": 50437832,
+   "bdbm_id": "BDBM50437832",
+   "name": "CHEMBL2407743",
+   "smiles": "Nc1cc(O)ccc1NC(=O)c1ccc(CNc2nccc(n2)-c2cccnc2)cc1",
+   "mol_weight": 412.44,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.463
+  },
+  {
+   "monomerid": 50668901,
+   "bdbm_id": "BDBM50668901",
+   "name": "CHEMBL6192589",
+   "smiles": "CCOc1ccc(-c2cn(C)c3cc(NC(=O)c4ccc(C)c(Nc5nccc(-c6ccc(Cl)cc6)n5)c4)ccc23)cn1",
+   "mol_weight": 589.1,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.463
+  },
+  {
+   "monomerid": 50290427,
+   "bdbm_id": "BDBM50290427",
+   "name": "Thiophene-2-carboxylic acid [3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-amide",
+   "smiles": "O=C(Nc1cccc(Nc2nccc(n2)-c2cccnc2)c1)c1cccs1",
+   "mol_weight": 373.431,
+   "n_activities": 5,
+   "n_targets": 5,
+   "similarity": 0.462
+  },
+  {
+   "monomerid": 239580,
+   "bdbm_id": "BDBM239580",
+   "name": "US9394309, 33",
+   "smiles": "Cc1ccc(NC(=O)c2cc(CN3CCCC3)cc(c2)S(F)(F)(F)(F)F)cc1-n1ccn2nc(cc12)-c1cccnc1",
+   "mol_weight": 602.19,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.462
+  },
+  {
+   "monomerid": 346024,
+   "bdbm_id": "BDBM346024",
+   "name": "[6-Methyl-2-(3- pyrrolidin-1-ylmethyl- 5-trifluoromethyl- phenyl)-3H- benzoimidazol-5-yl]- (4-pyridin-3-yl- pyrimidin-2-yl)- amine",
+   "smiles": "Cc1cc2nc(-c3cc(CN4CCCC4)cc(C(F)(F)F)c3)[nH]c2cc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 529.22,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.462
+  },
+  {
+   "monomerid": 50058761,
+   "bdbm_id": "BDBM50058761",
+   "name": "CHEMBL3335420",
+   "smiles": "O=C(Nc1ccc(cc1)C#Cc1cccnc1)c1ccc(CN2CCN(Cc3cccnc3)CC2)cc1",
+   "mol_weight": 487.24,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.462
+  },
+  {
+   "monomerid": 50058762,
+   "bdbm_id": "BDBM50058762",
+   "name": "CHEMBL3335419",
+   "smiles": "O=C(Nc1ccc(cc1)C#Cc1ccccc1)c1ccc(CN2CCN(Cc3cccnc3)CC2)cc1",
+   "mol_weight": 486.24,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.462
+  },
+  {
+   "monomerid": 50566608,
+   "bdbm_id": "BDBM50566608",
+   "name": "CHEMBL4863195",
+   "smiles": "COc1cc2CCN(CCNC(=O)c3ccc(C)c(Nc4nccc(n4)-c4ccccc4)c3)Cc2cc1OC",
+   "mol_weight": 523.64,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.462
+  },
+  {
+   "monomerid": 50607533,
+   "bdbm_id": "BDBM50607533",
+   "name": "CHEMBL5220995",
+   "smiles": "CN1CCN(Cc2ccc(NC(=O)c3ccc(C)c(Nc4cc(ccn4)-c4ccc(F)nc4)c3)cc2C(F)(F)F)CC1",
+   "mol_weight": 578.61,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.462
+  },
+  {
+   "monomerid": 50600441,
+   "bdbm_id": "BDBM50600441",
+   "name": "CHEMBL5180210",
+   "smiles": "CCOP(=O)(OCC)C(Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1)c1scnc1C",
+   "mol_weight": 524.59,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.461
+  },
+  {
+   "monomerid": 50600443,
+   "bdbm_id": "BDBM50600443",
+   "name": "CHEMBL5173220",
+   "smiles": "CCOP(=O)(OCC)C(Nc1ccc(C)c(Nc2nccc(-c3cccnc3)n2)c1)c1ccc[nH]1",
+   "mol_weight": 492.52,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.461
+  },
+  {
+   "monomerid": 50256929,
+   "bdbm_id": "BDBM50256929",
+   "name": "N1-(2-aminophenyl)-N4-(3-(methyl(4-(pyridin-3-yl)pyrimidin-2-yl)amino)phenyl)terephthalamide",
+   "smiles": "CN(C(=O)c1ccc(cc1)C(=O)Nc1ccccc1N)c1cccc(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 515.5652,
+   "n_activities": 5,
+   "n_targets": 5,
+   "similarity": 0.46
+  },
+  {
+   "monomerid": 50313643,
+   "bdbm_id": "BDBM50313643",
+   "name": "(E)-4-(3-(hydroxyamino)-3-oxoprop-1-enyl)-N-(4-methyl-3-(4-(pyridin-3-yl)thiazol-2-ylamino)phenyl)benzamide",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(\\C=C\\C(=O)NO)cc2)cc1Nc1nc(cs1)-c1cccnc1",
+   "mol_weight": 471.53094,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.46
+  },
+  {
+   "monomerid": 50008101,
+   "bdbm_id": "BDBM50008101",
+   "name": "CHEMBL3234737",
+   "smiles": "CN1CCN(Cc2ccc(NC(=O)c3ccc(C)c(NC(=O)c4ccccn4)c3)cc2C(F)(F)F)CC1",
+   "mol_weight": 511.22,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.46
+  },
+  {
+   "monomerid": 50556136,
+   "bdbm_id": "BDBM50556136",
+   "name": "CHEMBL4790634",
+   "smiles": "Cc1ccc(C(=O)Nc2ccc(CN3CCN(C)CC3)c(C(F)(F)F)c2)cc1Oc1nc(-c2cccnc2)nc2[nH]ncc12",
+   "mol_weight": 602.62,
+   "n_activities": 6,
+   "n_targets": 3,
+   "similarity": 0.459
+  },
+  {
+   "monomerid": 50437827,
+   "bdbm_id": "BDBM50437827",
+   "name": "CHEMBL2407730",
+   "smiles": "ONC(=O)c1ccc(CNc2nccc(n2)-c2cccnc2)cc1",
+   "mol_weight": 321.33,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.459
+  },
+  {
+   "monomerid": 50437833,
+   "bdbm_id": "BDBM50437833",
+   "name": "CHEMBL2407742",
+   "smiles": "COc1ccc(NC(=O)c2ccc(CNc3nccc(n3)-c3cccnc3)cc2)c(N)c1",
+   "mol_weight": 426.47,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.459
+  },
+  {
+   "monomerid": 559896,
+   "bdbm_id": "BDBM559896",
+   "name": "US11377423, Cmpd 2A",
+   "smiles": "Nc1cc(F)ccc1NC(=O)c1ccc(CNc2nccc(n2)-c2cccnc2)cc1",
+   "mol_weight": 414.16,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.458
+  },
+  {
+   "monomerid": 71747,
+   "bdbm_id": "BDBM71747",
+   "name": "US12486270, Compound @6",
+   "smiles": "Cc1ccc(C(=O)Nc2cccc(C(F)(F)F)c2)cc1Nc1nc(-c2cccnc2)nc(-c2cccnc2)n1",
+   "mol_weight": 527.17,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.458
+  },
+  {
+   "monomerid": 50437834,
+   "bdbm_id": "BDBM50437834",
+   "name": "CHEMBL2407741",
+   "smiles": "Nc1cc(Br)ccc1NC(=O)c1ccc(CNc2nccc(n2)-c2cccnc2)cc1",
+   "mol_weight": 475.34,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.458
+  },
+  {
+   "monomerid": 50437835,
+   "bdbm_id": "BDBM50437835",
+   "name": "CHEMBL2407740",
+   "smiles": "Nc1cc(ccc1NC(=O)c1ccc(CNc2nccc(n2)-c2cccnc2)cc1)-c1ccccc1",
+   "mol_weight": 472.54,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.458
+  },
+  {
+   "monomerid": 50544969,
+   "bdbm_id": "BDBM50544969",
+   "name": "CHEMBL4637172",
+   "smiles": "Cc1cn(cn1)-c1cc(CCC(O)=O)cc(NC(=O)c2ccc(C)c(Nc3nccc(n3)-c3ccccc3)c2)c1",
+   "mol_weight": 532.6,
+   "n_activities": 4,
+   "n_targets": 4,
+   "similarity": 0.457
+  },
+  {
+   "monomerid": 50544973,
+   "bdbm_id": "BDBM50544973",
+   "name": "CHEMBL4638783",
+   "smiles": "Cc1cn(cn1)-c1cc(NC(=O)c2ccc(C)c(Nc3nccc(n3)-c3ccccc3)c2)cc(c1)N1CCNCC1",
+   "mol_weight": 544.66,
+   "n_activities": 4,
+   "n_targets": 4,
+   "similarity": 0.457
+  },
+  {
+   "monomerid": 50240209,
+   "bdbm_id": "BDBM50240209",
+   "name": "CHEMBL4068526",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)c(C(F)(F)F)c2)cc1NC(=O)c1cccc(-c2cn[nH]c2)c1",
+   "mol_weight": 576.25,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.457
+  },
+  {
+   "monomerid": 346030,
+   "bdbm_id": "BDBM346030",
+   "name": "[6-Methyl-2-(3- piperidin-1-ylmethyl- 5-trifluoromethyl- phenyl)-3H- benzoimidazol-5-yl]- (4-pyridin-3-yl- pyrimidin-2-yl)- amine",
+   "smiles": "Cc1cc2nc(-c3cc(CN4CCCCC4)cc(C(F)(F)F)c3)[nH]c2cc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 543.24,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.457
+  },
+  {
+   "monomerid": 50203454,
+   "bdbm_id": "BDBM50203454",
+   "name": "CHEMBL3961612",
+   "smiles": "CN1CCN(Cc2ccc(NC(=O)c3ccc(Cl)c(c3)-c3noc(n3)-c3cccnc3)cc2C(F)(F)F)CC1",
+   "mol_weight": 556.16,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.457
+  },
+  {
+   "monomerid": 50203457,
+   "bdbm_id": "BDBM50203457",
+   "name": "CHEMBL3985315",
+   "smiles": "CN1CCN(Cc2ccc(NC(=O)c3ccc(Cl)c(c3)-c3nc(no3)-c3cccnc3)cc2C(F)(F)F)CC1",
+   "mol_weight": 556.16,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.457
+  },
+  {
+   "monomerid": 50607528,
+   "bdbm_id": "BDBM50607528",
+   "name": "CHEMBL5221085",
+   "smiles": "Cc1ccc(cc1Nc1cc(ccn1)-c1cccnc1)C(=O)Nc1ccc(-c2cnn(C)c2)c(c1)C(F)(F)F",
+   "mol_weight": 528.54,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.457
+  },
+  {
+   "monomerid": 50668891,
+   "bdbm_id": "BDBM50668891",
+   "name": "CHEMBL6191357",
+   "smiles": "CCOc1ccc(-c2cn(C)c3cc(NC(=O)c4ccc(C)c(Nc5nccc(-c6ccc(C)cc6)n5)c4)ccc23)cn1",
+   "mol_weight": 568.68,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.457
+  },
+  {
+   "monomerid": 50345596,
+   "bdbm_id": "BDBM50345596",
+   "name": "4-methyl-N-(4-((4-methylpiperazin-1-yl)methyl)-3-(trifluoromethyl)phenyl)-3-(pyridin-3-ylethynyl)benzamide",
+   "smiles": "CN1CCN(Cc2ccc(NC(=O)c3ccc(C)c(c3)C#Cc3cccnc3)cc2C(F)(F)F)CC1",
+   "mol_weight": 492.21,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.456
+  },
+  {
+   "monomerid": 346014,
+   "bdbm_id": "BDBM346014",
+   "name": "{6-Methyl-2-[4-(4- methyl-piperazin-1- ylmethyl)-phenyl]- 3H-benzoimidazol-5- yl}-(4-pyridin-3-yl- thiazol-2-yl)-amine",
+   "smiles": "Cc1cc2nc(-c3ccc(CN4CCN(C)CC4)cc3)[nH]c2cc1Nc1nc(-c2cccnc2)cs1",
+   "mol_weight": 495.22,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.456
+  },
+  {
+   "monomerid": 172860,
+   "bdbm_id": "BDBM172860",
+   "name": "US9096559, 100",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2cc(ccc2O)-c2ccccc2)CC1",
+   "mol_weight": 401.21,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.455
+  },
+  {
+   "monomerid": 50668904,
+   "bdbm_id": "BDBM50668904",
+   "name": "CHEMBL6188829",
+   "smiles": "CCOc1ccc(-c2cn(C)c3cc(NC(=O)c4ccc(C)c(Nc5nccc(-c6cccc(OC)c6)n5)c4)ccc23)cn1",
+   "mol_weight": 584.68,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.455
+  },
+  {
+   "monomerid": 50105851,
+   "bdbm_id": "BDBM50105851",
+   "name": "CHEMBL3597613",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(Cn3ccnc3)cc2)cc1-n1cc(cn1)-c1cccnc1",
+   "mol_weight": 434.19,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.453
+  },
+  {
+   "monomerid": 50203446,
+   "bdbm_id": "BDBM50203446",
+   "name": "CHEMBL3952889",
+   "smiles": "CN1CCN(Cc2ccc(NC(=O)c3ccc(Cl)c(c3)-c3cnc(o3)-c3cccnc3)cc2C(F)(F)F)CC1",
+   "mol_weight": 555.16,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.453
+  },
+  {
+   "monomerid": 50668896,
+   "bdbm_id": "BDBM50668896",
+   "name": "CHEMBL6189339",
+   "smiles": "CCOc1ccc(-c2ccnc(Nc3cc(C(=O)Nc4ccc5c(-c6ccc(OCC)nc6)cn(C)c5c4)ccc3C)n2)cc1",
+   "mol_weight": 598.71,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.453
+  },
+  {
+   "monomerid": 50544967,
+   "bdbm_id": "BDBM50544967",
+   "name": "CHEMBL4633069",
+   "smiles": "CCCCc1cc(NC(=O)c2ccc(C)c(Nc3nccc(n3)-c3ccccc3)c2)cc(c1)-n1cnc(C)c1",
+   "mol_weight": 516.65,
+   "n_activities": 4,
+   "n_targets": 4,
+   "similarity": 0.452
+  },
+  {
+   "monomerid": 239598,
+   "bdbm_id": "BDBM239598",
+   "name": "US9394309, 51",
+   "smiles": "Cc1ccc(NC(=O)c2cc(CN3CCCC3)cc(c2)C(C)(C)C)cc1-n1ccn2nc(cc12)-c1cccnc1",
+   "mol_weight": 532.3,
+   "n_activities": 2,
+   "n_targets": 1,
+   "similarity": 0.452
+  },
+  {
+   "monomerid": 327920,
+   "bdbm_id": "BDBM327920",
+   "name": "5-(4-(4- fluorobenzyl)piperazine- 1-carbonyl)-N-(4- (pyridine-3- yl)phenyl)picolinamide",
+   "smiles": "Fc1ccc(CN2CCN(CC2)C(=O)c2ccc(nc2)C(=O)Nc2ccc(cc2)-c2cccnc2)cc1",
+   "mol_weight": 495.21,
+   "n_activities": 2,
+   "n_targets": 1,
+   "similarity": 0.452
+  },
+  {
+   "monomerid": 50240224,
+   "bdbm_id": "BDBM50240224",
+   "name": "CHEMBL4095856",
+   "smiles": "CN1CCN(Cc2ccc(cc2C(F)(F)F)C(=O)Nc2ccc(C)c(NC(=O)c3cccc(c3)-c3cnn(C)c3)c2)CC1",
+   "mol_weight": 590.26,
+   "n_activities": 5,
+   "n_targets": 2,
+   "similarity": 0.451
+  },
+  {
+   "monomerid": 50105856,
+   "bdbm_id": "BDBM50105856",
+   "name": "CHEMBL3597608",
+   "smiles": "CCc1ccc(cc1)C(=O)Nc1ccc(C)c(c1)-n1cc(cn1)-c1cccnc1",
+   "mol_weight": 382.18,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.451
+  },
+  {
+   "monomerid": 50203451,
+   "bdbm_id": "BDBM50203451",
+   "name": "CHEMBL3943036",
+   "smiles": "CN1CCN(Cc2ccc(NC(=O)c3cccc(c3)-c3noc(n3)-c3cccnc3)cc2C(F)(F)F)CC1",
+   "mol_weight": 522.2,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.451
+  },
+  {
+   "monomerid": 50617737,
+   "bdbm_id": "BDBM50617737",
+   "name": "CHEMBL5426587",
+   "smiles": "CC(C)CN(C[C@@H](O)[C@H](Cc1ccccc1)NC(=O)c1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1)S(=O)(=O)c1ccc(N)cc1 |r|",
+   "mol_weight": 679.85,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.45
+  },
+  {
+   "monomerid": 50290414,
+   "bdbm_id": "BDBM50290414",
+   "name": "N-[3-(4-Pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-phthalamic acid",
+   "smiles": "OC(=O)c1ccccc1C(=O)Nc1cccc(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 411.41278,
+   "n_activities": 5,
+   "n_targets": 5,
+   "similarity": 0.449
+  },
+  {
+   "monomerid": 488105,
+   "bdbm_id": "BDBM488105",
+   "name": "N-(4-(4- Benzylpiperazin-1- yl)phenyl)-4-(1-ethyl- 3-(pyridin-3-yl)-1H- pyrazol-4- yl)pyrimidin-2-amine",
+   "smiles": "CCn1cc(c(n1)-c1cccnc1)-c1ccnc(Nc2ccc(cc2)N2CCN(Cc3ccccc3)CC2)n1",
+   "mol_weight": 516.27,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.449
+  },
+  {
+   "monomerid": 50668902,
+   "bdbm_id": "BDBM50668902",
+   "name": "CHEMBL6190382",
+   "smiles": "CCOc1ccc(-c2cn(C)c3cc(NC(=O)c4ccc(C)c(Nc5nccc(-c6ccc(C(F)(F)F)cc6)n5)c4)ccc23)cn1",
+   "mol_weight": 622.65,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.449
+  },
+  {
+   "monomerid": 50668916,
+   "bdbm_id": "BDBM50668916",
+   "name": "CHEMBL6188793",
+   "smiles": "Cc1ccc(C(=O)Nc2ccc3c(-c4ccc(Cl)nc4)cn(C)c3c2)cc1Nc1nccc(-c2ccc(OC3CC3)cc2)n1",
+   "mol_weight": 601.11,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.449
+  },
+  {
+   "monomerid": 50257155,
+   "bdbm_id": "BDBM50257155",
+   "name": "(E)-4-(3-(hydroxyamino)-3-oxoprop-1-enyl)-N-(4-methyl-3-(4-(pyridin-3-yl)thiazol-2-ylamino)phenyl)benzamide",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(\\C=C\\C(=O)NO)cc2)cc1Nc1ncc(s1)-c1cccnc1",
+   "mol_weight": 471.53094,
+   "n_activities": 5,
+   "n_targets": 5,
+   "similarity": 0.448
+  },
+  {
+   "monomerid": 50529760,
+   "bdbm_id": "BDBM50529760",
+   "name": "CHEMBL4473922",
+   "smiles": "Cc1ccc(C(=O)Nc2cccc(CN3CCN(C)CC3)c2)cc1-c1ccc2cn[nH]c2c1",
+   "mol_weight": 439.56,
+   "n_activities": 2,
+   "n_targets": 1,
+   "similarity": 0.448
+  },
+  {
+   "monomerid": 239582,
+   "bdbm_id": "BDBM239582",
+   "name": "US9394309, 35",
+   "smiles": "Cc1ccc(NC(=O)c2cc(CN3CCNCC3)cc(c2)S(F)(F)(F)(F)F)cc1-n1ccn2nc(cc12)-c1cccnc1",
+   "mol_weight": 617.2,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.448
+  },
+  {
+   "monomerid": 346023,
+   "bdbm_id": "BDBM346023",
+   "name": "[6-Methyl-2-(3- morpholin-4- ylmethyl-5- trifluoromethyl- phenyl)-3H- benzoimidazol-5-yl- (4-pyridin-3-yl- pyrimidin-2-yl)- amine",
+   "smiles": "Cc1cc2nc(-c3cc(CN4CCOCC4)cc(C(F)(F)F)c3)[nH]c2cc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 545.22,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.448
+  },
+  {
+   "monomerid": 50607536,
+   "bdbm_id": "BDBM50607536",
+   "name": "CHEMBL5218470",
+   "smiles": "COc1ccc(cn1)-c1ccnc(Nc2cc(ccc2C)C(=O)Nc2ccc(CN3CCN(C)CC3)c(c2)C(F)(F)F)c1",
+   "mol_weight": 590.65,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.448
+  },
+  {
+   "monomerid": 50668900,
+   "bdbm_id": "BDBM50668900",
+   "name": "CHEMBL6191341",
+   "smiles": "CCOc1ccc(-c2cn(C)c3cc(NC(=O)c4ccc(C)c(Nc5nccc(-c6ccc(F)cc6)n5)c4)ccc23)cn1",
+   "mol_weight": 572.64,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.448
+  },
+  {
+   "monomerid": 614173,
+   "bdbm_id": "BDBM614173",
+   "name": "US11746103, EX-26",
+   "smiles": "CN1CCN(Cc2ccc(Nc3nccc(Nc4cnnc5c(C)cccc45)n3)cc2)CC1",
+   "mol_weight": 440.24,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.447
+  },
+  {
+   "monomerid": 50203458,
+   "bdbm_id": "BDBM50203458",
+   "name": "CHEMBL3915551",
+   "smiles": "CN1CCN(Cc2ccc(NC(=O)c3ccc(Cl)c(c3)-c3nnc(o3)-c3cccnc3)cc2C(F)(F)F)CC1",
+   "mol_weight": 556.16,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.447
+  },
+  {
+   "monomerid": 50311032,
+   "bdbm_id": "BDBM50311032",
+   "name": "N-(cyanomethyl)-4-(2-(4-(4-methylpiperazin-1-yl)phenylamino)pyrimidin-4-yl)benzamide",
+   "smiles": "CN1CCN(CC1)c1ccc(Nc2nccc(n2)-c2ccc(cc2)C(=O)NCC#N)cc1",
+   "mol_weight": 427.50159,
+   "n_activities": 4,
+   "n_targets": 2,
+   "similarity": 0.446
+  },
+  {
+   "monomerid": 557276,
+   "bdbm_id": "BDBM557276",
+   "name": "US11352354, Example V-c-40",
+   "smiles": "Cc1ccc(NC(=O)c2cccc(c2)C(F)(F)F)cc1Nc1nc(-c2cccnc2)c2n(C)ccc2n1",
+   "mol_weight": 502.17,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.446
+  },
+  {
+   "monomerid": 50607526,
+   "bdbm_id": "BDBM50607526",
+   "name": "CHEMBL5220397",
+   "smiles": "Cc1ccc(cc1Nc1cc(ccn1)-c1cccnc1)C(=O)Nc1cc(cc(c1)-c1cnn(C)c1)C1CC1",
+   "mol_weight": 500.61,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.446
+  },
+  {
+   "monomerid": 50290429,
+   "bdbm_id": "BDBM50290429",
+   "name": "2-Methoxy-N-[3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-benzamide",
+   "smiles": "COc1ccccc1C(=O)Nc1cccc(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 397.42926,
+   "n_activities": 8,
+   "n_targets": 8,
+   "similarity": 0.444
+  },
+  {
+   "monomerid": 112214,
+   "bdbm_id": "BDBM112214",
+   "name": "US8623889, 212",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(Cl)c(c2)-c2ccc3cc(NC(=O)C4CC4)ncc3c2)CC1",
+   "mol_weight": 553.22,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.444
+  },
+  {
+   "monomerid": 50432869,
+   "bdbm_id": "BDBM50432869",
+   "name": "CHEMBL2376500",
+   "smiles": "C(Cc1cccc(Nc2nccc(n2)-c2cccnc2)c1)N1CCOCC1",
+   "mol_weight": 361.44,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.444
+  },
+  {
+   "monomerid": 50491788,
+   "bdbm_id": "BDBM50491788",
+   "name": "CHEMBL2385991",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(c2)C(=O)Nc2ccc(OCc3cccc(F)c3)c(Cl)c2)CC1",
+   "mol_weight": 601.12,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.444
+  },
+  {
+   "monomerid": 50607524,
+   "bdbm_id": "BDBM50607524",
+   "name": "CHEMBL5219546",
+   "smiles": "Cc1ccc(cc1Nc1cc(ccn1)-c1cccnc1)C(=O)Nc1cc(F)cc(c1)-c1cnn(C)c1",
+   "mol_weight": 478.53,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.444
+  },
+  {
+   "monomerid": 50668894,
+   "bdbm_id": "BDBM50668894",
+   "name": "CHEMBL6191607",
+   "smiles": "CCOc1ccc(-c2cn(C)c3cc(NC(=O)c4ccc(C)c(Nc5nccc(-c6ccc(C7CC7)cc6)n5)c4)ccc23)cn1",
+   "mol_weight": 594.72,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.444
+  },
+  {
+   "monomerid": 50008108,
+   "bdbm_id": "BDBM50008108",
+   "name": "CHEMBL3234744",
+   "smiles": "CNc1ncc(cn1)C(=O)Nc1cc(ccc1C)C(=O)Nc1ccc(CN2CCN(C)CC2)c(c1)C(F)(F)F",
+   "mol_weight": 541.24,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.443
+  },
+  {
+   "monomerid": 50255262,
+   "bdbm_id": "BDBM50255262",
+   "name": "N-(2-aminophenyl)-4-((4-(6-(4-methylpiperazin-1-yl)pyridin-3-yl)pyrimidin-2-ylamino)methyl)benzamide",
+   "smiles": "CN1CCN(CC1)c1ccc(cn1)-c1ccnc(NCc2ccc(cc2)C(=O)Nc2ccccc2N)n1",
+   "mol_weight": 494.5908,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.443
+  },
+  {
+   "monomerid": 50432859,
+   "bdbm_id": "BDBM50432859",
+   "name": "CHEMBL2376503",
+   "smiles": "Sc1ccccc1C(=O)Nc1cccc(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 399.47,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.443
+  },
+  {
+   "monomerid": 50590001,
+   "bdbm_id": "BDBM50590001",
+   "name": "CHEMBL5202515",
+   "smiles": "CN1CCN(CCCNC(=O)c2ccc(Nc3nccc(n3)-c3cc4ccccc4s3)cc2)CC1",
+   "mol_weight": 486.65,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.443
+  },
+  {
+   "monomerid": 50668895,
+   "bdbm_id": "BDBM50668895",
+   "name": "CHEMBL6189229",
+   "smiles": "CCOc1ccc(-c2cn(C)c3cc(NC(=O)c4ccc(C)c(Nc5nccc(-c6ccc(OC)cc6)n5)c4)ccc23)cn1",
+   "mol_weight": 584.68,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.443
+  },
+  {
+   "monomerid": 50668915,
+   "bdbm_id": "BDBM50668915",
+   "name": "CHEMBL6193424",
+   "smiles": "Cc1ccc(C(=O)Nc2ccc3c(-c4ccc(F)nc4)cn(C)c3c2)cc1Nc1nccc(-c2ccc(OC3CC3)cc2)n1",
+   "mol_weight": 584.66,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.443
+  },
+  {
+   "monomerid": 50271733,
+   "bdbm_id": "BDBM50271733",
+   "name": "CHEMBL4129991",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1ccc(cc1)C(N)=O)-c1ccccc1",
+   "mol_weight": 380.45,
+   "n_activities": 5,
+   "n_targets": 5,
+   "similarity": 0.442
+  },
+  {
+   "monomerid": 205174,
+   "bdbm_id": "BDBM205174",
+   "name": "US9249114, A7",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2sc(nc2C(N)=O)-c2ccnc(C)c2)CC1",
+   "mol_weight": 450.18,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.442
+  },
+  {
+   "monomerid": 205196,
+   "bdbm_id": "BDBM205196",
+   "name": "US9249114, A22",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2sc(nc2C(N)=O)-c2ccncc2C)CC1",
+   "mol_weight": 450.18,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.442
+  },
+  {
+   "monomerid": 795207,
+   "bdbm_id": "BDBM795207",
+   "name": "4-(2-(4-morpholinophenyl-amino)pyrimidin-4-yl)-N-(pyridin-3-ylmethyl)benzamide",
+   "smiles": "O=C(NCc1cccnc1)c1ccc(-c2ccnc(Nc3ccc(N4CCOCC4)cc3)n2)cc1",
+   "mol_weight": 466.21,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.442
+  },
+  {
+   "monomerid": 50452718,
+   "bdbm_id": "BDBM50452718",
+   "name": "CHEMBL4217692",
+   "smiles": "CC(C)(C)c1ccc(C(=O)Nc2cccc(-c3ccnc(Nc4ccc5cn[nH]c5c4)n3)c2)cc1",
+   "mol_weight": 462.56,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.442
+  },
+  {
+   "monomerid": 50008105,
+   "bdbm_id": "BDBM50008105",
+   "name": "CHEMBL3234741",
+   "smiles": "CN1CCN(Cc2ccc(NC(=O)c3ccc(C)c(NC(=O)c4cncnc4)c3)cc2C(F)(F)F)CC1",
+   "mol_weight": 512.21,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.442
+  },
+  {
+   "monomerid": 50491765,
+   "bdbm_id": "BDBM50491765",
+   "name": "CHEMBL2385992",
+   "smiles": "CN(C)C\\C=C\\C(=O)Nc1ccc(C)c(c1)C(=O)Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 416.49,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.442
+  },
+  {
+   "monomerid": 50566605,
+   "bdbm_id": "BDBM50566605",
+   "name": "CHEMBL4862544",
+   "smiles": "COc1cc2CCN(CCNC(=O)c3ccc(C)c(Nc4nccc(n4)-c4cccc(O)c4)c3)Cc2cc1OC",
+   "mol_weight": 539.64,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.442
+  },
+  {
+   "monomerid": 50511494,
+   "bdbm_id": "BDBM50511494",
+   "name": "CHEMBL4544048",
+   "smiles": "CCc1ccc(cc1-c1cccc(c1)-c1cnc2cnccn12)C(=O)Nc1cccc(CN2CCN(C)CC2)c1",
+   "mol_weight": 530.68,
+   "n_activities": 4,
+   "n_targets": 4,
+   "similarity": 0.441
+  },
+  {
+   "monomerid": 50443899,
+   "bdbm_id": "BDBM50443899",
+   "name": "CHEMBL3091569",
+   "smiles": "CN1CCN(Cc2ccccc2NC(=O)c2ccc(Nc3ncc(C)c(n3)-c3ccc(OC(F)(F)F)cc3)cc2)CC1",
+   "mol_weight": 576.61,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.441
+  },
+  {
+   "monomerid": 50555116,
+   "bdbm_id": "BDBM50555116",
+   "name": "CHEMBL4780068",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Oc1ccc(-c2n[nH]c3ncnc(N)c23)cc1",
+   "mol_weight": 548.65,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.441
+  },
+  {
+   "monomerid": 112213,
+   "bdbm_id": "BDBM112213",
+   "name": "US8623889, 211",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(F)c(c2)-c2ccc3cc(NC(=O)C4CC4)ncc3c2)CC1",
+   "mol_weight": 537.25,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.44
+  },
+  {
+   "monomerid": 346112,
+   "bdbm_id": "BDBM346112",
+   "name": "{6-Methyl-2-[4-(4- methyl-piperazin-1- ylmethyl)-phenyl]- 3H-benzoimidazol-5- yl}-(5-pyridin-3-yl- oxazol-2-yl)-amine",
+   "smiles": "Cc1cc2nc(-c3ccc(CN4CCN(C)CC4)cc3)[nH]c2cc1Nc1ncc(-c2cccnc2)o1",
+   "mol_weight": 479.24,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.44
+  },
+  {
+   "monomerid": 50008103,
+   "bdbm_id": "BDBM50008103",
+   "name": "CHEMBL3234739",
+   "smiles": "CN1CCN(Cc2ccc(NC(=O)c3ccc(C)c(NC(=O)c4ccccc4)c3)cc2C(F)(F)F)CC1",
+   "mol_weight": 510.22,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.44
+  },
+  {
+   "monomerid": 50173124,
+   "bdbm_id": "BDBM50173124",
+   "name": "CHEMBL3809888",
+   "smiles": "Cc1cc(-c2cc(NC(=O)c3ccc(CN4CCN(C)CC4)cc3)[nH]n2)ccc1NC(=O)Nc1cccc(F)c1",
+   "mol_weight": 541.26,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.44
+  },
+  {
+   "monomerid": 50668898,
+   "bdbm_id": "BDBM50668898",
+   "name": "CHEMBL6193456",
+   "smiles": "CCOc1ccc(-c2cn(C)c3cc(NC(=O)c4ccc(C)c(Nc5nccc(-c6ccc(OC7CC7)cc6)n5)c4)ccc23)cn1",
+   "mol_weight": 610.72,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.44
+  },
+  {
+   "monomerid": 50173125,
+   "bdbm_id": "BDBM50173125",
+   "name": "CHEMBL3809012",
+   "smiles": "Cc1cc(-c2cc(NC(=O)c3ccc(CN4CCN(C)CC4)cc3)[nH]n2)ccc1N",
+   "mol_weight": 404.23,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.439
+  },
+  {
+   "monomerid": 50668893,
+   "bdbm_id": "BDBM50668893",
+   "name": "CHEMBL6188406",
+   "smiles": "CCOc1ccc(-c2cn(C)c3cc(NC(=O)c4ccc(C)c(Nc5nccc(-c6ccc(C(C)C)cc6)n5)c4)ccc23)cn1",
+   "mol_weight": 596.74,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.439
+  },
+  {
+   "monomerid": 50668897,
+   "bdbm_id": "BDBM50668897",
+   "name": "CHEMBL6188939",
+   "smiles": "CCOc1ccc(-c2cn(C)c3cc(NC(=O)c4ccc(C)c(Nc5nccc(-c6ccc(OC(C)C)cc6)n5)c4)ccc23)cn1",
+   "mol_weight": 612.73,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.439
+  },
+  {
+   "monomerid": 50668907,
+   "bdbm_id": "BDBM50668907",
+   "name": "CHEMBL6192897",
+   "smiles": "CCOc1ccc(-c2cn(C)c3cc(NC(=O)c4ccc(C)c(Nc5nccc(-c6ccc(F)c(F)c6)n5)c4)ccc23)cn1",
+   "mol_weight": 590.63,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.439
+  },
+  {
+   "monomerid": 50290431,
+   "bdbm_id": "BDBM50290431",
+   "name": "Hexanoic acid [3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-amide",
+   "smiles": "CCCCCC(=O)Nc1cccc(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 361.44021,
+   "n_activities": 6,
+   "n_targets": 6,
+   "similarity": 0.438
+  },
+  {
+   "monomerid": 50257115,
+   "bdbm_id": "BDBM50257115",
+   "name": "N2-(2-aminophenyl)-N5-(4-methyl-3-(5-(pyridin-3-yl)thiazol-2-ylamino)phenyl)pyridine-2,5-dicarboxamide",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(nc2)C(=O)Nc2ccccc2N)cc1Nc1ncc(s1)-c1cccnc1",
+   "mol_weight": 521.59292,
+   "n_activities": 5,
+   "n_targets": 5,
+   "similarity": 0.438
+  },
+  {
+   "monomerid": 50544968,
+   "bdbm_id": "BDBM50544968",
+   "name": "CHEMBL4642587",
+   "smiles": "Cc1cn(cn1)-c1cc(CCS(N)(=O)=O)cc(NC(=O)c2ccc(C)c(Nc3nccc(n3)-c3ccccc3)c2)c1",
+   "mol_weight": 567.68,
+   "n_activities": 4,
+   "n_targets": 4,
+   "similarity": 0.438
+  },
+  {
+   "monomerid": 50240221,
+   "bdbm_id": "BDBM50240221",
+   "name": "CHEMBL4099220",
+   "smiles": "CN1CCN(Cc2ccc(NC(=O)c3ccc(C)c(NC(=O)c4cccc(c4)-c4cccs4)c3)cc2Cl)CC1",
+   "mol_weight": 558.19,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.438
+  },
+  {
+   "monomerid": 50008109,
+   "bdbm_id": "BDBM50008109",
+   "name": "CHEMBL3234745",
+   "smiles": "CCNc1ncc(cn1)C(=O)Nc1cc(ccc1C)C(=O)Nc1ccc(CN2CCN(C)CC2)c(c1)C(F)(F)F",
+   "mol_weight": 555.26,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.438
+  },
+  {
+   "monomerid": 50544966,
+   "bdbm_id": "BDBM50544966",
+   "name": "CHEMBL4637487",
+   "smiles": "Cc1cn(cn1)-c1cc(CN2CCC[C@H](N)C2)cc(NC(=O)c2ccc(C)c(Nc3nccc(n3)-c3ccc(F)cc3)c2)c1 |r|",
+   "mol_weight": 590.71,
+   "n_activities": 4,
+   "n_targets": 4,
+   "similarity": 0.437
+  },
+  {
+   "monomerid": 50255424,
+   "bdbm_id": "BDBM50255424",
+   "name": "N-(2-aminophenyl)-4-((4-(4-(morpholinomethyl)phenyl)pyrimidin-2-ylamino)methyl)benzamide",
+   "smiles": "Nc1ccccc1NC(=O)c1ccc(CNc2nccc(n2)-c2ccc(CN3CCOCC3)cc2)cc1",
+   "mol_weight": 494.5875,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.437
+  },
+  {
+   "monomerid": 50617736,
+   "bdbm_id": "BDBM50617736",
+   "name": "CHEMBL5423653",
+   "smiles": "COc1ccc(cc1)S(=O)(=O)N(CC(C)C)C[C@@H](O)[C@H](Cc1ccccc1)NC(=O)c1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1 |r|",
+   "mol_weight": 694.86,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.437
+  },
+  {
+   "monomerid": 50617739,
+   "bdbm_id": "BDBM50617739",
+   "name": "CHEMBL5415174",
+   "smiles": "CC(C)CN(C[C@@H](O)[C@H](Cc1cc(F)cc(F)c1)NC(=O)c1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1)S(=O)(=O)c1ccc(N)cc1 |r|",
+   "mol_weight": 715.83,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.437
+  },
+  {
+   "monomerid": 378889,
+   "bdbm_id": "BDBM378889",
+   "name": "N-(3-((4-amino-1-isopropyl-1H-pyrazolo [3,4-d] pyrimidin-3-yl) ethynyl)-4-methylphenyl)-4-(4-methylpiperazin-1-yl) methyl) benzamide",
+   "smiles": "CC(C)n1nc(C#Cc2cc(NC(=O)c3ccc(CN4CCN(C)CC4)cc3)ccc2C)c2c(N)ncnc12",
+   "mol_weight": 522.29,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.436
+  },
+  {
+   "monomerid": 50544974,
+   "bdbm_id": "BDBM50544974",
+   "name": "CHEMBL4642181",
+   "smiles": "Cc1cn(cn1)-c1cc(NC(=O)c2ccc(C)c(Nc3nccc(n3)-c3ccccc3)c2)cc(c1)C(F)(F)F",
+   "mol_weight": 528.54,
+   "n_activities": 4,
+   "n_targets": 4,
+   "similarity": 0.435
+  },
+  {
+   "monomerid": 50452711,
+   "bdbm_id": "BDBM50452711",
+   "name": "CHEMBL4208579",
+   "smiles": "CC(C)(C)c1ccc(C(=O)Nc2cccc(-c3ccnc(Nc4ccc5cc[nH]c5c4)n3)c2)cc1",
+   "mol_weight": 461.57,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.435
+  },
+  {
+   "monomerid": 802275,
+   "bdbm_id": "BDBM802275",
+   "name": "4-(2-((3-fluoro-4-(4- methylpiperazine-1- carbonyl)phenyl)amino)pyrimidin- 4-yl)-N-hydroxybenzamide",
+   "smiles": "CN1CCN(C(=O)c2ccc(Nc3nccc(-c4ccc(C(=O)NO)cc4)n3)cc2F)CC1",
+   "mol_weight": 450.18,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.435
+  },
+  {
+   "monomerid": 50491784,
+   "bdbm_id": "BDBM50491784",
+   "name": "CHEMBL2385987",
+   "smiles": "CCOc1ccc(cc1NC(=O)c1ccc(CN2CCN(C)CC2)cc1)C(=O)Nc1ccc(OCc2ccccn2)c(Cl)c1",
+   "mol_weight": 614.15,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.435
+  },
+  {
+   "monomerid": 50290418,
+   "bdbm_id": "BDBM50290418",
+   "name": "3-(4-Pyridin-3-yl-pyrimidin-2-ylamino)-benzoic acid methyl ester",
+   "smiles": "COC(=O)c1cccc(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 306.31866,
+   "n_activities": 5,
+   "n_targets": 5,
+   "similarity": 0.434
+  },
+  {
+   "monomerid": 148325,
+   "bdbm_id": "BDBM148325",
+   "name": "US8962637, 51",
+   "smiles": "CN1CCN(Cc2cccc(Nc3ncc4CN(CCc4n3)c3cc(NC(=O)c4cccc(c4)C(F)(F)F)ccc3C)c2)CC1",
+   "mol_weight": 615.29,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.434
+  },
+  {
+   "monomerid": 148411,
+   "bdbm_id": "BDBM148411",
+   "name": "US8962637, 137",
+   "smiles": "CN1CCN(Cc2cccc(Nc3ncc4CN(CCc4n3)c3cc(NC(=O)c4cccc(c4)C(F)(F)F)ccc3C)c2)CC1",
+   "mol_weight": null,
+   "n_activities": 0,
+   "n_targets": 0,
+   "similarity": 0.434
+  },
+  {
+   "monomerid": 261627,
+   "bdbm_id": "BDBM261627",
+   "name": "N-(4-(4-methyl-3-(phenylethynyl)phenyl)thiazol-2-yl)-4-((4-methylpiperazin-1-yl)methyl)benzamide",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2nc(cs2)-c2ccc(C)c(c2)C#Cc2ccccc2)CC1",
+   "mol_weight": 506.21,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.433
+  },
+  {
+   "monomerid": 50668884,
+   "bdbm_id": "BDBM50668884",
+   "name": "CHEMBL6190873",
+   "smiles": "CCOc1ccc(-c2cn(C)c3cc(NC(=O)c4ccc(C)c(Nc5cc(-c6cccnc6)ccn5)c4)ccc23)cn1",
+   "mol_weight": 554.65,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.433
+  },
+  {
+   "monomerid": 50290410,
+   "bdbm_id": "BDBM50290410",
+   "name": "3-(4-Pyridin-3-yl-pyrimidin-2-ylamino)-benzoic acid",
+   "smiles": "OC(=O)c1cccc(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 292.29208,
+   "n_activities": 6,
+   "n_targets": 6,
+   "similarity": 0.432
+  },
+  {
+   "monomerid": 5844,
+   "bdbm_id": "BDBM5844",
+   "name": "D3RKN_88",
+   "smiles": "CN(c1ccc(NC(=O)Nc2ccc(CN3CCN(C)CC3)cc2)cc1)c1ccnc(Nc2ccc(CS(C)(=O)=O)cc2)n1",
+   "mol_weight": 614.28,
+   "n_activities": 4,
+   "n_targets": 3,
+   "similarity": 0.432
+  },
+  {
+   "monomerid": 639117,
+   "bdbm_id": "BDBM639117",
+   "name": "US20230391714, NUCC-0202005",
+   "smiles": "CN1CCN(Cc2cc(ccc2OCC(=O)Nc2ccc(Cl)c(Cl)c2)-c2cccnc2)CC1",
+   "mol_weight": 484.14,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.432
+  },
+  {
+   "monomerid": 50008106,
+   "bdbm_id": "BDBM50008106",
+   "name": "CHEMBL3234742",
+   "smiles": "CN1CCN(Cc2ccc(NC(=O)c3ccc(C)c(NC(=O)c4cnc(N)nc4)c3)cc2C(F)(F)F)CC1",
+   "mol_weight": 527.23,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.432
+  },
+  {
+   "monomerid": 50008107,
+   "bdbm_id": "BDBM50008107",
+   "name": "CHEMBL3234743",
+   "smiles": "CN1CCN(Cc2ccc(NC(=O)c3ccc(C)c(NC(=O)c4ccc(O)nc4)c3)cc2C(F)(F)F)CC1",
+   "mol_weight": 527.21,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.432
+  },
+  {
+   "monomerid": 50255856,
+   "bdbm_id": "BDBM50255856",
+   "name": "2-amino-N-(4-((4-(pyridin-3-yl)pyrimidin-2-ylamino)methyl)phenyl)benzamide",
+   "smiles": "Nc1ccccc1C(=O)Nc1ccc(CNc2nccc(n2)-c2cccnc2)cc1",
+   "mol_weight": 396.4445,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.432
+  },
+  {
+   "monomerid": 50432860,
+   "bdbm_id": "BDBM50432860",
+   "name": "CHEMBL2376633",
+   "smiles": "CCCCCCC(=O)Nc1cccc(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 375.47,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.432
+  },
+  {
+   "monomerid": 50491772,
+   "bdbm_id": "BDBM50491772",
+   "name": "CHEMBL2385973",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(cc2)-c2cncc(C#N)c2Nc2ccc(cc2)C(C)=O)CC1",
+   "mol_weight": 544.66,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.432
+  },
+  {
+   "monomerid": 50432872,
+   "bdbm_id": "BDBM50432872",
+   "name": "CHEMBL327907",
+   "smiles": "Cc1cccc(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 262.31,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.431
+  },
+  {
+   "monomerid": 50257030,
+   "bdbm_id": "BDBM50257030",
+   "name": "N2-(2-aminophenyl)-N5-(4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)phenyl)thiophene-2,5-dicarboxamide",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(s2)C(=O)Nc2ccccc2N)cc1Nc1ncc(cn1)-c1cccnc1",
+   "mol_weight": 521.59292,
+   "n_activities": 5,
+   "n_targets": 5,
+   "similarity": 0.43
+  },
+  {
+   "monomerid": 50402426,
+   "bdbm_id": "BDBM50402426",
+   "name": "CHEMBL2207767",
+   "smiles": "CC(=O)Nc1ccc(cc1)-c1ccnc(Nc2cccc(NC(=O)c3ccccc3)c2)n1",
+   "mol_weight": 423.17,
+   "n_activities": 3,
+   "n_targets": 2,
+   "similarity": 0.43
+  },
+  {
+   "monomerid": 261672,
+   "bdbm_id": "BDBM261672",
+   "name": "N-(4-(3-ethynylphenyl)thiazol-2-yl)-4-((4-methylpiperazin-1-yl)methyl)benzamide",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2nc(cs2)-c2cccc(c2)C#C)CC1",
+   "mol_weight": 416.17,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.43
+  },
+  {
+   "monomerid": 488047,
+   "bdbm_id": "BDBM488047",
+   "name": "4-(1-Ethyl-3-(pyridin- 3-yl)-1H-pyrazol-4- yl)-N-(4-(4- methylpiperazin-1- yl)phenyl)pyrimidin-2- amine",
+   "smiles": "CCn1cc(c(n1)-c1cccnc1)-c1ccnc(Nc2ccc(cc2)N2CCN(C)CC2)n1",
+   "mol_weight": 440.24,
+   "n_activities": 2,
+   "n_targets": 2,
+   "similarity": 0.43
+  },
+  {
+   "monomerid": 50607517,
+   "bdbm_id": "BDBM50607517",
+   "name": "CHEMBL5219468",
+   "smiles": "Cc1ccc(cc1Nc1cc(ccn1)-c1cccnc1)C(=O)Nc1cc(cc(c1)C(F)(F)F)-c1cnn(C)c1",
+   "mol_weight": 528.54,
+   "n_activities": 2,
+   "n_targets": 1,
+   "similarity": 0.43
+  },
+  {
+   "monomerid": 346117,
+   "bdbm_id": "BDBM346117",
+   "name": "(6-Methyl-2-pyridin- 3-yl-3H- benzoimidazol-5-yl)- (4-pyridin-3-yl- pyrimidin-2-yl)- amine",
+   "smiles": "Cc1cc2nc(-c3cccnc3)[nH]c2cc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 379.15,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.43
+  },
+  {
+   "monomerid": 50242185,
+   "bdbm_id": "BDBM50242185",
+   "name": "CHEMBL4071683",
+   "smiles": "CN1CCN(Cc2ccc(NC(=O)c3ccc(C)c(c3)C#Cc3ccc(N)nn3)cc2)CC1",
+   "mol_weight": 440.23,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.43
+  },
+  {
+   "monomerid": 50382426,
+   "bdbm_id": "BDBM50382426",
+   "name": "CHEMBL2022969",
+   "smiles": "CN(C)C(=O)c1ccccc1Nc1nc(Nc2ccc(CN3CCN(C)CC3)cc2)ncc1Cl",
+   "mol_weight": 479.22,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.43
+  },
+  {
+   "monomerid": 50437264,
+   "bdbm_id": "BDBM50437264",
+   "name": "CHEMBL2407257",
+   "smiles": "CCN1CCN(CC1)c1ccc(NC(=O)c2ccc(cc2)-c2cccnc2)cc1",
+   "mol_weight": 386.49,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.43
+  },
+  {
+   "monomerid": 50443911,
+   "bdbm_id": "BDBM50443911",
+   "name": "CHEMBL3091557",
+   "smiles": "Cc1cccc(C)c1NC(=O)c1ccc(Nc2ncc(C)c(n2)-c2cccnc2)cc1",
+   "mol_weight": 409.48,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.43
+  }
+ ],
+ "n_similar_compounds": 7624,
+ "compounds_searched": 1466457,
+ "search_set_size": 1466457
+}

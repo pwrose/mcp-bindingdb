@@ -1,0 +1,53 @@
+{
+ "measurement": {
+  "ic50": " 0.00026",
+  "ki_result_id": 536982,
+  "reactant_set_id": 536984,
+  "temp": 298.15,
+  "comments": "extracted",
+  "assayid": 1,
+  "entryid": 610,
+  "ph": 7.4
+ },
+ "reactants": {
+  "target_label": "Tyrosine-protein kinase BTK",
+  "ligand_label": "BDBM281761",
+  "substrate": "to-be-curated",
+  "e_prep": null,
+  "i_prep": null,
+  "s_prep": null,
+  "monomerid": 281761,
+  "compound_name": "4-(2-acryloyl-1,2,3,4- tetrahydroisoquinolin- 5-yl)-6-chloro-3-fluoro- 9H-carbazole-1- carboxamide",
+  "inchi_key": "PRKMJLHNBXYDTM-UHFFFAOYSA-N",
+  "polymerid": 1846,
+  "complexid": null,
+  "target_name": "Tyrosine-protein kinase BTK",
+  "uniprot_raw": "Q06187",
+  "organism": "Homo sapiens"
+ },
+ "assay": {
+  "assay_name": "Human Recombinant Btk Enzyme Assay",
+  "description": "To V-bottom 384-well plates were added test compounds, human recombinant Btk (1 nM, Invitrogen Corporation), fluoresceinated peptide (1.5 &#956;M), ATP (20 &#956;M), and assay buffer (20 mM HEPES pH 7.4, 10 mM MgCl2, 0.015% Brij 35 surfactant and 4 mM DTT in 1.6% DMSO), with a final volume of 30 &#956;L. After incubating at room temperature for 60 min, the reaction was terminated by adding 45 &#956;L of 35 mM EDTA to each sample. The reaction mixture was analyzed on the Caliper LABCHIP 3000 (Caliper, Hopkinton, Mass.) by electrophoretic separation of the fluorescent substrate and phosphorylated product. Inhibition data were calculated by comparison to no enzyme control reactions for 100% inhibition and no inhibitor controls for 0% inhibition. Dose response curves were generated to determine the concentration required for inhibiting 50% of kinase activity (IC50). Compounds were dissolved at 10 mM in DMSO and evaluated at eleven concentrations."
+ },
+ "entry": {
+  "entryid": 610,
+  "entrytitle": "Carbazole and tetrahydrocarbazole compounds useful as inhibitors of BTK",
+  "meas_tech": "Enzyme Inhibition",
+  "entrydate": "2018-12-31T00:00:00",
+  "ezid": "10.7270/Q2WW7KQR"
+ },
+ "citations": [
+  {
+   "articleid": 7043,
+   "art_purp": "header5body5-20180717",
+   "title": "Carbazole and tetrahydrocarbazole compounds useful as inhibitors of BTK",
+   "journal": "US Patent",
+   "year": 2018,
+   "volume": 2018,
+   "firstpage": null,
+   "source_id": "US10023534-B2",
+   "doi": null,
+   "authors": "SH Watterson, AJ Tebben, S Ahmad"
+  }
+ ]
+}

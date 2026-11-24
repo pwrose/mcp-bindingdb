@@ -1,0 +1,33 @@
+{
+ "query": "terfenadine",
+ "resolved": true,
+ "source": "bindingdb",
+ "smiles": "CC(C)(C)c1ccc(cc1)C(O)CCCN1CCC(CC1)C(O)(c1ccccc1)c1ccccc1",
+ "inchi_key": "GUGOEEXESWIERI-UHFFFAOYSA-N",
+ "monomerid": 50017376,
+ "ambiguous": false,
+ "candidates": [
+  {
+   "monomerid": 50017376,
+   "bdbm_id": "BDBM50017376",
+   "name": "TERFENADINE",
+   "inchi_key": "GUGOEEXESWIERI-UHFFFAOYSA-N",
+   "smiles": "CC(C)(C)c1ccc(cc1)C(O)CCCN1CCC(CC1)C(O)(c1ccccc1)c1ccccc1",
+   "n_activities": 60
+  },
+  {
+   "monomerid": 22879,
+   "bdbm_id": "BDBM22879",
+   "name": "Terfenadine",
+   "inchi_key": "GUGOEEXESWIERI-SSEXGKCCSA-N",
+   "smiles": "CC(C)(C)c1ccc(cc1)[C@H](O)CCCN1CCC(CC1)C(O)(c1ccccc1)c1ccccc1",
+   "n_activities": 8
+  }
+ ],
+ "sources_tried": [
+  {
+   "source": "bindingdb",
+   "status": "found"
+  }
+ ]
+}

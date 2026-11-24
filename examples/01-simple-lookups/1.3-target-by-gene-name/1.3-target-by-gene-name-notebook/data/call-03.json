@@ -1,0 +1,342 @@
+{
+ "row_count": 56,
+ "truncated": false,
+ "rows": [
+  {
+   "target_id": 520,
+   "uniprot_raw": "P00533",
+   "n_measurements": 23267,
+   "n_compounds": 14127
+  },
+  {
+   "target_id": 60,
+   "uniprot_raw": "P00533[T790M,L858R]",
+   "n_measurements": 1536,
+   "n_compounds": 1276
+  },
+  {
+   "target_id": 1058,
+   "uniprot_raw": "P00533[L858R,T790M,C797S]",
+   "n_measurements": 703,
+   "n_compounds": 679
+  },
+  {
+   "target_id": 1214,
+   "uniprot_raw": "P00533[L858R,C797S]",
+   "n_measurements": 684,
+   "n_compounds": 683
+  },
+  {
+   "target_id": 51,
+   "uniprot_raw": "P00533[L858R]",
+   "n_measurements": 678,
+   "n_compounds": 646
+  },
+  {
+   "target_id": 1655,
+   "uniprot_raw": "P00533[1-745,751-1210,C797S]",
+   "n_measurements": 665,
+   "n_compounds": 664
+  },
+  {
+   "target_id": 1198,
+   "uniprot_raw": "P00533[1-18,20-1210,T790M,C797S]",
+   "n_measurements": 478,
+   "n_compounds": 451
+  },
+  {
+   "target_id": 1197,
+   "uniprot_raw": "P00533[1-18,20-1210,C797S]",
+   "n_measurements": 428,
+   "n_compounds": 415
+  },
+  {
+   "target_id": 1253,
+   "uniprot_raw": "P00533[1-770,'NPG',771-1210]",
+   "n_measurements": 415,
+   "n_compounds": 410
+  },
+  {
+   "target_id": 1252,
+   "uniprot_raw": "P00533[1-770,'SVD',771-1210]",
+   "n_measurements": 302,
+   "n_compounds": 282
+  },
+  {
+   "target_id": 1788,
+   "uniprot_raw": "P00533[T790M,C797S,L858R]",
+   "n_measurements": 275,
+   "n_compounds": 275
+  },
+  {
+   "target_id": 535,
+   "uniprot_raw": "P00533[1-745,751-1210]",
+   "n_measurements": 246,
+   "n_compounds": 245
+  },
+  {
+   "target_id": 243,
+   "uniprot_raw": "P00533[T790M]",
+   "n_measurements": 229,
+   "n_compounds": 213
+  },
+  {
+   "target_id": 1847,
+   "uniprot_raw": "P00533[669-1210]",
+   "n_measurements": 165,
+   "n_compounds": 165
+  },
+  {
+   "target_id": 1148,
+   "uniprot_raw": "P00533[695-1022,T790M,C797S,L858R]",
+   "n_measurements": 151,
+   "n_compounds": 130
+  },
+  {
+   "target_id": 1200,
+   "uniprot_raw": "P00533[1-18,20-1210]",
+   "n_measurements": 150,
+   "n_compounds": 150
+  },
+  {
+   "target_id": 1150,
+   "uniprot_raw": "P00533[695-1022]",
+   "n_measurements": 142,
+   "n_compounds": 124
+  },
+  {
+   "target_id": 1734,
+   "uniprot_raw": "P00533[1-763,'FHEA',764-1210]",
+   "n_measurements": 106,
+   "n_compounds": 106
+  },
+  {
+   "target_id": 1539,
+   "uniprot_raw": "P00533[1-773,'NPH',774-1210]",
+   "n_measurements": 103,
+   "n_compounds": 98
+  },
+  {
+   "target_id": 1542,
+   "uniprot_raw": "P00533[1-769,'ASV',770-1210]",
+   "n_measurements": 102,
+   "n_compounds": 97
+  },
+  {
+   "target_id": 1201,
+   "uniprot_raw": "P00533[1-18,20-1210,T790M]",
+   "n_measurements": 95,
+   "n_compounds": 83
+  },
+  {
+   "target_id": 1834,
+   "uniprot_raw": "P00533[1-18,20-745,751-1210,T790M]",
+   "n_measurements": 80,
+   "n_compounds": 80
+  },
+  {
+   "target_id": 1217,
+   "uniprot_raw": "P00533[669-770,'SVD',771-1210]",
+   "n_measurements": 73,
+   "n_compounds": 45
+  },
+  {
+   "target_id": 1251,
+   "uniprot_raw": "P00533[S768I]",
+   "n_measurements": 58,
+   "n_compounds": 58
+  },
+  {
+   "target_id": 1254,
+   "uniprot_raw": "P00533[1-769,'SVD',770-1210]",
+   "n_measurements": 58,
+   "n_compounds": 58
+  },
+  {
+   "target_id": 1255,
+   "uniprot_raw": "P00533[1-769,'SV',770-1210]",
+   "n_measurements": 58,
+   "n_compounds": 58
+  },
+  {
+   "target_id": 1127,
+   "uniprot_raw": "P00533[695-745,751-1022,T790M,C797S]",
+   "n_measurements": 49,
+   "n_compounds": 49
+  },
+  {
+   "target_id": 10043,
+   "uniprot_raw": "P00533[645-1186]",
+   "n_measurements": 33,
+   "n_compounds": 33
+  },
+  {
+   "target_id": 1052,
+   "uniprot_raw": "P00533[1-18,20-745,747-749,751-1210]",
+   "n_measurements": 29,
+   "n_compounds": 28
+  },
+  {
+   "target_id": 1054,
+   "uniprot_raw": "P00533[1-18,20-745,747-749,751-1210,T790M]",
+   "n_measurements": 29,
+   "n_compounds": 28
+  },
+  {
+   "target_id": 10125,
+   "uniprot_raw": "P00533[668-1210,T790M,L858R]",
+   "n_measurements": 28,
+   "n_compounds": 25
+  },
+  {
+   "target_id": 588,
+   "uniprot_raw": "P00533[1-249,301-1210,T790M,L858R]",
+   "n_measurements": 23,
+   "n_compounds": 23
+  },
+  {
+   "target_id": 3997,
+   "uniprot_raw": "P00533[G719C]",
+   "n_measurements": 23,
+   "n_compounds": 22
+  },
+  {
+   "target_id": 4460,
+   "uniprot_raw": "P00533[1-999,L858R]",
+   "n_measurements": 18,
+   "n_compounds": 18
+  },
+  {
+   "target_id": 5914,
+   "uniprot_raw": "P00533[1-973]",
+   "n_measurements": 17,
+   "n_compounds": 17
+  },
+  {
+   "target_id": 1911,
+   "uniprot_raw": "P00533[1-770,'NPG',771-1210,T790M]",
+   "n_measurements": 13,
+   "n_compounds": 13
+  },
+  {
+   "target_id": 3945,
+   "uniprot_raw": "P00533[668-1210]",
+   "n_measurements": 13,
+   "n_compounds": 10
+  },
+  {
+   "target_id": 632,
+   "uniprot_raw": "P00533[1-745,747-749,751-1210]",
+   "n_measurements": 12,
+   "n_compounds": 11
+  },
+  {
+   "target_id": 1256,
+   "uniprot_raw": "P00533[1-772,'NPH',773-1210]",
+   "n_measurements": 12,
+   "n_compounds": 12
+  },
+  {
+   "target_id": 2959,
+   "uniprot_raw": "P00533[696-1022,L858R]",
+   "n_measurements": 11,
+   "n_compounds": 9
+  },
+  {
+   "target_id": 677,
+   "uniprot_raw": "P00533[1-745,751-1210,T790M]",
+   "n_measurements": 10,
+   "n_compounds": 10
+  },
+  {
+   "target_id": 1659,
+   "uniprot_raw": "P00533[1-745,751-1210,T790M,C797S]",
+   "n_measurements": 10,
+   "n_compounds": 10
+  },
+  {
+   "target_id": 3392,
+   "uniprot_raw": "P00533[671-1210,L858R]",
+   "n_measurements": 10,
+   "n_compounds": 10
+  },
+  {
+   "target_id": 634,
+   "uniprot_raw": "P00533[1-751,753-758,760-1210]",
+   "n_measurements": 8,
+   "n_compounds": 8
+  },
+  {
+   "target_id": 3950,
+   "uniprot_raw": "P00533[696-1210,T790M]",
+   "n_measurements": 5,
+   "n_compounds": 5
+  },
+  {
+   "target_id": 636,
+   "uniprot_raw": "P00533[G719S]",
+   "n_measurements": 3,
+   "n_compounds": 3
+  },
+  {
+   "target_id": 637,
+   "uniprot_raw": "P00533[L861Q]",
+   "n_measurements": 3,
+   "n_compounds": 3
+  },
+  {
+   "target_id": 2958,
+   "uniprot_raw": "P00533[696-1022,G719S]",
+   "n_measurements": 2,
+   "n_compounds": 2
+  },
+  {
+   "target_id": 2960,
+   "uniprot_raw": "P00533[696-1022,T790M]",
+   "n_measurements": 2,
+   "n_compounds": 2
+  },
+  {
+   "target_id": 2961,
+   "uniprot_raw": "P00533[696-1022,T790M,L858R]",
+   "n_measurements": 2,
+   "n_compounds": 2
+  },
+  {
+   "target_id": 10580,
+   "uniprot_raw": "P00533[1-746,750-1210,A750P]",
+   "n_measurements": 2,
+   "n_compounds": 2
+  },
+  {
+   "target_id": 10581,
+   "uniprot_raw": "P00533[1-746,753-1210,P753S]",
+   "n_measurements": 2,
+   "n_compounds": 2
+  },
+  {
+   "target_id": 10582,
+   "uniprot_raw": "P00533[1-751,75360-1210]",
+   "n_measurements": 2,
+   "n_compounds": 2
+  },
+  {
+   "target_id": 638,
+   "uniprot_raw": "P00533[1-746,748-748,750-1210,A750P]",
+   "n_measurements": 1,
+   "n_compounds": 1
+  },
+  {
+   "target_id": 639,
+   "uniprot_raw": "P00533[1-746,748-751,753-1210,P753S]",
+   "n_measurements": 1,
+   "n_compounds": 1
+  },
+  {
+   "target_id": 640,
+   "uniprot_raw": "P00533[1-746,748-750,752-1210]",
+   "n_measurements": 1,
+   "n_compounds": 1
+  }
+ ]
+}

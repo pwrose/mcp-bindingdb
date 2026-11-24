@@ -1,0 +1,189 @@
+{
+ "row_count": 26,
+ "truncated": false,
+ "rows": [
+  {
+   "source_id": "22037378",
+   "doi": "10.1038/nbt.1990",
+   "yr": 2011,
+   "n_kd": 1744,
+   "n_kinases": 371
+  },
+  {
+   "source_id": "18183025",
+   "doi": "10.1038/nbt1358",
+   "yr": 2008,
+   "n_kd": 628,
+   "n_kinases": 279
+  },
+  {
+   "source_id": "aid1433",
+   "doi": null,
+   "yr": 2008,
+   "n_kd": 117,
+   "n_kinases": 82
+  },
+  {
+   "source_id": "29928781",
+   "doi": "10.1002/cmdc.201800398",
+   "yr": null,
+   "n_kd": 23,
+   "n_kinases": 22
+  },
+  {
+   "source_id": "15711537",
+   "doi": "10.1038/nbt1068",
+   "yr": 2005,
+   "n_kd": 22,
+   "n_kinases": 16
+  },
+  {
+   "source_id": "30807144",
+   "doi": "10.1021/acs.jmedchem.8b01925",
+   "yr": 2019,
+   "n_kd": 9,
+   "n_kinases": 9
+  },
+  {
+   "source_id": "23273517",
+   "doi": "10.1016/j.bmcl.2012.11.111",
+   "yr": 2013,
+   "n_kd": 6,
+   "n_kinases": 6
+  },
+  {
+   "source_id": "28792760",
+   "doi": "10.1021/acs.jmedchem.7b00996",
+   "yr": 2017,
+   "n_kd": 6,
+   "n_kinases": 3
+  },
+  {
+   "source_id": "27940419",
+   "doi": "10.1016/j.ejmech.2016.11.003",
+   "yr": 2017,
+   "n_kd": 5,
+   "n_kinases": 4
+  },
+  {
+   "source_id": "24754677",
+   "doi": "10.1021/jm500167q",
+   "yr": 2014,
+   "n_kd": 4,
+   "n_kinases": 1
+  },
+  {
+   "source_id": "32428794",
+   "doi": "10.1016/j.ejmech.2020.112421",
+   "yr": 2020,
+   "n_kd": 4,
+   "n_kinases": 4
+  },
+  {
+   "source_id": "26789553",
+   "doi": "10.1021/acs.jmedchem.5b01618",
+   "yr": 2016,
+   "n_kd": 4,
+   "n_kinases": 2
+  },
+  {
+   "source_id": "33970631",
+   "doi": "10.1021/acs.jmedchem.1c00302",
+   "yr": 2022,
+   "n_kd": 3,
+   "n_kinases": 3
+  },
+  {
+   "source_id": "30973735",
+   "doi": "10.1021/acs.jmedchem.9b00350",
+   "yr": 2019,
+   "n_kd": 2,
+   "n_kinases": 2
+  },
+  {
+   "source_id": "21429632",
+   "doi": "10.1016/j.ejmech.2011.02.057",
+   "yr": 2011,
+   "n_kd": 2,
+   "n_kinases": 1
+  },
+  {
+   "source_id": "31129055",
+   "doi": "10.1016/j.bmcl.2019.05.025",
+   "yr": 2019,
+   "n_kd": 2,
+   "n_kinases": 2
+  },
+  {
+   "source_id": "25822739",
+   "doi": "10.1021/jm501759m",
+   "yr": 2015,
+   "n_kd": 1,
+   "n_kinases": 1
+  },
+  {
+   "source_id": "34735773",
+   "doi": "10.1021/acs.jmedchem.1c01030",
+   "yr": 2021,
+   "n_kd": 1,
+   "n_kinases": 1
+  },
+  {
+   "source_id": "31188592",
+   "doi": "10.1021/acs.jmedchem.8b01732",
+   "yr": 2019,
+   "n_kd": 1,
+   "n_kinases": 1
+  },
+  {
+   "source_id": "19396179",
+   "doi": "10.1038/nchembio.162",
+   "yr": 2009,
+   "n_kd": 1,
+   "n_kinases": 1
+  },
+  {
+   "source_id": "32688199",
+   "doi": "10.1016/j.ejmech.2020.112524",
+   "yr": 2020,
+   "n_kd": 1,
+   "n_kinases": 1
+  },
+  {
+   "source_id": "37134203",
+   "doi": "10.1021/acs.jmedchem.3c00319",
+   "yr": 2023,
+   "n_kd": 1,
+   "n_kinases": 1
+  },
+  {
+   "source_id": "20153202",
+   "doi": "10.1016/j.bmc.2010.01.053",
+   "yr": 2010,
+   "n_kd": 1,
+   "n_kinases": 1
+  },
+  {
+   "source_id": "39818014",
+   "doi": "10.1016/j.ejmech.2025.117258",
+   "yr": null,
+   "n_kd": 1,
+   "n_kinases": 1
+  },
+  {
+   "source_id": "29636220",
+   "doi": "10.1016/j.bmcl.2018.03.032",
+   "yr": 2018,
+   "n_kd": 1,
+   "n_kinases": 1
+  },
+  {
+   "source_id": "25699576",
+   "doi": "10.1021/jm501929n",
+   "yr": 2015,
+   "n_kd": 1,
+   "n_kinases": 1
+  }
+ ],
+ "order_warning": "Rows 7 and 8 tie on every ORDER BY column (n_kd), so rows like them can swap places from run to run. End the ORDER BY with a unique column (e.g. monomerid; ki_result_id, affinity_type for measurements) so the result is the same on every run and a notebook's rerun check passes."
+}

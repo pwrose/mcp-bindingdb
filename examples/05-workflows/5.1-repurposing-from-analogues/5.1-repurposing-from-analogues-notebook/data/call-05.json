@@ -1,0 +1,176 @@
+{
+ "row_count": 17,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 50196669,
+   "target_name": "Histone deacetylase 1",
+   "uniprot_raw": "Q13547",
+   "organism": "Homo sapiens",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 8.0,
+   "source_id": "27606546"
+  },
+  {
+   "monomerid": 50196669,
+   "target_name": "Histone deacetylase 2",
+   "uniprot_raw": "Q92769",
+   "organism": "Homo sapiens",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 117.0,
+   "source_id": "27606546"
+  },
+  {
+   "monomerid": 50196669,
+   "target_name": "Histone deacetylase 3/Nuclear receptor corepressor 2 (HDAC3/NCoR2)",
+   "uniprot_raw": null,
+   "organism": null,
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 36.0,
+   "source_id": "27606546"
+  },
+  {
+   "monomerid": 50196669,
+   "target_name": "Histone deacetylase 6",
+   "uniprot_raw": "Q9UBN7",
+   "organism": "Homo sapiens",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 268.0,
+   "source_id": "27606546"
+  },
+  {
+   "monomerid": 50196669,
+   "target_name": "cGMP-specific 3',5'-cyclic phosphodiesterase",
+   "uniprot_raw": "O76074",
+   "organism": "Homo sapiens",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 3.0,
+   "source_id": "27606546"
+  },
+  {
+   "monomerid": 50196760,
+   "target_name": "Histone deacetylase 1",
+   "uniprot_raw": "Q13547",
+   "organism": "Homo sapiens",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 406.0,
+   "source_id": "27606546"
+  },
+  {
+   "monomerid": 50196760,
+   "target_name": "Histone deacetylase 2",
+   "uniprot_raw": "Q92769",
+   "organism": "Homo sapiens",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 1940.0,
+   "source_id": "27606546"
+  },
+  {
+   "monomerid": 50196760,
+   "target_name": "Histone deacetylase 6",
+   "uniprot_raw": "Q9UBN7",
+   "organism": "Homo sapiens",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 87.0,
+   "source_id": "27606546"
+  },
+  {
+   "monomerid": 50196760,
+   "target_name": "cGMP-specific 3',5'-cyclic phosphodiesterase",
+   "uniprot_raw": "O76074",
+   "organism": "Homo sapiens",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 0.5,
+   "source_id": "27606546"
+  },
+  {
+   "monomerid": 50196775,
+   "target_name": "Histone deacetylase 1",
+   "uniprot_raw": "Q13547",
+   "organism": "Homo sapiens",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 1100.0,
+   "source_id": "27606546"
+  },
+  {
+   "monomerid": 50196775,
+   "target_name": "Histone deacetylase 2",
+   "uniprot_raw": "Q92769",
+   "organism": "Homo sapiens",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 4640.0,
+   "source_id": "27606546"
+  },
+  {
+   "monomerid": 50196775,
+   "target_name": "Histone deacetylase 6",
+   "uniprot_raw": "Q9UBN7",
+   "organism": "Homo sapiens",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 360.0,
+   "source_id": "27606546"
+  },
+  {
+   "monomerid": 50196775,
+   "target_name": "cGMP-specific 3',5'-cyclic phosphodiesterase",
+   "uniprot_raw": "O76074",
+   "organism": "Homo sapiens",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 2.0,
+   "source_id": "27606546"
+  },
+  {
+   "monomerid": 50196781,
+   "target_name": "Histone deacetylase 1",
+   "uniprot_raw": "Q13547",
+   "organism": "Homo sapiens",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 10500.0,
+   "source_id": "27606546"
+  },
+  {
+   "monomerid": 50196781,
+   "target_name": "Histone deacetylase 2",
+   "uniprot_raw": "Q92769",
+   "organism": "Homo sapiens",
+   "affinity_type": "IC50",
+   "relation": ">",
+   "value": 20000.0,
+   "source_id": "27606546"
+  },
+  {
+   "monomerid": 50196781,
+   "target_name": "Histone deacetylase 6",
+   "uniprot_raw": "Q9UBN7",
+   "organism": "Homo sapiens",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 2360.0,
+   "source_id": "27606546"
+  },
+  {
+   "monomerid": 50196781,
+   "target_name": "cGMP-specific 3',5'-cyclic phosphodiesterase",
+   "uniprot_raw": "O76074",
+   "organism": "Homo sapiens",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 3.0,
+   "source_id": "27606546"
+  }
+ ]
+}

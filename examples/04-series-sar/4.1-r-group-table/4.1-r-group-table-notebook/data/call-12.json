@@ -1,0 +1,31 @@
+{
+ "query": {
+  "input": "Cc1ccc(cc1)-c1cc(nn1-c1ccc(cc1)S(N)(=O)=O)C(F)(F)F",
+  "canonical": "Cc1ccc(-c2cc(C(F)(F)F)nn2-c2ccc(S(N)(=O)=O)cc2)cc1",
+  "inchi_key": "RZEKVGVHFLEQIL-UHFFFAOYSA-N",
+  "match": "same canonical isomeric SMILES (salts, stereo, charges and isotopes included)"
+ },
+ "row_count": 2,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 11639,
+   "bdbm_id": "BDBM11639",
+   "name": "CLX",
+   "smiles": "Cc1ccc(cc1)-c1cc(nn1-c1ccc(cc1)S(N)(=O)=O)C(F)(F)F",
+   "mol_weight": 381.08,
+   "n_activities": 823,
+   "n_targets": 75
+  },
+  {
+   "monomerid": 91683,
+   "bdbm_id": "BDBM91683",
+   "name": "Celecoxib",
+   "smiles": "Cc1ccc(cc1)c2cc(nn2c3ccc(cc3)S(=O)(=O)N)C(F)(F)F",
+   "mol_weight": 381.08,
+   "n_activities": 12,
+   "n_targets": 5
+  }
+ ],
+ "n_exact_matches": 2
+}

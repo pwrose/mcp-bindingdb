@@ -1,0 +1,51 @@
+{
+ "row_count": 5,
+ "truncated": false,
+ "rows": [
+  {
+   "polymerid": 5066,
+   "target": "cGMP-specific 3',5'-cyclic phosphodiesterase",
+   "uniprot": "O76074",
+   "compounds": 770,
+   "scaffolds": 352,
+   "singleton_scaffolds": 255,
+   "pct_in_series_of_5plus": 46.0
+  },
+  {
+   "polymerid": 788,
+   "target": "cGMP-dependent 3',5'-cyclic phosphodiesterase",
+   "uniprot": "O00408",
+   "compounds": 950,
+   "scaffolds": 170,
+   "singleton_scaffolds": 94,
+   "pct_in_series_of_5plus": 80.0
+  },
+  {
+   "polymerid": 5866,
+   "target": "D(2) dopamine receptor",
+   "uniprot": "P14416",
+   "compounds": 1433,
+   "scaffolds": 811,
+   "singleton_scaffolds": 609,
+   "pct_in_series_of_5plus": 31.0
+  },
+  {
+   "polymerid": 520,
+   "target": "Epidermal growth factor receptor",
+   "uniprot": "P00533",
+   "compounds": 3151,
+   "scaffolds": 1262,
+   "singleton_scaffolds": 809,
+   "pct_in_series_of_5plus": 47.0
+  },
+  {
+   "polymerid": 1846,
+   "target": "Tyrosine-protein kinase BTK",
+   "uniprot": "Q06187",
+   "compounds": 6326,
+   "scaffolds": 2478,
+   "singleton_scaffolds": 1629,
+   "pct_in_series_of_5plus": 50.0
+  }
+ ]
+}

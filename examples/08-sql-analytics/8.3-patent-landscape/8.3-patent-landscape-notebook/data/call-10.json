@@ -1,0 +1,46 @@
+{
+ "row_count": 8,
+ "truncated": false,
+ "rows": [
+  {
+   "theme": "oncology",
+   "patents_2013_17": 741,
+   "patents_2022_26": 1201
+  },
+  {
+   "theme": "degrader / PROTAC",
+   "patents_2013_17": 8,
+   "patents_2022_26": 107
+  },
+  {
+   "theme": "pain",
+   "patents_2013_17": 198,
+   "patents_2022_26": 97
+  },
+  {
+   "theme": "psychiatric",
+   "patents_2013_17": 197,
+   "patents_2022_26": 96
+  },
+  {
+   "theme": "COVID / coronavirus",
+   "patents_2013_17": 0,
+   "patents_2022_26": 80
+  },
+  {
+   "theme": "deuterated",
+   "patents_2013_17": 6,
+   "patents_2022_26": 70
+  },
+  {
+   "theme": "macrocycle",
+   "patents_2013_17": 23,
+   "patents_2022_26": 63
+  },
+  {
+   "theme": "KRAS",
+   "patents_2013_17": 0,
+   "patents_2022_26": 53
+  }
+ ]
+}

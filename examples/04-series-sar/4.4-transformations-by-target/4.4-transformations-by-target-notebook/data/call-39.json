@@ -1,0 +1,1591 @@
+{
+ "row_count": 317,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid_from": 18751,
+   "monomerid_to": 19476,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 26502,
+   "monomerid_to": 26788,
+   "n_documents": 2
+  },
+  {
+   "monomerid_from": 116233,
+   "monomerid_to": 116236,
+   "n_documents": 3
+  },
+  {
+   "monomerid_from": 124132,
+   "monomerid_to": 124133,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 124132,
+   "monomerid_to": 124138,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 124132,
+   "monomerid_to": 124170,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 124133,
+   "monomerid_to": 124168,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 124135,
+   "monomerid_to": 124136,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 124143,
+   "monomerid_to": 124135,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 124170,
+   "monomerid_to": 124168,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 124174,
+   "monomerid_to": 124177,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 134360,
+   "monomerid_to": 50012653,
+   "n_documents": 2
+  },
+  {
+   "monomerid_from": 134445,
+   "monomerid_to": 134463,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 134448,
+   "monomerid_to": 134445,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 136738,
+   "monomerid_to": 136863,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 136739,
+   "monomerid_to": 136829,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 136740,
+   "monomerid_to": 136824,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 136744,
+   "monomerid_to": 136863,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 136834,
+   "monomerid_to": 136859,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 136849,
+   "monomerid_to": 136848,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 136855,
+   "monomerid_to": 136850,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 150686,
+   "monomerid_to": 150688,
+   "n_documents": 2
+  },
+  {
+   "monomerid_from": 150686,
+   "monomerid_to": 150691,
+   "n_documents": 2
+  },
+  {
+   "monomerid_from": 150687,
+   "monomerid_to": 150689,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 150688,
+   "monomerid_to": 150693,
+   "n_documents": 3
+  },
+  {
+   "monomerid_from": 150690,
+   "monomerid_to": 150692,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 150691,
+   "monomerid_to": 150693,
+   "n_documents": 2
+  },
+  {
+   "monomerid_from": 153632,
+   "monomerid_to": 50457586,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 171399,
+   "monomerid_to": 171401,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 171399,
+   "monomerid_to": 171477,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 171461,
+   "monomerid_to": 171462,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 171461,
+   "monomerid_to": 171477,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 171565,
+   "monomerid_to": 171401,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 171565,
+   "monomerid_to": 171462,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 171587,
+   "monomerid_to": 171581,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 171645,
+   "monomerid_to": 171587,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 171645,
+   "monomerid_to": 171651,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 171645,
+   "monomerid_to": 171683,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 171651,
+   "monomerid_to": 171581,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 195117,
+   "monomerid_to": 195118,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 195422,
+   "monomerid_to": 195418,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 195422,
+   "monomerid_to": 195423,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 204940,
+   "monomerid_to": 50462001,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 210070,
+   "monomerid_to": 116292,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 214835,
+   "monomerid_to": 214839,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 214835,
+   "monomerid_to": 214960,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 214835,
+   "monomerid_to": 215026,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 214839,
+   "monomerid_to": 214961,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 214844,
+   "monomerid_to": 214835,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 214844,
+   "monomerid_to": 214997,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 214960,
+   "monomerid_to": 214961,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 214996,
+   "monomerid_to": 214966,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 214996,
+   "monomerid_to": 214995,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 214997,
+   "monomerid_to": 214960,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 220806,
+   "monomerid_to": 220783,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 220827,
+   "monomerid_to": 220826,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 220828,
+   "monomerid_to": 220825,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 220836,
+   "monomerid_to": 220858,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 220839,
+   "monomerid_to": 220799,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 220840,
+   "monomerid_to": 220798,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 220854,
+   "monomerid_to": 220856,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 220854,
+   "monomerid_to": 220859,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 223395,
+   "monomerid_to": 223400,
+   "n_documents": 2
+  },
+  {
+   "monomerid_from": 228399,
+   "monomerid_to": 228414,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 228399,
+   "monomerid_to": 228415,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 228399,
+   "monomerid_to": 230001,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 228400,
+   "monomerid_to": 228425,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 228419,
+   "monomerid_to": 229990,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 228425,
+   "monomerid_to": 229992,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 228440,
+   "monomerid_to": 228474,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 228473,
+   "monomerid_to": 228472,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 228474,
+   "monomerid_to": 228476,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 228868,
+   "monomerid_to": 229050,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 229582,
+   "monomerid_to": 230011,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 230017,
+   "monomerid_to": 228478,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 230018,
+   "monomerid_to": 228479,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 312913,
+   "monomerid_to": 312921,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 312938,
+   "monomerid_to": 223381,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 312938,
+   "monomerid_to": 312941,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 338836,
+   "monomerid_to": 338843,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 338836,
+   "monomerid_to": 338844,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 372703,
+   "monomerid_to": 372734,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 372742,
+   "monomerid_to": 372741,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 372742,
+   "monomerid_to": 372743,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 372742,
+   "monomerid_to": 372921,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 372811,
+   "monomerid_to": 372815,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 372818,
+   "monomerid_to": 372819,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 372823,
+   "monomerid_to": 372830,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 372829,
+   "monomerid_to": 372833,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 372881,
+   "monomerid_to": 372883,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 372921,
+   "monomerid_to": 372920,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 400331,
+   "monomerid_to": 400979,
+   "n_documents": 2
+  },
+  {
+   "monomerid_from": 400607,
+   "monomerid_to": 400643,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 403754,
+   "monomerid_to": 195119,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 403754,
+   "monomerid_to": 195132,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 403754,
+   "monomerid_to": 195133,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 404165,
+   "monomerid_to": 195379,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 477920,
+   "monomerid_to": 477924,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 501187,
+   "monomerid_to": 501188,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 501187,
+   "monomerid_to": 501350,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 501188,
+   "monomerid_to": 501357,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 501192,
+   "monomerid_to": 501239,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 501197,
+   "monomerid_to": 501247,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 501241,
+   "monomerid_to": 501259,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 501289,
+   "monomerid_to": 501280,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 501323,
+   "monomerid_to": 501353,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 501350,
+   "monomerid_to": 501357,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 589192,
+   "monomerid_to": 589194,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 589194,
+   "monomerid_to": 589195,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 589195,
+   "monomerid_to": 589184,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 589206,
+   "monomerid_to": 589202,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 589207,
+   "monomerid_to": 589169,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705373,
+   "monomerid_to": 705445,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705384,
+   "monomerid_to": 705378,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705388,
+   "monomerid_to": 705444,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705388,
+   "monomerid_to": 50510782,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705398,
+   "monomerid_to": 705413,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705403,
+   "monomerid_to": 705396,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705407,
+   "monomerid_to": 705425,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705410,
+   "monomerid_to": 705437,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705416,
+   "monomerid_to": 705414,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705419,
+   "monomerid_to": 705443,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705419,
+   "monomerid_to": 705450,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705420,
+   "monomerid_to": 705414,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705427,
+   "monomerid_to": 705450,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705444,
+   "monomerid_to": 705451,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705473,
+   "monomerid_to": 705527,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705474,
+   "monomerid_to": 705528,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705478,
+   "monomerid_to": 705529,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705486,
+   "monomerid_to": 705863,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705488,
+   "monomerid_to": 705489,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705490,
+   "monomerid_to": 705491,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705493,
+   "monomerid_to": 705491,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705497,
+   "monomerid_to": 705489,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705501,
+   "monomerid_to": 705743,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705507,
+   "monomerid_to": 705808,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705519,
+   "monomerid_to": 705517,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705557,
+   "monomerid_to": 50510972,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705558,
+   "monomerid_to": 705559,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705560,
+   "monomerid_to": 705559,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705564,
+   "monomerid_to": 705558,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705564,
+   "monomerid_to": 705560,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705564,
+   "monomerid_to": 705565,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705565,
+   "monomerid_to": 705559,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705566,
+   "monomerid_to": 705567,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705566,
+   "monomerid_to": 705569,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705569,
+   "monomerid_to": 705553,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705574,
+   "monomerid_to": 705576,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705590,
+   "monomerid_to": 705589,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705636,
+   "monomerid_to": 705715,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705654,
+   "monomerid_to": 705658,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705656,
+   "monomerid_to": 705662,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705659,
+   "monomerid_to": 705661,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705672,
+   "monomerid_to": 705880,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705674,
+   "monomerid_to": 705915,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705676,
+   "monomerid_to": 705740,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705677,
+   "monomerid_to": 705734,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705679,
+   "monomerid_to": 705742,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705680,
+   "monomerid_to": 705679,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705682,
+   "monomerid_to": 705686,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705685,
+   "monomerid_to": 705677,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705687,
+   "monomerid_to": 705819,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705688,
+   "monomerid_to": 705488,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705690,
+   "monomerid_to": 705679,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705691,
+   "monomerid_to": 705740,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705692,
+   "monomerid_to": 50510980,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705693,
+   "monomerid_to": 705819,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705694,
+   "monomerid_to": 705704,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705694,
+   "monomerid_to": 705945,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705694,
+   "monomerid_to": 50510977,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705695,
+   "monomerid_to": 705407,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705695,
+   "monomerid_to": 705692,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705695,
+   "monomerid_to": 50510978,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705696,
+   "monomerid_to": 705694,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705696,
+   "monomerid_to": 705703,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705697,
+   "monomerid_to": 705680,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705697,
+   "monomerid_to": 705690,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705698,
+   "monomerid_to": 705687,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705698,
+   "monomerid_to": 705693,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705699,
+   "monomerid_to": 705676,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705699,
+   "monomerid_to": 705691,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705700,
+   "monomerid_to": 705688,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705701,
+   "monomerid_to": 705753,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705703,
+   "monomerid_to": 705704,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705704,
+   "monomerid_to": 705735,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705705,
+   "monomerid_to": 705939,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705705,
+   "monomerid_to": 50510985,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705706,
+   "monomerid_to": 705736,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705707,
+   "monomerid_to": 705940,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705707,
+   "monomerid_to": 50510974,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705707,
+   "monomerid_to": 50559903,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705708,
+   "monomerid_to": 705706,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705708,
+   "monomerid_to": 705917,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705708,
+   "monomerid_to": 50510976,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705709,
+   "monomerid_to": 705737,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705710,
+   "monomerid_to": 705734,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705711,
+   "monomerid_to": 705677,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705711,
+   "monomerid_to": 705710,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705725,
+   "monomerid_to": 705724,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705733,
+   "monomerid_to": 705719,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705740,
+   "monomerid_to": 705762,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705741,
+   "monomerid_to": 705744,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705744,
+   "monomerid_to": 705760,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705758,
+   "monomerid_to": 705748,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705785,
+   "monomerid_to": 705794,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705801,
+   "monomerid_to": 705798,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705802,
+   "monomerid_to": 705795,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705803,
+   "monomerid_to": 50510992,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705839,
+   "monomerid_to": 705883,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705840,
+   "monomerid_to": 705493,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705847,
+   "monomerid_to": 705575,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705847,
+   "monomerid_to": 705851,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705850,
+   "monomerid_to": 705876,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705851,
+   "monomerid_to": 705850,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705851,
+   "monomerid_to": 705914,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705852,
+   "monomerid_to": 705841,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705853,
+   "monomerid_to": 705789,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705861,
+   "monomerid_to": 705788,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705861,
+   "monomerid_to": 705891,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705868,
+   "monomerid_to": 705893,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705873,
+   "monomerid_to": 705846,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705873,
+   "monomerid_to": 705919,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705874,
+   "monomerid_to": 705800,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705879,
+   "monomerid_to": 705878,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705882,
+   "monomerid_to": 705888,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705882,
+   "monomerid_to": 705918,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705883,
+   "monomerid_to": 705496,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705886,
+   "monomerid_to": 705889,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705895,
+   "monomerid_to": 705935,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705899,
+   "monomerid_to": 705613,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705899,
+   "monomerid_to": 50510985,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705910,
+   "monomerid_to": 705904,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705913,
+   "monomerid_to": 705948,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705914,
+   "monomerid_to": 705873,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705923,
+   "monomerid_to": 705935,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705927,
+   "monomerid_to": 705895,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705927,
+   "monomerid_to": 705923,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705928,
+   "monomerid_to": 705894,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705930,
+   "monomerid_to": 705902,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705931,
+   "monomerid_to": 705705,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705931,
+   "monomerid_to": 705899,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 705938,
+   "monomerid_to": 705899,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50012660,
+   "monomerid_to": 228439,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50012660,
+   "monomerid_to": 228440,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50012660,
+   "monomerid_to": 228443,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50012660,
+   "monomerid_to": 230025,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50031628,
+   "monomerid_to": 50031627,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50032728,
+   "monomerid_to": 50032731,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50032728,
+   "monomerid_to": 50032733,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50032733,
+   "monomerid_to": 50032734,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50032742,
+   "monomerid_to": 50032744,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50061581,
+   "monomerid_to": 50032737,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50061591,
+   "monomerid_to": 50061580,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50061591,
+   "monomerid_to": 50061592,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50061890,
+   "monomerid_to": 50061729,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50061890,
+   "monomerid_to": 50061730,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50061890,
+   "monomerid_to": 50061965,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50061893,
+   "monomerid_to": 50061728,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50061893,
+   "monomerid_to": 50061731,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50131807,
+   "monomerid_to": 50131808,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50169365,
+   "monomerid_to": 50169366,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50264185,
+   "monomerid_to": 50264186,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50264195,
+   "monomerid_to": 50264184,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50383838,
+   "monomerid_to": 50392770,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50383838,
+   "monomerid_to": 50392782,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50383839,
+   "monomerid_to": 50392782,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50383839,
+   "monomerid_to": 50392783,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50383845,
+   "monomerid_to": 50383847,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50383854,
+   "monomerid_to": 50383856,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50386515,
+   "monomerid_to": 50386513,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50387054,
+   "monomerid_to": 50387056,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50392776,
+   "monomerid_to": 50383838,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50392776,
+   "monomerid_to": 50383839,
+   "n_documents": 2
+  },
+  {
+   "monomerid_from": 50392776,
+   "monomerid_to": 50392777,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50393088,
+   "monomerid_to": 50398268,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50393099,
+   "monomerid_to": 136830,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50393099,
+   "monomerid_to": 50393106,
+   "n_documents": 2
+  },
+  {
+   "monomerid_from": 50393100,
+   "monomerid_to": 50393107,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50397688,
+   "monomerid_to": 50397707,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50397688,
+   "monomerid_to": 50397708,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50397688,
+   "monomerid_to": 50397709,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50397692,
+   "monomerid_to": 50397689,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50397692,
+   "monomerid_to": 50397704,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50397692,
+   "monomerid_to": 50397712,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50398312,
+   "monomerid_to": 50392776,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50432608,
+   "monomerid_to": 124137,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50432608,
+   "monomerid_to": 124167,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50432615,
+   "monomerid_to": 50432614,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50462005,
+   "monomerid_to": 204994,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50501811,
+   "monomerid_to": 50567456,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50501819,
+   "monomerid_to": 50501816,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50510782,
+   "monomerid_to": 705451,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50510783,
+   "monomerid_to": 501235,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50510783,
+   "monomerid_to": 501285,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50510974,
+   "monomerid_to": 705409,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50510976,
+   "monomerid_to": 705736,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50510976,
+   "monomerid_to": 705920,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50510977,
+   "monomerid_to": 705735,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50510978,
+   "monomerid_to": 705425,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50510978,
+   "monomerid_to": 50510980,
+   "n_documents": 2
+  },
+  {
+   "monomerid_from": 50510979,
+   "monomerid_to": 705396,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50510984,
+   "monomerid_to": 50510972,
+   "n_documents": 2
+  },
+  {
+   "monomerid_from": 50510986,
+   "monomerid_to": 705737,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50510989,
+   "monomerid_to": 705938,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50510989,
+   "monomerid_to": 50510975,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50510993,
+   "monomerid_to": 50510977,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50545178,
+   "monomerid_to": 50545179,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50559903,
+   "monomerid_to": 705409,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50569345,
+   "monomerid_to": 50569350,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50569348,
+   "monomerid_to": 50569349,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50579814,
+   "monomerid_to": 50579806,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50583315,
+   "monomerid_to": 50583324,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50596248,
+   "monomerid_to": 50596252,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50596252,
+   "monomerid_to": 50596254,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50610551,
+   "monomerid_to": 50610552,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50610556,
+   "monomerid_to": 50610557,
+   "n_documents": 1
+  },
+  {
+   "monomerid_from": 50610558,
+   "monomerid_to": 50610559,
+   "n_documents": 1
+  }
+ ]
+}

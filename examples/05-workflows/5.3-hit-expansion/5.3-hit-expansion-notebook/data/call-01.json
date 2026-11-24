@@ -1,0 +1,22 @@
+{
+ "query": {
+  "input": "Brc1cccc(Nc2ncnc3ccccc23)c1",
+  "canonical": "Brc1cccc(Nc2ncnc3ccccc23)c1",
+  "inchi_key": "SUTRLYZWRGPLSJ-UHFFFAOYSA-N",
+  "match": "same canonical isomeric SMILES (salts, stereo, charges and isotopes included)"
+ },
+ "row_count": 1,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 3264,
+   "bdbm_id": "BDBM3264",
+   "name": "4-Anilino quinazoline deriv. 15",
+   "smiles": "Brc1cccc(Nc2ncnc3ccccc23)c1",
+   "mol_weight": 299.01,
+   "n_activities": 5,
+   "n_targets": 2
+  }
+ ],
+ "n_exact_matches": 1
+}

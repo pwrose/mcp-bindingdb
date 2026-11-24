@@ -1,15 +1,15 @@
-# JAK1 selectivity across the JAK family
+# Example 3.6 — JAK1 selectivity across the JAK family
 
-A reproducible record of an AI-assisted BindingDB analysis with 3 tool calls, made by mcp-bindingdb v0.1.9.
+A reproducible record of an AI-assisted BindingDB analysis with 3 tool calls, made by mcp-bindingdb v0.1.17.
 
 - **Date:** 2026-11-23
-- **Model:** claude-opus-5
+- **Model:** claude-sonnet-5-5
 - **Data:** BindingDB release **202611** (`BDB-mySQL_All_202611_dmp.zip`, SHA-256 `daea9260d404919a183ce02d91bf4b9c49b410bea7eaaeba105c8e0280510381`)
 - **Database build:** 2026-11-21T01:08:15+00:00, DuckDB 1.5.6
 - **Derived data:** standard InChIKeys computed from SMILES by RDKit 2026.03.6; compound_property computed from SMILES (largest fragment) by RDKit 2026.03.6
-- **Server:** mcp-bindingdb v0.1.9, commit [`5ea8c6253a4c`](https://github.com/pwrose/mcp-bindingdb/commit/5ea8c6253a4c012b3f3982669393dcdf831fca79)
+- **Server:** mcp-bindingdb v0.1.17, commit [`79dae5d22c0f`](https://github.com/sbl-sdsc/mcp-bindingdb/commit/79dae5d22c0f15b8ded9b49adc8b105f0463703a)
 - **Software:** python 3.12.7, duckdb 1.5.6, rdkit 2026.03.6, mcp 2.3.0, gemmi 0.7.5
-- **Notebook generated:** 2026-11-23T08:25:14Z
+- **Notebook generated:** 2026-11-24T04:55:26Z
 
 ## How to run
 
@@ -34,9 +34,9 @@ BINDINGDB_RERUN=1 uv run --no-project --with-requirements requirements.txt --wit
 A rerun needs the database: the one `BINDINGDB_DUCKDB=/path/to/bindingdb_202611.duckdb` names (put it before `uv run`), else the newest one mcp-bindingdb built on this computer, for example for Claude Desktop. With neither, the first rerun builds one, which takes about half an hour and 2.4 GB. To build exactly release 202611, with a clone of mcp-bindingdb:
 
 ```bash
-git clone https://github.com/pwrose/mcp-bindingdb.git
+git clone https://github.com/sbl-sdsc/mcp-bindingdb.git
 cd mcp-bindingdb
-git checkout 5ea8c6253a4c012b3f3982669393dcdf831fca79
+git checkout 79dae5d22c0f15b8ded9b49adc8b105f0463703a
 scripts/build_duckdb.sh --release 202611
 ```
 

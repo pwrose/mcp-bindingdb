@@ -1,0 +1,25 @@
+{
+ "query": "fexofenadine",
+ "resolved": true,
+ "source": "bindingdb",
+ "smiles": "CC(C)(C(O)=O)c1ccc(cc1)C(O)CCCN1CCC(CC1)C(O)(c1ccccc1)c1ccccc1",
+ "inchi_key": "RWTNPBWLLIMQHL-UHFFFAOYSA-N",
+ "monomerid": 22874,
+ "ambiguous": false,
+ "candidates": [
+  {
+   "monomerid": 22874,
+   "bdbm_id": "BDBM22874",
+   "name": "Allegra",
+   "inchi_key": "RWTNPBWLLIMQHL-UHFFFAOYSA-N",
+   "smiles": "CC(C)(C(O)=O)c1ccc(cc1)C(O)CCCN1CCC(CC1)C(O)(c1ccccc1)c1ccccc1",
+   "n_activities": 19
+  }
+ ],
+ "sources_tried": [
+  {
+   "source": "bindingdb",
+   "status": "found"
+  }
+ ]
+}

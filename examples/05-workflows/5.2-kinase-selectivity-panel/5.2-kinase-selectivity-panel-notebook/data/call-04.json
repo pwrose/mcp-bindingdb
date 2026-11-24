@@ -1,0 +1,25 @@
+{
+ "query": "bosutinib",
+ "resolved": true,
+ "source": "bindingdb",
+ "smiles": "CN1CCN(CC1)CCCOc2cc3c(cc2OC)c(c(cn3)C#N)Nc4cc(c(cc4Cl)Cl)OC",
+ "inchi_key": "UBPYILGKFZZVDX-UHFFFAOYSA-N",
+ "monomerid": 4552,
+ "ambiguous": false,
+ "candidates": [
+  {
+   "monomerid": 4552,
+   "bdbm_id": "BDBM4552",
+   "name": "BOSUTINIB",
+   "inchi_key": "UBPYILGKFZZVDX-UHFFFAOYSA-N",
+   "smiles": "CN1CCN(CC1)CCCOc2cc3c(cc2OC)c(c(cn3)C#N)Nc4cc(c(cc4Cl)Cl)OC",
+   "n_activities": 585
+  }
+ ],
+ "sources_tried": [
+  {
+   "source": "bindingdb",
+   "status": "found"
+  }
+ ]
+}

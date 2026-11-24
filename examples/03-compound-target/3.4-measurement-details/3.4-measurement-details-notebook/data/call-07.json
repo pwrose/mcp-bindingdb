@@ -1,0 +1,96 @@
+{
+ "row_count": 10,
+ "truncated": false,
+ "rows": [
+  {
+   "ki_result_id": 50076446,
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 0.1,
+   "p_affinity": 10.0,
+   "source_id": "23792318",
+   "assay_name": "ChEMBL_974507 (CHEMBL2412780)"
+  },
+  {
+   "ki_result_id": 50087097,
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 0.1,
+   "p_affinity": 10.0,
+   "source_id": "24607591",
+   "assay_name": "ChEMBL_1338035 (CHEMBL3241595)"
+  },
+  {
+   "ki_result_id": 51193991,
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 0.1,
+   "p_affinity": 10.0,
+   "source_id": "23668441",
+   "assay_name": "ChEMBL_958682 (CHEMBL2383984)"
+  },
+  {
+   "ki_result_id": 51421148,
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 0.1,
+   "p_affinity": 10.0,
+   "source_id": "34464874",
+   "assay_name": "ChEMBL_2121824 (CHEMBL4830971)"
+  },
+  {
+   "ki_result_id": 50695137,
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 0.15,
+   "p_affinity": 9.82,
+   "source_id": "28236592",
+   "assay_name": "ChEMBL_1650711 (CHEMBL3999845)"
+  },
+  {
+   "ki_result_id": 51421145,
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 0.32,
+   "p_affinity": 9.49,
+   "source_id": "34464874",
+   "assay_name": "ChEMBL_2121823 (CHEMBL4830970)"
+  },
+  {
+   "ki_result_id": 50917515,
+   "affinity_type": "Ki",
+   "relation": "=",
+   "value": 0.4,
+   "p_affinity": 9.4,
+   "source_id": "15975507",
+   "assay_name": "ChEMBL_660429 (CHEMBL1250019)"
+  },
+  {
+   "ki_result_id": 50258430,
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 0.45,
+   "p_affinity": 9.35,
+   "source_id": "25462282",
+   "assay_name": "ChEMBL_1445067 (CHEMBL3372999)"
+  },
+  {
+   "ki_result_id": 50258928,
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 0.45,
+   "p_affinity": 9.35,
+   "source_id": "25468044",
+   "assay_name": "ChEMBL_1443957 (CHEMBL3375345)"
+  },
+  {
+   "ki_result_id": 51276651,
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 0.47,
+   "p_affinity": 9.33,
+   "source_id": "30472599",
+   "assay_name": "ChEMBL_1882933 (CHEMBL4384432)"
+  }
+ ]
+}

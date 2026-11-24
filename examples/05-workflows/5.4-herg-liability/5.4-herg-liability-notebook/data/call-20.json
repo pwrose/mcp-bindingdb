@@ -1,0 +1,41 @@
+{
+ "query": "bepridil",
+ "resolved": true,
+ "source": "bindingdb",
+ "smiles": "CC(C)COC[C@H](C[N@@](Cc1ccccc1)c2ccccc2)N3CCCC3",
+ "inchi_key": "UIEATEWHFDRYRU-DEOSSOPVSA-N",
+ "monomerid": 78577,
+ "ambiguous": false,
+ "candidates": [
+  {
+   "monomerid": 78577,
+   "bdbm_id": "BDBM78577",
+   "name": "Bepridil",
+   "inchi_key": "UIEATEWHFDRYRU-DEOSSOPVSA-N",
+   "smiles": "CC(C)COC[C@H](C[N@@](Cc1ccccc1)c2ccccc2)N3CCCC3",
+   "n_activities": 40
+  },
+  {
+   "monomerid": 50664461,
+   "bdbm_id": "BDBM50664461",
+   "name": "Bepridil",
+   "inchi_key": "UIEATEWHFDRYRU-UHFFFAOYSA-N",
+   "smiles": "CC(C)COCC(CN(Cc1ccccc1)c1ccccc1)N1CCCC1",
+   "n_activities": 2
+  },
+  {
+   "monomerid": 50017667,
+   "bdbm_id": "BDBM50017667",
+   "name": "Bepadin",
+   "inchi_key": "UIEATEWHFDRYRU-DEOSSOPVSA-N",
+   "smiles": "CC(C)COC[C@H](C[N@@](Cc1ccccc1)c2ccccc2)N3CCCC3",
+   "n_activities": 0
+  }
+ ],
+ "sources_tried": [
+  {
+   "source": "bindingdb",
+   "status": "found"
+  }
+ ]
+}

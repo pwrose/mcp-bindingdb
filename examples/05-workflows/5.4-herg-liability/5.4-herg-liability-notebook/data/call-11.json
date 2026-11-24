@@ -1,0 +1,25 @@
+{
+ "query": "thioridazine",
+ "resolved": true,
+ "source": "bindingdb",
+ "smiles": "CN1CCCC[C@H]1CCN2c3ccccc3Sc4c2cc(cc4)SC",
+ "inchi_key": "KLBQZWRITKRQQV-INIZCTEOSA-N",
+ "monomerid": 50002338,
+ "ambiguous": false,
+ "candidates": [
+  {
+   "monomerid": 50002338,
+   "bdbm_id": "BDBM50002338",
+   "name": "MELLARIL",
+   "inchi_key": "KLBQZWRITKRQQV-INIZCTEOSA-N",
+   "smiles": "CN1CCCC[C@H]1CCN2c3ccccc3Sc4c2cc(cc4)SC",
+   "n_activities": 175
+  }
+ ],
+ "sources_tried": [
+  {
+   "source": "bindingdb",
+   "status": "found"
+  }
+ ]
+}

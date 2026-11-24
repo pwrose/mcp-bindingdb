@@ -1,0 +1,25 @@
+{
+ "query": "linagliptin",
+ "resolved": true,
+ "source": "bindingdb",
+ "smiles": "CC#CCn1c(nc2n(C)c(=O)n(Cc3nc(C)c4ccccc4n3)c(=O)c12)N1CCC[C@@H](N)C1",
+ "inchi_key": "LTXREWYXXSTFRX-QGZVFWFLSA-N",
+ "monomerid": 50228403,
+ "ambiguous": false,
+ "candidates": [
+  {
+   "monomerid": 50228403,
+   "bdbm_id": "BDBM50228403",
+   "name": "LINAGLIPTIN",
+   "inchi_key": "LTXREWYXXSTFRX-QGZVFWFLSA-N",
+   "smiles": "CC#CCn1c(nc2n(C)c(=O)n(Cc3nc(C)c4ccccc4n3)c(=O)c12)N1CCC[C@@H](N)C1",
+   "n_activities": 62
+  }
+ ],
+ "sources_tried": [
+  {
+   "source": "bindingdb",
+   "status": "found"
+  }
+ ]
+}

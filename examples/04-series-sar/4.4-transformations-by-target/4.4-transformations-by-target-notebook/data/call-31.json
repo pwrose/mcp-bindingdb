@@ -1,0 +1,1630 @@
+{
+ "row_count": 232,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid_from": 3570,
+   "monomerid_to": 3571,
+   "source_id": "8632415",
+   "assay_name": "Kinase Inhibition Assay",
+   "delta": -1.5593
+  },
+  {
+   "monomerid_from": 3772,
+   "monomerid_to": 3773,
+   "source_id": "10639288",
+   "assay_name": "Kinase Inhibition Assay",
+   "delta": -0.3279
+  },
+  {
+   "monomerid_from": 4567,
+   "monomerid_to": 4595,
+   "source_id": "11462982",
+   "assay_name": "Kinase Inhibition Assay",
+   "delta": -0.2341
+  },
+  {
+   "monomerid_from": 4567,
+   "monomerid_to": 4595,
+   "source_id": "11495584",
+   "assay_name": "Kinase Inhibition Assay",
+   "delta": -2.2292
+  },
+  {
+   "monomerid_from": 4567,
+   "monomerid_to": 50077238,
+   "source_id": "10346932",
+   "assay_name": "ChEMBL_64442 (CHEMBL674017)",
+   "delta": 0.2021
+  },
+  {
+   "monomerid_from": 4567,
+   "monomerid_to": 50077238,
+   "source_id": "10346932",
+   "assay_name": "ChEMBL_64443 (CHEMBL674018)",
+   "delta": 0.0062
+  },
+  {
+   "monomerid_from": 4567,
+   "monomerid_to": 50077238,
+   "source_id": "10753475",
+   "assay_name": "ChEMBL_64444 (CHEMBL674019)",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 4567,
+   "monomerid_to": 50077238,
+   "source_id": "10753475",
+   "assay_name": "ChEMBL_64445 (CHEMBL674020)",
+   "delta": 0.0062
+  },
+  {
+   "monomerid_from": 4777,
+   "monomerid_to": 4781,
+   "source_id": "11462982",
+   "assay_name": "Kinase Inhibition Assay",
+   "delta": -0.2451
+  },
+  {
+   "monomerid_from": 4777,
+   "monomerid_to": 50077231,
+   "source_id": "10346932",
+   "assay_name": "ChEMBL_64442 (CHEMBL674017)",
+   "delta": 0.2093
+  },
+  {
+   "monomerid_from": 4777,
+   "monomerid_to": 50077231,
+   "source_id": "10346932",
+   "assay_name": "ChEMBL_64443 (CHEMBL674018)",
+   "delta": 0.1017
+  },
+  {
+   "monomerid_from": 170461,
+   "monomerid_to": 170475,
+   "source_id": "US9085540-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": 0.0726
+  },
+  {
+   "monomerid_from": 170461,
+   "monomerid_to": 170482,
+   "source_id": "US9085540-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": -0.0621
+  },
+  {
+   "monomerid_from": 170461,
+   "monomerid_to": 170503,
+   "source_id": "US9085540-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": 0.2944
+  },
+  {
+   "monomerid_from": 170461,
+   "monomerid_to": 170542,
+   "source_id": "US9085540-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": -0.0621
+  },
+  {
+   "monomerid_from": 170529,
+   "monomerid_to": 170484,
+   "source_id": "US9085540-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": 0.0726
+  },
+  {
+   "monomerid_from": 170539,
+   "monomerid_to": 170540,
+   "source_id": "US9085540-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": 0.0348
+  },
+  {
+   "monomerid_from": 173427,
+   "monomerid_to": 173430,
+   "source_id": "US9096601-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": 0.4771
+  },
+  {
+   "monomerid_from": 199995,
+   "monomerid_to": 199967,
+   "source_id": "US9670231-B2",
+   "assay_name": "Not found",
+   "delta": 0.1461
+  },
+  {
+   "monomerid_from": 200335,
+   "monomerid_to": 200489,
+   "source_id": "US9670231-B2",
+   "assay_name": "Not found",
+   "delta": -0.0067
+  },
+  {
+   "monomerid_from": 200335,
+   "monomerid_to": 200490,
+   "source_id": "US9670231-B2",
+   "assay_name": "Not found",
+   "delta": 0.2041
+  },
+  {
+   "monomerid_from": 200335,
+   "monomerid_to": 200630,
+   "source_id": "US9670231-B2",
+   "assay_name": "Not found",
+   "delta": 0.028
+  },
+  {
+   "monomerid_from": 200489,
+   "monomerid_to": 199996,
+   "source_id": "US9670231-B2",
+   "assay_name": "Not found",
+   "delta": -0.0322
+  },
+  {
+   "monomerid_from": 200490,
+   "monomerid_to": 200478,
+   "source_id": "US9670231-B2",
+   "assay_name": "Not found",
+   "delta": 0.058
+  },
+  {
+   "monomerid_from": 200491,
+   "monomerid_to": 200487,
+   "source_id": "US9670231-B2",
+   "assay_name": "Not found",
+   "delta": 0.301
+  },
+  {
+   "monomerid_from": 200630,
+   "monomerid_to": 200627,
+   "source_id": "US9670231-B2",
+   "assay_name": "Not found",
+   "delta": -0.0969
+  },
+  {
+   "monomerid_from": 200791,
+   "monomerid_to": 200792,
+   "source_id": "US9670231-B2",
+   "assay_name": "Not found",
+   "delta": 0.2218
+  },
+  {
+   "monomerid_from": 200801,
+   "monomerid_to": 200800,
+   "source_id": "US9670231-B2",
+   "assay_name": "Not found",
+   "delta": -0.0792
+  },
+  {
+   "monomerid_from": 200810,
+   "monomerid_to": 200809,
+   "source_id": "US9670231-B2",
+   "assay_name": "Not found",
+   "delta": 0.1926
+  },
+  {
+   "monomerid_from": 228124,
+   "monomerid_to": 228125,
+   "source_id": "US9556191-B2",
+   "assay_name": "Kinase Assay",
+   "delta": 0.243
+  },
+  {
+   "monomerid_from": 249900,
+   "monomerid_to": 250051,
+   "source_id": "36912866",
+   "assay_name": "ChEMBL_2291428",
+   "delta": -0.1513
+  },
+  {
+   "monomerid_from": 264129,
+   "monomerid_to": 264160,
+   "source_id": "US9714235-B2",
+   "assay_name": "BT474 Assay",
+   "delta": -0.0969
+  },
+  {
+   "monomerid_from": 332539,
+   "monomerid_to": 332540,
+   "source_id": "30600209",
+   "assay_name": "ChEMBL_1832355 (CHEMBL4332363)",
+   "delta": -0.6083
+  },
+  {
+   "monomerid_from": 332539,
+   "monomerid_to": 332540,
+   "source_id": "US10196365-B2",
+   "assay_name": "HTRF kinEASE TK",
+   "delta": -0.6104
+  },
+  {
+   "monomerid_from": 332539,
+   "monomerid_to": 332541,
+   "source_id": "30600209",
+   "assay_name": "ChEMBL_1832355 (CHEMBL4332363)",
+   "delta": -0.3372
+  },
+  {
+   "monomerid_from": 332539,
+   "monomerid_to": 332541,
+   "source_id": "US10196365-B2",
+   "assay_name": "HTRF kinEASE TK",
+   "delta": -0.343
+  },
+  {
+   "monomerid_from": 414541,
+   "monomerid_to": 414577,
+   "source_id": "US10435400-B2",
+   "assay_name": "Wild Type EGFR and Mutant EGFR Kinase Inhibition Test",
+   "delta": -0.1761
+  },
+  {
+   "monomerid_from": 504411,
+   "monomerid_to": 504414,
+   "source_id": "US11040984-B2",
+   "assay_name": "Kinase Assay",
+   "delta": -0.1383
+  },
+  {
+   "monomerid_from": 504414,
+   "monomerid_to": 504415,
+   "source_id": "US11040984-B2",
+   "assay_name": "Kinase Assay",
+   "delta": 0.0202
+  },
+  {
+   "monomerid_from": 504535,
+   "monomerid_to": 505778,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": -0.301
+  },
+  {
+   "monomerid_from": 504535,
+   "monomerid_to": 505786,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 505411,
+   "monomerid_to": 505782,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 505412,
+   "monomerid_to": 505411,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": 0.301
+  },
+  {
+   "monomerid_from": 505500,
+   "monomerid_to": 505445,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": -0.1761
+  },
+  {
+   "monomerid_from": 505500,
+   "monomerid_to": 505446,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 505542,
+   "monomerid_to": 504514,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 505542,
+   "monomerid_to": 505541,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": -0.1761
+  },
+  {
+   "monomerid_from": 505610,
+   "monomerid_to": 505572,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 505684,
+   "monomerid_to": 505683,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 505706,
+   "monomerid_to": 505635,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 505715,
+   "monomerid_to": 505710,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": -0.1761
+  },
+  {
+   "monomerid_from": 505735,
+   "monomerid_to": 505676,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": -0.1761
+  },
+  {
+   "monomerid_from": 505748,
+   "monomerid_to": 505708,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": 0.1761
+  },
+  {
+   "monomerid_from": 505769,
+   "monomerid_to": 505785,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 505775,
+   "monomerid_to": 505403,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": -0.1761
+  },
+  {
+   "monomerid_from": 505786,
+   "monomerid_to": 505792,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": -0.301
+  },
+  {
+   "monomerid_from": 505792,
+   "monomerid_to": 505775,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 505794,
+   "monomerid_to": 505915,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": -0.4771
+  },
+  {
+   "monomerid_from": 505805,
+   "monomerid_to": 505843,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 505805,
+   "monomerid_to": 506032,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 505818,
+   "monomerid_to": 505929,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 505819,
+   "monomerid_to": 505932,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": -0.301
+  },
+  {
+   "monomerid_from": 505822,
+   "monomerid_to": 505988,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 505824,
+   "monomerid_to": 505822,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": -0.1761
+  },
+  {
+   "monomerid_from": 505824,
+   "monomerid_to": 505948,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": -0.1761
+  },
+  {
+   "monomerid_from": 505831,
+   "monomerid_to": 505846,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": -0.1761
+  },
+  {
+   "monomerid_from": 505843,
+   "monomerid_to": 505854,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 505846,
+   "monomerid_to": 505798,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": 0.1761
+  },
+  {
+   "monomerid_from": 505854,
+   "monomerid_to": 505824,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 505874,
+   "monomerid_to": 505835,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": -0.1761
+  },
+  {
+   "monomerid_from": 505881,
+   "monomerid_to": 505882,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 505888,
+   "monomerid_to": 505884,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": -0.1761
+  },
+  {
+   "monomerid_from": 505901,
+   "monomerid_to": 506022,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 505902,
+   "monomerid_to": 505821,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 505902,
+   "monomerid_to": 506023,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 505903,
+   "monomerid_to": 505886,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 505910,
+   "monomerid_to": 505878,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": -0.1761
+  },
+  {
+   "monomerid_from": 505922,
+   "monomerid_to": 505879,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": -0.1761
+  },
+  {
+   "monomerid_from": 505940,
+   "monomerid_to": 505976,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 505945,
+   "monomerid_to": 505888,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 505957,
+   "monomerid_to": 505948,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": -0.1761
+  },
+  {
+   "monomerid_from": 505957,
+   "monomerid_to": 505953,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": -0.1761
+  },
+  {
+   "monomerid_from": 505960,
+   "monomerid_to": 505880,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 505976,
+   "monomerid_to": 505941,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": -0.1761
+  },
+  {
+   "monomerid_from": 506048,
+   "monomerid_to": 506164,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": -0.301
+  },
+  {
+   "monomerid_from": 506062,
+   "monomerid_to": 506119,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 506066,
+   "monomerid_to": 505831,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 506066,
+   "monomerid_to": 505998,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": -0.1761
+  },
+  {
+   "monomerid_from": 506095,
+   "monomerid_to": 506126,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 506119,
+   "monomerid_to": 506122,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 506123,
+   "monomerid_to": 506124,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 506126,
+   "monomerid_to": 506123,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 506146,
+   "monomerid_to": 506150,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 506196,
+   "monomerid_to": 506213,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 506214,
+   "monomerid_to": 506213,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 506221,
+   "monomerid_to": 505982,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": -0.301
+  },
+  {
+   "monomerid_from": 506226,
+   "monomerid_to": 506051,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 506228,
+   "monomerid_to": 506221,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": 0.301
+  },
+  {
+   "monomerid_from": 506229,
+   "monomerid_to": 506228,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": -0.301
+  },
+  {
+   "monomerid_from": 506247,
+   "monomerid_to": 506166,
+   "source_id": "US11066414-B2",
+   "assay_name": "High Throughput Biochemical Assay",
+   "delta": 0.301
+  },
+  {
+   "monomerid_from": 561454,
+   "monomerid_to": 561455,
+   "source_id": "34323489",
+   "assay_name": "ChEMBL_2229997 (CHEMBL5143769)",
+   "delta": -0.2109
+  },
+  {
+   "monomerid_from": 561454,
+   "monomerid_to": 561455,
+   "source_id": "34323489",
+   "assay_name": "ChEMBL_2229998 (CHEMBL5143770)",
+   "delta": 0.1901
+  },
+  {
+   "monomerid_from": 561454,
+   "monomerid_to": 561455,
+   "source_id": "34323489",
+   "assay_name": "ChEMBL_2229999 (CHEMBL5143771)",
+   "delta": 0.0121
+  },
+  {
+   "monomerid_from": 561454,
+   "monomerid_to": 561455,
+   "source_id": "US11390625-B2",
+   "assay_name": "Not found",
+   "delta": 0.1895
+  },
+  {
+   "monomerid_from": 717483,
+   "monomerid_to": 717518,
+   "source_id": "US20250034165-A1",
+   "assay_name": "Inhibitory Activity for EGFR (WT) Kinase",
+   "delta": -0.3979
+  },
+  {
+   "monomerid_from": 717491,
+   "monomerid_to": 717526,
+   "source_id": "US20250034165-A1",
+   "assay_name": "Inhibitory Activity for EGFR (WT) Kinase",
+   "delta": 0.1347
+  },
+  {
+   "monomerid_from": 717495,
+   "monomerid_to": 717497,
+   "source_id": "US20250034165-A1",
+   "assay_name": "Inhibitory Activity for EGFR (WT) Kinase",
+   "delta": -0.0706
+  },
+  {
+   "monomerid_from": 717499,
+   "monomerid_to": 717500,
+   "source_id": "US20250034165-A1",
+   "assay_name": "Inhibitory Activity for EGFR (WT) Kinase",
+   "delta": 0.03
+  },
+  {
+   "monomerid_from": 717499,
+   "monomerid_to": 717503,
+   "source_id": "US20250034165-A1",
+   "assay_name": "Inhibitory Activity for EGFR (WT) Kinase",
+   "delta": -0.028
+  },
+  {
+   "monomerid_from": 717505,
+   "monomerid_to": 717525,
+   "source_id": "US20250034165-A1",
+   "assay_name": "Inhibitory Activity for EGFR (WT) Kinase",
+   "delta": -0.054
+  },
+  {
+   "monomerid_from": 717518,
+   "monomerid_to": 717517,
+   "source_id": "US20250034165-A1",
+   "assay_name": "Inhibitory Activity for EGFR (WT) Kinase",
+   "delta": 0.1079
+  },
+  {
+   "monomerid_from": 790061,
+   "monomerid_to": 790039,
+   "source_id": "US20250353864-A1",
+   "assay_name": "Biochemical Assays for Inhibition of Wild-Type and Mutant EGFRs",
+   "delta": -0.1134
+  },
+  {
+   "monomerid_from": 790085,
+   "monomerid_to": 790086,
+   "source_id": "US20250353864-A1",
+   "assay_name": "Biochemical Assays for Inhibition of Wild-Type and Mutant EGFRs",
+   "delta": -0.3465
+  },
+  {
+   "monomerid_from": 50029668,
+   "monomerid_to": 50260360,
+   "source_id": "28716641",
+   "assay_name": "ChEBML_1693612",
+   "delta": 0.1321
+  },
+  {
+   "monomerid_from": 50029668,
+   "monomerid_to": 50260360,
+   "source_id": "30530173",
+   "assay_name": "ChEMBL_1909512 (CHEMBL4411958)",
+   "delta": 0.2646
+  },
+  {
+   "monomerid_from": 50029668,
+   "monomerid_to": 50260360,
+   "source_id": "30530173",
+   "assay_name": "ChEMBL_1909513 (CHEMBL4411959)",
+   "delta": 2.058
+  },
+  {
+   "monomerid_from": 50077230,
+   "monomerid_to": 50077234,
+   "source_id": "10346932",
+   "assay_name": "ChEMBL_64442 (CHEMBL674017)",
+   "delta": -0.5071
+  },
+  {
+   "monomerid_from": 50077230,
+   "monomerid_to": 50077234,
+   "source_id": "10346932",
+   "assay_name": "ChEMBL_64443 (CHEMBL674018)",
+   "delta": -0.0378
+  },
+  {
+   "monomerid_from": 50123170,
+   "monomerid_to": 50123171,
+   "source_id": "26310890",
+   "assay_name": "ChEMBL_1520607 (CHEMBL3625155)",
+   "delta": 0.368
+  },
+  {
+   "monomerid_from": 50182695,
+   "monomerid_to": 4566,
+   "source_id": "16480284",
+   "assay_name": "ChEMBL_334483 (CHEMBL862512)",
+   "delta": 0.9031
+  },
+  {
+   "monomerid_from": 50182695,
+   "monomerid_to": 4566,
+   "source_id": "16480284",
+   "assay_name": "ChEMBL_334486 (CHEMBL862515)",
+   "delta": 0.0334
+  },
+  {
+   "monomerid_from": 50276123,
+   "monomerid_to": 50276101,
+   "source_id": "29906114",
+   "assay_name": "ChEMBL_1715285 (CHEMBL4125334)",
+   "delta": 0.7443
+  },
+  {
+   "monomerid_from": 50276123,
+   "monomerid_to": 50276101,
+   "source_id": "29906114",
+   "assay_name": "ChEMBL_1715286 (CHEMBL4125335)",
+   "delta": 0.4949
+  },
+  {
+   "monomerid_from": 50276123,
+   "monomerid_to": 50276104,
+   "source_id": "29906114",
+   "assay_name": "ChEMBL_1715285 (CHEMBL4125334)",
+   "delta": 0.9314
+  },
+  {
+   "monomerid_from": 50276123,
+   "monomerid_to": 50276104,
+   "source_id": "29906114",
+   "assay_name": "ChEMBL_1715286 (CHEMBL4125335)",
+   "delta": 0.7959
+  },
+  {
+   "monomerid_from": 50322823,
+   "monomerid_to": 50033373,
+   "source_id": "25409491",
+   "assay_name": "ChEMBL_1433615 (CHEMBL3385194)",
+   "delta": 0.4949
+  },
+  {
+   "monomerid_from": 50326514,
+   "monomerid_to": 50326513,
+   "source_id": "20797871",
+   "assay_name": "ChEMBL_658103 (CHEMBL1249168)",
+   "delta": -0.0645
+  },
+  {
+   "monomerid_from": 50326514,
+   "monomerid_to": 50326513,
+   "source_id": "20797871",
+   "assay_name": "ChEMBL_658253 (CHEMBL1246645)",
+   "delta": -0.1812
+  },
+  {
+   "monomerid_from": 50383283,
+   "monomerid_to": 50383287,
+   "source_id": "22339342",
+   "assay_name": "ChEMBL_819567 (CHEMBL2033651)",
+   "delta": -0.6566
+  },
+  {
+   "monomerid_from": 50391086,
+   "monomerid_to": 50391088,
+   "source_id": "22959248",
+   "assay_name": "ChEMBL_840626 (CHEMBL2090277)",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 50391086,
+   "monomerid_to": 50391088,
+   "source_id": "22959248",
+   "assay_name": "ChEMBL_840627 (CHEMBL2090278)",
+   "delta": 0.0872
+  },
+  {
+   "monomerid_from": 50405281,
+   "monomerid_to": 50405287,
+   "source_id": "36064123",
+   "assay_name": "ChEMBL_2265030",
+   "delta": 0.1891
+  },
+  {
+   "monomerid_from": 50405281,
+   "monomerid_to": 50405287,
+   "source_id": "36064123",
+   "assay_name": "ChEMBL_2265031",
+   "delta": -0.3505
+  },
+  {
+   "monomerid_from": 50405282,
+   "monomerid_to": 50405288,
+   "source_id": "36064123",
+   "assay_name": "ChEMBL_2265030",
+   "delta": 0.008
+  },
+  {
+   "monomerid_from": 50405282,
+   "monomerid_to": 50405288,
+   "source_id": "36064123",
+   "assay_name": "ChEMBL_2265031",
+   "delta": -0.4973
+  },
+  {
+   "monomerid_from": 50458058,
+   "monomerid_to": 50458062,
+   "source_id": "29466773",
+   "assay_name": "ChEMBL_1761975 (CHEMBL4197222)",
+   "delta": -0.6778
+  },
+  {
+   "monomerid_from": 50458058,
+   "monomerid_to": 50458062,
+   "source_id": "29466773",
+   "assay_name": "ChEMBL_1761976 (CHEMBL4197223)",
+   "delta": 0.4638
+  },
+  {
+   "monomerid_from": 50458058,
+   "monomerid_to": 50458062,
+   "source_id": "29466773",
+   "assay_name": "ChEMBL_1761977 (CHEMBL4197224)",
+   "delta": 0.112
+  },
+  {
+   "monomerid_from": 50458058,
+   "monomerid_to": 50458062,
+   "source_id": "29466773",
+   "assay_name": "ChEMBL_1761978 (CHEMBL4197225)",
+   "delta": 1.0617
+  },
+  {
+   "monomerid_from": 50458060,
+   "monomerid_to": 50458067,
+   "source_id": "29466773",
+   "assay_name": "ChEMBL_1761975 (CHEMBL4197222)",
+   "delta": 0.2218
+  },
+  {
+   "monomerid_from": 50458060,
+   "monomerid_to": 50458067,
+   "source_id": "29466773",
+   "assay_name": "ChEMBL_1761976 (CHEMBL4197223)",
+   "delta": 0.0757
+  },
+  {
+   "monomerid_from": 50458060,
+   "monomerid_to": 50458067,
+   "source_id": "29466773",
+   "assay_name": "ChEMBL_1761977 (CHEMBL4197224)",
+   "delta": -0.0147
+  },
+  {
+   "monomerid_from": 50458060,
+   "monomerid_to": 50458067,
+   "source_id": "29466773",
+   "assay_name": "ChEMBL_1761978 (CHEMBL4197225)",
+   "delta": -0.2852
+  },
+  {
+   "monomerid_from": 50532912,
+   "monomerid_to": 50532911,
+   "source_id": "27396610",
+   "assay_name": "ChEMBL_1924071 (CHEMBL4427027)",
+   "delta": 1.5661
+  },
+  {
+   "monomerid_from": 50532912,
+   "monomerid_to": 50532911,
+   "source_id": "27396610",
+   "assay_name": "ChEMBL_1924072 (CHEMBL4427028)",
+   "delta": 0.301
+  },
+  {
+   "monomerid_from": 50532912,
+   "monomerid_to": 50532914,
+   "source_id": "27396610",
+   "assay_name": "ChEMBL_1924071 (CHEMBL4427027)",
+   "delta": 1.6075
+  },
+  {
+   "monomerid_from": 50532912,
+   "monomerid_to": 50532914,
+   "source_id": "27396610",
+   "assay_name": "ChEMBL_1924072 (CHEMBL4427028)",
+   "delta": 0.6021
+  },
+  {
+   "monomerid_from": 50558376,
+   "monomerid_to": 50558393,
+   "source_id": "27614407",
+   "assay_name": "ChEMBL_2063567 (CHEMBL4718820)",
+   "delta": 0.301
+  },
+  {
+   "monomerid_from": 50558385,
+   "monomerid_to": 50558386,
+   "source_id": "27614407",
+   "assay_name": "ChEMBL_2063567 (CHEMBL4718820)",
+   "delta": -0.301
+  },
+  {
+   "monomerid_from": 50558403,
+   "monomerid_to": 50558411,
+   "source_id": "27614407",
+   "assay_name": "ChEMBL_2063567 (CHEMBL4718820)",
+   "delta": 0.4771
+  },
+  {
+   "monomerid_from": 50579857,
+   "monomerid_to": 50579860,
+   "source_id": "34624491",
+   "assay_name": "ChEMBL_2145644 (CHEMBL5029924)",
+   "delta": 0.0512
+  },
+  {
+   "monomerid_from": 50579857,
+   "monomerid_to": 50579860,
+   "source_id": "34624491",
+   "assay_name": "ChEMBL_2145645 (CHEMBL5029925)",
+   "delta": -0.3522
+  },
+  {
+   "monomerid_from": 50579857,
+   "monomerid_to": 50579861,
+   "source_id": "34624491",
+   "assay_name": "ChEMBL_2145644 (CHEMBL5029924)",
+   "delta": -0.1249
+  },
+  {
+   "monomerid_from": 50579857,
+   "monomerid_to": 50579861,
+   "source_id": "34624491",
+   "assay_name": "ChEMBL_2145645 (CHEMBL5029925)",
+   "delta": -0.5441
+  },
+  {
+   "monomerid_from": 50582238,
+   "monomerid_to": 50582243,
+   "source_id": "35178175",
+   "assay_name": "ChEMBL_2153740 (CHEMBL5038287)",
+   "delta": -0.2398
+  },
+  {
+   "monomerid_from": 50582238,
+   "monomerid_to": 50582243,
+   "source_id": "35178175",
+   "assay_name": "ChEMBL_2153742 (CHEMBL5038289)",
+   "delta": -0.0669
+  },
+  {
+   "monomerid_from": 50582238,
+   "monomerid_to": 50582243,
+   "source_id": "39681043",
+   "assay_name": "ChEMBL_2613398",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 50592743,
+   "monomerid_to": 50592741,
+   "source_id": "35810715",
+   "assay_name": "ChEMBL_2205221 (CHEMBL5117929)",
+   "delta": -0.2632
+  },
+  {
+   "monomerid_from": 50592743,
+   "monomerid_to": 50592741,
+   "source_id": "35810715",
+   "assay_name": "ChEMBL_2205222 (CHEMBL5117930)",
+   "delta": 0.0512
+  },
+  {
+   "monomerid_from": 50592743,
+   "monomerid_to": 50592741,
+   "source_id": "37269687",
+   "assay_name": "ChEMBL_2317305",
+   "delta": 0.0512
+  },
+  {
+   "monomerid_from": 50592743,
+   "monomerid_to": 50592741,
+   "source_id": "37269687",
+   "assay_name": "ChEMBL_2317306",
+   "delta": -0.2632
+  },
+  {
+   "monomerid_from": 50592743,
+   "monomerid_to": 50592741,
+   "source_id": "39681043",
+   "assay_name": "ChEMBL_2613399",
+   "delta": -0.2632
+  },
+  {
+   "monomerid_from": 50592743,
+   "monomerid_to": 50592741,
+   "source_id": "39681043",
+   "assay_name": "ChEMBL_2613402",
+   "delta": 0.0512
+  },
+  {
+   "monomerid_from": 50592745,
+   "monomerid_to": 50592754,
+   "source_id": "35810715",
+   "assay_name": "ChEMBL_2205221 (CHEMBL5117929)",
+   "delta": 0.3153
+  },
+  {
+   "monomerid_from": 50592745,
+   "monomerid_to": 50592754,
+   "source_id": "35810715",
+   "assay_name": "ChEMBL_2205222 (CHEMBL5117930)",
+   "delta": -0.1249
+  },
+  {
+   "monomerid_from": 50592746,
+   "monomerid_to": 50592752,
+   "source_id": "35810715",
+   "assay_name": "ChEMBL_2205221 (CHEMBL5117929)",
+   "delta": 0.574
+  },
+  {
+   "monomerid_from": 50592746,
+   "monomerid_to": 50592752,
+   "source_id": "35810715",
+   "assay_name": "ChEMBL_2205222 (CHEMBL5117930)",
+   "delta": 0.4393
+  },
+  {
+   "monomerid_from": 50592746,
+   "monomerid_to": 50592755,
+   "source_id": "35810715",
+   "assay_name": "ChEMBL_2205222 (CHEMBL5117930)",
+   "delta": -0.1047
+  },
+  {
+   "monomerid_from": 50598683,
+   "monomerid_to": 50598684,
+   "source_id": "35838760",
+   "assay_name": "ChEMBL_2227701 (CHEMBL5141214)",
+   "delta": -0.2218
+  },
+  {
+   "monomerid_from": 50598683,
+   "monomerid_to": 50598684,
+   "source_id": "35838760",
+   "assay_name": "ChEMBL_2227703 (CHEMBL5141216)",
+   "delta": -0.1781
+  },
+  {
+   "monomerid_from": 50598683,
+   "monomerid_to": 50598684,
+   "source_id": "35838760",
+   "assay_name": "ChEMBL_2227704 (CHEMBL5141217)",
+   "delta": -0.2553
+  },
+  {
+   "monomerid_from": 50598683,
+   "monomerid_to": 50598684,
+   "source_id": "35838760",
+   "assay_name": "ChEMBL_2227705 (CHEMBL5141218)",
+   "delta": 0.3998
+  },
+  {
+   "monomerid_from": 50600260,
+   "monomerid_to": 50600262,
+   "source_id": "35378251",
+   "assay_name": "ChEMBL_2233431 (CHEMBL5147203)",
+   "delta": -0.301
+  },
+  {
+   "monomerid_from": 50600261,
+   "monomerid_to": 50600259,
+   "source_id": "35378251",
+   "assay_name": "ChEMBL_2233431 (CHEMBL5147203)",
+   "delta": 0.6532
+  },
+  {
+   "monomerid_from": 50600274,
+   "monomerid_to": 50600281,
+   "source_id": "35378251",
+   "assay_name": "ChEMBL_2233431 (CHEMBL5147203)",
+   "delta": -0.4771
+  },
+  {
+   "monomerid_from": 50600274,
+   "monomerid_to": 50600282,
+   "source_id": "35378251",
+   "assay_name": "ChEMBL_2233431 (CHEMBL5147203)",
+   "delta": 0.301
+  },
+  {
+   "monomerid_from": 50600274,
+   "monomerid_to": 50600283,
+   "source_id": "35378251",
+   "assay_name": "ChEMBL_2233431 (CHEMBL5147203)",
+   "delta": -0.8451
+  },
+  {
+   "monomerid_from": 50602101,
+   "monomerid_to": 50602103,
+   "source_id": "36384036",
+   "assay_name": "ChEMBL_2239139 (CHEMBL5153035)",
+   "delta": -0.6368
+  },
+  {
+   "monomerid_from": 50602101,
+   "monomerid_to": 50602103,
+   "source_id": "36384036",
+   "assay_name": "ChEMBL_2239140 (CHEMBL5153036)",
+   "delta": -0.6021
+  },
+  {
+   "monomerid_from": 50602101,
+   "monomerid_to": 50602103,
+   "source_id": "36384036",
+   "assay_name": "ChEMBL_2239141 (CHEMBL5153037)",
+   "delta": -0.5447
+  },
+  {
+   "monomerid_from": 50605425,
+   "monomerid_to": 50605422,
+   "source_id": "35446588",
+   "assay_name": "ChEMBL_2251606 (CHEMBL5165816)",
+   "delta": 0.0181
+  },
+  {
+   "monomerid_from": 50605425,
+   "monomerid_to": 50605422,
+   "source_id": "35446588",
+   "assay_name": "ChEMBL_2251607 (CHEMBL5165817)",
+   "delta": 0.942
+  },
+  {
+   "monomerid_from": 50605425,
+   "monomerid_to": 50605422,
+   "source_id": "35446588",
+   "assay_name": "ChEMBL_2251608 (CHEMBL5165818)",
+   "delta": -0.8617
+  },
+  {
+   "monomerid_from": 50605425,
+   "monomerid_to": 50605422,
+   "source_id": "35446588",
+   "assay_name": "ChEMBL_2251609 (CHEMBL5165819)",
+   "delta": -0.0696
+  },
+  {
+   "monomerid_from": 50605425,
+   "monomerid_to": 50605422,
+   "source_id": "39681043",
+   "assay_name": "ChEMBL_2613398",
+   "delta": 0.942
+  },
+  {
+   "monomerid_from": 50605425,
+   "monomerid_to": 50605422,
+   "source_id": "39681043",
+   "assay_name": "ChEMBL_2613399",
+   "delta": 0.0181
+  },
+  {
+   "monomerid_from": 50613861,
+   "monomerid_to": 50613848,
+   "source_id": "36804726",
+   "assay_name": "ChEMBL_2294498",
+   "delta": -0.2929
+  },
+  {
+   "monomerid_from": 50613861,
+   "monomerid_to": 50613848,
+   "source_id": "36804726",
+   "assay_name": "ChEMBL_2294501",
+   "delta": 0.077
+  },
+  {
+   "monomerid_from": 50613861,
+   "monomerid_to": 50613848,
+   "source_id": "36804726",
+   "assay_name": "ChEMBL_2294502",
+   "delta": 0.3249
+  },
+  {
+   "monomerid_from": 50613861,
+   "monomerid_to": 50613848,
+   "source_id": "36804726",
+   "assay_name": "ChEMBL_2294504",
+   "delta": 0.2208
+  },
+  {
+   "monomerid_from": 50613861,
+   "monomerid_to": 50613848,
+   "source_id": "36804726",
+   "assay_name": "ChEMBL_2294506",
+   "delta": 0.0777
+  },
+  {
+   "monomerid_from": 50613862,
+   "monomerid_to": 50613848,
+   "source_id": "36804726",
+   "assay_name": "ChEMBL_2294498",
+   "delta": 0.8072
+  },
+  {
+   "monomerid_from": 50615093,
+   "monomerid_to": 50615094,
+   "source_id": "37197473",
+   "assay_name": "ChEMBL_2299669",
+   "delta": -0.7229
+  },
+  {
+   "monomerid_from": 50615093,
+   "monomerid_to": 50615094,
+   "source_id": "37197473",
+   "assay_name": "ChEMBL_2299671",
+   "delta": -0.3699
+  },
+  {
+   "monomerid_from": 50615093,
+   "monomerid_to": 50615094,
+   "source_id": "37197473",
+   "assay_name": "ChEMBL_2299672",
+   "delta": 0.1521
+  },
+  {
+   "monomerid_from": 50615098,
+   "monomerid_to": 50615097,
+   "source_id": "37197473",
+   "assay_name": "ChEMBL_2299669",
+   "delta": 0.716
+  },
+  {
+   "monomerid_from": 50615098,
+   "monomerid_to": 50615097,
+   "source_id": "37197473",
+   "assay_name": "ChEMBL_2299670",
+   "delta": 0.6021
+  },
+  {
+   "monomerid_from": 50615098,
+   "monomerid_to": 50615097,
+   "source_id": "37197473",
+   "assay_name": "ChEMBL_2299671",
+   "delta": 1.0263
+  },
+  {
+   "monomerid_from": 50618649,
+   "monomerid_to": 50618653,
+   "source_id": "37269687",
+   "assay_name": "ChEMBL_2317305",
+   "delta": -1.1303
+  },
+  {
+   "monomerid_from": 50618649,
+   "monomerid_to": 50618653,
+   "source_id": "37269687",
+   "assay_name": "ChEMBL_2317306",
+   "delta": 0.3617
+  },
+  {
+   "monomerid_from": 50618649,
+   "monomerid_to": 50618653,
+   "source_id": "39681043",
+   "assay_name": "ChEMBL_2613399",
+   "delta": 0.368
+  },
+  {
+   "monomerid_from": 50618649,
+   "monomerid_to": 50618653,
+   "source_id": "39681043",
+   "assay_name": "ChEMBL_2613402",
+   "delta": -1.1303
+  },
+  {
+   "monomerid_from": 50618651,
+   "monomerid_to": 50618654,
+   "source_id": "37269687",
+   "assay_name": "ChEMBL_2317305",
+   "delta": 0.3554
+  },
+  {
+   "monomerid_from": 50618651,
+   "monomerid_to": 50618654,
+   "source_id": "37269687",
+   "assay_name": "ChEMBL_2317306",
+   "delta": 0.9777
+  },
+  {
+   "monomerid_from": 50618651,
+   "monomerid_to": 50618654,
+   "source_id": "39681043",
+   "assay_name": "ChEMBL_2613399",
+   "delta": 0.9777
+  },
+  {
+   "monomerid_from": 50618651,
+   "monomerid_to": 50618654,
+   "source_id": "39681043",
+   "assay_name": "ChEMBL_2613402",
+   "delta": 0.3554
+  },
+  {
+   "monomerid_from": 50618651,
+   "monomerid_to": 50618655,
+   "source_id": "37269687",
+   "assay_name": "ChEMBL_2317305",
+   "delta": 0.5315
+  },
+  {
+   "monomerid_from": 50618651,
+   "monomerid_to": 50618655,
+   "source_id": "37269687",
+   "assay_name": "ChEMBL_2317306",
+   "delta": 0.6419
+  },
+  {
+   "monomerid_from": 50618660,
+   "monomerid_to": 50618662,
+   "source_id": "37269687",
+   "assay_name": "ChEMBL_2317305",
+   "delta": -0.5229
+  },
+  {
+   "monomerid_from": 50618660,
+   "monomerid_to": 50618662,
+   "source_id": "37269687",
+   "assay_name": "ChEMBL_2317306",
+   "delta": -0.3874
+  },
+  {
+   "monomerid_from": 50621967,
+   "monomerid_to": 50621968,
+   "source_id": "37141440",
+   "assay_name": "ChEMBL_2331102",
+   "delta": -0.1684
+  },
+  {
+   "monomerid_from": 50621967,
+   "monomerid_to": 50621968,
+   "source_id": "37141440",
+   "assay_name": "ChEMBL_2331103",
+   "delta": -0.233
+  },
+  {
+   "monomerid_from": 50621967,
+   "monomerid_to": 50621968,
+   "source_id": "37141440",
+   "assay_name": "ChEMBL_2331104",
+   "delta": -0.5362
+  },
+  {
+   "monomerid_from": 50621967,
+   "monomerid_to": 50621968,
+   "source_id": "37141440",
+   "assay_name": "ChEMBL_2331105",
+   "delta": -0.1249
+  },
+  {
+   "monomerid_from": 50621967,
+   "monomerid_to": 50621968,
+   "source_id": "37141440",
+   "assay_name": "ChEMBL_2331106",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 50621967,
+   "monomerid_to": 50621968,
+   "source_id": "37141440",
+   "assay_name": "ChEMBL_2331107",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 50621967,
+   "monomerid_to": 50621968,
+   "source_id": "37141440",
+   "assay_name": "ChEMBL_2331108",
+   "delta": -0.1684
+  },
+  {
+   "monomerid_from": 50621967,
+   "monomerid_to": 50621968,
+   "source_id": "39681043",
+   "assay_name": "ChEMBL_2613398",
+   "delta": -0.1684
+  },
+  {
+   "monomerid_from": 50630522,
+   "monomerid_to": 50630523,
+   "source_id": "37885208",
+   "assay_name": "ChEMBL_2363373",
+   "delta": 0.4437
+  },
+  {
+   "monomerid_from": 50630530,
+   "monomerid_to": 50630531,
+   "source_id": "37885208",
+   "assay_name": "ChEMBL_2363373",
+   "delta": -0.0872
+  },
+  {
+   "monomerid_from": 50643838,
+   "monomerid_to": 50643841,
+   "source_id": "38518121",
+   "assay_name": "ChEMBL_2463487",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 50646573,
+   "monomerid_to": 50646575,
+   "source_id": "38908104",
+   "assay_name": "ChEMBL_2476957",
+   "delta": 0.0659
+  },
+  {
+   "monomerid_from": 50646573,
+   "monomerid_to": 50646575,
+   "source_id": "38908104",
+   "assay_name": "ChEMBL_2476958",
+   "delta": -0.3188
+  },
+  {
+   "monomerid_from": 50646573,
+   "monomerid_to": 50646575,
+   "source_id": "38908104",
+   "assay_name": "ChEMBL_2476959",
+   "delta": 0.3382
+  },
+  {
+   "monomerid_from": 50646573,
+   "monomerid_to": 50646575,
+   "source_id": "38908104",
+   "assay_name": "ChEMBL_2476960",
+   "delta": 0.1461
+  },
+  {
+   "monomerid_from": 50646573,
+   "monomerid_to": 50646575,
+   "source_id": "39681043",
+   "assay_name": "ChEMBL_2613397",
+   "delta": -2.0659
+  },
+  {
+   "monomerid_from": 50654304,
+   "monomerid_to": 50654307,
+   "source_id": "39657459",
+   "assay_name": "ChEMBL_2606247",
+   "delta": 0.243
+  },
+  {
+   "monomerid_from": 50657777,
+   "monomerid_to": 50657778,
+   "source_id": "39626019",
+   "assay_name": "ChEMBL_2620059",
+   "delta": -0.1249
+  },
+  {
+   "monomerid_from": 50667495,
+   "monomerid_to": 50667496,
+   "source_id": "40120497",
+   "assay_name": "ChEMBL_2667177",
+   "delta": -0.8155
+  },
+  {
+   "monomerid_from": 50667501,
+   "monomerid_to": 50667502,
+   "source_id": "40120497",
+   "assay_name": "ChEMBL_2667177",
+   "delta": 0.9449
+  },
+  {
+   "monomerid_from": 50667504,
+   "monomerid_to": 50667505,
+   "source_id": "40120497",
+   "assay_name": "ChEMBL_2667177",
+   "delta": 0.039
+  },
+  {
+   "monomerid_from": 50667512,
+   "monomerid_to": 50667513,
+   "source_id": "40120497",
+   "assay_name": "ChEMBL_2667177",
+   "delta": 0.5836
+  }
+ ]
+}

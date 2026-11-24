@@ -1,0 +1,52 @@
+{
+ "query": "(S)-crizotinib",
+ "resolved": true,
+ "source": "pubchem",
+ "smiles": "C[C@H](Oc1cc(-c2cnn(C3CCNCC3)c2)cnc1N)c1c(Cl)ccc(F)c1Cl",
+ "inchi_key": "KTEIFNKAUNYNJU-LBPRGKRZSA-N",
+ "pubchem_name": "(S)-Crizotinib",
+ "pubchem_cid": 56671814,
+ "bindingdb_matches": [
+  {
+   "monomerid": 50352564,
+   "bdbm_id": "BDBM50352564",
+   "name": "CHEMBL1825141",
+   "inchi_key": "KTEIFNKAUNYNJU-LBPRGKRZSA-N",
+   "smiles": "C[C@H](Oc1cc(cnc1N)-c1cnn(c1)C1CCNCC1)c1c(Cl)ccc(F)c1Cl |r|",
+   "n_activities": 13,
+   "exact_match": true
+  },
+  {
+   "monomerid": 50306682,
+   "bdbm_id": "BDBM50306682",
+   "name": "CRIZOTINIB",
+   "inchi_key": "KTEIFNKAUNYNJU-GFCCVEGCSA-N",
+   "smiles": "C[C@@H](Oc1cc(cnc1N)-c1cnn(c1)C1CCNCC1)c1c(Cl)ccc(F)c1Cl |r|",
+   "n_activities": 813,
+   "exact_match": false
+  },
+  {
+   "monomerid": 179803,
+   "bdbm_id": "BDBM179803",
+   "name": "3-[1-(2,6-dichloro-3-fluorophenyl)ethoxy]-5-[1-(piperidin-4-yl)-1H-pyrazol-4-yl]pyridin-2-amine (11a)",
+   "inchi_key": "KTEIFNKAUNYNJU-UHFFFAOYSA-N",
+   "smiles": "CC(Oc1cc(cnc1N)-c1cnn(c1)C1CCNCC1)c1c(Cl)ccc(F)c1Cl",
+   "n_activities": 10,
+   "exact_match": false
+  }
+ ],
+ "sources_tried": [
+  {
+   "source": "bindingdb",
+   "status": "not found"
+  },
+  {
+   "source": "opsin",
+   "status": "not found"
+  },
+  {
+   "source": "pubchem",
+   "status": "found"
+  }
+ ]
+}

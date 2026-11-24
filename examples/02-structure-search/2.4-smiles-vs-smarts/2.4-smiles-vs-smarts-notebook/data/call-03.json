@@ -1,0 +1,85 @@
+{
+ "query": {
+  "input": "Nc1ccc(Cl)cc1",
+  "interpreted_as": "smiles",
+  "canonical": "Nc1ccc(Cl)cc1"
+ },
+ "row_count": 8,
+ "truncated": true,
+ "rows": [
+  {
+   "monomerid": 16673,
+   "bdbm_id": "BDBM16673",
+   "name": "Nexavar",
+   "smiles": "CNC(=O)c1cc(ccn1)Oc2ccc(cc2)NC(=O)Nc3ccc(c(c3)C(F)(F)F)Cl",
+   "mol_weight": 464.09,
+   "n_activities": 1731,
+   "n_targets": 434
+  },
+  {
+   "monomerid": 4851,
+   "bdbm_id": "BDBM4851",
+   "name": "PTK787",
+   "smiles": "Clc1ccc(Nc2nnc(Cc3ccncc3)c3ccccc23)cc1",
+   "mol_weight": 346.1,
+   "n_activities": 856,
+   "n_targets": 385
+  },
+  {
+   "monomerid": 50001884,
+   "bdbm_id": "BDBM50001884",
+   "name": "CLOZARIL",
+   "smiles": "CN1CCN(CC1)C2=Nc3cc(ccc3Nc4c2cccc4)Cl",
+   "mol_weight": 326.13,
+   "n_activities": 635,
+   "n_targets": 89
+  },
+  {
+   "monomerid": 4552,
+   "bdbm_id": "BDBM4552",
+   "name": "BOSUTINIB",
+   "smiles": "CN1CCN(CC1)CCCOc2cc3c(cc2OC)c(c(cn3)C#N)Nc4cc(c(cc4Cl)Cl)OC",
+   "mol_weight": 529.16,
+   "n_activities": 585,
+   "n_targets": 386
+  },
+  {
+   "monomerid": 22869,
+   "bdbm_id": "BDBM22869",
+   "name": "Leponex",
+   "smiles": "CN1CCN(C2=c3ccccc3=Nc3ccc(Cl)cc3N2)CC1",
+   "mol_weight": 326.13,
+   "n_activities": 413,
+   "n_targets": 101
+  },
+  {
+   "monomerid": 21278,
+   "bdbm_id": "BDBM21278",
+   "name": "Acomplia",
+   "smiles": "Cc1c(nn(c1-c1ccc(Cl)cc1)-c1ccc(Cl)cc1Cl)C(=O)NN1CCCCC1",
+   "mol_weight": 462.08,
+   "n_activities": 271,
+   "n_targets": 33
+  },
+  {
+   "monomerid": 2483,
+   "bdbm_id": "BDBM2483",
+   "name": "EFV",
+   "smiles": "c1cc2c(cc1Cl)[C@@](OC(=O)N2)(C#CC3CC3)C(F)(F)F",
+   "mol_weight": 315.03,
+   "n_activities": 254,
+   "n_targets": 23
+  },
+  {
+   "monomerid": 50000766,
+   "bdbm_id": "BDBM50000766",
+   "name": "DIAZEPAM",
+   "smiles": "CN1c2ccc(cc2C(=NCC1=O)c3ccccc3)Cl",
+   "mol_weight": 284.07,
+   "n_activities": 139,
+   "n_targets": 54
+  }
+ ],
+ "compounds_searched": 100000,
+ "search_set_size": 1466457
+}

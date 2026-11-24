@@ -1,0 +1,17 @@
+{
+ "row_count": 1,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 50624931,
+   "bdbm_id": "BDBM50624931",
+   "name": "CHEMBL5421129",
+   "inchi_key": "OVEYXZMVSHHINQ-UHFFFAOYSA-N",
+   "smiles": "Oc1ccc(cc1O)-c1cccc2c1sc1ccccc21",
+   "mol_weight": 292.36,
+   "n_activities": 2,
+   "n_targets": 1,
+   "matched_name": "CHEMBL5421129"
+  }
+ ]
+}

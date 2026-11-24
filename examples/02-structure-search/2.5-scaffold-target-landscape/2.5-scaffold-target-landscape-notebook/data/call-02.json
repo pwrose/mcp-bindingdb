@@ -1,0 +1,2276 @@
+{
+ "query": {
+  "input": "c1ccc(Nc2nccc(-c3cccnc3)n2)cc1",
+  "interpreted_as": "smiles",
+  "canonical": "c1ccc(Nc2nccc(-c3cccnc3)n2)cc1"
+ },
+ "n_matching_compounds": 460,
+ "n_targets": 170,
+ "n_compounds_measured": 394,
+ "row_count": 170,
+ "truncated": false,
+ "rows": [
+  {
+   "target_kind": "polymer",
+   "target_id": 5221,
+   "target_name": "Tyrosine-protein kinase ABL1",
+   "uniprot_raw": "P00519",
+   "organism": "Homo sapiens",
+   "n_compounds": 134,
+   "n_measurements": 331,
+   "affinity_types": [
+    "EC50",
+    "IC50",
+    "Kd",
+    "Ki"
+   ],
+   "best_p_affinity": 9.06
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 359,
+   "target_name": "Mast/stem cell growth factor receptor Kit",
+   "uniprot_raw": "P10721",
+   "organism": "Homo sapiens",
+   "n_compounds": 120,
+   "n_measurements": 217,
+   "affinity_types": [
+    "EC50",
+    "IC50",
+    "Kd",
+    "Ki"
+   ],
+   "best_p_affinity": 8.7
+  },
+  {
+   "target_kind": "complex",
+   "target_id": 261,
+   "target_name": "Breakpoint cluster region protein/Tyrosine-protein kinase ABL1",
+   "uniprot_raw": null,
+   "organism": null,
+   "n_compounds": 69,
+   "n_measurements": 130,
+   "affinity_types": [
+    "EC50",
+    "IC50",
+    "Ki"
+   ],
+   "best_p_affinity": 9.48
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50001306,
+   "target_name": "Tyrosine-protein kinase ABL2",
+   "uniprot_raw": "P42684",
+   "organism": "Homo sapiens",
+   "n_compounds": 65,
+   "n_measurements": 93,
+   "affinity_types": [
+    "IC50",
+    "Kd"
+   ],
+   "best_p_affinity": 8.0
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 520,
+   "target_name": "Epidermal growth factor receptor",
+   "uniprot_raw": "P00533",
+   "organism": "Homo sapiens",
+   "n_compounds": 52,
+   "n_measurements": 61,
+   "affinity_types": [
+    "IC50",
+    "Kd"
+   ],
+   "best_p_affinity": 9.96
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 60,
+   "target_name": "Epidermal growth factor receptor [T790M,L858R]",
+   "uniprot_raw": "P00533[T790M,L858R]",
+   "organism": "Homo sapiens",
+   "n_compounds": 50,
+   "n_measurements": 56,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 9.3
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 5778,
+   "target_name": "Platelet-derived growth factor receptor alpha",
+   "uniprot_raw": "P16234",
+   "organism": "Homo sapiens",
+   "n_compounds": 24,
+   "n_measurements": 46,
+   "affinity_types": [
+    "EC50",
+    "IC50",
+    "Kd",
+    "Ki"
+   ],
+   "best_p_affinity": 9.14
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 692,
+   "target_name": "Vascular endothelial growth factor receptor 2",
+   "uniprot_raw": "P35968",
+   "organism": "Homo sapiens",
+   "n_compounds": 22,
+   "n_measurements": 23,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 7.8
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 5926,
+   "target_name": "Breakpoint cluster region protein [1-693]",
+   "uniprot_raw": "P11274[1-693]",
+   "organism": "Homo sapiens",
+   "n_compounds": 21,
+   "n_measurements": 21,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 8.0
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 575,
+   "target_name": "Platelet-derived growth factor receptor beta",
+   "uniprot_raw": "P09619",
+   "organism": "Homo sapiens",
+   "n_compounds": 20,
+   "n_measurements": 36,
+   "affinity_types": [
+    "IC50",
+    "Kd",
+    "Ki"
+   ],
+   "best_p_affinity": 8.7
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 6797,
+   "target_name": "Serine/threonine-protein kinase TBK1",
+   "uniprot_raw": "Q9UHD2",
+   "organism": "Homo sapiens",
+   "n_compounds": 19,
+   "n_measurements": 19,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 7.82
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 3207,
+   "target_name": "Inhibitor of nuclear factor kappa-B kinase subunit epsilon",
+   "uniprot_raw": "Q14164",
+   "organism": "Homo sapiens",
+   "n_compounds": 18,
+   "n_measurements": 18,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 7.82
+  },
+  {
+   "target_kind": "complex",
+   "target_id": 50000008,
+   "target_name": "Platelet-derived growth factor receptor alpha/beta",
+   "uniprot_raw": null,
+   "organism": null,
+   "n_compounds": 16,
+   "n_measurements": 26,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 8.0
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 759,
+   "target_name": "Tyrosine-protein kinase ZAP-70",
+   "uniprot_raw": "P43403",
+   "organism": "Homo sapiens",
+   "n_compounds": 14,
+   "n_measurements": 14,
+   "affinity_types": [
+    "IC50",
+    "Ki"
+   ],
+   "best_p_affinity": 8.1
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1653,
+   "target_name": "Mitogen-activated protein kinase 10",
+   "uniprot_raw": "P53779",
+   "organism": "Homo sapiens",
+   "n_compounds": 12,
+   "n_measurements": 36,
+   "affinity_types": [
+    "IC50",
+    "Kd"
+   ],
+   "best_p_affinity": 9.3
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1358,
+   "target_name": "Receptor-type tyrosine-protein kinase FLT3",
+   "uniprot_raw": "P36888",
+   "organism": "Homo sapiens",
+   "n_compounds": 11,
+   "n_measurements": 16,
+   "affinity_types": [
+    "IC50",
+    "Kd",
+    "Ki"
+   ],
+   "best_p_affinity": 8.1
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 599,
+   "target_name": "Protein kinase C alpha type",
+   "uniprot_raw": "P17252",
+   "organism": "Homo sapiens",
+   "n_compounds": 11,
+   "n_measurements": 13,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 6.49
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 13,
+   "target_name": "Proto-oncogene tyrosine-protein kinase Src",
+   "uniprot_raw": "P12931",
+   "organism": "Homo sapiens",
+   "n_compounds": 10,
+   "n_measurements": 12,
+   "affinity_types": [
+    "IC50",
+    "Kd"
+   ],
+   "best_p_affinity": 5.87
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1663,
+   "target_name": "Mitogen-activated protein kinase 9",
+   "uniprot_raw": "P45984",
+   "organism": "Homo sapiens",
+   "n_compounds": 9,
+   "n_measurements": 26,
+   "affinity_types": [
+    "IC50",
+    "Kd"
+   ],
+   "best_p_affinity": 9.15
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1662,
+   "target_name": "Mitogen-activated protein kinase 8",
+   "uniprot_raw": "P45983",
+   "organism": "Homo sapiens",
+   "n_compounds": 9,
+   "n_measurements": 29,
+   "affinity_types": [
+    "IC50",
+    "Kd"
+   ],
+   "best_p_affinity": 9.0
+  },
+  {
+   "target_kind": "complex",
+   "target_id": 50000208,
+   "target_name": "Tyrosine-protein kinase ABL1/ABL2",
+   "uniprot_raw": null,
+   "organism": null,
+   "n_compounds": 8,
+   "n_measurements": 8,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 7.4
+  },
+  {
+   "target_kind": "complex",
+   "target_id": 113,
+   "target_name": "Cyclin-T1/Cyclin-dependent kinase 9",
+   "uniprot_raw": null,
+   "organism": null,
+   "n_compounds": 7,
+   "n_measurements": 8,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 9.0
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 507,
+   "target_name": "Tyrosine-protein kinase Lck",
+   "uniprot_raw": "P06239",
+   "organism": "Homo sapiens",
+   "n_compounds": 7,
+   "n_measurements": 17,
+   "affinity_types": [
+    "IC50",
+    "Kd",
+    "Ki"
+   ],
+   "best_p_affinity": 7.4
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 5481,
+   "target_name": "Tyrosine-protein kinase Lyn",
+   "uniprot_raw": "P07948",
+   "organism": "Homo sapiens",
+   "n_compounds": 6,
+   "n_measurements": 11,
+   "affinity_types": [
+    "IC50",
+    "Kd",
+    "Ki"
+   ],
+   "best_p_affinity": 8.51
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 5709,
+   "target_name": "Discoidin domain-containing receptor 2",
+   "uniprot_raw": "Q16832",
+   "organism": "Homo sapiens",
+   "n_compounds": 5,
+   "n_measurements": 20,
+   "affinity_types": [
+    "IC50",
+    "Kd"
+   ],
+   "best_p_affinity": 9.3
+  },
+  {
+   "target_kind": "complex",
+   "target_id": 97,
+   "target_name": "Cyclin-A2/Cyclin-dependent kinase 2",
+   "uniprot_raw": null,
+   "organism": null,
+   "n_compounds": 5,
+   "n_measurements": 5,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 7.74
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 4916,
+   "target_name": "Non-receptor tyrosine-protein kinase TYK2",
+   "uniprot_raw": "P29597",
+   "organism": "Homo sapiens",
+   "n_compounds": 5,
+   "n_measurements": 5,
+   "affinity_types": [
+    "IC50",
+    "Kd",
+    "Ki"
+   ],
+   "best_p_affinity": 6.2
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 2700,
+   "target_name": "Serine/threonine-protein kinase PLK1",
+   "uniprot_raw": "P53350",
+   "organism": "Homo sapiens",
+   "n_compounds": 5,
+   "n_measurements": 5,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 5.85
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 223,
+   "target_name": "Gag-Pol polyprotein [489-587]",
+   "uniprot_raw": "P04585[489-587]",
+   "organism": "Human immunodeficiency virus 1",
+   "n_compounds": 4,
+   "n_measurements": 4,
+   "affinity_types": [
+    "Ki"
+   ],
+   "best_p_affinity": 10.55
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1193,
+   "target_name": "Carbonic anhydrase 2",
+   "uniprot_raw": "P00918",
+   "organism": "Homo sapiens",
+   "n_compounds": 4,
+   "n_measurements": 4,
+   "affinity_types": [
+    "Ki"
+   ],
+   "best_p_affinity": 8.39
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1233,
+   "target_name": "Carbonic anhydrase 9",
+   "uniprot_raw": "Q16790",
+   "organism": "Homo sapiens",
+   "n_compounds": 4,
+   "n_measurements": 4,
+   "affinity_types": [
+    "Ki"
+   ],
+   "best_p_affinity": 8.09
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50001198,
+   "target_name": "Breakpoint cluster region protein",
+   "uniprot_raw": "Q6PAJ1",
+   "organism": "Mus musculus",
+   "n_compounds": 4,
+   "n_measurements": 6,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 8.0
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 6885,
+   "target_name": "Bromodomain-containing protein 4",
+   "uniprot_raw": "O60885",
+   "organism": "Homo sapiens",
+   "n_compounds": 4,
+   "n_measurements": 4,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 7.89
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1363,
+   "target_name": "Carbonic anhydrase 12",
+   "uniprot_raw": "O43570",
+   "organism": "Homo sapiens",
+   "n_compounds": 4,
+   "n_measurements": 4,
+   "affinity_types": [
+    "Ki"
+   ],
+   "best_p_affinity": 7.74
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 3881,
+   "target_name": "Mitogen-activated protein kinase 14",
+   "uniprot_raw": "Q16539",
+   "organism": "Homo sapiens",
+   "n_compounds": 4,
+   "n_measurements": 6,
+   "affinity_types": [
+    "EC50",
+    "IC50",
+    "Kd"
+   ],
+   "best_p_affinity": 7.74
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 997,
+   "target_name": "Cyclin-dependent kinase 9",
+   "uniprot_raw": "P50750",
+   "organism": "Homo sapiens",
+   "n_compounds": 4,
+   "n_measurements": 4,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 7.66
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1192,
+   "target_name": "Carbonic anhydrase 1",
+   "uniprot_raw": "P00915",
+   "organism": "Homo sapiens",
+   "n_compounds": 4,
+   "n_measurements": 4,
+   "affinity_types": [
+    "Ki"
+   ],
+   "best_p_affinity": 7.53
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1967,
+   "target_name": "Histone deacetylase 1",
+   "uniprot_raw": "Q13547",
+   "organism": "Homo sapiens",
+   "n_compounds": 4,
+   "n_measurements": 5,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 7.11
+  },
+  {
+   "target_kind": "complex",
+   "target_id": 50000112,
+   "target_name": "Protein kinase C (PKC)",
+   "uniprot_raw": null,
+   "organism": null,
+   "n_compounds": 4,
+   "n_measurements": 4,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 6.82
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 796,
+   "target_name": "Cyclin-dependent kinase 2",
+   "uniprot_raw": "P24941",
+   "organism": "Homo sapiens",
+   "n_compounds": 4,
+   "n_measurements": 4,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 6.77
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 2857,
+   "target_name": "Serine/threonine-protein kinase B-raf",
+   "uniprot_raw": "P15056",
+   "organism": "Homo sapiens",
+   "n_compounds": 4,
+   "n_measurements": 7,
+   "affinity_types": [
+    "IC50",
+    "Kd"
+   ],
+   "best_p_affinity": 6.74
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 3885,
+   "target_name": "Heme oxygenase 1",
+   "uniprot_raw": "P06762",
+   "organism": "Rattus norvegicus",
+   "n_compounds": 4,
+   "n_measurements": 4,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 6.04
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 3993,
+   "target_name": "Epithelial discoidin domain-containing receptor 1",
+   "uniprot_raw": "Q08345",
+   "organism": "Homo sapiens",
+   "n_compounds": 3,
+   "n_measurements": 15,
+   "affinity_types": [
+    "IC50",
+    "Kd"
+   ],
+   "best_p_affinity": 9.15
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 4453,
+   "target_name": "Tyrosine-protein kinase ABL1 [1-999,Q252H]",
+   "uniprot_raw": "P00519[1-999,Q252H]",
+   "organism": "Homo sapiens",
+   "n_compounds": 3,
+   "n_measurements": 4,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 8.3
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 799,
+   "target_name": "Cyclin-dependent kinase 4",
+   "uniprot_raw": "P11802",
+   "organism": "Homo sapiens",
+   "n_compounds": 3,
+   "n_measurements": 3,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 8.15
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 879,
+   "target_name": "Macrophage colony-stimulating factor 1 receptor",
+   "uniprot_raw": "P07333",
+   "organism": "Homo sapiens",
+   "n_compounds": 3,
+   "n_measurements": 10,
+   "affinity_types": [
+    "IC50",
+    "Kd"
+   ],
+   "best_p_affinity": 8.0
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 4981,
+   "target_name": "Aurora kinase B",
+   "uniprot_raw": "Q96GD4",
+   "organism": "Homo sapiens",
+   "n_compounds": 3,
+   "n_measurements": 3,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 7.92
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1325,
+   "target_name": "Aurora kinase A",
+   "uniprot_raw": "O14965",
+   "organism": "Homo sapiens",
+   "n_compounds": 3,
+   "n_measurements": 3,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 7.82
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 763,
+   "target_name": "Tyrosine-protein kinase SYK",
+   "uniprot_raw": "P43405",
+   "organism": "Homo sapiens",
+   "n_compounds": 3,
+   "n_measurements": 5,
+   "affinity_types": [
+    "IC50",
+    "Ki"
+   ],
+   "best_p_affinity": 6.8
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 4918,
+   "target_name": "Tyrosine-protein kinase JAK2",
+   "uniprot_raw": "O60674",
+   "organism": "Homo sapiens",
+   "n_compounds": 3,
+   "n_measurements": 3,
+   "affinity_types": [
+    "IC50",
+    "Ki"
+   ],
+   "best_p_affinity": 6.54
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50003169,
+   "target_name": "Breakpoint cluster region protein",
+   "uniprot_raw": "P11274",
+   "organism": "Homo sapiens",
+   "n_compounds": 3,
+   "n_measurements": 3,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 6.24
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 7838,
+   "target_name": "Tyrosine-protein kinase ABL1 [229-512]",
+   "uniprot_raw": "P00519[229-512]",
+   "organism": "Homo sapiens",
+   "n_compounds": 2,
+   "n_measurements": 4,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 8.82
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50000450,
+   "target_name": "1-phosphatidylinositol 3-phosphate 5-kinase",
+   "uniprot_raw": "Q9Y2I7",
+   "organism": "Homo sapiens",
+   "n_compounds": 2,
+   "n_measurements": 3,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 8.19
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50001750,
+   "target_name": "Tyrosine-protein kinase ABL1",
+   "uniprot_raw": "P00520",
+   "organism": "Mus musculus",
+   "n_compounds": 2,
+   "n_measurements": 3,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 8.07
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50002885,
+   "target_name": "Mitogen-activated protein kinase kinase kinase 20",
+   "uniprot_raw": "Q9NYL2",
+   "organism": "Homo sapiens",
+   "n_compounds": 2,
+   "n_measurements": 4,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 7.96
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 7381,
+   "target_name": "Interleukin-1 receptor-associated kinase 1",
+   "uniprot_raw": "P51617",
+   "organism": "Homo sapiens",
+   "n_compounds": 2,
+   "n_measurements": 2,
+   "affinity_types": [
+    "IC50",
+    "Kd"
+   ],
+   "best_p_affinity": 7.85
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 5588,
+   "target_name": "Corticotropin-releasing factor receptor 1",
+   "uniprot_raw": "P34998",
+   "organism": "Homo sapiens",
+   "n_compounds": 2,
+   "n_measurements": 2,
+   "affinity_types": [
+    "Ki"
+   ],
+   "best_p_affinity": 7.6
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50003030,
+   "target_name": "Ephrin type-A receptor 8",
+   "uniprot_raw": "P29322",
+   "organism": "Homo sapiens",
+   "n_compounds": 2,
+   "n_measurements": 5,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 7.43
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 5286,
+   "target_name": "Ribosyldihydronicotinamide dehydrogenase [quinone]",
+   "uniprot_raw": "P16083",
+   "organism": "Homo sapiens",
+   "n_compounds": 2,
+   "n_measurements": 7,
+   "affinity_types": [
+    "IC50",
+    "Ki"
+   ],
+   "best_p_affinity": 7.41
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 633,
+   "target_name": "Platelet-derived growth factor receptor beta",
+   "uniprot_raw": "P05622",
+   "organism": "Mus musculus",
+   "n_compounds": 2,
+   "n_measurements": 2,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 7.3
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 4919,
+   "target_name": "Tyrosine-protein kinase JAK3",
+   "uniprot_raw": "P52333",
+   "organism": "Homo sapiens",
+   "n_compounds": 2,
+   "n_measurements": 4,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 7.26
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50004142,
+   "target_name": "Carbonic anhydrase 15",
+   "uniprot_raw": "Q99N23",
+   "organism": "Mus musculus",
+   "n_compounds": 2,
+   "n_measurements": 2,
+   "affinity_types": [
+    "Ki"
+   ],
+   "best_p_affinity": 7.11
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 2863,
+   "target_name": "Tyrosine-protein kinase FRK",
+   "uniprot_raw": "P42685",
+   "organism": "Homo sapiens",
+   "n_compounds": 2,
+   "n_measurements": 6,
+   "affinity_types": [
+    "Kd",
+    "Ki"
+   ],
+   "best_p_affinity": 7.07
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1361,
+   "target_name": "Carbonic anhydrase 7",
+   "uniprot_raw": "P43166",
+   "organism": "Homo sapiens",
+   "n_compounds": 2,
+   "n_measurements": 2,
+   "affinity_types": [
+    "Ki"
+   ],
+   "best_p_affinity": 7.0
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 4578,
+   "target_name": "Nuclear receptor subfamily 4 group A member 1",
+   "uniprot_raw": "P22736",
+   "organism": "Homo sapiens",
+   "n_compounds": 2,
+   "n_measurements": 3,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 6.92
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1365,
+   "target_name": "Carbonic anhydrase 14",
+   "uniprot_raw": "Q9ULX7",
+   "organism": "Homo sapiens",
+   "n_compounds": 2,
+   "n_measurements": 2,
+   "affinity_types": [
+    "Ki"
+   ],
+   "best_p_affinity": 6.65
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 6818,
+   "target_name": "Tyrosine-protein kinase Fgr",
+   "uniprot_raw": "P09769",
+   "organism": "Homo sapiens",
+   "n_compounds": 2,
+   "n_measurements": 5,
+   "affinity_types": [
+    "Kd",
+    "Ki"
+   ],
+   "best_p_affinity": 6.49
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 4451,
+   "target_name": "Serine/threonine-protein kinase TNNI3K",
+   "uniprot_raw": "Q59H18",
+   "organism": "Homo sapiens",
+   "n_compounds": 2,
+   "n_measurements": 4,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 6.44
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50004748,
+   "target_name": "Phosphatidylinositol 5-phosphate 4-kinase type-2 gamma",
+   "uniprot_raw": "Q8TBX8",
+   "organism": "Homo sapiens",
+   "n_compounds": 2,
+   "n_measurements": 2,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 6.42
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 10154,
+   "target_name": "Carbonic anhydrase 6",
+   "uniprot_raw": "P23280",
+   "organism": "Homo sapiens",
+   "n_compounds": 2,
+   "n_measurements": 2,
+   "affinity_types": [
+    "Ki"
+   ],
+   "best_p_affinity": 6.41
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1247,
+   "target_name": "Carbonic anhydrase 4",
+   "uniprot_raw": "P22748",
+   "organism": "Homo sapiens",
+   "n_compounds": 2,
+   "n_measurements": 2,
+   "affinity_types": [
+    "Ki"
+   ],
+   "best_p_affinity": 6.35
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 2920,
+   "target_name": "Carbonic anhydrase 3",
+   "uniprot_raw": "P07451",
+   "organism": "Homo sapiens",
+   "n_compounds": 2,
+   "n_measurements": 2,
+   "affinity_types": [
+    "Ki"
+   ],
+   "best_p_affinity": 6.35
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 4026,
+   "target_name": "Broad substrate specificity ATP-binding cassette transporter ABCG2",
+   "uniprot_raw": "Q9UNQ0",
+   "organism": "Homo sapiens",
+   "n_compounds": 2,
+   "n_measurements": 7,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 6.3
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 5620,
+   "target_name": "Tyrosine-protein kinase Blk",
+   "uniprot_raw": "P51451",
+   "organism": "Homo sapiens",
+   "n_compounds": 2,
+   "n_measurements": 4,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 6.3
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 2939,
+   "target_name": "RAF proto-oncogene serine/threonine-protein kinase",
+   "uniprot_raw": "P04049",
+   "organism": "Homo sapiens",
+   "n_compounds": 2,
+   "n_measurements": 5,
+   "affinity_types": [
+    "IC50",
+    "Kd"
+   ],
+   "best_p_affinity": 5.96
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 5118,
+   "target_name": "Putative glycogen synthase kinase 3 alpha",
+   "uniprot_raw": "",
+   "organism": "Ustilago maydis (strain 521 / FGSC 9021)",
+   "n_compounds": 2,
+   "n_measurements": 2,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 5.94
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 8061,
+   "target_name": "Tyrosine-protein kinase Fyn",
+   "uniprot_raw": "P06241",
+   "organism": "Homo sapiens",
+   "n_compounds": 2,
+   "n_measurements": 5,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 5.8
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1003,
+   "target_name": "Glycogen synthase kinase-3 beta",
+   "uniprot_raw": "P49841",
+   "organism": "Homo sapiens",
+   "n_compounds": 2,
+   "n_measurements": 2,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 5.68
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 3913,
+   "target_name": "Dual specificity protein kinase CLK4",
+   "uniprot_raw": "Q9HAZ1",
+   "organism": "Homo sapiens",
+   "n_compounds": 2,
+   "n_measurements": 6,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 5.68
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 4897,
+   "target_name": "Dual specificity protein kinase CLK1",
+   "uniprot_raw": "P49759",
+   "organism": "Homo sapiens",
+   "n_compounds": 2,
+   "n_measurements": 5,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 5.68
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1364,
+   "target_name": "Carbonic anhydrase 13",
+   "uniprot_raw": "Q9D6N1",
+   "organism": "Mus musculus",
+   "n_compounds": 2,
+   "n_measurements": 2,
+   "affinity_types": [
+    "Ki"
+   ],
+   "best_p_affinity": 5.33
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 188,
+   "target_name": "Receptor tyrosine-protein kinase erbB-2",
+   "uniprot_raw": "P04626",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 10.22
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1385,
+   "target_name": "Tyrosine-protein kinase ABL1 [201-500]",
+   "uniprot_raw": "P00519[201-500]",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 8.7
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1394,
+   "target_name": "Mast/stem cell growth factor receptor Kit [N822K]",
+   "uniprot_raw": "P10721[N822K]",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 8.52
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50001579,
+   "target_name": "Ephrin type-B receptor 2",
+   "uniprot_raw": "P29323",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 2,
+   "affinity_types": [
+    "Kd",
+    "Ki"
+   ],
+   "best_p_affinity": 8.4
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1389,
+   "target_name": "Tyrosine-protein kinase ABL1 [201-500,M351T]",
+   "uniprot_raw": "P00519[201-500,M351T]",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 8.0
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 3995,
+   "target_name": "Discoidin domain-containing receptor 2 [A642S]",
+   "uniprot_raw": "Q16832[A642S]",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 7.82
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 49000507,
+   "target_name": "Ephrin type-B receptor 1",
+   "uniprot_raw": "P54762",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 2,
+   "affinity_types": [
+    "Kd",
+    "Ki"
+   ],
+   "best_p_affinity": 7.82
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1386,
+   "target_name": "Tyrosine-protein kinase ABL1 [201-500,Q252H]",
+   "uniprot_raw": "P00519[201-500,Q252H]",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 7.7
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1390,
+   "target_name": "Tyrosine-protein kinase ABL1 [201-500,F359V]",
+   "uniprot_raw": "P00519[201-500,F359V]",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 7.7
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1395,
+   "target_name": "Mast/stem cell growth factor receptor Kit [V559D]",
+   "uniprot_raw": "P10721[V559D]",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 7.7
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 2130,
+   "target_name": "Adenosine receptor A2a",
+   "uniprot_raw": "P29274",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Ki"
+   ],
+   "best_p_affinity": 7.57
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 4341,
+   "target_name": "Adenosine receptor A2b",
+   "uniprot_raw": "P29275",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Ki"
+   ],
+   "best_p_affinity": 7.52
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 8765,
+   "target_name": "Ephrin type-A receptor 2 [596-900]",
+   "uniprot_raw": "P29317[596-900]",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 2,
+   "affinity_types": [
+    "IC50",
+    "Kd"
+   ],
+   "best_p_affinity": 7.48
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 2556,
+   "target_name": "Histone deacetylase 6",
+   "uniprot_raw": "Q9UBN7",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 7.44
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 4481,
+   "target_name": "Mitogen-activated protein kinase 11",
+   "uniprot_raw": "Q15759",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 7.44
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 5496,
+   "target_name": "Ephrin type-B receptor 4",
+   "uniprot_raw": "P54760",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 2,
+   "affinity_types": [
+    "Kd",
+    "Ki"
+   ],
+   "best_p_affinity": 7.43
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1387,
+   "target_name": "Tyrosine-protein kinase ABL1 [201-500,Y253F]",
+   "uniprot_raw": "P00519[201-500,Y253F]",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 7.4
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50006151,
+   "target_name": "Multidrug and toxin extrusion protein 1",
+   "uniprot_raw": "Q96FL8",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 3,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 7.4
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 243,
+   "target_name": "Epidermal growth factor receptor [T790M]",
+   "uniprot_raw": "P00533[T790M]",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 3,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 7.26
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1391,
+   "target_name": "Tyrosine-protein kinase ABL1 [201-500,H396P]",
+   "uniprot_raw": "P00519[201-500,H396P]",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 7.22
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50004854,
+   "target_name": "Serine/threonine-protein kinase PknB",
+   "uniprot_raw": "P9WI81",
+   "organism": "Mycobacterium tuberculosis (strain ATCC 25618 / H37Rv)",
+   "n_compounds": 1,
+   "n_measurements": 3,
+   "affinity_types": [
+    "IC50",
+    "Kd",
+    "Ki"
+   ],
+   "best_p_affinity": 7.21
+  },
+  {
+   "target_kind": "complex",
+   "target_id": 200,
+   "target_name": "Phosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit gamma isoform/Phosphoinositide 3-kinase regulatory subunit 5",
+   "uniprot_raw": null,
+   "organism": null,
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 7.1
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1388,
+   "target_name": "Tyrosine-protein kinase ABL1 [201-500,E255K]",
+   "uniprot_raw": "P00519[201-500,E255K]",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 7.0
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 5401,
+   "target_name": "Ephrin type-A receptor 3",
+   "uniprot_raw": "P29320",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 6.96
+  },
+  {
+   "target_kind": "complex",
+   "target_id": 50000562,
+   "target_name": "Tyrosine-protein kinase ABL1 [T315I]/Breakpoint cluster region protein",
+   "uniprot_raw": null,
+   "organism": null,
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 6.94
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 2132,
+   "target_name": "Potassium voltage-gated channel subfamily H member 2",
+   "uniprot_raw": "Q12809",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 3,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 6.9
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50001175,
+   "target_name": "Platelet-derived growth factor receptor beta",
+   "uniprot_raw": "Q05030",
+   "organism": "Rattus norvegicus",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 6.79
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50000594,
+   "target_name": "Dual specificity mitogen-activated protein kinase kinase 5",
+   "uniprot_raw": "Q13163",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 6.72
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50003028,
+   "target_name": "Ephrin type-A receptor 2",
+   "uniprot_raw": "P29317",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 6.64
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50006377,
+   "target_name": "Cyclin-K",
+   "uniprot_raw": "O75909",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 6.63
+  },
+  {
+   "target_kind": "complex",
+   "target_id": 112,
+   "target_name": "Cyclin-H/Cyclin-dependent kinase 7",
+   "uniprot_raw": null,
+   "organism": null,
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 6.54
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50003041,
+   "target_name": "Ephrin type-A receptor 4",
+   "uniprot_raw": "P54764",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 6.48
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50006152,
+   "target_name": "Multidrug and toxin extrusion protein 2",
+   "uniprot_raw": "Q86VL8",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 2,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 6.46
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 4465,
+   "target_name": "Tyrosine-protein kinase HCK",
+   "uniprot_raw": "P08631",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 6.41
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1744,
+   "target_name": "3-phosphoinositide-dependent protein kinase 1",
+   "uniprot_raw": "O15530",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 6.4
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 6476,
+   "target_name": "BDNF/NT-3 growth factors receptor",
+   "uniprot_raw": "Q16620",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 2,
+   "affinity_types": [
+    "Kd",
+    "Ki"
+   ],
+   "best_p_affinity": 6.31
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50004569,
+   "target_name": "Ephrin type-B receptor 6",
+   "uniprot_raw": "O15197",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 6.3
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 5527,
+   "target_name": "Macrophage colony-stimulating factor 1 receptor",
+   "uniprot_raw": "P09581",
+   "organism": "Mus musculus",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 6.27
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1846,
+   "target_name": "Tyrosine-protein kinase BTK",
+   "uniprot_raw": "Q06187",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 3,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 6.26
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 5623,
+   "target_name": "Tyrosine-protein kinase ITK/TSK",
+   "uniprot_raw": "Q08881",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 3,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 6.26
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 2127,
+   "target_name": "Cytochrome P450 3A4",
+   "uniprot_raw": "P08684",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 6.24
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 7531,
+   "target_name": "ATP-dependent translocase ABCB1",
+   "uniprot_raw": "P08183",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 2,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 6.24
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 10230,
+   "target_name": "Ephrin type-A receptor 1",
+   "uniprot_raw": "P21709",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 6.23
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 6477,
+   "target_name": "NT-3 growth factor receptor",
+   "uniprot_raw": "Q16288",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 6.22
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50003066,
+   "target_name": "Ephrin type-A receptor 6",
+   "uniprot_raw": "Q9UF33",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 6.19
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 4366,
+   "target_name": "Calcium-dependent protein kinase 1",
+   "uniprot_raw": "P62343",
+   "organism": "Plasmodium falciparum (isolate K1 / Thailand)",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 6.1
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 5974,
+   "target_name": "Proto-oncogene tyrosine-protein kinase receptor Ret",
+   "uniprot_raw": "P07949",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 2,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 6.06
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50004052,
+   "target_name": "Mitogen-activated protein kinase kinase kinase kinase 1",
+   "uniprot_raw": "Q92918",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 6.05
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 5237,
+   "target_name": "Serine/threonine-protein kinase MRCK beta",
+   "uniprot_raw": "Q9Y5S2",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 6.04
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50004557,
+   "target_name": "Homeodomain-interacting protein kinase 4",
+   "uniprot_raw": "Q8NE63",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 6.02
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 808,
+   "target_name": "Angiopoietin-1 receptor",
+   "uniprot_raw": "Q02763",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 2,
+   "affinity_types": [
+    "Kd",
+    "Ki"
+   ],
+   "best_p_affinity": 6.0
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 5427,
+   "target_name": "Ephrin type-B receptor 3",
+   "uniprot_raw": "P54753",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 6.0
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50002896,
+   "target_name": "Cyclin-G-associated kinase",
+   "uniprot_raw": "O14976",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 4,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 6.0
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50003646,
+   "target_name": "Tyrosine-protein kinase receptor Tie-1",
+   "uniprot_raw": "P35590",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 6.0
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 5424,
+   "target_name": "Tyrosine-protein kinase Yes",
+   "uniprot_raw": "P07947",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 5.96
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 5224,
+   "target_name": "Tyrosine-protein kinase ABL1 [1-999,E255K]",
+   "uniprot_raw": "P00519[1-999,E255K]",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 5.92
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 7795,
+   "target_name": "Ferrochelatase, mitochondrial [R115L]",
+   "uniprot_raw": "P22830[R115L]",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 5.77
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50004246,
+   "target_name": "Serine/threonine-protein kinase TAO3",
+   "uniprot_raw": "Q9H2K8",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 5.77
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 7407,
+   "target_name": "Maternal embryonic leucine zipper kinase",
+   "uniprot_raw": "Q14680",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 3,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 5.72
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50003039,
+   "target_name": "Ephrin type-A receptor 5",
+   "uniprot_raw": "P54756",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 5.72
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50003023,
+   "target_name": "Serine/threonine-protein kinase PLK4",
+   "uniprot_raw": "O00444",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 5,
+   "affinity_types": [
+    "Kd",
+    "Ki"
+   ],
+   "best_p_affinity": 5.66
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 2869,
+   "target_name": "Tyrosine-protein kinase CSK",
+   "uniprot_raw": "P41240",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 5.62
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 3933,
+   "target_name": "Proto-oncogene tyrosine-protein kinase Src",
+   "uniprot_raw": "P00523",
+   "organism": "Gallus gallus",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 5.56
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 4493,
+   "target_name": "Serine/threonine-protein kinase 17A",
+   "uniprot_raw": "Q9UEE5",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 3,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 5.55
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1051,
+   "target_name": "Mast/stem cell growth factor receptor Kit [V559D,T670I]",
+   "uniprot_raw": "P10721[V559D,T670I]",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 5.52
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50003766,
+   "target_name": "Lysine--tRNA ligase",
+   "uniprot_raw": "Q15046",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 5.5
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 5758,
+   "target_name": "Leucine-rich repeat serine/threonine-protein kinase 2",
+   "uniprot_raw": "Q5S007",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 2,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 5.48
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 858,
+   "target_name": "Insulin receptor",
+   "uniprot_raw": "P06213",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Ki"
+   ],
+   "best_p_affinity": 5.39
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50006127,
+   "target_name": "Solute carrier family 22 member 2",
+   "uniprot_raw": "O15244",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 5.38
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 3911,
+   "target_name": "Dual specificity protein kinase CLK1 [R432A]",
+   "uniprot_raw": "P49759[R432A]",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 5.35
+  },
+  {
+   "target_kind": "complex",
+   "target_id": 50000101,
+   "target_name": "Voltage-gated L-type calcium channel",
+   "uniprot_raw": null,
+   "organism": null,
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 5.33
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50003871,
+   "target_name": "Serine/threonine-protein kinase TAO1",
+   "uniprot_raw": "Q7L7X3",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 5.33
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 2712,
+   "target_name": "Cytoplasmic tyrosine-protein kinase BMX",
+   "uniprot_raw": "P51813",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Ki"
+   ],
+   "best_p_affinity": 5.32
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1228,
+   "target_name": "Carbonic anhydrase 5A, mitochondrial",
+   "uniprot_raw": "P35218",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Ki"
+   ],
+   "best_p_affinity": 5.26
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 3735,
+   "target_name": "Cyclin-dependent kinase 19",
+   "uniprot_raw": "Q9BWU1",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 3,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 5.26
+  },
+  {
+   "target_kind": "complex",
+   "target_id": 50000561,
+   "target_name": "cAMP-dependent protein kinase catalytic subunit alpha/beta/gamma",
+   "uniprot_raw": null,
+   "organism": null,
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 5.22
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1392,
+   "target_name": "Tyrosine-protein kinase ABL1 [201-500,T315I]",
+   "uniprot_raw": "P00519[201-500,T315I]",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 5.22
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 2333,
+   "target_name": "Sphingosine 1-phosphate receptor 2",
+   "uniprot_raw": "O95136",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 5.22
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 5399,
+   "target_name": "Serine/threonine-protein kinase 10",
+   "uniprot_raw": "O94804",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_p_affinity": 5.17
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 4906,
+   "target_name": "Hepatocyte growth factor receptor",
+   "uniprot_raw": "P08581",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Ki"
+   ],
+   "best_p_affinity": 5.15
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 856,
+   "target_name": "Fibroblast growth factor receptor 2",
+   "uniprot_raw": "P21802",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Ki"
+   ],
+   "best_p_affinity": 5.14
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 694,
+   "target_name": "Fibroblast growth factor receptor 1",
+   "uniprot_raw": "P11362",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Ki"
+   ],
+   "best_p_affinity": 5.1
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 350,
+   "target_name": "Leucine-rich repeat serine/threonine-protein kinase 2 [970-2527]",
+   "uniprot_raw": "Q5S007[970-2527]",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 5.08
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 49000990,
+   "target_name": "Ret proto-oncogene",
+   "uniprot_raw": null,
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Ki"
+   ],
+   "best_p_affinity": 5.06
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 6655,
+   "target_name": "Macrophage-stimulating protein receptor",
+   "uniprot_raw": "Q04912",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Ki"
+   ],
+   "best_p_affinity": 5.05
+  },
+  {
+   "target_kind": "complex",
+   "target_id": 50000025,
+   "target_name": "Cyclin-A1/Cyclin-A2/Cyclin-dependent kinase 2",
+   "uniprot_raw": null,
+   "organism": null,
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 5.03
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 4753,
+   "target_name": "Replicase polyprotein 1ab",
+   "uniprot_raw": "P0C6X7",
+   "organism": "Severe acute respiratory syndrome coronavirus",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "EC50"
+   ],
+   "best_p_affinity": 5.01
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 823,
+   "target_name": "Spike glycoprotein",
+   "uniprot_raw": "P59594",
+   "organism": "Severe acute respiratory syndrome coronavirus",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "EC50"
+   ],
+   "best_p_affinity": 5.0
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 7532,
+   "target_name": "Bile salt export pump",
+   "uniprot_raw": "O95342",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 5.0
+  }
+ ],
+ "compounds_searched": 1466457,
+ "search_set_size": 1466457
+}

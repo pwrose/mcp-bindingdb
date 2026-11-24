@@ -1,0 +1,226 @@
+{
+ "row_count": 20,
+ "truncated": true,
+ "rows": [
+  {
+   "monomerid": 13530,
+   "bdbm_id": "BDBM13530",
+   "name": "Gleevec",
+   "inchi_key": "KTUFNOKKBVMGRW-UHFFFAOYSA-N",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)CC1",
+   "mol_weight": 493.26,
+   "n_activities": 1156,
+   "n_targets": 459,
+   "matched_name": "cid_5291"
+  },
+  {
+   "monomerid": 54798,
+   "bdbm_id": "BDBM54798",
+   "name": "MLS000519510",
+   "inchi_key": "RXQBEHGNWZBHIF-UHFFFAOYSA-N",
+   "smiles": "Cc1[nH]c2ccccc2c1/C=C1SC(=N)N(c2nccs2)C1=O",
+   "mol_weight": 340.05,
+   "n_activities": 5,
+   "n_targets": 4,
+   "matched_name": "cid_5291664"
+  },
+  {
+   "monomerid": 40401,
+   "bdbm_id": "BDBM40401",
+   "name": "UNM000003529001",
+   "inchi_key": "CRBWSCQTBBPMTG-UHFFFAOYSA-N",
+   "smiles": "CCCCCCN1C(C(C(=O)c2ccccc2)C(=O)C1=O)c1ccc(O)c(OC)c1",
+   "mol_weight": 409.19,
+   "n_activities": 4,
+   "n_targets": 2,
+   "matched_name": "cid_5291143"
+  },
+  {
+   "monomerid": 40406,
+   "bdbm_id": "BDBM40406",
+   "name": "UNM000003537201",
+   "inchi_key": "ICSLNJDFTGEPMX-UHFFFAOYSA-N",
+   "smiles": "COCCN1C(C(C(=O)c2ccccc2)C(=O)C1=O)c1cc(OC)ccc1OC",
+   "mol_weight": 397.15,
+   "n_activities": 4,
+   "n_targets": 2,
+   "matched_name": "cid_5291419"
+  },
+  {
+   "monomerid": 40411,
+   "bdbm_id": "BDBM40411",
+   "name": "UNM000003538701",
+   "inchi_key": "FWDCSNYZLUMPPC-UHFFFAOYSA-N",
+   "smiles": "COc1ccc(OC)c(c1)C1C(C(=O)c2ccccc2)C(=O)C(=O)N1c1cccnc1",
+   "mol_weight": 416.14,
+   "n_activities": 4,
+   "n_targets": 2,
+   "matched_name": "cid_5291451"
+  },
+  {
+   "monomerid": 40436,
+   "bdbm_id": "BDBM40436",
+   "name": "UNM000003598601",
+   "inchi_key": "MSXFHQCGSVCQFL-UHFFFAOYSA-N",
+   "smiles": "COc1ccc(C2C(C(=O)c3ccc(C)cc3)C(=O)C(=O)N2Cc2cccnc2)c(OC)c1",
+   "mol_weight": 444.17,
+   "n_activities": 4,
+   "n_targets": 2,
+   "matched_name": "cid_5291826"
+  },
+  {
+   "monomerid": 50154,
+   "bdbm_id": "BDBM50154",
+   "name": "MLS000553382",
+   "inchi_key": "QAAHPCIPFCTISV-ZROIWOOFSA-N",
+   "smiles": "O=C1Oc2ccccc2C(=O)/C1=C/c1c[nH]c2ccccc12",
+   "mol_weight": 289.07,
+   "n_activities": 4,
+   "n_targets": 4,
+   "matched_name": "cid_5291977"
+  },
+  {
+   "monomerid": 40434,
+   "bdbm_id": "BDBM40434",
+   "name": "UNM000003595901",
+   "inchi_key": "NJZQQPNMYSXORF-UHFFFAOYSA-N",
+   "smiles": "Fc1ccc(cc1)N1C(C(C(=O)c2ccccc2)C(=O)C1=O)c1ccc(Br)cc1",
+   "mol_weight": 451.02,
+   "n_activities": 3,
+   "n_targets": 2,
+   "matched_name": "cid_5291115"
+  },
+  {
+   "monomerid": 40437,
+   "bdbm_id": "BDBM40437",
+   "name": "UNM000003598701",
+   "inchi_key": "ZLEIAKOIGUCLNH-BUHFOSPRSA-N",
+   "smiles": "OC(=O)CCCN1C(\\C=C\\c2ccccc2)C(C(=O)c2ccccc2)C(=O)C1=O",
+   "mol_weight": 391.14,
+   "n_activities": 3,
+   "n_targets": 2,
+   "matched_name": "cid_5291834"
+  },
+  {
+   "monomerid": 40439,
+   "bdbm_id": "BDBM40439",
+   "name": "UNM000003599401",
+   "inchi_key": "MGUCWTPCCYOFBH-UHFFFAOYSA-N",
+   "smiles": "Brc1ccc(cc1)C1C(C(=O)c2ccccc2)C(=O)C(=O)N1CN1CCOCC1",
+   "mol_weight": 456.07,
+   "n_activities": 3,
+   "n_targets": 2,
+   "matched_name": "cid_5291891"
+  },
+  {
+   "monomerid": 51172,
+   "bdbm_id": "BDBM51172",
+   "name": "MLS000712299",
+   "inchi_key": "XAVAXEJERNGXLG-XCMCHEKJSA-N",
+   "smiles": "CCCCN1C(=S)S\\C(=C/C=C2\\Oc3ccccc3N2CC)C1=O",
+   "mol_weight": 360.1,
+   "n_activities": 3,
+   "n_targets": 3,
+   "matched_name": "cid_5291166"
+  },
+  {
+   "monomerid": 59754,
+   "bdbm_id": "BDBM59754",
+   "name": "MLS000111824",
+   "inchi_key": "ZDCSYGXLZHPWCP-UHFFFAOYSA-N",
+   "smiles": "C/C(=Cc1ccco1)C1c2c(-c3ccccc3)n[nH]c2OC(=N)C1C#N",
+   "mol_weight": 344.13,
+   "n_activities": 3,
+   "n_targets": 2,
+   "matched_name": "cid_5291857"
+  },
+  {
+   "monomerid": 64843,
+   "bdbm_id": "BDBM64843",
+   "name": "MLS000519119",
+   "inchi_key": "OZCTZEQRPXUHPT-MDWZMJQESA-N",
+   "smiles": "CC1=NOC(=O)\\C1=C\\c1ccc(o1)-c1ccc(Cl)cc1 |t:1|",
+   "mol_weight": 287.03,
+   "n_activities": 3,
+   "n_targets": 3,
+   "matched_name": "cid_5291838"
+  },
+  {
+   "monomerid": 50241,
+   "bdbm_id": "BDBM50241",
+   "name": "MLS000567498",
+   "inchi_key": "QFTJMDXQIISZOP-UHFFFAOYSA-N",
+   "smiles": "Cc1ccc2nc(C(C#N)=Cc3ccc(-c4cccc([N+](=O)[O-])c4)o3)[nH]c2c1",
+   "mol_weight": 370.11,
+   "n_activities": 2,
+   "n_targets": 2,
+   "matched_name": "cid_5291132"
+  },
+  {
+   "monomerid": 52081,
+   "bdbm_id": "BDBM52081",
+   "name": "MLS000077161",
+   "inchi_key": "GXDHEXWWCZQNIQ-UHFFFAOYSA-N",
+   "smiles": "O=c1[nH]c(=O)n(-c2cccc(Cl)c2)c(O)c1C=Nc1ccccn1",
+   "mol_weight": 342.05,
+   "n_activities": 2,
+   "n_targets": 2,
+   "matched_name": "cid_5291172"
+  },
+  {
+   "monomerid": 52255,
+   "bdbm_id": "BDBM52255",
+   "name": "MLS000519515",
+   "inchi_key": "STTLXVSWOQMQBG-UHFFFAOYSA-N",
+   "smiles": "CCOC(=O)C(=O)NCc1ccc(C=c2c(O)c(C(=O)OC)c(=C)n2-c2ccccc2)o1",
+   "mol_weight": 438.14,
+   "n_activities": 2,
+   "n_targets": 2,
+   "matched_name": "cid_5291849"
+  },
+  {
+   "monomerid": 52275,
+   "bdbm_id": "BDBM52275",
+   "name": "MLS000519514",
+   "inchi_key": "VUMWWRSISQSUJP-UHFFFAOYSA-N",
+   "smiles": "CCOC(=O)C(=O)NCc1ccc(C=c2c(O)c(C(=O)OC)c(=C)n2-c2ccc(F)cc2)o1",
+   "mol_weight": 456.13,
+   "n_activities": 2,
+   "n_targets": 2,
+   "matched_name": "cid_5291831"
+  },
+  {
+   "monomerid": 54016,
+   "bdbm_id": "BDBM54016",
+   "name": "MLS000682115",
+   "inchi_key": "UNELMGUYQOCWST-HTHTTXKWSA-N",
+   "smiles": "Cc1ccc(C)c(c1)N1C(=N)S\\C(=C/c2ccc(o2)-c2ccccc2C(O)=O)C1=O",
+   "mol_weight": 418.1,
+   "n_activities": 2,
+   "n_targets": 2,
+   "matched_name": "cid_5291770"
+  },
+  {
+   "monomerid": 83637,
+   "bdbm_id": "BDBM83637",
+   "name": "MLS001203453",
+   "inchi_key": "VYRCFJLNSPMBBR-FNORWQNLSA-N",
+   "smiles": "[O-][N+](=O)c1ccc(\\C=C\\c2nc3ccccc3c(=O)o2)s1",
+   "mol_weight": 300.02,
+   "n_activities": 2,
+   "n_targets": 1,
+   "matched_name": "cid_5291685"
+  },
+  {
+   "monomerid": 47901,
+   "bdbm_id": "BDBM47901",
+   "name": "MLS001197204",
+   "inchi_key": "BTXWOQBYISISBP-UHFFFAOYSA-N",
+   "smiles": "O=C1NC(=O)N(c2ccccc2F)C(=O)C1=Cc1c[nH]c2ccccc12",
+   "mol_weight": 349.09,
+   "n_activities": 1,
+   "n_targets": 1,
+   "matched_name": "cid_5291609"
+  }
+ ]
+}

@@ -1,0 +1,62 @@
+{
+ "row_count": 14,
+ "truncated": false,
+ "rows": [
+  {
+   "alert": "catechol_A(92)",
+   "n_cpd": 128
+  },
+  {
+   "alert": "ene_five_het_B(90)",
+   "n_cpd": 89
+  },
+  {
+   "alert": "quinone_A(370)",
+   "n_cpd": 45
+  },
+  {
+   "alert": "anil_di_alk_A(478)",
+   "n_cpd": 22
+  },
+  {
+   "alert": "imine_one_A(321)",
+   "n_cpd": 20
+  },
+  {
+   "alert": "het_65_B(7)",
+   "n_cpd": 19
+  },
+  {
+   "alert": "quinone_D(2)",
+   "n_cpd": 14
+  },
+  {
+   "alert": "ene_rhod_A(235)",
+   "n_cpd": 12
+  },
+  {
+   "alert": "mannich_A(296)",
+   "n_cpd": 10
+  },
+  {
+   "alert": "azo_A(324)",
+   "n_cpd": 9
+  },
+  {
+   "alert": "indol_3yl_alk(461)",
+   "n_cpd": 8
+  },
+  {
+   "alert": "keto_keto_beta_C(7)",
+   "n_cpd": 8
+  },
+  {
+   "alert": "anil_no_alk(40)",
+   "n_cpd": 7
+  },
+  {
+   "alert": "hzone_phenol_A(479)",
+   "n_cpd": 7
+  }
+ ]
+}

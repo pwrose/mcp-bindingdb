@@ -1,0 +1,50 @@
+{
+ "row_count": 4,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 5447,
+   "bdbm_id": "BDBM5447",
+   "name": "Iressa",
+   "inchi_key": "XGALLCVXEZPNRQ-UHFFFAOYSA-N",
+   "smiles": "COc1cc2c(cc1OCCCN3CCOCC3)c(ncn2)Nc4ccc(c(c4)Cl)F",
+   "mol_weight": 446.15,
+   "n_activities": 1177,
+   "n_targets": 424,
+   "matched_name": "GEFITINIB"
+  },
+  {
+   "monomerid": 50338602,
+   "bdbm_id": "BDBM50338602",
+   "name": "Iressa",
+   "inchi_key": "XGALLCVXEZPNRQ-UHFFFAOYSA-N",
+   "smiles": "COc1cc2c(cc1OCCCN3CCOCC3)c(ncn2)Nc4ccc(c(c4)Cl)F",
+   "mol_weight": 446.15,
+   "n_activities": 6,
+   "n_targets": 2,
+   "matched_name": "gefitinib"
+  },
+  {
+   "monomerid": 32367,
+   "bdbm_id": "BDBM32367",
+   "name": "GEFITINIB",
+   "inchi_key": "XGALLCVXEZPNRQ-UHFFFAOYSA-N",
+   "smiles": "COc1cc2c(cc1OCCCN3CCOCC3)c(ncn2)Nc4ccc(c(c4)Cl)F",
+   "mol_weight": null,
+   "n_activities": 0,
+   "n_targets": 0,
+   "matched_name": "GEFITINIB"
+  },
+  {
+   "monomerid": 582528,
+   "bdbm_id": "BDBM582528",
+   "name": "US11524945, Compound Gefitinib",
+   "inchi_key": "YWEAQFVLBUGCSC-UHFFFAOYSA-N",
+   "smiles": "COc1cc2ncnc(NC3=CC(Cl)C(F)C=C3)c2cc1OCCCN1CCOCC1",
+   "mol_weight": 448.17,
+   "n_activities": 2,
+   "n_targets": 2,
+   "matched_name": "US11524945, Compound Gefitinib"
+  }
+ ]
+}

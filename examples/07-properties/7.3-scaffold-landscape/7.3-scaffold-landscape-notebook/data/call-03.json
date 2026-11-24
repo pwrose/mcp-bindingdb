@@ -1,0 +1,54 @@
+{
+ "row_count": 8,
+ "truncated": false,
+ "rows": [
+  {
+   "scaffold": "O=c1[nH]cnc2c1cnn2Cc1ccccc1",
+   "n": 115,
+   "first_year": 2019,
+   "earliest_sources": "US10174037-B2"
+  },
+  {
+   "scaffold": "O=C(NCc1ccccc1)c1cc(=O)[nH]cn1",
+   "n": 111,
+   "first_year": 2017,
+   "earliest_sources": "US9815796-B2"
+  },
+  {
+   "scaffold": "O=C(NCc1ccccc1)c1cc(=O)[nH]c(-c2ccccc2)n1",
+   "n": 41,
+   "first_year": 2017,
+   "earliest_sources": "US9815796-B2"
+  },
+  {
+   "scaffold": "O=C(NCc1ccccc1)c1cc(=O)[nH]c(Cc2ccccc2)n1",
+   "n": 39,
+   "first_year": 2017,
+   "earliest_sources": "US9815796-B2"
+  },
+  {
+   "scaffold": "c1ccc(-c2nnc3cnc4ccccc4n23)cc1",
+   "n": 37,
+   "first_year": 2013,
+   "earliest_sources": "23260348"
+  },
+  {
+   "scaffold": "c1ccc(-c2[nH]ncc2-c2ncn3ncnc(N4CCC4)c23)cc1",
+   "n": 32,
+   "first_year": 2013,
+   "earliest_sources": "US8598155-B2"
+  },
+  {
+   "scaffold": "O=C(NCc1ccccc1)c1cc(=O)[nH]c(-c2ncccn2)n1",
+   "n": 26,
+   "first_year": 2017,
+   "earliest_sources": "US9815796-B2"
+  },
+  {
+   "scaffold": "O=C(N[C@@H](c1ccccc1)C1CC1)c1cc(=O)[nH]cn1",
+   "n": 25,
+   "first_year": 2017,
+   "earliest_sources": "US9815796-B2"
+  }
+ ]
+}

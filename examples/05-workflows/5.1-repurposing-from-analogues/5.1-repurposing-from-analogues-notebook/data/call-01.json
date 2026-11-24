@@ -1,0 +1,25 @@
+{
+ "query": "sildenafil",
+ "resolved": true,
+ "source": "bindingdb",
+ "smiles": "CCCc1c2c(n(n1)C)C(=O)NC(=N2)c3cc(ccc3OCC)S(=O)(=O)N4CCN(CC4)C",
+ "inchi_key": "BNRNXUUZRGQAQC-UHFFFAOYSA-N",
+ "monomerid": 14390,
+ "ambiguous": false,
+ "candidates": [
+  {
+   "monomerid": 14390,
+   "bdbm_id": "BDBM14390",
+   "name": "Viagra",
+   "inchi_key": "BNRNXUUZRGQAQC-UHFFFAOYSA-N",
+   "smiles": "CCCc1c2c(n(n1)C)C(=O)NC(=N2)c3cc(ccc3OCC)S(=O)(=O)N4CCN(CC4)C",
+   "n_activities": 201
+  }
+ ],
+ "sources_tried": [
+  {
+   "source": "bindingdb",
+   "status": "found"
+  }
+ ]
+}

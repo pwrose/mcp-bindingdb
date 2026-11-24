@@ -1,0 +1,23 @@
+{
+ "row_count": 2,
+ "truncated": false,
+ "rows": [
+  {
+   "target_id": 2262,
+   "n": 229,
+   "below_10nM": 11,
+   "le_100nM": 124,
+   "above_1uM": 24,
+   "from_17714833": 1
+  },
+  {
+   "target_id": 7854,
+   "n": 96,
+   "below_10nM": 0,
+   "le_100nM": 5,
+   "above_1uM": 85,
+   "from_17714833": 0
+  }
+ ],
+ "order_warning": "The query has no ORDER BY, so its 2 rows can come back in a different order. Add an ORDER BY that ends with a unique column (e.g. monomerid; ki_result_id, affinity_type for measurements) so the result is the same on every run and a notebook's rerun check passes."
+}

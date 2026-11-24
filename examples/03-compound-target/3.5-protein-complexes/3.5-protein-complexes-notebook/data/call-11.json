@@ -1,0 +1,114 @@
+{
+ "row_count": 12,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 50310937,
+   "ki1": 469.0,
+   "ki5": 0.9,
+   "src1": "19740657",
+   "src5": "19740657",
+   "ratio": 521.1111111111111,
+   "name": "5-((3-bromo-10-methyl-9H-benzo[f]imidazo[1,5-a][1,2,4]triazolo[1,5-d][1,4]diazepin-6-yl)methyl)-3-methyl-1,2,4-oxadiazole"
+  },
+  {
+   "monomerid": 736893,
+   "ki1": 178.0,
+   "ki5": 0.39,
+   "src1": "US20250136581-A1",
+   "src5": "US20250136581-A1",
+   "ratio": 456.4102564102564,
+   "name": "(R)-8-(6-((1-(4-(Difluoromethyl)phenyl)-4-methyl-1H-1,2,3-triazol-5-yl)methoxy)pyridazin-3-yl)hexahydro-2H-pyrazino[1,2-a]pyrazin-1(6H)-one"
+  },
+  {
+   "monomerid": 50310938,
+   "ki1": 188.0,
+   "ki5": 0.6,
+   "src1": "19740657",
+   "src5": "19740657",
+   "ratio": 313.33333333333337,
+   "name": "5-((3-bromo-10-methyl-9H-benzo[f]imidazo[1,5-a][1,2,4]triazolo[1,5-d][1,4]diazepin-6-yl)methyl)-3-methylisoxazole"
+  },
+  {
+   "monomerid": 736912,
+   "ki1": 832.0,
+   "ki5": 2.87,
+   "src1": "US20250136581-A1",
+   "src5": "US20250136581-A1",
+   "ratio": 289.89547038327527,
+   "name": "4-(6-((1-(4-Fluorophenyl)-4-methyl-1H-1,2,3-triazol-5-yl)methoxy)pyridazin-3-yl)piperazin-2-one"
+  },
+  {
+   "monomerid": 736915,
+   "ki1": 161.0,
+   "ki5": 0.82,
+   "src1": "US20250136581-A1",
+   "src5": "US20250136581-A1",
+   "ratio": 196.34146341463415,
+   "name": "4-(6-((1-(4-(Difluoromethyl)phenyl)-4-(hydroxymethyl)-1H-1,2,3-triazol-5-yl)methoxy)pyridazin-3-yl)piperazin-2-one"
+  },
+  {
+   "monomerid": 736959,
+   "ki1": 400.0,
+   "ki5": 2.08,
+   "src1": "US20250136581-A1",
+   "src5": "US20250136581-A1",
+   "ratio": 192.3076923076923,
+   "name": "4-(6-((4-(4-(Difluoromethyl)phenyl)-1-methyl-1H-1,2,3-triazol-5-yl)methoxy)pyridazin-3-yl)piperazin-2-one"
+  },
+  {
+   "monomerid": 736978,
+   "ki1": 445.0,
+   "ki5": 2.5,
+   "src1": "US20250136581-A1",
+   "src5": "US20250136581-A1",
+   "ratio": 178.0,
+   "name": "(S)-2-Cyclopropyl-8-(6-((1-(4-(difluoromethyl)phenyl)-4-methyl-1H-1,2,3-triazol-5-yl)methoxy)pyridazin-3-yl)hexahydro-2H-pyrazino[1,2-a]pyrazin-1(6H)-one"
+  },
+  {
+   "monomerid": 737001,
+   "ki1": 80.6,
+   "ki5": 0.55,
+   "src1": "US20250136581-A1",
+   "src5": "US20250136581-A1",
+   "ratio": 146.54545454545453,
+   "name": "US20250136581, Example 173"
+  },
+  {
+   "monomerid": 50149423,
+   "ki1": 48.6,
+   "ki5": 0.39,
+   "src1": "15214791",
+   "src5": "15214791",
+   "ratio": 124.61538461538461,
+   "name": "5,6-dimethyl-2-pyridyl[6-(3-methyl-1,2,4-oxadiazol-5-yl)-4,5,7,8-tetraazatetracyclo[9.2.2.02,10.03,7]pentadeca-2(10),3,5,8-tetraen-9-yloxy]methane"
+  },
+  {
+   "monomerid": 736848,
+   "ki1": 122.0,
+   "ki5": 1.0,
+   "src1": "US20250136581-A1",
+   "src5": "US20250136581-A1",
+   "ratio": 122.0,
+   "name": "4-(6-((1-(4-(Difluoromethyl)phenyl)-4-methyl-1H-1,2,3-triazol-5-yl)methoxy)pyridazin-3-yl)-6,6-dimethylpiperazin-2-one"
+  },
+  {
+   "monomerid": 736913,
+   "ki1": 246.0,
+   "ki5": 2.03,
+   "src1": "US20250136581-A1",
+   "src5": "US20250136581-A1",
+   "ratio": 121.18226600985223,
+   "name": "1-(4-(Difluoromethyl)phenyl)-5-(((6-(3-oxopiperazin-1-yl)pyridazin-3-yl)oxy)methyl)-1H-1,2,3-triazole-4-carbonitrile"
+  },
+  {
+   "monomerid": 737009,
+   "ki1": 140.0,
+   "ki5": 1.21,
+   "src1": "US20250136581-A1",
+   "src5": "US20250136581-A1",
+   "ratio": 115.70247933884298,
+   "name": "(S)-8-(6-((4-Chloro-1-(4-(difluoromethyl)phenyl)-1H-1,2,3-triazol-5-yl)methoxy)pyridazin-3-yl)hexahydro-2H-pyrazino[1,2-a]pyrazin-1(6H)-one"
+  }
+ ]
+}

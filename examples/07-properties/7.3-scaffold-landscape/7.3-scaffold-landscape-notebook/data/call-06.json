@@ -1,0 +1,55 @@
+{
+ "grouped_by": "generic_scaffold",
+ "n_scaffolds": 107,
+ "n_compounds": 950,
+ "row_count": 5,
+ "truncated": true,
+ "rows": [
+  {
+   "scaffold_smiles": "CC1CCCC2C(CC3CCCCC3)CCC12",
+   "n_compounds": 135,
+   "n_measurements": 201,
+   "best_p_affinity": 10.8,
+   "median_p_affinity": 9.07,
+   "best_monomerid": 320811,
+   "best_compound_name": "(R)- or (S)-1-(1-(4-(1,1-Difluoroethyl)-3- fluorophenyl)propyl)-6-(dimethylamino)-3- (fluoromethyl)-1H-pyrazolo[3,4- d]pyrimidin-4(5H)-one"
+  },
+  {
+   "scaffold_smiles": "CC1CCCC(C(C)CCC2CCCCC2)C1",
+   "n_compounds": 111,
+   "n_measurements": 116,
+   "best_p_affinity": 10.14,
+   "median_p_affinity": 8.66,
+   "best_monomerid": 384991,
+   "best_compound_name": "2-(dimethylamino)-N-{(1S)-2- hydroxy-2-methyl-1-[4- (pentafluoro-lambda6- sulfanyl)phenyl]propyl}-6-oxo- 1,6-dihydropyrimidine-4- carboxamide"
+  },
+  {
+   "scaffold_smiles": "C1CCC(C2CCCC2C2CCC3CCCC(C4CCC4)C32)CC1",
+   "n_compounds": 69,
+   "n_measurements": 91,
+   "best_p_affinity": 9.52,
+   "median_p_affinity": 8.5,
+   "best_monomerid": 107776,
+   "best_compound_name": "US8598155, 13"
+  },
+  {
+   "scaffold_smiles": "C1CCC(C2CCC3CCC4CCCCC4C32)CC1",
+   "n_compounds": 67,
+   "n_measurements": 75,
+   "best_p_affinity": 9.55,
+   "median_p_affinity": 8.3,
+   "best_monomerid": 50425140,
+   "best_compound_name": "CHEMBL2313250"
+  },
+  {
+   "scaffold_smiles": "CC1CC(C(C)CCC2CCCCC2)CC(C2CCCCC2)C1",
+   "n_compounds": 67,
+   "n_measurements": 70,
+   "best_p_affinity": 9.3,
+   "median_p_affinity": 8.42,
+   "best_monomerid": 355552,
+   "best_compound_name": "N-{(1S)-1-[2-chloro-4- (trifluoromethyl)phenyl]-2-hydroxy- 1-methylethyl}-6-oxo-2-phenyl-1,6- dihydropyrimidine-4-carboxamide"
+  }
+ ],
+ "note": "Generic scaffolds: all atoms carbon, all bonds single; null for compounds without a ring"
+}

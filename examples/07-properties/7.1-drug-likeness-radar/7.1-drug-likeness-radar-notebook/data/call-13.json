@@ -1,0 +1,291 @@
+{
+ "compound": {
+  "monomerid": 50228403,
+  "bdbm_id": "BDBM50228403",
+  "name": "LINAGLIPTIN",
+  "inchi_key": "LTXREWYXXSTFRX-QGZVFWFLSA-N",
+  "smiles": "CC#CCn1c(nc2n(C)c(=O)n(Cc3nc(C)c4ccccc4n3)c(=O)c12)N1CCC[C@@H](N)C1",
+  "formula": null,
+  "mol_weight": 472.23,
+  "type": "Small organic molecule",
+  "het_pdb": "",
+  "n_pdb_ids_exact": 0,
+  "n_activities": 62,
+  "n_targets": 18,
+  "inchi": "InChI=1S/C25H28N8O2/c1-4-5-13-32-21-22(29-24(32)31-12-8-9-17(26)14-31)30(3)25(35)33(23(21)34)15-20-27-16(2)18-10-6-7-11-19(18)28-20/h6-7,10-11,17H,8-9,12-15,26H2,1-3H3/t17-/m1/s1",
+  "pdb_ids_exact": "",
+  "pdb_ids_sub": null
+ },
+ "synonyms": [
+  "LINAGLIPTIN",
+  "CHEMBL237500",
+  "US9321791, 2(142)",
+  "US9556175, 2(142)",
+  "US9255098, Linagliptin",
+  "US10358449, Linagliptin",
+  "US20240115577, Compound 5",
+  "US10202383, Example 2(142)",
+  "(R)-8-(3-aminopiperidin-1-yl)-7-(but-2-ynyl)-3-methyl-1-((4-methylquinazolin-2-yl)methyl)-1H-purine-2,6(3H,7H)-dione",
+  "8-[(3R)-3-Aminopiperidin-1-yl]-7-but-2-yn-1-yl-3-methyl-1-[(4-methylquinazolin-2-yl)methyl]-3,7-dihydro-1H-purine-2,6-dione"
+ ],
+ "top_targets": [
+  {
+   "polymerid": 1234,
+   "complexid": null,
+   "target_name": "Dipeptidyl peptidase 4",
+   "uniprot_raw": "P27487",
+   "organism": "Homo sapiens",
+   "n_measurements": 28,
+   "best_p_affinity": 11.18,
+   "affinity_types": [
+    "EC50",
+    "IC50",
+    "Kd"
+   ],
+   "best_ligand_efficiency": 0.44
+  },
+  {
+   "polymerid": 50002948,
+   "complexid": null,
+   "target_name": "Dipeptidyl peptidase 4",
+   "uniprot_raw": "P28843",
+   "organism": "Mus musculus",
+   "n_measurements": 1,
+   "best_p_affinity": 9.92,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.39
+  },
+  {
+   "polymerid": 7424,
+   "complexid": null,
+   "target_name": "Dipeptidyl peptidase 4 [K6R,T557I]",
+   "uniprot_raw": "P27487[K6R,T557I]",
+   "organism": "Homo sapiens",
+   "n_measurements": 1,
+   "best_p_affinity": 9.0,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.35
+  },
+  {
+   "polymerid": 50002333,
+   "complexid": null,
+   "target_name": "Acyl-protein thioesterase 1",
+   "uniprot_raw": "P70470",
+   "organism": "Rattus norvegicus",
+   "n_measurements": 1,
+   "best_p_affinity": 7.15,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.28
+  },
+  {
+   "polymerid": 5699,
+   "complexid": null,
+   "target_name": "Prolyl endopeptidase FAP",
+   "uniprot_raw": "Q12884",
+   "organism": "Homo sapiens",
+   "n_measurements": 4,
+   "best_p_affinity": 7.05,
+   "affinity_types": [
+    "IC50",
+    "Ki"
+   ],
+   "best_ligand_efficiency": 0.28
+  },
+  {
+   "polymerid": 10062,
+   "complexid": null,
+   "target_name": "Muscarinic acetylcholine receptor M1",
+   "uniprot_raw": "P11229",
+   "organism": "Homo sapiens",
+   "n_measurements": 3,
+   "best_p_affinity": 6.53,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.26
+  },
+  {
+   "polymerid": 10010,
+   "complexid": null,
+   "target_name": "Prolyl endopeptidase FAP",
+   "uniprot_raw": "P97321",
+   "organism": "Mus musculus",
+   "n_measurements": 2,
+   "best_p_affinity": 6.43,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.25
+  },
+  {
+   "polymerid": 1237,
+   "complexid": null,
+   "target_name": "Dipeptidyl peptidase 9",
+   "uniprot_raw": "Q86TI2",
+   "organism": "Homo sapiens",
+   "n_measurements": 3,
+   "best_p_affinity": 5.0,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.2
+  },
+  {
+   "polymerid": 50007586,
+   "complexid": null,
+   "target_name": "Dipeptidyl peptidase IV",
+   "uniprot_raw": null,
+   "organism": "Porphyromonas gingivalis",
+   "n_measurements": 1,
+   "best_p_affinity": 5.0,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.2
+  },
+  {
+   "polymerid": 2132,
+   "complexid": null,
+   "target_name": "Potassium voltage-gated channel subfamily H member 2",
+   "uniprot_raw": "Q12809",
+   "organism": "Homo sapiens",
+   "n_measurements": 1,
+   "best_p_affinity": 4.52,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.18
+  },
+  {
+   "polymerid": 1236,
+   "complexid": null,
+   "target_name": "Dipeptidyl peptidase 8",
+   "uniprot_raw": "Q6V1X1",
+   "organism": "Homo sapiens",
+   "n_measurements": 4,
+   "best_p_affinity": 4.4,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.17
+  },
+  {
+   "polymerid": 50006877,
+   "complexid": null,
+   "target_name": "POU domain, class 2, transcription factor 1",
+   "uniprot_raw": "P14859",
+   "organism": "Homo sapiens",
+   "n_measurements": 2,
+   "best_p_affinity": 4.39,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.17
+  },
+  {
+   "polymerid": 50006878,
+   "complexid": null,
+   "target_name": "POU domain, class 2, transcription factor 2",
+   "uniprot_raw": "P09086",
+   "organism": "Homo sapiens",
+   "n_measurements": 1,
+   "best_p_affinity": 4.1,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.16
+  },
+  {
+   "polymerid": 5468,
+   "complexid": null,
+   "target_name": "Dipeptidyl peptidase 2",
+   "uniprot_raw": "Q9UHL4",
+   "organism": "Homo sapiens",
+   "n_measurements": 4,
+   "best_p_affinity": 4.0,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.16
+  },
+  {
+   "polymerid": 10014,
+   "complexid": null,
+   "target_name": "Prolyl endopeptidase",
+   "uniprot_raw": "P48147",
+   "organism": "Homo sapiens",
+   "n_measurements": 3,
+   "best_p_affinity": 4.0,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.16
+  },
+  {
+   "polymerid": 7527,
+   "complexid": null,
+   "target_name": "Solute carrier organic anion transporter family member 1B1",
+   "uniprot_raw": "Q9Y6L6",
+   "organism": "Homo sapiens",
+   "n_measurements": 1,
+   "best_p_affinity": 4.0,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.16
+  },
+  {
+   "polymerid": 50006118,
+   "complexid": null,
+   "target_name": "Solute carrier family 22 member 8",
+   "uniprot_raw": "Q8TCC7",
+   "organism": "Homo sapiens",
+   "n_measurements": 1,
+   "best_p_affinity": 4.0,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.16
+  },
+  {
+   "polymerid": 50007587,
+   "complexid": null,
+   "target_name": "Dipeptidyl peptidase 9",
+   "uniprot_raw": null,
+   "organism": "Bos taurus",
+   "n_measurements": 1,
+   "best_p_affinity": 4.0,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.16
+  }
+ ],
+ "properties": {
+  "heavy_atoms": 35,
+  "mw": 472.55,
+  "clogp": 1.15,
+  "tpsa": 116.86,
+  "hbd": 2,
+  "hba": 10,
+  "rotatable_bonds": 4,
+  "rings": 5,
+  "aromatic_rings": 4,
+  "fsp3": 0.4,
+  "qed": 0.443,
+  "ro5_violations": 0,
+  "scaffold": "O=c1[nH]c2nc(N3CCCCC3)[nH]c2c(=O)n1Cc1ncc2ccccc2n1",
+  "generic_scaffold": "CC1CC2CC(C3CCCCC3)CC2C(C)C1CC1CCC2CCCCC2C1",
+  "pains": [],
+  "brenk": [
+   "triple_bond"
+  ],
+  "nih": []
+ }
+}

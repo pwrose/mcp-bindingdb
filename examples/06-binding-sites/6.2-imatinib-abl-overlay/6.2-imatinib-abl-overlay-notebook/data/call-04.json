@@ -1,0 +1,17 @@
+{
+ "row_count": 1,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 4552,
+   "bdbm_id": "BDBM4552",
+   "name": "BOSUTINIB",
+   "inchi_key": "UBPYILGKFZZVDX-UHFFFAOYSA-N",
+   "smiles": "CN1CCN(CC1)CCCOc2cc3c(cc2OC)c(c(cn3)C#N)Nc4cc(c(cc4Cl)Cl)OC",
+   "mol_weight": 529.16,
+   "n_activities": 585,
+   "n_targets": 386,
+   "matched_name": "BOSUTINIB"
+  }
+ ]
+}

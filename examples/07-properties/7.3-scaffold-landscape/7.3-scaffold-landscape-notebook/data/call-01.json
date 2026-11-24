@@ -1,0 +1,78 @@
+{
+ "row_count": 6,
+ "truncated": true,
+ "rows": [
+  {
+   "target_kind": "polymer",
+   "target_id": 788,
+   "name": "cGMP-dependent 3',5'-cyclic phosphodiesterase",
+   "uniprot": "O00408",
+   "uniprot_raw": "O00408",
+   "organism": "Homo sapiens",
+   "type": "Enzyme Catalytic Domain",
+   "n_activities": 3883,
+   "n_compounds": 3047,
+   "matched_name": "PDE2A"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 542,
+   "name": "Phosphodiesterase",
+   "uniprot": null,
+   "uniprot_raw": null,
+   "organism": "Macaca mulatta",
+   "type": "Enzyme Catalytic Domain",
+   "n_activities": 286,
+   "n_compounds": 184,
+   "matched_name": "PDE2A"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50000779,
+   "name": "cGMP-dependent 3',5'-cyclic phosphodiesterase",
+   "uniprot": "Q01062",
+   "uniprot_raw": "Q01062",
+   "organism": "Rattus norvegicus",
+   "type": "PROTEIN",
+   "n_activities": 41,
+   "n_compounds": 40,
+   "matched_name": "Pde2a"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50000777,
+   "name": "cGMP-dependent 3',5'-cyclic phosphodiesterase",
+   "uniprot": "P14099",
+   "uniprot_raw": "P14099",
+   "organism": "Bos taurus",
+   "type": "PROTEIN",
+   "n_activities": 29,
+   "n_compounds": 26,
+   "matched_name": "PDE2A"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1573,
+   "name": "cGMP-dependent 3',5'-cyclic phosphodiesterase [574-941]",
+   "uniprot": "O00408",
+   "uniprot_raw": "O00408[574-941]",
+   "organism": "Homo sapiens",
+   "type": "Enzyme",
+   "n_activities": 10,
+   "n_compounds": 10,
+   "matched_name": "PDE2A"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 7936,
+   "name": "Isoform PDE2A2 of cGMP-dependent 3',5'-cyclic phosphodiesterase (PDE2A2)",
+   "uniprot": "O00408",
+   "uniprot_raw": "O00408-3",
+   "organism": "Homo sapiens",
+   "type": "Protein",
+   "n_activities": 8,
+   "n_compounds": 8,
+   "matched_name": "PDE2A"
+  }
+ ]
+}

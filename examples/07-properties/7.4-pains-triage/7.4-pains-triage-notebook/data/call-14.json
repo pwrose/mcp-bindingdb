@@ -1,0 +1,39 @@
+{
+ "row_count": 3,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 50000541,
+   "bdbm_id": "BDBM50000541",
+   "name": "Leutrol",
+   "inchi_key": "MWLSOWXNZPKENC-UHFFFAOYSA-N",
+   "smiles": "CC(N(O)C(N)=O)c1cc2ccccc2s1",
+   "mol_weight": 236.06,
+   "n_activities": 151,
+   "n_targets": 26,
+   "matched_name": "ZILEUTON"
+  },
+  {
+   "monomerid": 50418083,
+   "bdbm_id": "BDBM50418083",
+   "name": "ZILEUTON",
+   "inchi_key": "MWLSOWXNZPKENC-SSDOTTSWSA-N",
+   "smiles": "C[C@@H](N(O)C(N)=O)c1cc2ccccc2s1 |r|",
+   "mol_weight": 236.06,
+   "n_activities": 3,
+   "n_targets": 3,
+   "matched_name": "ZILEUTON"
+  },
+  {
+   "monomerid": 50320449,
+   "bdbm_id": "BDBM50320449",
+   "name": "(-)-ZILEUTON",
+   "inchi_key": "MWLSOWXNZPKENC-ZETCQYMHSA-N",
+   "smiles": "C[C@H](N(O)C(N)=O)c1cc2ccccc2s1 |r|",
+   "mol_weight": 236.29018,
+   "n_activities": 2,
+   "n_targets": 2,
+   "matched_name": "(-)-ZILEUTON"
+  }
+ ]
+}

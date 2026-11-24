@@ -1,0 +1,54 @@
+{
+ "row_count": 6,
+ "truncated": false,
+ "rows": [
+  {
+   "target_name": "Platelet-derived growth factor receptor alpha",
+   "uniprot_raw": "P16234",
+   "n": 17,
+   "n_censored": 0,
+   "median_p": 7.51,
+   "best_p": 8.7
+  },
+  {
+   "target_name": "Epithelial discoidin domain-containing receptor 1",
+   "uniprot_raw": "Q08345",
+   "n": 9,
+   "n_censored": 0,
+   "median_p": 7.37,
+   "best_p": 9.15
+  },
+  {
+   "target_name": "Mast/stem cell growth factor receptor Kit",
+   "uniprot_raw": "P10721",
+   "n": 52,
+   "n_censored": 0,
+   "median_p": 7.0,
+   "best_p": 7.89
+  },
+  {
+   "target_name": "Tyrosine-protein kinase ABL1",
+   "uniprot_raw": "P00519",
+   "n": 85,
+   "n_censored": 7,
+   "median_p": 6.77,
+   "best_p": 9.0
+  },
+  {
+   "target_name": "Epidermal growth factor receptor",
+   "uniprot_raw": "P00533",
+   "n": 25,
+   "n_censored": 21,
+   "median_p": 5.0,
+   "best_p": 9.96
+  },
+  {
+   "target_name": "Receptor tyrosine-protein kinase erbB-2",
+   "uniprot_raw": "P04626",
+   "n": 3,
+   "n_censored": 2,
+   "median_p": 5.0,
+   "best_p": 10.22
+  }
+ ]
+}

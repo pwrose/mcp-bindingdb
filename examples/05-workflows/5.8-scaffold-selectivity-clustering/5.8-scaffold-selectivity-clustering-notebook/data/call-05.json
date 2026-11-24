@@ -1,0 +1,15 @@
+{
+ "row_count": 1,
+ "truncated": false,
+ "rows": [
+  {
+   "compounds": 453,
+   "measurements": 3151,
+   "targets": 492,
+   "kin_measurements": 2810,
+   "kin_targets": 397,
+   "kin_compounds": 397,
+   "kin_cells": 1716
+  }
+ ]
+}

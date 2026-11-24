@@ -1,0 +1,66 @@
+{
+ "target": {
+  "target_kind": "polymer",
+  "target_id": 520,
+  "name": "Epidermal growth factor receptor",
+  "uniprot": "P00533",
+  "uniprot_raw": "P00533",
+  "organism": "Homo sapiens",
+  "taxid": "9606",
+  "type": "Receptor Kinase Domain",
+  "res_count": 1210,
+  "n_pdb_ids": 278,
+  "chembl_id": "CHEMBL1955",
+  "n_activities": 23267,
+  "n_compounds": 14127,
+  "unpid2": "",
+  "common_name": "HUMAN",
+  "topology": "Linear",
+  "weight": "134279.59",
+  "pdb_ids": "7SZ7,7SZ5,7SYE,7SYD,7SZ1,7SZ0,8HGS,8HGP,8HGO,5XWD,3QWQ,7OM4,1IVO,9Z9F,9Z9E,4UV7,9IPE,9IPD,9IPC,9IPB,9IPA,9IP9,9IP8,9IP7,4KRO,3B2V,1NQL,4KRP,1YY9,6ARU,3NJP,4UIP,1MOX,5WB8,5WB7,7LFR,7LEN,7LFS,3GOP,8UKV,8UKX,8UKW,5CNN,5ZWJ,9P9U,4RIY,4RIX,4RIW,9U91,8HV2,7AEM,8TJL,8F1Z,8F1Y,8F1X,8F1H,7U9A,7U99,7KXZ,4ZJV,9GHV,9GHU,9GHT,9GHS,9GHR,7SI1,7B85,5EM8,5CZI,5CZH,5CAV,4WD5,4R5S,4LQM,3IKA,1M17,1M14,4TKS,7UKV,3VJO,8PNZ,7AEI,5UGB,4I23,1XKK,9QXN,4LL0,9Q0S,9PMZ,9OU9,9OS6,9NM0,9NJN,9NJ7,9NIS,9NHW,9NGP,9MST,9MSS,9MSR,9KL4,9H47,9H46,9H42,9GL9,9GI9,9FRD,9DM8,8SC7,8G63,6VHP,6VHN,6VH4,6D8E,5Y9T,4ZAU,4WRG,4WKQ,4G5J,3W33,3W32,3W2S,3POZ,2RF9,2J6M,2J5F,2J5E,2ITY,2ITX,2ITW,2GS6,2GS2,2EB2,7T4I,5XDL,5FED,2JIV,2JIU,9GDV,9GC6,9GC5,9FZS,9FZR,9BY6,9BY4,8PO4,8PO3,4I24,2EB3,4LRM,9XU9,5X2K,4G5P,2JIT,8GK5,8GB4,8F1W,8EME,7U98,7LTX,7LG8,7KY0,7JXW,7JXQ,7JXP,7JXM,7JXL,7JXK,7JXI,6JZ0,6JX4,6JX0,6DUK,5YU9,5XGM,5XDK,5X2F,5X2C,5X2A,5X28,5X27,5X26,5GTZ,5GTY,5GMP,5FEQ,5FEE,5D41,4ZSE,3VJN,3UG2,3UG1,2ITZ,2ITV,2ITU,2ITT,2ITQ,2ITP,2ITO,2ITN,8TO4,8TO3,8FV4,8FV3,7UKW,6XL4,6WXN,6WAK,6WA2,6V5P,6V5N,6JWL,5CNO,4I21,3GT8,2GS7,7ZYQ,7A6K,7A6J,7A6I,7A2A,6Z4D,6Z4B,6TG1,6TG0,6TFZ,6TFY,6TFW,6TFV,6TFU,4JRV,4JR3,4JQ8,4JQ7,8H7X,8DSW,7K1I,7K1H,6JRX,5ZTO,5XGN,5JEB,4HJO,8PO0,4I20,9KLW,4LI5,6V6O,6V6K,6V66,6P8Q,6P1L,6P1D,9NTP,9DF2,8D76,8D73,5UWD,5UGC,5UGA,5UG9,5UG8,5U8L,5HG9,5HG8,5HG7,5HG5,4I22,4I1Z,9U8C,9JQ1,9DF4,9DF3,6JXT,6JRK,5J9Z,9HBO,9GC4"
+ },
+ "synonyms": [
+  "EGFR",
+  "ERBB",
+  "HER1",
+  "ERBB1",
+  "EGFR_HUMAN",
+  "EGF Receptor Substrate",
+  "Proto-oncogene c-ErbB-1",
+  "Protein-Tyrosine Kinase Erbb-1",
+  "Tyrosine-Protein Kinase ErbB-1",
+  "Epidermal growth factor receptor",
+  "Epidermal Growth Factor Receptor erbB-1",
+  "Epidermal growth factor receptor (EGFR)",
+  "Epidermal growth factor receptor (HER1)",
+  "Receptor tyrosine-protein kinase ErbB-1",
+  "Epidermal Growth Factor Receptor, ErbB-1",
+  "Epidermal Growth Factor Receptor Tyrosine Kinase"
+ ],
+ "measurements_by_type": [
+  {
+   "affinity_type": "IC50",
+   "n_measurements": 20998,
+   "n_compounds": 13814,
+   "best_p_affinity": 11.7
+  },
+  {
+   "affinity_type": "Kd",
+   "n_measurements": 1593,
+   "n_compounds": 180,
+   "best_p_affinity": 10.0
+  },
+  {
+   "affinity_type": "Ki",
+   "n_measurements": 409,
+   "n_compounds": 288,
+   "best_p_affinity": 11.22
+  },
+  {
+   "affinity_type": "EC50",
+   "n_measurements": 267,
+   "n_compounds": 147,
+   "best_p_affinity": 9.0
+  }
+ ]
+}

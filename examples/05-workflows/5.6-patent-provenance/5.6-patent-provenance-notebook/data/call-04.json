@@ -1,0 +1,71 @@
+{
+ "row_count": 13,
+ "truncated": false,
+ "rows": [
+  {
+   "a": "US10266491-B2",
+   "b": "US10676434-B2",
+   "shared_compounds": 162
+  },
+  {
+   "a": "US10266491-B2",
+   "b": "US11053197-B2",
+   "shared_compounds": 162
+  },
+  {
+   "a": "US10604504-B2",
+   "b": "US11623921-B2",
+   "shared_compounds": 219
+  },
+  {
+   "a": "US10604504-B2",
+   "b": "US9688629-B2",
+   "shared_compounds": 214
+  },
+  {
+   "a": "US10604504-B2",
+   "b": "US9802915-B2",
+   "shared_compounds": 210
+  },
+  {
+   "a": "US10604504-B2",
+   "b": "US9920031-B2",
+   "shared_compounds": 212
+  },
+  {
+   "a": "US10676434-B2",
+   "b": "US11053197-B2",
+   "shared_compounds": 160
+  },
+  {
+   "a": "US11623921-B2",
+   "b": "US9688629-B2",
+   "shared_compounds": 218
+  },
+  {
+   "a": "US11623921-B2",
+   "b": "US9802915-B2",
+   "shared_compounds": 214
+  },
+  {
+   "a": "US11623921-B2",
+   "b": "US9920031-B2",
+   "shared_compounds": 216
+  },
+  {
+   "a": "US9688629-B2",
+   "b": "US9802915-B2",
+   "shared_compounds": 209
+  },
+  {
+   "a": "US9688629-B2",
+   "b": "US9920031-B2",
+   "shared_compounds": 211
+  },
+  {
+   "a": "US9802915-B2",
+   "b": "US9920031-B2",
+   "shared_compounds": 212
+  }
+ ]
+}

@@ -1,0 +1,14 @@
+{
+ "row_count": 1,
+ "truncated": false,
+ "rows": [
+  {
+   "patents": 9004,
+   "median_compounds": 42.0,
+   "p90_compounds": 247,
+   "max_compounds": 2689,
+   "largest_patent": "US12581252-B2",
+   "pct_single_target": 60.0
+  }
+ ]
+}

@@ -1,0 +1,162 @@
+{
+ "row_count": 13,
+ "truncated": false,
+ "rows": [
+  {
+   "target_kind": "polymer",
+   "target_id": 5023,
+   "name": "Neutrophil elastase",
+   "uniprot": "P08246",
+   "uniprot_raw": "P08246",
+   "organism": "Homo sapiens",
+   "type": "Enzyme",
+   "n_activities": 4695,
+   "n_compounds": 3478,
+   "matched_name": "Thrombin"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 334,
+   "name": "Prothrombin",
+   "uniprot": "P00734",
+   "uniprot_raw": "P00734",
+   "organism": "Homo sapiens",
+   "type": "Protein",
+   "n_activities": 10197,
+   "n_compounds": 8290,
+   "matched_name": "Prothrombin"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1529,
+   "name": "Serine protease 1",
+   "uniprot": "P07477",
+   "uniprot_raw": "P07477",
+   "organism": "Homo sapiens",
+   "type": "Enzyme",
+   "n_activities": 2401,
+   "n_compounds": 2168,
+   "matched_name": "Thrombin & trypsin"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 364,
+   "name": "Proteinase-activated receptor 4",
+   "uniprot": "Q96RI0",
+   "uniprot_raw": "Q96RI0",
+   "organism": "Homo sapiens",
+   "type": "Protein",
+   "n_activities": 1805,
+   "n_compounds": 1178,
+   "matched_name": "Thrombin receptor-like 3"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 6553,
+   "name": "Proteinase-activated receptor 1",
+   "uniprot": "P25116",
+   "uniprot_raw": "P25116",
+   "organism": "Homo sapiens",
+   "type": "Protein",
+   "n_activities": 1329,
+   "n_compounds": 1013,
+   "matched_name": "Thrombin receptor"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1517,
+   "name": "Tissue-type plasminogen activator",
+   "uniprot": "P00750",
+   "uniprot_raw": "P00750",
+   "organism": "Homo sapiens",
+   "type": "Enzyme",
+   "n_activities": 1280,
+   "n_compounds": 1209,
+   "matched_name": "Thrombin receptor protein"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1346,
+   "name": "Coagulation factor VII",
+   "uniprot": "P08709",
+   "uniprot_raw": "P08709",
+   "organism": "Homo sapiens",
+   "type": "Enzyme",
+   "n_activities": 894,
+   "n_compounds": 789,
+   "matched_name": "Thrombin and coagulation factor VII"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 5887,
+   "name": "Carboxypeptidase B2",
+   "uniprot": "Q96IY4",
+   "uniprot_raw": "Q96IY4",
+   "organism": "Homo sapiens",
+   "type": "Enzyme",
+   "n_activities": 430,
+   "n_compounds": 393,
+   "matched_name": "Thrombin-activable fibrinolysis inhibitor"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1568,
+   "name": "Vitamin K-dependent protein C",
+   "uniprot": "P04070",
+   "uniprot_raw": "P04070",
+   "organism": "Homo sapiens",
+   "type": "Enzyme",
+   "n_activities": 395,
+   "n_compounds": 344,
+   "matched_name": "Autoprothrombin IIA"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 6170,
+   "name": "Carboxypeptidase B",
+   "uniprot": "P15086",
+   "uniprot_raw": "P15086",
+   "organism": "Homo sapiens",
+   "type": "Enzyme",
+   "n_activities": 91,
+   "n_compounds": 90,
+   "matched_name": "Thrombin-activatable fibrinolysis (TAFI)"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50000400,
+   "name": "Trypsin-3",
+   "uniprot": "P35030",
+   "uniprot_raw": "P35030",
+   "organism": "Homo sapiens",
+   "type": "PROTEIN",
+   "n_activities": 22,
+   "n_compounds": 22,
+   "matched_name": "Thrombin & trypsin"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50000015,
+   "name": "Antithrombin-III",
+   "uniprot": "P01008",
+   "uniprot_raw": "P01008",
+   "organism": "Homo sapiens",
+   "type": "PROTEIN",
+   "n_activities": 21,
+   "n_compounds": 21,
+   "matched_name": "Antithrombin-III"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50000341,
+   "name": "Trypsin-2",
+   "uniprot": "P07478",
+   "uniprot_raw": "P07478",
+   "organism": "Homo sapiens",
+   "type": "PROTEIN",
+   "n_activities": 14,
+   "n_compounds": 14,
+   "matched_name": "Thrombin & trypsin"
+  }
+ ]
+}

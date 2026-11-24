@@ -1,0 +1,51 @@
+{
+ "row_count": 5,
+ "truncated": false,
+ "rows": [
+  {
+   "inchikey_block": "CBVCZFGXHXORBI",
+   "monomerid": 517,
+   "inchi_key": "CBVCZFGXHXORBI-MXSREYJQNA-N",
+   "het_pdb": "",
+   "n_pdb_ids_exact": 0,
+   "pdb_ids_start": "",
+   "measurements": 109
+  },
+  {
+   "inchikey_block": "CBVCZFGXHXORBI",
+   "monomerid": 50067593,
+   "inchi_key": "CBVCZFGXHXORBI-MXSREYJQNA-N",
+   "het_pdb": "",
+   "n_pdb_ids_exact": 0,
+   "pdb_ids_start": "",
+   "measurements": 32
+  },
+  {
+   "inchikey_block": "YMARZQAQMVYCKC",
+   "monomerid": 577,
+   "inchi_key": "YMARZQAQMVYCKC-ISVAFMPHNA-N",
+   "het_pdb": null,
+   "n_pdb_ids_exact": 0,
+   "pdb_ids_start": "",
+   "measurements": 77
+  },
+  {
+   "inchikey_block": "YMARZQAQMVYCKC",
+   "monomerid": 50163391,
+   "inchi_key": "YMARZQAQMVYCKC-UHFFFAOYNA-N",
+   "het_pdb": "478",
+   "n_pdb_ids_exact": 26,
+   "pdb_ids_start": "1HPV,1T7J,3EKP,3EKV,3EM3,3NU3,3NU4,3NU5,3NU6,3NU9,3NUJ,3NUO,",
+   "measurements": 1
+  },
+  {
+   "inchikey_block": "YMARZQAQMVYCKC",
+   "monomerid": 50215393,
+   "inchi_key": "YMARZQAQMVYCKC-ISVAFMPHNA-N",
+   "het_pdb": "",
+   "n_pdb_ids_exact": 0,
+   "pdb_ids_start": "",
+   "measurements": 0
+  }
+ ]
+}

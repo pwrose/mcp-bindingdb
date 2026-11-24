@@ -1,0 +1,57 @@
+{
+ "row_count": 10,
+ "truncated": false,
+ "rows": [
+  {
+   "scaffold": "O=C(NCc1ccccc1)c1cc(=O)[nH]cn1",
+   "generic_scaffold": "CC1CCCC(C(C)CCC2CCCCC2)C1",
+   "n": 111
+  },
+  {
+   "scaffold": "O=C(NCc1ccccc1)c1cc(=O)[nH]c(-c2ccccc2)n1",
+   "generic_scaffold": "CC1CC(C(C)CCC2CCCCC2)CC(C2CCCCC2)C1",
+   "n": 41
+  },
+  {
+   "scaffold": "O=C(NCc1ccccc1)c1cc(=O)[nH]c(Cc2ccccc2)n1",
+   "generic_scaffold": "CC1CC(CC2CCCCC2)CC(C(C)CCC2CCCCC2)C1",
+   "n": 39
+  },
+  {
+   "scaffold": "O=C(NCc1ccccc1)c1cc(=O)[nH]c(-c2ncccn2)n1",
+   "generic_scaffold": "CC1CC(C(C)CCC2CCCCC2)CC(C2CCCCC2)C1",
+   "n": 26
+  },
+  {
+   "scaffold": "O=C(NCc1ccccc1)c1cc(=O)[nH]c(C2CC2)n1",
+   "generic_scaffold": "CC1CC(C(C)CCC2CCCCC2)CC(C2CC2)C1",
+   "n": 25
+  },
+  {
+   "scaffold": "O=C(NCc1ccccc1)c1cc(=O)[nH]c(N2CCCC2)n1",
+   "generic_scaffold": "CC1CC(C(C)CCC2CCCCC2)CC(C2CCCC2)C1",
+   "n": 15
+  },
+  {
+   "scaffold": "O=C(NCc1ccccc1)c1cc(=O)[nH]c(N2CCC2)n1",
+   "generic_scaffold": "CC1CC(C(C)CCC2CCCCC2)CC(C2CCC2)C1",
+   "n": 3
+  },
+  {
+   "scaffold": "O=C(NCc1ccccc1)c1cc(=O)[nH]c(N2Cc3cncnc3C2)n1",
+   "generic_scaffold": "CC1CC(C(C)CCC2CCCCC2)CC(C2CC3CCCCC3C2)C1",
+   "n": 1
+  },
+  {
+   "scaffold": "O=C(NCc1ccccc1)c1cc(=O)[nH]c(OCCCOc2ccccc2)n1",
+   "generic_scaffold": "CC1CC(CCCCCC2CCCCC2)CC(C(C)CCC2CCCCC2)C1",
+   "n": 1
+  },
+  {
+   "scaffold": "O=C(NCc1ccccc1)c1cc(=O)[nH]c(N2Cc3ccncc3C2)n1",
+   "generic_scaffold": "CC1CC(C(C)CCC2CCCCC2)CC(C2CC3CCCCC3C2)C1",
+   "n": 1
+  }
+ ],
+ "order_warning": "Rows 8 and 9 tie on every ORDER BY column (n), so rows like them can swap places from run to run. End the ORDER BY with a unique column (e.g. monomerid; ki_result_id, affinity_type for measurements) so the result is the same on every run and a notebook's rerun check passes."
+}

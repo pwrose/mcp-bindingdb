@@ -1,0 +1,41 @@
+{
+ "row_count": 7,
+ "truncated": false,
+ "rows": [
+  {
+   "source_id": "23244744",
+   "year": 2013,
+   "n": 71
+  },
+  {
+   "source_id": "31244110",
+   "year": 2019,
+   "n": 83
+  },
+  {
+   "source_id": "US10899738-B2",
+   "year": 2021,
+   "n": 386
+  },
+  {
+   "source_id": "US11045448-B2",
+   "year": 2021,
+   "n": 41
+  },
+  {
+   "source_id": "US12473295-B2",
+   "year": 2025,
+   "n": 204
+  },
+  {
+   "source_id": "US20240261292-A1",
+   "year": 2024,
+   "n": 4
+  },
+  {
+   "source_id": "US20240335431-A1",
+   "year": 2024,
+   "n": 79
+  }
+ ]
+}

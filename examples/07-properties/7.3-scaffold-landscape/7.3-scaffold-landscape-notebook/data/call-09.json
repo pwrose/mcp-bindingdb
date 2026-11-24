@@ -1,0 +1,66 @@
+{
+ "row_count": 5,
+ "truncated": false,
+ "rows": [
+  {
+   "label": "Azetidinyl pyrimidine",
+   "monomerid": 107776,
+   "smiles": "Cc1nc(-c2cnn(C)c2-c2ccc(cc2)C(F)(F)F)c2c(ncnn12)N1CCC1",
+   "heavy_atoms": 30,
+   "clogp": 3.73,
+   "affinity_type": "IC50",
+   "median_nm": 0.3015,
+   "n": 2,
+   "first_year": 2013,
+   "sources": "29293004, US8598155-B2"
+  },
+  {
+   "label": "Pyrazolo[3,4-d]pyrimidinone",
+   "monomerid": 320811,
+   "smiles": "CCC(c1ccc(C(C)(F)F)c(F)c1)n1nc(CF)c2c(=O)[nH]c(N(C)C)nc21",
+   "heavy_atoms": 29,
+   "clogp": 3.91,
+   "affinity_type": "Ki",
+   "median_nm": 0.558,
+   "n": 2,
+   "first_year": 2019,
+   "sources": "US10174037-B2"
+  },
+  {
+   "label": "Pyrimidinone carboxamide",
+   "monomerid": 384991,
+   "smiles": "CN(C)c1nc(C(=O)N[C@@H](c2ccc(S(F)(F)(F)(F)F)cc2)C(C)(C)O)cc(=O)[nH]1",
+   "heavy_atoms": 30,
+   "clogp": 3.74,
+   "affinity_type": "Ki",
+   "median_nm": 0.073,
+   "n": 1,
+   "first_year": 2019,
+   "sources": "US10285989-B2"
+  },
+  {
+   "label": "BAY 60-7550",
+   "monomerid": 50166893,
+   "smiles": "Cc1c2n(c(n1)[C@@H](CCCc3ccccc3)[C@@H](C)O)N=C(NC2=O)Cc4ccc(c(c4)OC)OC",
+   "heavy_atoms": 35,
+   "clogp": 3.82,
+   "affinity_type": "IC50",
+   "median_nm": 4.7,
+   "n": 16,
+   "first_year": 2005,
+   "sources": "28796496, US11419874-B2, US10543194-B2, US10105349-B2, 15887951, 28574706, 26908025, 40015121, 29601185, 28759228, 30554955, 38614063, 28165743"
+  },
+  {
+   "label": "Triazoloquinoxaline",
+   "monomerid": 50425140,
+   "smiles": "CCNC(=O)c1ccc2nc(C)c3nnc(-c4c(Cl)cccc4Cl)n3c2c1",
+   "heavy_atoms": 27,
+   "clogp": 4.31,
+   "affinity_type": "IC50",
+   "median_nm": 0.28,
+   "n": 1,
+   "first_year": 2013,
+   "sources": "23260348"
+  }
+ ]
+}

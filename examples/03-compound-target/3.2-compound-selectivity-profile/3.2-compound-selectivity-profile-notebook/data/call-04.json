@@ -1,0 +1,366 @@
+{
+ "row_count": 36,
+ "truncated": false,
+ "rows": [
+  {
+   "polymerid": 188,
+   "target_name": "Receptor tyrosine-protein kinase erbB-2",
+   "affinity_type": "IC50",
+   "n": 1,
+   "n_exact": 1,
+   "median_exact_nm": 0.06,
+   "best_nm": 0.06,
+   "n_greater": 0
+  },
+  {
+   "polymerid": 188,
+   "target_name": "Receptor tyrosine-protein kinase erbB-2",
+   "affinity_type": "Kd",
+   "n": 2,
+   "n_exact": 0,
+   "median_exact_nm": null,
+   "best_nm": null,
+   "n_greater": 2
+  },
+  {
+   "polymerid": 359,
+   "target_name": "Mast/stem cell growth factor receptor Kit",
+   "affinity_type": "EC50",
+   "n": 1,
+   "n_exact": 1,
+   "median_exact_nm": 100.0,
+   "best_nm": 100.0,
+   "n_greater": 0
+  },
+  {
+   "polymerid": 359,
+   "target_name": "Mast/stem cell growth factor receptor Kit",
+   "affinity_type": "IC50",
+   "n": 28,
+   "n_exact": 28,
+   "median_exact_nm": 159.5,
+   "best_nm": 16.0,
+   "n_greater": 0
+  },
+  {
+   "polymerid": 359,
+   "target_name": "Mast/stem cell growth factor receptor Kit",
+   "affinity_type": "Kd",
+   "n": 16,
+   "n_exact": 16,
+   "median_exact_nm": 43.0,
+   "best_nm": 13.0,
+   "n_greater": 0
+  },
+  {
+   "polymerid": 359,
+   "target_name": "Mast/stem cell growth factor receptor Kit",
+   "affinity_type": "Ki",
+   "n": 7,
+   "n_exact": 7,
+   "median_exact_nm": 15000.0,
+   "best_nm": 14.0,
+   "n_greater": 0
+  },
+  {
+   "polymerid": 507,
+   "target_name": "Tyrosine-protein kinase Lck",
+   "affinity_type": "IC50",
+   "n": 3,
+   "n_exact": 3,
+   "median_exact_nm": 320.0,
+   "best_nm": 160.0,
+   "n_greater": 0
+  },
+  {
+   "polymerid": 507,
+   "target_name": "Tyrosine-protein kinase Lck",
+   "affinity_type": "Kd",
+   "n": 5,
+   "n_exact": 5,
+   "median_exact_nm": 40.0,
+   "best_nm": 40.0,
+   "n_greater": 0
+  },
+  {
+   "polymerid": 507,
+   "target_name": "Tyrosine-protein kinase Lck",
+   "affinity_type": "Ki",
+   "n": 1,
+   "n_exact": 1,
+   "median_exact_nm": 6893.0,
+   "best_nm": 6893.0,
+   "n_greater": 0
+  },
+  {
+   "polymerid": 520,
+   "target_name": "Epidermal growth factor receptor",
+   "affinity_type": "IC50",
+   "n": 2,
+   "n_exact": 1,
+   "median_exact_nm": 0.11,
+   "best_nm": 0.11,
+   "n_greater": 1
+  },
+  {
+   "polymerid": 520,
+   "target_name": "Epidermal growth factor receptor",
+   "affinity_type": "Kd",
+   "n": 23,
+   "n_exact": 3,
+   "median_exact_nm": 7600.0,
+   "best_nm": 7600.0,
+   "n_greater": 20
+  },
+  {
+   "polymerid": 575,
+   "target_name": "Platelet-derived growth factor receptor beta",
+   "affinity_type": "IC50",
+   "n": 5,
+   "n_exact": 5,
+   "median_exact_nm": 240.0,
+   "best_nm": 72.0,
+   "n_greater": 0
+  },
+  {
+   "polymerid": 575,
+   "target_name": "Platelet-derived growth factor receptor beta",
+   "affinity_type": "Kd",
+   "n": 4,
+   "n_exact": 4,
+   "median_exact_nm": 14.0,
+   "best_nm": 14.0,
+   "n_greater": 0
+  },
+  {
+   "polymerid": 575,
+   "target_name": "Platelet-derived growth factor receptor beta",
+   "affinity_type": "Ki",
+   "n": 1,
+   "n_exact": 1,
+   "median_exact_nm": 3.0,
+   "best_nm": 3.0,
+   "n_greater": 0
+  },
+  {
+   "polymerid": 879,
+   "target_name": "Macrophage colony-stimulating factor 1 receptor",
+   "affinity_type": "IC50",
+   "n": 3,
+   "n_exact": 3,
+   "median_exact_nm": 960.0,
+   "best_nm": 291.0,
+   "n_greater": 0
+  },
+  {
+   "polymerid": 879,
+   "target_name": "Macrophage colony-stimulating factor 1 receptor",
+   "affinity_type": "Kd",
+   "n": 4,
+   "n_exact": 4,
+   "median_exact_nm": 15.0,
+   "best_nm": 10.0,
+   "n_greater": 0
+  },
+  {
+   "polymerid": 1192,
+   "target_name": "Carbonic anhydrase 1",
+   "affinity_type": "Ki",
+   "n": 1,
+   "n_exact": 1,
+   "median_exact_nm": 31.9,
+   "best_nm": 31.9,
+   "n_greater": 0
+  },
+  {
+   "polymerid": 1193,
+   "target_name": "Carbonic anhydrase 2",
+   "affinity_type": "Ki",
+   "n": 1,
+   "n_exact": 1,
+   "median_exact_nm": 30.2,
+   "best_nm": 30.2,
+   "n_greater": 0
+  },
+  {
+   "polymerid": 1233,
+   "target_name": "Carbonic anhydrase 9",
+   "affinity_type": "Ki",
+   "n": 1,
+   "n_exact": 1,
+   "median_exact_nm": 75.7,
+   "best_nm": 75.7,
+   "n_greater": 0
+  },
+  {
+   "polymerid": 3993,
+   "target_name": "Epithelial discoidin domain-containing receptor 1",
+   "affinity_type": "IC50",
+   "n": 5,
+   "n_exact": 5,
+   "median_exact_nm": 337.0,
+   "best_nm": 43.0,
+   "n_greater": 0
+  },
+  {
+   "polymerid": 3993,
+   "target_name": "Epithelial discoidin domain-containing receptor 1",
+   "affinity_type": "Kd",
+   "n": 4,
+   "n_exact": 4,
+   "median_exact_nm": 0.7,
+   "best_nm": 0.7,
+   "n_greater": 0
+  },
+  {
+   "polymerid": 5221,
+   "target_name": "Tyrosine-protein kinase ABL1",
+   "affinity_type": "EC50",
+   "n": 1,
+   "n_exact": 1,
+   "median_exact_nm": 70.0,
+   "best_nm": 70.0,
+   "n_greater": 0
+  },
+  {
+   "polymerid": 5221,
+   "target_name": "Tyrosine-protein kinase ABL1",
+   "affinity_type": "IC50",
+   "n": 43,
+   "n_exact": 39,
+   "median_exact_nm": 300.0,
+   "best_nm": 20.0,
+   "n_greater": 4
+  },
+  {
+   "polymerid": 5221,
+   "target_name": "Tyrosine-protein kinase ABL1",
+   "affinity_type": "Kd",
+   "n": 35,
+   "n_exact": 32,
+   "median_exact_nm": 35.0,
+   "best_nm": 1.0,
+   "n_greater": 3
+  },
+  {
+   "polymerid": 5221,
+   "target_name": "Tyrosine-protein kinase ABL1",
+   "affinity_type": "Ki",
+   "n": 6,
+   "n_exact": 6,
+   "median_exact_nm": 25.0,
+   "best_nm": 13.0,
+   "n_greater": 0
+  },
+  {
+   "polymerid": 5286,
+   "target_name": "Ribosyldihydronicotinamide dehydrogenase [quinone]",
+   "affinity_type": "IC50",
+   "n": 3,
+   "n_exact": 3,
+   "median_exact_nm": 82.0,
+   "best_nm": 43.0,
+   "n_greater": 0
+  },
+  {
+   "polymerid": 5286,
+   "target_name": "Ribosyldihydronicotinamide dehydrogenase [quinone]",
+   "affinity_type": "Ki",
+   "n": 1,
+   "n_exact": 1,
+   "median_exact_nm": 39.0,
+   "best_nm": 39.0,
+   "n_greater": 0
+  },
+  {
+   "polymerid": 5709,
+   "target_name": "Discoidin domain-containing receptor 2",
+   "affinity_type": "IC50",
+   "n": 3,
+   "n_exact": 3,
+   "median_exact_nm": 675.0,
+   "best_nm": 141.0,
+   "n_greater": 0
+  },
+  {
+   "polymerid": 5709,
+   "target_name": "Discoidin domain-containing receptor 2",
+   "affinity_type": "Kd",
+   "n": 2,
+   "n_exact": 2,
+   "median_exact_nm": 15.0,
+   "best_nm": 15.0,
+   "n_greater": 0
+  },
+  {
+   "polymerid": 5778,
+   "target_name": "Platelet-derived growth factor receptor alpha",
+   "affinity_type": "EC50",
+   "n": 1,
+   "n_exact": 1,
+   "median_exact_nm": 90.0,
+   "best_nm": 90.0,
+   "n_greater": 0
+  },
+  {
+   "polymerid": 5778,
+   "target_name": "Platelet-derived growth factor receptor alpha",
+   "affinity_type": "IC50",
+   "n": 12,
+   "n_exact": 12,
+   "median_exact_nm": 71.5,
+   "best_nm": 2.0,
+   "n_greater": 0
+  },
+  {
+   "polymerid": 5778,
+   "target_name": "Platelet-derived growth factor receptor alpha",
+   "affinity_type": "Kd",
+   "n": 3,
+   "n_exact": 3,
+   "median_exact_nm": 31.0,
+   "best_nm": 31.0,
+   "n_greater": 0
+  },
+  {
+   "polymerid": 5778,
+   "target_name": "Platelet-derived growth factor receptor alpha",
+   "affinity_type": "Ki",
+   "n": 1,
+   "n_exact": 1,
+   "median_exact_nm": 2.0,
+   "best_nm": 2.0,
+   "n_greater": 0
+  },
+  {
+   "polymerid": 50001306,
+   "target_name": "Tyrosine-protein kinase ABL2",
+   "affinity_type": "IC50",
+   "n": 4,
+   "n_exact": 4,
+   "median_exact_nm": 1000.0,
+   "best_nm": 272.0,
+   "n_greater": 0
+  },
+  {
+   "polymerid": 50001306,
+   "target_name": "Tyrosine-protein kinase ABL2",
+   "affinity_type": "Kd",
+   "n": 6,
+   "n_exact": 6,
+   "median_exact_nm": 10.0,
+   "best_nm": 10.0,
+   "n_greater": 0
+  },
+  {
+   "polymerid": 50006151,
+   "target_name": "Multidrug and toxin extrusion protein 1",
+   "affinity_type": "IC50",
+   "n": 3,
+   "n_exact": 3,
+   "median_exact_nm": 50.0,
+   "best_nm": 40.0,
+   "n_greater": 0
+  }
+ ]
+}

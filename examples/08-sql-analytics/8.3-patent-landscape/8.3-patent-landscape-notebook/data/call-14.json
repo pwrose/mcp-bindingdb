@@ -1,0 +1,195 @@
+{
+ "row_count": 27,
+ "truncated": false,
+ "rows": [
+  {
+   "year": 2013,
+   "source": "other",
+   "compounds": 35925,
+   "median_mw": 399.5,
+   "pct_mw_over_500": 18.6
+  },
+  {
+   "year": 2014,
+   "source": "other",
+   "compounds": 32340,
+   "median_mw": 408.9,
+   "pct_mw_over_500": 21.5
+  },
+  {
+   "year": 2015,
+   "source": "other",
+   "compounds": 29366,
+   "median_mw": 412.6,
+   "pct_mw_over_500": 22.0
+  },
+  {
+   "year": 2016,
+   "source": "other",
+   "compounds": 32954,
+   "median_mw": 409.4,
+   "pct_mw_over_500": 22.4
+  },
+  {
+   "year": 2017,
+   "source": "other",
+   "compounds": 31666,
+   "median_mw": 411.9,
+   "pct_mw_over_500": 23.9
+  },
+  {
+   "year": 2018,
+   "source": "other",
+   "compounds": 30190,
+   "median_mw": 425.5,
+   "pct_mw_over_500": 25.4
+  },
+  {
+   "year": 2019,
+   "source": "other",
+   "compounds": 30397,
+   "median_mw": 424.5,
+   "pct_mw_over_500": 25.7
+  },
+  {
+   "year": 2020,
+   "source": "other",
+   "compounds": 32658,
+   "median_mw": 429.5,
+   "pct_mw_over_500": 28.9
+  },
+  {
+   "year": 2021,
+   "source": "other",
+   "compounds": 36139,
+   "median_mw": 430.9,
+   "pct_mw_over_500": 29.3
+  },
+  {
+   "year": 2022,
+   "source": "other",
+   "compounds": 30199,
+   "median_mw": 433.5,
+   "pct_mw_over_500": 29.3
+  },
+  {
+   "year": 2023,
+   "source": "other",
+   "compounds": 24401,
+   "median_mw": 431.6,
+   "pct_mw_over_500": 28.2
+  },
+  {
+   "year": 2024,
+   "source": "other",
+   "compounds": 2279,
+   "median_mw": 442.5,
+   "pct_mw_over_500": 31.7
+  },
+  {
+   "year": 2025,
+   "source": "other",
+   "compounds": 1,
+   "median_mw": 657.1,
+   "pct_mw_over_500": 100.0
+  },
+  {
+   "year": 2013,
+   "source": "patent",
+   "compounds": 13194,
+   "median_mw": 447.0,
+   "pct_mw_over_500": 27.6
+  },
+  {
+   "year": 2014,
+   "source": "patent",
+   "compounds": 28112,
+   "median_mw": 438.5,
+   "pct_mw_over_500": 23.5
+  },
+  {
+   "year": 2015,
+   "source": "patent",
+   "compounds": 47492,
+   "median_mw": 448.4,
+   "pct_mw_over_500": 29.1
+  },
+  {
+   "year": 2016,
+   "source": "patent",
+   "compounds": 51600,
+   "median_mw": 449.5,
+   "pct_mw_over_500": 28.2
+  },
+  {
+   "year": 2017,
+   "source": "patent",
+   "compounds": 82078,
+   "median_mw": 464.6,
+   "pct_mw_over_500": 34.3
+  },
+  {
+   "year": 2018,
+   "source": "patent",
+   "compounds": 57689,
+   "median_mw": 455.5,
+   "pct_mw_over_500": 31.7
+  },
+  {
+   "year": 2019,
+   "source": "patent",
+   "compounds": 83708,
+   "median_mw": 462.0,
+   "pct_mw_over_500": 32.9
+  },
+  {
+   "year": 2020,
+   "source": "patent",
+   "compounds": 74083,
+   "median_mw": 464.5,
+   "pct_mw_over_500": 35.6
+  },
+  {
+   "year": 2021,
+   "source": "patent",
+   "compounds": 74047,
+   "median_mw": 466.6,
+   "pct_mw_over_500": 37.1
+  },
+  {
+   "year": 2022,
+   "source": "patent",
+   "compounds": 67093,
+   "median_mw": 472.5,
+   "pct_mw_over_500": 39.0
+  },
+  {
+   "year": 2023,
+   "source": "patent",
+   "compounds": 68022,
+   "median_mw": 471.9,
+   "pct_mw_over_500": 38.0
+  },
+  {
+   "year": 2024,
+   "source": "patent",
+   "compounds": 70546,
+   "median_mw": 473.5,
+   "pct_mw_over_500": 38.9
+  },
+  {
+   "year": 2025,
+   "source": "patent",
+   "compounds": 91421,
+   "median_mw": 481.6,
+   "pct_mw_over_500": 42.8
+  },
+  {
+   "year": 2026,
+   "source": "patent",
+   "compounds": 31471,
+   "median_mw": 477.4,
+   "pct_mw_over_500": 42.2
+  }
+ ]
+}

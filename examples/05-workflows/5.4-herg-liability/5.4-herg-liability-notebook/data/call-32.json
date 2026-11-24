@@ -1,0 +1,25 @@
+{
+ "query": "sotalol",
+ "resolved": true,
+ "source": "bindingdb",
+ "smiles": "CC(C)NCC(O)c1ccc(NS(C)(=O)=O)cc1",
+ "inchi_key": "ZBMZVLHSJCTVON-UHFFFAOYSA-N",
+ "monomerid": 25762,
+ "ambiguous": false,
+ "candidates": [
+  {
+   "monomerid": 25762,
+   "bdbm_id": "BDBM25762",
+   "name": "Sotalol",
+   "inchi_key": "ZBMZVLHSJCTVON-UHFFFAOYSA-N",
+   "smiles": "CC(C)NCC(O)c1ccc(NS(C)(=O)=O)cc1",
+   "n_activities": 26
+  }
+ ],
+ "sources_tried": [
+  {
+   "source": "bindingdb",
+   "status": "found"
+  }
+ ]
+}

@@ -1,0 +1,78 @@
+{
+ "row_count": 6,
+ "truncated": false,
+ "rows": [
+  {
+   "target_kind": "polymer",
+   "target_id": 1846,
+   "name": "Tyrosine-protein kinase BTK",
+   "uniprot": "Q06187",
+   "uniprot_raw": "Q06187",
+   "organism": "Homo sapiens",
+   "type": "Enzyme",
+   "n_activities": 23124,
+   "n_compounds": 13927,
+   "matched_name": "BTK"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 502,
+   "name": "Tyrosine-protein kinase BTK [C481S]",
+   "uniprot": "Q06187",
+   "uniprot_raw": "Q06187[C481S]",
+   "organism": "Homo sapiens",
+   "type": "Enzyme Catalytic Domain",
+   "n_activities": 1018,
+   "n_compounds": 854,
+   "matched_name": "BTK"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 934,
+   "name": "Tyrosine-protein kinase BTK [386-659]",
+   "uniprot": "Q06187",
+   "uniprot_raw": "Q06187[386-659]",
+   "organism": "Homo sapiens",
+   "type": "Enzyme Catalytic Domain",
+   "n_activities": 937,
+   "n_compounds": 789,
+   "matched_name": "BTK"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 479,
+   "name": "Tyrosine-protein kinase BTK [393-659]",
+   "uniprot": "Q06187",
+   "uniprot_raw": "Q06187[393-659]",
+   "organism": "Homo sapiens",
+   "type": "Enzyme Catalytic Domain",
+   "n_activities": 358,
+   "n_compounds": 354,
+   "matched_name": "BTK"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1098,
+   "name": "Tyrosine-protein kinase BTK [328-659]",
+   "uniprot": "Q06187",
+   "uniprot_raw": "Q06187[328-659]",
+   "organism": "Homo sapiens",
+   "type": "Enzyme Catalytic Domain",
+   "n_activities": 122,
+   "n_compounds": 121,
+   "matched_name": "BTK"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1511,
+   "name": "Tyrosine-protein kinase BTK [14-552]",
+   "uniprot": "Q06187",
+   "uniprot_raw": "Q06187[14-552]",
+   "organism": "Homo sapiens",
+   "type": "Enzyme Catalytic Domain",
+   "n_activities": 146,
+   "n_compounds": 144,
+   "matched_name": "Tyrosine-protein kinase BTK [14-552]"
+  }
+ ]
+}

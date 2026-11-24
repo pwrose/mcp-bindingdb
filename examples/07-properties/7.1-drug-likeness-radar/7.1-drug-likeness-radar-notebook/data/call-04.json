@@ -1,0 +1,25 @@
+{
+ "query": "alogliptin",
+ "resolved": true,
+ "source": "bindingdb",
+ "smiles": "Cn1c(=O)cc(N2CCC[C@@H](N)C2)n(Cc2ccccc2C#N)c1=O |r|",
+ "inchi_key": "ZSBOMTDTBDDKMP-OAHLLOKOSA-N",
+ "monomerid": 16285,
+ "ambiguous": false,
+ "candidates": [
+  {
+   "monomerid": 16285,
+   "bdbm_id": "BDBM16285",
+   "name": "Alogliptin",
+   "inchi_key": "ZSBOMTDTBDDKMP-OAHLLOKOSA-N",
+   "smiles": "Cn1c(=O)cc(N2CCC[C@@H](N)C2)n(Cc2ccccc2C#N)c1=O |r|",
+   "n_activities": 70
+  }
+ ],
+ "sources_tried": [
+  {
+   "source": "bindingdb",
+   "status": "found"
+  }
+ ]
+}

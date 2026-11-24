@@ -1,0 +1,5012 @@
+{
+ "affinity_type": "Ki",
+ "n_compounds": 1500,
+ "n_pairs": 5616,
+ "grouped_by": "transformation",
+ "n_transformations": 3984,
+ "row_count": 500,
+ "truncated": true,
+ "rows": [
+  {
+   "transformation": "[H][*:1] >> C[*:1]",
+   "n_pairs": 119,
+   "median_delta_p_affinity": 0.0,
+   "min_delta_p_affinity": -1.66,
+   "max_delta_p_affinity": 1.34,
+   "n_improved": 53,
+   "best_monomerid_from": 50404115,
+   "best_monomerid_to": 17226
+  },
+  {
+   "transformation": "[H][*:1] >> F[*:1]",
+   "n_pairs": 69,
+   "median_delta_p_affinity": 0.02,
+   "min_delta_p_affinity": -1.61,
+   "max_delta_p_affinity": 0.98,
+   "n_improved": 36,
+   "best_monomerid_from": 50228918,
+   "best_monomerid_to": 50228925
+  },
+  {
+   "transformation": "[H][*:1] >> Cl[*:1]",
+   "n_pairs": 35,
+   "median_delta_p_affinity": 0.19,
+   "min_delta_p_affinity": -0.62,
+   "max_delta_p_affinity": 1.77,
+   "n_improved": 21,
+   "best_monomerid_from": 50404134,
+   "best_monomerid_to": 17226
+  },
+  {
+   "transformation": "C[*:1] >> FC(F)(F)[*:1]",
+   "n_pairs": 28,
+   "median_delta_p_affinity": 0.2,
+   "min_delta_p_affinity": -2.26,
+   "max_delta_p_affinity": 1.61,
+   "n_improved": 18,
+   "best_monomerid_from": 50096112,
+   "best_monomerid_to": 50096105
+  },
+  {
+   "transformation": "[H][*:1] >> CO[*:1]",
+   "n_pairs": 26,
+   "median_delta_p_affinity": 0.01,
+   "min_delta_p_affinity": -2.66,
+   "max_delta_p_affinity": 1.04,
+   "n_improved": 13,
+   "best_monomerid_from": 12745,
+   "best_monomerid_to": 12747
+  },
+  {
+   "transformation": "NC(=O)[*:1] >> FC(F)(F)[*:1]",
+   "n_pairs": 23,
+   "median_delta_p_affinity": -0.3,
+   "min_delta_p_affinity": -1.28,
+   "max_delta_p_affinity": 0.55,
+   "n_improved": 4,
+   "best_monomerid_from": 50266013,
+   "best_monomerid_to": 50243592
+  },
+  {
+   "transformation": "CS(=O)(=O)[*:1] >> NS(=O)(=O)[*:1]",
+   "n_pairs": 22,
+   "median_delta_p_affinity": -0.23,
+   "min_delta_p_affinity": -1.05,
+   "max_delta_p_affinity": 0.6,
+   "n_improved": 6,
+   "best_monomerid_from": 50096096,
+   "best_monomerid_to": 50096099
+  },
+  {
+   "transformation": "CN(C)[*:1] >> C1CCN([*:1])C1",
+   "n_pairs": 21,
+   "median_delta_p_affinity": 0.15,
+   "min_delta_p_affinity": -0.58,
+   "max_delta_p_affinity": 0.59,
+   "n_improved": 12,
+   "best_monomerid_from": 50224694,
+   "best_monomerid_to": 50224708
+  },
+  {
+   "transformation": "CN[*:1] >> CN(C)[*:1]",
+   "n_pairs": 19,
+   "median_delta_p_affinity": 0.3,
+   "min_delta_p_affinity": -0.52,
+   "max_delta_p_affinity": 1.44,
+   "n_improved": 14,
+   "best_monomerid_from": 50266179,
+   "best_monomerid_to": 50266214
+  },
+  {
+   "transformation": "C[*:1] >> CC(C)[*:1]",
+   "n_pairs": 19,
+   "median_delta_p_affinity": -0.1,
+   "min_delta_p_affinity": -1.17,
+   "max_delta_p_affinity": 1.02,
+   "n_improved": 7,
+   "best_monomerid_from": 17282,
+   "best_monomerid_to": 50088963
+  },
+  {
+   "transformation": "C[*:1] >> Cl[*:1]",
+   "n_pairs": 18,
+   "median_delta_p_affinity": 0.15,
+   "min_delta_p_affinity": -0.45,
+   "max_delta_p_affinity": 1.34,
+   "n_improved": 12,
+   "best_monomerid_from": 50404141,
+   "best_monomerid_to": 17226
+  },
+  {
+   "transformation": "[H][*:1] >> O[*:1]",
+   "n_pairs": 18,
+   "median_delta_p_affinity": -0.2,
+   "min_delta_p_affinity": -1.28,
+   "max_delta_p_affinity": 0.85,
+   "n_improved": 6,
+   "best_monomerid_from": 50377632,
+   "best_monomerid_to": 50377629
+  },
+  {
+   "transformation": "N#C[*:1] >> NC(=O)[*:1]",
+   "n_pairs": 15,
+   "median_delta_p_affinity": 0.3,
+   "min_delta_p_affinity": -1.17,
+   "max_delta_p_affinity": 1.82,
+   "n_improved": 11,
+   "best_monomerid_from": 12732,
+   "best_monomerid_to": 12733
+  },
+  {
+   "transformation": "CN(C)C[*:1] >> CS(=O)(=O)[*:1]",
+   "n_pairs": 15,
+   "median_delta_p_affinity": 0.09,
+   "min_delta_p_affinity": -1.21,
+   "max_delta_p_affinity": 1.1,
+   "n_improved": 10,
+   "best_monomerid_from": 50224694,
+   "best_monomerid_to": 50224693
+  },
+  {
+   "transformation": "[H][*:1] >> CC[*:1]",
+   "n_pairs": 14,
+   "median_delta_p_affinity": -0.0,
+   "min_delta_p_affinity": -0.59,
+   "max_delta_p_affinity": 1.52,
+   "n_improved": 7,
+   "best_monomerid_from": 50088960,
+   "best_monomerid_to": 50088951
+  },
+  {
+   "transformation": "CN(C)[*:1] >> O[C@@H]1CCN([*:1])C1",
+   "n_pairs": 13,
+   "median_delta_p_affinity": 0.08,
+   "min_delta_p_affinity": -0.6,
+   "max_delta_p_affinity": 0.53,
+   "n_improved": 7,
+   "best_monomerid_from": 19009,
+   "best_monomerid_to": 18991
+  },
+  {
+   "transformation": "Br[*:1] >> Cl[*:1]",
+   "n_pairs": 13,
+   "median_delta_p_affinity": 0.07,
+   "min_delta_p_affinity": -0.37,
+   "max_delta_p_affinity": 0.6,
+   "n_improved": 8,
+   "best_monomerid_from": 50590078,
+   "best_monomerid_to": 12372
+  },
+  {
+   "transformation": "O=C1CCCCN1[*:1] >> O=c1ccccn1[*:1]",
+   "n_pairs": 12,
+   "median_delta_p_affinity": 0.7,
+   "min_delta_p_affinity": -0.69,
+   "max_delta_p_affinity": 1.96,
+   "n_improved": 11,
+   "best_monomerid_from": 50374882,
+   "best_monomerid_to": 50374880
+  },
+  {
+   "transformation": "CN[*:1] >> C1CCN([*:1])C1",
+   "n_pairs": 12,
+   "median_delta_p_affinity": 0.39,
+   "min_delta_p_affinity": -0.4,
+   "max_delta_p_affinity": 1.44,
+   "n_improved": 8,
+   "best_monomerid_from": 50266179,
+   "best_monomerid_to": 50266215
+  },
+  {
+   "transformation": "N[*:1] >> O[*:1]",
+   "n_pairs": 12,
+   "median_delta_p_affinity": 0.32,
+   "min_delta_p_affinity": -0.64,
+   "max_delta_p_affinity": 1.07,
+   "n_improved": 9,
+   "best_monomerid_from": 50066627,
+   "best_monomerid_to": 50066638
+  },
+  {
+   "transformation": "[H][*:1] >> NC(=O)[*:1]",
+   "n_pairs": 12,
+   "median_delta_p_affinity": 0.0,
+   "min_delta_p_affinity": -1.11,
+   "max_delta_p_affinity": 1.0,
+   "n_improved": 5,
+   "best_monomerid_from": 50085406,
+   "best_monomerid_to": 50085393
+  },
+  {
+   "transformation": "Cl[*:1] >> F[*:1]",
+   "n_pairs": 12,
+   "median_delta_p_affinity": -0.08,
+   "min_delta_p_affinity": -1.49,
+   "max_delta_p_affinity": 0.44,
+   "n_improved": 4,
+   "best_monomerid_from": 50123041,
+   "best_monomerid_to": 50123035
+  },
+  {
+   "transformation": "N[*:1] >> CN(C)[*:1]",
+   "n_pairs": 11,
+   "median_delta_p_affinity": 0.61,
+   "min_delta_p_affinity": -0.05,
+   "max_delta_p_affinity": 1.34,
+   "n_improved": 10,
+   "best_monomerid_from": 18996,
+   "best_monomerid_to": 18999
+  },
+  {
+   "transformation": "C[*:1] >> F[*:1]",
+   "n_pairs": 11,
+   "median_delta_p_affinity": 0.16,
+   "min_delta_p_affinity": -1.19,
+   "max_delta_p_affinity": 0.47,
+   "n_improved": 6,
+   "best_monomerid_from": 12378,
+   "best_monomerid_to": 12374
+  },
+  {
+   "transformation": "[H][*:1] >> N[*:1]",
+   "n_pairs": 11,
+   "median_delta_p_affinity": -0.08,
+   "min_delta_p_affinity": -1.35,
+   "max_delta_p_affinity": 0.74,
+   "n_improved": 4,
+   "best_monomerid_from": 13282,
+   "best_monomerid_to": 13283
+  },
+  {
+   "transformation": "CN(C)[*:1] >> C1CN([*:1])CCO1",
+   "n_pairs": 11,
+   "median_delta_p_affinity": -0.25,
+   "min_delta_p_affinity": -1.02,
+   "max_delta_p_affinity": 0.12,
+   "n_improved": 2,
+   "best_monomerid_from": 19046,
+   "best_monomerid_to": 19048
+  },
+  {
+   "transformation": "C1CCN([*:1])C1 >> C1CN([*:1])CCO1",
+   "n_pairs": 11,
+   "median_delta_p_affinity": -0.43,
+   "min_delta_p_affinity": -1.02,
+   "max_delta_p_affinity": 0.25,
+   "n_improved": 1,
+   "best_monomerid_from": 50266013,
+   "best_monomerid_to": 50266049
+  },
+  {
+   "transformation": "[H][*:1] >> N#C[*:1]",
+   "n_pairs": 10,
+   "median_delta_p_affinity": 0.44,
+   "min_delta_p_affinity": -1.19,
+   "max_delta_p_affinity": 1.19,
+   "n_improved": 9,
+   "best_monomerid_from": 50089112,
+   "best_monomerid_to": 50089118
+  },
+  {
+   "transformation": "N#C[*:1] >> FC(F)(F)[*:1]",
+   "n_pairs": 10,
+   "median_delta_p_affinity": 0.15,
+   "min_delta_p_affinity": -0.52,
+   "max_delta_p_affinity": 0.55,
+   "n_improved": 6,
+   "best_monomerid_from": 50265829,
+   "best_monomerid_to": 50266216
+  },
+  {
+   "transformation": "Clc1ccc([*:1])cc1 >> Clc1ccc([*:1])nc1",
+   "n_pairs": 10,
+   "median_delta_p_affinity": 0.05,
+   "min_delta_p_affinity": -0.85,
+   "max_delta_p_affinity": 0.48,
+   "n_improved": 6,
+   "best_monomerid_from": 12400,
+   "best_monomerid_to": 15867
+  },
+  {
+   "transformation": "[H][*:1] >> O=C(O)[*:1]",
+   "n_pairs": 10,
+   "median_delta_p_affinity": 0.05,
+   "min_delta_p_affinity": -1.17,
+   "max_delta_p_affinity": 0.82,
+   "n_improved": 5,
+   "best_monomerid_from": 50101878,
+   "best_monomerid_to": 50101879
+  },
+  {
+   "transformation": "O=C(O)[*:1] >> CCOC(=O)[*:1]",
+   "n_pairs": 10,
+   "median_delta_p_affinity": -0.11,
+   "min_delta_p_affinity": -0.31,
+   "max_delta_p_affinity": 0.88,
+   "n_improved": 4,
+   "best_monomerid_from": 50088932,
+   "best_monomerid_to": 50088924
+  },
+  {
+   "transformation": "[H][*:1] >> c1ccc([*:1])cc1",
+   "n_pairs": 10,
+   "median_delta_p_affinity": -0.18,
+   "min_delta_p_affinity": -1.35,
+   "max_delta_p_affinity": 0.85,
+   "n_improved": 2,
+   "best_monomerid_from": 50111667,
+   "best_monomerid_to": 50111675
+  },
+  {
+   "transformation": "O[*:1] >> CN(C)[*:1]",
+   "n_pairs": 9,
+   "median_delta_p_affinity": 0.88,
+   "min_delta_p_affinity": 0.25,
+   "max_delta_p_affinity": 1.84,
+   "n_improved": 9,
+   "best_monomerid_from": 50243379,
+   "best_monomerid_to": 50243540
+  },
+  {
+   "transformation": "N[*:1] >> CN[*:1]",
+   "n_pairs": 9,
+   "median_delta_p_affinity": 0.68,
+   "min_delta_p_affinity": 0.0,
+   "max_delta_p_affinity": 1.25,
+   "n_improved": 8,
+   "best_monomerid_from": 12674,
+   "best_monomerid_to": 12675
+  },
+  {
+   "transformation": "O=C(O)[*:1] >> COC(=O)[*:1]",
+   "n_pairs": 9,
+   "median_delta_p_affinity": 0.44,
+   "min_delta_p_affinity": 0.0,
+   "max_delta_p_affinity": 1.36,
+   "n_improved": 8,
+   "best_monomerid_from": 50088932,
+   "best_monomerid_to": 50088923
+  },
+  {
+   "transformation": "CS(=O)(=O)[*:1] >> C1CCN(C[*:1])C1",
+   "n_pairs": 9,
+   "median_delta_p_affinity": 0.32,
+   "min_delta_p_affinity": -0.51,
+   "max_delta_p_affinity": 1.21,
+   "n_improved": 7,
+   "best_monomerid_from": 50265915,
+   "best_monomerid_to": 50266215
+  },
+  {
+   "transformation": "[H][*:1] >> OC[*:1]",
+   "n_pairs": 9,
+   "median_delta_p_affinity": -0.13,
+   "min_delta_p_affinity": -0.86,
+   "max_delta_p_affinity": 0.56,
+   "n_improved": 2,
+   "best_monomerid_from": 12504,
+   "best_monomerid_to": 12519
+  },
+  {
+   "transformation": "NC(=O)[*:1] >> CS(=O)(=O)[*:1]",
+   "n_pairs": 9,
+   "median_delta_p_affinity": -0.3,
+   "min_delta_p_affinity": -0.73,
+   "max_delta_p_affinity": 0.71,
+   "n_improved": 2,
+   "best_monomerid_from": 50265947,
+   "best_monomerid_to": 50265916
+  },
+  {
+   "transformation": "[H][*:1] >> FC(F)(F)[*:1]",
+   "n_pairs": 9,
+   "median_delta_p_affinity": -0.34,
+   "min_delta_p_affinity": -2.49,
+   "max_delta_p_affinity": 1.51,
+   "n_improved": 3,
+   "best_monomerid_from": 50096103,
+   "best_monomerid_to": 50096094
+  },
+  {
+   "transformation": "O[*:1] >> C1CCN([*:1])C1",
+   "n_pairs": 8,
+   "median_delta_p_affinity": 0.86,
+   "min_delta_p_affinity": 0.14,
+   "max_delta_p_affinity": 2.12,
+   "n_improved": 8,
+   "best_monomerid_from": 50046500,
+   "best_monomerid_to": 50046521
+  },
+  {
+   "transformation": "[H][*:1] >> NC[*:1]",
+   "n_pairs": 8,
+   "median_delta_p_affinity": 0.74,
+   "min_delta_p_affinity": 0.16,
+   "max_delta_p_affinity": 1.54,
+   "n_improved": 8,
+   "best_monomerid_from": 50211575,
+   "best_monomerid_to": 50211564
+  },
+  {
+   "transformation": "[H][*:1] >> Br[*:1]",
+   "n_pairs": 8,
+   "median_delta_p_affinity": 0.31,
+   "min_delta_p_affinity": -0.47,
+   "max_delta_p_affinity": 1.62,
+   "n_improved": 6,
+   "best_monomerid_from": 50404134,
+   "best_monomerid_to": 50404108
+  },
+  {
+   "transformation": "CN[*:1] >> C1CN([*:1])CCO1",
+   "n_pairs": 8,
+   "median_delta_p_affinity": 0.21,
+   "min_delta_p_affinity": -0.83,
+   "max_delta_p_affinity": 0.48,
+   "n_improved": 5,
+   "best_monomerid_from": 50243539,
+   "best_monomerid_to": 50243628
+  },
+  {
+   "transformation": "NS(=O)(=O)[*:1] >> C1CCN(C[*:1])C1",
+   "n_pairs": 8,
+   "median_delta_p_affinity": 0.2,
+   "min_delta_p_affinity": -0.26,
+   "max_delta_p_affinity": 1.18,
+   "n_improved": 6,
+   "best_monomerid_from": 19045,
+   "best_monomerid_to": 19038
+  },
+  {
+   "transformation": "CN(C)[*:1] >> CN(C)C[*:1]",
+   "n_pairs": 8,
+   "median_delta_p_affinity": 0.1,
+   "min_delta_p_affinity": -0.13,
+   "max_delta_p_affinity": 0.45,
+   "n_improved": 4,
+   "best_monomerid_from": 50046515,
+   "best_monomerid_to": 50046434
+  },
+  {
+   "transformation": "C1CCN([*:1])C1 >> O[C@@H]1CCN([*:1])C1",
+   "n_pairs": 8,
+   "median_delta_p_affinity": -0.04,
+   "min_delta_p_affinity": -0.32,
+   "max_delta_p_affinity": 0.7,
+   "n_improved": 4,
+   "best_monomerid_from": 12692,
+   "best_monomerid_to": 12693
+  },
+  {
+   "transformation": "COc1ccc([*:1])cc1 >> NCc1cccc([*:1])c1",
+   "n_pairs": 7,
+   "median_delta_p_affinity": 0.46,
+   "min_delta_p_affinity": -0.21,
+   "max_delta_p_affinity": 1.36,
+   "n_improved": 6,
+   "best_monomerid_from": 12705,
+   "best_monomerid_to": 12657
+  },
+  {
+   "transformation": "[H][*:1] >> COC(=O)[*:1]",
+   "n_pairs": 7,
+   "median_delta_p_affinity": 0.27,
+   "min_delta_p_affinity": -0.78,
+   "max_delta_p_affinity": 0.82,
+   "n_improved": 5,
+   "best_monomerid_from": 50101878,
+   "best_monomerid_to": 50101880
+  },
+  {
+   "transformation": "CN(C)C[*:1] >> NS(=O)(=O)[*:1]",
+   "n_pairs": 7,
+   "median_delta_p_affinity": 0.12,
+   "min_delta_p_affinity": -0.98,
+   "max_delta_p_affinity": 0.85,
+   "n_improved": 5,
+   "best_monomerid_from": 50224694,
+   "best_monomerid_to": 50224696
+  },
+  {
+   "transformation": "[H][*:1] >> CCC[*:1]",
+   "n_pairs": 7,
+   "median_delta_p_affinity": 0.07,
+   "min_delta_p_affinity": -0.67,
+   "max_delta_p_affinity": 1.1,
+   "n_improved": 4,
+   "best_monomerid_from": 50088960,
+   "best_monomerid_to": 50088952
+  },
+  {
+   "transformation": "CN(C)[*:1] >> C1CN(C[*:1])CCO1",
+   "n_pairs": 7,
+   "median_delta_p_affinity": -0.05,
+   "min_delta_p_affinity": -1.17,
+   "max_delta_p_affinity": 0.52,
+   "n_improved": 2,
+   "best_monomerid_from": 50046515,
+   "best_monomerid_to": 50046441
+  },
+  {
+   "transformation": "[H][*:1] >> CN(C)C[*:1]",
+   "n_pairs": 7,
+   "median_delta_p_affinity": -0.05,
+   "min_delta_p_affinity": -1.37,
+   "max_delta_p_affinity": 1.04,
+   "n_improved": 3,
+   "best_monomerid_from": 12504,
+   "best_monomerid_to": 12531
+  },
+  {
+   "transformation": "CC(C)[*:1] >> C1CC1C[*:1]",
+   "n_pairs": 7,
+   "median_delta_p_affinity": -0.07,
+   "min_delta_p_affinity": -0.58,
+   "max_delta_p_affinity": 0.22,
+   "n_improved": 2,
+   "best_monomerid_from": 12506,
+   "best_monomerid_to": 12509
+  },
+  {
+   "transformation": "O[*:1] >> CO[*:1]",
+   "n_pairs": 7,
+   "median_delta_p_affinity": -0.08,
+   "min_delta_p_affinity": -2.11,
+   "max_delta_p_affinity": 0.52,
+   "n_improved": 3,
+   "best_monomerid_from": 50295587,
+   "best_monomerid_to": 50295588
+  },
+  {
+   "transformation": "[H][*:1] >> CN(C)[*:1]",
+   "n_pairs": 7,
+   "median_delta_p_affinity": -0.1,
+   "min_delta_p_affinity": -1.17,
+   "max_delta_p_affinity": 0.74,
+   "n_improved": 3,
+   "best_monomerid_from": 12505,
+   "best_monomerid_to": 12531
+  },
+  {
+   "transformation": "NC(=O)[*:1] >> COC(=O)[*:1]",
+   "n_pairs": 7,
+   "median_delta_p_affinity": -0.18,
+   "min_delta_p_affinity": -0.36,
+   "max_delta_p_affinity": 0.37,
+   "n_improved": 3,
+   "best_monomerid_from": 50374874,
+   "best_monomerid_to": 50374871
+  },
+  {
+   "transformation": "CS(=O)(=O)[*:1] >> C1CN(C[*:1])CCO1",
+   "n_pairs": 7,
+   "median_delta_p_affinity": -0.22,
+   "min_delta_p_affinity": -0.79,
+   "max_delta_p_affinity": 0.9,
+   "n_improved": 3,
+   "best_monomerid_from": 50046522,
+   "best_monomerid_to": 50046441
+  },
+  {
+   "transformation": "Cl[*:1] >> CO[*:1]",
+   "n_pairs": 7,
+   "median_delta_p_affinity": -0.43,
+   "min_delta_p_affinity": -1.69,
+   "max_delta_p_affinity": 0.04,
+   "n_improved": 1,
+   "best_monomerid_from": 50404129,
+   "best_monomerid_to": 50404105
+  },
+  {
+   "transformation": "NC[*:1] >> N=C(N)[*:1]",
+   "n_pairs": 6,
+   "median_delta_p_affinity": 2.23,
+   "min_delta_p_affinity": -1.95,
+   "max_delta_p_affinity": 2.64,
+   "n_improved": 5,
+   "best_monomerid_from": 50096086,
+   "best_monomerid_to": 50096099
+  },
+  {
+   "transformation": "N[*:1] >> C1CCN([*:1])C1",
+   "n_pairs": 6,
+   "median_delta_p_affinity": 0.71,
+   "min_delta_p_affinity": 0.28,
+   "max_delta_p_affinity": 1.46,
+   "n_improved": 6,
+   "best_monomerid_from": 50243538,
+   "best_monomerid_to": 50243592
+  },
+  {
+   "transformation": "NC(=O)[*:1] >> NS(=O)(=O)[*:1]",
+   "n_pairs": 6,
+   "median_delta_p_affinity": 0.33,
+   "min_delta_p_affinity": -0.25,
+   "max_delta_p_affinity": 0.56,
+   "n_improved": 5,
+   "best_monomerid_from": 12524,
+   "best_monomerid_to": 12530
+  },
+  {
+   "transformation": "CN[*:1] >> C1CN(C[*:1])CCO1",
+   "n_pairs": 6,
+   "median_delta_p_affinity": 0.1,
+   "min_delta_p_affinity": -0.69,
+   "max_delta_p_affinity": 0.54,
+   "n_improved": 3,
+   "best_monomerid_from": 50266321,
+   "best_monomerid_to": 50266050
+  },
+  {
+   "transformation": "N[*:1] >> NC(=O)[*:1]",
+   "n_pairs": 6,
+   "median_delta_p_affinity": 0.01,
+   "min_delta_p_affinity": -0.63,
+   "max_delta_p_affinity": 1.98,
+   "n_improved": 3,
+   "best_monomerid_from": 18996,
+   "best_monomerid_to": 18991
+  },
+  {
+   "transformation": "[H][*:1] >> COC[*:1]",
+   "n_pairs": 6,
+   "median_delta_p_affinity": -0.01,
+   "min_delta_p_affinity": -1.56,
+   "max_delta_p_affinity": 0.33,
+   "n_improved": 3,
+   "best_monomerid_from": 50079259,
+   "best_monomerid_to": 50079252
+  },
+  {
+   "transformation": "N#C[*:1] >> CS(=O)(=O)N[*:1]",
+   "n_pairs": 6,
+   "median_delta_p_affinity": -0.02,
+   "min_delta_p_affinity": -0.89,
+   "max_delta_p_affinity": 1.26,
+   "n_improved": 3,
+   "best_monomerid_from": 50377639,
+   "best_monomerid_to": 50377640
+  },
+  {
+   "transformation": "Br[*:1] >> F[*:1]",
+   "n_pairs": 6,
+   "median_delta_p_affinity": -0.04,
+   "min_delta_p_affinity": -1.34,
+   "max_delta_p_affinity": 0.47,
+   "n_improved": 2,
+   "best_monomerid_from": 12376,
+   "best_monomerid_to": 12374
+  },
+  {
+   "transformation": "NC(=O)[*:1] >> O=C(O)[*:1]",
+   "n_pairs": 6,
+   "median_delta_p_affinity": -0.14,
+   "min_delta_p_affinity": -2.03,
+   "max_delta_p_affinity": 0.18,
+   "n_improved": 1,
+   "best_monomerid_from": 12568,
+   "best_monomerid_to": 12567
+  },
+  {
+   "transformation": "Br[*:1] >> C[*:1]",
+   "n_pairs": 6,
+   "median_delta_p_affinity": -0.15,
+   "min_delta_p_affinity": -1.19,
+   "max_delta_p_affinity": 0.19,
+   "n_improved": 1,
+   "best_monomerid_from": 13659,
+   "best_monomerid_to": 13663
+  },
+  {
+   "transformation": "[H][*:1] >> c1nnnn1[*:1]",
+   "n_pairs": 5,
+   "median_delta_p_affinity": 1.03,
+   "min_delta_p_affinity": -0.1,
+   "max_delta_p_affinity": 1.57,
+   "n_improved": 4,
+   "best_monomerid_from": 50079229,
+   "best_monomerid_to": 50079240
+  },
+  {
+   "transformation": "[H][*:1] >> O=[N+]([O-])[*:1]",
+   "n_pairs": 5,
+   "median_delta_p_affinity": 1.0,
+   "min_delta_p_affinity": 0.1,
+   "max_delta_p_affinity": 1.6,
+   "n_improved": 5,
+   "best_monomerid_from": 50088957,
+   "best_monomerid_to": 50112524
+  },
+  {
+   "transformation": "COC(=O)[*:1] >> c1nnnn1[*:1]",
+   "n_pairs": 5,
+   "median_delta_p_affinity": 0.94,
+   "min_delta_p_affinity": 0.87,
+   "max_delta_p_affinity": 1.12,
+   "n_improved": 5,
+   "best_monomerid_from": 50079222,
+   "best_monomerid_to": 50079253
+  },
+  {
+   "transformation": "C[*:1] >> CC(C)(C)[*:1]",
+   "n_pairs": 5,
+   "median_delta_p_affinity": 0.49,
+   "min_delta_p_affinity": -1.23,
+   "max_delta_p_affinity": 1.06,
+   "n_improved": 3,
+   "best_monomerid_from": 50592210,
+   "best_monomerid_to": 50592212
+  },
+  {
+   "transformation": "O[*:1] >> C1CN([*:1])CCO1",
+   "n_pairs": 5,
+   "median_delta_p_affinity": 0.49,
+   "min_delta_p_affinity": 0.0,
+   "max_delta_p_affinity": 1.6,
+   "n_improved": 4,
+   "best_monomerid_from": 50243379,
+   "best_monomerid_to": 50243628
+  },
+  {
+   "transformation": "CN(C)[*:1] >> C1CCN(C[*:1])C1",
+   "n_pairs": 5,
+   "median_delta_p_affinity": 0.47,
+   "min_delta_p_affinity": -0.25,
+   "max_delta_p_affinity": 0.65,
+   "n_improved": 4,
+   "best_monomerid_from": 50266112,
+   "best_monomerid_to": 50243592
+  },
+  {
+   "transformation": "N[*:1] >> C1CN([*:1])CCO1",
+   "n_pairs": 5,
+   "median_delta_p_affinity": 0.4,
+   "min_delta_p_affinity": -0.15,
+   "max_delta_p_affinity": 0.98,
+   "n_improved": 3,
+   "best_monomerid_from": 50243538,
+   "best_monomerid_to": 50243628
+  },
+  {
+   "transformation": "CC(C)N[*:1] >> C1CCN([*:1])C1",
+   "n_pairs": 5,
+   "median_delta_p_affinity": 0.32,
+   "min_delta_p_affinity": -0.3,
+   "max_delta_p_affinity": 0.53,
+   "n_improved": 4,
+   "best_monomerid_from": 12835,
+   "best_monomerid_to": 12840
+  },
+  {
+   "transformation": "CN[*:1] >> O[C@@H]1CCN([*:1])C1",
+   "n_pairs": 5,
+   "median_delta_p_affinity": 0.3,
+   "min_delta_p_affinity": 0.19,
+   "max_delta_p_affinity": 1.05,
+   "n_improved": 5,
+   "best_monomerid_from": 12691,
+   "best_monomerid_to": 12693
+  },
+  {
+   "transformation": "CNC[*:1] >> CS(=O)(=O)[*:1]",
+   "n_pairs": 5,
+   "median_delta_p_affinity": 0.23,
+   "min_delta_p_affinity": -0.4,
+   "max_delta_p_affinity": 0.48,
+   "n_improved": 4,
+   "best_monomerid_from": 12833,
+   "best_monomerid_to": 12659
+  },
+  {
+   "transformation": "c1ccc([*:1])nc1 >> [O-][n+]1ccccc1[*:1]",
+   "n_pairs": 5,
+   "median_delta_p_affinity": 0.23,
+   "min_delta_p_affinity": 0.19,
+   "max_delta_p_affinity": 0.4,
+   "n_improved": 5,
+   "best_monomerid_from": 50211571,
+   "best_monomerid_to": 50211565
+  },
+  {
+   "transformation": "C1CCN([*:1])C1 >> CCN(CC)[*:1]",
+   "n_pairs": 5,
+   "median_delta_p_affinity": 0.14,
+   "min_delta_p_affinity": -0.24,
+   "max_delta_p_affinity": 0.58,
+   "n_improved": 3,
+   "best_monomerid_from": 19011,
+   "best_monomerid_to": 19010
+  },
+  {
+   "transformation": "F[*:1] >> CS(=O)(=O)[*:1]",
+   "n_pairs": 5,
+   "median_delta_p_affinity": 0.14,
+   "min_delta_p_affinity": -0.82,
+   "max_delta_p_affinity": 1.76,
+   "n_improved": 3,
+   "best_monomerid_from": 50096088,
+   "best_monomerid_to": 50096091
+  },
+  {
+   "transformation": "CN(C)[*:1] >> CCN(CC)[*:1]",
+   "n_pairs": 5,
+   "median_delta_p_affinity": -0.07,
+   "min_delta_p_affinity": -0.44,
+   "max_delta_p_affinity": 0.48,
+   "n_improved": 2,
+   "best_monomerid_from": 19009,
+   "best_monomerid_to": 19010
+  },
+  {
+   "transformation": "N[*:1] >> N#C[*:1]",
+   "n_pairs": 5,
+   "median_delta_p_affinity": -0.1,
+   "min_delta_p_affinity": -0.78,
+   "max_delta_p_affinity": 1.31,
+   "n_improved": 2,
+   "best_monomerid_from": 18996,
+   "best_monomerid_to": 18994
+  },
+  {
+   "transformation": "CN(C)[*:1] >> CC(=O)N(C)[*:1]",
+   "n_pairs": 5,
+   "median_delta_p_affinity": -0.34,
+   "min_delta_p_affinity": -1.75,
+   "max_delta_p_affinity": 1.08,
+   "n_improved": 1,
+   "best_monomerid_from": 19018,
+   "best_monomerid_to": 19017
+  },
+  {
+   "transformation": "CN(C)[*:1] >> CS(=O)(=O)[*:1]",
+   "n_pairs": 5,
+   "median_delta_p_affinity": -0.38,
+   "min_delta_p_affinity": -0.97,
+   "max_delta_p_affinity": 0.09,
+   "n_improved": 1,
+   "best_monomerid_from": 18999,
+   "best_monomerid_to": 18988
+  },
+  {
+   "transformation": "CN(C)[*:1] >> CN1CCN([*:1])CC1",
+   "n_pairs": 5,
+   "median_delta_p_affinity": -0.61,
+   "min_delta_p_affinity": -1.25,
+   "max_delta_p_affinity": -0.17,
+   "n_improved": 0,
+   "best_monomerid_from": 17233,
+   "best_monomerid_to": 17235
+  },
+  {
+   "transformation": "NC[*:1] >> NC(=O)[*:1]",
+   "n_pairs": 5,
+   "median_delta_p_affinity": -0.74,
+   "min_delta_p_affinity": -0.85,
+   "max_delta_p_affinity": 1.11,
+   "n_improved": 2,
+   "best_monomerid_from": 12714,
+   "best_monomerid_to": 12710
+  },
+  {
+   "transformation": "CN(C)[*:1] >> NC(=O)[*:1]",
+   "n_pairs": 5,
+   "median_delta_p_affinity": -0.96,
+   "min_delta_p_affinity": -1.57,
+   "max_delta_p_affinity": 0.64,
+   "n_improved": 1,
+   "best_monomerid_from": 18999,
+   "best_monomerid_to": 18991
+  },
+  {
+   "transformation": "O[*:1] >> CN(C)C[*:1]",
+   "n_pairs": 4,
+   "median_delta_p_affinity": 1.54,
+   "min_delta_p_affinity": 0.12,
+   "max_delta_p_affinity": 2.12,
+   "n_improved": 4,
+   "best_monomerid_from": 50046500,
+   "best_monomerid_to": 50046434
+  },
+  {
+   "transformation": "CO[*:1] >> c1nnnn1[*:1]",
+   "n_pairs": 4,
+   "median_delta_p_affinity": 1.08,
+   "min_delta_p_affinity": -0.62,
+   "max_delta_p_affinity": 1.49,
+   "n_improved": 3,
+   "best_monomerid_from": 50079245,
+   "best_monomerid_to": 50079253
+  },
+  {
+   "transformation": "CN[*:1] >> C1CCN(C[*:1])C1",
+   "n_pairs": 4,
+   "median_delta_p_affinity": 0.93,
+   "min_delta_p_affinity": 0.0,
+   "max_delta_p_affinity": 1.06,
+   "n_improved": 3,
+   "best_monomerid_from": 50266321,
+   "best_monomerid_to": 50266047
+  },
+  {
+   "transformation": "CS(=O)(=O)[*:1] >> C1CCN([*:1])C1",
+   "n_pairs": 4,
+   "median_delta_p_affinity": 0.93,
+   "min_delta_p_affinity": 0.0,
+   "max_delta_p_affinity": 1.21,
+   "n_improved": 3,
+   "best_monomerid_from": 50265915,
+   "best_monomerid_to": 50243592
+  },
+  {
+   "transformation": "[H][*:1] >> c1ncn([*:1])n1",
+   "n_pairs": 4,
+   "median_delta_p_affinity": 0.81,
+   "min_delta_p_affinity": 0.49,
+   "max_delta_p_affinity": 1.06,
+   "n_improved": 4,
+   "best_monomerid_from": 17237,
+   "best_monomerid_to": 17263
+  },
+  {
+   "transformation": "CN[*:1] >> CN(C)C[*:1]",
+   "n_pairs": 4,
+   "median_delta_p_affinity": 0.73,
+   "min_delta_p_affinity": 0.25,
+   "max_delta_p_affinity": 0.96,
+   "n_improved": 4,
+   "best_monomerid_from": 50243539,
+   "best_monomerid_to": 50266214
+  },
+  {
+   "transformation": "COc1ccc([*:1])cc1 >> NCc1ccccc1[*:1]",
+   "n_pairs": 4,
+   "median_delta_p_affinity": 0.72,
+   "min_delta_p_affinity": 0.28,
+   "max_delta_p_affinity": 0.88,
+   "n_improved": 4,
+   "best_monomerid_from": 12705,
+   "best_monomerid_to": 50135953
+  },
+  {
+   "transformation": "C1CN([*:1])CCO1 >> Cc1nccn1[*:1]",
+   "n_pairs": 4,
+   "median_delta_p_affinity": 0.67,
+   "min_delta_p_affinity": 0.05,
+   "max_delta_p_affinity": 2.15,
+   "n_improved": 4,
+   "best_monomerid_from": 17095,
+   "best_monomerid_to": 17133
+  },
+  {
+   "transformation": "N#C[*:1] >> CN(C)[*:1]",
+   "n_pairs": 4,
+   "median_delta_p_affinity": 0.59,
+   "min_delta_p_affinity": 0.03,
+   "max_delta_p_affinity": 1.31,
+   "n_improved": 4,
+   "best_monomerid_from": 50243378,
+   "best_monomerid_to": 50266112
+  },
+  {
+   "transformation": "N#C[*:1] >> NC[*:1]",
+   "n_pairs": 4,
+   "median_delta_p_affinity": 0.45,
+   "min_delta_p_affinity": -1.06,
+   "max_delta_p_affinity": 0.9,
+   "n_improved": 3,
+   "best_monomerid_from": 50046442,
+   "best_monomerid_to": 50046445
+  },
+  {
+   "transformation": "[H][*:1] >> CCCC[*:1]",
+   "n_pairs": 4,
+   "median_delta_p_affinity": 0.39,
+   "min_delta_p_affinity": 0.27,
+   "max_delta_p_affinity": 1.1,
+   "n_improved": 4,
+   "best_monomerid_from": 50088960,
+   "best_monomerid_to": 50088942
+  },
+  {
+   "transformation": "CS(=O)(=O)[*:1] >> C1CN([*:1])CCO1",
+   "n_pairs": 4,
+   "median_delta_p_affinity": 0.38,
+   "min_delta_p_affinity": -0.47,
+   "max_delta_p_affinity": 0.73,
+   "n_improved": 3,
+   "best_monomerid_from": 50265915,
+   "best_monomerid_to": 50243628
+  },
+  {
+   "transformation": "CN[*:1] >> CCN(CC)[*:1]",
+   "n_pairs": 4,
+   "median_delta_p_affinity": 0.37,
+   "min_delta_p_affinity": -0.19,
+   "max_delta_p_affinity": 0.59,
+   "n_improved": 3,
+   "best_monomerid_from": 19041,
+   "best_monomerid_to": 19042
+  },
+  {
+   "transformation": "C1CN([*:1])CCO1 >> CN1CCN([*:1])CC1",
+   "n_pairs": 4,
+   "median_delta_p_affinity": 0.36,
+   "min_delta_p_affinity": -0.31,
+   "max_delta_p_affinity": 0.95,
+   "n_improved": 2,
+   "best_monomerid_from": 17095,
+   "best_monomerid_to": 17088
+  },
+  {
+   "transformation": "C[C@@H](N(C)C)[*:1] >> C[C@H](N(C)C)[*:1]",
+   "n_pairs": 4,
+   "median_delta_p_affinity": 0.35,
+   "min_delta_p_affinity": 0.0,
+   "max_delta_p_affinity": 0.4,
+   "n_improved": 3,
+   "best_monomerid_from": 50306144,
+   "best_monomerid_to": 50306143
+  },
+  {
+   "transformation": "CN(C)C(=O)[*:1] >> CN1CCN=C1[*:1]",
+   "n_pairs": 4,
+   "median_delta_p_affinity": 0.33,
+   "min_delta_p_affinity": 0.11,
+   "max_delta_p_affinity": 1.56,
+   "n_improved": 4,
+   "best_monomerid_from": 50243431,
+   "best_monomerid_to": 50266250
+  },
+  {
+   "transformation": "N[*:1] >> CC(C)N[*:1]",
+   "n_pairs": 4,
+   "median_delta_p_affinity": 0.33,
+   "min_delta_p_affinity": -0.15,
+   "max_delta_p_affinity": 1.14,
+   "n_improved": 2,
+   "best_monomerid_from": 50243538,
+   "best_monomerid_to": 50243590
+  },
+  {
+   "transformation": "N[*:1] >> OC1CCN([*:1])CC1",
+   "n_pairs": 4,
+   "median_delta_p_affinity": 0.27,
+   "min_delta_p_affinity": -0.34,
+   "max_delta_p_affinity": 0.61,
+   "n_improved": 2,
+   "best_monomerid_from": 50243538,
+   "best_monomerid_to": 50243629
+  },
+  {
+   "transformation": "NC(=O)N[*:1] >> CS(=O)(=O)N[*:1]",
+   "n_pairs": 4,
+   "median_delta_p_affinity": 0.26,
+   "min_delta_p_affinity": 0.22,
+   "max_delta_p_affinity": 0.55,
+   "n_improved": 4,
+   "best_monomerid_from": 12526,
+   "best_monomerid_to": 12529
+  },
+  {
+   "transformation": "N[*:1] >> CS(=O)(=O)N[*:1]",
+   "n_pairs": 4,
+   "median_delta_p_affinity": 0.21,
+   "min_delta_p_affinity": -0.59,
+   "max_delta_p_affinity": 0.88,
+   "n_improved": 2,
+   "best_monomerid_from": 12523,
+   "best_monomerid_to": 12529
+  },
+  {
+   "transformation": "CC[*:1] >> CC(C)(C)[*:1]",
+   "n_pairs": 4,
+   "median_delta_p_affinity": 0.18,
+   "min_delta_p_affinity": -1.0,
+   "max_delta_p_affinity": 0.3,
+   "n_improved": 3,
+   "best_monomerid_from": 50088957,
+   "best_monomerid_to": 50088941
+  },
+  {
+   "transformation": "O=C(O)[*:1] >> c1ccc([*:1])cc1",
+   "n_pairs": 4,
+   "median_delta_p_affinity": 0.16,
+   "min_delta_p_affinity": 0.05,
+   "max_delta_p_affinity": 0.37,
+   "n_improved": 4,
+   "best_monomerid_from": 50079239,
+   "best_monomerid_to": 50079241
+  },
+  {
+   "transformation": "O=C(O)[*:1] >> CN(C)C(=O)[*:1]",
+   "n_pairs": 4,
+   "median_delta_p_affinity": 0.15,
+   "min_delta_p_affinity": -0.04,
+   "max_delta_p_affinity": 0.65,
+   "n_improved": 3,
+   "best_monomerid_from": 18990,
+   "best_monomerid_to": 18993
+  },
+  {
+   "transformation": "C[*:1] >> N#C[*:1]",
+   "n_pairs": 4,
+   "median_delta_p_affinity": 0.14,
+   "min_delta_p_affinity": -1.89,
+   "max_delta_p_affinity": 1.0,
+   "n_improved": 2,
+   "best_monomerid_from": 12393,
+   "best_monomerid_to": 12395
+  },
+  {
+   "transformation": "Cl[*:1] >> N#C[*:1]",
+   "n_pairs": 4,
+   "median_delta_p_affinity": 0.14,
+   "min_delta_p_affinity": -1.56,
+   "max_delta_p_affinity": 0.82,
+   "n_improved": 2,
+   "best_monomerid_from": 12391,
+   "best_monomerid_to": 12395
+  },
+  {
+   "transformation": "CS(=O)(=O)[*:1] >> FC(F)(F)[*:1]",
+   "n_pairs": 4,
+   "median_delta_p_affinity": 0.13,
+   "min_delta_p_affinity": -0.7,
+   "max_delta_p_affinity": 0.45,
+   "n_improved": 3,
+   "best_monomerid_from": 50266080,
+   "best_monomerid_to": 50243668
+  },
+  {
+   "transformation": "c1nnn([*:1])n1 >> c1nnnn1[*:1]",
+   "n_pairs": 4,
+   "median_delta_p_affinity": 0.12,
+   "min_delta_p_affinity": 0.07,
+   "max_delta_p_affinity": 0.48,
+   "n_improved": 4,
+   "best_monomerid_from": 50079235,
+   "best_monomerid_to": 50079236
+  },
+  {
+   "transformation": "N#C[*:1] >> CS(=O)(=O)[*:1]",
+   "n_pairs": 4,
+   "median_delta_p_affinity": 0.08,
+   "min_delta_p_affinity": -1.0,
+   "max_delta_p_affinity": 0.4,
+   "n_improved": 3,
+   "best_monomerid_from": 50046442,
+   "best_monomerid_to": 50046522
+  },
+  {
+   "transformation": "[H][*:1] >> CS(=O)(=O)[*:1]",
+   "n_pairs": 4,
+   "median_delta_p_affinity": 0.06,
+   "min_delta_p_affinity": -1.37,
+   "max_delta_p_affinity": 2.21,
+   "n_improved": 2,
+   "best_monomerid_from": 50096103,
+   "best_monomerid_to": 50096091
+  },
+  {
+   "transformation": "CN(C)C[*:1] >> C1CCN([*:1])C1",
+   "n_pairs": 4,
+   "median_delta_p_affinity": 0.05,
+   "min_delta_p_affinity": 0.0,
+   "max_delta_p_affinity": 0.3,
+   "n_improved": 2,
+   "best_monomerid_from": 17258,
+   "best_monomerid_to": 17259
+  },
+  {
+   "transformation": "NCc1cccc([*:1])c1 >> NCc1ccccc1[*:1]",
+   "n_pairs": 4,
+   "median_delta_p_affinity": 0.03,
+   "min_delta_p_affinity": -0.48,
+   "max_delta_p_affinity": 0.31,
+   "n_improved": 2,
+   "best_monomerid_from": 19027,
+   "best_monomerid_to": 19028
+  },
+  {
+   "transformation": "CN[*:1] >> CNC[*:1]",
+   "n_pairs": 4,
+   "median_delta_p_affinity": 0.01,
+   "min_delta_p_affinity": -0.48,
+   "max_delta_p_affinity": 0.31,
+   "n_improved": 2,
+   "best_monomerid_from": 50266321,
+   "best_monomerid_to": 50265978
+  },
+  {
+   "transformation": "c1cn([*:1])cn1 >> CN1CCN([*:1])CC1",
+   "n_pairs": 4,
+   "median_delta_p_affinity": 0.0,
+   "min_delta_p_affinity": -0.86,
+   "max_delta_p_affinity": 0.4,
+   "n_improved": 2,
+   "best_monomerid_from": 17242,
+   "best_monomerid_to": 17085
+  },
+  {
+   "transformation": "CN[*:1] >> OC1CCN([*:1])CC1",
+   "n_pairs": 4,
+   "median_delta_p_affinity": -0.1,
+   "min_delta_p_affinity": -1.02,
+   "max_delta_p_affinity": 0.19,
+   "n_improved": 2,
+   "best_monomerid_from": 12691,
+   "best_monomerid_to": 12695
+  },
+  {
+   "transformation": "CS(=O)(=O)[*:1] >> O[C@@H]1CCN(C[*:1])C1",
+   "n_pairs": 4,
+   "median_delta_p_affinity": -0.1,
+   "min_delta_p_affinity": -0.25,
+   "max_delta_p_affinity": 0.42,
+   "n_improved": 1,
+   "best_monomerid_from": 50307096,
+   "best_monomerid_to": 50307099
+  },
+  {
+   "transformation": "C[*:1] >> c1cncc([*:1])c1",
+   "n_pairs": 4,
+   "median_delta_p_affinity": -0.1,
+   "min_delta_p_affinity": -0.4,
+   "max_delta_p_affinity": 0.28,
+   "n_improved": 2,
+   "best_monomerid_from": 12750,
+   "best_monomerid_to": 12772
+  },
+  {
+   "transformation": "C[*:1] >> O[*:1]",
+   "n_pairs": 4,
+   "median_delta_p_affinity": -0.12,
+   "min_delta_p_affinity": -0.31,
+   "max_delta_p_affinity": 0.7,
+   "n_improved": 1,
+   "best_monomerid_from": 12402,
+   "best_monomerid_to": 50096459
+  },
+  {
+   "transformation": "NC(=O)[*:1] >> CN(C)C(=O)[*:1]",
+   "n_pairs": 4,
+   "median_delta_p_affinity": -0.12,
+   "min_delta_p_affinity": -1.38,
+   "max_delta_p_affinity": 0.53,
+   "n_improved": 1,
+   "best_monomerid_from": 50306150,
+   "best_monomerid_to": 50306148
+  },
+  {
+   "transformation": "CN(C)C(=N)[*:1] >> CN1CCN=C1[*:1]",
+   "n_pairs": 4,
+   "median_delta_p_affinity": -0.15,
+   "min_delta_p_affinity": -0.31,
+   "max_delta_p_affinity": -0.13,
+   "n_improved": 0,
+   "best_monomerid_from": 50140410,
+   "best_monomerid_to": 50140415
+  },
+  {
+   "transformation": "CN[*:1] >> CS(=O)(=O)[*:1]",
+   "n_pairs": 4,
+   "median_delta_p_affinity": -0.16,
+   "min_delta_p_affinity": -0.28,
+   "max_delta_p_affinity": 0.83,
+   "n_improved": 1,
+   "best_monomerid_from": 18998,
+   "best_monomerid_to": 18988
+  },
+  {
+   "transformation": "CN(C)[*:1] >> CN(C)C(=O)[*:1]",
+   "n_pairs": 4,
+   "median_delta_p_affinity": -0.17,
+   "min_delta_p_affinity": -1.81,
+   "max_delta_p_affinity": 0.59,
+   "n_improved": 2,
+   "best_monomerid_from": 50370088,
+   "best_monomerid_to": 50066622
+  },
+  {
+   "transformation": "C[*:1] >> CO[*:1]",
+   "n_pairs": 4,
+   "median_delta_p_affinity": -0.17,
+   "min_delta_p_affinity": -0.35,
+   "max_delta_p_affinity": 0.74,
+   "n_improved": 1,
+   "best_monomerid_from": 50218320,
+   "best_monomerid_to": 50218280
+  },
+  {
+   "transformation": "CCN(C)[*:1] >> C1CCN([*:1])C1",
+   "n_pairs": 4,
+   "median_delta_p_affinity": -0.19,
+   "min_delta_p_affinity": -0.4,
+   "max_delta_p_affinity": 0.06,
+   "n_improved": 1,
+   "best_monomerid_from": 19035,
+   "best_monomerid_to": 19032
+  },
+  {
+   "transformation": "C[*:1] >> N[*:1]",
+   "n_pairs": 4,
+   "median_delta_p_affinity": -0.2,
+   "min_delta_p_affinity": -1.69,
+   "max_delta_p_affinity": 0.35,
+   "n_improved": 2,
+   "best_monomerid_from": 12761,
+   "best_monomerid_to": 12762
+  },
+  {
+   "transformation": "c1ccc([*:1])cc1 >> c1ccc(C[*:1])cc1",
+   "n_pairs": 4,
+   "median_delta_p_affinity": -0.2,
+   "min_delta_p_affinity": -0.39,
+   "max_delta_p_affinity": 0.38,
+   "n_improved": 1,
+   "best_monomerid_from": 50085519,
+   "best_monomerid_to": 50085511
+  },
+  {
+   "transformation": "[H][*:1] >> O=C(O)C[*:1]",
+   "n_pairs": 4,
+   "median_delta_p_affinity": -0.21,
+   "min_delta_p_affinity": -0.68,
+   "max_delta_p_affinity": 1.6,
+   "n_improved": 2,
+   "best_monomerid_from": 50101878,
+   "best_monomerid_to": 50101871
+  },
+  {
+   "transformation": "CC(C)[*:1] >> CCC[*:1]",
+   "n_pairs": 4,
+   "median_delta_p_affinity": -0.3,
+   "min_delta_p_affinity": -0.95,
+   "max_delta_p_affinity": 0.17,
+   "n_improved": 1,
+   "best_monomerid_from": 50079255,
+   "best_monomerid_to": 50079244
+  },
+  {
+   "transformation": "CN(C)[*:1] >> CNC[*:1]",
+   "n_pairs": 4,
+   "median_delta_p_affinity": -0.3,
+   "min_delta_p_affinity": -1.2,
+   "max_delta_p_affinity": -0.18,
+   "n_improved": 0,
+   "best_monomerid_from": 50265826,
+   "best_monomerid_to": 50265977
+  },
+  {
+   "transformation": "CN(C)[*:1] >> CC(C)N[*:1]",
+   "n_pairs": 4,
+   "median_delta_p_affinity": -0.34,
+   "min_delta_p_affinity": -0.67,
+   "max_delta_p_affinity": -0.08,
+   "n_improved": 0,
+   "best_monomerid_from": 50243540,
+   "best_monomerid_to": 50243590
+  },
+  {
+   "transformation": "[H][*:1] >> CN1CCN([*:1])CC1",
+   "n_pairs": 4,
+   "median_delta_p_affinity": -0.36,
+   "min_delta_p_affinity": -1.39,
+   "max_delta_p_affinity": 1.38,
+   "n_improved": 2,
+   "best_monomerid_from": 17237,
+   "best_monomerid_to": 17085
+  },
+  {
+   "transformation": "C1CCN([*:1])C1 >> OC1CCN([*:1])CC1",
+   "n_pairs": 4,
+   "median_delta_p_affinity": -0.39,
+   "min_delta_p_affinity": -0.85,
+   "max_delta_p_affinity": 0.02,
+   "n_improved": 1,
+   "best_monomerid_from": 19011,
+   "best_monomerid_to": 19012
+  },
+  {
+   "transformation": "CC(C)[*:1] >> CCCC[*:1]",
+   "n_pairs": 4,
+   "median_delta_p_affinity": -0.4,
+   "min_delta_p_affinity": -0.95,
+   "max_delta_p_affinity": -0.15,
+   "n_improved": 0,
+   "best_monomerid_from": 50088947,
+   "best_monomerid_to": 50088939
+  },
+  {
+   "transformation": "CN(C)[*:1] >> OC1CCN([*:1])CC1",
+   "n_pairs": 4,
+   "median_delta_p_affinity": -0.45,
+   "min_delta_p_affinity": -0.74,
+   "max_delta_p_affinity": -0.08,
+   "n_improved": 0,
+   "best_monomerid_from": 19009,
+   "best_monomerid_to": 19012
+  },
+  {
+   "transformation": "COC(=O)[*:1] >> CN(C)C(=O)[*:1]",
+   "n_pairs": 4,
+   "median_delta_p_affinity": -0.59,
+   "min_delta_p_affinity": -1.24,
+   "max_delta_p_affinity": 0.18,
+   "n_improved": 1,
+   "best_monomerid_from": 50101880,
+   "best_monomerid_to": 50101883
+  },
+  {
+   "transformation": "O[C@@H]1CCN([*:1])C1 >> OC1CCN([*:1])CC1",
+   "n_pairs": 4,
+   "median_delta_p_affinity": -0.59,
+   "min_delta_p_affinity": -0.86,
+   "max_delta_p_affinity": -0.3,
+   "n_improved": 0,
+   "best_monomerid_from": 12870,
+   "best_monomerid_to": 12871
+  },
+  {
+   "transformation": "CN[*:1] >> NC(=O)[*:1]",
+   "n_pairs": 4,
+   "median_delta_p_affinity": -0.65,
+   "min_delta_p_affinity": -1.32,
+   "max_delta_p_affinity": 1.38,
+   "n_improved": 1,
+   "best_monomerid_from": 18998,
+   "best_monomerid_to": 18991
+  },
+  {
+   "transformation": "C1CCN([*:1])C1 >> C1CN(C[*:1])CCO1",
+   "n_pairs": 4,
+   "median_delta_p_affinity": -0.66,
+   "min_delta_p_affinity": -1.44,
+   "max_delta_p_affinity": 0.07,
+   "n_improved": 1,
+   "best_monomerid_from": 50046521,
+   "best_monomerid_to": 50046441
+  },
+  {
+   "transformation": "NC(=O)[*:1] >> CN(C)C[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 1.47,
+   "min_delta_p_affinity": -0.3,
+   "max_delta_p_affinity": 1.98,
+   "n_improved": 2,
+   "best_monomerid_from": 50243430,
+   "best_monomerid_to": 50243540
+  },
+  {
+   "transformation": "N[*:1] >> CN(C)C[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 1.35,
+   "min_delta_p_affinity": 0.3,
+   "max_delta_p_affinity": 1.46,
+   "n_improved": 3,
+   "best_monomerid_from": 50243538,
+   "best_monomerid_to": 50266214
+  },
+  {
+   "transformation": "CCS(=O)(=O)[*:1] >> c1nnnn1[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 1.19,
+   "min_delta_p_affinity": 0.82,
+   "max_delta_p_affinity": 1.21,
+   "n_improved": 3,
+   "best_monomerid_from": 50079233,
+   "best_monomerid_to": 50079253
+  },
+  {
+   "transformation": "N[*:1] >> O[C@@H]1CCN([*:1])C1",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 1.14,
+   "min_delta_p_affinity": 1.1,
+   "max_delta_p_affinity": 1.18,
+   "n_improved": 3,
+   "best_monomerid_from": 50243538,
+   "best_monomerid_to": 50243340
+  },
+  {
+   "transformation": "NC(=O)[*:1] >> C1CN([*:1])CCO1",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.96,
+   "min_delta_p_affinity": 0.44,
+   "max_delta_p_affinity": 0.99,
+   "n_improved": 3,
+   "best_monomerid_from": 50265946,
+   "best_monomerid_to": 50243628
+  },
+  {
+   "transformation": "N[*:1] >> CN(S(C)(=O)=O)[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.89,
+   "min_delta_p_affinity": -0.57,
+   "max_delta_p_affinity": 1.35,
+   "n_improved": 2,
+   "best_monomerid_from": 17089,
+   "best_monomerid_to": 17105
+  },
+  {
+   "transformation": "CCO[*:1] >> c1nnnn1[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.86,
+   "min_delta_p_affinity": 0.8,
+   "max_delta_p_affinity": 1.32,
+   "n_improved": 3,
+   "best_monomerid_from": 50079248,
+   "best_monomerid_to": 50079253
+  },
+  {
+   "transformation": "Cl[*:1] >> O=[N+]([O-])[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.72,
+   "min_delta_p_affinity": 0.7,
+   "max_delta_p_affinity": 0.85,
+   "n_improved": 3,
+   "best_monomerid_from": 12384,
+   "best_monomerid_to": 12389
+  },
+  {
+   "transformation": "CN1CCN=C1[*:1] >> O=C1COCCN1[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.69,
+   "min_delta_p_affinity": 0.3,
+   "max_delta_p_affinity": 1.2,
+   "n_improved": 3,
+   "best_monomerid_from": 50140416,
+   "best_monomerid_to": 50140371
+  },
+  {
+   "transformation": "Br[*:1] >> N#C[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.65,
+   "min_delta_p_affinity": -0.5,
+   "max_delta_p_affinity": 0.82,
+   "n_improved": 2,
+   "best_monomerid_from": 12392,
+   "best_monomerid_to": 12395
+  },
+  {
+   "transformation": "[H][*:1] >> NS(=O)(=O)[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.56,
+   "min_delta_p_affinity": 0.18,
+   "max_delta_p_affinity": 2.0,
+   "n_improved": 3,
+   "best_monomerid_from": 50096103,
+   "best_monomerid_to": 12751
+  },
+  {
+   "transformation": "CN(C)C(=N)[*:1] >> O=C1COCCN1[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.55,
+   "min_delta_p_affinity": 0.15,
+   "max_delta_p_affinity": 0.89,
+   "n_improved": 3,
+   "best_monomerid_from": 50140407,
+   "best_monomerid_to": 50140371
+  },
+  {
+   "transformation": "C1CN([*:1])CCO1 >> O[C@@H]1CCN([*:1])C1",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.54,
+   "min_delta_p_affinity": 0.2,
+   "max_delta_p_affinity": 1.06,
+   "n_improved": 3,
+   "best_monomerid_from": 12696,
+   "best_monomerid_to": 12693
+  },
+  {
+   "transformation": "C[*:1] >> O=[N+]([O-])[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.53,
+   "min_delta_p_affinity": 0.4,
+   "max_delta_p_affinity": 0.95,
+   "n_improved": 3,
+   "best_monomerid_from": 12378,
+   "best_monomerid_to": 12381
+  },
+  {
+   "transformation": "[H][*:1] >> c1cn([*:1])cn1",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.52,
+   "min_delta_p_affinity": -0.18,
+   "max_delta_p_affinity": 0.98,
+   "n_improved": 2,
+   "best_monomerid_from": 17237,
+   "best_monomerid_to": 17242
+  },
+  {
+   "transformation": "CN1CCN([*:1])CC1 >> OC1CCN([*:1])CC1",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.51,
+   "min_delta_p_affinity": -1.14,
+   "max_delta_p_affinity": 0.65,
+   "n_improved": 2,
+   "best_monomerid_from": 50142103,
+   "best_monomerid_to": 50142129
+  },
+  {
+   "transformation": "[H][*:1] >> CC(C)[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.5,
+   "min_delta_p_affinity": 0.35,
+   "max_delta_p_affinity": 2.05,
+   "n_improved": 3,
+   "best_monomerid_from": 50088960,
+   "best_monomerid_to": 50088963
+  },
+  {
+   "transformation": "NC(=O)[*:1] >> C1CN(C[*:1])CCO1",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.45,
+   "min_delta_p_affinity": 0.41,
+   "max_delta_p_affinity": 1.74,
+   "n_improved": 3,
+   "best_monomerid_from": 50243430,
+   "best_monomerid_to": 50243628
+  },
+  {
+   "transformation": "C1CN[C@H]([*:1])C1 >> C[C@@H](N(C)C)[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.4,
+   "min_delta_p_affinity": 0.0,
+   "max_delta_p_affinity": 0.8,
+   "n_improved": 2,
+   "best_monomerid_from": 50338679,
+   "best_monomerid_to": 50614408
+  },
+  {
+   "transformation": "CN[*:1] >> CN(S(C)(=O)=O)[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.39,
+   "min_delta_p_affinity": -1.26,
+   "max_delta_p_affinity": 0.67,
+   "n_improved": 2,
+   "best_monomerid_from": 17090,
+   "best_monomerid_to": 17105
+  },
+  {
+   "transformation": "CO[*:1] >> COC(=O)[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.37,
+   "min_delta_p_affinity": -0.06,
+   "max_delta_p_affinity": 0.48,
+   "n_improved": 2,
+   "best_monomerid_from": 50079249,
+   "best_monomerid_to": 50079211
+  },
+  {
+   "transformation": "N[*:1] >> CN1CCN([*:1])CC1",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.37,
+   "min_delta_p_affinity": -0.65,
+   "max_delta_p_affinity": 0.8,
+   "n_improved": 2,
+   "best_monomerid_from": 17089,
+   "best_monomerid_to": 17088
+  },
+  {
+   "transformation": "O[*:1] >> N#C[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.37,
+   "min_delta_p_affinity": 0.08,
+   "max_delta_p_affinity": 0.89,
+   "n_improved": 3,
+   "best_monomerid_from": 50046500,
+   "best_monomerid_to": 50046442
+  },
+  {
+   "transformation": "[H][*:1] >> O=C(O)CC[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.35,
+   "min_delta_p_affinity": 0.03,
+   "max_delta_p_affinity": 1.45,
+   "n_improved": 3,
+   "best_monomerid_from": 50101878,
+   "best_monomerid_to": 50101881
+  },
+  {
+   "transformation": "CC(=O)N(C)[*:1] >> O=C1CCCCN1[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.34,
+   "min_delta_p_affinity": -1.12,
+   "max_delta_p_affinity": 0.91,
+   "n_improved": 2,
+   "best_monomerid_from": 19022,
+   "best_monomerid_to": 19023
+  },
+  {
+   "transformation": "c1ccc([*:1])cc1 >> c1ccc([*:1])nc1",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.34,
+   "min_delta_p_affinity": 0.0,
+   "max_delta_p_affinity": 0.75,
+   "n_improved": 2,
+   "best_monomerid_from": 50085406,
+   "best_monomerid_to": 50114537
+  },
+  {
+   "transformation": "CC(C)N[*:1] >> O[C@@H]1CCN([*:1])C1",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.33,
+   "min_delta_p_affinity": 0.04,
+   "max_delta_p_affinity": 0.89,
+   "n_improved": 3,
+   "best_monomerid_from": 50242833,
+   "best_monomerid_to": 12743
+  },
+  {
+   "transformation": "N[*:1] >> NC(=O)N[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.3,
+   "min_delta_p_affinity": -0.4,
+   "max_delta_p_affinity": 0.33,
+   "n_improved": 2,
+   "best_monomerid_from": 12523,
+   "best_monomerid_to": 12526
+  },
+  {
+   "transformation": "CC(C)[*:1] >> FC(F)(F)C[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.28,
+   "min_delta_p_affinity": -0.23,
+   "max_delta_p_affinity": 0.28,
+   "n_improved": 2,
+   "best_monomerid_from": 50324744,
+   "best_monomerid_to": 50324771
+  },
+  {
+   "transformation": "[H][*:1] >> C1CCN([*:1])C1",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.28,
+   "min_delta_p_affinity": -0.26,
+   "max_delta_p_affinity": 1.06,
+   "n_improved": 2,
+   "best_monomerid_from": 17093,
+   "best_monomerid_to": 17104
+  },
+  {
+   "transformation": "[H][*:1] >> CN1CCN(C[*:1])CC1",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.26,
+   "min_delta_p_affinity": -1.54,
+   "max_delta_p_affinity": 0.3,
+   "n_improved": 2,
+   "best_monomerid_from": 17238,
+   "best_monomerid_to": 17244
+  },
+  {
+   "transformation": "CC[*:1] >> CO[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.25,
+   "min_delta_p_affinity": -0.73,
+   "max_delta_p_affinity": 0.93,
+   "n_improved": 2,
+   "best_monomerid_from": 12739,
+   "best_monomerid_to": 12740
+  },
+  {
+   "transformation": "[H][*:1] >> NC(=O)C[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.23,
+   "min_delta_p_affinity": -0.57,
+   "max_delta_p_affinity": 0.3,
+   "n_improved": 2,
+   "best_monomerid_from": 12504,
+   "best_monomerid_to": 12524
+  },
+  {
+   "transformation": "C1CN[C@@H]([*:1])C1 >> C[C@@H](N(C)C)[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.18,
+   "min_delta_p_affinity": 0.0,
+   "max_delta_p_affinity": 0.58,
+   "n_improved": 2,
+   "best_monomerid_from": 50338680,
+   "best_monomerid_to": 50614408
+  },
+  {
+   "transformation": "F[*:1] >> N#C[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.18,
+   "min_delta_p_affinity": 0.13,
+   "max_delta_p_affinity": 0.82,
+   "n_improved": 3,
+   "best_monomerid_from": 12390,
+   "best_monomerid_to": 12395
+  },
+  {
+   "transformation": "N[*:1] >> O=[N+]([O-])[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.18,
+   "min_delta_p_affinity": -1.0,
+   "max_delta_p_affinity": 1.9,
+   "n_improved": 2,
+   "best_monomerid_from": 50112530,
+   "best_monomerid_to": 50112524
+  },
+  {
+   "transformation": "CO[*:1] >> CCS(=O)(=O)[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.17,
+   "min_delta_p_affinity": -0.01,
+   "max_delta_p_affinity": 0.28,
+   "n_improved": 2,
+   "best_monomerid_from": 50079245,
+   "best_monomerid_to": 50079233
+  },
+  {
+   "transformation": "c1cn([*:1])cn1 >> c1nnnn1[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.17,
+   "min_delta_p_affinity": 0.05,
+   "max_delta_p_affinity": 0.27,
+   "n_improved": 3,
+   "best_monomerid_from": 12768,
+   "best_monomerid_to": 12771
+  },
+  {
+   "transformation": "CN(C)[*:1] >> C1CCN([*:1])CC1",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.14,
+   "min_delta_p_affinity": 0.0,
+   "max_delta_p_affinity": 0.46,
+   "n_improved": 2,
+   "best_monomerid_from": 19018,
+   "best_monomerid_to": 19019
+  },
+  {
+   "transformation": "O=C(O)[*:1] >> O=C(O)C[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.12,
+   "min_delta_p_affinity": -0.15,
+   "max_delta_p_affinity": 0.78,
+   "n_improved": 2,
+   "best_monomerid_from": 50101879,
+   "best_monomerid_to": 50101871
+  },
+  {
+   "transformation": "C1CCN([*:1])C1 >> O[C@H]1CCN([*:1])C1",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.1,
+   "min_delta_p_affinity": -0.72,
+   "max_delta_p_affinity": 0.41,
+   "n_improved": 2,
+   "best_monomerid_from": 12856,
+   "best_monomerid_to": 12857
+  },
+  {
+   "transformation": "C[*:1] >> NC(=O)[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.09,
+   "min_delta_p_affinity": -0.64,
+   "max_delta_p_affinity": 1.51,
+   "n_improved": 2,
+   "best_monomerid_from": 50307101,
+   "best_monomerid_to": 50307102
+  },
+  {
+   "transformation": "[H][*:1] >> CS(=O)(=O)N[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.07,
+   "min_delta_p_affinity": -0.22,
+   "max_delta_p_affinity": 1.04,
+   "n_improved": 2,
+   "best_monomerid_from": 12505,
+   "best_monomerid_to": 12528
+  },
+  {
+   "transformation": "C1CN([*:1])CCN1 >> CN1CCN([*:1])CC1",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.05,
+   "min_delta_p_affinity": -0.04,
+   "max_delta_p_affinity": 0.13,
+   "n_improved": 2,
+   "best_monomerid_from": 12849,
+   "best_monomerid_to": 12848
+  },
+  {
+   "transformation": "OC[*:1] >> FC(F)[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.04,
+   "min_delta_p_affinity": -0.29,
+   "max_delta_p_affinity": 0.38,
+   "n_improved": 2,
+   "best_monomerid_from": 50324750,
+   "best_monomerid_to": 50324752
+  },
+  {
+   "transformation": "OC[*:1] >> COC(=O)[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.03,
+   "min_delta_p_affinity": -0.78,
+   "max_delta_p_affinity": 0.2,
+   "n_improved": 2,
+   "best_monomerid_from": 50243379,
+   "best_monomerid_to": 50243377
+  },
+  {
+   "transformation": "CN[*:1] >> CN(CCO)[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.0,
+   "min_delta_p_affinity": -0.06,
+   "max_delta_p_affinity": 0.12,
+   "n_improved": 1,
+   "best_monomerid_from": 50266111,
+   "best_monomerid_to": 50266113
+  },
+  {
+   "transformation": "CN[*:1] >> CS(=O)(=O)C[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.0,
+   "min_delta_p_affinity": -0.31,
+   "max_delta_p_affinity": 0.03,
+   "n_improved": 1,
+   "best_monomerid_from": 50266321,
+   "best_monomerid_to": 50265945
+  },
+  {
+   "transformation": "NC[*:1] >> CN(C)[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.0,
+   "min_delta_p_affinity": -0.12,
+   "max_delta_p_affinity": 0.81,
+   "n_improved": 1,
+   "best_monomerid_from": 50243538,
+   "best_monomerid_to": 50266112
+  },
+  {
+   "transformation": "O[*:1] >> NC(=O)N[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": 0.0,
+   "min_delta_p_affinity": 0.0,
+   "max_delta_p_affinity": 0.48,
+   "n_improved": 1,
+   "best_monomerid_from": 12519,
+   "best_monomerid_to": 12525
+  },
+  {
+   "transformation": "CCO[*:1] >> CCS(=O)(=O)[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": -0.02,
+   "min_delta_p_affinity": -0.33,
+   "max_delta_p_affinity": 0.11,
+   "n_improved": 1,
+   "best_monomerid_from": 50079248,
+   "best_monomerid_to": 50079233
+  },
+  {
+   "transformation": "CCO[*:1] >> COC(=O)[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": -0.02,
+   "min_delta_p_affinity": -0.07,
+   "max_delta_p_affinity": 0.2,
+   "n_improved": 1,
+   "best_monomerid_from": 50079248,
+   "best_monomerid_to": 50079222
+  },
+  {
+   "transformation": "c1ncn([*:1])n1 >> c1nnnn1[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": -0.03,
+   "min_delta_p_affinity": -0.53,
+   "max_delta_p_affinity": 0.51,
+   "n_improved": 1,
+   "best_monomerid_from": 50079246,
+   "best_monomerid_to": 50079236
+  },
+  {
+   "transformation": "[H][*:1] >> c1ccc(C[*:1])cc1",
+   "n_pairs": 3,
+   "median_delta_p_affinity": -0.07,
+   "min_delta_p_affinity": -0.62,
+   "max_delta_p_affinity": 0.52,
+   "n_improved": 1,
+   "best_monomerid_from": 12775,
+   "best_monomerid_to": 12776
+  },
+  {
+   "transformation": "c1cn([*:1])nn1 >> c1nnnn1[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": -0.08,
+   "min_delta_p_affinity": -0.1,
+   "max_delta_p_affinity": -0.08,
+   "n_improved": 0,
+   "best_monomerid_from": 12770,
+   "best_monomerid_to": 12771
+  },
+  {
+   "transformation": "COC(=O)[*:1] >> CCS(=O)(=O)[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": -0.09,
+   "min_delta_p_affinity": -0.31,
+   "max_delta_p_affinity": 0.05,
+   "n_improved": 1,
+   "best_monomerid_from": 50072445,
+   "best_monomerid_to": 50079242
+  },
+  {
+   "transformation": "c1ncn([*:1])n1 >> c1nnn([*:1])n1",
+   "n_pairs": 3,
+   "median_delta_p_affinity": -0.1,
+   "min_delta_p_affinity": -0.64,
+   "max_delta_p_affinity": 0.03,
+   "n_improved": 1,
+   "best_monomerid_from": 50079246,
+   "best_monomerid_to": 50079235
+  },
+  {
+   "transformation": "C[*:1] >> O=C(O)[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": -0.12,
+   "min_delta_p_affinity": -0.75,
+   "max_delta_p_affinity": 0.7,
+   "n_improved": 1,
+   "best_monomerid_from": 50101878,
+   "best_monomerid_to": 50101870
+  },
+  {
+   "transformation": "OC[*:1] >> NC(=O)[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": -0.14,
+   "min_delta_p_affinity": -0.42,
+   "max_delta_p_affinity": -0.07,
+   "n_improved": 0,
+   "best_monomerid_from": 50266113,
+   "best_monomerid_to": 50266114
+  },
+  {
+   "transformation": "CC(=O)N(C)[*:1] >> CN(S(C)(=O)=O)[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": -0.16,
+   "min_delta_p_affinity": -0.28,
+   "max_delta_p_affinity": -0.13,
+   "n_improved": 0,
+   "best_monomerid_from": 50243669,
+   "best_monomerid_to": 50243670
+  },
+  {
+   "transformation": "CC(C)N[*:1] >> C1CN([*:1])CCO1",
+   "n_pairs": 3,
+   "median_delta_p_affinity": -0.16,
+   "min_delta_p_affinity": -0.21,
+   "max_delta_p_affinity": 0.0,
+   "n_improved": 0,
+   "best_monomerid_from": 17092,
+   "best_monomerid_to": 17095
+  },
+  {
+   "transformation": "c1cc([*:1])ccn1 >> c1cncc([*:1])c1",
+   "n_pairs": 3,
+   "median_delta_p_affinity": -0.17,
+   "min_delta_p_affinity": -1.2,
+   "max_delta_p_affinity": 0.15,
+   "n_improved": 1,
+   "best_monomerid_from": 50228945,
+   "best_monomerid_to": 50228951
+  },
+  {
+   "transformation": "C1CN([*:1])CCO1 >> OC1CCN([*:1])CC1",
+   "n_pairs": 3,
+   "median_delta_p_affinity": -0.19,
+   "min_delta_p_affinity": -0.37,
+   "max_delta_p_affinity": 0.2,
+   "n_improved": 1,
+   "best_monomerid_from": 12696,
+   "best_monomerid_to": 12695
+  },
+  {
+   "transformation": "F[*:1] >> CO[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": -0.2,
+   "min_delta_p_affinity": -0.6,
+   "max_delta_p_affinity": 0.3,
+   "n_improved": 1,
+   "best_monomerid_from": 50176255,
+   "best_monomerid_to": 50176250
+  },
+  {
+   "transformation": "c1ccc([*:1])cc1 >> c1cncc([*:1])c1",
+   "n_pairs": 3,
+   "median_delta_p_affinity": -0.2,
+   "min_delta_p_affinity": -0.25,
+   "max_delta_p_affinity": 0.43,
+   "n_improved": 1,
+   "best_monomerid_from": 12514,
+   "best_monomerid_to": 12516
+  },
+  {
+   "transformation": "C1CCN([*:1])CC1 >> C1CN([*:1])CCO1",
+   "n_pairs": 3,
+   "median_delta_p_affinity": -0.3,
+   "min_delta_p_affinity": -0.56,
+   "max_delta_p_affinity": 0.0,
+   "n_improved": 0,
+   "best_monomerid_from": 12543,
+   "best_monomerid_to": 12544
+  },
+  {
+   "transformation": "CN[*:1] >> C1CN(CC[*:1])CCO1",
+   "n_pairs": 3,
+   "median_delta_p_affinity": -0.3,
+   "min_delta_p_affinity": -0.38,
+   "max_delta_p_affinity": -0.12,
+   "n_improved": 0,
+   "best_monomerid_from": 50266111,
+   "best_monomerid_to": 50266216
+  },
+  {
+   "transformation": "CC[*:1] >> O=C(O)[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": -0.32,
+   "min_delta_p_affinity": -0.75,
+   "max_delta_p_affinity": 0.33,
+   "n_improved": 1,
+   "best_monomerid_from": 50211560,
+   "best_monomerid_to": 50211580
+  },
+  {
+   "transformation": "CN[*:1] >> CN1CCN([*:1])CC1",
+   "n_pairs": 3,
+   "median_delta_p_affinity": -0.32,
+   "min_delta_p_affinity": -0.5,
+   "max_delta_p_affinity": 0.12,
+   "n_improved": 1,
+   "best_monomerid_from": 17090,
+   "best_monomerid_to": 17088
+  },
+  {
+   "transformation": "CC(C)[*:1] >> C1CCC([*:1])C1",
+   "n_pairs": 3,
+   "median_delta_p_affinity": -0.34,
+   "min_delta_p_affinity": -0.46,
+   "max_delta_p_affinity": 0.05,
+   "n_improved": 1,
+   "best_monomerid_from": 12835,
+   "best_monomerid_to": 12837
+  },
+  {
+   "transformation": "C[*:1] >> c1ccc([*:1])cc1",
+   "n_pairs": 3,
+   "median_delta_p_affinity": -0.34,
+   "min_delta_p_affinity": -0.58,
+   "max_delta_p_affinity": -0.05,
+   "n_improved": 0,
+   "best_monomerid_from": 50125242,
+   "best_monomerid_to": 50125245
+  },
+  {
+   "transformation": "N[*:1] >> FC(F)(F)[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": -0.38,
+   "min_delta_p_affinity": -0.45,
+   "max_delta_p_affinity": 1.57,
+   "n_improved": 1,
+   "best_monomerid_from": 18996,
+   "best_monomerid_to": 12743
+  },
+  {
+   "transformation": "CN(C)[*:1] >> O[C@H]1CCN([*:1])C1",
+   "n_pairs": 3,
+   "median_delta_p_affinity": -0.4,
+   "min_delta_p_affinity": -0.48,
+   "max_delta_p_affinity": 0.02,
+   "n_improved": 1,
+   "best_monomerid_from": 12855,
+   "best_monomerid_to": 12857
+  },
+  {
+   "transformation": "O=C(O)[*:1] >> n1n[nH]c([*:1])n1",
+   "n_pairs": 3,
+   "median_delta_p_affinity": -0.4,
+   "min_delta_p_affinity": -0.82,
+   "max_delta_p_affinity": 1.08,
+   "n_improved": 1,
+   "best_monomerid_from": 18990,
+   "best_monomerid_to": 19001
+  },
+  {
+   "transformation": "Clc1ccc([*:1])s1 >> Clc1ccc([*:1])cc1",
+   "n_pairs": 3,
+   "median_delta_p_affinity": -0.44,
+   "min_delta_p_affinity": -0.64,
+   "max_delta_p_affinity": 0.7,
+   "n_improved": 1,
+   "best_monomerid_from": 15865,
+   "best_monomerid_to": 12400
+  },
+  {
+   "transformation": "CN(C)[*:1] >> C1CC1CN[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": -0.47,
+   "min_delta_p_affinity": -0.51,
+   "max_delta_p_affinity": -0.08,
+   "n_improved": 0,
+   "best_monomerid_from": 12688,
+   "best_monomerid_to": 12834
+  },
+  {
+   "transformation": "CCN(CC)[*:1] >> C1CN([*:1])CCO1",
+   "n_pairs": 3,
+   "median_delta_p_affinity": -0.5,
+   "min_delta_p_affinity": -0.64,
+   "max_delta_p_affinity": -0.35,
+   "n_improved": 0,
+   "best_monomerid_from": 19042,
+   "best_monomerid_to": 19039
+  },
+  {
+   "transformation": "CN(C)[*:1] >> CN(S(C)(=O)=O)[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": -0.5,
+   "min_delta_p_affinity": -1.51,
+   "max_delta_p_affinity": -0.33,
+   "n_improved": 0,
+   "best_monomerid_from": 50243540,
+   "best_monomerid_to": 50243670
+  },
+  {
+   "transformation": "c1cn([*:1])cn1 >> C1CN([*:1])CCO1",
+   "n_pairs": 3,
+   "median_delta_p_affinity": -0.51,
+   "min_delta_p_affinity": -1.81,
+   "max_delta_p_affinity": 0.08,
+   "n_improved": 1,
+   "best_monomerid_from": 12850,
+   "best_monomerid_to": 12847
+  },
+  {
+   "transformation": "FC(F)(F)[*:1] >> c1nnnn1C[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": -0.52,
+   "min_delta_p_affinity": -0.67,
+   "max_delta_p_affinity": 1.64,
+   "n_improved": 1,
+   "best_monomerid_from": 50079237,
+   "best_monomerid_to": 50079236
+  },
+  {
+   "transformation": "C1CN([*:1])CCO1 >> C1CN(C[*:1])CCO1",
+   "n_pairs": 3,
+   "median_delta_p_affinity": -0.55,
+   "min_delta_p_affinity": -0.92,
+   "max_delta_p_affinity": -0.54,
+   "n_improved": 0,
+   "best_monomerid_from": 50243628,
+   "best_monomerid_to": 50266216
+  },
+  {
+   "transformation": "CN(C)[*:1] >> C1CN(CC[*:1])CCO1",
+   "n_pairs": 3,
+   "median_delta_p_affinity": -0.55,
+   "min_delta_p_affinity": -0.97,
+   "max_delta_p_affinity": -0.37,
+   "n_improved": 0,
+   "best_monomerid_from": 50266112,
+   "best_monomerid_to": 50266216
+  },
+  {
+   "transformation": "CCN(CC)[*:1] >> OC1CCN([*:1])CC1",
+   "n_pairs": 3,
+   "median_delta_p_affinity": -0.56,
+   "min_delta_p_affinity": -0.83,
+   "max_delta_p_affinity": -0.3,
+   "n_improved": 0,
+   "best_monomerid_from": 12689,
+   "best_monomerid_to": 12695
+  },
+  {
+   "transformation": "CN(C)[*:1] >> CS(=O)(=O)C[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": -0.56,
+   "min_delta_p_affinity": -0.56,
+   "max_delta_p_affinity": -0.25,
+   "n_improved": 0,
+   "best_monomerid_from": 50265826,
+   "best_monomerid_to": 50265916
+  },
+  {
+   "transformation": "c1cc([*:1])ccn1 >> c1ccc([*:1])cc1",
+   "n_pairs": 3,
+   "median_delta_p_affinity": -0.6,
+   "min_delta_p_affinity": -1.0,
+   "max_delta_p_affinity": -0.09,
+   "n_improved": 0,
+   "best_monomerid_from": 50097772,
+   "best_monomerid_to": 50097759
+  },
+  {
+   "transformation": "C1CCN([*:1])C1 >> CN1CCN([*:1])CC1",
+   "n_pairs": 3,
+   "median_delta_p_affinity": -0.67,
+   "min_delta_p_affinity": -0.93,
+   "max_delta_p_affinity": 0.52,
+   "n_improved": 1,
+   "best_monomerid_from": 17096,
+   "best_monomerid_to": 17088
+  },
+  {
+   "transformation": "NC(=O)[*:1] >> CCOC(=O)[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": -0.69,
+   "min_delta_p_affinity": -1.74,
+   "max_delta_p_affinity": -0.54,
+   "n_improved": 0,
+   "best_monomerid_from": 12719,
+   "best_monomerid_to": 12716
+  },
+  {
+   "transformation": "N#C[*:1] >> CN(C)C(=O)[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": -0.71,
+   "min_delta_p_affinity": -0.81,
+   "max_delta_p_affinity": -0.5,
+   "n_improved": 0,
+   "best_monomerid_from": 50243378,
+   "best_monomerid_to": 50243431
+  },
+  {
+   "transformation": "O=C1CCCCN1[*:1] >> O=C1CCCCCN1[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": -0.8,
+   "min_delta_p_affinity": -0.82,
+   "max_delta_p_affinity": -0.31,
+   "n_improved": 0,
+   "best_monomerid_from": 19020,
+   "best_monomerid_to": 19021
+  },
+  {
+   "transformation": "C[C@@H](N(C)C)[*:1] >> CN1CCCC1[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": -0.88,
+   "min_delta_p_affinity": -1.28,
+   "max_delta_p_affinity": -0.48,
+   "n_improved": 0,
+   "best_monomerid_from": 50306144,
+   "best_monomerid_to": 50338683
+  },
+  {
+   "transformation": "COC[*:1] >> FC(F)(F)[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": -0.93,
+   "min_delta_p_affinity": -1.18,
+   "max_delta_p_affinity": -0.83,
+   "n_improved": 0,
+   "best_monomerid_from": 50079252,
+   "best_monomerid_to": 50079237
+  },
+  {
+   "transformation": "CN[*:1] >> CC(=O)N(C)[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": -0.98,
+   "min_delta_p_affinity": -1.36,
+   "max_delta_p_affinity": 0.52,
+   "n_improved": 1,
+   "best_monomerid_from": 50243539,
+   "best_monomerid_to": 50243669
+  },
+  {
+   "transformation": "CN(C)[*:1] >> C1CN([*:1])CCN1",
+   "n_pairs": 3,
+   "median_delta_p_affinity": -1.0,
+   "min_delta_p_affinity": -1.21,
+   "max_delta_p_affinity": -0.74,
+   "n_improved": 0,
+   "best_monomerid_from": 12688,
+   "best_monomerid_to": 12849
+  },
+  {
+   "transformation": "CN(C)[*:1] >> O=C1CCCCN1[*:1]",
+   "n_pairs": 3,
+   "median_delta_p_affinity": -1.33,
+   "min_delta_p_affinity": -2.35,
+   "max_delta_p_affinity": 1.42,
+   "n_improved": 1,
+   "best_monomerid_from": 19018,
+   "best_monomerid_to": 19020
+  },
+  {
+   "transformation": "O[*:1] >> C1CCN(C[*:1])C1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 2.17,
+   "min_delta_p_affinity": 2.08,
+   "max_delta_p_affinity": 2.27,
+   "n_improved": 2,
+   "best_monomerid_from": 50046500,
+   "best_monomerid_to": 50046440
+  },
+  {
+   "transformation": "NC(=O)[*:1] >> C1CCN(C[*:1])C1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 1.85,
+   "min_delta_p_affinity": 1.47,
+   "max_delta_p_affinity": 2.22,
+   "n_improved": 2,
+   "best_monomerid_from": 50243430,
+   "best_monomerid_to": 50243592
+  },
+  {
+   "transformation": "N[*:1] >> Cc1nccn1[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 1.68,
+   "min_delta_p_affinity": 1.36,
+   "max_delta_p_affinity": 2.0,
+   "n_improved": 2,
+   "best_monomerid_from": 17089,
+   "best_monomerid_to": 17133
+  },
+  {
+   "transformation": "N#C[*:1] >> C1CCN(C[*:1])C1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 1.67,
+   "min_delta_p_affinity": 1.38,
+   "max_delta_p_affinity": 1.96,
+   "n_improved": 2,
+   "best_monomerid_from": 50243378,
+   "best_monomerid_to": 50243592
+  },
+  {
+   "transformation": "O[*:1] >> C1CN(C[*:1])CCO1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 1.62,
+   "min_delta_p_affinity": 1.06,
+   "max_delta_p_affinity": 2.19,
+   "n_improved": 2,
+   "best_monomerid_from": 50046500,
+   "best_monomerid_to": 50046441
+  },
+  {
+   "transformation": "N[*:1] >> C1CCN(C[*:1])C1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 1.52,
+   "min_delta_p_affinity": 1.46,
+   "max_delta_p_affinity": 1.59,
+   "n_improved": 2,
+   "best_monomerid_from": 50266083,
+   "best_monomerid_to": 50243592
+  },
+  {
+   "transformation": "C1COC([*:1])=N1 >> C1CCN(C[*:1])C1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 1.5,
+   "min_delta_p_affinity": 0.9,
+   "max_delta_p_affinity": 2.1,
+   "n_improved": 2,
+   "best_monomerid_from": 50266282,
+   "best_monomerid_to": 50243592
+  },
+  {
+   "transformation": "N#C[*:1] >> CN(C)C[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 1.48,
+   "min_delta_p_affinity": 1.23,
+   "max_delta_p_affinity": 1.72,
+   "n_improved": 2,
+   "best_monomerid_from": 50243378,
+   "best_monomerid_to": 50243540
+  },
+  {
+   "transformation": "C1CN([*:1])CCO1 >> CN(C)CCCN(C)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 1.39,
+   "min_delta_p_affinity": 1.01,
+   "max_delta_p_affinity": 1.77,
+   "n_improved": 2,
+   "best_monomerid_from": 17095,
+   "best_monomerid_to": 17103
+  },
+  {
+   "transformation": "C1COC([*:1])=N1 >> C1CN(C[*:1])CCO1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 1.39,
+   "min_delta_p_affinity": 1.15,
+   "max_delta_p_affinity": 1.62,
+   "n_improved": 2,
+   "best_monomerid_from": 50266282,
+   "best_monomerid_to": 50243628
+  },
+  {
+   "transformation": "N#C[*:1] >> C1CN(C[*:1])CCO1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 1.39,
+   "min_delta_p_affinity": 1.3,
+   "max_delta_p_affinity": 1.48,
+   "n_improved": 2,
+   "best_monomerid_from": 50243378,
+   "best_monomerid_to": 50243628
+  },
+  {
+   "transformation": "CC(C)N[*:1] >> Cc1nccn1[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 1.19,
+   "min_delta_p_affinity": 0.22,
+   "max_delta_p_affinity": 2.15,
+   "n_improved": 2,
+   "best_monomerid_from": 17092,
+   "best_monomerid_to": 17133
+  },
+  {
+   "transformation": "CC(=O)N(C)[*:1] >> CN(C)CC1([*:1])CC1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 1.17,
+   "min_delta_p_affinity": 1.16,
+   "max_delta_p_affinity": 1.19,
+   "n_improved": 2,
+   "best_monomerid_from": 19022,
+   "best_monomerid_to": 50266010
+  },
+  {
+   "transformation": "CC(=O)N(C)[*:1] >> C1CCN(C[*:1])C1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 1.16,
+   "min_delta_p_affinity": 0.44,
+   "max_delta_p_affinity": 1.88,
+   "n_improved": 2,
+   "best_monomerid_from": 50266142,
+   "best_monomerid_to": 50243592
+  },
+  {
+   "transformation": "N[*:1] >> CCNC(=O)N(C)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 1.16,
+   "min_delta_p_affinity": 0.61,
+   "max_delta_p_affinity": 1.7,
+   "n_improved": 2,
+   "best_monomerid_from": 17089,
+   "best_monomerid_to": 17107
+  },
+  {
+   "transformation": "[H][*:1] >> CC(C)(C)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 1.15,
+   "min_delta_p_affinity": 0.5,
+   "max_delta_p_affinity": 1.8,
+   "n_improved": 2,
+   "best_monomerid_from": 50088960,
+   "best_monomerid_to": 50088944
+  },
+  {
+   "transformation": "O[*:1] >> NC[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 1.14,
+   "min_delta_p_affinity": 0.48,
+   "max_delta_p_affinity": 1.79,
+   "n_improved": 2,
+   "best_monomerid_from": 50046500,
+   "best_monomerid_to": 50046445
+  },
+  {
+   "transformation": "C1COC([*:1])=N1 >> CN(CCO)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 1.11,
+   "min_delta_p_affinity": 0.9,
+   "max_delta_p_affinity": 1.32,
+   "n_improved": 2,
+   "best_monomerid_from": 50266282,
+   "best_monomerid_to": 50266113
+  },
+  {
+   "transformation": "C1CN([*:1])CCN1 >> O[C@@H]1CCN([*:1])C1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 1.09,
+   "min_delta_p_affinity": 0.86,
+   "max_delta_p_affinity": 1.33,
+   "n_improved": 2,
+   "best_monomerid_from": 12697,
+   "best_monomerid_to": 12693
+  },
+  {
+   "transformation": "CN[*:1] >> Cc1nccn1[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 1.09,
+   "min_delta_p_affinity": 0.86,
+   "max_delta_p_affinity": 1.32,
+   "n_improved": 2,
+   "best_monomerid_from": 17090,
+   "best_monomerid_to": 17133
+  },
+  {
+   "transformation": "NC(=O)[*:1] >> C1CCN([*:1])C1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 1.09,
+   "min_delta_p_affinity": 0.71,
+   "max_delta_p_affinity": 1.47,
+   "n_improved": 2,
+   "best_monomerid_from": 50265946,
+   "best_monomerid_to": 50243592
+  },
+  {
+   "transformation": "CCS[*:1] >> c1nnnn1[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 1.08,
+   "min_delta_p_affinity": 0.87,
+   "max_delta_p_affinity": 1.3,
+   "n_improved": 2,
+   "best_monomerid_from": 50079258,
+   "best_monomerid_to": 50079240
+  },
+  {
+   "transformation": "O[*:1] >> CS(=O)(=O)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 1.08,
+   "min_delta_p_affinity": 0.87,
+   "max_delta_p_affinity": 1.29,
+   "n_improved": 2,
+   "best_monomerid_from": 50046500,
+   "best_monomerid_to": 50046522
+  },
+  {
+   "transformation": "N[*:1] >> c1cn([*:1])cn1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 1.07,
+   "min_delta_p_affinity": 0.48,
+   "max_delta_p_affinity": 1.66,
+   "n_improved": 2,
+   "best_monomerid_from": 17089,
+   "best_monomerid_to": 17132
+  },
+  {
+   "transformation": "CC(=O)[*:1] >> CN(C)C[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 1.06,
+   "min_delta_p_affinity": 0.66,
+   "max_delta_p_affinity": 1.46,
+   "n_improved": 2,
+   "best_monomerid_from": 50265913,
+   "best_monomerid_to": 50243540
+  },
+  {
+   "transformation": "CC(=O)[*:1] >> C1CCN(C[*:1])C1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 1.05,
+   "min_delta_p_affinity": 0.41,
+   "max_delta_p_affinity": 1.7,
+   "n_improved": 2,
+   "best_monomerid_from": 50265913,
+   "best_monomerid_to": 50243592
+  },
+  {
+   "transformation": "O=C(O)CN[*:1] >> O=C(O)CS(=O)(=O)N[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 1.04,
+   "min_delta_p_affinity": 1.0,
+   "max_delta_p_affinity": 1.07,
+   "n_improved": 2,
+   "best_monomerid_from": 50211556,
+   "best_monomerid_to": 50211585
+  },
+  {
+   "transformation": "NC(=O)[*:1] >> Cc1nccn1[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 1.03,
+   "min_delta_p_affinity": 0.69,
+   "max_delta_p_affinity": 1.37,
+   "n_improved": 2,
+   "best_monomerid_from": 50265946,
+   "best_monomerid_to": 50243668
+  },
+  {
+   "transformation": "CO[*:1] >> Cc1nccn1[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 1.02,
+   "min_delta_p_affinity": 0.25,
+   "max_delta_p_affinity": 1.8,
+   "n_improved": 2,
+   "best_monomerid_from": 50243429,
+   "best_monomerid_to": 50243668
+  },
+  {
+   "transformation": "O=C1CCCN1[*:1] >> C1CN(C[*:1])CCO1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.99,
+   "min_delta_p_affinity": -0.11,
+   "max_delta_p_affinity": 2.1,
+   "n_improved": 1,
+   "best_monomerid_from": 50266177,
+   "best_monomerid_to": 50243628
+  },
+  {
+   "transformation": "CC(=O)N(C)[*:1] >> CN(C)C1([*:1])CC1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.97,
+   "min_delta_p_affinity": 0.75,
+   "max_delta_p_affinity": 1.19,
+   "n_improved": 2,
+   "best_monomerid_from": 19022,
+   "best_monomerid_to": 50265826
+  },
+  {
+   "transformation": "OC[*:1] >> C1CCN([*:1])C1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.97,
+   "min_delta_p_affinity": 0.97,
+   "max_delta_p_affinity": 0.98,
+   "n_improved": 2,
+   "best_monomerid_from": 17099,
+   "best_monomerid_to": 17104
+  },
+  {
+   "transformation": "OC[*:1] >> CN(C)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.97,
+   "min_delta_p_affinity": 0.52,
+   "max_delta_p_affinity": 1.43,
+   "n_improved": 2,
+   "best_monomerid_from": 50243379,
+   "best_monomerid_to": 50266112
+  },
+  {
+   "transformation": "Oc1ccc([*:1])cc1 >> [O-][n+]1ccccc1[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.97,
+   "min_delta_p_affinity": 0.95,
+   "max_delta_p_affinity": 1.0,
+   "n_improved": 2,
+   "best_monomerid_from": 50211559,
+   "best_monomerid_to": 50211566
+  },
+  {
+   "transformation": "O[*:1] >> CN[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.95,
+   "min_delta_p_affinity": 0.77,
+   "max_delta_p_affinity": 1.12,
+   "n_improved": 2,
+   "best_monomerid_from": 50243379,
+   "best_monomerid_to": 50243539
+  },
+  {
+   "transformation": "[H][*:1] >> CS(=O)(=O)NC[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.95,
+   "min_delta_p_affinity": 0.56,
+   "max_delta_p_affinity": 1.34,
+   "n_improved": 2,
+   "best_monomerid_from": 12504,
+   "best_monomerid_to": 12528
+  },
+  {
+   "transformation": "CC(=O)[*:1] >> C1CN(C[*:1])CCO1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.94,
+   "min_delta_p_affinity": 0.66,
+   "max_delta_p_affinity": 1.22,
+   "n_improved": 2,
+   "best_monomerid_from": 50265913,
+   "best_monomerid_to": 50243628
+  },
+  {
+   "transformation": "C1COC([*:1])=N1 >> CS(=O)(=O)C[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.9,
+   "min_delta_p_affinity": 0.89,
+   "max_delta_p_affinity": 0.9,
+   "n_improved": 2,
+   "best_monomerid_from": 50265864,
+   "best_monomerid_to": 50265916
+  },
+  {
+   "transformation": "OCC(O)[*:1] >> C1CCN(C[*:1])C1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.9,
+   "min_delta_p_affinity": 0.67,
+   "max_delta_p_affinity": 1.13,
+   "n_improved": 2,
+   "best_monomerid_from": 17102,
+   "best_monomerid_to": 17104
+  },
+  {
+   "transformation": "c1c[nH]c([*:1])n1 >> C1CCN(CC[*:1])C1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.88,
+   "min_delta_p_affinity": 0.02,
+   "max_delta_p_affinity": 1.74,
+   "n_improved": 2,
+   "best_monomerid_from": 50266318,
+   "best_monomerid_to": 50266215
+  },
+  {
+   "transformation": "F[*:1] >> FC(F)(F)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.86,
+   "min_delta_p_affinity": 0.67,
+   "max_delta_p_affinity": 1.06,
+   "n_improved": 2,
+   "best_monomerid_from": 50096088,
+   "best_monomerid_to": 50096094
+  },
+  {
+   "transformation": "CC(=O)[*:1] >> CN(C)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.85,
+   "min_delta_p_affinity": 0.66,
+   "max_delta_p_affinity": 1.05,
+   "n_improved": 2,
+   "best_monomerid_from": 50265913,
+   "best_monomerid_to": 50266112
+  },
+  {
+   "transformation": "C1COC([*:1])=N1 >> C1CN(CC[*:1])CCO1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.84,
+   "min_delta_p_affinity": 0.6,
+   "max_delta_p_affinity": 1.08,
+   "n_improved": 2,
+   "best_monomerid_from": 50266282,
+   "best_monomerid_to": 50266216
+  },
+  {
+   "transformation": "N[*:1] >> CS(=O)(=O)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.84,
+   "min_delta_p_affinity": 0.25,
+   "max_delta_p_affinity": 1.43,
+   "n_improved": 2,
+   "best_monomerid_from": 18996,
+   "best_monomerid_to": 18988
+  },
+  {
+   "transformation": "[H][*:1] >> CCC(C)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.83,
+   "min_delta_p_affinity": 0.28,
+   "max_delta_p_affinity": 1.38,
+   "n_improved": 2,
+   "best_monomerid_from": 50088960,
+   "best_monomerid_to": 50088954
+  },
+  {
+   "transformation": "C1CCN([*:1])C1 >> Cc1nccn1[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.81,
+   "min_delta_p_affinity": -0.1,
+   "max_delta_p_affinity": 1.72,
+   "n_improved": 1,
+   "best_monomerid_from": 17096,
+   "best_monomerid_to": 17133
+  },
+  {
+   "transformation": "[H][*:1] >> c1nnn([*:1])n1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.81,
+   "min_delta_p_affinity": 0.66,
+   "max_delta_p_affinity": 0.96,
+   "n_improved": 2,
+   "best_monomerid_from": 17237,
+   "best_monomerid_to": 17267
+  },
+  {
+   "transformation": "N[*:1] >> CCN(CC)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.79,
+   "min_delta_p_affinity": 0.49,
+   "max_delta_p_affinity": 1.09,
+   "n_improved": 2,
+   "best_monomerid_from": 19007,
+   "best_monomerid_to": 19010
+  },
+  {
+   "transformation": "O[*:1] >> O=C(O)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.79,
+   "min_delta_p_affinity": 0.36,
+   "max_delta_p_affinity": 1.22,
+   "n_improved": 2,
+   "best_monomerid_from": 50142129,
+   "best_monomerid_to": 50142111
+  },
+  {
+   "transformation": "CC(=O)N(C)[*:1] >> C1CN([*:1])CCO1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.78,
+   "min_delta_p_affinity": -0.04,
+   "max_delta_p_affinity": 1.6,
+   "n_improved": 1,
+   "best_monomerid_from": 19043,
+   "best_monomerid_to": 19039
+  },
+  {
+   "transformation": "CC(=O)N(C)[*:1] >> CN(CCO)C1([*:1])CC1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.78,
+   "min_delta_p_affinity": 0.62,
+   "max_delta_p_affinity": 0.94,
+   "n_improved": 2,
+   "best_monomerid_from": 19022,
+   "best_monomerid_to": 50265948
+  },
+  {
+   "transformation": "N[*:1] >> C1CN(C[*:1])CCO1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.78,
+   "min_delta_p_affinity": 0.44,
+   "max_delta_p_affinity": 1.11,
+   "n_improved": 2,
+   "best_monomerid_from": 50266083,
+   "best_monomerid_to": 50243628
+  },
+  {
+   "transformation": "O=C(O)[*:1] >> O=C(O)CC[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.77,
+   "min_delta_p_affinity": 0.63,
+   "max_delta_p_affinity": 0.9,
+   "n_improved": 2,
+   "best_monomerid_from": 50101870,
+   "best_monomerid_to": 50101871
+  },
+  {
+   "transformation": "CC(C)N[*:1] >> c1cn([*:1])cn1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.76,
+   "min_delta_p_affinity": -0.29,
+   "max_delta_p_affinity": 1.81,
+   "n_improved": 1,
+   "best_monomerid_from": 17092,
+   "best_monomerid_to": 17132
+  },
+  {
+   "transformation": "N[*:1] >> C1CCC(N[*:1])C1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.75,
+   "min_delta_p_affinity": 0.68,
+   "max_delta_p_affinity": 0.82,
+   "n_improved": 2,
+   "best_monomerid_from": 12832,
+   "best_monomerid_to": 12837
+  },
+  {
+   "transformation": "C1CN([*:1])CCO1 >> CCNC(=O)N(C)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.74,
+   "min_delta_p_affinity": -0.37,
+   "max_delta_p_affinity": 1.85,
+   "n_improved": 1,
+   "best_monomerid_from": 17095,
+   "best_monomerid_to": 17107
+  },
+  {
+   "transformation": "CN(C)C[*:1] >> CN(C)C(=N)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.73,
+   "min_delta_p_affinity": 0.0,
+   "max_delta_p_affinity": 1.47,
+   "n_improved": 1,
+   "best_monomerid_from": 50142146,
+   "best_monomerid_to": 50193861
+  },
+  {
+   "transformation": "CC(=O)N(C)[*:1] >> CNC1([*:1])CC1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.72,
+   "min_delta_p_affinity": 0.5,
+   "max_delta_p_affinity": 0.94,
+   "n_improved": 2,
+   "best_monomerid_from": 19022,
+   "best_monomerid_to": 50266320
+  },
+  {
+   "transformation": "CC(=O)N(C)[*:1] >> CNCC1([*:1])CC1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.72,
+   "min_delta_p_affinity": 0.44,
+   "max_delta_p_affinity": 1.01,
+   "n_improved": 2,
+   "best_monomerid_from": 19022,
+   "best_monomerid_to": 50265977
+  },
+  {
+   "transformation": "N[*:1] >> CN(CCO)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.72,
+   "min_delta_p_affinity": 0.62,
+   "max_delta_p_affinity": 0.81,
+   "n_improved": 2,
+   "best_monomerid_from": 50266083,
+   "best_monomerid_to": 50266113
+  },
+  {
+   "transformation": "N[*:1] >> C1CCN([*:1])CC1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.71,
+   "min_delta_p_affinity": 0.3,
+   "max_delta_p_affinity": 1.12,
+   "n_improved": 2,
+   "best_monomerid_from": 12832,
+   "best_monomerid_to": 12846
+  },
+  {
+   "transformation": "C1CN([*:1])CCO1 >> CN(S(C)(=O)=O)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.7,
+   "min_delta_p_affinity": -0.09,
+   "max_delta_p_affinity": 1.5,
+   "n_improved": 1,
+   "best_monomerid_from": 17095,
+   "best_monomerid_to": 17105
+  },
+  {
+   "transformation": "COC(=O)C(=O)N[*:1] >> O=C(O)CS(=O)(=O)N[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.7,
+   "min_delta_p_affinity": 0.49,
+   "max_delta_p_affinity": 0.9,
+   "n_improved": 2,
+   "best_monomerid_from": 50211587,
+   "best_monomerid_to": 50211585
+  },
+  {
+   "transformation": "NC(=O)C[*:1] >> CN(CCO)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.7,
+   "min_delta_p_affinity": 0.69,
+   "max_delta_p_affinity": 0.71,
+   "n_improved": 2,
+   "best_monomerid_from": 50265947,
+   "best_monomerid_to": 50265948
+  },
+  {
+   "transformation": "OCC(O)[*:1] >> CN(C)CC[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.7,
+   "min_delta_p_affinity": 0.37,
+   "max_delta_p_affinity": 1.03,
+   "n_improved": 2,
+   "best_monomerid_from": 17102,
+   "best_monomerid_to": 17103
+  },
+  {
+   "transformation": "C1CN([*:1])CCO1 >> CN(CC(O)CO)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.69,
+   "min_delta_p_affinity": 0.64,
+   "max_delta_p_affinity": 0.74,
+   "n_improved": 2,
+   "best_monomerid_from": 17095,
+   "best_monomerid_to": 17102
+  },
+  {
+   "transformation": "C=C(C)[*:1] >> C[C@@H](N(C)C)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.69,
+   "min_delta_p_affinity": 0.49,
+   "max_delta_p_affinity": 0.89,
+   "n_improved": 2,
+   "best_monomerid_from": 50306152,
+   "best_monomerid_to": 50614408
+  },
+  {
+   "transformation": "NC(=O)[*:1] >> CC(=O)N(C)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.69,
+   "min_delta_p_affinity": 0.34,
+   "max_delta_p_affinity": 1.03,
+   "n_improved": 2,
+   "best_monomerid_from": 50265946,
+   "best_monomerid_to": 50243669
+  },
+  {
+   "transformation": "[H][*:1] >> NC(=O)NC[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.69,
+   "min_delta_p_affinity": 0.34,
+   "max_delta_p_affinity": 1.04,
+   "n_improved": 2,
+   "best_monomerid_from": 12504,
+   "best_monomerid_to": 12525
+  },
+  {
+   "transformation": "CC(=O)[*:1] >> CN(CCO)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.67,
+   "min_delta_p_affinity": 0.41,
+   "max_delta_p_affinity": 0.92,
+   "n_improved": 2,
+   "best_monomerid_from": 50265913,
+   "best_monomerid_to": 50266113
+  },
+  {
+   "transformation": "O[*:1] >> CS(=O)(=O)N[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.67,
+   "min_delta_p_affinity": 0.55,
+   "max_delta_p_affinity": 0.78,
+   "n_improved": 2,
+   "best_monomerid_from": 12519,
+   "best_monomerid_to": 12528
+  },
+  {
+   "transformation": "CC(C)N[*:1] >> CCNC(=O)N(C)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.66,
+   "min_delta_p_affinity": -0.53,
+   "max_delta_p_affinity": 1.85,
+   "n_improved": 1,
+   "best_monomerid_from": 17092,
+   "best_monomerid_to": 17107
+  },
+  {
+   "transformation": "O[*:1] >> OC[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.64,
+   "min_delta_p_affinity": 0.12,
+   "max_delta_p_affinity": 1.15,
+   "n_improved": 2,
+   "best_monomerid_from": 50046500,
+   "best_monomerid_to": 50046425
+  },
+  {
+   "transformation": "[H][*:1] >> c1cn([*:1])nn1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.64,
+   "min_delta_p_affinity": 0.17,
+   "max_delta_p_affinity": 1.11,
+   "n_improved": 2,
+   "best_monomerid_from": 17237,
+   "best_monomerid_to": 17264
+  },
+  {
+   "transformation": "[H][*:1] >> CN[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.63,
+   "min_delta_p_affinity": 0.62,
+   "max_delta_p_affinity": 0.64,
+   "n_improved": 2,
+   "best_monomerid_from": 17132,
+   "best_monomerid_to": 17135
+  },
+  {
+   "transformation": "CC(C)N[*:1] >> CN(S(C)(=O)=O)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.62,
+   "min_delta_p_affinity": -0.25,
+   "max_delta_p_affinity": 1.5,
+   "n_improved": 1,
+   "best_monomerid_from": 17092,
+   "best_monomerid_to": 17105
+  },
+  {
+   "transformation": "CC(=O)[*:1] >> CNC[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.61,
+   "min_delta_p_affinity": 0.48,
+   "max_delta_p_affinity": 0.74,
+   "n_improved": 2,
+   "best_monomerid_from": 50265913,
+   "best_monomerid_to": 50243539
+  },
+  {
+   "transformation": "CN(S(C)(=O)=O)[*:1] >> C1CN(C[*:1])CCO1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.61,
+   "min_delta_p_affinity": -0.45,
+   "max_delta_p_affinity": 1.68,
+   "n_improved": 1,
+   "best_monomerid_from": 50266176,
+   "best_monomerid_to": 50243628
+  },
+  {
+   "transformation": "NC(=O)[*:1] >> C[C@@H](N(C)C)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.61,
+   "min_delta_p_affinity": 0.41,
+   "max_delta_p_affinity": 0.81,
+   "n_improved": 2,
+   "best_monomerid_from": 50306150,
+   "best_monomerid_to": 50614408
+  },
+  {
+   "transformation": "C1CCC([*:1])NC1 >> [O-][n+]1ccccc1[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.6,
+   "min_delta_p_affinity": 0.6,
+   "max_delta_p_affinity": 0.61,
+   "n_improved": 2,
+   "best_monomerid_from": 50172835,
+   "best_monomerid_to": 50172828
+  },
+  {
+   "transformation": "C1CN[C@H]([*:1])C1 >> C[C@H](N(C)C)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.6,
+   "min_delta_p_affinity": 0.4,
+   "max_delta_p_affinity": 0.8,
+   "n_improved": 2,
+   "best_monomerid_from": 50338679,
+   "best_monomerid_to": 50306146
+  },
+  {
+   "transformation": "C1CCN([*:1])CC1 >> O=C1CCCCN1[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.58,
+   "min_delta_p_affinity": 0.2,
+   "max_delta_p_affinity": 0.96,
+   "n_improved": 2,
+   "best_monomerid_from": 19019,
+   "best_monomerid_to": 19020
+  },
+  {
+   "transformation": "C1CN([*:1])CCN1 >> OC1CCN([*:1])CC1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.58,
+   "min_delta_p_affinity": 0.47,
+   "max_delta_p_affinity": 0.7,
+   "n_improved": 2,
+   "best_monomerid_from": 50142106,
+   "best_monomerid_to": 50142129
+  },
+  {
+   "transformation": "CN[*:1] >> CCNC(=O)N(C)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.57,
+   "min_delta_p_affinity": 0.11,
+   "max_delta_p_affinity": 1.02,
+   "n_improved": 2,
+   "best_monomerid_from": 17090,
+   "best_monomerid_to": 17107
+  },
+  {
+   "transformation": "CC(=O)N(C)[*:1] >> CS(=O)(=O)CC1([*:1])CC1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.56,
+   "min_delta_p_affinity": 0.19,
+   "max_delta_p_affinity": 0.94,
+   "n_improved": 2,
+   "best_monomerid_from": 19022,
+   "best_monomerid_to": 50265916
+  },
+  {
+   "transformation": "CN(S(C)(=O)=O)[*:1] >> Cc1nccn1[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.56,
+   "min_delta_p_affinity": 0.47,
+   "max_delta_p_affinity": 0.65,
+   "n_improved": 2,
+   "best_monomerid_from": 17105,
+   "best_monomerid_to": 17133
+  },
+  {
+   "transformation": "O=C1NCCCN1[*:1] >> O=c1ccccn1[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.56,
+   "min_delta_p_affinity": 0.34,
+   "max_delta_p_affinity": 0.77,
+   "n_improved": 2,
+   "best_monomerid_from": 50216596,
+   "best_monomerid_to": 50216556
+  },
+  {
+   "transformation": "OCC[*:1] >> CN1CCC([*:1])CC1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.56,
+   "min_delta_p_affinity": 0.32,
+   "max_delta_p_affinity": 0.8,
+   "n_improved": 2,
+   "best_monomerid_from": 50374890,
+   "best_monomerid_to": 50374889
+  },
+  {
+   "transformation": "CC(=O)N[*:1] >> CS(=O)(=O)N[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.55,
+   "min_delta_p_affinity": 0.23,
+   "max_delta_p_affinity": 0.86,
+   "n_improved": 2,
+   "best_monomerid_from": 50125248,
+   "best_monomerid_to": 50125242
+  },
+  {
+   "transformation": "NC(=O)CC1([*:1])CC1 >> O=C1CCCCN1[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.55,
+   "min_delta_p_affinity": 0.41,
+   "max_delta_p_affinity": 0.68,
+   "n_improved": 2,
+   "best_monomerid_from": 50265947,
+   "best_monomerid_to": 19023
+  },
+  {
+   "transformation": "C1CN([*:1])CCN1 >> O[C@H]1CCN([*:1])C1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.54,
+   "min_delta_p_affinity": 0.34,
+   "max_delta_p_affinity": 0.73,
+   "n_improved": 2,
+   "best_monomerid_from": 12697,
+   "best_monomerid_to": 12694
+  },
+  {
+   "transformation": "NC(=O)[*:1] >> CS(=O)(=O)N[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.54,
+   "min_delta_p_affinity": 0.04,
+   "max_delta_p_affinity": 1.04,
+   "n_improved": 2,
+   "best_monomerid_from": 12524,
+   "best_monomerid_to": 12528
+  },
+  {
+   "transformation": "[H][*:1] >> CCO[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.53,
+   "min_delta_p_affinity": 0.34,
+   "max_delta_p_affinity": 0.71,
+   "n_improved": 2,
+   "best_monomerid_from": 50079229,
+   "best_monomerid_to": 50079230
+  },
+  {
+   "transformation": "c1cn([*:1])cn1 >> Cn1ccnc1[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.53,
+   "min_delta_p_affinity": 0.46,
+   "max_delta_p_affinity": 0.6,
+   "n_improved": 2,
+   "best_monomerid_from": 50228949,
+   "best_monomerid_to": 50228932
+  },
+  {
+   "transformation": "CCC[*:1] >> CC(C)(C)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.52,
+   "min_delta_p_affinity": 0.35,
+   "max_delta_p_affinity": 0.7,
+   "n_improved": 2,
+   "best_monomerid_from": 50088952,
+   "best_monomerid_to": 50088944
+  },
+  {
+   "transformation": "CC(=O)C1([*:1])CC1 >> O=C1CCCCN1[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.51,
+   "min_delta_p_affinity": 0.38,
+   "max_delta_p_affinity": 0.64,
+   "n_improved": 2,
+   "best_monomerid_from": 50265913,
+   "best_monomerid_to": 19020
+  },
+  {
+   "transformation": "O=C1COCCN1[*:1] >> O=c1ccccn1[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.5,
+   "min_delta_p_affinity": 0.23,
+   "max_delta_p_affinity": 0.77,
+   "n_improved": 2,
+   "best_monomerid_from": 50216616,
+   "best_monomerid_to": 50216604
+  },
+  {
+   "transformation": "C1CN[C@@H]([*:1])C1 >> C[C@H](N(C)C)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.49,
+   "min_delta_p_affinity": 0.4,
+   "max_delta_p_affinity": 0.58,
+   "n_improved": 2,
+   "best_monomerid_from": 50338680,
+   "best_monomerid_to": 50306146
+  },
+  {
+   "transformation": "COc1ccc([*:1])cc1 >> Nc1cc([*:1])ccc1Cl",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.49,
+   "min_delta_p_affinity": 0.17,
+   "max_delta_p_affinity": 0.82,
+   "n_improved": 2,
+   "best_monomerid_from": 50125238,
+   "best_monomerid_to": 50125242
+  },
+  {
+   "transformation": "FC(F)(F)[*:1] >> c1ncn(C[*:1])n1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.49,
+   "min_delta_p_affinity": -0.14,
+   "max_delta_p_affinity": 1.13,
+   "n_improved": 1,
+   "best_monomerid_from": 50079237,
+   "best_monomerid_to": 50079246
+  },
+  {
+   "transformation": "NC(=O)[*:1] >> CN(S(C)(=O)=O)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.48,
+   "min_delta_p_affinity": 0.06,
+   "max_delta_p_affinity": 0.9,
+   "n_improved": 2,
+   "best_monomerid_from": 50265946,
+   "best_monomerid_to": 50243670
+  },
+  {
+   "transformation": "CC(C)N[*:1] >> CCN(C)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.46,
+   "min_delta_p_affinity": 0.1,
+   "max_delta_p_affinity": 0.81,
+   "n_improved": 2,
+   "best_monomerid_from": 17092,
+   "best_monomerid_to": 17093
+  },
+  {
+   "transformation": "CN1CCN([*:1])CC1 >> CN(C)CCCN(C)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.46,
+   "min_delta_p_affinity": 0.1,
+   "max_delta_p_affinity": 0.82,
+   "n_improved": 2,
+   "best_monomerid_from": 17088,
+   "best_monomerid_to": 17103
+  },
+  {
+   "transformation": "C[*:1] >> CN[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.46,
+   "min_delta_p_affinity": 0.3,
+   "max_delta_p_affinity": 0.63,
+   "n_improved": 2,
+   "best_monomerid_from": 12671,
+   "best_monomerid_to": 12675
+  },
+  {
+   "transformation": "NC[*:1] >> NS(=O)(=O)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.46,
+   "min_delta_p_affinity": -0.18,
+   "max_delta_p_affinity": 1.1,
+   "n_improved": 1,
+   "best_monomerid_from": 12832,
+   "best_monomerid_to": 12660
+  },
+  {
+   "transformation": "CC(=O)[*:1] >> CS(=O)(=O)C[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.45,
+   "min_delta_p_affinity": 0.41,
+   "max_delta_p_affinity": 0.49,
+   "n_improved": 2,
+   "best_monomerid_from": 50265913,
+   "best_monomerid_to": 50265915
+  },
+  {
+   "transformation": "[H][*:1] >> C1CN([*:1])CCO1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.45,
+   "min_delta_p_affinity": 0.44,
+   "max_delta_p_affinity": 0.47,
+   "n_improved": 2,
+   "best_monomerid_from": 17237,
+   "best_monomerid_to": 17240
+  },
+  {
+   "transformation": "NC[*:1] >> CS(=O)(=O)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.43,
+   "min_delta_p_affinity": -0.5,
+   "max_delta_p_affinity": 1.35,
+   "n_improved": 1,
+   "best_monomerid_from": 12832,
+   "best_monomerid_to": 12659
+  },
+  {
+   "transformation": "CC(=O)N(C)[*:1] >> C1CN(C[*:1])CCO1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.41,
+   "min_delta_p_affinity": -0.58,
+   "max_delta_p_affinity": 1.4,
+   "n_improved": 1,
+   "best_monomerid_from": 50266142,
+   "best_monomerid_to": 50243628
+  },
+  {
+   "transformation": "CC(=O)[*:1] >> C1CN(CC[*:1])CCO1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.4,
+   "min_delta_p_affinity": 0.11,
+   "max_delta_p_affinity": 0.68,
+   "n_improved": 2,
+   "best_monomerid_from": 50265913,
+   "best_monomerid_to": 50266216
+  },
+  {
+   "transformation": "C1CCC(N[*:1])C1 >> O[C@@H]1CCN([*:1])C1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.39,
+   "min_delta_p_affinity": 0.28,
+   "max_delta_p_affinity": 0.5,
+   "n_improved": 2,
+   "best_monomerid_from": 50243591,
+   "best_monomerid_to": 50243340
+  },
+  {
+   "transformation": "CC(=N)N(C)[*:1] >> CN(C(=N)N)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.39,
+   "min_delta_p_affinity": 0.0,
+   "max_delta_p_affinity": 0.78,
+   "n_improved": 1,
+   "best_monomerid_from": 50142177,
+   "best_monomerid_to": 50142139
+  },
+  {
+   "transformation": "CN(CCO)[*:1] >> C1CCN(C[*:1])C1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.39,
+   "min_delta_p_affinity": 0.0,
+   "max_delta_p_affinity": 0.78,
+   "n_improved": 1,
+   "best_monomerid_from": 50266113,
+   "best_monomerid_to": 50243592
+  },
+  {
+   "transformation": "c1cn([*:1])cn1 >> c1cc([*:1])ccn1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.39,
+   "min_delta_p_affinity": -0.31,
+   "max_delta_p_affinity": 1.08,
+   "n_improved": 1,
+   "best_monomerid_from": 50114541,
+   "best_monomerid_to": 50114544
+  },
+  {
+   "transformation": "CN(C)[*:1] >> C[N+](C)(C)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.36,
+   "min_delta_p_affinity": 0.11,
+   "max_delta_p_affinity": 0.62,
+   "n_improved": 2,
+   "best_monomerid_from": 12688,
+   "best_monomerid_to": 12853
+  },
+  {
+   "transformation": "N[*:1] >> CC(=O)N(C)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.36,
+   "min_delta_p_affinity": -0.29,
+   "max_delta_p_affinity": 1.02,
+   "n_improved": 1,
+   "best_monomerid_from": 50243538,
+   "best_monomerid_to": 50243669
+  },
+  {
+   "transformation": "[H][*:1] >> CCS(=O)(=O)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.35,
+   "min_delta_p_affinity": 0.32,
+   "max_delta_p_affinity": 0.38,
+   "n_improved": 2,
+   "best_monomerid_from": 50079229,
+   "best_monomerid_to": 50079232
+  },
+  {
+   "transformation": "[H][*:1] >> NC(=O)CC[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.35,
+   "min_delta_p_affinity": 0.24,
+   "max_delta_p_affinity": 0.46,
+   "n_improved": 2,
+   "best_monomerid_from": 50088960,
+   "best_monomerid_to": 50088953
+  },
+  {
+   "transformation": "CO[*:1] >> CCS[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.34,
+   "min_delta_p_affinity": 0.06,
+   "max_delta_p_affinity": 0.62,
+   "n_improved": 2,
+   "best_monomerid_from": 50079245,
+   "best_monomerid_to": 50079243
+  },
+  {
+   "transformation": "O=C(O)CN[*:1] >> COC(=O)C(=O)N[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.34,
+   "min_delta_p_affinity": 0.17,
+   "max_delta_p_affinity": 0.51,
+   "n_improved": 2,
+   "best_monomerid_from": 50211554,
+   "best_monomerid_to": 50211568
+  },
+  {
+   "transformation": "CCN[*:1] >> CCN(C)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.33,
+   "min_delta_p_affinity": 0.26,
+   "max_delta_p_affinity": 0.4,
+   "n_improved": 2,
+   "best_monomerid_from": 50306141,
+   "best_monomerid_to": 50306142
+  },
+  {
+   "transformation": "CN(CCO)[*:1] >> c1cn([*:1])cn1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.33,
+   "min_delta_p_affinity": -0.38,
+   "max_delta_p_affinity": 1.04,
+   "n_improved": 1,
+   "best_monomerid_from": 17098,
+   "best_monomerid_to": 17132
+  },
+  {
+   "transformation": "N[*:1] >> CNC[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.33,
+   "min_delta_p_affinity": 0.02,
+   "max_delta_p_affinity": 0.63,
+   "n_improved": 2,
+   "best_monomerid_from": 50266083,
+   "best_monomerid_to": 50243539
+  },
+  {
+   "transformation": "c1ccc([*:1])cc1 >> c1ccc(C[*:1])nc1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.33,
+   "min_delta_p_affinity": 0.27,
+   "max_delta_p_affinity": 0.38,
+   "n_improved": 2,
+   "best_monomerid_from": 50085519,
+   "best_monomerid_to": 50085518
+  },
+  {
+   "transformation": "C1CC1CN[*:1] >> O[C@@H]1CCN([*:1])C1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.32,
+   "min_delta_p_affinity": 0.2,
+   "max_delta_p_affinity": 0.44,
+   "n_improved": 2,
+   "best_monomerid_from": 12865,
+   "best_monomerid_to": 12866
+  },
+  {
+   "transformation": "COCC[*:1] >> c1ccc([*:1])cc1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.32,
+   "min_delta_p_affinity": 0.23,
+   "max_delta_p_affinity": 0.41,
+   "n_improved": 2,
+   "best_monomerid_from": 50034574,
+   "best_monomerid_to": 50034585
+  },
+  {
+   "transformation": "CCN(CC)[*:1] >> O[C@@H]1CCN([*:1])C1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.31,
+   "min_delta_p_affinity": 0.05,
+   "max_delta_p_affinity": 0.56,
+   "n_improved": 2,
+   "best_monomerid_from": 12689,
+   "best_monomerid_to": 12693
+  },
+  {
+   "transformation": "C[*:1] >> CCC(C)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.31,
+   "min_delta_p_affinity": 0.27,
+   "max_delta_p_affinity": 0.35,
+   "n_improved": 2,
+   "best_monomerid_from": 17282,
+   "best_monomerid_to": 50088954
+  },
+  {
+   "transformation": "c1cnn([*:1])n1 >> c1ncn([*:1])n1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.31,
+   "min_delta_p_affinity": 0.28,
+   "max_delta_p_affinity": 0.34,
+   "n_improved": 2,
+   "best_monomerid_from": 17265,
+   "best_monomerid_to": 17263
+  },
+  {
+   "transformation": "C1CC([*:1])C1 >> C1CC1C[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.3,
+   "min_delta_p_affinity": -0.1,
+   "max_delta_p_affinity": 0.7,
+   "n_improved": 1,
+   "best_monomerid_from": 12510,
+   "best_monomerid_to": 12509
+  },
+  {
+   "transformation": "C1CN([*:1])CCN1 >> C1CN([*:1])CCO1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.3,
+   "min_delta_p_affinity": 0.27,
+   "max_delta_p_affinity": 0.32,
+   "n_improved": 2,
+   "best_monomerid_from": 12849,
+   "best_monomerid_to": 12847
+  },
+  {
+   "transformation": "CN[*:1] >> c1cn([*:1])cn1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.29,
+   "min_delta_p_affinity": -0.39,
+   "max_delta_p_affinity": 0.98,
+   "n_improved": 1,
+   "best_monomerid_from": 17090,
+   "best_monomerid_to": 17132
+  },
+  {
+   "transformation": "O=C1CCCCN1[*:1] >> O=c1cnccn1[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.29,
+   "min_delta_p_affinity": 0.14,
+   "max_delta_p_affinity": 0.44,
+   "n_improved": 2,
+   "best_monomerid_from": 50216569,
+   "best_monomerid_to": 50216583
+  },
+  {
+   "transformation": "O[*:1] >> CCN(CC)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.29,
+   "min_delta_p_affinity": 0.18,
+   "max_delta_p_affinity": 0.39,
+   "n_improved": 2,
+   "best_monomerid_from": 50374890,
+   "best_monomerid_to": 50374891
+  },
+  {
+   "transformation": "C1CCN([*:1])C1 >> CCNC(=O)N(C)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.28,
+   "min_delta_p_affinity": -0.85,
+   "max_delta_p_affinity": 1.42,
+   "n_improved": 1,
+   "best_monomerid_from": 17096,
+   "best_monomerid_to": 17107
+  },
+  {
+   "transformation": "C1CCN([*:1])C1 >> c1cn([*:1])cn1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.28,
+   "min_delta_p_affinity": -0.82,
+   "max_delta_p_affinity": 1.38,
+   "n_improved": 1,
+   "best_monomerid_from": 17096,
+   "best_monomerid_to": 17132
+  },
+  {
+   "transformation": "CCN(CC)CC[*:1] >> CN1CCC([*:1])CC1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.28,
+   "min_delta_p_affinity": 0.14,
+   "max_delta_p_affinity": 0.41,
+   "n_improved": 2,
+   "best_monomerid_from": 50374891,
+   "best_monomerid_to": 50374889
+  },
+  {
+   "transformation": "CN(CCO)[*:1] >> C1CN(C[*:1])CCO1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.28,
+   "min_delta_p_affinity": 0.25,
+   "max_delta_p_affinity": 0.3,
+   "n_improved": 2,
+   "best_monomerid_from": 50266113,
+   "best_monomerid_to": 50243628
+  },
+  {
+   "transformation": "CC(C)N[*:1] >> CN1CCN([*:1])CC1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.27,
+   "min_delta_p_affinity": -0.4,
+   "max_delta_p_affinity": 0.95,
+   "n_improved": 1,
+   "best_monomerid_from": 17092,
+   "best_monomerid_to": 17088
+  },
+  {
+   "transformation": "C1CC1CN[*:1] >> C1CCN([*:1])C1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.26,
+   "min_delta_p_affinity": 0.12,
+   "max_delta_p_affinity": 0.4,
+   "n_improved": 2,
+   "best_monomerid_from": 12834,
+   "best_monomerid_to": 12840
+  },
+  {
+   "transformation": "C1CCN([*:1])C1 >> CN(S(C)(=O)=O)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.25,
+   "min_delta_p_affinity": -0.57,
+   "max_delta_p_affinity": 1.07,
+   "n_improved": 1,
+   "best_monomerid_from": 17096,
+   "best_monomerid_to": 17105
+  },
+  {
+   "transformation": "C1CN([*:1])CCO1 >> O[C@H]1CCN([*:1])C1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.24,
+   "min_delta_p_affinity": 0.02,
+   "max_delta_p_affinity": 0.46,
+   "n_improved": 2,
+   "best_monomerid_from": 12696,
+   "best_monomerid_to": 12694
+  },
+  {
+   "transformation": "CN(CC(O)CO)[*:1] >> CN1CCN([*:1])CC1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.24,
+   "min_delta_p_affinity": 0.21,
+   "max_delta_p_affinity": 0.27,
+   "n_improved": 2,
+   "best_monomerid_from": 17253,
+   "best_monomerid_to": 17085
+  },
+  {
+   "transformation": "NC[*:1] >> COC(=O)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.24,
+   "min_delta_p_affinity": -0.42,
+   "max_delta_p_affinity": 0.89,
+   "n_improved": 1,
+   "best_monomerid_from": 12714,
+   "best_monomerid_to": 12708
+  },
+  {
+   "transformation": "N[*:1] >> CCN[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.24,
+   "min_delta_p_affinity": 0.08,
+   "max_delta_p_affinity": 0.4,
+   "n_improved": 2,
+   "best_monomerid_from": 17089,
+   "best_monomerid_to": 17091
+  },
+  {
+   "transformation": "O[*:1] >> C1CCN([*:1])CC1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.24,
+   "min_delta_p_affinity": 0.0,
+   "max_delta_p_affinity": 0.48,
+   "n_improved": 1,
+   "best_monomerid_from": 12519,
+   "best_monomerid_to": 12532
+  },
+  {
+   "transformation": "c1cn([*:1])cn1 >> c1cn([*:1])nn1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.24,
+   "min_delta_p_affinity": 0.13,
+   "max_delta_p_affinity": 0.35,
+   "n_improved": 2,
+   "best_monomerid_from": 12768,
+   "best_monomerid_to": 12770
+  },
+  {
+   "transformation": "c1cn([*:1])cn1 >> CN(C)CCCN(C)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.23,
+   "min_delta_p_affinity": -0.04,
+   "max_delta_p_affinity": 0.5,
+   "n_improved": 1,
+   "best_monomerid_from": 17242,
+   "best_monomerid_to": 17258
+  },
+  {
+   "transformation": "CN(C)[*:1] >> CN1CCN=C1[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.22,
+   "min_delta_p_affinity": -0.25,
+   "max_delta_p_affinity": 0.7,
+   "n_improved": 1,
+   "best_monomerid_from": 50370088,
+   "best_monomerid_to": 50066637
+  },
+  {
+   "transformation": "N[*:1] >> COC[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.21,
+   "min_delta_p_affinity": -0.31,
+   "max_delta_p_affinity": 0.73,
+   "n_improved": 1,
+   "best_monomerid_from": 50087528,
+   "best_monomerid_to": 50087532
+  },
+  {
+   "transformation": "N[*:1] >> NC[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.21,
+   "min_delta_p_affinity": 0.13,
+   "max_delta_p_affinity": 0.3,
+   "n_improved": 2,
+   "best_monomerid_from": 12522,
+   "best_monomerid_to": 12535
+  },
+  {
+   "transformation": "CN(C)C(=O)[*:1] >> CN(S(C)(=O)=O)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.2,
+   "min_delta_p_affinity": 0.11,
+   "max_delta_p_affinity": 0.3,
+   "n_improved": 2,
+   "best_monomerid_from": 50243431,
+   "best_monomerid_to": 50266176
+  },
+  {
+   "transformation": "c1cnn([*:1])c1 >> c1nnnn1[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.2,
+   "min_delta_p_affinity": 0.09,
+   "max_delta_p_affinity": 0.3,
+   "n_improved": 2,
+   "best_monomerid_from": 50125239,
+   "best_monomerid_to": 50125237
+  },
+  {
+   "transformation": "FC(F)(F)[*:1] >> c1nnn(C[*:1])n1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.19,
+   "min_delta_p_affinity": -0.78,
+   "max_delta_p_affinity": 1.16,
+   "n_improved": 1,
+   "best_monomerid_from": 50079237,
+   "best_monomerid_to": 50079235
+  },
+  {
+   "transformation": "c1cn([*:1])nn1 >> c1ncn([*:1])n1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.19,
+   "min_delta_p_affinity": -0.05,
+   "max_delta_p_affinity": 0.43,
+   "n_improved": 1,
+   "best_monomerid_from": 19002,
+   "best_monomerid_to": 19004
+  },
+  {
+   "transformation": "CN(C)CC[*:1] >> CN1CCC([*:1])CC1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.18,
+   "min_delta_p_affinity": 0.07,
+   "max_delta_p_affinity": 0.29,
+   "n_improved": 2,
+   "best_monomerid_from": 50374892,
+   "best_monomerid_to": 50374889
+  },
+  {
+   "transformation": "O=C1CCCCN1[*:1] >> O=C1COCCN1[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.18,
+   "min_delta_p_affinity": -0.21,
+   "max_delta_p_affinity": 0.56,
+   "n_improved": 1,
+   "best_monomerid_from": 50140387,
+   "best_monomerid_to": 50140394
+  },
+  {
+   "transformation": "N[*:1] >> NS(=O)(=O)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.17,
+   "min_delta_p_affinity": 0.12,
+   "max_delta_p_affinity": 0.22,
+   "n_improved": 2,
+   "best_monomerid_from": 12749,
+   "best_monomerid_to": 12748
+  },
+  {
+   "transformation": "N[*:1] >> OC[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.17,
+   "min_delta_p_affinity": -0.49,
+   "max_delta_p_affinity": 0.83,
+   "n_improved": 1,
+   "best_monomerid_from": 50087528,
+   "best_monomerid_to": 50087540
+  },
+  {
+   "transformation": "O[*:1] >> NC(=O)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.17,
+   "min_delta_p_affinity": -0.26,
+   "max_delta_p_affinity": 0.61,
+   "n_improved": 1,
+   "best_monomerid_from": 50243379,
+   "best_monomerid_to": 50265946
+  },
+  {
+   "transformation": "CN(C)[*:1] >> Cc1nccn1[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.16,
+   "min_delta_p_affinity": 0.14,
+   "max_delta_p_affinity": 0.18,
+   "n_improved": 2,
+   "best_monomerid_from": 50370088,
+   "best_monomerid_to": 50113925
+  },
+  {
+   "transformation": "O=C1CCCCN1[*:1] >> CN(CCO)C1([*:1])CC1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.16,
+   "min_delta_p_affinity": 0.03,
+   "max_delta_p_affinity": 0.28,
+   "n_improved": 2,
+   "best_monomerid_from": 19020,
+   "best_monomerid_to": 50266113
+  },
+  {
+   "transformation": "CC(C)N[*:1] >> O[C@H]1CCN([*:1])C1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.14,
+   "min_delta_p_affinity": -0.19,
+   "max_delta_p_affinity": 0.48,
+   "n_improved": 1,
+   "best_monomerid_from": 12859,
+   "best_monomerid_to": 12857
+  },
+  {
+   "transformation": "NS(=O)(=O)[*:1] >> C1CN(C[*:1])CCO1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.14,
+   "min_delta_p_affinity": -0.54,
+   "max_delta_p_affinity": 0.83,
+   "n_improved": 1,
+   "best_monomerid_from": 19045,
+   "best_monomerid_to": 19039
+  },
+  {
+   "transformation": "CC(=O)N(C)[*:1] >> CC(=O)C1([*:1])CC1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.12,
+   "min_delta_p_affinity": -0.3,
+   "max_delta_p_affinity": 0.53,
+   "n_improved": 1,
+   "best_monomerid_from": 19022,
+   "best_monomerid_to": 50265914
+  },
+  {
+   "transformation": "c1cc([*:1])no1 >> c1cncc([*:1])c1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.12,
+   "min_delta_p_affinity": 0.07,
+   "max_delta_p_affinity": 0.18,
+   "n_improved": 2,
+   "best_monomerid_from": 13306,
+   "best_monomerid_to": 13304
+  },
+  {
+   "transformation": "C1CC1CN[*:1] >> O[C@H]1CCN([*:1])C1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.11,
+   "min_delta_p_affinity": -0.32,
+   "max_delta_p_affinity": 0.53,
+   "n_improved": 1,
+   "best_monomerid_from": 12858,
+   "best_monomerid_to": 12857
+  },
+  {
+   "transformation": "[H][*:1] >> c1ccc([*:1])nc1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.11,
+   "min_delta_p_affinity": -0.07,
+   "max_delta_p_affinity": 0.3,
+   "n_improved": 1,
+   "best_monomerid_from": 12504,
+   "best_monomerid_to": 12515
+  },
+  {
+   "transformation": "CC[*:1] >> c1ccc([*:1])cc1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.1,
+   "min_delta_p_affinity": -0.04,
+   "max_delta_p_affinity": 0.23,
+   "n_improved": 1,
+   "best_monomerid_from": 50125246,
+   "best_monomerid_to": 50125241
+  },
+  {
+   "transformation": "CN(C)C(=O)[*:1] >> CS(=O)(=O)N[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.1,
+   "min_delta_p_affinity": -0.08,
+   "max_delta_p_affinity": 0.28,
+   "n_improved": 1,
+   "best_monomerid_from": 50243431,
+   "best_monomerid_to": 50266140
+  },
+  {
+   "transformation": "CN(CCO)[*:1] >> CN1CCN([*:1])CC1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.1,
+   "min_delta_p_affinity": 0.02,
+   "max_delta_p_affinity": 0.18,
+   "n_improved": 2,
+   "best_monomerid_from": 17098,
+   "best_monomerid_to": 17088
+  },
+  {
+   "transformation": "CS(=O)(=O)N[*:1] >> CN(S(C)(=O)=O)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.1,
+   "min_delta_p_affinity": 0.02,
+   "max_delta_p_affinity": 0.19,
+   "n_improved": 2,
+   "best_monomerid_from": 50228937,
+   "best_monomerid_to": 50228933
+  },
+  {
+   "transformation": "CC(=O)N(C)[*:1] >> NC(=O)CC1([*:1])CC1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.08,
+   "min_delta_p_affinity": -0.07,
+   "max_delta_p_affinity": 0.23,
+   "n_improved": 1,
+   "best_monomerid_from": 19022,
+   "best_monomerid_to": 50265947
+  },
+  {
+   "transformation": "CCCC[*:1] >> c1ccc([*:1])cc1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.08,
+   "min_delta_p_affinity": -0.32,
+   "max_delta_p_affinity": 0.48,
+   "n_improved": 1,
+   "best_monomerid_from": 50034583,
+   "best_monomerid_to": 50034580
+  },
+  {
+   "transformation": "CCS[*:1] >> COC(=O)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.08,
+   "min_delta_p_affinity": -0.25,
+   "max_delta_p_affinity": 0.42,
+   "n_improved": 1,
+   "best_monomerid_from": 50079258,
+   "best_monomerid_to": 50079211
+  },
+  {
+   "transformation": "CN(C)C(=O)[*:1] >> C[C@@H](N(C)C)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.08,
+   "min_delta_p_affinity": -0.12,
+   "max_delta_p_affinity": 0.28,
+   "n_improved": 1,
+   "best_monomerid_from": 50306148,
+   "best_monomerid_to": 50614408
+  },
+  {
+   "transformation": "CN[*:1] >> O[C@H]1CCN([*:1])C1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.08,
+   "min_delta_p_affinity": -0.29,
+   "max_delta_p_affinity": 0.45,
+   "n_improved": 1,
+   "best_monomerid_from": 12691,
+   "best_monomerid_to": 12694
+  },
+  {
+   "transformation": "NC(=O)[*:1] >> O=C1CCCN1[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.08,
+   "min_delta_p_affinity": -0.36,
+   "max_delta_p_affinity": 0.52,
+   "n_improved": 1,
+   "best_monomerid_from": 50265947,
+   "best_monomerid_to": 50266082
+  },
+  {
+   "transformation": "c1cn([*:1])cn1 >> c1cnn([*:1])c1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.08,
+   "min_delta_p_affinity": -0.04,
+   "max_delta_p_affinity": 0.21,
+   "n_improved": 1,
+   "best_monomerid_from": 50228949,
+   "best_monomerid_to": 50228936
+  },
+  {
+   "transformation": "C1CCN([*:1])C1 >> C1CCN(C[*:1])C1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.07,
+   "min_delta_p_affinity": 0.0,
+   "max_delta_p_affinity": 0.15,
+   "n_improved": 1,
+   "best_monomerid_from": 50046521,
+   "best_monomerid_to": 50046440
+  },
+  {
+   "transformation": "COC[*:1] >> COC(=O)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.07,
+   "min_delta_p_affinity": 0.02,
+   "max_delta_p_affinity": 0.11,
+   "n_improved": 2,
+   "best_monomerid_from": 50079231,
+   "best_monomerid_to": 50072445
+  },
+  {
+   "transformation": "C[*:1] >> C1CCC([*:1])C1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.07,
+   "min_delta_p_affinity": -0.05,
+   "max_delta_p_affinity": 0.18,
+   "n_improved": 1,
+   "best_monomerid_from": 50243539,
+   "best_monomerid_to": 50243591
+  },
+  {
+   "transformation": "N#C[*:1] >> OC[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.07,
+   "min_delta_p_affinity": -0.12,
+   "max_delta_p_affinity": 0.26,
+   "n_improved": 1,
+   "best_monomerid_from": 50046442,
+   "best_monomerid_to": 50046425
+  },
+  {
+   "transformation": "CNC[*:1] >> CN(CCO)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.05,
+   "min_delta_p_affinity": -0.07,
+   "max_delta_p_affinity": 0.18,
+   "n_improved": 1,
+   "best_monomerid_from": 50243539,
+   "best_monomerid_to": 50266113
+  },
+  {
+   "transformation": "Cc1nccn1[*:1] >> Cn1ccnc1[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.05,
+   "min_delta_p_affinity": -0.05,
+   "max_delta_p_affinity": 0.14,
+   "n_improved": 1,
+   "best_monomerid_from": 12663,
+   "best_monomerid_to": 12662
+  },
+  {
+   "transformation": "Cc1nccn1[*:1] >> O=C(N1CCCC1)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.05,
+   "min_delta_p_affinity": -0.11,
+   "max_delta_p_affinity": 0.2,
+   "n_improved": 1,
+   "best_monomerid_from": 50140352,
+   "best_monomerid_to": 50140382
+  },
+  {
+   "transformation": "CC[*:1] >> FC(F)(F)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.04,
+   "min_delta_p_affinity": 0.03,
+   "max_delta_p_affinity": 0.05,
+   "n_improved": 2,
+   "best_monomerid_from": 50125246,
+   "best_monomerid_to": 50125236
+  },
+  {
+   "transformation": "CNC[*:1] >> CC(=O)N(C)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.04,
+   "min_delta_p_affinity": -0.92,
+   "max_delta_p_affinity": 1.0,
+   "n_improved": 1,
+   "best_monomerid_from": 50266179,
+   "best_monomerid_to": 50243669
+  },
+  {
+   "transformation": "N#C[*:1] >> O=[N+]([O-])[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.04,
+   "min_delta_p_affinity": -0.22,
+   "max_delta_p_affinity": 0.3,
+   "n_improved": 1,
+   "best_monomerid_from": 12379,
+   "best_monomerid_to": 12381
+  },
+  {
+   "transformation": "O=C1CCCN1[*:1] >> O=C1CCCCN1[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.04,
+   "min_delta_p_affinity": -0.42,
+   "max_delta_p_affinity": 0.5,
+   "n_improved": 1,
+   "best_monomerid_from": 50216617,
+   "best_monomerid_to": 50216569
+  },
+  {
+   "transformation": "CN(S(C)(=O)=O)[*:1] >> CCNC(=O)N(C)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.03,
+   "min_delta_p_affinity": -0.28,
+   "max_delta_p_affinity": 0.35,
+   "n_improved": 1,
+   "best_monomerid_from": 17105,
+   "best_monomerid_to": 17107
+  },
+  {
+   "transformation": "NS(=O)(=O)[*:1] >> O[C@@H]1CCN(C[*:1])C1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.03,
+   "min_delta_p_affinity": 0.0,
+   "max_delta_p_affinity": 0.05,
+   "n_improved": 1,
+   "best_monomerid_from": 12710,
+   "best_monomerid_to": 12721
+  },
+  {
+   "transformation": "[H][*:1] >> CCOC(=O)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.03,
+   "min_delta_p_affinity": 0.0,
+   "max_delta_p_affinity": 0.05,
+   "n_improved": 1,
+   "best_monomerid_from": 50112493,
+   "best_monomerid_to": 50112507
+  },
+  {
+   "transformation": "c1cnn([*:1])n1 >> c1nnnn1[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.03,
+   "min_delta_p_affinity": -0.25,
+   "max_delta_p_affinity": 0.31,
+   "n_improved": 1,
+   "best_monomerid_from": 17265,
+   "best_monomerid_to": 17266
+  },
+  {
+   "transformation": "C1CCC(N[*:1])C1 >> C1CN([*:1])CCO1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.02,
+   "min_delta_p_affinity": -0.26,
+   "max_delta_p_affinity": 0.3,
+   "n_improved": 1,
+   "best_monomerid_from": 50243591,
+   "best_monomerid_to": 50243628
+  },
+  {
+   "transformation": "CC(C)N[*:1] >> C1CCN([*:1])CC1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.02,
+   "min_delta_p_affinity": -0.3,
+   "max_delta_p_affinity": 0.35,
+   "n_improved": 1,
+   "best_monomerid_from": 12835,
+   "best_monomerid_to": 12846
+  },
+  {
+   "transformation": "N#C[*:1] >> NC(=O)N[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.02,
+   "min_delta_p_affinity": -0.37,
+   "max_delta_p_affinity": 0.4,
+   "n_improved": 1,
+   "best_monomerid_from": 12506,
+   "best_monomerid_to": 12525
+  },
+  {
+   "transformation": "NS(=O)(=O)[*:1] >> O[C@H]1CCN(C[*:1])C1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.02,
+   "min_delta_p_affinity": -0.52,
+   "max_delta_p_affinity": 0.56,
+   "n_improved": 1,
+   "best_monomerid_from": 50228923,
+   "best_monomerid_to": 50228910
+  },
+  {
+   "transformation": "CCO[*:1] >> CCS[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.01,
+   "min_delta_p_affinity": -0.44,
+   "max_delta_p_affinity": 0.45,
+   "n_improved": 1,
+   "best_monomerid_from": 50079248,
+   "best_monomerid_to": 50079243
+  },
+  {
+   "transformation": "[H][*:1] >> c1cncc([*:1])c1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.01,
+   "min_delta_p_affinity": -0.37,
+   "max_delta_p_affinity": 0.39,
+   "n_improved": 1,
+   "best_monomerid_from": 12504,
+   "best_monomerid_to": 12516
+  },
+  {
+   "transformation": "c1cn([*:1])cn1 >> c1nnn([*:1])n1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.01,
+   "min_delta_p_affinity": -0.02,
+   "max_delta_p_affinity": 0.04,
+   "n_improved": 1,
+   "best_monomerid_from": 12725,
+   "best_monomerid_to": 12727
+  },
+  {
+   "transformation": "NC(=O)N[*:1] >> C1CCN([*:1])CC1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": 0.0,
+   "min_delta_p_affinity": 0.0,
+   "max_delta_p_affinity": 0.0,
+   "n_improved": 0,
+   "best_monomerid_from": 12525,
+   "best_monomerid_to": 12532
+  },
+  {
+   "transformation": "CO[*:1] >> NC(=O)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.01,
+   "min_delta_p_affinity": -0.44,
+   "max_delta_p_affinity": 0.43,
+   "n_improved": 1,
+   "best_monomerid_from": 50243429,
+   "best_monomerid_to": 50265946
+  },
+  {
+   "transformation": "C1CC([*:1])C1 >> C1CCC([*:1])C1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.02,
+   "min_delta_p_affinity": -0.18,
+   "max_delta_p_affinity": 0.14,
+   "n_improved": 1,
+   "best_monomerid_from": 12510,
+   "best_monomerid_to": 12511
+  },
+  {
+   "transformation": "CN[*:1] >> CCN(C)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.02,
+   "min_delta_p_affinity": -0.02,
+   "max_delta_p_affinity": -0.02,
+   "n_improved": 0,
+   "best_monomerid_from": 17090,
+   "best_monomerid_to": 17093
+  },
+  {
+   "transformation": "CC(=O)[*:1] >> NC(=O)C[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.03,
+   "min_delta_p_affinity": -0.3,
+   "max_delta_p_affinity": 0.23,
+   "n_improved": 1,
+   "best_monomerid_from": 50265913,
+   "best_monomerid_to": 50265946
+  },
+  {
+   "transformation": "N#C[*:1] >> COC(=O)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.05,
+   "min_delta_p_affinity": -0.17,
+   "max_delta_p_affinity": 0.08,
+   "n_improved": 1,
+   "best_monomerid_from": 50243378,
+   "best_monomerid_to": 50243377
+  },
+  {
+   "transformation": "CCN[*:1] >> C1CCN([*:1])C1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.06,
+   "min_delta_p_affinity": -0.12,
+   "max_delta_p_affinity": 0.0,
+   "n_improved": 0,
+   "best_monomerid_from": 50306141,
+   "best_monomerid_to": 50306137
+  },
+  {
+   "transformation": "O=C1CCCCN1[*:1] >> CS(=O)(=O)CC1([*:1])CC1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.06,
+   "min_delta_p_affinity": -0.15,
+   "max_delta_p_affinity": 0.03,
+   "n_improved": 1,
+   "best_monomerid_from": 19023,
+   "best_monomerid_to": 50265916
+  },
+  {
+   "transformation": "c1cnn([*:1])n1 >> c1nnn([*:1])n1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.06,
+   "min_delta_p_affinity": -0.36,
+   "max_delta_p_affinity": 0.24,
+   "n_improved": 1,
+   "best_monomerid_from": 17265,
+   "best_monomerid_to": 17267
+  },
+  {
+   "transformation": "C1CCN([*:1])C1 >> C1CCN([*:1])CC1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.09,
+   "min_delta_p_affinity": -0.18,
+   "max_delta_p_affinity": 0.0,
+   "n_improved": 0,
+   "best_monomerid_from": 50306137,
+   "best_monomerid_to": 50306136
+  },
+  {
+   "transformation": "CNC1([*:1])CC1 >> O=C1CCCCN1[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.1,
+   "min_delta_p_affinity": -0.16,
+   "max_delta_p_affinity": -0.03,
+   "n_improved": 0,
+   "best_monomerid_from": 50266320,
+   "best_monomerid_to": 19023
+  },
+  {
+   "transformation": "CNCC1([*:1])CC1 >> O=C1CCCCN1[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.1,
+   "min_delta_p_affinity": -0.1,
+   "max_delta_p_affinity": -0.1,
+   "n_improved": 0,
+   "best_monomerid_from": 50243539,
+   "best_monomerid_to": 19020
+  },
+  {
+   "transformation": "Brc1ccc([*:1])cc1 >> Clc1ccc([*:1])nc1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.11,
+   "min_delta_p_affinity": -0.7,
+   "max_delta_p_affinity": 0.48,
+   "n_improved": 1,
+   "best_monomerid_from": 50590072,
+   "best_monomerid_to": 15867
+  },
+  {
+   "transformation": "C1CN[C@@H]([*:1])C1 >> C1CN[C@H]([*:1])C1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.11,
+   "min_delta_p_affinity": -0.22,
+   "max_delta_p_affinity": 0.0,
+   "n_improved": 0,
+   "best_monomerid_from": 50338678,
+   "best_monomerid_to": 50338677
+  },
+  {
+   "transformation": "CCC(C)[*:1] >> CCCC[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.11,
+   "min_delta_p_affinity": -0.28,
+   "max_delta_p_affinity": 0.07,
+   "n_improved": 1,
+   "best_monomerid_from": 50088949,
+   "best_monomerid_to": 50088939
+  },
+  {
+   "transformation": "CC(C)[*:1] >> C1CC([*:1])C1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.12,
+   "min_delta_p_affinity": -0.48,
+   "max_delta_p_affinity": 0.23,
+   "n_improved": 1,
+   "best_monomerid_from": 12835,
+   "best_monomerid_to": 12836
+  },
+  {
+   "transformation": "CCS[*:1] >> CCS(=O)(=O)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.12,
+   "min_delta_p_affinity": -0.34,
+   "max_delta_p_affinity": 0.11,
+   "n_improved": 1,
+   "best_monomerid_from": 50079258,
+   "best_monomerid_to": 50079232
+  },
+  {
+   "transformation": "c1cn([*:1])nn1 >> c1cnn([*:1])n1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.12,
+   "min_delta_p_affinity": -0.39,
+   "max_delta_p_affinity": 0.15,
+   "n_improved": 1,
+   "best_monomerid_from": 19002,
+   "best_monomerid_to": 19003
+  },
+  {
+   "transformation": "N[*:1] >> CN(C)C(=O)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.14,
+   "min_delta_p_affinity": -0.87,
+   "max_delta_p_affinity": 0.6,
+   "n_improved": 1,
+   "best_monomerid_from": 18996,
+   "best_monomerid_to": 18993
+  },
+  {
+   "transformation": "c1cn([*:1])cn1 >> c1cncc([*:1])c1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.14,
+   "min_delta_p_affinity": -0.16,
+   "max_delta_p_affinity": -0.12,
+   "n_improved": 0,
+   "best_monomerid_from": 50114541,
+   "best_monomerid_to": 50114545
+  },
+  {
+   "transformation": "Cl[*:1] >> I[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.15,
+   "min_delta_p_affinity": -0.37,
+   "max_delta_p_affinity": 0.07,
+   "n_improved": 1,
+   "best_monomerid_from": 50094096,
+   "best_monomerid_to": 50094100
+  },
+  {
+   "transformation": "NC(=O)N[*:1] >> C1CN([*:1])CCO1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.15,
+   "min_delta_p_affinity": -0.3,
+   "max_delta_p_affinity": 0.0,
+   "n_improved": 0,
+   "best_monomerid_from": 12541,
+   "best_monomerid_to": 12544
+  },
+  {
+   "transformation": "CNC[*:1] >> CN(S(C)(=O)=O)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.16,
+   "min_delta_p_affinity": -1.2,
+   "max_delta_p_affinity": 0.87,
+   "n_improved": 1,
+   "best_monomerid_from": 50266179,
+   "best_monomerid_to": 50243670
+  },
+  {
+   "transformation": "CNC[*:1] >> NS(=O)(=O)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.18,
+   "min_delta_p_affinity": -0.59,
+   "max_delta_p_affinity": 0.23,
+   "n_improved": 1,
+   "best_monomerid_from": 12833,
+   "best_monomerid_to": 12660
+  },
+  {
+   "transformation": "CN[*:1] >> N#C[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.18,
+   "min_delta_p_affinity": -1.06,
+   "max_delta_p_affinity": 0.71,
+   "n_improved": 1,
+   "best_monomerid_from": 18998,
+   "best_monomerid_to": 18994
+  },
+  {
+   "transformation": "OC[*:1] >> CC(C)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.18,
+   "min_delta_p_affinity": -0.2,
+   "max_delta_p_affinity": -0.16,
+   "n_improved": 0,
+   "best_monomerid_from": 50349350,
+   "best_monomerid_to": 50349346
+  },
+  {
+   "transformation": "c1cn([*:1])nn1 >> c1nnn([*:1])n1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.18,
+   "min_delta_p_affinity": -0.21,
+   "max_delta_p_affinity": -0.15,
+   "n_improved": 0,
+   "best_monomerid_from": 17264,
+   "best_monomerid_to": 17267
+  },
+  {
+   "transformation": "COC(=O)[*:1] >> c1ccc([*:1])cc1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.19,
+   "min_delta_p_affinity": -0.34,
+   "max_delta_p_affinity": -0.04,
+   "n_improved": 0,
+   "best_monomerid_from": 50084192,
+   "best_monomerid_to": 50084163
+  },
+  {
+   "transformation": "CC(=N)N(C)[*:1] >> N=C1OCCN1[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.2,
+   "min_delta_p_affinity": -0.4,
+   "max_delta_p_affinity": 0.0,
+   "n_improved": 0,
+   "best_monomerid_from": 17130,
+   "best_monomerid_to": 17123
+  },
+  {
+   "transformation": "CCOC(=O)[*:1] >> CN(C)C(=O)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.2,
+   "min_delta_p_affinity": -0.76,
+   "max_delta_p_affinity": 0.36,
+   "n_improved": 1,
+   "best_monomerid_from": 18989,
+   "best_monomerid_to": 18993
+  },
+  {
+   "transformation": "CN(CCO)[*:1] >> CS(=O)(=O)C[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.21,
+   "min_delta_p_affinity": -0.43,
+   "max_delta_p_affinity": 0.0,
+   "n_improved": 0,
+   "best_monomerid_from": 50265948,
+   "best_monomerid_to": 50265916
+  },
+  {
+   "transformation": "NC[*:1] >> CS(=O)(=O)N[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.21,
+   "min_delta_p_affinity": -0.72,
+   "max_delta_p_affinity": 0.3,
+   "n_improved": 1,
+   "best_monomerid_from": 12535,
+   "best_monomerid_to": 12528
+  },
+  {
+   "transformation": "NS(=O)(=O)[*:1] >> CNS(=O)(=O)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.22,
+   "min_delta_p_affinity": -0.24,
+   "max_delta_p_affinity": -0.21,
+   "n_improved": 0,
+   "best_monomerid_from": 12775,
+   "best_monomerid_to": 50094091
+  },
+  {
+   "transformation": "N[*:1] >> C1CN([*:1])CCN1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.23,
+   "min_delta_p_affinity": -0.7,
+   "max_delta_p_affinity": 0.24,
+   "n_improved": 1,
+   "best_monomerid_from": 12832,
+   "best_monomerid_to": 12849
+  },
+  {
+   "transformation": "CCN(CC)[*:1] >> CN1CCN([*:1])CC1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.25,
+   "min_delta_p_affinity": -0.81,
+   "max_delta_p_affinity": 0.31,
+   "n_improved": 1,
+   "best_monomerid_from": 17094,
+   "best_monomerid_to": 17088
+  },
+  {
+   "transformation": "CN(C)C(=O)[*:1] >> Cn1ccnc1[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.26,
+   "min_delta_p_affinity": -0.46,
+   "max_delta_p_affinity": -0.05,
+   "n_improved": 0,
+   "best_monomerid_from": 50243431,
+   "best_monomerid_to": 50266319
+  },
+  {
+   "transformation": "O=C1CCCCN1[*:1] >> O=C1NCCCN1[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.26,
+   "min_delta_p_affinity": -0.33,
+   "max_delta_p_affinity": -0.19,
+   "n_improved": 0,
+   "best_monomerid_from": 50216569,
+   "best_monomerid_to": 50216596
+  },
+  {
+   "transformation": "c1cc([*:1])ccn1 >> c1ccc([*:1])nc1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.26,
+   "min_delta_p_affinity": -0.26,
+   "max_delta_p_affinity": -0.25,
+   "n_improved": 0,
+   "best_monomerid_from": 50114544,
+   "best_monomerid_to": 50114537
+  },
+  {
+   "transformation": "CN(CCO)[*:1] >> C1CN(CC[*:1])CCO1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.27,
+   "min_delta_p_affinity": -0.3,
+   "max_delta_p_affinity": -0.24,
+   "n_improved": 0,
+   "best_monomerid_from": 50266113,
+   "best_monomerid_to": 50266216
+  },
+  {
+   "transformation": "O=c1ccccn1[*:1] >> O=c1cnccn1[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.28,
+   "min_delta_p_affinity": -0.41,
+   "max_delta_p_affinity": -0.14,
+   "n_improved": 0,
+   "best_monomerid_from": 50216556,
+   "best_monomerid_to": 50216583
+  },
+  {
+   "transformation": "C1CCN([*:1])C1 >> CC(C)N(C)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.29,
+   "min_delta_p_affinity": -0.4,
+   "max_delta_p_affinity": -0.18,
+   "n_improved": 0,
+   "best_monomerid_from": 50374264,
+   "best_monomerid_to": 50374263
+  },
+  {
+   "transformation": "CN(C)C(=O)[*:1] >> n1n[nH]c([*:1])n1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.29,
+   "min_delta_p_affinity": -1.0,
+   "max_delta_p_affinity": 0.43,
+   "n_improved": 1,
+   "best_monomerid_from": 18993,
+   "best_monomerid_to": 19001
+  },
+  {
+   "transformation": "O[*:1] >> OCCO[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.31,
+   "min_delta_p_affinity": -0.34,
+   "max_delta_p_affinity": -0.28,
+   "n_improved": 0,
+   "best_monomerid_from": 17252,
+   "best_monomerid_to": 17255
+  },
+  {
+   "transformation": "Br[*:1] >> I[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.32,
+   "min_delta_p_affinity": -0.37,
+   "max_delta_p_affinity": -0.27,
+   "n_improved": 0,
+   "best_monomerid_from": 50094092,
+   "best_monomerid_to": 50094100
+  },
+  {
+   "transformation": "C1CC1C[*:1] >> C1CCC([*:1])C1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.32,
+   "min_delta_p_affinity": -0.56,
+   "max_delta_p_affinity": -0.08,
+   "n_improved": 0,
+   "best_monomerid_from": 12834,
+   "best_monomerid_to": 12837
+  },
+  {
+   "transformation": "CC(C)(C)[*:1] >> CCC(C)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.32,
+   "min_delta_p_affinity": -0.42,
+   "max_delta_p_affinity": -0.22,
+   "n_improved": 0,
+   "best_monomerid_from": 50088941,
+   "best_monomerid_to": 50088949
+  },
+  {
+   "transformation": "CN(CCO)[*:1] >> CN(S(C)(=O)=O)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.32,
+   "min_delta_p_affinity": -1.38,
+   "max_delta_p_affinity": 0.73,
+   "n_improved": 1,
+   "best_monomerid_from": 17098,
+   "best_monomerid_to": 17105
+  },
+  {
+   "transformation": "[H][*:1] >> C1CC1[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.32,
+   "min_delta_p_affinity": -0.67,
+   "max_delta_p_affinity": 0.03,
+   "n_improved": 1,
+   "best_monomerid_from": 12833,
+   "best_monomerid_to": 12834
+  },
+  {
+   "transformation": "CC(=O)N(C)[*:1] >> C1COC(C2([*:1])CC2)=N1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.33,
+   "min_delta_p_affinity": -0.7,
+   "max_delta_p_affinity": 0.04,
+   "n_improved": 1,
+   "best_monomerid_from": 19022,
+   "best_monomerid_to": 50265864
+  },
+  {
+   "transformation": "CN(C)C(=N)[*:1] >> O=c1ccccn1[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.33,
+   "min_delta_p_affinity": -0.51,
+   "max_delta_p_affinity": -0.14,
+   "n_improved": 0,
+   "best_monomerid_from": 50193861,
+   "best_monomerid_to": 50377638
+  },
+  {
+   "transformation": "CN(C)C1([*:1])CC1 >> O=C1CCCCN1[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.34,
+   "min_delta_p_affinity": -0.41,
+   "max_delta_p_affinity": -0.28,
+   "n_improved": 0,
+   "best_monomerid_from": 50265826,
+   "best_monomerid_to": 19023
+  },
+  {
+   "transformation": "CN(C)[*:1] >> C1CCC(N[*:1])C1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.35,
+   "min_delta_p_affinity": -0.54,
+   "max_delta_p_affinity": -0.16,
+   "n_improved": 0,
+   "best_monomerid_from": 12688,
+   "best_monomerid_to": 12837
+  },
+  {
+   "transformation": "CC(C)N[*:1] >> OC1CCN([*:1])CC1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.36,
+   "min_delta_p_affinity": -0.53,
+   "max_delta_p_affinity": -0.19,
+   "n_improved": 0,
+   "best_monomerid_from": 17092,
+   "best_monomerid_to": 17097
+  },
+  {
+   "transformation": "CC[*:1] >> NC(=O)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.38,
+   "min_delta_p_affinity": -0.64,
+   "max_delta_p_affinity": -0.11,
+   "n_improved": 0,
+   "best_monomerid_from": 50088939,
+   "best_monomerid_to": 50088958
+  },
+  {
+   "transformation": "OC[*:1] >> CCOC(=O)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.39,
+   "min_delta_p_affinity": -0.82,
+   "max_delta_p_affinity": 0.04,
+   "n_improved": 1,
+   "best_monomerid_from": 50172832,
+   "best_monomerid_to": 50172841
+  },
+  {
+   "transformation": "OC[*:1] >> O=C(O)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.39,
+   "min_delta_p_affinity": -0.53,
+   "max_delta_p_affinity": -0.24,
+   "n_improved": 0,
+   "best_monomerid_from": 50172832,
+   "best_monomerid_to": 50172845
+  },
+  {
+   "transformation": "CN(C)C[*:1] >> CN(CCO)[*:1]",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.4,
+   "min_delta_p_affinity": -0.54,
+   "max_delta_p_affinity": -0.25,
+   "n_improved": 0,
+   "best_monomerid_from": 50266010,
+   "best_monomerid_to": 50265948
+  },
+  {
+   "transformation": "OC[*:1] >> c1ccc([*:1])cc1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.4,
+   "min_delta_p_affinity": -0.6,
+   "max_delta_p_affinity": -0.19,
+   "n_improved": 0,
+   "best_monomerid_from": 50172832,
+   "best_monomerid_to": 50172831
+  },
+  {
+   "transformation": "NC(=O)C[*:1] >> C1COC([*:1])=N1",
+   "n_pairs": 2,
+   "median_delta_p_affinity": -0.41,
+   "min_delta_p_affinity": -0.63,
+   "max_delta_p_affinity": -0.19,
+   "n_improved": 0,
+   "best_monomerid_from": 50265947,
+   "best_monomerid_to": 50265864
+  }
+ ],
+ "note": "Only the 1,500 most potent compounds were paired; raise max_compounds to cover more of the target, at the cost of time. A pair comes from cutting one acyclic single bond, so it is a change of substituent, not of scaffold; fold_change below 1 means the change cost potency."
+}

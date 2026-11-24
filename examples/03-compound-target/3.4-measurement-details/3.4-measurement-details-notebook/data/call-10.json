@@ -1,0 +1,55 @@
+{
+ "measurement": {
+  "ic50": " 1",
+  "ki_result_id": 8648,
+  "reactant_set_id": 8646,
+  "solution_id": 1,
+  "e_conc_range": "20 nM",
+  "temp": 296.15,
+  "assayid": 1,
+  "entryid": 724,
+  "s_conc_range": "50 uM",
+  "ph": 7.5
+ },
+ "reactants": {
+  "target_label": "Epidermal growth factor receptor",
+  "ligand_label": "BDBM5447",
+  "substrate": "EGFR Substrate Peptide",
+  "e_prep": null,
+  "i_prep": null,
+  "s_prep": null,
+  "monomerid": 5447,
+  "compound_name": "Iressa",
+  "inchi_key": "XGALLCVXEZPNRQ-UHFFFAOYSA-N",
+  "polymerid": 520,
+  "complexid": null,
+  "target_name": "Epidermal growth factor receptor",
+  "uniprot_raw": "P00533",
+  "organism": "Homo sapiens"
+ },
+ "assay": {
+  "assay_name": "Kinase Inhibition Assay",
+  "description": "Enzymatic reactions were initiated by adding kinase to the reaction mixture containing ATP, [gamma-33P] ATP, peptide substrate and test inhibitor compound. The reactions were terminated after 10 min at 23 &#176;C. The reaction mix was then transferred to filter plates for scintillation counting. Each inhibitor compound was added to the reaction to produce an 11-point dose-response curve (0.0001 to 10 uM). The IC50 values were estimated from data fit to the equation: y =Vmax X (1 - (x/(K + x))."
+ },
+ "entry": {
+  "entryid": 724,
+  "entrytitle": "Discovery and Biological Evaluation of Potent Dual ErbB-2/EGFR Tyrosine Kinase Inhibitors: 6-Thiazolylquinazolines",
+  "meas_tech": "Enzyme Inhibition",
+  "entrydate": "2005-08-11T00:00:00",
+  "ezid": "10.7270/Q2HQ3X4M"
+ },
+ "citations": [
+  {
+   "articleid": 271,
+   "art_purp": "Binding Data",
+   "title": "Synthesis and SAR of potent EGFR/erbB2 dual inhibitors.",
+   "journal": "Bioorg Med Chem Lett",
+   "year": 2004,
+   "volume": 14,
+   "firstpage": 111,
+   "source_id": "14684309",
+   "doi": "10.1016/j.bmcl.2003.10.010",
+   "authors": "YM Zhang, S Cockerill, SB Guntrip, D Rusnak, K Smith, D Vanderwall, E Wood, K Lackey"
+  }
+ ]
+}

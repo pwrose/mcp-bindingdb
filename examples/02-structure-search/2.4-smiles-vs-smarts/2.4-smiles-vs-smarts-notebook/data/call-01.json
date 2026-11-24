@@ -1,0 +1,10 @@
+{
+ "query": {
+  "input": "Nc1ccc(Cl)cc1",
+  "interpreted_as": "smiles",
+  "canonical": "Nc1ccc(Cl)cc1"
+ },
+ "n_matching_compounds": 21350,
+ "compounds_searched": 1466457,
+ "compounds_indexed": 1466457
+}

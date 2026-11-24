@@ -1,0 +1,50 @@
+{
+ "measurement": {
+  "ic50": " 0.100000",
+  "ki_result_id": 51193991,
+  "reactant_set_id": 51193991,
+  "assayid": 1,
+  "entryid": 50005373
+ },
+ "reactants": {
+  "target_label": "Epidermal growth factor receptor",
+  "ligand_label": "BDBM5447",
+  "substrate": null,
+  "e_prep": null,
+  "i_prep": null,
+  "s_prep": null,
+  "monomerid": 5447,
+  "compound_name": "Iressa",
+  "inchi_key": "XGALLCVXEZPNRQ-UHFFFAOYSA-N",
+  "polymerid": 520,
+  "complexid": null,
+  "target_name": "Epidermal growth factor receptor",
+  "uniprot_raw": "P00533",
+  "organism": "Homo sapiens"
+ },
+ "assay": {
+  "assay_name": "ChEMBL_958682 (CHEMBL2383984)",
+  "description": "Inhibition of wild type EGFR (unknown origin) after 1.5 hrs by FRET-based Z'Lyte assay"
+ },
+ "entry": {
+  "entryid": 50005373,
+  "entrytitle": "Novel hybrids of (phenylsulfonyl)furoxan and anilinopyrimidine as potent and selective epidermal growth factor receptor inhibitors for intervention of non-small-cell lung cancer.",
+  "meas_tech": "Enzyme Inhibition",
+  "entrydate": "2020-09-01T00:00:00",
+  "ezid": "10.7270/Q2X351C8"
+ },
+ "citations": [
+  {
+   "articleid": 50005373,
+   "art_purp": "ChEMBL_26",
+   "title": "Novel hybrids of (phenylsulfonyl)furoxan and anilinopyrimidine as potent and selective epidermal growth factor receptor inhibitors for intervention of non-small-cell lung cancer.",
+   "journal": "J Med Chem",
+   "year": 2013,
+   "volume": 56,
+   "firstpage": 4738,
+   "source_id": "23668441",
+   "doi": "10.1021/jm400463q",
+   "authors": "C Han, Z Huang, C Zheng, L Wan, L Zhang, S Peng, K Ding, H Ji, J Tian, Y Zhang"
+  }
+ ]
+}

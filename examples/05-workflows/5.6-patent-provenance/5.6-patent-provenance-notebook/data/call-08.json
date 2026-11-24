@@ -1,0 +1,90 @@
+{
+ "row_count": 14,
+ "truncated": false,
+ "rows": [
+  {
+   "year": 2013,
+   "patents": 5,
+   "compounds": 88,
+   "sub1nm": 9
+  },
+  {
+   "year": 2014,
+   "patents": 3,
+   "compounds": 100,
+   "sub1nm": 24
+  },
+  {
+   "year": 2015,
+   "patents": 9,
+   "compounds": 249,
+   "sub1nm": 36
+  },
+  {
+   "year": 2016,
+   "patents": 17,
+   "compounds": 903,
+   "sub1nm": 240
+  },
+  {
+   "year": 2017,
+   "patents": 32,
+   "compounds": 3101,
+   "sub1nm": 270
+  },
+  {
+   "year": 2018,
+   "patents": 17,
+   "compounds": 1202,
+   "sub1nm": 347
+  },
+  {
+   "year": 2019,
+   "patents": 26,
+   "compounds": 1778,
+   "sub1nm": 264
+  },
+  {
+   "year": 2020,
+   "patents": 29,
+   "compounds": 3209,
+   "sub1nm": 348
+  },
+  {
+   "year": 2021,
+   "patents": 25,
+   "compounds": 2535,
+   "sub1nm": 205
+  },
+  {
+   "year": 2022,
+   "patents": 10,
+   "compounds": 1090,
+   "sub1nm": 14
+  },
+  {
+   "year": 2023,
+   "patents": 11,
+   "compounds": 758,
+   "sub1nm": 105
+  },
+  {
+   "year": 2024,
+   "patents": 15,
+   "compounds": 737,
+   "sub1nm": 59
+  },
+  {
+   "year": 2025,
+   "patents": 12,
+   "compounds": 1150,
+   "sub1nm": 63
+  },
+  {
+   "year": 2026,
+   "patents": 6,
+   "compounds": 121,
+   "sub1nm": 27
+  }
+ ]
+}

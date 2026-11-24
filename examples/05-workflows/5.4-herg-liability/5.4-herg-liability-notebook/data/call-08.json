@@ -1,0 +1,25 @@
+{
+ "query": "haloperidol",
+ "resolved": true,
+ "source": "bindingdb",
+ "smiles": "c1cc(ccc1C(=O)CCCN2CCC(CC2)(c3ccc(cc3)Cl)O)F",
+ "inchi_key": "LNEPOXFFQSENCJ-UHFFFAOYSA-N",
+ "monomerid": 21398,
+ "ambiguous": false,
+ "candidates": [
+  {
+   "monomerid": 21398,
+   "bdbm_id": "BDBM21398",
+   "name": "Haloperidol",
+   "inchi_key": "LNEPOXFFQSENCJ-UHFFFAOYSA-N",
+   "smiles": "c1cc(ccc1C(=O)CCCN2CCC(CC2)(c3ccc(cc3)Cl)O)F",
+   "n_activities": 1195
+  }
+ ],
+ "sources_tried": [
+  {
+   "source": "bindingdb",
+   "status": "found"
+  }
+ ]
+}

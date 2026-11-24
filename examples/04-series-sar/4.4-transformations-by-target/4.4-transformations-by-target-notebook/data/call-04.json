@@ -1,0 +1,42 @@
+{
+ "row_count": 3,
+ "truncated": false,
+ "rows": [
+  {
+   "target_kind": "polymer",
+   "target_id": 1193,
+   "name": "Carbonic anhydrase 2",
+   "uniprot": "P00918",
+   "uniprot_raw": "P00918",
+   "organism": "Homo sapiens",
+   "type": "Enzyme",
+   "n_activities": 15712,
+   "n_compounds": 10535,
+   "matched_name": "Carbonic anhydrase II (CAII)"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 2920,
+   "name": "Carbonic anhydrase 3",
+   "uniprot": "P07451",
+   "uniprot_raw": "P07451",
+   "organism": "Homo sapiens",
+   "type": "Enzyme",
+   "n_activities": 575,
+   "n_compounds": 342,
+   "matched_name": "Carbonic Anhydrase III"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1277,
+   "name": "Carbonic anhydrase 2 [F130V]",
+   "uniprot": "P00918",
+   "uniprot_raw": "P00918[F130V]",
+   "organism": "Homo sapiens",
+   "type": "Enzyme",
+   "n_activities": 11,
+   "n_compounds": 11,
+   "matched_name": "Carbonic Anhydrase II Mutant (F130V)"
+  }
+ ]
+}

@@ -1,5 +1,5 @@
-# mcp-bindingdb at commit 5ea8c6253a4c, with the versions of its dependencies its uv.lock pins.
-mcp-bindingdb[substructure,structures,opsin,notebook] @ git+https://github.com/pwrose/mcp-bindingdb.git@5ea8c6253a4c012b3f3982669393dcdf831fca79
+# mcp-bindingdb at commit 79dae5d22c0f, with the versions of its dependencies its uv.lock pins.
+mcp-bindingdb[substructure,structures,opsin,notebook] @ git+https://github.com/sbl-sdsc/mcp-bindingdb.git@79dae5d22c0f15b8ded9b49adc8b105f0463703a
 annotated-doc==0.0.5
 annotated-types==0.8.0
 anyio==4.15.1
@@ -71,7 +71,7 @@ stack-data==0.6.3
 starlette==1.7.0
 tornado==6.6.1
 traitlets==5.16.1
-truststore==0.10.4 ; sys_platform != 'emscripten'
+truststore==0.10.4
 typer==0.27.2
 typing-extensions==4.16.0
 typing-inspection==0.4.4

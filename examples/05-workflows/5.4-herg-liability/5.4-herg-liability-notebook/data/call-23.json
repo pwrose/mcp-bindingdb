@@ -1,0 +1,25 @@
+{
+ "query": "chlorpromazine",
+ "resolved": true,
+ "source": "bindingdb",
+ "smiles": "CN(C)CCCN1c2ccccc2Sc3c1cc(cc3)Cl",
+ "inchi_key": "ZPEIMTDSQAKGNT-UHFFFAOYSA-N",
+ "monomerid": 50001888,
+ "ambiguous": false,
+ "candidates": [
+  {
+   "monomerid": 50001888,
+   "bdbm_id": "BDBM50001888",
+   "name": "PROMAPAR",
+   "inchi_key": "ZPEIMTDSQAKGNT-UHFFFAOYSA-N",
+   "smiles": "CN(C)CCCN1c2ccccc2Sc3c1cc(cc3)Cl",
+   "n_activities": 331
+  }
+ ],
+ "sources_tried": [
+  {
+   "source": "bindingdb",
+   "status": "found"
+  }
+ ]
+}

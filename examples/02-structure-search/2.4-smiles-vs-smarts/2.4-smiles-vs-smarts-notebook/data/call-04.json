@@ -1,0 +1,85 @@
+{
+ "query": {
+  "input": "[NX3;H2]c1ccc(Cl)cc1",
+  "interpreted_as": "smarts",
+  "canonical": "[N&X3&H2]c1ccc(Cl)cc1"
+ },
+ "row_count": 8,
+ "truncated": true,
+ "rows": [
+  {
+   "monomerid": 35371,
+   "bdbm_id": "BDBM35371",
+   "name": "MLS000042514",
+   "smiles": "Nc1c(cc(Cl)c2nonc12)N1CCCC1",
+   "mol_weight": 238.06,
+   "n_activities": 19,
+   "n_targets": 12
+  },
+  {
+   "monomerid": 50259519,
+   "bdbm_id": "BDBM50259519",
+   "name": "CHEMBL4087260",
+   "smiles": "Nc1ccc(Cl)cc1-c1cnc2ccc(Cl)nn12",
+   "mol_weight": 279.13,
+   "n_activities": 11,
+   "n_targets": 11
+  },
+  {
+   "monomerid": 50259524,
+   "bdbm_id": "BDBM50259524",
+   "name": "CHEMBL4067477",
+   "smiles": "CC[C@@H](CO)Nc1ccc2ncc(-c3cc(Cl)ccc3N)n2n1 |r|",
+   "mol_weight": 331.81,
+   "n_activities": 11,
+   "n_targets": 11
+  },
+  {
+   "monomerid": 50574672,
+   "bdbm_id": "BDBM50574672",
+   "name": "CHEMBL4861912",
+   "smiles": "CN1CCN(CC1)c1ccc(cc1NC(=O)c1cc(N)c(F)c(C)c1Cl)-n1cc(nn1)C(=O)NCCCN1CCOCC1",
+   "mol_weight": 614.13,
+   "n_activities": 11,
+   "n_targets": 7
+  },
+  {
+   "monomerid": 61213,
+   "bdbm_id": "BDBM61213",
+   "name": "MLS000763081",
+   "smiles": "CN(C)c1cc(Cl)c2nonc2c1N",
+   "mol_weight": 212.05,
+   "n_activities": 8,
+   "n_targets": 6
+  },
+  {
+   "monomerid": 50658547,
+   "bdbm_id": "BDBM50658547",
+   "name": "CHEMBL6148436",
+   "smiles": "Cc1c(F)c(N)cc(C(=O)Nc2cc(-c3ccc(NC(=O)CCCCCCC(=O)NO)cc3)ccc2N2CCN(C)CC2)c1Cl",
+   "mol_weight": 639.17,
+   "n_activities": 8,
+   "n_targets": 8
+  },
+  {
+   "monomerid": 50658552,
+   "bdbm_id": "BDBM50658552",
+   "name": "CHEMBL6133389",
+   "smiles": "Cc1c(F)c(N)cc(C(=O)Nc2cc(-c3ccc(C(=O)NCc4ccc(/C=C/C(=O)NO)cc4)cc3)ccc2N2CCN(C)CC2)c1Cl",
+   "mol_weight": 671.17,
+   "n_activities": 8,
+   "n_targets": 8
+  },
+  {
+   "monomerid": 160150,
+   "bdbm_id": "BDBM160150",
+   "name": "US9040534, 91",
+   "smiles": "C[C@H]1Cn2c(nnc2-c2cnccn2)C(=O)N1Cc1cc(N)ccc1Cl |r|",
+   "mol_weight": 369.11,
+   "n_activities": 6,
+   "n_targets": 3
+  }
+ ],
+ "compounds_searched": 100000,
+ "search_set_size": 1466457
+}

@@ -1,0 +1,25 @@
+{
+ "query": "dofetilide",
+ "resolved": true,
+ "source": "bindingdb",
+ "smiles": "CN(CCOc1ccc(NS(C)(=O)=O)cc1)CCc1ccc(NS(C)(=O)=O)cc1",
+ "inchi_key": "IXTMWRCNAAVVAI-UHFFFAOYSA-N",
+ "monomerid": 50031720,
+ "ambiguous": false,
+ "candidates": [
+  {
+   "monomerid": 50031720,
+   "bdbm_id": "BDBM50031720",
+   "name": "TIKOSYN",
+   "inchi_key": "IXTMWRCNAAVVAI-UHFFFAOYSA-N",
+   "smiles": "CN(CCOc1ccc(NS(C)(=O)=O)cc1)CCc1ccc(NS(C)(=O)=O)cc1",
+   "n_activities": 37
+  }
+ ],
+ "sources_tried": [
+  {
+   "source": "bindingdb",
+   "status": "found"
+  }
+ ]
+}

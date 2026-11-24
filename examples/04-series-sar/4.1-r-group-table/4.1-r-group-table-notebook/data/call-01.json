@@ -1,0 +1,78 @@
+{
+ "row_count": 6,
+ "truncated": false,
+ "rows": [
+  {
+   "target_kind": "polymer",
+   "target_id": 2262,
+   "name": "Prostaglandin G/H synthase 2",
+   "uniprot": "P35354",
+   "uniprot_raw": "P35354",
+   "organism": "Homo sapiens",
+   "type": "Enzyme",
+   "n_activities": 7678,
+   "n_compounds": 5518,
+   "matched_name": "Cyclooxygenase"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 7854,
+   "name": "Prostaglandin G/H synthase 1",
+   "uniprot": "P23219",
+   "uniprot_raw": "P23219",
+   "organism": "Homo sapiens",
+   "type": "Enzyme",
+   "n_activities": 3665,
+   "n_compounds": 2863,
+   "matched_name": "Cyclooxygenase"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 5096,
+   "name": "Prostaglandin G/H synthase 1 [582-599]",
+   "uniprot": "P23219",
+   "uniprot_raw": "P23219[582-599]",
+   "organism": "Homo sapiens",
+   "type": "Protein",
+   "n_activities": 11,
+   "n_compounds": 10,
+   "matched_name": "Cyclooxygenase"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 8894,
+   "name": "Prostaglandin G/H synthase 2",
+   "uniprot": "P35354",
+   "uniprot_raw": "P35354",
+   "organism": "Homo sapiens",
+   "type": "Enzyme",
+   "n_activities": 46,
+   "n_compounds": 41,
+   "matched_name": "Cyclooxygenase-2 (COX-2)"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 7549,
+   "name": "Prostaglandin G/H synthase 2 [E165G]",
+   "uniprot": "P35354",
+   "uniprot_raw": "P35354[E165G]",
+   "organism": "Homo sapiens",
+   "type": "Protein",
+   "n_activities": 36,
+   "n_compounds": 35,
+   "matched_name": "Cyclooxygenase-2 (COX-2)"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 8893,
+   "name": "Prostaglandin G/H synthase 2",
+   "uniprot": "P35354",
+   "uniprot_raw": "P35354",
+   "organism": "Homo sapiens",
+   "type": "Enzyme",
+   "n_activities": 0,
+   "n_compounds": 0,
+   "matched_name": "Cyclooxygenase-2 (COX-2)"
+  }
+ ]
+}

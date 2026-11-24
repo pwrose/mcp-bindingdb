@@ -1,0 +1,34 @@
+{
+ "row_count": 4,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 50111724,
+   "smiles": "Cc1ccc(NS(=O)(=O)Cc2ccccc2)c(=O)n1CC(=O)NCc1ccc(cc1)C(N)=N",
+   "n": 1,
+   "best_nm": 0.37,
+   "best_source": "11934589"
+  },
+  {
+   "monomerid": 50111726,
+   "smiles": "Cc1cnc(NCCc2ccccc2)c(=O)n1CC(=O)NCc1ccc(cc1)C(N)=N",
+   "n": 1,
+   "best_nm": 0.57,
+   "best_source": "11934589"
+  },
+  {
+   "monomerid": 50133520,
+   "smiles": "Cc1cnc(NCCc2ccccc2)c(=O)n1CC(=O)NCc1cc(Cl)ccc1CN",
+   "n": 1,
+   "best_nm": 0.13,
+   "best_source": "14505652"
+  },
+  {
+   "monomerid": 50133529,
+   "smiles": "Cc1ccc(NS(=O)(=O)Cc2ccccc2)c(=O)n1CC(=O)NCc1cc(Cl)ccc1CN",
+   "n": 1,
+   "best_nm": 0.046,
+   "best_source": "14505652"
+  }
+ ]
+}

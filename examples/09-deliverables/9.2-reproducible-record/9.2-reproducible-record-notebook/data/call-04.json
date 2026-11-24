@@ -1,0 +1,346 @@
+{
+ "row_count": 68,
+ "truncated": false,
+ "rows": [
+  {
+   "target_name": "Aurora kinase A",
+   "n": 2,
+   "nd": 1
+  },
+  {
+   "target_name": "Aurora kinase B",
+   "n": 2,
+   "nd": 1
+  },
+  {
+   "target_name": "CDK-activating kinase assembly factor MAT1/Cyclin-H/Cyclin-dependent kinase 7",
+   "n": 6,
+   "nd": 3
+  },
+  {
+   "target_name": "CDK1/Cyclin E",
+   "n": 1,
+   "nd": 1
+  },
+  {
+   "target_name": "CDK6/cyclin D1",
+   "n": 24,
+   "nd": 3
+  },
+  {
+   "target_name": "Calcium/calmodulin-dependent protein kinase type 1",
+   "n": 1,
+   "nd": 1
+  },
+  {
+   "target_name": "Calcium/calmodulin-dependent protein kinase type II subunit beta",
+   "n": 2,
+   "nd": 2
+  },
+  {
+   "target_name": "Calcium/calmodulin-dependent protein kinase type II subunit delta",
+   "n": 2,
+   "nd": 2
+  },
+  {
+   "target_name": "Calcium/calmodulin-dependent protein kinase type II subunit gamma",
+   "n": 2,
+   "nd": 2
+  },
+  {
+   "target_name": "Casein kinase I isoform epsilon",
+   "n": 1,
+   "nd": 1
+  },
+  {
+   "target_name": "Casein kinase II subunit alpha",
+   "n": 1,
+   "nd": 1
+  },
+  {
+   "target_name": "Cyclin-A2 [177-432]/Cyclin-dependent kinase 2",
+   "n": 1,
+   "nd": 1
+  },
+  {
+   "target_name": "Cyclin-A2/Cyclin-dependent kinase 1",
+   "n": 1,
+   "nd": 1
+  },
+  {
+   "target_name": "Cyclin-A2/Cyclin-dependent kinase 2",
+   "n": 19,
+   "nd": 3
+  },
+  {
+   "target_name": "Cyclin-H/Cyclin-dependent kinase 7",
+   "n": 4,
+   "nd": 2
+  },
+  {
+   "target_name": "Cyclin-K",
+   "n": 2,
+   "nd": 2
+  },
+  {
+   "target_name": "Cyclin-T1/Cyclin-dependent kinase 9",
+   "n": 17,
+   "nd": 3
+  },
+  {
+   "target_name": "Cyclin-dependent kinase 1",
+   "n": 11,
+   "nd": 3
+  },
+  {
+   "target_name": "Cyclin-dependent kinase 1/G1/S-specific cyclin-D3",
+   "n": 4,
+   "nd": 1
+  },
+  {
+   "target_name": "Cyclin-dependent kinase 1/G2/mitotic-specific cyclin-B",
+   "n": 1,
+   "nd": 1
+  },
+  {
+   "target_name": "Cyclin-dependent kinase 12",
+   "n": 1,
+   "nd": 1
+  },
+  {
+   "target_name": "Cyclin-dependent kinase 2",
+   "n": 13,
+   "nd": 3
+  },
+  {
+   "target_name": "Cyclin-dependent kinase 2/G1/S-specific cyclin-E1",
+   "n": 20,
+   "nd": 3
+  },
+  {
+   "target_name": "Cyclin-dependent kinase 4",
+   "n": 41,
+   "nd": 3
+  },
+  {
+   "target_name": "Cyclin-dependent kinase 4/6",
+   "n": 4,
+   "nd": 1
+  },
+  {
+   "target_name": "Cyclin-dependent kinase 4/G1/S-specific cyclin-D1",
+   "n": 47,
+   "nd": 3
+  },
+  {
+   "target_name": "Cyclin-dependent kinase 4/G1/S-specific cyclin-D1 [L188C]",
+   "n": 1,
+   "nd": 1
+  },
+  {
+   "target_name": "Cyclin-dependent kinase 4/G1/S-specific cyclin-D3",
+   "n": 18,
+   "nd": 3
+  },
+  {
+   "target_name": "Cyclin-dependent kinase 4/G1/S-specific cyclin-E1",
+   "n": 2,
+   "nd": 1
+  },
+  {
+   "target_name": "Cyclin-dependent kinase 5",
+   "n": 6,
+   "nd": 2
+  },
+  {
+   "target_name": "Cyclin-dependent kinase 5 activator 1",
+   "n": 10,
+   "nd": 3
+  },
+  {
+   "target_name": "Cyclin-dependent kinase 6",
+   "n": 36,
+   "nd": 3
+  },
+  {
+   "target_name": "Cyclin-dependent kinase 6/G1/S-specific cyclin-D1/D2/D3",
+   "n": 3,
+   "nd": 3
+  },
+  {
+   "target_name": "Cyclin-dependent kinase 6/G1/S-specific cyclin-D3",
+   "n": 26,
+   "nd": 3
+  },
+  {
+   "target_name": "Cyclin-dependent kinase 7",
+   "n": 4,
+   "nd": 2
+  },
+  {
+   "target_name": "Cyclin-dependent kinase 9",
+   "n": 7,
+   "nd": 2
+  },
+  {
+   "target_name": "Cyclin-dependent kinase/G1/S-specific cyclin- 2",
+   "n": 4,
+   "nd": 1
+  },
+  {
+   "target_name": "Cyclin-dependent kinase/G2/mitotic-specific cyclin- 1",
+   "n": 17,
+   "nd": 3
+  },
+  {
+   "target_name": "Dual specificity protein kinase CLK1",
+   "n": 3,
+   "nd": 1
+  },
+  {
+   "target_name": "Dual specificity protein kinase CLK2",
+   "n": 1,
+   "nd": 1
+  },
+  {
+   "target_name": "Dual specificity protein kinase CLK3",
+   "n": 1,
+   "nd": 1
+  },
+  {
+   "target_name": "Dual specificity protein kinase CLK4",
+   "n": 1,
+   "nd": 1
+  },
+  {
+   "target_name": "Dual specificity tyrosine-phosphorylation-regulated kinase 1A",
+   "n": 4,
+   "nd": 1
+  },
+  {
+   "target_name": "Dual specificity tyrosine-phosphorylation-regulated kinase 1B",
+   "n": 2,
+   "nd": 1
+  },
+  {
+   "target_name": "Dual specificity tyrosine-phosphorylation-regulated kinase 2",
+   "n": 3,
+   "nd": 1
+  },
+  {
+   "target_name": "Dual specificity tyrosine-phosphorylation-regulated kinase 3",
+   "n": 1,
+   "nd": 1
+  },
+  {
+   "target_name": "Dual specificity tyrosine-phosphorylation-regulated kinase 4",
+   "n": 1,
+   "nd": 1
+  },
+  {
+   "target_name": "G1/S-specific cyclin-D2",
+   "n": 4,
+   "nd": 1
+  },
+  {
+   "target_name": "Glycogen synthase kinase-3 beta",
+   "n": 6,
+   "nd": 2
+  },
+  {
+   "target_name": "Homeodomain-interacting protein kinase 1",
+   "n": 1,
+   "nd": 1
+  },
+  {
+   "target_name": "Homeodomain-interacting protein kinase 2",
+   "n": 2,
+   "nd": 1
+  },
+  {
+   "target_name": "Mitogen-activated protein kinase 10",
+   "n": 2,
+   "nd": 1
+  },
+  {
+   "target_name": "Mitogen-activated protein kinase 3",
+   "n": 2,
+   "nd": 1
+  },
+  {
+   "target_name": "NUAK family SNF1-like kinase 1",
+   "n": 1,
+   "nd": 1
+  },
+  {
+   "target_name": "Phosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit delta isoform",
+   "n": 1,
+   "nd": 1
+  },
+  {
+   "target_name": "Phosphatidylinositol 5-phosphate 4-kinase type-2 alpha",
+   "n": 1,
+   "nd": 1
+  },
+  {
+   "target_name": "Proto-oncogene tyrosine-protein kinase ROS",
+   "n": 2,
+   "nd": 1
+  },
+  {
+   "target_name": "RAC-alpha serine/threonine-protein kinase",
+   "n": 2,
+   "nd": 1
+  },
+  {
+   "target_name": "RAF proto-oncogene serine/threonine-protein kinase",
+   "n": 2,
+   "nd": 1
+  },
+  {
+   "target_name": "Receptor-type tyrosine-protein kinase FLT3",
+   "n": 6,
+   "nd": 2
+  },
+  {
+   "target_name": "Serine/threonine-protein kinase 17A",
+   "n": 2,
+   "nd": 1
+  },
+  {
+   "target_name": "Serine/threonine-protein kinase B-raf",
+   "n": 2,
+   "nd": 1
+  },
+  {
+   "target_name": "Serine/threonine-protein kinase PLK1",
+   "n": 2,
+   "nd": 1
+  },
+  {
+   "target_name": "Serine/threonine-protein kinase PLK3",
+   "n": 2,
+   "nd": 1
+  },
+  {
+   "target_name": "Serine/threonine-protein kinase pim-1",
+   "n": 5,
+   "nd": 1
+  },
+  {
+   "target_name": "Serine/threonine-protein kinase pim-2",
+   "n": 2,
+   "nd": 1
+  },
+  {
+   "target_name": "Tyrosine-protein kinase ABL1",
+   "n": 1,
+   "nd": 1
+  },
+  {
+   "target_name": "Tyrosine-protein kinase JAK3",
+   "n": 1,
+   "nd": 1
+  }
+ ]
+}

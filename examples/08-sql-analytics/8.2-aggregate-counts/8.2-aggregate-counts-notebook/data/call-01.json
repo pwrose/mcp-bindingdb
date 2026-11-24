@@ -1,0 +1,76 @@
+{
+ "row_count": 10,
+ "truncated": false,
+ "rows": [
+  {
+   "uniprot": "O60674",
+   "target_name": "Tyrosine-protein kinase JAK2",
+   "compounds": 18186,
+   "measurements": 25188,
+   "target_records": 13
+  },
+  {
+   "uniprot": "P00533",
+   "target_name": "Epidermal growth factor receptor",
+   "compounds": 16187,
+   "measurements": 30307,
+   "target_records": 49
+  },
+  {
+   "uniprot": "Q12809",
+   "target_name": "Potassium voltage-gated channel subfamily H member 2",
+   "compounds": 14872,
+   "measurements": 18767,
+   "target_records": 1
+  },
+  {
+   "uniprot": "P23458",
+   "target_name": "Tyrosine-protein kinase JAK1",
+   "compounds": 14768,
+   "measurements": 19337,
+   "target_records": 7
+  },
+  {
+   "uniprot": "Q06187",
+   "target_name": "Tyrosine-protein kinase BTK",
+   "compounds": 14353,
+   "measurements": 25705,
+   "target_records": 6
+  },
+  {
+   "uniprot": "P42336",
+   "target_name": "Phosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit alpha isoform",
+   "compounds": 13081,
+   "measurements": 16270,
+   "target_records": 2
+  },
+  {
+   "uniprot": "O60885",
+   "target_name": "Bromodomain-containing protein 4",
+   "compounds": 13024,
+   "measurements": 22896,
+   "target_records": 31
+  },
+  {
+   "uniprot": "P35968",
+   "target_name": "Vascular endothelial growth factor receptor 2",
+   "compounds": 12792,
+   "measurements": 15984,
+   "target_records": 3
+  },
+  {
+   "uniprot": "P51449",
+   "target_name": "Nuclear receptor ROR-gamma",
+   "compounds": 12007,
+   "measurements": 18281,
+   "target_records": 6
+  },
+  {
+   "uniprot": "Q9NWZ3",
+   "target_name": "Interleukin-1 receptor-associated kinase 4",
+   "compounds": 11909,
+   "measurements": 14983,
+   "target_records": 2
+  }
+ ]
+}

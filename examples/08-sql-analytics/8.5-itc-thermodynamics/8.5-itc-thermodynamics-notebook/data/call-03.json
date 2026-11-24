@@ -1,0 +1,102 @@
+{
+ "row_count": 12,
+ "truncated": false,
+ "rows": [
+  {
+   "target_id": 177,
+   "name": "Serine protease 1",
+   "organism": "Bos taurus",
+   "complete_profiles": 30,
+   "median_mismatch": 0.01,
+   "rows_off_by_more_than_1": 0
+  },
+  {
+   "target_id": 50007614,
+   "name": "Leucine--tRNA ligase",
+   "organism": "Escherichia coli (strain K12)",
+   "complete_profiles": 24,
+   "median_mismatch": 0.99,
+   "rows_off_by_more_than_1": 11
+  },
+  {
+   "target_id": 61,
+   "name": "Guanylyl Cyclase C receptor mAb",
+   "organism": null,
+   "complete_profiles": 22,
+   "median_mismatch": 0.46,
+   "rows_off_by_more_than_1": 1
+  },
+  {
+   "target_id": 796,
+   "name": "Cyclin-dependent kinase 2",
+   "organism": "Homo sapiens",
+   "complete_profiles": 20,
+   "median_mismatch": 0.05,
+   "rows_off_by_more_than_1": 3
+  },
+  {
+   "target_id": 5153,
+   "name": "Phosphoethanolamine N-methyltransferase 1",
+   "organism": "Caenorhabditis elegans",
+   "complete_profiles": 18,
+   "median_mismatch": 0.4,
+   "rows_off_by_more_than_1": 5
+  },
+  {
+   "target_id": 22,
+   "name": "Lysozyme (hen egg)",
+   "organism": "Mus musculus",
+   "complete_profiles": 17,
+   "median_mismatch": 0.07,
+   "rows_off_by_more_than_1": 0
+  },
+  {
+   "target_id": 42,
+   "name": "Cytochrome c peroxidase, mitochondrial",
+   "organism": "Saccharomyces cerevisiae YJM1341",
+   "complete_profiles": 13,
+   "median_mismatch": 6.3,
+   "rows_off_by_more_than_1": 12
+  },
+  {
+   "target_id": 5650,
+   "name": "cAMP-activated global transcriptional regulator CRP",
+   "organism": "Escherichia coli",
+   "complete_profiles": 12,
+   "median_mismatch": 0.18,
+   "rows_off_by_more_than_1": 2
+  },
+  {
+   "target_id": 15,
+   "name": "Lysozyme C",
+   "organism": "Gallus gallus",
+   "complete_profiles": 11,
+   "median_mismatch": 0.13,
+   "rows_off_by_more_than_1": 0
+  },
+  {
+   "target_id": 52,
+   "name": "Growth factor receptor-bound protein 2",
+   "organism": "Homo sapiens",
+   "complete_profiles": 10,
+   "median_mismatch": 0.07,
+   "rows_off_by_more_than_1": 0
+  },
+  {
+   "target_id": 8450,
+   "name": "Aldo-keto reductase family 1 member B1",
+   "organism": "Homo sapiens",
+   "complete_profiles": 10,
+   "median_mismatch": 20.57,
+   "rows_off_by_more_than_1": 10
+  },
+  {
+   "target_id": 50001119,
+   "name": "Flavin reductase (NADPH)",
+   "organism": "Homo sapiens",
+   "complete_profiles": 10,
+   "median_mismatch": 0.03,
+   "rows_off_by_more_than_1": 0
+  }
+ ]
+}

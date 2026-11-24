@@ -1,0 +1,33 @@
+{
+ "query": "saxagliptin",
+ "resolved": true,
+ "source": "bindingdb",
+ "smiles": "N#C[C@@H]1C[C@@H]2C[C@@H]2N1C(=O)[C@@H](N)C12CC3CC(CC(O)(C3)C1)C2",
+ "inchi_key": "QGJUIPDUBHWZPV-SGTAVMJGSA-N",
+ "monomerid": 50225074,
+ "ambiguous": false,
+ "candidates": [
+  {
+   "monomerid": 50225074,
+   "bdbm_id": "BDBM50225074",
+   "name": "SAXAGLIPTIN",
+   "inchi_key": "QGJUIPDUBHWZPV-SGTAVMJGSA-N",
+   "smiles": "N#C[C@@H]1C[C@@H]2C[C@@H]2N1C(=O)[C@@H](N)C12CC3CC(CC(O)(C3)C1)C2",
+   "n_activities": 49
+  },
+  {
+   "monomerid": 11542,
+   "bdbm_id": "BDBM11542",
+   "name": "Saxagliptin",
+   "inchi_key": "QGJUIPDUBHWZPV-SGTAVMJGSA-N",
+   "smiles": "N#C[C@@H]1C[C@@H]2C[C@@H]2N1C(=O)[C@@H](N)C12CC3CC(CC(O)(C3)C1)C2",
+   "n_activities": 6
+  }
+ ],
+ "sources_tried": [
+  {
+   "source": "bindingdb",
+   "status": "found"
+  }
+ ]
+}

@@ -1,0 +1,226 @@
+{
+ "row_count": 20,
+ "truncated": true,
+ "rows": [
+  {
+   "monomerid": 13530,
+   "bdbm_id": "BDBM13530",
+   "name": "Gleevec",
+   "inchi_key": "KTUFNOKKBVMGRW-UHFFFAOYSA-N",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)CC1",
+   "mol_weight": 493.26,
+   "n_activities": 1156,
+   "n_targets": 459,
+   "matched_name": "CHEMBL941"
+  },
+  {
+   "monomerid": 3530,
+   "bdbm_id": "BDBM3530",
+   "name": "PD153035 Analog 29",
+   "inchi_key": "MJKCGAHOCZLYDG-UHFFFAOYSA-N",
+   "smiles": "COc1cc2ncnc(Nc3ccccc3)c2cc1OC",
+   "mol_weight": 281.12,
+   "n_activities": 16,
+   "n_targets": 9,
+   "matched_name": "CHEMBL94191"
+  },
+  {
+   "monomerid": 50102788,
+   "bdbm_id": "BDBM50102788",
+   "name": "2-(2-Hydroxy-3-methoxy-phenyl)-1H-benzoimidazole-5-carboxamidine",
+   "inchi_key": "MXYHBEGHRXMSNT-UHFFFAOYSA-N",
+   "smiles": "COc1cccc(-c2nc3ccc(C(=N)N)cc3[nH]2)c1O",
+   "mol_weight": 282.11,
+   "n_activities": 6,
+   "n_targets": 6,
+   "matched_name": "CHEMBL94139"
+  },
+  {
+   "monomerid": 50033722,
+   "bdbm_id": "BDBM50033722",
+   "name": "ISOBUTYLSHIKONIN",
+   "inchi_key": "CVESWGQNHXEYIQ-UHFFFAOYSA-N",
+   "smiles": "CC(C)=CC=C(OC(=O)C(C)C)c1cc(O)c2c(O)ccc(O)c2c1O",
+   "mol_weight": 358.14,
+   "n_activities": 5,
+   "n_targets": 4,
+   "matched_name": "CHEMBL9416"
+  },
+  {
+   "monomerid": 50039712,
+   "bdbm_id": "BDBM50039712",
+   "name": "3-(2-(1-benzylpiperidin-4-yl)ethyl)-5-methoxybenzo[d]isoxazole",
+   "inchi_key": "WLEKXXPTBPECMY-UHFFFAOYSA-N",
+   "smiles": "COc1ccc2onc(CCC3CCN(Cc4ccccc4)CC3)c2c1",
+   "mol_weight": 350.2,
+   "n_activities": 5,
+   "n_targets": 1,
+   "matched_name": "CHEMBL94186"
+  },
+  {
+   "monomerid": 50052111,
+   "bdbm_id": "BDBM50052111",
+   "name": "(2-Methoxy-ethyl)-carbamic acid (3R,4aR,5S,6S,6aS,10S,10aR,10bS)-5,10,10b-trihydroxy-3,4a,7,7,10a-pentamethyl-1-oxo-3-vinyl-dodecahydro-benzo[f]chromen-6-yl ester",
+   "inchi_key": "DHXAJBAYFHOCQQ-PNUNPAGSSA-N",
+   "smiles": "COCCNC(=O)O[C@@H]1[C@H](O)[C@@]2(C)O[C@](C)(CC(=O)[C@]2(O)[C@@]2(C)[C@@H](O)CCC(C)(C)[C@H]12)C=C",
+   "mol_weight": 469.27,
+   "n_activities": 4,
+   "n_targets": 1,
+   "matched_name": "CHEMBL94135"
+  },
+  {
+   "monomerid": 50052113,
+   "bdbm_id": "BDBM50052113",
+   "name": "(2-Methoxy-ethyl)-carbamic acid (3R,4aR,5S,6S,6aS,10S,10aR,10bS)-6,10,10b-trihydroxy-3,4a,7,7,10a-pentamethyl-1-oxo-3-vinyl-dodecahydro-benzo[f]chromen-5-yl ester",
+   "inchi_key": "ABSVJDSEPWWKHF-PNUNPAGSSA-N",
+   "smiles": "COCCNC(=O)O[C@H]1[C@@H](O)[C@H]2C(C)(C)CC[C@H](O)[C@]2(C)[C@@]2(O)C(=O)C[C@@](C)(O[C@]12C)C=C",
+   "mol_weight": 469.27,
+   "n_activities": 4,
+   "n_targets": 1,
+   "matched_name": "CHEMBL94168"
+  },
+  {
+   "monomerid": 50069580,
+   "bdbm_id": "BDBM50069580",
+   "name": "(R)-2-Benzyl-N*1*-((S)-1-benzylcarbamoyl-2-phenyl-ethyl)-N*4*-hydroxy-succinamide",
+   "inchi_key": "QLLHBFHVPQQFRB-RPWUZVMVSA-N",
+   "smiles": "ONC(=O)C[C@@H](Cc1ccccc1)C(=O)N[C@@H](Cc1ccccc1)C(=O)NCc1ccccc1",
+   "mol_weight": 459.22,
+   "n_activities": 4,
+   "n_targets": 2,
+   "matched_name": "CHEMBL94155"
+  },
+  {
+   "monomerid": 50090023,
+   "bdbm_id": "BDBM50090023",
+   "name": "4-(3,4-Difluoro-phenyl)-2-oxo-1,2,3,4-tetrahydro-pyrimidine-5-carboxylic acid {3-[4-(2-cyano-4-fluoro-phenyl)-piperidin-1-yl]-propyl}-amide",
+   "inchi_key": "OZLVILGCRABIEJ-MQNHUJCZSA-N",
+   "smiles": "Fc1ccc(C2CCN(CCCNC(=O)C3C=NC(=O)N[C@@H]3c3ccc(F)c(F)c3)CC2)c(c1)C#N |c:16|",
+   "mol_weight": 497.2,
+   "n_activities": 4,
+   "n_targets": 3,
+   "matched_name": "CHEMBL94188"
+  },
+  {
+   "monomerid": 50090031,
+   "bdbm_id": "BDBM50090031",
+   "name": "4-(3,4-Difluoro-phenyl)-2-oxo-1,2,3,4-tetrahydro-pyrimidine-5-carboxylic acid {3-[4-(4-fluoro-phenyl)-piperidin-1-yl]-propyl}-amide",
+   "inchi_key": "PLQHNFLSZUTLDO-GWQXNCQPSA-N",
+   "smiles": "Fc1ccc(cc1)C1CCN(CCCNC(=O)C2C=NC(=O)N[C@@H]2c2ccc(F)c(F)c2)CC1 |c:19|",
+   "mol_weight": 472.21,
+   "n_activities": 4,
+   "n_targets": 3,
+   "matched_name": "CHEMBL94167"
+  },
+  {
+   "monomerid": 50131354,
+   "bdbm_id": "BDBM50131354",
+   "name": "7,8-Dimethoxy-3-(4-naphthalen-2-ylmethyl-piperazin-1-ylmethyl)-3a,4-dihydro-3H-chromeno[4,3-c]isoxazole",
+   "inchi_key": "XHLHZPFSBCZVEA-UHFFFAOYSA-N",
+   "smiles": "COc1cc2OCC3C(CN4CCN(Cc5ccc6ccccc6c5)CC4)ON=C3c2cc1OC |c:31|",
+   "mol_weight": 473.23,
+   "n_activities": 4,
+   "n_targets": 4,
+   "matched_name": "CHEMBL94129"
+  },
+  {
+   "monomerid": 50146269,
+   "bdbm_id": "BDBM50146269",
+   "name": "(2R,3S)-5-Chloro-3-(4-hydroxy-phenyl)-2-[4-(2-piperidin-1-yl-ethoxy)-phenyl]-2,3-dihydro-benzo[1,4]oxathiin-7-ol",
+   "inchi_key": "RSGSDAZRNVPOTK-FTJBHMTQSA-N",
+   "smiles": "Oc1ccc(cc1)[C@@H]1Sc2c(Cl)cc(O)cc2O[C@@H]1c1ccc(OCCN2CCCCC2)cc1",
+   "mol_weight": 497.14,
+   "n_activities": 4,
+   "n_targets": 2,
+   "matched_name": "CHEMBL94116"
+  },
+  {
+   "monomerid": 50146282,
+   "bdbm_id": "BDBM50146282",
+   "name": "(2R,3S)-5-Ethyl-3-(4-hydroxy-phenyl)-2-[4-(2-piperidin-1-yl-ethoxy)-phenyl]-2,3-dihydro-benzo[1,4]oxathiin-7-ol",
+   "inchi_key": "RQEDNNYPHPXBQP-PXJZQJOASA-N",
+   "smiles": "CCc1cc(O)cc2O[C@@H]([C@@H](Sc12)c1ccc(O)cc1)c1ccc(OCCN2CCCCC2)cc1",
+   "mol_weight": 491.21,
+   "n_activities": 4,
+   "n_targets": 2,
+   "matched_name": "CHEMBL94170"
+  },
+  {
+   "monomerid": 50095134,
+   "bdbm_id": "BDBM50095134",
+   "name": "(3S,4R)-4-(4-Chloro-phenyl)-1-methyl-piperidine-3-carboxylic acid 4-[(4-chloro-benzoylamino)-methyl]-benzylamide",
+   "inchi_key": "HZUQKHSZVBGHLH-IZZNHLLZSA-N",
+   "smiles": "CN1CC[C@H]([C@@H](C1)C(=O)NCc1ccc(CNC(=O)c2ccc(Cl)cc2)cc1)c1ccc(Cl)cc1",
+   "mol_weight": 509.16,
+   "n_activities": 3,
+   "n_targets": 3,
+   "matched_name": "CHEMBL94108"
+  },
+  {
+   "monomerid": 50105559,
+   "bdbm_id": "BDBM50105559",
+   "name": "1-Benzyl-5-(3-chloro-phenyl)-1,3-dihydro-benzoimidazol-2-one",
+   "inchi_key": "JTJWERWUFWISDB-UHFFFAOYSA-N",
+   "smiles": "O=c1[nH]c2cc(-c3cccc(Cl)c3)ccc2n1Cc1ccccc1",
+   "mol_weight": 334.09,
+   "n_activities": 3,
+   "n_targets": 1,
+   "matched_name": "CHEMBL94162"
+  },
+  {
+   "monomerid": 50105618,
+   "bdbm_id": "BDBM50105618",
+   "name": "1-(5-tert-butyl-2-(dimethylcarbamoyl)thiophen-3-yl)-3-p-tolylurea",
+   "inchi_key": "RALWYNSHHMYKBY-UHFFFAOYSA-N",
+   "smiles": "CN(C)C(=O)c1sc(cc1NC(=O)Nc1ccc(C)cc1)C(C)(C)C",
+   "mol_weight": 359.17,
+   "n_activities": 3,
+   "n_targets": 1,
+   "matched_name": "CHEMBL94156"
+  },
+  {
+   "monomerid": 50146311,
+   "bdbm_id": "BDBM50146311",
+   "name": "4-Fluoro-biphenyl-2-carboxylic acid [3-chloro-4-((S)-3,4,11,11a-tetrahydro-1H,5H-2-oxa-4a,10-diaza-dibenzo[a,d]cycloheptene-10-carbonyl)-phenyl]-amide",
+   "inchi_key": "DACLNYLQXBKHMO-VWLOTQADSA-N",
+   "smiles": "Fc1ccc(-c2ccccc2)c(c1)C(=O)Nc1ccc(C(=O)N2C[C@H]3COCCN3Cc3ccccc23)c(Cl)c1",
+   "mol_weight": 555.17,
+   "n_activities": 3,
+   "n_targets": 2,
+   "matched_name": "CHEMBL94133"
+  },
+  {
+   "monomerid": 50283710,
+   "bdbm_id": "BDBM50283710",
+   "name": "(R)-N*1*-[(S)-2-Cyclohexyl-1-(4-morpholin-4-yl-butylcarbamoyl)-ethyl]-N*4*-hydroxy-2-(3-p-tolyl-propyl)-succinamide",
+   "inchi_key": "UVOFCKSSQUNXIZ-IZLXSDGUSA-N",
+   "smiles": "Cc1ccc(CCC[C@H](CC(=O)NO)C(=O)N[C@@H](CC2CCCCC2)C(=O)NCCCCN2CCOCC2)cc1",
+   "mol_weight": 558.75249,
+   "n_activities": 3,
+   "n_targets": 3,
+   "matched_name": "CHEMBL94114"
+  },
+  {
+   "monomerid": 50039826,
+   "bdbm_id": "BDBM50039826",
+   "name": "1-Decyl-4-(2,3-dihydro-benzo[1,4]dioxin-5-yl)-piperazine",
+   "inchi_key": "ZWPCABJDUWYWJX-UHFFFAOYSA-N",
+   "smiles": "CCCCCCCCCCN1CCN(CC1)c1cccc2OCCOc12",
+   "mol_weight": 360.28,
+   "n_activities": 2,
+   "n_targets": 1,
+   "matched_name": "CHEMBL94115"
+  },
+  {
+   "monomerid": 50039878,
+   "bdbm_id": "BDBM50039878",
+   "name": "4'-[3-(2-Methyl-cyclopropylmethyl)-5-oxo-1-(2-trifluoromethyl-phenyl)-1,5-dihydro-[1,2,4]triazol-4-ylmethyl]-biphenyl-2-sulfonic acid benzoylamide",
+   "inchi_key": "CCJJBAOBCOBULM-UHFFFAOYSA-N",
+   "smiles": "CC1CC1Cc1nn(-c2ccccc2C(F)(F)F)c(=O)n1Cc1ccc(cc1)-c1ccccc1S(=O)(=O)NC(=O)c1ccccc1",
+   "mol_weight": 646.19,
+   "n_activities": 2,
+   "n_targets": 2,
+   "matched_name": "CHEMBL94176"
+  }
+ ]
+}

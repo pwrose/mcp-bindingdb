@@ -1,0 +1,1187 @@
+{
+ "row_count": 118,
+ "truncated": false,
+ "rows": [
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3556,
+   "compound_name": "PD153035 Analog",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 0.006,
+   "smiles": "CCOc1cc2ncnc(Nc3cccc(Br)c3)c2cc1OCC"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3032,
+   "compound_name": "PD153035",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 0.025,
+   "smiles": "COc1cc2ncnc(Nc3cccc(Br)c3)c2cc1OC"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3568,
+   "compound_name": "PD153035 Analog 68",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 0.072,
+   "smiles": "COc1cc2ncnc(Nc3ccc(Br)c(Br)c3)c2cc1OC"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3297,
+   "compound_name": "4-Anilinoquinazoline deriv. 48",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 0.1,
+   "smiles": "Nc1ccc2c(Nc3cccc(Br)c3)ncnc2c1"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3297,
+   "compound_name": "4-Anilinoquinazoline deriv. 48",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 0.1,
+   "smiles": "Nc1ccc2c(Nc3cccc(Br)c3)ncnc2c1"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3303,
+   "compound_name": "4-Anilinoquinazoline deriv. 54",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 0.12,
+   "smiles": "Nc1cc2ncnc(Nc3cccc(Br)c3)c2cc1N"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3303,
+   "compound_name": "4-Anilinoquinazoline deriv. 54",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 0.12,
+   "smiles": "Nc1cc2ncnc(Nc3cccc(Br)c3)c2cc1N"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3302,
+   "compound_name": "4-Anilinoquinazoline deriv. 53",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 0.17,
+   "smiles": "Oc1cc2ncnc(Nc3cccc(Br)c3)c2cc1O"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3302,
+   "compound_name": "4-Anilinoquinazoline deriv. 53",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 0.17,
+   "smiles": "Oc1cc2ncnc(Nc3cccc(Br)c3)c2cc1O"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3557,
+   "compound_name": "PD153035 Analog 57",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 0.17,
+   "smiles": "CCCOc1cc2ncnc(Nc3cccc(Br)c3)c2cc1OCCC"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3534,
+   "compound_name": "PD153035 Analog 34",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 0.24,
+   "smiles": "COc1cc2ncnc(Nc3cccc(c3)C(F)(F)F)c2cc1OC"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3520,
+   "compound_name": "PD153035 Analog 19",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 0.25,
+   "smiles": "Nc1ccc2c(Nc3cccc(Cl)c3)ncnc2c1"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3532,
+   "compound_name": "PD153035 Analog 31",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 0.31,
+   "smiles": "COc1cc2c(cc1OC)ncnc2Nc3cccc(c3)Cl"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3522,
+   "compound_name": "PD153035 Analog 21",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 0.35,
+   "smiles": "Nc1ccc2c(Nc3cccc(I)c3)ncnc2c1"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3564,
+   "compound_name": "PD153035 Analog",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 0.67,
+   "smiles": "COc1cc2ncnc(Nc3cccc(Br)c3)c2c(OC)c1OC"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3544,
+   "compound_name": "PD153035 Analog 44",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 0.69,
+   "smiles": "CNc1cc2ncnc(Nc3cccc(Br)c3)c2cc1N"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3294,
+   "compound_name": "Anilinoquinazoline, 4b",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 0.78,
+   "smiles": "Nc1ccc2ncnc(Nc3cccc(Br)c3)c2c1"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3294,
+   "compound_name": "Anilinoquinazoline, 4b",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 0.79,
+   "smiles": "Nc1ccc2ncnc(Nc3cccc(Br)c3)c2c1"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3533,
+   "compound_name": "PD153035 Analog 33",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 0.89,
+   "smiles": "COc1cc2ncnc(Nc3cccc(I)c3)c2cc1OC"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3567,
+   "compound_name": "PD153035 Analog 67",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 0.96,
+   "smiles": "COc1cc2ncnc(Nc3ccc(Br)cc3)c2cc1OC"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3519,
+   "compound_name": "PD153035 Analog 18",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 2.0,
+   "smiles": "Nc1ccc2c(Nc3cccc(F)c3)ncnc2c1"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3523,
+   "compound_name": "PD153035 Analog 22",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 3.3,
+   "smiles": "Nc1ccc2c(Nc3cccc(c3)C(F)(F)F)ncnc2c1"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3531,
+   "compound_name": "PD153035 Analog 30",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 3.8,
+   "smiles": "COc1cc2ncnc(Nc3cccc(F)c3)c2cc1OC"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3546,
+   "compound_name": "PD153035 Analog 46",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 3.8,
+   "smiles": "COc1cc2ncnc(Nc3cccc(Br)c3)c2cc1N"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3535,
+   "compound_name": "PD153035 Analog 35",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 4.0,
+   "smiles": "CNc1ccc2ncnc(Nc3cccc(Br)c3)c2c1"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3538,
+   "compound_name": "PD153035 Analog",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 4.7,
+   "smiles": "Oc1ccc2c(Nc3cccc(Br)c3)ncnc2c1"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3547,
+   "compound_name": "PD153035 Analog 47",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 6.5,
+   "smiles": "Nc1cc2c(Nc3cccc(Br)c3)ncnc2cc1Cl"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3540,
+   "compound_name": "PD153035 Analog",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 7.0,
+   "smiles": "CNc1ccc2c(Nc3cccc(Br)c3)ncnc2c1"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3289,
+   "compound_name": "4-(Benzylamino)quinazoline deriv. 40",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 10.0,
+   "smiles": "COc1cc2ncnc(NCc3ccccc3)c2cc1OC"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3298,
+   "compound_name": "4-Anilinoquinazoline deriv. 49",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 10.0,
+   "smiles": "COc1ccc2c(Nc3cccc(Br)c3)ncnc2c1"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3298,
+   "compound_name": "4-Anilinoquinazoline deriv. 49",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 10.0,
+   "smiles": "COc1ccc2c(Nc3cccc(Br)c3)ncnc2c1"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3542,
+   "compound_name": "PD153035 Analog 42",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 11.0,
+   "smiles": "CN(C)c1ccc2c(Nc3cccc(Br)c3)ncnc2c1"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3541,
+   "compound_name": "PD153035 Analog 41",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 12.0,
+   "smiles": "CCNc1ccc2c(Nc3cccc(Br)c3)ncnc2c1"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3537,
+   "compound_name": "PD153035 Analog",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 12.0,
+   "smiles": "COC(=O)Nc1ccc2ncnc(Nc3cccc(Br)c3)c2c1"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3552,
+   "compound_name": "PD153035 Analog 52",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 15.0,
+   "smiles": "COc1cc2ncnc(Nc3cccc(Br)c3)c2cc1[N+]([O-])=O"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3554,
+   "compound_name": "PD153035 Analog 54",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 15.0,
+   "smiles": "Brc1cccc(Nc2ncnc3cc4OCOc4cc23)c1"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3263,
+   "compound_name": "4-Anilino quinazoline deriv. 14",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 23.0,
+   "smiles": "Clc1cccc(Nc2ncnc3ccccc23)c1"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3263,
+   "compound_name": "4-Anilino quinazoline deriv. 14",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 23.0,
+   "smiles": "Clc1cccc(Nc2ncnc3ccccc23)c1"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3553,
+   "compound_name": "PD153035 Analog",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 25.0,
+   "smiles": "[O-][N+](=O)c1cc2c(Nc3cccc(Br)c3)ncnc2cc1Cl"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3264,
+   "compound_name": "4-Anilino quinazoline deriv. 15",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 27.0,
+   "smiles": "Brc1cccc(Nc2ncnc3ccccc23)c1"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3264,
+   "compound_name": "4-Anilino quinazoline deriv. 15",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 27.0,
+   "smiles": "Brc1cccc(Nc2ncnc3ccccc23)c1"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3551,
+   "compound_name": "PD153035 Analog 51",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 28.0,
+   "smiles": "CC(=O)Nc1cc2ncnc(Nc3cccc(Br)c3)c2cc1[N+]([O-])=O"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3530,
+   "compound_name": "PD153035 Analog 29",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 29.0,
+   "smiles": "COc1cc2ncnc(Nc3ccccc3)c2cc1OC"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3295,
+   "compound_name": "4-Anilinoquinazoline deriv. 46",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 30.0,
+   "smiles": "COc1ccc2ncnc(Nc3cccc(Br)c3)c2c1"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3539,
+   "compound_name": "PD153035 Analog",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 40.0,
+   "smiles": "CC(=O)Nc1ccc2c(Nc3cccc(Br)c3)ncnc2c1"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3548,
+   "compound_name": "PD153035 Analog",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 53.0,
+   "smiles": "Nc1cc2ncnc(Nc3cccc(Br)c3)c2cc1[N+]([O-])=O"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3508,
+   "compound_name": "PD153035 Analog 7",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 55.0,
+   "smiles": "COc1ccc2ncnc(Nc3ccccc3)c2c1"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3503,
+   "compound_name": "PD153035 Analog 2",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 56.0,
+   "smiles": "Fc1cccc(Nc2ncnc3ccccc23)c1"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3288,
+   "compound_name": "4-(Benzylamino)quinazoline deriv. 39",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 56.0,
+   "smiles": "COc1cc2ncnc(NCc3ccccc3)c2cc1O"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3283,
+   "compound_name": "4-(Benzylamino)quinazoline deriv. 34",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 58.0,
+   "smiles": "COc1ccc2c(NCc3ccccc3)ncnc2c1"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3549,
+   "compound_name": "PD153035 Analog",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 68.0,
+   "smiles": "CNc1cc2ncnc(Nc3cccc(Br)c3)c2cc1[N+]([O-])=O"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3265,
+   "compound_name": "4-Anilino quinazoline deriv. 16",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 80.0,
+   "smiles": "Ic1cccc(Nc2ncnc3ccccc23)c1"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3265,
+   "compound_name": "4-Anilino quinazoline deriv. 16",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 80.0,
+   "smiles": "Ic1cccc(Nc2ncnc3ccccc23)c1"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3536,
+   "compound_name": "PD153035 Analog 36",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 84.0,
+   "smiles": "CN(C)c1ccc2ncnc(Nc3cccc(Br)c3)c2c1"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3518,
+   "compound_name": "PD153035 Analog 17",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 100.0,
+   "smiles": "Nc1ccc2c(Nc3ccccc3)ncnc2c1"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3558,
+   "compound_name": "PD153035 Analog 58",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 105.0,
+   "smiles": "CCCCOc1cc2ncnc(Nc3cccc(Br)c3)c2cc1OCCCC"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3300,
+   "compound_name": "4-Anilinoquinazoline deriv. 51",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 105.0,
+   "smiles": "Nc1cccc2c(Nc3cccc(Br)c3)ncnc12"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3569,
+   "compound_name": "PD153035 Analog 69",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 113.0,
+   "smiles": "COc1cc2ncnc(Nc3cc(Br)cc(Br)c3)c2cc1OC"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3516,
+   "compound_name": "PD153035 Analog 15",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 120.0,
+   "smiles": "COc1ccc2c(Nc3ccccc3)ncnc2c1"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3566,
+   "compound_name": "PD153035 Analog 66",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 128.0,
+   "smiles": "COc1cc2ncnc(Nc3ccccc3Br)c2cc1OC"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3292,
+   "compound_name": "4-Anilinoquinazoline deriv. 43",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 139.0,
+   "smiles": "COc1cccc2ncnc(Nc3cccc(Br)c3)c12"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3563,
+   "compound_name": "PD153035 Analog 63",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 152.0,
+   "smiles": "COc1cc2ncnc(N(C)c3cccc(Br)c3)c2cc1OC"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3545,
+   "compound_name": "PD153035 Analog",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 159.0,
+   "smiles": "CN(C)c1cc2ncnc(Nc3cccc(Br)c3)c2cc1N"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3280,
+   "compound_name": "4-(Benzylamino)quinazoline deriv. 31",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 200.0,
+   "smiles": "COc1ccc2ncnc(NCc3ccccc3)c2c1"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3256,
+   "compound_name": "N-benzylquinazolin-4-amine",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 320.0,
+   "smiles": "C(Nc1ncnc2ccccc12)c1ccccc1"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3259,
+   "compound_name": "N-phenylquinazolin-4-amine",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 344.0,
+   "smiles": "N(c1ccccc1)c1ncnc2ccccc12"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3259,
+   "compound_name": "N-phenylquinazolin-4-amine",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 344.0,
+   "smiles": "N(c1ccccc1)c1ncnc2ccccc12"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3295,
+   "compound_name": "4-Anilinoquinazoline deriv. 46",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 348.0,
+   "smiles": "COc1ccc2ncnc(Nc3cccc(Br)c3)c2c1"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3290,
+   "compound_name": "4-Anilinoquinazoline deriv. 41",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 355.0,
+   "smiles": "[O-][N+](=O)c1cccc2ncnc(Nc3cccc(Br)c3)c12"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3291,
+   "compound_name": "4-Anilinoquinazoline deriv. 42",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 439.0,
+   "smiles": "Nc1cccc2ncnc(Nc3cccc(Br)c3)c12"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3562,
+   "compound_name": "PD153035 Analog",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 463.0,
+   "smiles": "COc1cc2nc(N)nc(Nc3cccc(Br)c3)c2cc1OC"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3528,
+   "compound_name": "PD153035 Analog 27",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 540.0,
+   "smiles": "[O-][N+](=O)c1ccc2c(Nc3cccc(I)c3)ncnc2c1"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3511,
+   "compound_name": "PD153035 Analog 10",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 574.0,
+   "smiles": "Nc1ccc2ncnc(Nc3cccc(c3)C(F)(F)F)c2c1"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3266,
+   "compound_name": "4-Anilino quinazoline deriv. 17",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 577.0,
+   "smiles": "FC(F)(F)c1cccc(Nc2ncnc3ccccc23)c1"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3266,
+   "compound_name": "4-Anilino quinazoline deriv. 17",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 577.0,
+   "smiles": "FC(F)(F)c1cccc(Nc2ncnc3ccccc23)c1"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3287,
+   "compound_name": "4-(Benzylamino)quinazoline deriv. 38",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 588.0,
+   "smiles": "COc1cc2c(NCc3ccccc3)ncnc2cc1O"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3268,
+   "compound_name": "4-(3-bromophenoxy)quinazoline",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 756.0,
+   "smiles": "Brc1cccc(Oc2ncnc3ccccc23)c1"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3510,
+   "compound_name": "PD153035 Analog 9",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 770.0,
+   "smiles": "Nc1ccc2ncnc(Nc3ccccc3)c2c1"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3526,
+   "compound_name": "PD153035 Analog 25",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 810.0,
+   "smiles": "[O-][N+](=O)c1ccc2c(Nc3cccc(Cl)c3)ncnc2c1"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3261,
+   "compound_name": "4-Anilino quinazoline deriv. 12",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 842.0,
+   "smiles": "COc1cccc(Nc2ncnc3ccccc23)c1"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3293,
+   "compound_name": "4-Anilinoquinazoline deriv. 44",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 897.0,
+   "smiles": "[O-][N+](=O)c1ccc2ncnc(Nc3cccc(Br)c3)c2c1"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3293,
+   "compound_name": "4-Anilinoquinazoline deriv. 44",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 900.0,
+   "smiles": "[O-][N+](=O)c1ccc2ncnc(Nc3cccc(Br)c3)c2c1"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3262,
+   "compound_name": "4-Anilino quinazoline deriv. 13",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 910.0,
+   "smiles": "Cc1cccc(Nc2ncnc3ccccc23)c1"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3301,
+   "compound_name": "4-Anilinoquinazoline deriv. 52",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 974.0,
+   "smiles": "COc1cccc2c(Nc3cccc(Br)c3)ncnc12"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3282,
+   "compound_name": "4-N-benzylquinazoline-4,7-diamine",
+   "affinity_type": "IC50",
+   "relation": ">",
+   "value": 1000.0,
+   "smiles": "Nc1ccc2c(NCc3ccccc3)ncnc2c1"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3296,
+   "compound_name": "4-Anilinoquinazoline deriv. 47",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 1000.0,
+   "smiles": "[O-][N+](=O)c1ccc2c(Nc3cccc(Br)c3)ncnc2c1"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3267,
+   "compound_name": "4-Anilino quinazoline deriv. 18",
+   "affinity_type": "IC50",
+   "relation": ">",
+   "value": 1000.0,
+   "smiles": "N(c1cccnc1)c1ncnc2ccccc12"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3296,
+   "compound_name": "4-Anilinoquinazoline deriv. 47",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 1000.0,
+   "smiles": "[O-][N+](=O)c1ccc2c(Nc3cccc(Br)c3)ncnc2c1"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3274,
+   "compound_name": "Benzotriazine deriv. 25",
+   "affinity_type": "IC50",
+   "relation": ">",
+   "value": 1000.0,
+   "smiles": "Brc1cccc(Nc2nnnc3ccccc23)c1"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3559,
+   "compound_name": "PD153035 Analog 59",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 1367.0,
+   "smiles": "COc1ccc2ncnc(Nc3cccc(Br)c3)c2c1OC"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3279,
+   "compound_name": "4-N-benzylquinazoline-4,6-diamine",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 1400.0,
+   "smiles": "Nc1ccc2ncnc(NCc3ccccc3)c2c1"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3550,
+   "compound_name": "PD153035 Analog",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 2000.0,
+   "smiles": "CN(C)c1cc2ncnc(Nc3cccc(Br)c3)c2cc1[N+]([O-])=O"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3255,
+   "compound_name": "4-Anilino quinazoline deriv. 6",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 4100.0,
+   "smiles": "c1ccc(cc1)CCNc2c3ccccc3ncn2"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3277,
+   "compound_name": "4-(Benzylamino)quinazoline deriv. 28",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 4900.0,
+   "smiles": "COc1cccc2ncnc(NCc3ccccc3)c12"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3513,
+   "compound_name": "PD153035 Analog 12",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 5000.0,
+   "smiles": "[O-][N+](=O)c1ccc2ncnc(Nc3ccccc3)c2c1"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3269,
+   "compound_name": "quinoline deriv. 20",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 5500.0,
+   "smiles": "Brc1cccc(Nc2ccnc3ccccc23)c1"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3281,
+   "compound_name": "N-benzyl-7-nitroquinazolin-4-amine",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 5900.0,
+   "smiles": "[O-][N+](=O)c1ccc2c(NCc3ccccc3)ncnc2c1"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3525,
+   "compound_name": "PD153035 Analog 24",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 6100.0,
+   "smiles": "[O-][N+](=O)c1ccc2c(Nc3cccc(F)c3)ncnc2c1"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3257,
+   "compound_name": "4-(Benzylamino)quinazoline deriv. 8",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 7000.0,
+   "smiles": "c1ccc2c(c1)c(ncn2)NCc3ccc(cc3)Cl"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3275,
+   "compound_name": "N-benzyl-5-nitroquinazolin-4-amine",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 8000.0,
+   "smiles": "[O-][N+](=O)c1cccc2ncnc(NCc3ccccc3)c12"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3285,
+   "compound_name": "4-N-benzylquinazoline-4,8-diamine",
+   "affinity_type": "IC50",
+   "relation": ">",
+   "value": 10000.0,
+   "smiles": "Nc1cccc2c(NCc3ccccc3)ncnc12"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3278,
+   "compound_name": "N-benzyl-6-nitroquinazolin-4-amine",
+   "affinity_type": "IC50",
+   "relation": ">",
+   "value": 10000.0,
+   "smiles": "[O-][N+](=O)c1ccc2ncnc(NCc3ccccc3)c2c1"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3565,
+   "compound_name": "PD153035 Analog 65",
+   "affinity_type": "IC50",
+   "relation": ">",
+   "value": 10000.0,
+   "smiles": "COc1cc2c(Nc3cccc(Br)c3)ncnc2c(OC)c1OC"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3276,
+   "compound_name": "4-N-benzylquinazoline-4,5-diamine",
+   "affinity_type": "IC50",
+   "relation": ">",
+   "value": 10000.0,
+   "smiles": "Nc1cccc2ncnc(NCc3ccccc3)c12"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3286,
+   "compound_name": "4-(Benzylamino)quinazoline deriv. 37",
+   "affinity_type": "IC50",
+   "relation": ">",
+   "value": 10000.0,
+   "smiles": "COc1cccc2c(NCc3ccccc3)ncnc12"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3271,
+   "compound_name": "cinnoline deriv. 22",
+   "affinity_type": "IC50",
+   "relation": ">",
+   "value": 10000.0,
+   "smiles": "Brc1cccc(Nc2cnnc3ccccc23)c1"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3258,
+   "compound_name": "4-(Benzylamino)quinazoline deriv. 9",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 10000.0,
+   "smiles": "COc1ccc(CNc2ncnc3ccccc23)cc1"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3529,
+   "compound_name": "PD153035 Analog 28",
+   "affinity_type": "IC50",
+   "relation": ">",
+   "value": 10000.0,
+   "smiles": "[O-][N+](=O)c1ccc2c(Nc3cccc(c3)C(F)(F)F)ncnc2c1"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3299,
+   "compound_name": "4-Anilinoquinazoline deriv. 50",
+   "affinity_type": "IC50",
+   "relation": ">",
+   "value": 10000.0,
+   "smiles": "[O-][N+](=O)c1cccc2c(Nc3cccc(Br)c3)ncnc12"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3561,
+   "compound_name": "PD153035 Analog",
+   "affinity_type": "IC50",
+   "relation": ">",
+   "value": 10000.0,
+   "smiles": "COc1cc2nc(C)nc(Nc3cccc(Br)c3)c2cc1OC"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3515,
+   "compound_name": "PD153035 Analog 14",
+   "affinity_type": "IC50",
+   "relation": ">",
+   "value": 10000.0,
+   "smiles": "[O-][N+](=O)c1ccc2ncnc(Nc3cccc(c3)C(F)(F)F)c2c1"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3560,
+   "compound_name": "PD153035 Analog 60",
+   "affinity_type": "IC50",
+   "relation": ">",
+   "value": 10000.0,
+   "smiles": "COc1ccc2c(Nc3cccc(Br)c3)ncnc2c1OC"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3284,
+   "compound_name": "N-benzyl-8-nitroquinazolin-4-amine",
+   "affinity_type": "IC50",
+   "relation": ">",
+   "value": 10000.0,
+   "smiles": "[O-][N+](=O)c1cccc2c(NCc3ccccc3)ncnc12"
+  },
+  {
+   "source_id": "8568816",
+   "year": 1996,
+   "monomerid": 3524,
+   "compound_name": "PD153035 Analog 23",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 12000.0,
+   "smiles": "[O-][N+](=O)c1ccc2c(Nc3ccccc3)ncnc2c1"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3273,
+   "compound_name": "quinoxaline deriv. 24",
+   "affinity_type": "IC50",
+   "relation": ">",
+   "value": 100000.0,
+   "smiles": "Brc1cccc(Nc2cnc3ccccc3n2)c1"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3272,
+   "compound_name": "phthalazine deriv. 23",
+   "affinity_type": "IC50",
+   "relation": ">",
+   "value": 100000.0,
+   "smiles": "Brc1cccc(Nc2nncc3ccccc23)c1"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3270,
+   "compound_name": "isoquinoline deriv. 21",
+   "affinity_type": "IC50",
+   "relation": ">",
+   "value": 100000.0,
+   "smiles": "Brc1cccc(Nc2nccc3ccccc23)c1"
+  },
+  {
+   "source_id": "7658435",
+   "year": 1995,
+   "monomerid": 3260,
+   "compound_name": "4-Anilino quinazoline deriv. 11",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 100000.0,
+   "smiles": "CN(c1ccccc1)c1ncnc2ccccc12"
+  }
+ ],
+ "order_warning": "Rows 4 and 5 tie on every ORDER BY column (value), so rows like them can swap places from run to run. End the ORDER BY with a unique column (e.g. monomerid; ki_result_id, affinity_type for measurements) so the result is the same on every run and a notebook's rerun check passes."
+}

@@ -1,0 +1,28 @@
+{
+ "row_count": 2,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 22372,
+   "bdbm_id": "BDBM22372",
+   "name": "NDGA",
+   "inchi_key": "HCZKYJDFEPMADG-TXEJJXNPSA-N",
+   "smiles": "C[C@@H](Cc1ccc(O)c(O)c1)[C@H](C)Cc1ccc(O)c(O)c1",
+   "mol_weight": 302.15,
+   "n_activities": 37,
+   "n_targets": 12,
+   "matched_name": "NDGA"
+  },
+  {
+   "monomerid": 32020,
+   "bdbm_id": "BDBM32020",
+   "name": "LOX inhibitor, N/A",
+   "inchi_key": "HCZKYJDFEPMADG-UHFFFAOYSA-N",
+   "smiles": "CC(Cc1ccc(O)c(O)c1)C(C)Cc1ccc(O)c(O)c1",
+   "mol_weight": 302.15,
+   "n_activities": 64,
+   "n_targets": 33,
+   "matched_name": "Nordihydroguaiaretic acid (NDGA)"
+  }
+ ]
+}

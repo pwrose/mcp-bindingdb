@@ -1,0 +1,217 @@
+{
+ "target": "Dimer of Gag-Pol polyprotein [489-587]",
+ "n_compounds": 12,
+ "rows": [
+  {
+   "monomerid": 198,
+   "bdbm": "BDBM198",
+   "name": "A-76928",
+   "ligand_code": "A79",
+   "match": "record",
+   "pdb_ids": [
+    "1HVK"
+   ],
+   "n_pdb_ids": 1,
+   "affinity_type": "Ki",
+   "median_nm": 0.011,
+   "best_nm": 0.011,
+   "n_measurements": 1,
+   "other_affinity_types": []
+  },
+  {
+   "monomerid": 198,
+   "bdbm": "BDBM198",
+   "name": "A-76928",
+   "ligand_code": "A77",
+   "match": "connectivity only",
+   "pdb_ids": [
+    "1HVI",
+    "1HVS"
+   ],
+   "n_pdb_ids": 2,
+   "affinity_type": "Ki",
+   "median_nm": 0.011,
+   "best_nm": 0.011,
+   "n_measurements": 1,
+   "other_affinity_types": []
+  },
+  {
+   "monomerid": 199,
+   "bdbm": "BDBM199",
+   "name": "A-77003",
+   "ligand_code": "A77",
+   "match": "record",
+   "pdb_ids": [
+    "1HVI",
+    "1HVS"
+   ],
+   "n_pdb_ids": 2,
+   "affinity_type": "Ki",
+   "median_nm": 0.012,
+   "best_nm": 0.012,
+   "n_measurements": 1,
+   "other_affinity_types": []
+  },
+  {
+   "monomerid": 199,
+   "bdbm": "BDBM199",
+   "name": "A-77003",
+   "ligand_code": "A79",
+   "match": "connectivity only",
+   "pdb_ids": [
+    "1HVK"
+   ],
+   "n_pdb_ids": 1,
+   "affinity_type": "Ki",
+   "median_nm": 0.012,
+   "best_nm": 0.012,
+   "n_measurements": 1,
+   "other_affinity_types": []
+  },
+  {
+   "monomerid": 577,
+   "bdbm": "BDBM577",
+   "name": "APV",
+   "ligand_code": "478",
+   "match": "same structure",
+   "pdb_ids": [
+    "1HPV",
+    "1T7J",
+    "3EKP",
+    "3EKV",
+    "3EM3",
+    "3OXV",
+    "4RVJ"
+   ],
+   "n_pdb_ids": 7,
+   "affinity_type": "Ki",
+   "median_nm": 0.057,
+   "best_nm": 0.057,
+   "n_measurements": 1,
+   "other_affinity_types": [
+    "IC50"
+   ]
+  },
+  {
+   "monomerid": 197,
+   "bdbm": "BDBM197",
+   "name": "A-76889",
+   "ligand_code": "A77",
+   "match": "connectivity only",
+   "pdb_ids": [
+    "1HVI",
+    "1HVS"
+   ],
+   "n_pdb_ids": 2,
+   "affinity_type": "Ki",
+   "median_nm": 0.112,
+   "best_nm": 0.112,
+   "n_measurements": 1,
+   "other_affinity_types": []
+  },
+  {
+   "monomerid": 197,
+   "bdbm": "BDBM197",
+   "name": "A-76889",
+   "ligand_code": "A79",
+   "match": "connectivity only",
+   "pdb_ids": [
+    "1HVK"
+   ],
+   "n_pdb_ids": 1,
+   "affinity_type": "Ki",
+   "median_nm": 0.112,
+   "best_nm": 0.112,
+   "n_measurements": 1,
+   "other_affinity_types": []
+  },
+  {
+   "monomerid": 763,
+   "bdbm": "BDBM763",
+   "name": "U-103017 Analog",
+   "ligand_code": "INU",
+   "match": "same structure",
+   "pdb_ids": [
+    "7UPJ"
+   ],
+   "n_pdb_ids": 1,
+   "affinity_type": "Ki",
+   "median_nm": 3.1,
+   "best_nm": 3.0,
+   "n_measurements": 2,
+   "other_affinity_types": []
+  },
+  {
+   "monomerid": 196,
+   "bdbm": "BDBM196",
+   "name": "A-74704",
+   "ligand_code": "0E9",
+   "match": "same structure",
+   "pdb_ids": [
+    "9HVP"
+   ],
+   "n_pdb_ids": 1,
+   "affinity_type": "Ki",
+   "median_nm": 4.5,
+   "best_nm": 4.5,
+   "n_measurements": 1,
+   "other_affinity_types": [],
+   "found_in_pdb_by_inchikey": [
+    "9HVP"
+   ]
+  },
+  {
+   "monomerid": 578,
+   "bdbm": "BDBM578",
+   "name": "LPV",
+   "ligand_code": "AB1",
+   "match": "same structure",
+   "pdb_ids": [
+    "6PJB"
+   ],
+   "n_pdb_ids": 1,
+   "affinity_type": "IC50",
+   "median_nm": 35.0,
+   "best_nm": 35.0,
+   "n_measurements": 1,
+   "other_affinity_types": [],
+   "found_in_pdb_by_inchikey": [
+    "6PJB"
+   ]
+  },
+  {
+   "monomerid": 640,
+   "bdbm": "BDBM640",
+   "name": "penicillin deriv. 53",
+   "ligand_code": "G26",
+   "match": "same structure",
+   "pdb_ids": [
+    "1HTF"
+   ],
+   "n_pdb_ids": 1,
+   "affinity_type": "IC50",
+   "median_nm": 150.0,
+   "best_nm": 150.0,
+   "n_measurements": 1,
+   "other_affinity_types": []
+  },
+  {
+   "monomerid": 639,
+   "bdbm": "BDBM639",
+   "name": "penicillin deriv. 52",
+   "ligand_code": "G26",
+   "match": "connectivity only",
+   "pdb_ids": [
+    "1HTF"
+   ],
+   "n_pdb_ids": 1,
+   "affinity_type": null,
+   "median_nm": null,
+   "best_nm": null,
+   "n_measurements": 0,
+   "other_affinity_types": []
+  }
+ ],
+ "truncated": false,
+ "note": "4 more compound(s) have PDB entries that BindingDB links to other proteins or to other records of this protein (e.g. another strain or construct); pass only_linked=false to list them. overlay_binding_site checks each chain against the target's sequence."
+}

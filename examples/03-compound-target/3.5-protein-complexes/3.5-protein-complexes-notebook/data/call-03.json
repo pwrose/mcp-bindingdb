@@ -1,0 +1,528 @@
+{
+ "row_count": 87,
+ "truncated": false,
+ "rows": [
+  {
+   "target_id": 50000048,
+   "name": "GABA-A receptor; alpha-5/beta-3/gamma-2",
+   "n_compounds": 1213,
+   "n_activities": 1383
+  },
+  {
+   "target_id": 386,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-1/beta-3/gamma-2",
+   "n_compounds": 1111,
+   "n_activities": 1325
+  },
+  {
+   "target_id": 50000037,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-3/beta-3/gamma-2",
+   "n_compounds": 734,
+   "n_activities": 899
+  },
+  {
+   "target_id": 50000045,
+   "name": "GABA-A receptor; alpha-2/beta-3/gamma-2",
+   "n_compounds": 617,
+   "n_activities": 779
+  },
+  {
+   "target_id": 384,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-2/beta-2/gamma-1",
+   "n_compounds": 394,
+   "n_activities": 651
+  },
+  {
+   "target_id": 347,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-1/beta-2/gamma-2",
+   "n_compounds": 307,
+   "n_activities": 416
+  },
+  {
+   "target_id": 382,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-5/beta-2/gamma-1",
+   "n_compounds": 385,
+   "n_activities": 390
+  },
+  {
+   "target_id": 50000040,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-6/beta-3/gamma-2",
+   "n_compounds": 216,
+   "n_activities": 317
+  },
+  {
+   "target_id": 385,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-1/beta-2/gamma-1",
+   "n_compounds": 142,
+   "n_activities": 157
+  },
+  {
+   "target_id": 50000071,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-2/beta-2/gamma-2",
+   "n_compounds": 121,
+   "n_activities": 131
+  },
+  {
+   "target_id": 50000068,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-1/beta-2/gamma-2",
+   "n_compounds": 85,
+   "n_activities": 103
+  },
+  {
+   "target_id": 50000072,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-3/beta-2/gamma-2",
+   "n_compounds": 54,
+   "n_activities": 66
+  },
+  {
+   "target_id": 50000150,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-5/beta-2/gamma-2",
+   "n_compounds": 43,
+   "n_activities": 65
+  },
+  {
+   "target_id": 50000047,
+   "name": "GABA A receptor alpha-4/beta-3/gamma-2",
+   "n_compounds": 61,
+   "n_activities": 63
+  },
+  {
+   "target_id": 50000106,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-6/beta-2/gamma-2",
+   "n_compounds": 14,
+   "n_activities": 37
+  },
+  {
+   "target_id": 50000146,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-5/beta-3/gamma-2",
+   "n_compounds": 36,
+   "n_activities": 36
+  },
+  {
+   "target_id": 50016995,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-6/beta-3/gamma-2",
+   "n_compounds": 20,
+   "n_activities": 32
+  },
+  {
+   "target_id": 50000041,
+   "name": "GABA-A receptor; alpha-1/beta-3/gamma-2",
+   "n_compounds": 21,
+   "n_activities": 31
+  },
+  {
+   "target_id": 50000411,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-1/beta-2",
+   "n_compounds": 30,
+   "n_activities": 30
+  },
+  {
+   "target_id": 50017444,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-1/beta-3/gamma-2",
+   "n_compounds": 14,
+   "n_activities": 28
+  },
+  {
+   "target_id": 50000038,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-3/beta-2/gamma-2",
+   "n_compounds": 20,
+   "n_activities": 26
+  },
+  {
+   "target_id": 50000020,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-2/beta-2/gamma-2",
+   "n_compounds": 22,
+   "n_activities": 25
+  },
+  {
+   "target_id": 50000010,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-6/beta-2/gamma-2",
+   "n_compounds": 17,
+   "n_activities": 20
+  },
+  {
+   "target_id": 438,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-1/Adenosine receptor A1",
+   "n_compounds": 19,
+   "n_activities": 19
+  },
+  {
+   "target_id": 50000043,
+   "name": "GABA A receptor alpha-1/beta-1/gamma-2",
+   "n_compounds": 11,
+   "n_activities": 18
+  },
+  {
+   "target_id": 50003702,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-4/beta-2/gamma-2",
+   "n_compounds": 9,
+   "n_activities": 18
+  },
+  {
+   "target_id": 50004460,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-2/delta",
+   "n_compounds": 17,
+   "n_activities": 17
+  },
+  {
+   "target_id": 50000132,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-4/beta-1/delta",
+   "n_compounds": 10,
+   "n_activities": 14
+  },
+  {
+   "target_id": 50017847,
+   "name": "Gamma-aminobutyric acid receptor subunit beta-1/beta-2",
+   "n_compounds": 14,
+   "n_activities": 14
+  },
+  {
+   "target_id": 50015477,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-4/beta-3/delta",
+   "n_compounds": 12,
+   "n_activities": 12
+  },
+  {
+   "target_id": 226,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-5 [32-462]/beta-3 [26-473]/gamma-2 [40-467]",
+   "n_compounds": 11,
+   "n_activities": 11
+  },
+  {
+   "target_id": 50016994,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-6/beta-3/delta",
+   "n_compounds": 7,
+   "n_activities": 10
+  },
+  {
+   "target_id": 50016993,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-6/beta-3",
+   "n_compounds": 7,
+   "n_activities": 9
+  },
+  {
+   "target_id": 222,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-1 [28-456]/beta-3 [26-473]/gamma-2 [40-467]",
+   "n_compounds": 8,
+   "n_activities": 8
+  },
+  {
+   "target_id": 223,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-2 [29-451]/beta-3 [26-473]/gamma-2 [40-467]",
+   "n_compounds": 8,
+   "n_activities": 8
+  },
+  {
+   "target_id": 50000121,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-1/beta-2/delta",
+   "n_compounds": 4,
+   "n_activities": 8
+  },
+  {
+   "target_id": 224,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-3 [29-492]/beta-3 [26-473]/gamma-2 [40-467]",
+   "n_compounds": 7,
+   "n_activities": 7
+  },
+  {
+   "target_id": 227,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-6 [20-453]/beta-3 [26-473]/gamma-2 [40-467]",
+   "n_compounds": 7,
+   "n_activities": 7
+  },
+  {
+   "target_id": 50017008,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-1/beta-3/gamma-2",
+   "n_compounds": 4,
+   "n_activities": 6
+  },
+  {
+   "target_id": 50000177,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-1/alpha-6/beta-3/gamma-2",
+   "n_compounds": 2,
+   "n_activities": 5
+  },
+  {
+   "target_id": 50017006,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-6/beta-2/delta",
+   "n_compounds": 4,
+   "n_activities": 5
+  },
+  {
+   "target_id": 225,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-4 [36-554]/beta-3 [26-473]/gamma-2 [40-467]",
+   "n_compounds": 4,
+   "n_activities": 4
+  },
+  {
+   "target_id": 228,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-1 [28-456]/beta-2 [26-512]/gamma-2 [40-467]",
+   "n_compounds": 3,
+   "n_activities": 3
+  },
+  {
+   "target_id": 229,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-2 [29-451]/beta-2 [26-512]/gamma-2 [40-467]",
+   "n_compounds": 3,
+   "n_activities": 3
+  },
+  {
+   "target_id": 230,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-3 [29-492]/beta-2 [26-512]/gamma-2 [40-467]",
+   "n_compounds": 3,
+   "n_activities": 3
+  },
+  {
+   "target_id": 231,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-5 [32-462]/beta-2 [26-512]/gamma-2 [40-467]",
+   "n_compounds": 3,
+   "n_activities": 3
+  },
+  {
+   "target_id": 232,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-4 [36-554]/beta-2 [26-512]/gamma-2 [40-467]",
+   "n_compounds": 3,
+   "n_activities": 3
+  },
+  {
+   "target_id": 233,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-6 [20-453]/beta-2 [26-512]/gamma-2 [40-467]",
+   "n_compounds": 3,
+   "n_activities": 3
+  },
+  {
+   "target_id": 235,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-1 [F99C]/beta-2 [26-512]/gamma-2 [40-467]",
+   "n_compounds": 3,
+   "n_activities": 3
+  },
+  {
+   "target_id": 236,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-1 [G157C]/beta-2 [26-512]/gamma-2 [40-467]",
+   "n_compounds": 3,
+   "n_activities": 3
+  },
+  {
+   "target_id": 237,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-1 [A160C]/beta-2 [26-512]/gamma-2 [40-467]",
+   "n_compounds": 3,
+   "n_activities": 3
+  },
+  {
+   "target_id": 238,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-1 [T162C]/beta-2 [26-512]/gamma-2 [40-467]",
+   "n_compounds": 3,
+   "n_activities": 3
+  },
+  {
+   "target_id": 239,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-1 [G200C]/beta-2 [26-512]/gamma-2 [40-467]",
+   "n_compounds": 3,
+   "n_activities": 3
+  },
+  {
+   "target_id": 240,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-1 [V202C]/beta-2 [26-512]/gamma-2 [40-467]",
+   "n_compounds": 3,
+   "n_activities": 3
+  },
+  {
+   "target_id": 241,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-1 [S204C]/beta-2 [26-512]/gamma-2 [40-467]",
+   "n_compounds": 3,
+   "n_activities": 3
+  },
+  {
+   "target_id": 242,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-1 [S205C]/beta-2 [26-512]/gamma-2 [40-467]",
+   "n_compounds": 3,
+   "n_activities": 3
+  },
+  {
+   "target_id": 243,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-1 [T206C]/beta-2 [26-512]/gamma-2 [40-467]",
+   "n_compounds": 3,
+   "n_activities": 3
+  },
+  {
+   "target_id": 245,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-1 [V211C]/beta-2 [26-512]/gamma-2 [40-467]",
+   "n_compounds": 3,
+   "n_activities": 3
+  },
+  {
+   "target_id": 246,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-1 [28-456]/beta-2 [26-512]/gamma-2 [40-467,D95C]",
+   "n_compounds": 3,
+   "n_activities": 3
+  },
+  {
+   "target_id": 248,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-1 [28-456]/beta-2 [26-512]/gamma-2 [40-467,A118C]",
+   "n_compounds": 3,
+   "n_activities": 3
+  },
+  {
+   "target_id": 249,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-1 [28-456]/beta-2 [26-512]/gamma-2 [40-467,T120C]",
+   "n_compounds": 3,
+   "n_activities": 3
+  },
+  {
+   "target_id": 250,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-1 [28-456]/beta-2 [26-512]/gamma-2 [40-467,T165C]",
+   "n_compounds": 3,
+   "n_activities": 3
+  },
+  {
+   "target_id": 251,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-1 [28-456]/beta-2 [26-512]/gamma-2 [40-467,M169C]",
+   "n_compounds": 3,
+   "n_activities": 3
+  },
+  {
+   "target_id": 252,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-1 [28-456]/beta-2 [26-512]/gamma-2 [40-467,R171C]",
+   "n_compounds": 3,
+   "n_activities": 3
+  },
+  {
+   "target_id": 253,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-1 [28-456]/beta-2 [26-512]/gamma-2 [40-467,L179C]",
+   "n_compounds": 3,
+   "n_activities": 3
+  },
+  {
+   "target_id": 254,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-1 [28-456]/beta-2 [26-512]/gamma-2 [40-467,T181C]",
+   "n_compounds": 3,
+   "n_activities": 3
+  },
+  {
+   "target_id": 255,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-1 [28-456]/beta-2 [26-512]/gamma-2 [40-467,R183C]",
+   "n_compounds": 3,
+   "n_activities": 3
+  },
+  {
+   "target_id": 256,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-1 [28-456]/beta-2 [26-512]/gamma-2 [40-200],P14867[176-456]",
+   "n_compounds": 3,
+   "n_activities": 3
+  },
+  {
+   "target_id": 257,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-1 [28-456]/beta-2 [26-512]/gamma-2 [40-467,R224C]",
+   "n_compounds": 3,
+   "n_activities": 3
+  },
+  {
+   "target_id": 258,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-1 [28-456]/beta-2 [26-512]/gamma-2 [40-467,R233C]",
+   "n_compounds": 3,
+   "n_activities": 3
+  },
+  {
+   "target_id": 50017011,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-4/beta-3/delta",
+   "n_compounds": 2,
+   "n_activities": 3
+  },
+  {
+   "target_id": 50000081,
+   "name": "GABA-A receptor; alpha-1/beta-2/gamma-2",
+   "n_compounds": 2,
+   "n_activities": 2
+  },
+  {
+   "target_id": 50000103,
+   "name": "GABA-A receptor alpha-1/beta-3",
+   "n_compounds": 2,
+   "n_activities": 2
+  },
+  {
+   "target_id": 50000178,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-2/beta-1/gamma-2",
+   "n_compounds": 2,
+   "n_activities": 2
+  },
+  {
+   "target_id": 50016679,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-2/beta-3/gamma-2",
+   "n_compounds": 2,
+   "n_activities": 2
+  },
+  {
+   "target_id": 50016680,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-3/beta-3/gamma-2",
+   "n_compounds": 2,
+   "n_activities": 2
+  },
+  {
+   "target_id": 50017009,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-1/beta-3/delta",
+   "n_compounds": 2,
+   "n_activities": 2
+  },
+  {
+   "target_id": 50017010,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-4/beta-3",
+   "n_compounds": 1,
+   "n_activities": 2
+  },
+  {
+   "target_id": 50017023,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-6/beta-2",
+   "n_compounds": 2,
+   "n_activities": 2
+  },
+  {
+   "target_id": 50000910,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-1/beta-1",
+   "n_compounds": 1,
+   "n_activities": 1
+  },
+  {
+   "target_id": 50001488,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-1/gamma-2",
+   "n_compounds": 1,
+   "n_activities": 1
+  },
+  {
+   "target_id": 50016997,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-4/beta-3/gamma-2",
+   "n_compounds": 1,
+   "n_activities": 1
+  },
+  {
+   "target_id": 50017029,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-1/beta-3",
+   "n_compounds": 1,
+   "n_activities": 1
+  },
+  {
+   "target_id": 50017448,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-4/beta-2/delta",
+   "n_compounds": 1,
+   "n_activities": 1
+  },
+  {
+   "target_id": 234,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-1 [D97C]/beta-2 [26-512]/gamma-2 [40-467]",
+   "n_compounds": 0,
+   "n_activities": 0
+  },
+  {
+   "target_id": 244,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-1 [Y209C]/beta-2 [26-512]/gamma-2 [40-467]",
+   "n_compounds": 0,
+   "n_activities": 0
+  },
+  {
+   "target_id": 247,
+   "name": "Gamma-aminobutyric acid receptor subunit alpha-1 [28-456]/beta-2 [26-512]/gamma-2 [40-467,F116C]",
+   "n_compounds": 0,
+   "n_activities": 0
+  }
+ ]
+}

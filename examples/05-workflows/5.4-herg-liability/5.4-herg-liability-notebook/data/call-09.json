@@ -1,0 +1,25 @@
+{
+ "query": "droperidol",
+ "resolved": true,
+ "source": "bindingdb",
+ "smiles": "c1ccc2c(c1)NC(=O)N2C3=CCN(CC3)CCCC(=O)c4ccc(cc4)F",
+ "inchi_key": "RMEDXOLNCUSCGS-UHFFFAOYSA-N",
+ "monomerid": 50017705,
+ "ambiguous": false,
+ "candidates": [
+  {
+   "monomerid": 50017705,
+   "bdbm_id": "BDBM50017705",
+   "name": "Inapsine",
+   "inchi_key": "RMEDXOLNCUSCGS-UHFFFAOYSA-N",
+   "smiles": "c1ccc2c(c1)NC(=O)N2C3=CCN(CC3)CCCC(=O)c4ccc(cc4)F",
+   "n_activities": 18
+  }
+ ],
+ "sources_tried": [
+  {
+   "source": "bindingdb",
+   "status": "found"
+  }
+ ]
+}

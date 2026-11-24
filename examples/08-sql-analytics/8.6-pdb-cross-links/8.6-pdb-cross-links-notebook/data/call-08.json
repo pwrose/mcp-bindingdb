@@ -1,0 +1,13 @@
+{
+ "row_count": 1,
+ "truncated": false,
+ "rows": [
+  {
+   "protease_ligands": 7055,
+   "protease_records": 159,
+   "protease_pdb_entries": 848,
+   "ligands_with_structure": 94,
+   "pdb_entries_linked": 106
+  }
+ ]
+}

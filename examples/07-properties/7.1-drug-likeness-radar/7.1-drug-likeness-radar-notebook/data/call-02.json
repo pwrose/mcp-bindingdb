@@ -1,0 +1,70 @@
+{
+ "query": "vildagliptin",
+ "resolved": true,
+ "source": "pubchem",
+ "smiles": "N#C[C@@H]1CCCN1C(=O)CNC12CC3CC(CC(O)(C3)C1)C2",
+ "inchi_key": "SYOKIDBDQMKNDQ-XWTIBIIYSA-N",
+ "pubchem_name": "Vildagliptin",
+ "pubchem_cid": 6918537,
+ "bindingdb_matches": [
+  {
+   "monomerid": 11695,
+   "bdbm_id": "BDBM11695",
+   "name": "NVP-LAF237",
+   "inchi_key": "SYOKIDBDQMKNDQ-XWTIBIIYSA-N",
+   "smiles": "N#C[C@@H]1CCCN1C(=O)CNC12CC3CC(CC(O)(C3)C1)C2",
+   "n_activities": 121,
+   "exact_match": true
+  },
+  {
+   "monomerid": 50129889,
+   "bdbm_id": "BDBM50129889",
+   "name": "1-[2-(3-Hydroxy-adamantan-1-ylamino)-acetyl]-pyrrolidine-2-carbonitrile",
+   "inchi_key": "SYOKIDBDQMKNDQ-IGEWIKJLSA-N",
+   "smiles": "N#C[C@@H]1CCCN1C(=O)CNC12C[C@H]3C[C@@H](C1)C[C@](O)(C3)C2",
+   "n_activities": 5,
+   "exact_match": false
+  },
+  {
+   "monomerid": 123776,
+   "bdbm_id": "BDBM123776",
+   "name": "(2S)-1-(2-{[(1r,3s,5R,7S)-3-hydroxyadamantan-1- yl]amino}acetyl)pyrrolidine-2-carbonitrile (11)",
+   "inchi_key": "SYOKIDBDQMKNDQ-NHMCJKAESA-N",
+   "smiles": "N#C[C@@H]1CCCN1C(=O)CN[C@@]12C[C@@H]3C[C@@H](C[C@@](O)(C3)C1)C2",
+   "n_activities": 1,
+   "exact_match": false
+  },
+  {
+   "monomerid": 126821,
+   "bdbm_id": "BDBM126821",
+   "name": "US8785477, Vildagliptin",
+   "inchi_key": "SYOKIDBDQMKNDQ-UHFFFAOYSA-N",
+   "smiles": "N#CC1CCCN1C(=O)CNC12CC3CC(CC(O)(C3)C1)C2",
+   "n_activities": 1,
+   "exact_match": false
+  },
+  {
+   "monomerid": 664702,
+   "bdbm_id": "BDBM664702",
+   "name": "(2S)-1-(((1S,3R,5S)-3-hydroxyadamantan-1- yl)glycyl)pyrrolidine-2-carbonitrile (vildagliptin)",
+   "inchi_key": "SYOKIDBDQMKNDQ-MLIKTYCQSA-N",
+   "smiles": "N#C[C@@H]1CCCN1C(=O)CNC12CC3C[C@@H](C1)C[C@@](O)(C3)C2",
+   "n_activities": 1,
+   "exact_match": false
+  }
+ ],
+ "sources_tried": [
+  {
+   "source": "bindingdb",
+   "status": "not found"
+  },
+  {
+   "source": "opsin",
+   "status": "not found"
+  },
+  {
+   "source": "pubchem",
+   "status": "found"
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "row_count": 1,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 13530,
+   "bdbm_id": "BDBM13530",
+   "name": "Gleevec",
+   "inchi_key": "KTUFNOKKBVMGRW-UHFFFAOYSA-N",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)CC1",
+   "mol_weight": 493.26,
+   "n_activities": 1156,
+   "n_targets": 459
+  }
+ ]
+}

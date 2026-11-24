@@ -1,0 +1,111 @@
+{
+ "row_count": 15,
+ "truncated": false,
+ "rows": [
+  {
+   "target_id": 2242,
+   "name": "Purine nucleoside phosphorylase",
+   "organism": "Homo sapiens",
+   "itc_results": 40,
+   "complete": 0
+  },
+  {
+   "target_id": 177,
+   "name": "Serine protease 1",
+   "organism": "Bos taurus",
+   "itc_results": 30,
+   "complete": 30
+  },
+  {
+   "target_id": 3984,
+   "name": "Heat Shock Protein 90 (Hsp90)",
+   "organism": "Saccharomyces cerevisiae (strain ATCC 204508 / S288c)",
+   "itc_results": 29,
+   "complete": 0
+  },
+  {
+   "target_id": 7572,
+   "name": "3-hydroxy-3-methylglutaryl-coenzyme A reductase",
+   "organism": "Homo sapiens",
+   "itc_results": 27,
+   "complete": 0
+  },
+  {
+   "target_id": 50007614,
+   "name": "Leucine--tRNA ligase",
+   "organism": "Escherichia coli (strain K12)",
+   "itc_results": 24,
+   "complete": 24
+  },
+  {
+   "target_id": 61,
+   "name": "Guanylyl Cyclase C receptor mAb",
+   "organism": null,
+   "itc_results": 22,
+   "complete": 22
+  },
+  {
+   "target_id": 2245,
+   "name": "S-methyl-5'-thioadenosine phosphorylase",
+   "organism": "Homo sapiens",
+   "itc_results": 22,
+   "complete": 0
+  },
+  {
+   "target_id": 796,
+   "name": "Cyclin-dependent kinase 2",
+   "organism": "Homo sapiens",
+   "itc_results": 20,
+   "complete": 20
+  },
+  {
+   "target_id": 8450,
+   "name": "Aldo-keto reductase family 1 member B1",
+   "organism": "Homo sapiens",
+   "itc_results": 20,
+   "complete": 10
+  },
+  {
+   "target_id": 334,
+   "name": "Prothrombin",
+   "organism": "Homo sapiens",
+   "itc_results": 19,
+   "complete": 0
+  },
+  {
+   "target_id": 2397,
+   "name": "Transcriptional Regulator TtgR",
+   "organism": "Pseudomonas putida (strain DOT-T1E)",
+   "itc_results": 19,
+   "complete": 0
+  },
+  {
+   "target_id": 5153,
+   "name": "Phosphoethanolamine N-methyltransferase 1",
+   "organism": "Caenorhabditis elegans",
+   "itc_results": 18,
+   "complete": 18
+  },
+  {
+   "target_id": 22,
+   "name": "Lysozyme (hen egg)",
+   "organism": "Mus musculus",
+   "itc_results": 17,
+   "complete": 17
+  },
+  {
+   "target_id": 42,
+   "name": "Cytochrome c peroxidase, mitochondrial",
+   "organism": "Saccharomyces cerevisiae YJM1341",
+   "itc_results": 13,
+   "complete": 13
+  },
+  {
+   "target_id": 5650,
+   "name": "cAMP-activated global transcriptional regulator CRP",
+   "organism": "Escherichia coli",
+   "itc_results": 12,
+   "complete": 12
+  }
+ ]
+}

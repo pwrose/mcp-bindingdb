@@ -1,0 +1,18 @@
+{
+ "row_count": 1,
+ "truncated": false,
+ "rows": [
+  {
+   "target_kind": "polymer",
+   "target_id": 3619,
+   "name": "Acetylcholinesterase",
+   "uniprot": "P22303",
+   "uniprot_raw": "P22303",
+   "organism": "Homo sapiens",
+   "type": "Enzyme",
+   "n_activities": 9820,
+   "n_compounds": 7560,
+   "matched_name": "Acetylcholinesterase"
+  }
+ ]
+}

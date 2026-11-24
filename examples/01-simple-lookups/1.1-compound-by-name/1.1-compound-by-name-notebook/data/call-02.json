@@ -1,0 +1,403 @@
+{
+ "compound": {
+  "monomerid": 13530,
+  "bdbm_id": "BDBM13530",
+  "name": "Gleevec",
+  "inchi_key": "KTUFNOKKBVMGRW-UHFFFAOYSA-N",
+  "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)CC1",
+  "formula": "C29H31N7O",
+  "mol_weight": 493.26,
+  "type": "Small organic molecule",
+  "het_pdb": "",
+  "n_pdb_ids_exact": 0,
+  "n_activities": 1156,
+  "n_targets": 459,
+  "inchi": "InChI=1S/C29H31N7O/c1-21-5-10-25(18-27(21)34-29-31-13-11-26(33-29)24-4-3-12-30-19-24)32-28(37)23-8-6-22(7-9-23)20-36-16-14-35(2)15-17-36/h3-13,18-19H,14-17,20H2,1-2H3,(H,32,37)(H,31,33,34)",
+  "pdb_ids_exact": "",
+  "pdb_ids_sub": null
+ },
+ "synonyms": [
+  "STI571",
+  "Gleevec",
+  "STI-571",
+  "Imatinib",
+  "cid_5291",
+  "CHEMBL941",
+  "Imatinib, 21",
+  "US9255107, Imatinib",
+  "med.21724, Compound 6",
+  "US10906896, Cpd imatinib",
+  "US11649218, Example Imatinib",
+  "US11725005, Compound imatinib",
+  "US20250129067, Compound Imatinib",
+  "4-[(4-methylpiperazin-1-yl)methyl]-N-[4-methyl-3-[(4-pyridin-3-ylpyrimidin-2-yl)amino]phenyl]benzamide",
+  "N-(4-methyl-3-{[4-(pyridin-3-yl)pyrimidin-2-yl]amino}phenyl)-4-[(4-methylpiperazin-1-yl)methyl]benzamide"
+ ],
+ "top_targets": [
+  {
+   "polymerid": 188,
+   "complexid": null,
+   "target_name": "Receptor tyrosine-protein kinase erbB-2",
+   "uniprot_raw": "P04626",
+   "organism": "Homo sapiens",
+   "n_measurements": 3,
+   "best_p_affinity": 10.22,
+   "affinity_types": [
+    "IC50",
+    "Kd"
+   ],
+   "best_ligand_efficiency": 0.38
+  },
+  {
+   "polymerid": 520,
+   "complexid": null,
+   "target_name": "Epidermal growth factor receptor",
+   "uniprot_raw": "P00533",
+   "organism": "Homo sapiens",
+   "n_measurements": 25,
+   "best_p_affinity": 9.96,
+   "affinity_types": [
+    "IC50",
+    "Kd"
+   ],
+   "best_ligand_efficiency": 0.37
+  },
+  {
+   "polymerid": 3993,
+   "complexid": null,
+   "target_name": "Epithelial discoidin domain-containing receptor 1",
+   "uniprot_raw": "Q08345",
+   "organism": "Homo sapiens",
+   "n_measurements": 9,
+   "best_p_affinity": 9.15,
+   "affinity_types": [
+    "IC50",
+    "Kd"
+   ],
+   "best_ligand_efficiency": 0.34
+  },
+  {
+   "polymerid": 5221,
+   "complexid": null,
+   "target_name": "Tyrosine-protein kinase ABL1",
+   "uniprot_raw": "P00519",
+   "organism": "Homo sapiens",
+   "n_measurements": 85,
+   "best_p_affinity": 9.0,
+   "affinity_types": [
+    "EC50",
+    "IC50",
+    "Kd",
+    "Ki"
+   ],
+   "best_ligand_efficiency": 0.33
+  },
+  {
+   "polymerid": null,
+   "complexid": 261,
+   "target_name": "Breakpoint cluster region protein/Tyrosine-protein kinase ABL1",
+   "uniprot_raw": null,
+   "organism": null,
+   "n_measurements": 43,
+   "best_p_affinity": 8.96,
+   "affinity_types": [
+    "EC50",
+    "IC50",
+    "Ki"
+   ],
+   "best_ligand_efficiency": 0.33
+  },
+  {
+   "polymerid": 7838,
+   "complexid": null,
+   "target_name": "Tyrosine-protein kinase ABL1 [229-512]",
+   "uniprot_raw": "P00519[229-512]",
+   "organism": "Homo sapiens",
+   "n_measurements": 2,
+   "best_p_affinity": 8.82,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_ligand_efficiency": 0.33
+  },
+  {
+   "polymerid": 5778,
+   "complexid": null,
+   "target_name": "Platelet-derived growth factor receptor alpha",
+   "uniprot_raw": "P16234",
+   "organism": "Homo sapiens",
+   "n_measurements": 17,
+   "best_p_affinity": 8.7,
+   "affinity_types": [
+    "EC50",
+    "IC50",
+    "Kd",
+    "Ki"
+   ],
+   "best_ligand_efficiency": 0.32
+  },
+  {
+   "polymerid": 1385,
+   "complexid": null,
+   "target_name": "Tyrosine-protein kinase ABL1 [201-500]",
+   "uniprot_raw": "P00519[201-500]",
+   "organism": "Homo sapiens",
+   "n_measurements": 1,
+   "best_p_affinity": 8.7,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_ligand_efficiency": 0.32
+  },
+  {
+   "polymerid": 575,
+   "complexid": null,
+   "target_name": "Platelet-derived growth factor receptor beta",
+   "uniprot_raw": "P09619",
+   "organism": "Homo sapiens",
+   "n_measurements": 10,
+   "best_p_affinity": 8.52,
+   "affinity_types": [
+    "IC50",
+    "Kd",
+    "Ki"
+   ],
+   "best_ligand_efficiency": 0.32
+  },
+  {
+   "polymerid": 1394,
+   "complexid": null,
+   "target_name": "Mast/stem cell growth factor receptor Kit [N822K]",
+   "uniprot_raw": "P10721[N822K]",
+   "organism": "Homo sapiens",
+   "n_measurements": 1,
+   "best_p_affinity": 8.52,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_ligand_efficiency": 0.32
+  },
+  {
+   "polymerid": 50001306,
+   "complexid": null,
+   "target_name": "Tyrosine-protein kinase ABL2",
+   "uniprot_raw": "P42684",
+   "organism": "Homo sapiens",
+   "n_measurements": 10,
+   "best_p_affinity": 8.0,
+   "affinity_types": [
+    "IC50",
+    "Kd"
+   ],
+   "best_ligand_efficiency": 0.3
+  },
+  {
+   "polymerid": 879,
+   "complexid": null,
+   "target_name": "Macrophage colony-stimulating factor 1 receptor",
+   "uniprot_raw": "P07333",
+   "organism": "Homo sapiens",
+   "n_measurements": 7,
+   "best_p_affinity": 8.0,
+   "affinity_types": [
+    "IC50",
+    "Kd"
+   ],
+   "best_ligand_efficiency": 0.3
+  },
+  {
+   "polymerid": 1389,
+   "complexid": null,
+   "target_name": "Tyrosine-protein kinase ABL1 [201-500,M351T]",
+   "uniprot_raw": "P00519[201-500,M351T]",
+   "organism": "Homo sapiens",
+   "n_measurements": 1,
+   "best_p_affinity": 8.0,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_ligand_efficiency": 0.3
+  },
+  {
+   "polymerid": 50001750,
+   "complexid": null,
+   "target_name": "Tyrosine-protein kinase ABL1",
+   "uniprot_raw": "P00520",
+   "organism": "Mus musculus",
+   "n_measurements": 3,
+   "best_p_affinity": 7.97,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.3
+  },
+  {
+   "polymerid": 359,
+   "complexid": null,
+   "target_name": "Mast/stem cell growth factor receptor Kit",
+   "uniprot_raw": "P10721",
+   "organism": "Homo sapiens",
+   "n_measurements": 52,
+   "best_p_affinity": 7.89,
+   "affinity_types": [
+    "EC50",
+    "IC50",
+    "Kd",
+    "Ki"
+   ],
+   "best_ligand_efficiency": 0.29
+  },
+  {
+   "polymerid": 5709,
+   "complexid": null,
+   "target_name": "Discoidin domain-containing receptor 2",
+   "uniprot_raw": "Q16832",
+   "organism": "Homo sapiens",
+   "n_measurements": 5,
+   "best_p_affinity": 7.82,
+   "affinity_types": [
+    "IC50",
+    "Kd"
+   ],
+   "best_ligand_efficiency": 0.29
+  },
+  {
+   "polymerid": 3995,
+   "complexid": null,
+   "target_name": "Discoidin domain-containing receptor 2 [A642S]",
+   "uniprot_raw": "Q16832[A642S]",
+   "organism": "Homo sapiens",
+   "n_measurements": 1,
+   "best_p_affinity": 7.82,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_ligand_efficiency": 0.29
+  },
+  {
+   "polymerid": 1386,
+   "complexid": null,
+   "target_name": "Tyrosine-protein kinase ABL1 [201-500,Q252H]",
+   "uniprot_raw": "P00519[201-500,Q252H]",
+   "organism": "Homo sapiens",
+   "n_measurements": 1,
+   "best_p_affinity": 7.7,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_ligand_efficiency": 0.29
+  },
+  {
+   "polymerid": 1390,
+   "complexid": null,
+   "target_name": "Tyrosine-protein kinase ABL1 [201-500,F359V]",
+   "uniprot_raw": "P00519[201-500,F359V]",
+   "organism": "Homo sapiens",
+   "n_measurements": 1,
+   "best_p_affinity": 7.7,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_ligand_efficiency": 0.29
+  },
+  {
+   "polymerid": 1395,
+   "complexid": null,
+   "target_name": "Mast/stem cell growth factor receptor Kit [V559D]",
+   "uniprot_raw": "P10721[V559D]",
+   "organism": "Homo sapiens",
+   "n_measurements": 1,
+   "best_p_affinity": 7.7,
+   "affinity_types": [
+    "Kd"
+   ],
+   "best_ligand_efficiency": 0.29
+  },
+  {
+   "polymerid": 4453,
+   "complexid": null,
+   "target_name": "Tyrosine-protein kinase ABL1 [1-999,Q252H]",
+   "uniprot_raw": "P00519[1-999,Q252H]",
+   "organism": "Homo sapiens",
+   "n_measurements": 3,
+   "best_p_affinity": 7.57,
+   "affinity_types": [
+    "IC50",
+    "Kd"
+   ],
+   "best_ligand_efficiency": 0.28
+  },
+  {
+   "polymerid": 1193,
+   "complexid": null,
+   "target_name": "Carbonic anhydrase 2",
+   "uniprot_raw": "P00918",
+   "organism": "Homo sapiens",
+   "n_measurements": 1,
+   "best_p_affinity": 7.52,
+   "affinity_types": [
+    "Ki"
+   ],
+   "best_ligand_efficiency": 0.28
+  },
+  {
+   "polymerid": 1192,
+   "complexid": null,
+   "target_name": "Carbonic anhydrase 1",
+   "uniprot_raw": "P00915",
+   "organism": "Homo sapiens",
+   "n_measurements": 1,
+   "best_p_affinity": 7.5,
+   "affinity_types": [
+    "Ki"
+   ],
+   "best_ligand_efficiency": 0.28
+  },
+  {
+   "polymerid": 50001198,
+   "complexid": null,
+   "target_name": "Breakpoint cluster region protein",
+   "uniprot_raw": "Q6PAJ1",
+   "organism": "Mus musculus",
+   "n_measurements": 1,
+   "best_p_affinity": 7.42,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.27
+  },
+  {
+   "polymerid": 5286,
+   "complexid": null,
+   "target_name": "Ribosyldihydronicotinamide dehydrogenase [quinone]",
+   "uniprot_raw": "P16083",
+   "organism": "Homo sapiens",
+   "n_measurements": 4,
+   "best_p_affinity": 7.41,
+   "affinity_types": [
+    "IC50",
+    "Ki"
+   ],
+   "best_ligand_efficiency": 0.27
+  }
+ ],
+ "properties": {
+  "heavy_atoms": 37,
+  "mw": 493.62,
+  "clogp": 4.59,
+  "tpsa": 86.28,
+  "hbd": 2,
+  "hba": 8,
+  "rotatable_bonds": 7,
+  "rings": 5,
+  "aromatic_rings": 4,
+  "fsp3": 0.241,
+  "qed": 0.389,
+  "ro5_violations": 0,
+  "scaffold": "O=C(Nc1cccc(Nc2nccc(-c3cccnc3)n2)c1)c1ccc(CN2CCNCC2)cc1",
+  "generic_scaffold": "CC(CC1CCCC(CC2CCCC(C3CCCCC3)C2)C1)C1CCC(CC2CCCCC2)CC1",
+  "pains": [],
+  "brenk": [],
+  "nih": []
+ }
+}

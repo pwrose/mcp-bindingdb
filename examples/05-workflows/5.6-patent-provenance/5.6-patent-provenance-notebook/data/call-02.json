@@ -1,0 +1,27 @@
+{
+ "row_count": 3,
+ "truncated": false,
+ "rows": [
+  {
+   "source_type": "article",
+   "measurements": 4005,
+   "compounds": 2533,
+   "sources": 303,
+   "exact": 3630
+  },
+  {
+   "source_type": "other",
+   "measurements": 6,
+   "compounds": 6,
+   "sources": 1,
+   "exact": 6
+  },
+  {
+   "source_type": "patent",
+   "measurements": 19113,
+   "compounds": 11850,
+   "sources": 217,
+   "exact": 13611
+  }
+ ]
+}

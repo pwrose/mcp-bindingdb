@@ -1,0 +1,1326 @@
+{
+ "row_count": 220,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 480057,
+   "source_id": "US10899738-B2",
+   "best_nm": 56500.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480124,
+   "source_id": "US10899738-B2",
+   "best_nm": 2600.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480125,
+   "source_id": "US10899738-B2",
+   "best_nm": 7.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480126,
+   "source_id": "US10899738-B2",
+   "best_nm": 1000.0,
+   "n": 2
+  },
+  {
+   "monomerid": 480127,
+   "source_id": "US10899738-B2",
+   "best_nm": 18.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480128,
+   "source_id": "US10899738-B2",
+   "best_nm": 1700.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480132,
+   "source_id": "US10899738-B2",
+   "best_nm": 28000.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480133,
+   "source_id": "US10899738-B2",
+   "best_nm": 237.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480134,
+   "source_id": "US10899738-B2",
+   "best_nm": 164600.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480135,
+   "source_id": "US10899738-B2",
+   "best_nm": 10.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480136,
+   "source_id": "US10899738-B2",
+   "best_nm": 1000.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480138,
+   "source_id": "US10899738-B2",
+   "best_nm": 853.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480151,
+   "source_id": "US10899738-B2",
+   "best_nm": 9.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480154,
+   "source_id": "US10899738-B2",
+   "best_nm": 3400.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480155,
+   "source_id": "US10899738-B2",
+   "best_nm": 6.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480165,
+   "source_id": "US10899738-B2",
+   "best_nm": 14.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480173,
+   "source_id": "US10899738-B2",
+   "best_nm": 50.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480174,
+   "source_id": "US10899738-B2",
+   "best_nm": 6200.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480202,
+   "source_id": "US10899738-B2",
+   "best_nm": 10.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480214,
+   "source_id": "US10899738-B2",
+   "best_nm": 12.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480215,
+   "source_id": "US10899738-B2",
+   "best_nm": 1200.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480220,
+   "source_id": "US10899738-B2",
+   "best_nm": 29.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480221,
+   "source_id": "US10899738-B2",
+   "best_nm": 3300.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480237,
+   "source_id": "US10899738-B2",
+   "best_nm": 300.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480247,
+   "source_id": "US10899738-B2",
+   "best_nm": 66.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480248,
+   "source_id": "US10899738-B2",
+   "best_nm": 11400.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480249,
+   "source_id": "US10899738-B2",
+   "best_nm": 45.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480250,
+   "source_id": "US10899738-B2",
+   "best_nm": 5700.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480251,
+   "source_id": "US10899738-B2",
+   "best_nm": 13.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480252,
+   "source_id": "US10899738-B2",
+   "best_nm": 13800.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480258,
+   "source_id": "US10899738-B2",
+   "best_nm": 31.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480259,
+   "source_id": "US10899738-B2",
+   "best_nm": 5100.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480283,
+   "source_id": "US10899738-B2",
+   "best_nm": 11.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480285,
+   "source_id": "US10899738-B2",
+   "best_nm": 14.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480286,
+   "source_id": "US10899738-B2",
+   "best_nm": 819.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480289,
+   "source_id": "US10899738-B2",
+   "best_nm": 15.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480290,
+   "source_id": "US10899738-B2",
+   "best_nm": 2700.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480291,
+   "source_id": "US10899738-B2",
+   "best_nm": 6.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480297,
+   "source_id": "US10899738-B2",
+   "best_nm": 12.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480298,
+   "source_id": "US10899738-B2",
+   "best_nm": 1400.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480302,
+   "source_id": "US10899738-B2",
+   "best_nm": 3100.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480305,
+   "source_id": "US10899738-B2",
+   "best_nm": 30.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480312,
+   "source_id": "US10899738-B2",
+   "best_nm": 4700.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480314,
+   "source_id": "US10899738-B2",
+   "best_nm": 6.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480315,
+   "source_id": "US10899738-B2",
+   "best_nm": 1129.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480316,
+   "source_id": "US10899738-B2",
+   "best_nm": 32.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480317,
+   "source_id": "US10899738-B2",
+   "best_nm": 3800.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480322,
+   "source_id": "US10899738-B2",
+   "best_nm": 4600.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480323,
+   "source_id": "US10899738-B2",
+   "best_nm": 13.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480324,
+   "source_id": "US10899738-B2",
+   "best_nm": 15100.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480325,
+   "source_id": "US10899738-B2",
+   "best_nm": 6500.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480327,
+   "source_id": "US10899738-B2",
+   "best_nm": 7.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480328,
+   "source_id": "US10899738-B2",
+   "best_nm": 8.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480329,
+   "source_id": "US10899738-B2",
+   "best_nm": 15.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480334,
+   "source_id": "US10899738-B2",
+   "best_nm": 7.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480337,
+   "source_id": "US10899738-B2",
+   "best_nm": 2400.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480338,
+   "source_id": "US10899738-B2",
+   "best_nm": 7.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480350,
+   "source_id": "US10899738-B2",
+   "best_nm": 16.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480351,
+   "source_id": "US10899738-B2",
+   "best_nm": 3280.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480352,
+   "source_id": "US10899738-B2",
+   "best_nm": 1610.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480353,
+   "source_id": "US10899738-B2",
+   "best_nm": 923130.0,
+   "n": 1
+  },
+  {
+   "monomerid": 480357,
+   "source_id": "US10899738-B2",
+   "best_nm": 28.0,
+   "n": 1
+  },
+  {
+   "monomerid": 506335,
+   "source_id": "US11045448-B2",
+   "best_nm": 3.0,
+   "n": 1
+  },
+  {
+   "monomerid": 506336,
+   "source_id": "US11045448-B2",
+   "best_nm": 300.0,
+   "n": 1
+  },
+  {
+   "monomerid": 506342,
+   "source_id": "US11045448-B2",
+   "best_nm": 2.0,
+   "n": 1
+  },
+  {
+   "monomerid": 506343,
+   "source_id": "US11045448-B2",
+   "best_nm": 2200.0,
+   "n": 1
+  },
+  {
+   "monomerid": 689587,
+   "source_id": "US12473295-B2",
+   "best_nm": 80.0,
+   "n": 2
+  },
+  {
+   "monomerid": 689587,
+   "source_id": "US20240261292-A1",
+   "best_nm": 0.09,
+   "n": 2
+  },
+  {
+   "monomerid": 689589,
+   "source_id": "US20240261292-A1",
+   "best_nm": 0.098,
+   "n": 1
+  },
+  {
+   "monomerid": 689590,
+   "source_id": "US12473295-B2",
+   "best_nm": 90.0,
+   "n": 3
+  },
+  {
+   "monomerid": 689590,
+   "source_id": "US20240261292-A1",
+   "best_nm": 0.18,
+   "n": 1
+  },
+  {
+   "monomerid": 699866,
+   "source_id": "US20240335431-A1",
+   "best_nm": 15.0,
+   "n": 1
+  },
+  {
+   "monomerid": 699867,
+   "source_id": "US20240335431-A1",
+   "best_nm": 1975.0,
+   "n": 1
+  },
+  {
+   "monomerid": 699868,
+   "source_id": "US20240335431-A1",
+   "best_nm": 13.0,
+   "n": 1
+  },
+  {
+   "monomerid": 699870,
+   "source_id": "US20240335431-A1",
+   "best_nm": 29.0,
+   "n": 1
+  },
+  {
+   "monomerid": 699871,
+   "source_id": "US20240335431-A1",
+   "best_nm": 5497.0,
+   "n": 1
+  },
+  {
+   "monomerid": 699872,
+   "source_id": "US20240335431-A1",
+   "best_nm": 29.0,
+   "n": 1
+  },
+  {
+   "monomerid": 699875,
+   "source_id": "US20240335431-A1",
+   "best_nm": 16.0,
+   "n": 1
+  },
+  {
+   "monomerid": 699876,
+   "source_id": "US20240335431-A1",
+   "best_nm": 18.0,
+   "n": 1
+  },
+  {
+   "monomerid": 699877,
+   "source_id": "US20240335431-A1",
+   "best_nm": 5950.0,
+   "n": 1
+  },
+  {
+   "monomerid": 699878,
+   "source_id": "US20240335431-A1",
+   "best_nm": 2468.0,
+   "n": 1
+  },
+  {
+   "monomerid": 699879,
+   "source_id": "US20240335431-A1",
+   "best_nm": 8028.0,
+   "n": 1
+  },
+  {
+   "monomerid": 699880,
+   "source_id": "US20240335431-A1",
+   "best_nm": 7798.0,
+   "n": 1
+  },
+  {
+   "monomerid": 699881,
+   "source_id": "US20240335431-A1",
+   "best_nm": 14.0,
+   "n": 1
+  },
+  {
+   "monomerid": 699882,
+   "source_id": "US20240335431-A1",
+   "best_nm": 48.0,
+   "n": 1
+  },
+  {
+   "monomerid": 699884,
+   "source_id": "US20240335431-A1",
+   "best_nm": 1345.0,
+   "n": 1
+  },
+  {
+   "monomerid": 699885,
+   "source_id": "US20240335431-A1",
+   "best_nm": 9.0,
+   "n": 1
+  },
+  {
+   "monomerid": 699887,
+   "source_id": "US20240335431-A1",
+   "best_nm": 43.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787550,
+   "source_id": "US12473295-B2",
+   "best_nm": 130.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787557,
+   "source_id": "US12473295-B2",
+   "best_nm": 100.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787561,
+   "source_id": "US12473295-B2",
+   "best_nm": 95.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787615,
+   "source_id": "US12473295-B2",
+   "best_nm": 2260.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787616,
+   "source_id": "US12473295-B2",
+   "best_nm": 610.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787617,
+   "source_id": "US12473295-B2",
+   "best_nm": 86200.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787618,
+   "source_id": "US12473295-B2",
+   "best_nm": 430.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787619,
+   "source_id": "US12473295-B2",
+   "best_nm": 44660.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787620,
+   "source_id": "US12473295-B2",
+   "best_nm": 180.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787623,
+   "source_id": "US12473295-B2",
+   "best_nm": 400.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787624,
+   "source_id": "US12473295-B2",
+   "best_nm": 50.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787625,
+   "source_id": "US12473295-B2",
+   "best_nm": 250.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787626,
+   "source_id": "US12473295-B2",
+   "best_nm": 1850.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787628,
+   "source_id": "US12473295-B2",
+   "best_nm": 300.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787629,
+   "source_id": "US12473295-B2",
+   "best_nm": 110.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787631,
+   "source_id": "US12473295-B2",
+   "best_nm": 10410.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787635,
+   "source_id": "US12473295-B2",
+   "best_nm": 10520.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787636,
+   "source_id": "US12473295-B2",
+   "best_nm": 280.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787638,
+   "source_id": "US12473295-B2",
+   "best_nm": 2750.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787640,
+   "source_id": "US12473295-B2",
+   "best_nm": 67.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787653,
+   "source_id": "US12473295-B2",
+   "best_nm": 550.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787654,
+   "source_id": "US12473295-B2",
+   "best_nm": 46620.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787655,
+   "source_id": "US12473295-B2",
+   "best_nm": 370.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787656,
+   "source_id": "US12473295-B2",
+   "best_nm": 59700.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787657,
+   "source_id": "US12473295-B2",
+   "best_nm": 310.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787658,
+   "source_id": "US12473295-B2",
+   "best_nm": 70390.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787672,
+   "source_id": "US12473295-B2",
+   "best_nm": 160.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787673,
+   "source_id": "US12473295-B2",
+   "best_nm": 120.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787674,
+   "source_id": "US12473295-B2",
+   "best_nm": 4980.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787675,
+   "source_id": "US12473295-B2",
+   "best_nm": 200.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787676,
+   "source_id": "US12473295-B2",
+   "best_nm": 2050.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787680,
+   "source_id": "US12473295-B2",
+   "best_nm": 49.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787681,
+   "source_id": "US12473295-B2",
+   "best_nm": 50.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787682,
+   "source_id": "US12473295-B2",
+   "best_nm": 65.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787684,
+   "source_id": "US12473295-B2",
+   "best_nm": 89.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787685,
+   "source_id": "US12473295-B2",
+   "best_nm": 1640.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787686,
+   "source_id": "US12473295-B2",
+   "best_nm": 110.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787687,
+   "source_id": "US12473295-B2",
+   "best_nm": 2130.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787690,
+   "source_id": "US12473295-B2",
+   "best_nm": 93.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787691,
+   "source_id": "US12473295-B2",
+   "best_nm": 71.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787694,
+   "source_id": "US12473295-B2",
+   "best_nm": 350.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787695,
+   "source_id": "US12473295-B2",
+   "best_nm": 260.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787696,
+   "source_id": "US12473295-B2",
+   "best_nm": 190.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787697,
+   "source_id": "US12473295-B2",
+   "best_nm": 51.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787698,
+   "source_id": "US12473295-B2",
+   "best_nm": 120.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787699,
+   "source_id": "US12473295-B2",
+   "best_nm": 100.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787700,
+   "source_id": "US12473295-B2",
+   "best_nm": 230.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787707,
+   "source_id": "US12473295-B2",
+   "best_nm": 130.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787708,
+   "source_id": "US12473295-B2",
+   "best_nm": 130.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787709,
+   "source_id": "US12473295-B2",
+   "best_nm": 62.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787724,
+   "source_id": "US12473295-B2",
+   "best_nm": 270.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787726,
+   "source_id": "US12473295-B2",
+   "best_nm": 350.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787727,
+   "source_id": "US12473295-B2",
+   "best_nm": 9450.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787728,
+   "source_id": "US12473295-B2",
+   "best_nm": 490.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787729,
+   "source_id": "US12473295-B2",
+   "best_nm": 88840.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787730,
+   "source_id": "US12473295-B2",
+   "best_nm": 270.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787731,
+   "source_id": "US12473295-B2",
+   "best_nm": 400.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787732,
+   "source_id": "US12473295-B2",
+   "best_nm": 8310.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787733,
+   "source_id": "US12473295-B2",
+   "best_nm": 150.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787734,
+   "source_id": "US12473295-B2",
+   "best_nm": 370.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787737,
+   "source_id": "US12473295-B2",
+   "best_nm": 58.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787738,
+   "source_id": "US12473295-B2",
+   "best_nm": 12310.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787741,
+   "source_id": "US12473295-B2",
+   "best_nm": 7390.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787742,
+   "source_id": "US12473295-B2",
+   "best_nm": 260.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787743,
+   "source_id": "US12473295-B2",
+   "best_nm": 63.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787744,
+   "source_id": "US12473295-B2",
+   "best_nm": 180.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787745,
+   "source_id": "US12473295-B2",
+   "best_nm": 180.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787746,
+   "source_id": "US12473295-B2",
+   "best_nm": 65.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787747,
+   "source_id": "US12473295-B2",
+   "best_nm": 4160.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787748,
+   "source_id": "US12473295-B2",
+   "best_nm": 150.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787749,
+   "source_id": "US12473295-B2",
+   "best_nm": 330.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787750,
+   "source_id": "US12473295-B2",
+   "best_nm": 160.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787753,
+   "source_id": "US12473295-B2",
+   "best_nm": 290.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787754,
+   "source_id": "US12473295-B2",
+   "best_nm": 540.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787755,
+   "source_id": "US12473295-B2",
+   "best_nm": 270.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787756,
+   "source_id": "US12473295-B2",
+   "best_nm": 580.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787757,
+   "source_id": "US12473295-B2",
+   "best_nm": 210.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787758,
+   "source_id": "US12473295-B2",
+   "best_nm": 380.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787759,
+   "source_id": "US12473295-B2",
+   "best_nm": 660.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787760,
+   "source_id": "US12473295-B2",
+   "best_nm": 500.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787763,
+   "source_id": "US12473295-B2",
+   "best_nm": 240.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787764,
+   "source_id": "US12473295-B2",
+   "best_nm": 54.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787765,
+   "source_id": "US12473295-B2",
+   "best_nm": 360.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787766,
+   "source_id": "US12473295-B2",
+   "best_nm": 1020.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787769,
+   "source_id": "US12473295-B2",
+   "best_nm": 260.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787775,
+   "source_id": "US12473295-B2",
+   "best_nm": 18400.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787776,
+   "source_id": "US12473295-B2",
+   "best_nm": 160.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787777,
+   "source_id": "US12473295-B2",
+   "best_nm": 18510.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787778,
+   "source_id": "US12473295-B2",
+   "best_nm": 79.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787782,
+   "source_id": "US12473295-B2",
+   "best_nm": 170.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787784,
+   "source_id": "US12473295-B2",
+   "best_nm": 58.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787785,
+   "source_id": "US12473295-B2",
+   "best_nm": 12020.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787786,
+   "source_id": "US12473295-B2",
+   "best_nm": 77.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787788,
+   "source_id": "US12473295-B2",
+   "best_nm": 53.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787789,
+   "source_id": "US12473295-B2",
+   "best_nm": 7770.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787790,
+   "source_id": "US12473295-B2",
+   "best_nm": 97.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787791,
+   "source_id": "US12473295-B2",
+   "best_nm": 88.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787796,
+   "source_id": "US12473295-B2",
+   "best_nm": 14210.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787797,
+   "source_id": "US12473295-B2",
+   "best_nm": 40550.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787800,
+   "source_id": "US12473295-B2",
+   "best_nm": 9520.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787802,
+   "source_id": "US12473295-B2",
+   "best_nm": 10340.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787807,
+   "source_id": "US12473295-B2",
+   "best_nm": 240.0,
+   "n": 1
+  },
+  {
+   "monomerid": 787815,
+   "source_id": "US12473295-B2",
+   "best_nm": 84.0,
+   "n": 1
+  },
+  {
+   "monomerid": 788822,
+   "source_id": "US12473295-B2",
+   "best_nm": 74.0,
+   "n": 1
+  },
+  {
+   "monomerid": 50489228,
+   "source_id": "23244744",
+   "best_nm": 159.0,
+   "n": 1
+  },
+  {
+   "monomerid": 50489234,
+   "source_id": "23244744",
+   "best_nm": 11000.0,
+   "n": 1
+  },
+  {
+   "monomerid": 50489238,
+   "source_id": "23244744",
+   "best_nm": 232.0,
+   "n": 1
+  },
+  {
+   "monomerid": 50489240,
+   "source_id": "23244744",
+   "best_nm": 4610.0,
+   "n": 1
+  },
+  {
+   "monomerid": 50489241,
+   "source_id": "23244744",
+   "best_nm": 2520.0,
+   "n": 1
+  },
+  {
+   "monomerid": 50489244,
+   "source_id": "23244744",
+   "best_nm": 194.0,
+   "n": 1
+  },
+  {
+   "monomerid": 50489248,
+   "source_id": "23244744",
+   "best_nm": 25.0,
+   "n": 1
+  },
+  {
+   "monomerid": 50489250,
+   "source_id": "23244744",
+   "best_nm": 85300.0,
+   "n": 1
+  },
+  {
+   "monomerid": 50489251,
+   "source_id": "23244744",
+   "best_nm": 78.0,
+   "n": 1
+  },
+  {
+   "monomerid": 50489252,
+   "source_id": "23244744",
+   "best_nm": 39400.0,
+   "n": 1
+  },
+  {
+   "monomerid": 50489253,
+   "source_id": "23244744",
+   "best_nm": 102.0,
+   "n": 1
+  },
+  {
+   "monomerid": 50489255,
+   "source_id": "23244744",
+   "best_nm": 25.0,
+   "n": 1
+  },
+  {
+   "monomerid": 50489256,
+   "source_id": "23244744",
+   "best_nm": 63.0,
+   "n": 1
+  },
+  {
+   "monomerid": 50516547,
+   "source_id": "31244110",
+   "best_nm": 71.0,
+   "n": 1
+  },
+  {
+   "monomerid": 50516547,
+   "source_id": "US10899738-B2",
+   "best_nm": 71.0,
+   "n": 1
+  },
+  {
+   "monomerid": 50516551,
+   "source_id": "31244110",
+   "best_nm": 3500.0,
+   "n": 1
+  },
+  {
+   "monomerid": 50516555,
+   "source_id": "31244110",
+   "best_nm": 21200.0,
+   "n": 1
+  },
+  {
+   "monomerid": 50516558,
+   "source_id": "31244110",
+   "best_nm": 6600.0,
+   "n": 1
+  },
+  {
+   "monomerid": 50516558,
+   "source_id": "US10899738-B2",
+   "best_nm": 4000.0,
+   "n": 1
+  },
+  {
+   "monomerid": 50516559,
+   "source_id": "31244110",
+   "best_nm": 36.0,
+   "n": 1
+  },
+  {
+   "monomerid": 50516559,
+   "source_id": "US10899738-B2",
+   "best_nm": 36.0,
+   "n": 1
+  },
+  {
+   "monomerid": 50516571,
+   "source_id": "31244110",
+   "best_nm": 7.0,
+   "n": 1
+  },
+  {
+   "monomerid": 50516571,
+   "source_id": "US10899738-B2",
+   "best_nm": 7.0,
+   "n": 1
+  },
+  {
+   "monomerid": 50516573,
+   "source_id": "31244110",
+   "best_nm": 1130.0,
+   "n": 1
+  },
+  {
+   "monomerid": 50516573,
+   "source_id": "US10899738-B2",
+   "best_nm": 1100.0,
+   "n": 1
+  },
+  {
+   "monomerid": 50516578,
+   "source_id": "31244110",
+   "best_nm": 40.0,
+   "n": 1
+  },
+  {
+   "monomerid": 50516579,
+   "source_id": "31244110",
+   "best_nm": 33.0,
+   "n": 1
+  },
+  {
+   "monomerid": 50516581,
+   "source_id": "31244110",
+   "best_nm": 11.0,
+   "n": 1
+  }
+ ]
+}

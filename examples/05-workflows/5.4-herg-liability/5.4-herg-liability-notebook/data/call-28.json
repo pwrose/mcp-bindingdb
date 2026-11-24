@@ -1,0 +1,33 @@
+{
+ "query": "amiodarone",
+ "resolved": true,
+ "source": "bindingdb",
+ "smiles": "CCCCc1c(c2ccccc2o1)C(=O)c3cc(c(c(c3)I)OCCN(CC)CC)I",
+ "inchi_key": "IYIKLHRQXLHMJQ-UHFFFAOYSA-N",
+ "monomerid": 18957,
+ "ambiguous": false,
+ "candidates": [
+  {
+   "monomerid": 18957,
+   "bdbm_id": "BDBM18957",
+   "name": "Cordarone",
+   "inchi_key": "IYIKLHRQXLHMJQ-UHFFFAOYSA-N",
+   "smiles": "CCCCc1c(c2ccccc2o1)C(=O)c3cc(c(c(c3)I)OCCN(CC)CC)I",
+   "n_activities": 50
+  },
+  {
+   "monomerid": 50318906,
+   "bdbm_id": "BDBM50318906",
+   "name": "Amiodarone",
+   "inchi_key": "IYIKLHRQXLHMJQ-UHFFFAOYSA-N",
+   "smiles": "CCCCc1c(c2ccccc2o1)C(=O)c3cc(c(c(c3)I)OCCN(CC)CC)I",
+   "n_activities": 0
+  }
+ ],
+ "sources_tried": [
+  {
+   "source": "bindingdb",
+   "status": "found"
+  }
+ ]
+}

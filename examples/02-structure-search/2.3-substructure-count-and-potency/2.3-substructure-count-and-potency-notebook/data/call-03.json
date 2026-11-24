@@ -1,0 +1,127 @@
+{
+ "row_count": 15,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 50102750,
+   "polymerid": 1260,
+   "affinity_type": "IC50",
+   "n": 3,
+   "med": 0.0039,
+   "best": 0.0039
+  },
+  {
+   "monomerid": 3032,
+   "polymerid": 520,
+   "affinity_type": "Ki",
+   "n": 1,
+   "med": 0.006,
+   "best": 0.006
+  },
+  {
+   "monomerid": 50228403,
+   "polymerid": 1234,
+   "affinity_type": "Kd",
+   "n": 2,
+   "med": 2.6532999999999998,
+   "best": 0.0066
+  },
+  {
+   "monomerid": 112499,
+   "polymerid": 1200,
+   "affinity_type": "IC50",
+   "n": 1,
+   "med": 0.01,
+   "best": 0.01
+  },
+  {
+   "monomerid": 29568,
+   "polymerid": 6432,
+   "affinity_type": "Ki",
+   "n": 12,
+   "med": 0.265,
+   "best": 0.01
+  },
+  {
+   "monomerid": 50322823,
+   "polymerid": 520,
+   "affinity_type": "IC50",
+   "n": 102,
+   "med": 1.0,
+   "best": 0.01
+  },
+  {
+   "monomerid": 5446,
+   "polymerid": 520,
+   "affinity_type": "IC50",
+   "n": 173,
+   "med": 30.0,
+   "best": 0.029
+  },
+  {
+   "monomerid": 50595124,
+   "polymerid": 692,
+   "affinity_type": "IC50",
+   "n": 9,
+   "med": 40.0,
+   "best": 0.04
+  },
+  {
+   "monomerid": 18268,
+   "polymerid": 1875,
+   "affinity_type": "Ki",
+   "n": 4,
+   "med": 7.2,
+   "best": 0.04
+  },
+  {
+   "monomerid": 5445,
+   "polymerid": 520,
+   "affinity_type": "IC50",
+   "n": 75,
+   "med": 11.0,
+   "best": 0.06
+  },
+  {
+   "monomerid": 50468247,
+   "polymerid": 520,
+   "affinity_type": "IC50",
+   "n": 16,
+   "med": 0.266,
+   "best": 0.061
+  },
+  {
+   "monomerid": 50053929,
+   "polymerid": 2135,
+   "affinity_type": "Kd",
+   "n": 2,
+   "med": 0.0876745,
+   "best": 0.077625
+  },
+  {
+   "monomerid": 4567,
+   "polymerid": 3945,
+   "affinity_type": "IC50",
+   "n": 1,
+   "med": 0.08,
+   "best": 0.08
+  },
+  {
+   "monomerid": 5447,
+   "polymerid": 520,
+   "affinity_type": "IC50",
+   "n": 187,
+   "med": 22.0,
+   "best": 0.1
+  },
+  {
+   "monomerid": 4779,
+   "polymerid": 520,
+   "affinity_type": "Kd",
+   "n": 32,
+   "med": 0.20500000000000002,
+   "best": 0.1
+  }
+ ],
+ "order_warning": "Rows 4 and 5 tie on every ORDER BY column (best), so rows like them can swap places from run to run. End the ORDER BY with a unique column (e.g. monomerid; ki_result_id, affinity_type for measurements) so the result is the same on every run and a notebook's rerun check passes."
+}

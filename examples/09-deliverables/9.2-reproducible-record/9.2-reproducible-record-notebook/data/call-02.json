@@ -1,0 +1,17 @@
+{
+ "row_count": 1,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 50110183,
+   "bdbm_id": "BDBM50110183",
+   "name": "Abemaciclib",
+   "inchi_key": "UZWDCWONPYILKI-UHFFFAOYSA-N",
+   "smiles": "CCN1CCN(Cc2ccc(Nc3ncc(F)c(n3)-c3cc(F)c4nc(C)n(C(C)C)c4c3)nc2)CC1",
+   "mol_weight": 506.27,
+   "n_activities": 227,
+   "n_targets": 63,
+   "matched_name": "Abemaciclib"
+  }
+ ]
+}

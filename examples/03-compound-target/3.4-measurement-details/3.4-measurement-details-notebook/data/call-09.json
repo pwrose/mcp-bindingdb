@@ -1,0 +1,50 @@
+{
+ "measurement": {
+  "ic50": " 0.10",
+  "ki_result_id": 50076446,
+  "reactant_set_id": 50076446,
+  "assayid": 1,
+  "entryid": 50044056
+ },
+ "reactants": {
+  "target_label": "Epidermal growth factor receptor",
+  "ligand_label": "BDBM5447",
+  "substrate": null,
+  "e_prep": null,
+  "i_prep": null,
+  "s_prep": null,
+  "monomerid": 5447,
+  "compound_name": "Iressa",
+  "inchi_key": "XGALLCVXEZPNRQ-UHFFFAOYSA-N",
+  "polymerid": 520,
+  "complexid": null,
+  "target_name": "Epidermal growth factor receptor",
+  "uniprot_raw": "P00533",
+  "organism": "Homo sapiens"
+ },
+ "assay": {
+  "assay_name": "ChEMBL_974507 (CHEMBL2412780)",
+  "description": "Inhibition of wild type EGFR (unknown origin) using Tyr 4 peptide as substrate after 1.5 hrs by FRET based Z'-lyte assay"
+ },
+ "entry": {
+  "entryid": 50044056,
+  "entrytitle": "Nitric oxide donating anilinopyrimidines: synthesis and biological evaluation as EGFR inhibitors.",
+  "meas_tech": "Enzyme Inhibition",
+  "entrydate": "2014-12-26T00:00:00",
+  "ezid": "10.7270/Q27082Z6"
+ },
+ "citations": [
+  {
+   "articleid": 50044056,
+   "art_purp": "ChEMBL_19",
+   "title": "Nitric oxide donating anilinopyrimidines: synthesis and biological evaluation as EGFR inhibitors.",
+   "journal": "Eur J Med Chem",
+   "year": 2013,
+   "volume": 66,
+   "firstpage": 82,
+   "source_id": "23792318",
+   "doi": "10.1016/j.ejmech.2013.05.026",
+   "authors": "C Han, Z Huang, C Zheng, L Wan, Y Lai, S Peng, K Ding, H Ji, Y Zhang"
+  }
+ ]
+}

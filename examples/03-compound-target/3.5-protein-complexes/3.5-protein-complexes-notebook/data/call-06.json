@@ -1,0 +1,17 @@
+{
+ "row_count": 1,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 26266,
+   "bdbm_id": "BDBM26266",
+   "name": "ZPM",
+   "inchi_key": "ZAFYATHCZYHLPB-UHFFFAOYSA-N",
+   "smiles": "CN(C)C(=O)Cc1c(nc2ccc(C)cn12)-c1ccc(C)cc1",
+   "mol_weight": 307.17,
+   "n_activities": 148,
+   "n_targets": 59,
+   "matched_name": "Zolpidem"
+  }
+ ]
+}

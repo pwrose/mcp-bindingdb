@@ -1,0 +1,38 @@
+{
+ "row_count": 4,
+ "truncated": false,
+ "rows": [
+  {
+   "kind": "article (PMID)",
+   "n_values": 1454575,
+   "n_sources": 45157,
+   "pct_ph": 2.9,
+   "pct_temp": 2.6,
+   "pct_assay_name": 98.4
+  },
+  {
+   "kind": "patent",
+   "n_values": 1062387,
+   "n_sources": 8680,
+   "pct_ph": 13.0,
+   "pct_temp": 12.2,
+   "pct_assay_name": 99.0
+  },
+  {
+   "kind": "PubChem assay",
+   "n_values": 72558,
+   "n_sources": 663,
+   "pct_ph": 3.8,
+   "pct_temp": 5.8,
+   "pct_assay_name": 92.9
+  },
+  {
+   "kind": "D3R challenge",
+   "n_values": 2659,
+   "n_sources": 24,
+   "pct_ph": 3.5,
+   "pct_temp": 0.0,
+   "pct_assay_name": 100.0
+  }
+ ]
+}

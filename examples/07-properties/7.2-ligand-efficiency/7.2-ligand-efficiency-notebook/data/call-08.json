@@ -1,0 +1,17 @@
+{
+ "row_count": 1,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 50510823,
+   "bdbm_id": "BDBM50510823",
+   "name": "Elenbecestat",
+   "inchi_key": "AACUJFVOHGRMTR-DPXNYUHVSA-N",
+   "smiles": "C[C@H]1OC[C@]2(c3cc(NC(=O)c4cnc(C(F)F)cn4)ccc3F)N=C(N)SC[C@H]12",
+   "mol_weight": 437.45,
+   "n_activities": 2,
+   "n_targets": 1,
+   "matched_name": "Elenbecestat"
+  }
+ ]
+}

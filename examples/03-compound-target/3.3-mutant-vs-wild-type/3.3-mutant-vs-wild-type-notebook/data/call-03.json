@@ -1,0 +1,1172 @@
+{
+ "row_count": 64,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 391733,
+   "source_id": "US10300058-B2",
+   "affinity_type": "IC50",
+   "wt_p": 6.16,
+   "wt_n": 1,
+   "wt_vals": [
+    699.0
+   ],
+   "mut_p": 8.33,
+   "mut_n": 1,
+   "mut_vals": [
+    4.7
+   ],
+   "shift": 2.17,
+   "compound_name": "N-(3-((2-((4-(1-acetyl-1,2,3,6-tetrahydropyridin-4-yl)-2-methoxyphenyl)amino)-5-(trifluoromethyl)pyrimidin-4-yl)amino)phenyl)acrylamide",
+   "smiles": "COc1cc(ccc1Nc1ncc(c(Nc2cccc(NC(=O)C=C)c2)n1)C(F)(F)F)C1=CCN(CC1)C(C)=O |t:34|"
+  },
+  {
+   "monomerid": 391745,
+   "source_id": "US10300058-B2",
+   "affinity_type": "IC50",
+   "wt_p": 2.89,
+   "wt_n": 1,
+   "wt_vals": [
+    1284000.0
+   ],
+   "mut_p": 5.0,
+   "mut_n": 1,
+   "mut_vals": [
+    9900.0
+   ],
+   "shift": 2.11,
+   "compound_name": "N-(3-((2-((2-acetyl-1,2,3,4-tetrahydroisoquinoline-5-yl)amino)-5-(trifluoromethyl)pyrimidin-4-yl)amino)phenyl)acrylamide",
+   "smiles": "CC(=O)N1CCc2c(C1)cccc2Nc1ncc(c(Nc2cccc(NC(=O)C=C)c2)n1)C(F)(F)F"
+  },
+  {
+   "monomerid": 149404,
+   "source_id": "US10300058-B2",
+   "affinity_type": "IC50",
+   "wt_p": 6.74,
+   "wt_n": 4,
+   "wt_vals": [
+    145.0,
+    180.0,
+    180.0,
+    153000.0
+   ],
+   "mut_p": 8.785,
+   "mut_n": 4,
+   "mut_vals": [
+    1.3,
+    1.3,
+    2.1,
+    2500.0
+   ],
+   "shift": 2.05,
+   "compound_name": "Rociletinib",
+   "smiles": "CC(=O)N1CCN(CC1)c2ccc(c(c2)OC)Nc3ncc(c(n3)Nc4cccc(c4)NC(=O)C=C)C(F)(F)F"
+  },
+  {
+   "monomerid": 391736,
+   "source_id": "US10300058-B2",
+   "affinity_type": "IC50",
+   "wt_p": 6.0,
+   "wt_n": 1,
+   "wt_vals": [
+    995.0
+   ],
+   "mut_p": 8.05,
+   "mut_n": 1,
+   "mut_vals": [
+    8.9
+   ],
+   "shift": 2.05,
+   "compound_name": "N-(6-((2-((4-(1-acetyl-1,2,3,6-tetrahydropyridin-4-yl)-2-methoxyphenyl)amino)-5-(trifluoromethyl)pyrimidin-4-yl)amino)pyridin-2-yl)acrylamide",
+   "smiles": "COc1cc(ccc1Nc1ncc(c(Nc2cccc(NC(=O)C=C)n2)n1)C(F)(F)F)C1=CCN(CC1)C(C)=O |t:34|"
+  },
+  {
+   "monomerid": 391740,
+   "source_id": "US10300058-B2",
+   "affinity_type": "IC50",
+   "wt_p": 3.17,
+   "wt_n": 1,
+   "wt_vals": [
+    683000.0
+   ],
+   "mut_p": 5.15,
+   "mut_n": 1,
+   "mut_vals": [
+    7100.0
+   ],
+   "shift": 1.98,
+   "compound_name": "N-(3-((2-((4-(1-(3-fluoropropionyl)piperidin-4-yl)-2-methoxyphenyl)amino)-5-(trifluoromethyl)pyrimidin-4-yl)amino)phenyl)acrylamide",
+   "smiles": "COc1cc(ccc1Nc1ncc(c(Nc2cccc(NC(=O)C=C)c2)n1)C(F)(F)F)C1CCN(CC1)C(=O)CCF"
+  },
+  {
+   "monomerid": 391742,
+   "source_id": "US10300058-B2",
+   "affinity_type": "IC50",
+   "wt_p": 3.06,
+   "wt_n": 1,
+   "wt_vals": [
+    871000.0
+   ],
+   "mut_p": 5.02,
+   "mut_n": 1,
+   "mut_vals": [
+    9600.0
+   ],
+   "shift": 1.96,
+   "compound_name": "N-(3-((2-((2-methoxy-4-(1-(methylsulfonyl)piperidin-4-yl)phenyl)amino)-5-(trifluoromethyl)pyrimidin-4-yl)amino)phenyl)acrylamide",
+   "smiles": "COc1cc(ccc1Nc1ncc(c(Nc2cccc(NC(=O)C=C)c2)n1)C(F)(F)F)C1CCN(CC1)S(C)(=O)=O"
+  },
+  {
+   "monomerid": 391732,
+   "source_id": "US10300058-B2",
+   "affinity_type": "IC50",
+   "wt_p": 6.26,
+   "wt_n": 1,
+   "wt_vals": [
+    552.0
+   ],
+   "mut_p": 8.21,
+   "mut_n": 1,
+   "mut_vals": [
+    6.2
+   ],
+   "shift": 1.95,
+   "compound_name": "acrylamide",
+   "smiles": "COc1cc(ccc1Nc1ncc(c(Nc2cccc(NC(=O)C=C)c2)n1)C(F)(F)F)C1CCN(CC1)C(C)=O"
+  },
+  {
+   "monomerid": 391738,
+   "source_id": "US10300058-B2",
+   "affinity_type": "IC50",
+   "wt_p": 2.86,
+   "wt_n": 1,
+   "wt_vals": [
+    1369000.0
+   ],
+   "mut_p": 4.8,
+   "mut_n": 1,
+   "mut_vals": [
+    16000.0
+   ],
+   "shift": 1.94,
+   "compound_name": "N-(3-((2-((2-acetyl-8-methoxy-1,2,3,4-tetrahydroisoquinoline-7-yl)amino)-5-(trifluoromethyl)pyrimidin-4-yl)amino)phenyl)acrylamide",
+   "smiles": "COc1c(Nc2ncc(c(Nc3cccc(NC(=O)C=C)c3)n2)C(F)(F)F)ccc2CCN(Cc12)C(C)=O"
+  },
+  {
+   "monomerid": 391739,
+   "source_id": "US10300058-B2",
+   "affinity_type": "IC50",
+   "wt_p": 3.53,
+   "wt_n": 1,
+   "wt_vals": [
+    294000.0
+   ],
+   "mut_p": 5.41,
+   "mut_n": 1,
+   "mut_vals": [
+    3900.0
+   ],
+   "shift": 1.88,
+   "compound_name": "methyl)pyrimidin-4-yl)amino)phenyl)acrylamide",
+   "smiles": "COc1cc(ccc1Nc1ncc(c(Nc2cccc(NC(=O)C=C)c2)n1)C(F)(F)F)C1CCN(CCF)C(=O)C1"
+  },
+  {
+   "monomerid": 391743,
+   "source_id": "US10300058-B2",
+   "affinity_type": "IC50",
+   "wt_p": 4.14,
+   "wt_n": 1,
+   "wt_vals": [
+    73000.0
+   ],
+   "mut_p": 5.92,
+   "mut_n": 1,
+   "mut_vals": [
+    1200.0
+   ],
+   "shift": 1.78,
+   "compound_name": "N-(3-((2-((2-methoxy-4-(4-morpholinopiperidin-1-yl)phenyl)amino)-5-(trifluoromethyl)pyrimidin-4-yl)amino)phenyl)acrylamide",
+   "smiles": "COc1cc(ccc1Nc1ncc(c(Nc2cccc(NC(=O)C=C)c2)n1)C(F)(F)F)N1CCC(CC1)N1CCOCC1"
+  },
+  {
+   "monomerid": 391735,
+   "source_id": "US10300058-B2",
+   "affinity_type": "IC50",
+   "wt_p": 6.37,
+   "wt_n": 1,
+   "wt_vals": [
+    423.0
+   ],
+   "mut_p": 8.14,
+   "mut_n": 1,
+   "mut_vals": [
+    7.2
+   ],
+   "shift": 1.77,
+   "compound_name": "N-(6-((2-((4-(1-acetylpiperidin-4-yl)-2-methoxyphenyl)amino)-5-(trifluoromethyl)pyrimidin-4-yl)amino)pyridin-2-yl)acrylamide",
+   "smiles": "COc1cc(ccc1Nc1ncc(c(Nc2cccc(NC(=O)C=C)n2)n1)C(F)(F)F)C1CCN(CC1)C(C)=O"
+  },
+  {
+   "monomerid": 391746,
+   "source_id": "US10300058-B2",
+   "affinity_type": "IC50",
+   "wt_p": 4.09,
+   "wt_n": 1,
+   "wt_vals": [
+    82000.0
+   ],
+   "mut_p": 5.85,
+   "mut_n": 1,
+   "mut_vals": [
+    1400.0
+   ],
+   "shift": 1.76,
+   "compound_name": "N-(3-((2-((2-methoxy-4-(1-(oxetan-3-yl)piperidin-4-yl)phenyl)amino)-5-(trifluoromethyl)pyrimidin-4-yl)amino)phenyl)acrylamide",
+   "smiles": "COc1cc(ccc1Nc1ncc(c(Nc2cccc(NC(=O)C=C)c2)n1)C(F)(F)F)C1CCN(CC1)C1COC1"
+  },
+  {
+   "monomerid": 391731,
+   "source_id": "US10300058-B2",
+   "affinity_type": "IC50",
+   "wt_p": 6.49,
+   "wt_n": 1,
+   "wt_vals": [
+    323.0
+   ],
+   "mut_p": 8.24,
+   "mut_n": 1,
+   "mut_vals": [
+    5.7
+   ],
+   "shift": 1.75,
+   "compound_name": "pyrimidin-4-yl)amino)pyridin-2-yl)acrylamide",
+   "smiles": "COc1cc(ccc1Nc1ncc(c(Nc2cccc(NC(=O)C=C)n2)n1)C(F)(F)F)N1CCN(CC1)C(C)=O"
+  },
+  {
+   "monomerid": 391737,
+   "source_id": "US10300058-B2",
+   "affinity_type": "IC50",
+   "wt_p": 3.48,
+   "wt_n": 1,
+   "wt_vals": [
+    332000.0
+   ],
+   "mut_p": 5.21,
+   "mut_n": 1,
+   "mut_vals": [
+    6200.0
+   ],
+   "shift": 1.73,
+   "compound_name": "N-(3-((2-((4-(8-acetyl-3,8-diazabicyclo[3.2.1]octan-3-yl)-2-methoxyphenyl)amino)-5-(trifluoromethyl)pyrimidin-4-yl)amino)phenyl)acrylamide",
+   "smiles": "COc1cc(ccc1Nc1ncc(c(Nc2cccc(NC(=O)C=C)c2)n1)C(F)(F)F)N1CC2CCC(C1)N2C(C)=O"
+  },
+  {
+   "monomerid": 391734,
+   "source_id": "US10300058-B2",
+   "affinity_type": "IC50",
+   "wt_p": 6.19,
+   "wt_n": 1,
+   "wt_vals": [
+    640.0
+   ],
+   "mut_p": 7.89,
+   "mut_n": 1,
+   "mut_vals": [
+    13.0
+   ],
+   "shift": 1.7,
+   "compound_name": "N-(3-((2-((2-acetyl-7-methoxy-1,2,3,4-tetrahydroisoquinolin-6-yl)amino)-5-(trifluoromethyl)pyrimidin-4-yl)amino)phenyl)acrylamide",
+   "smiles": "COc1cc2CN(CCc2cc1Nc1ncc(c(Nc2cccc(NC(=O)C=C)c2)n1)C(F)(F)F)C(C)=O"
+  },
+  {
+   "monomerid": 391741,
+   "source_id": "US10300058-B2",
+   "affinity_type": "IC50",
+   "wt_p": 4.6,
+   "wt_n": 1,
+   "wt_vals": [
+    25000.0
+   ],
+   "mut_p": 6.29,
+   "mut_n": 1,
+   "mut_vals": [
+    510.0
+   ],
+   "shift": 1.69,
+   "compound_name": "pyrimidin-4-yl)amino)phenyl)acrylamide",
+   "smiles": "COc1cc(ccc1Nc1ncc(c(Nc2cccc(NC(=O)C=C)c2)n1)C(F)(F)F)C1CCN(CCF)CC1"
+  },
+  {
+   "monomerid": 391747,
+   "source_id": "US10300058-B2",
+   "affinity_type": "IC50",
+   "wt_p": 3.8,
+   "wt_n": 1,
+   "wt_vals": [
+    159000.0
+   ],
+   "mut_p": 5.44,
+   "mut_n": 1,
+   "mut_vals": [
+    3600.0
+   ],
+   "shift": 1.64,
+   "compound_name": "N-(3-((2-((2-methoxy-4-(3-(methylsulfonyl)propoxy)phenyl)amino)-5-(trifluoromethyl)pyrimidin-4-yl)amino)phenyl)acrylamide",
+   "smiles": "COc1cc(OCCCS(C)(=O)=O)ccc1Nc1ncc(c(Nc2cccc(NC(=O)C=C)c2)n1)C(F)(F)F"
+  },
+  {
+   "monomerid": 378885,
+   "source_id": "US10266537-B2",
+   "affinity_type": "IC50",
+   "wt_p": 6.19,
+   "wt_n": 1,
+   "wt_vals": [
+    651.0
+   ],
+   "mut_p": 7.72,
+   "mut_n": 1,
+   "mut_vals": [
+    19.0
+   ],
+   "shift": 1.53,
+   "compound_name": "US10266537, Compound 93",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(C)c(C(F)(F)F)c2)cc1C#Cc1nn([C@H]2CC[C@H](O)CC2)c2ncnc(N)c12"
+  },
+  {
+   "monomerid": 391744,
+   "source_id": "US10300058-B2",
+   "affinity_type": "IC50",
+   "wt_p": 4.96,
+   "wt_n": 1,
+   "wt_vals": [
+    11000.0
+   ],
+   "mut_p": 6.49,
+   "mut_n": 1,
+   "mut_vals": [
+    320.0
+   ],
+   "shift": 1.53,
+   "compound_name": "N-(3-((2-((2-methoxy-4-(1-methylpiperidin-4-yl)phenyl)amino)-5-(trifluoromethyl)pyrimidin-4-yl)amino)phenyl)acrylamide",
+   "smiles": "COc1cc(ccc1Nc1ncc(c(Nc2cccc(NC(=O)C=C)c2)n1)C(F)(F)F)C1CCN(C)CC1"
+  },
+  {
+   "monomerid": 270539,
+   "source_id": "US10059688-B2",
+   "affinity_type": "IC50",
+   "wt_p": 6.12,
+   "wt_n": 1,
+   "wt_vals": [
+    756.0
+   ],
+   "mut_p": 7.64,
+   "mut_n": 1,
+   "mut_vals": [
+    23.0
+   ],
+   "shift": 1.52,
+   "compound_name": "2-(2-(5-chloro-2-(3-methoxy- 4-(4-methylpiperazin-1-yl) phenylamino)pyrimidin-4- ylamino)phenyl)-N,N- dimethyl-2-oxoacetamide",
+   "smiles": "COc1cc(Nc2ncc(Cl)c(Nc3ccccc3C(=O)C(=O)N(C)C)n2)ccc1N1CCN(C)CC1"
+  },
+  {
+   "monomerid": 270543,
+   "source_id": "US10059688-B2",
+   "affinity_type": "IC50",
+   "wt_p": 6.4,
+   "wt_n": 1,
+   "wt_vals": [
+    397.0
+   ],
+   "mut_p": 7.92,
+   "mut_n": 1,
+   "mut_vals": [
+    12.0
+   ],
+   "shift": 1.52,
+   "compound_name": "US9783524, Example 115",
+   "smiles": "CN(C)CCOc1ccc(Nc2ncc(Cl)c(Nc3ccccc3C(=O)C(=O)N(C)C)n2)cc1NC(=O)C=C"
+  },
+  {
+   "monomerid": 270541,
+   "source_id": "US10059688-B2",
+   "affinity_type": "IC50",
+   "wt_p": 6.29,
+   "wt_n": 1,
+   "wt_vals": [
+    513.0
+   ],
+   "mut_p": 7.8,
+   "mut_n": 1,
+   "mut_vals": [
+    16.0
+   ],
+   "shift": 1.51,
+   "compound_name": "US10059688, Example 74",
+   "smiles": "CN(C)C(=O)C(=O)c1ccccc1Nc1cc(Cl)ccc1Cl"
+  },
+  {
+   "monomerid": 270542,
+   "source_id": "US10059688-B2",
+   "affinity_type": "IC50",
+   "wt_p": 6.45,
+   "wt_n": 1,
+   "wt_vals": [
+    354.0
+   ],
+   "mut_p": 7.82,
+   "mut_n": 1,
+   "mut_vals": [
+    15.0
+   ],
+   "shift": 1.37,
+   "compound_name": "2-(2-(2-(4-acryloyl-3,4- dihydro-2H-benzo[b][1,4] oxazin-6-ylamino)-5- chloropyrimidin-4- ylamino)phenyl)-N,N- dimethyl-2-oxoacetamide",
+   "smiles": "CN(C)C(=O)C(=O)c1ccccc1Nc1nc(Nc2ccc3OCCN(C(=O)C=C)c3c2)ncc1Cl"
+  },
+  {
+   "monomerid": 270540,
+   "source_id": "US10059688-B2",
+   "affinity_type": "IC50",
+   "wt_p": 6.56,
+   "wt_n": 1,
+   "wt_vals": [
+    273.0
+   ],
+   "mut_p": 7.82,
+   "mut_n": 1,
+   "mut_vals": [
+    15.0
+   ],
+   "shift": 1.26,
+   "compound_name": "N-(3-(5-chloro-4-(2-(2- (dimethylamino)-2-oxoacetyl) phenylamino)pyrimidin-2- ylamino)-4-methoxyphenyl) acrylamide",
+   "smiles": "COc1ccc(NC(=O)C=C)cc1Nc1ncc(Cl)c(Nc2ccccc2C(=O)C(=O)N(C)C)n1"
+  },
+  {
+   "monomerid": 270544,
+   "source_id": "US10059688-B2",
+   "affinity_type": "IC50",
+   "wt_p": 7.11,
+   "wt_n": 1,
+   "wt_vals": [
+    78.0
+   ],
+   "mut_p": 8.29,
+   "mut_n": 1,
+   "mut_vals": [
+    5.13
+   ],
+   "shift": 1.18,
+   "compound_name": "2-(2-(5-chloro-2-(4-(4- (dimethylamino)piperidin- 1-yl)-3-methoxyphenylamino) pyrimidin-4-ylamino)phenyl)- N,N-dimethyl-2-oxoacetamide",
+   "smiles": "COc1cc(Nc2ncc(Cl)c(Nc3ccccc3C(=O)C(=O)N(C)C)n2)ccc1N1CCC(CC1)N(C)C"
+  },
+  {
+   "monomerid": 270538,
+   "source_id": "US10059688-B2",
+   "affinity_type": "IC50",
+   "wt_p": 7.35,
+   "wt_n": 1,
+   "wt_vals": [
+    45.0
+   ],
+   "mut_p": 8.39,
+   "mut_n": 1,
+   "mut_vals": [
+    4.08
+   ],
+   "shift": 1.04,
+   "compound_name": "US9783524, Example 4",
+   "smiles": "COc1cc(ccc1Nc1ncc(Cl)c(Nc2ccccc2C(=O)C(N)=O)n1)N1CCC(CC1)N(C)C"
+  },
+  {
+   "monomerid": 228116,
+   "source_id": "US9556191-B2",
+   "affinity_type": "IC50",
+   "wt_p": 7.22,
+   "wt_n": 1,
+   "wt_vals": [
+    60.4
+   ],
+   "mut_p": 8.07,
+   "mut_n": 1,
+   "mut_vals": [
+    8.5
+   ],
+   "shift": 0.85,
+   "compound_name": "(e)-n-(4-((3-chloro-4-(pyridin-2-ylmethoxy)phenyl)amino)-7-methoxyquinazolin-6-yl)-4-((4 ar,7as)tetrahydro-2h-[1,4]dioxino[2,3-c]pyrrol-6(3h)-yl)but-2-enamide",
+   "smiles": "COc1cc2ncnc(Nc3ccc(OCc4ccccn4)c(Cl)c3)c2cc1NC(=O)\\C=C\\CN1C[C@H]2OCCO[C@H]2C1 |r|"
+  },
+  {
+   "monomerid": 195864,
+   "source_id": "US9670213-B2",
+   "affinity_type": "IC50",
+   "wt_p": 7.21,
+   "wt_n": 1,
+   "wt_vals": [
+    61.0
+   ],
+   "mut_p": 7.96,
+   "mut_n": 1,
+   "mut_vals": [
+    11.0
+   ],
+   "shift": 0.75,
+   "compound_name": "US9670213, Compound 009 4-(dimethylamino)-N-(4-(2-(4-methoxyphenylamino)-7-oxo-8(7H)-pteridin-yl)phenyl)-2-buteneamide",
+   "smiles": "COc1ccc(Nc2ncc3ncc(=O)n(-c4ccc(NC(=O)\\C=C\\CN(C)C)cc4)c3n2)cc1"
+  },
+  {
+   "monomerid": 228117,
+   "source_id": "US9556191-B2",
+   "affinity_type": "IC50",
+   "wt_p": 7.74,
+   "wt_n": 1,
+   "wt_vals": [
+    18.4
+   ],
+   "mut_p": 8.38,
+   "mut_n": 1,
+   "mut_vals": [
+    4.2
+   ],
+   "shift": 0.64,
+   "compound_name": "(e)-n-(4-((3-chloro-4-(pyridin-2-ylmethoxy)phenyl)amino)-7-ethoxyquinazolin-6-yl)-4-((4ar,7as)-tetrahydro-2h-[1,4]dioxino[2,3-c]pyrrol-6(3h)-yl)but-2-enamide",
+   "smiles": "CCOc1cc2ncnc(Nc3ccc(OCc4ccccn4)c(Cl)c3)c2cc1NC(=O)\\C=C\\CN1C[C@H]2OCCO[C@H]2C1 |r|"
+  },
+  {
+   "monomerid": 195865,
+   "source_id": "US9670213-B2",
+   "affinity_type": "IC50",
+   "wt_p": 5.09,
+   "wt_n": 1,
+   "wt_vals": [
+    8086.0
+   ],
+   "mut_p": 5.65,
+   "mut_n": 1,
+   "mut_vals": [
+    2253.0
+   ],
+   "shift": 0.56,
+   "compound_name": "US9670213, Compound 010 4-(dimethylamino)-N-(3-(2-(4-methoxyphenylamino)-7-oxo-8(7H)-pteridin-yl)phenyl)-2-buteneamide",
+   "smiles": "COc1ccc(Nc2ncc3ncc(=O)n(-c4cccc(NC(=O)\\C=C\\CN(C)C)c4)c3n2)cc1"
+  },
+  {
+   "monomerid": 228121,
+   "source_id": "US9556191-B2",
+   "affinity_type": "IC50",
+   "wt_p": 7.4,
+   "wt_n": 1,
+   "wt_vals": [
+    40.1
+   ],
+   "mut_p": 7.84,
+   "mut_n": 1,
+   "mut_vals": [
+    14.5
+   ],
+   "shift": 0.44,
+   "compound_name": "(e)-n-(7-ethoxy-4-((1-(3-fluorobenzyl)-1h-indazol-5-yl)amino)quinazolin-6-yl)-4-((4ar,7as)-tetrahydro-2h-[1,4]dioxino[2,3-c]pyrrol-6(3h)-yl)but-2-enamide",
+   "smiles": "CCOc1cc2ncnc(Nc3ccc4n(Cc5cccc(F)c5)ncc4c3)c2cc1NC(=O)\\C=C\\CN1C[C@H]2OCCO[C@H]2C1 |r|"
+  },
+  {
+   "monomerid": 368444,
+   "source_id": "US10227342-B2",
+   "affinity_type": "IC50",
+   "wt_p": 6.12,
+   "wt_n": 1,
+   "wt_vals": [
+    750.0
+   ],
+   "mut_p": 6.52,
+   "mut_n": 1,
+   "mut_vals": [
+    300.0
+   ],
+   "shift": 0.4,
+   "compound_name": "US10227342, Example 75",
+   "smiles": "COC(=O)c1cnc(Nc2cc(NC(=O)C=C)c(F)cc2OC)nc1-c1cn(N(C)C)c2ccccc12"
+  },
+  {
+   "monomerid": 368465,
+   "source_id": "US10227342-B2",
+   "affinity_type": "IC50",
+   "wt_p": 6.12,
+   "wt_n": 1,
+   "wt_vals": [
+    750.0
+   ],
+   "mut_p": 6.52,
+   "mut_n": 1,
+   "mut_vals": [
+    300.0
+   ],
+   "shift": 0.4,
+   "compound_name": "US10227342, Example 93",
+   "smiles": "COCCNC(=O)c1c(-c2ccnc(Nc3cc(NC(=O)C=C)c(cc3OC)N(C)CCN(C)C)n2)c2ccccc2n1C"
+  },
+  {
+   "monomerid": 228118,
+   "source_id": "US9556191-B2",
+   "affinity_type": "IC50",
+   "wt_p": 8.07,
+   "wt_n": 1,
+   "wt_vals": [
+    8.6
+   ],
+   "mut_p": 8.23,
+   "mut_n": 1,
+   "mut_vals": [
+    5.9
+   ],
+   "shift": 0.16,
+   "compound_name": "(e)-n-(4-((3-chloro-4-(pyridin-2-ylmethoxy)phenyl)amino)-7-(((s)-tetrahydrofuran-3-yl)oxy)quinazolin-6-yl)-4-((4ar,7as)-tetrahydro-2h-[1,4]dioxino[2,3-c]pyrrol-6(3h)-yl)but-2-enamide",
+   "smiles": "Clc1cc(Nc2ncnc3cc(O[C@H]4CCOC4)c(NC(=O)\\C=C\\CN4C[C@H]5OCCO[C@H]5C4)cc23)ccc1OCc1ccccn1 |r|"
+  },
+  {
+   "monomerid": 228109,
+   "source_id": "US9556191-B2",
+   "affinity_type": "IC50",
+   "wt_p": 8.19,
+   "wt_n": 1,
+   "wt_vals": [
+    6.4
+   ],
+   "mut_p": 8.21,
+   "mut_n": 1,
+   "mut_vals": [
+    6.2
+   ],
+   "shift": 0.02,
+   "compound_name": "(e)-n-(4-((3-chloro-4-fluorophenyl)amino)-7-ethoxyquinazolin-6-yl)-4-((4ar,7as)-tetrahydro-2h-[1,4]dioxin[2,3-c]pyrrol-6(3h)-yl)but-2-enamide",
+   "smiles": "CCOc1cc2ncnc(Nc3ccc(F)c(Cl)c3)c2cc1NC(=O)\\C=C\\CN1C[C@H]2OCCO[C@H]2C1 |r|"
+  },
+  {
+   "monomerid": 368368,
+   "source_id": "US10227342-B2",
+   "affinity_type": "IC50",
+   "wt_p": 6.52,
+   "wt_n": 2,
+   "wt_vals": [
+    300.0,
+    300.0
+   ],
+   "mut_p": 6.52,
+   "mut_n": 1,
+   "mut_vals": [
+    300.0
+   ],
+   "shift": 0.0,
+   "compound_name": "US10227342, Example 4",
+   "smiles": "COc1cc(N(C)CCN(C)C)c(NC(=O)C=C)cc1Nc1ncnc(n1)-c1c(C2CCOCC2)n(C)c2ccccc12"
+  },
+  {
+   "monomerid": 368369,
+   "source_id": "US10227342-B2",
+   "affinity_type": "IC50",
+   "wt_p": 6.52,
+   "wt_n": 3,
+   "wt_vals": [
+    300.0,
+    300.0,
+    300.0
+   ],
+   "mut_p": 6.52,
+   "mut_n": 1,
+   "mut_vals": [
+    300.0
+   ],
+   "shift": 0.0,
+   "compound_name": "US10227342, Example 5",
+   "smiles": "COOc1cc(N(C)CCN(C)C)c(NC(=O)C=C)cc1Nc1nccc(n1)-c1c(-c2ccc(OCc3ccccn3)c(Cl)c2)n(C)c2ccccc12"
+  },
+  {
+   "monomerid": 397156,
+   "source_id": "US10596172-B2",
+   "affinity_type": "IC50",
+   "wt_p": 7.26,
+   "wt_n": 1,
+   "wt_vals": [
+    55.0
+   ],
+   "mut_p": 7.26,
+   "mut_n": 1,
+   "mut_vals": [
+    55.0
+   ],
+   "shift": 0.0,
+   "compound_name": "US9987276, Compound I-56",
+   "smiles": "Cc1ccc(NC(=O)C=C)cc1Nc1nccc(n1)-c1cccnc1"
+  },
+  {
+   "monomerid": 397156,
+   "source_id": "US11351168-B1",
+   "affinity_type": "IC50",
+   "wt_p": 7.26,
+   "wt_n": 1,
+   "wt_vals": [
+    55.0
+   ],
+   "mut_p": 7.26,
+   "mut_n": 1,
+   "mut_vals": [
+    55.0
+   ],
+   "shift": 0.0,
+   "compound_name": "US9987276, Compound I-56",
+   "smiles": "Cc1ccc(NC(=O)C=C)cc1Nc1nccc(n1)-c1cccnc1"
+  },
+  {
+   "monomerid": 397156,
+   "source_id": "US9987276-B2",
+   "affinity_type": "IC50",
+   "wt_p": 7.26,
+   "wt_n": 1,
+   "wt_vals": [
+    55.0
+   ],
+   "mut_p": 7.26,
+   "mut_n": 1,
+   "mut_vals": [
+    55.0
+   ],
+   "shift": 0.0,
+   "compound_name": "US9987276, Compound I-56",
+   "smiles": "Cc1ccc(NC(=O)C=C)cc1Nc1nccc(n1)-c1cccnc1"
+  },
+  {
+   "monomerid": 195858,
+   "source_id": "US9670213-B2",
+   "affinity_type": "IC50",
+   "wt_p": 5.1,
+   "wt_n": 1,
+   "wt_vals": [
+    8011.0
+   ],
+   "mut_p": 5.06,
+   "mut_n": 1,
+   "mut_vals": [
+    8698.0
+   ],
+   "shift": -0.04,
+   "compound_name": "US9670213, Compound 003 N-(4-(2-(4-morpholino-phenylamino)-7-oxo-8(7H)-pteridin-yl)phenyl)acrylamide",
+   "smiles": "C=CC(=O)Nc1ccc(cc1)-n1c2nc(Nc3ccc(cc3)N3CCOCC3)ncc2ncc1=O"
+  },
+  {
+   "monomerid": 228112,
+   "source_id": "US9556191-B2",
+   "affinity_type": "IC50",
+   "wt_p": 7.81,
+   "wt_n": 1,
+   "wt_vals": [
+    15.4
+   ],
+   "mut_p": 7.65,
+   "mut_n": 1,
+   "mut_vals": [
+    22.6
+   ],
+   "shift": -0.16,
+   "compound_name": "(e)-n-(4-((3-chloro-4-fluorophenyl)amino)-7-(2,2,2-trifluoroethoxy)quinazolin-6-yl)-4-((4ar,7as)-tetrahydro-2h-[1,4]dioxino[2,3-c]pyrrol-6(3h)-yl)but-2-enamide",
+   "smiles": "Fc1ccc(Nc2ncnc3cc(OCC(F)(F)F)c(NC(=O)\\C=C\\CN4C[C@H]5OCCO[C@H]5C4)cc23)cc1Cl |r|"
+  },
+  {
+   "monomerid": 195857,
+   "source_id": "US9670213-B2",
+   "affinity_type": "IC50",
+   "wt_p": 6.35,
+   "wt_n": 1,
+   "wt_vals": [
+    446.0
+   ],
+   "mut_p": 6.18,
+   "mut_n": 1,
+   "mut_vals": [
+    665.0
+   ],
+   "shift": -0.17,
+   "compound_name": "US9670213, Compound 002 N-(4-(2-(4-methoxyphenylamino)-7-oxo-8(7H)-pteridin-yl)phenyl)acrylamide",
+   "smiles": "COc1ccc(Nc2ncc3ncc(=O)n(-c4ccc(NC(=O)C=C)cc4)c3n2)cc1"
+  },
+  {
+   "monomerid": 195861,
+   "source_id": "US9670213-B2",
+   "affinity_type": "IC50",
+   "wt_p": 7.96,
+   "wt_n": 1,
+   "wt_vals": [
+    11.0
+   ],
+   "mut_p": 7.72,
+   "mut_n": 1,
+   "mut_vals": [
+    19.0
+   ],
+   "shift": -0.24,
+   "compound_name": "US9670213, Compound 006 N-(3-(2-(4-methoxyphenylamino)-7-oxo-8(7H)-pteridin-yl)phenyl) acrylamide",
+   "smiles": "COc1ccc(Nc2ncc3ncc(=O)n(-c4cccc(NC(=O)C=C)c4)c3n2)cc1"
+  },
+  {
+   "monomerid": 228110,
+   "source_id": "US9556191-B2",
+   "affinity_type": "IC50",
+   "wt_p": 8.44,
+   "wt_n": 1,
+   "wt_vals": [
+    3.6
+   ],
+   "mut_p": 8.17,
+   "mut_n": 1,
+   "mut_vals": [
+    6.8
+   ],
+   "shift": -0.27,
+   "compound_name": "(e)-n-(4-((3-chloro-4-fluorophenyl)amino)-7-(((s)-tetrahydrofuran-3-yl)oxy)quinazolin-6-yl)-4-((4ar,7as)-tetrahydro-2h-[1,4]dioxino[2,3-c]pyrrol-6(3h)-yl)but-2-enamide",
+   "smiles": "Fc1ccc(Nc2ncnc3cc(O[C@H]4CCOC4)c(NC(=O)\\C=C\\CN4C[C@H]5OCCO[C@H]5C4)cc23)cc1Cl |r|"
+  },
+  {
+   "monomerid": 228115,
+   "source_id": "US9556191-B2",
+   "affinity_type": "IC50",
+   "wt_p": 7.66,
+   "wt_n": 1,
+   "wt_vals": [
+    22.0
+   ],
+   "mut_p": 7.33,
+   "mut_n": 1,
+   "mut_vals": [
+    47.3
+   ],
+   "shift": -0.33,
+   "compound_name": "(e)-n-(4-((3-chloro-4-(pyridin-2-ylmethoxy)phenyl)amino)quinazolin-6-yl)-4-((4ar,7as)-tetrahydro-2h-[1,4]dioxino[2,3-c]pyrrol-6(3h)-yl)but-2-enamide",
+   "smiles": "Clc1cc(Nc2ncnc3ccc(NC(=O)\\C=C\\CN4C[C@H]5OCCO[C@H]5C4)cc23)ccc1OCc1ccccn1 |r|"
+  },
+  {
+   "monomerid": 228127,
+   "source_id": "US9556191-B2",
+   "affinity_type": "IC50",
+   "wt_p": 8.48,
+   "wt_n": 1,
+   "wt_vals": [
+    3.3
+   ],
+   "mut_p": 8.15,
+   "mut_n": 1,
+   "mut_vals": [
+    7.0
+   ],
+   "shift": -0.33,
+   "compound_name": "(e)-n-(4-((3,4-dichloro-2-fluorophenyl)amino)-7-(((s)-tetrahydrofuran-3-yl)oxy)quinazolin-6-yl)-4-((4ar,7as)-tetrahydro-2h-[1,4]dioxino[2,3-c]pyrrol-6(3h)-yl)but-2-enamide",
+   "smiles": "Fc1c(Cl)c(Cl)ccc1Nc1ncnc2cc(O[C@H]3CCOC3)c(NC(=O)\\C=C\\CN3C[C@H]4OCCO[C@H]4C3)cc12 |r|"
+  },
+  {
+   "monomerid": 368407,
+   "source_id": "US10227342-B2",
+   "affinity_type": "IC50",
+   "wt_p": 6.52,
+   "wt_n": 2,
+   "wt_vals": [
+    300.0,
+    300.0
+   ],
+   "mut_p": 6.12,
+   "mut_n": 1,
+   "mut_vals": [
+    750.0
+   ],
+   "shift": -0.4,
+   "compound_name": "US10227342, Example 40",
+   "smiles": "COc1cc(N(C)CCN(C)C)c(NC(=O)C=C)cc1Nc1ncc(N(C)C(=O)C(C)C)c(n1)-c1cn(C)c2ccccc12"
+  },
+  {
+   "monomerid": 228107,
+   "source_id": "US9556191-B2",
+   "affinity_type": "IC50",
+   "wt_p": 8.49,
+   "wt_n": 1,
+   "wt_vals": [
+    3.2
+   ],
+   "mut_p": 8.08,
+   "mut_n": 1,
+   "mut_vals": [
+    8.3
+   ],
+   "shift": -0.41,
+   "compound_name": "(E)-N-(4-((3-Chloro-4-fluorophenyl)amino)-7-methoxyquinazolin-6-yl)-4-((4aR,7aS)-tetrahydro-2H-[1,4]dioxin[2,3-c]pyrrol-6(3H)-yl)but-2-enamide",
+   "smiles": "COc1cc2ncnc(Nc3ccc(F)c(Cl)c3)c2cc1NC(=O)\\C=C\\CN1C[C@H]2OCCO[C@H]2C1"
+  },
+  {
+   "monomerid": 228113,
+   "source_id": "US9556191-B2",
+   "affinity_type": "IC50",
+   "wt_p": 8.32,
+   "wt_n": 1,
+   "wt_vals": [
+    4.8
+   ],
+   "mut_p": 7.9,
+   "mut_n": 1,
+   "mut_vals": [
+    12.5
+   ],
+   "shift": -0.42,
+   "compound_name": "(e)-n-(4-((3-chloro-4-fluorophenyl)amino)-7-(methoxy-d3)quinazolin-6-yl)-4-((4ar,7as)-tetrahydro 2h-[1,4]dioxino[2,3-c]pyrrol-6(3h)-yl)but-2-enamide",
+   "smiles": "COc1cc2ncnc(Nc3ccc(F)c(Cl)c3)c2cc1NC(=O)\\C=C\\CN1C[C@H]2OCCO[C@H]2C1 |r|"
+  },
+  {
+   "monomerid": 228120,
+   "source_id": "US9556191-B2",
+   "affinity_type": "IC50",
+   "wt_p": 8.1,
+   "wt_n": 1,
+   "wt_vals": [
+    7.9
+   ],
+   "mut_p": 7.64,
+   "mut_n": 1,
+   "mut_vals": [
+    22.9
+   ],
+   "shift": -0.46,
+   "compound_name": "(e)-n-(4-((1-(3-fluorobenzyl)-1h-indazol-5-yl)amino)-7-methoxyquinazolin-6-yl)-4-((4ar,7as)-tetra hydro-2h-[1,4]dioxin[2,3-c]pyrrol-6(3h)-yl)but-2-enamide",
+   "smiles": "COc1cc2ncnc(Nc3ccc4n(Cc5cccc(F)c5)ncc4c3)c2cc1NC(=O)\\C=C\\CN1C[C@H]2OCCO[C@H]2C1 |r|"
+  },
+  {
+   "monomerid": 228124,
+   "source_id": "US9556191-B2",
+   "affinity_type": "IC50",
+   "wt_p": 8.68,
+   "wt_n": 1,
+   "wt_vals": [
+    2.1
+   ],
+   "mut_p": 8.19,
+   "mut_n": 1,
+   "mut_vals": [
+    6.4
+   ],
+   "shift": -0.49,
+   "compound_name": "(e)-n-(4-((3,4-dichloro-2-fluorophenyl)amino)-7-methoxyquinazolin-6-yl)-4-((4ar,7as)-tetrahydro-2h-[1,4]dioxino[2,3-c]pyrrol-6(3h)-yl)but-2-enamide",
+   "smiles": "COc1cc2ncnc(Nc3ccc(Cl)c(Cl)c3F)c2cc1NC(=O)\\C=C\\CN1C[C@H]2OCCO[C@H]2C1 |r|"
+  },
+  {
+   "monomerid": 228125,
+   "source_id": "US9556191-B2",
+   "affinity_type": "IC50",
+   "wt_p": 8.92,
+   "wt_n": 1,
+   "wt_vals": [
+    1.2
+   ],
+   "mut_p": 8.4,
+   "mut_n": 1,
+   "mut_vals": [
+    4.0
+   ],
+   "shift": -0.52,
+   "compound_name": "(e)-n-(4-((3,4-dichloro-2-fluorophenyl)amino)-7-ethoxyquinazolin-6-yl)-4-((4ar,7as)-tetrahydro-2h-[1,4]dioxino[2,3-c]pyrrol-6(3h)-yl)but-2-enamide",
+   "smiles": "CCOc1cc2ncnc(Nc3ccc(Cl)c(Cl)c3F)c2cc1NC(=O)\\C=C\\CN1C[C@H]2OCCO[C@H]2C1 |r|"
+  },
+  {
+   "monomerid": 228126,
+   "source_id": "US9556191-B2",
+   "affinity_type": "IC50",
+   "wt_p": 8.82,
+   "wt_n": 1,
+   "wt_vals": [
+    1.5
+   ],
+   "mut_p": 8.3,
+   "mut_n": 1,
+   "mut_vals": [
+    5.0
+   ],
+   "shift": -0.52,
+   "compound_name": "(e)-n-(4-((3,4-dichloro-2-fluorophenyl)amino)-7-(2-methoxyethoxy)quinazolin-6-yl)-4-((4ar,7as)-tetrahydro-2h-[1,4]dioxino[2,3-c]pyrrol-6(3h)-yl)but-2-enamide",
+   "smiles": "COCCOc1cc2ncnc(Nc3ccc(Cl)c(Cl)c3F)c2cc1NC(=O)\\C=C\\CN1C[C@H]2OCCO[C@H]2C1 |r|"
+  },
+  {
+   "monomerid": 5447,
+   "source_id": "US10106508-B2",
+   "affinity_type": "IC50",
+   "wt_p": 8.2,
+   "wt_n": 1,
+   "wt_vals": [
+    6.3
+   ],
+   "mut_p": 7.65,
+   "mut_n": 1,
+   "mut_vals": [
+    22.5
+   ],
+   "shift": -0.55,
+   "compound_name": "Iressa",
+   "smiles": "COc1cc2c(cc1OCCCN3CCOCC3)c(ncn2)Nc4ccc(c(c4)Cl)F"
+  },
+  {
+   "monomerid": 228108,
+   "source_id": "US9556191-B2",
+   "affinity_type": "IC50",
+   "wt_p": 8.37,
+   "wt_n": 1,
+   "wt_vals": [
+    4.3
+   ],
+   "mut_p": 7.8,
+   "mut_n": 1,
+   "mut_vals": [
+    16.0
+   ],
+   "shift": -0.57,
+   "compound_name": "(e)-n-(4-((3-chloro-4-fluorophenyl)amino)-7-methoxyquinazolin-6-yl)-4-((4as,7as)-tetrahydro-2h-[1,4]dioxino[2,3-c]pyrrol-6(3h)-yl)but-2-enamide",
+   "smiles": "COc1cc2ncnc(Nc3ccc(F)c(Cl)c3)c2cc1NC(=O)\\C=C\\CN1C[C@@H]2OCCO[C@H]2C1 |r|"
+  },
+  {
+   "monomerid": 228122,
+   "source_id": "US9556191-B2",
+   "affinity_type": "IC50",
+   "wt_p": 7.65,
+   "wt_n": 1,
+   "wt_vals": [
+    22.6
+   ],
+   "mut_p": 7.06,
+   "mut_n": 1,
+   "mut_vals": [
+    87.3
+   ],
+   "shift": -0.59,
+   "compound_name": "(e)-n-(4-((3-chloro-4-((3-fluorobenzyl)oxy)phenyl)amino)-7-methoxyquinazolin-6-yl)-4-((4ar,7as)-tetrahydro-2h-[1,4]dioxino[2,3-c]pyrrol-6(3h)-yl)but-2-enamide",
+   "smiles": "COc1cc2ncnc(Nc3ccc(OCc4cccc(F)c4)c(Cl)c3)c2cc1NC(=O)\\C=C\\CN1C[C@H]2OCCO[C@H]2C1 |r|"
+  },
+  {
+   "monomerid": 228123,
+   "source_id": "US9556191-B2",
+   "affinity_type": "IC50",
+   "wt_p": 7.5,
+   "wt_n": 1,
+   "wt_vals": [
+    31.9
+   ],
+   "mut_p": 6.88,
+   "mut_n": 1,
+   "mut_vals": [
+    133.0
+   ],
+   "shift": -0.62,
+   "compound_name": "(e)-n-(4-((3-chloro-4-((3-fluorobenzyl)oxy)phenyl)amino)-7-ethoxyquinazolin-6-yl)-4-((4ar,7as)-tetrahydro-2h-[1,4]dioxino[2,3-c]pyrrol-6(3h)-yl)but-2-enamide",
+   "smiles": "CCOc1cc2ncnc(Nc3ccc(OCc4cccc(F)c4)c(Cl)c3)c2cc1NC(=O)\\C=C\\CN1C[C@H]2OCCO[C@H]2C1 |r|"
+  },
+  {
+   "monomerid": 228111,
+   "source_id": "US9556191-B2",
+   "affinity_type": "IC50",
+   "wt_p": 8.74,
+   "wt_n": 1,
+   "wt_vals": [
+    1.8
+   ],
+   "mut_p": 8.06,
+   "mut_n": 1,
+   "mut_vals": [
+    8.7
+   ],
+   "shift": -0.68,
+   "compound_name": "(e)-n-(4-((3-chloro-4-fluorophenyl)amino)-7-(2-methoxyethoxy)quinazolin-6-yl)-4-((4ar,7as)-tetrahydro-2h-[1,4]dioxino[2,3-c]pyrrol-6(3h)-yl)but-2-enamide",
+   "smiles": "COCCOc1cc2ncnc(Nc3ccc(F)c(Cl)c3)c2cc1NC(=O)\\C=C\\CN1C[C@H]2OCCO[C@H]2C1 |r|"
+  },
+  {
+   "monomerid": 228119,
+   "source_id": "US9556191-B2",
+   "affinity_type": "IC50",
+   "wt_p": 7.85,
+   "wt_n": 1,
+   "wt_vals": [
+    14.0
+   ],
+   "mut_p": 7.05,
+   "mut_n": 1,
+   "mut_vals": [
+    89.3
+   ],
+   "shift": -0.8,
+   "compound_name": "(e)-n-(4-((1-(3-fluorobenzyl)-1h-indazol-5-yl)amino)quinazolin-6-yl)-4-((4ar,7as)-tetrahydro-2h-[1,4]dioxin[2,3-c]pyrrol-6(3h)-yl)but-2-enamide",
+   "smiles": "Fc1cccc(Cn2ncc3cc(Nc4ncnc5ccc(NC(=O)\\C=C\\CN6C[C@H]7OCCO[C@H]7C6)cc45)ccc23)c1 |r|"
+  },
+  {
+   "monomerid": 228114,
+   "source_id": "US9556191-B2",
+   "affinity_type": "IC50",
+   "wt_p": 7.82,
+   "wt_n": 1,
+   "wt_vals": [
+    15.0
+   ],
+   "mut_p": 6.5,
+   "mut_n": 1,
+   "mut_vals": [
+    317.0
+   ],
+   "shift": -1.32,
+   "compound_name": "(e)-n-(4-((3-chloro-4-((3-fluorobenzyl)oxy)phenyl)amino)quinazolin-6-yl)-4-((4ar,7as)-tetrahydro-2h-[1,4]dioxino[2,3-c]pyrrol-6(3h)-yl)but-2-enamide",
+   "smiles": "Fc1cccc(COc2ccc(Nc3ncnc4ccc(NC(=O)\\C=C\\CN5C[C@H]6OCCO[C@H]6C5)cc34)cc2Cl)c1 |r|"
+  },
+  {
+   "monomerid": 228128,
+   "source_id": "US9556191-B2",
+   "affinity_type": "IC50",
+   "wt_p": 9.05,
+   "wt_n": 1,
+   "wt_vals": [
+    0.9
+   ],
+   "mut_p": 7.7,
+   "mut_n": 1,
+   "mut_vals": [
+    20.0
+   ],
+   "shift": -1.35,
+   "compound_name": "(e)-n-(4-((3-chloro-2,4-difluorophenyl)amino)-7-methoxyquinazolin-6-yl)-4-((4ar,7as)-tetrahydro-2h-[1,4]dioxino[2,3-c]pyrrol-6(3h)-yl)but-2-enamide",
+   "smiles": "COc1cc2ncnc(Nc3ccc(F)c(Cl)c3F)c2cc1NC(=O)\\C=C\\CN1C[C@H]2OCCO[C@H]2C1 |r|"
+  },
+  {
+   "monomerid": 50379214,
+   "source_id": "US9416123-B2",
+   "affinity_type": "IC50",
+   "wt_p": 6.96,
+   "wt_n": 3,
+   "wt_vals": [
+    50.0,
+    110.0,
+    210.0
+   ],
+   "mut_p": 5.59,
+   "mut_n": 2,
+   "mut_vals": [
+    2000.0,
+    3300.0
+   ],
+   "shift": -1.37,
+   "compound_name": "US9416123, 6",
+   "smiles": "Nc1c(-c2ccc(F)cc2)c(-c2ccncc2)nn1-c1c(Cl)cc(Cl)cc1Cl"
+  },
+  {
+   "monomerid": 5447,
+   "source_id": "US9416123-B2",
+   "affinity_type": "IC50",
+   "wt_p": 8.684999999999999,
+   "wt_n": 2,
+   "wt_vals": [
+    1.4,
+    3.0
+   ],
+   "mut_p": 6.55,
+   "mut_n": 1,
+   "mut_vals": [
+    280.0
+   ],
+   "shift": -2.13,
+   "compound_name": "Iressa",
+   "smiles": "COc1cc2c(cc1OCCCN3CCOCC3)c(ncn2)Nc4ccc(c(c4)Cl)F"
+  }
+ ]
+}

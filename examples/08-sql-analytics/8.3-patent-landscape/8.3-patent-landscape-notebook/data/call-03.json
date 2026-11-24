@@ -1,0 +1,234 @@
+{
+ "row_count": 38,
+ "truncated": false,
+ "rows": [
+  {
+   "year": 2005,
+   "source": "other",
+   "documents": 1212,
+   "compounds": 22666
+  },
+  {
+   "year": 2005,
+   "source": "patent",
+   "documents": 1,
+   "compounds": 61
+  },
+  {
+   "year": 2006,
+   "source": "other",
+   "documents": 1280,
+   "compounds": 23525
+  },
+  {
+   "year": 2006,
+   "source": "patent",
+   "documents": 1,
+   "compounds": 12
+  },
+  {
+   "year": 2007,
+   "source": "other",
+   "documents": 1624,
+   "compounds": 34152
+  },
+  {
+   "year": 2008,
+   "source": "other",
+   "documents": 1948,
+   "compounds": 45193
+  },
+  {
+   "year": 2009,
+   "source": "other",
+   "documents": 1964,
+   "compounds": 44496
+  },
+  {
+   "year": 2010,
+   "source": "other",
+   "documents": 2299,
+   "compounds": 51782
+  },
+  {
+   "year": 2011,
+   "source": "other",
+   "documents": 2015,
+   "compounds": 43623
+  },
+  {
+   "year": 2012,
+   "source": "other",
+   "documents": 2088,
+   "compounds": 44049
+  },
+  {
+   "year": 2012,
+   "source": "patent",
+   "documents": 1,
+   "compounds": 267
+  },
+  {
+   "year": 2013,
+   "source": "other",
+   "documents": 1976,
+   "compounds": 35941
+  },
+  {
+   "year": 2013,
+   "source": "patent",
+   "documents": 234,
+   "compounds": 13196
+  },
+  {
+   "year": 2014,
+   "source": "other",
+   "documents": 1854,
+   "compounds": 32371
+  },
+  {
+   "year": 2014,
+   "source": "patent",
+   "documents": 395,
+   "compounds": 28114
+  },
+  {
+   "year": 2015,
+   "source": "other",
+   "documents": 1726,
+   "compounds": 29379
+  },
+  {
+   "year": 2015,
+   "source": "patent",
+   "documents": 665,
+   "compounds": 47590
+  },
+  {
+   "year": 2016,
+   "source": "other",
+   "documents": 1906,
+   "compounds": 32962
+  },
+  {
+   "year": 2016,
+   "source": "patent",
+   "documents": 662,
+   "compounds": 51794
+  },
+  {
+   "year": 2017,
+   "source": "other",
+   "documents": 1874,
+   "compounds": 31685
+  },
+  {
+   "year": 2017,
+   "source": "patent",
+   "documents": 796,
+   "compounds": 82288
+  },
+  {
+   "year": 2018,
+   "source": "other",
+   "documents": 1741,
+   "compounds": 30198
+  },
+  {
+   "year": 2018,
+   "source": "patent",
+   "documents": 603,
+   "compounds": 57722
+  },
+  {
+   "year": 2019,
+   "source": "other",
+   "documents": 1727,
+   "compounds": 30402
+  },
+  {
+   "year": 2019,
+   "source": "patent",
+   "documents": 773,
+   "compounds": 83726
+  },
+  {
+   "year": 2020,
+   "source": "other",
+   "documents": 1807,
+   "compounds": 32676
+  },
+  {
+   "year": 2020,
+   "source": "patent",
+   "documents": 719,
+   "compounds": 74146
+  },
+  {
+   "year": 2021,
+   "source": "other",
+   "documents": 1796,
+   "compounds": 36145
+  },
+  {
+   "year": 2021,
+   "source": "patent",
+   "documents": 729,
+   "compounds": 74073
+  },
+  {
+   "year": 2022,
+   "source": "other",
+   "documents": 1603,
+   "compounds": 30209
+  },
+  {
+   "year": 2022,
+   "source": "patent",
+   "documents": 643,
+   "compounds": 67233
+  },
+  {
+   "year": 2023,
+   "source": "other",
+   "documents": 1283,
+   "compounds": 24404
+  },
+  {
+   "year": 2023,
+   "source": "patent",
+   "documents": 679,
+   "compounds": 68160
+  },
+  {
+   "year": 2024,
+   "source": "other",
+   "documents": 165,
+   "compounds": 2279
+  },
+  {
+   "year": 2024,
+   "source": "patent",
+   "documents": 855,
+   "compounds": 70616
+  },
+  {
+   "year": 2025,
+   "source": "other",
+   "documents": 0,
+   "compounds": 1
+  },
+  {
+   "year": 2025,
+   "source": "patent",
+   "documents": 939,
+   "compounds": 91482
+  },
+  {
+   "year": 2026,
+   "source": "patent",
+   "documents": 309,
+   "compounds": 31471
+  }
+ ]
+}

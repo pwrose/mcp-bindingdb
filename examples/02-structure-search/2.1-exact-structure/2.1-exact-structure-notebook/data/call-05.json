@@ -1,0 +1,22 @@
+{
+ "query": {
+  "input": "CC(Oc1cc(cnc1N)-c1cnn(c1)C1CCNCC1)c1c(Cl)ccc(F)c1Cl",
+  "canonical": "CC(Oc1cc(-c2cnn(C3CCNCC3)c2)cnc1N)c1c(Cl)ccc(F)c1Cl",
+  "inchi_key": "KTEIFNKAUNYNJU-UHFFFAOYSA-N",
+  "match": "same canonical isomeric SMILES (salts, stereo, charges and isotopes included)"
+ },
+ "row_count": 1,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 179803,
+   "bdbm_id": "BDBM179803",
+   "name": "3-[1-(2,6-dichloro-3-fluorophenyl)ethoxy]-5-[1-(piperidin-4-yl)-1H-pyrazol-4-yl]pyridin-2-amine (11a)",
+   "smiles": "CC(Oc1cc(cnc1N)-c1cnn(c1)C1CCNCC1)c1c(Cl)ccc(F)c1Cl",
+   "mol_weight": 449.12,
+   "n_activities": 10,
+   "n_targets": 6
+  }
+ ],
+ "n_exact_matches": 1
+}

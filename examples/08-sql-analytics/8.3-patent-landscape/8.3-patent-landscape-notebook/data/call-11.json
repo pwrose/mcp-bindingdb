@@ -1,0 +1,181 @@
+{
+ "row_count": 25,
+ "truncated": false,
+ "rows": [
+  {
+   "target": "Replicase polyprotein 1a",
+   "uniprot": "P0DTC1",
+   "compounds": 5185,
+   "pct_patent": 100.0,
+   "targets_considered": 171
+  },
+  {
+   "target": "Diacylglycerol kinase alpha",
+   "uniprot": "P23743",
+   "compounds": 4305,
+   "pct_patent": 99.6,
+   "targets_considered": 171
+  },
+  {
+   "target": "Diacylglycerol kinase zeta",
+   "uniprot": "Q13574",
+   "compounds": 3002,
+   "pct_patent": 99.6,
+   "targets_considered": 171
+  },
+  {
+   "target": "Complement factor D",
+   "uniprot": "P00746",
+   "compounds": 5177,
+   "pct_patent": 97.9,
+   "targets_considered": 171
+  },
+  {
+   "target": "Programmed cell death 1 ligand 1",
+   "uniprot": "Q9NZQ7",
+   "compounds": 3332,
+   "pct_patent": 95.7,
+   "targets_considered": 171
+  },
+  {
+   "target": "Mitogen-activated protein kinase kinase kinase kinase 1",
+   "uniprot": "Q92918",
+   "compounds": 9663,
+   "pct_patent": 92.7,
+   "targets_considered": 171
+  },
+  {
+   "target": "P2X purinoceptor 3",
+   "uniprot": "P56373",
+   "compounds": 5395,
+   "pct_patent": 91.9,
+   "targets_considered": 171
+  },
+  {
+   "target": "Interleukin-1 receptor-associated kinase 4",
+   "uniprot": "Q9NWZ3",
+   "compounds": 11996,
+   "pct_patent": 91.3,
+   "targets_considered": 171
+  },
+  {
+   "target": "Receptor-interacting serine/threonine-protein kinase 1",
+   "uniprot": "Q13546",
+   "compounds": 7571,
+   "pct_patent": 90.1,
+   "targets_considered": 171
+  },
+  {
+   "target": "Plasma kallikrein",
+   "uniprot": "P03952",
+   "compounds": 5653,
+   "pct_patent": 88.9,
+   "targets_considered": 171
+  },
+  {
+   "target": "Toll-like receptor 9",
+   "uniprot": "Q9NR96",
+   "compounds": 4377,
+   "pct_patent": 88.7,
+   "targets_considered": 171
+  },
+  {
+   "target": "Nicotinamide phosphoribosyltransferase",
+   "uniprot": "P43490",
+   "compounds": 7036,
+   "pct_patent": 88.1,
+   "targets_considered": 171
+  },
+  {
+   "target": "Acetyl-CoA carboxylase 2",
+   "uniprot": "O00763",
+   "compounds": 4105,
+   "pct_patent": 87.9,
+   "targets_considered": 171
+  },
+  {
+   "target": "GTPase KRas",
+   "uniprot": "P01116",
+   "compounds": 6535,
+   "pct_patent": 87.9,
+   "targets_considered": 171
+  },
+  {
+   "target": "Non-receptor tyrosine-protein kinase TYK2",
+   "uniprot": "P29597",
+   "compounds": 11096,
+   "pct_patent": 87.6,
+   "targets_considered": 171
+  },
+  {
+   "target": "D(2) dopamine receptor",
+   "uniprot": "P61169",
+   "compounds": 4936,
+   "pct_patent": 2.0,
+   "targets_considered": 171
+  },
+  {
+   "target": "Cholinesterase",
+   "uniprot": "P06276",
+   "compounds": 4868,
+   "pct_patent": 1.8,
+   "targets_considered": 171
+  },
+  {
+   "target": "Carbonic anhydrase 1",
+   "uniprot": "P00915",
+   "compounds": 9531,
+   "pct_patent": 1.5,
+   "targets_considered": 171
+  },
+  {
+   "target": "Acetylcholinesterase",
+   "uniprot": "P22303",
+   "compounds": 7560,
+   "pct_patent": 1.5,
+   "targets_considered": 171
+  },
+  {
+   "target": "Mu-type opioid receptor",
+   "uniprot": "P33535",
+   "compounds": 3493,
+   "pct_patent": 1.1,
+   "targets_considered": 171
+  },
+  {
+   "target": "Acetylcholinesterase",
+   "uniprot": "O42275",
+   "compounds": 7118,
+   "pct_patent": 0.5,
+   "targets_considered": 171
+  },
+  {
+   "target": "Carbonic anhydrase 12",
+   "uniprot": "O43570",
+   "compounds": 5369,
+   "pct_patent": 0.5,
+   "targets_considered": 171
+  },
+  {
+   "target": "Carbonic anhydrase 9",
+   "uniprot": "Q16790",
+   "compounds": 6680,
+   "pct_patent": 0.5,
+   "targets_considered": 171
+  },
+  {
+   "target": "Adenosine receptor A1",
+   "uniprot": "P25099",
+   "compounds": 3273,
+   "pct_patent": 0.0,
+   "targets_considered": 171
+  },
+  {
+   "target": "Cholinesterase",
+   "uniprot": "P81908",
+   "compounds": 5582,
+   "pct_patent": 0.0,
+   "targets_considered": 171
+  }
+ ]
+}

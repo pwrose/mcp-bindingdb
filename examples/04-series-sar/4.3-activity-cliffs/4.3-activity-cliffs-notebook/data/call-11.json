@@ -1,0 +1,11 @@
+{
+ "row_count": 1,
+ "truncated": false,
+ "rows": [
+  {
+   "entryid": 12250,
+   "source_id": "US20240261292-A1",
+   "description": "To an untreated, white 384-well microtiter plate was added 40 nL 200 test compound in DMSO and 4 uL 2 terbium chelate-labeled menin (vide infra for preparation) in assay buffer (40 mM Tris HCl, pH 7.5, 50 mM NaCl, 1 mM DTT (dithiothreitol) and 0.05% Pluronic F-127). After incubation of test compound and terbium chelate-labeled menin for 30 min at ambient temperature, 4 uL 2 FITC-MBM1 peptide (FITC-beta-alanine-SARWRFPARPGT-NH2) ( FITC means fluorescein isothiocyanate) in assay buffer was added, the microtiter plate centrifuged at 1000 rpm for 1 min and the assay mixtures incubated for 15 min at ambient temperature. The relative amount of menin.FITC-MBM1 complex present in an assay mixture is determined by measuring the homogenous time-resolved fluorescence (HTRF) of the terbium/FITC donor/acceptor fluorophore pair using an EnVision microplate reader (ex. 337 nm/terbium em. 490 nm/FITC em. 520 nm) at ambient temperature. The degree of fluorescence resonance energy transfer (the HTRF value) is expressed as the ratio of the fluorescence emission intensities of the FITC and terbium fluorophores (Fem 520 nm/Fem 490 nm). The final concentrations of reagents in the binding assay are 200 pM terbium chelate-labeled menin, 75 nM FITC-MBM1 peptide and 0.5% DMSO in assay buffer. Dose-response titrations of test compounds are conducted using an 11 point, four-fold serial dilution scheme, starting typically at 10 uM."
+  }
+ ]
+}

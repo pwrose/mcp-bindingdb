@@ -1,0 +1,49 @@
+{
+ "query": "verapamil",
+ "resolved": true,
+ "source": "bindingdb",
+ "smiles": "COc1ccc(CCN(C)CCCC(C#N)(C(C)C)c2ccc(OC)c(OC)c2)cc1OC",
+ "inchi_key": "SGTNSNPWRIOYBX-UHFFFAOYSA-N",
+ "monomerid": 81939,
+ "ambiguous": false,
+ "candidates": [
+  {
+   "monomerid": 81939,
+   "bdbm_id": "BDBM81939",
+   "name": "VERAPAMIL",
+   "inchi_key": "SGTNSNPWRIOYBX-UHFFFAOYSA-N",
+   "smiles": "COc1ccc(CCN(C)CCCC(C#N)(C(C)C)c2ccc(OC)c(OC)c2)cc1OC",
+   "n_activities": 174
+  },
+  {
+   "monomerid": 50338982,
+   "bdbm_id": "BDBM50338982",
+   "name": "Calan",
+   "inchi_key": "SGTNSNPWRIOYBX-HHHXNRCGSA-N",
+   "smiles": "CC(C)[C@@](CCCN(C)CCc1ccc(c(c1)OC)OC)(C#N)c2ccc(c(c2)OC)OC",
+   "n_activities": 43
+  },
+  {
+   "monomerid": 50005628,
+   "bdbm_id": "BDBM50005628",
+   "name": "VERAPAMIL",
+   "inchi_key": "SGTNSNPWRIOYBX-MHZLTWQESA-N",
+   "smiles": "CC(C)[C@](CCCN(C)CCc1ccc(c(c1)OC)OC)(C#N)c2ccc(c(c2)OC)OC",
+   "n_activities": 10
+  },
+  {
+   "monomerid": 50279753,
+   "bdbm_id": "BDBM50279753",
+   "name": "VERAPAMIL",
+   "inchi_key": "SGTNSNPWRIOYBX-UHFFFAOYSA-N",
+   "smiles": "COc2ccc(CCN(C)CCCC(C#N)(c1ccc(OC)c(OC)c1)C(C)C)cc2OC",
+   "n_activities": 2
+  }
+ ],
+ "sources_tried": [
+  {
+   "source": "bindingdb",
+   "status": "found"
+  }
+ ]
+}

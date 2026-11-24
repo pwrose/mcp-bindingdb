@@ -1,0 +1,25 @@
+{
+ "query": "astemizole",
+ "resolved": true,
+ "source": "bindingdb",
+ "smiles": "COc1ccc(cc1)CCN2CCC(CC2)Nc3nc4ccccc4n3Cc5ccc(cc5)F",
+ "inchi_key": "GXDALQBWZGODGZ-UHFFFAOYSA-N",
+ "monomerid": 24226,
+ "ambiguous": false,
+ "candidates": [
+  {
+   "monomerid": 24226,
+   "bdbm_id": "BDBM24226",
+   "name": "Hismanal",
+   "inchi_key": "GXDALQBWZGODGZ-UHFFFAOYSA-N",
+   "smiles": "COc1ccc(cc1)CCN2CCC(CC2)Nc3nc4ccccc4n3Cc5ccc(cc5)F",
+   "n_activities": 69
+  }
+ ],
+ "sources_tried": [
+  {
+   "source": "bindingdb",
+   "status": "found"
+  }
+ ]
+}

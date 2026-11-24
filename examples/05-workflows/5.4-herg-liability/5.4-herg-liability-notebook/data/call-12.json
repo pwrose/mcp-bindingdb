@@ -1,0 +1,25 @@
+{
+ "query": "ziprasidone",
+ "resolved": true,
+ "source": "bindingdb",
+ "smiles": "c1ccc2c(c1)c(ns2)N3CCN(CC3)CCc4cc5c(cc4Cl)NC(=O)C5",
+ "inchi_key": "MVWVFYHBGMAFLY-UHFFFAOYSA-N",
+ "monomerid": 50048803,
+ "ambiguous": false,
+ "candidates": [
+  {
+   "monomerid": 50048803,
+   "bdbm_id": "BDBM50048803",
+   "name": "GEODON",
+   "inchi_key": "MVWVFYHBGMAFLY-UHFFFAOYSA-N",
+   "smiles": "c1ccc2c(c1)c(ns2)N3CCN(CC3)CCc4cc5c(cc4Cl)NC(=O)C5",
+   "n_activities": 189
+  }
+ ],
+ "sources_tried": [
+  {
+   "source": "bindingdb",
+   "status": "found"
+  }
+ ]
+}

@@ -1,0 +1,66 @@
+{
+ "row_count": 6,
+ "truncated": false,
+ "rows": [
+  {
+   "polymerid": 188,
+   "target_name": "Receptor tyrosine-protein kinase erbB-2",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 0.06,
+   "source_id": "35696863",
+   "year": 2022,
+   "ki_result_id": 51506159
+  },
+  {
+   "polymerid": 520,
+   "target_name": "Epidermal growth factor receptor",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 0.11,
+   "source_id": "35696863",
+   "year": 2022,
+   "ki_result_id": 51506157
+  },
+  {
+   "polymerid": 520,
+   "target_name": "Epidermal growth factor receptor",
+   "affinity_type": "IC50",
+   "relation": ">",
+   "value": 100000.0,
+   "source_id": null,
+   "year": 1997,
+   "ki_result_id": 50484525
+  },
+  {
+   "polymerid": 1192,
+   "target_name": "Carbonic anhydrase 1",
+   "affinity_type": "Ki",
+   "relation": "=",
+   "value": 31.9,
+   "source_id": "19527930",
+   "year": 2009,
+   "ki_result_id": 50513151
+  },
+  {
+   "polymerid": 1193,
+   "target_name": "Carbonic anhydrase 2",
+   "affinity_type": "Ki",
+   "relation": "=",
+   "value": 30.2,
+   "source_id": "19527930",
+   "year": 2009,
+   "ki_result_id": 50513152
+  },
+  {
+   "polymerid": 1233,
+   "target_name": "Carbonic anhydrase 9",
+   "affinity_type": "Ki",
+   "relation": "=",
+   "value": 75.7,
+   "source_id": "19527930",
+   "year": 2009,
+   "ki_result_id": 50513159
+  }
+ ]
+}

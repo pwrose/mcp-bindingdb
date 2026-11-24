@@ -1,0 +1,541 @@
+{
+ "query": {
+  "input": "CCCc1c2c(n(n1)C)C(=O)NC(=N2)c3cc(ccc3OCC)S(=O)(=O)N4CCN(CC4)C",
+  "canonical": "CCCc1nn(C)c2c(=O)[nH]c(-c3cc(S(=O)(=O)N4CCN(C)CC4)ccc3OCC)nc12",
+  "threshold": 0.7,
+  "fingerprint": "Morgan radius 2, 2048 bits, largest fragment"
+ },
+ "n_similar_compounds": 35,
+ "n_targets": 40,
+ "n_compounds_measured": 35,
+ "row_count": 40,
+ "truncated": false,
+ "rows": [
+  {
+   "target_kind": "polymer",
+   "target_id": 5066,
+   "target_name": "cGMP-specific 3',5'-cyclic phosphodiesterase",
+   "uniprot_raw": "O76074",
+   "organism": "Homo sapiens",
+   "n_compounds": 35,
+   "n_measurements": 116,
+   "affinity_types": [
+    "EC50",
+    "IC50",
+    "Ki"
+   ],
+   "best_p_affinity": 9.96
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 2556,
+   "target_name": "Histone deacetylase 6",
+   "uniprot_raw": "Q9UBN7",
+   "organism": "Homo sapiens",
+   "n_compounds": 4,
+   "n_measurements": 4,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 7.06
+  },
+  {
+   "target_kind": "complex",
+   "target_id": 50000902,
+   "target_name": "Dual specificity calcium/calmodulin-dependent 3',5'-cyclic nucleotide phosphodiesterase 1B/Dual specificity calcium/calmodulin-dependent 3',5'-cyclic nucleotide phosphodiesterase 1C/Phosphodiesterase",
+   "uniprot_raw": null,
+   "organism": null,
+   "n_compounds": 4,
+   "n_measurements": 5,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 6.96
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1967,
+   "target_name": "Histone deacetylase 1",
+   "uniprot_raw": "Q13547",
+   "organism": "Homo sapiens",
+   "n_compounds": 3,
+   "n_measurements": 3,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 8.1
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 2482,
+   "target_name": "Histone deacetylase 2",
+   "uniprot_raw": "Q92769",
+   "organism": "Homo sapiens",
+   "n_compounds": 3,
+   "n_measurements": 3,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 6.93
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50002272,
+   "target_name": "cGMP-specific 3',5'-cyclic phosphodiesterase",
+   "uniprot_raw": "O54735",
+   "organism": "Rattus norvegicus",
+   "n_compounds": 1,
+   "n_measurements": 3,
+   "affinity_types": [
+    "IC50",
+    "Ki"
+   ],
+   "best_p_affinity": 9.52
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50006512,
+   "target_name": "cGMP-specific 3',5'-cyclic phosphodiesterase",
+   "uniprot_raw": "O77746",
+   "organism": "Canis lupus familiaris",
+   "n_compounds": 1,
+   "n_measurements": 2,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 9.0
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1577,
+   "target_name": "cGMP-specific 3',5'-cyclic phosphodiesterase [531-875]",
+   "uniprot_raw": "O76074[531-875]",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 8.66
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1635,
+   "target_name": "cGMP-specific 3',5'-cyclic phosphodiesterase [535-860]",
+   "uniprot_raw": "O76074[535-860]",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 8.62
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1636,
+   "target_name": "cGMP-specific 3',5'-cyclic phosphodiesterase [1-662,679-875]",
+   "uniprot_raw": "O76074[1-662,679-875]",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 8.23
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50000786,
+   "target_name": "cGMP-specific 3',5'-cyclic phosphodiesterase",
+   "uniprot_raw": "Q28156",
+   "organism": "Bos taurus",
+   "n_compounds": 1,
+   "n_measurements": 6,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 8.22
+  },
+  {
+   "target_kind": "complex",
+   "target_id": 50000813,
+   "target_name": "O43924/P16499/P18545/P35913/P51160/Q13956",
+   "uniprot_raw": null,
+   "organism": null,
+   "n_compounds": 1,
+   "n_measurements": 3,
+   "affinity_types": [
+    "IC50",
+    "Ki"
+   ],
+   "best_p_affinity": 8.02
+  },
+  {
+   "target_kind": "complex",
+   "target_id": 50000741,
+   "target_name": "P04972/P11541/P16586/P22571/P23439/Q95142",
+   "uniprot_raw": null,
+   "organism": null,
+   "n_compounds": 1,
+   "n_measurements": 5,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 7.7
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 7940,
+   "target_name": "Cone cGMP-specific 3',5'-cyclic phosphodiesterase subunit alpha'",
+   "uniprot_raw": "P51160",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 4,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 7.62
+  },
+  {
+   "target_kind": "complex",
+   "target_id": 50005049,
+   "target_name": "Cone cGMP-specific 3',5'-cyclic phosphodiesterase subunit alpha'/cGMP-specific 3',5'-cyclic phosphodiesterase",
+   "uniprot_raw": null,
+   "organism": null,
+   "n_compounds": 1,
+   "n_measurements": 2,
+   "affinity_types": [
+    "Ki"
+   ],
+   "best_p_affinity": 7.6
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1540,
+   "target_name": "Retinal rod rhodopsin-sensitive cGMP 3',5'-cyclic phosphodiesterase subunit gamma",
+   "uniprot_raw": "P54827",
+   "organism": "Canis lupus familiaris",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 7.48
+  },
+  {
+   "target_kind": "complex",
+   "target_id": 50000007,
+   "target_name": "Histone deacetylase 3/Nuclear receptor corepressor 2 (HDAC3/NCoR2)",
+   "uniprot_raw": null,
+   "organism": null,
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 7.44
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 10157,
+   "target_name": "Rod cGMP-specific 3',5'-cyclic phosphodiesterase subunit alpha",
+   "uniprot_raw": "P11541",
+   "organism": "Bos taurus",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 6.85
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1639,
+   "target_name": "cGMP-specific 3',5'-cyclic phosphodiesterase [1-660,682-875]",
+   "uniprot_raw": "O76074[1-660,682-875]",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 6.73
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 2130,
+   "target_name": "Adenosine receptor A2a",
+   "uniprot_raw": "P29274",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Ki"
+   ],
+   "best_p_affinity": 6.7
+  },
+  {
+   "target_kind": "complex",
+   "target_id": 50000731,
+   "target_name": "Dual specificity calcium/calmodulin-dependent 3',5'-cyclic nucleotide phosphodiesterase 1A/1B/1C",
+   "uniprot_raw": null,
+   "organism": null,
+   "n_compounds": 1,
+   "n_measurements": 4,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 6.57
+  },
+  {
+   "target_kind": "complex",
+   "target_id": 50000743,
+   "target_name": "Dual specificity calcium/calmodulin-dependent 3',5'-cyclic nucleotide phosphodiesterase 1A/1B",
+   "uniprot_raw": null,
+   "organism": null,
+   "n_compounds": 1,
+   "n_measurements": 4,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 6.4
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 7465,
+   "target_name": "Dual specificity calcium/calmodulin-dependent 3',5'-cyclic nucleotide phosphodiesterase 1A",
+   "uniprot_raw": "P54750",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 6.22
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50006081,
+   "target_name": "ATP-binding cassette sub-family C member 5",
+   "uniprot_raw": "O15440",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "Ki"
+   ],
+   "best_p_affinity": 5.92
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1572,
+   "target_name": "Dual specificity calcium/calmodulin-dependent 3',5'-cyclic nucleotide phosphodiesterase 1B",
+   "uniprot_raw": "Q01064",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 5.82
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 7417,
+   "target_name": "Dual 3',5'-cyclic-AMP and -GMP phosphodiesterase 11A",
+   "uniprot_raw": "Q9HCR9",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 5,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 5.64
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 5461,
+   "target_name": "cAMP and cAMP-inhibited cGMP 3',5'-cyclic phosphodiesterase 10A",
+   "uniprot_raw": "Q9Y233",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 2,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 5.51
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 2132,
+   "target_name": "Potassium voltage-gated channel subfamily H member 2",
+   "uniprot_raw": "Q12809",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 5,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 5.48
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 5068,
+   "target_name": "High affinity cGMP-specific 3',5'-cyclic phosphodiesterase 9A",
+   "uniprot_raw": "O76083",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 2,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 5.47
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50006244,
+   "target_name": "Indoleamine 2,3-dioxygenase 2",
+   "uniprot_raw": "Q8R0V5",
+   "organism": "Mus musculus",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 5.35
+  },
+  {
+   "target_kind": "complex",
+   "target_id": 50006150,
+   "target_name": "cAMP-specific 3',5'-cyclic phosphodiesterase 4A/4B/4C/4D",
+   "uniprot_raw": null,
+   "organism": null,
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 5.34
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 6027,
+   "target_name": "High affinity cAMP-specific 3',5'-cyclic phosphodiesterase 7A",
+   "uniprot_raw": "Q13946",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 5.33
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1180,
+   "target_name": "cAMP-specific 3',5'-cyclic phosphodiesterase 4A",
+   "uniprot_raw": "P27815",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 5.3
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1580,
+   "target_name": "High affinity cGMP-specific 3',5'-cyclic phosphodiesterase 9A [226-593]",
+   "uniprot_raw": "O76083[226-593]",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 5.25
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1582,
+   "target_name": "Isoform 4 of Dual 3',5'-cyclic-AMP and -GMP phosphodiesterase 11A (PDE11A1) 35-489]",
+   "uniprot_raw": "Q9HCR9-4[135-489]",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 5.21
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1581,
+   "target_name": "cAMP and cAMP-inhibited cGMP 3',5'-cyclic phosphodiesterase 10A [432-779]",
+   "uniprot_raw": "Q9Y233[432-779]",
+   "organism": "Homo sapiens",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 5.17
+  },
+  {
+   "target_kind": "complex",
+   "target_id": 50000730,
+   "target_name": "cGMP-inhibited 3',5'-cyclic phosphodiesterase 3A/3B",
+   "uniprot_raw": null,
+   "organism": null,
+   "n_compounds": 1,
+   "n_measurements": 2,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 5.15
+  },
+  {
+   "target_kind": "complex",
+   "target_id": 50000012,
+   "target_name": "cAMP-specific 3',5'-cyclic phosphodiesterase 4A/4B/4C/4D",
+   "uniprot_raw": null,
+   "organism": null,
+   "n_compounds": 1,
+   "n_measurements": 2,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 5.11
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 770,
+   "target_name": "Replicase polyprotein 1ab",
+   "uniprot_raw": "P0DTD1",
+   "organism": "Severe acute respiratory syndrome coronavirus 2",
+   "n_compounds": 1,
+   "n_measurements": 1,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 5.08
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50002848,
+   "target_name": "Phosphodiesterase",
+   "uniprot_raw": null,
+   "organism": "Bos taurus",
+   "n_compounds": 1,
+   "n_measurements": 2,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 5.04
+  }
+ ],
+ "compounds_searched": 1466457,
+ "search_set_size": 1466457
+}

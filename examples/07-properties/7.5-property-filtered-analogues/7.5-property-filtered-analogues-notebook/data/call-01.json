@@ -1,0 +1,17 @@
+{
+ "row_count": 1,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 50357312,
+   "bdbm_id": "BDBM50357312",
+   "name": "IBRUTINIB",
+   "inchi_key": "XYFPWWZEPKGCCK-GOSISDBHSA-N",
+   "smiles": "Nc1ncnc2n(nc(-c3ccc(Oc4ccccc4)cc3)c12)[C@@H]1CCCN(C1)C(=O)C=C",
+   "mol_weight": 440.2,
+   "n_activities": 454,
+   "n_targets": 49,
+   "matched_name": "IBRUTINIB"
+  }
+ ]
+}

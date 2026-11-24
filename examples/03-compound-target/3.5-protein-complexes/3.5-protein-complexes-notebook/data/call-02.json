@@ -1,0 +1,68 @@
+{
+ "target": {
+  "target_kind": "complex",
+  "target_id": 386,
+  "name": "Gamma-aminobutyric acid receptor subunit alpha-1/beta-3/gamma-2",
+  "uniprot": null,
+  "uniprot_raw": null,
+  "organism": null,
+  "taxid": null,
+  "type": "Protein",
+  "res_count": null,
+  "n_pdb_ids": 153,
+  "chembl_id": null,
+  "n_activities": 1325,
+  "n_compounds": 1111,
+  "pdb_ids": "9EQG,9CXA,7QNE,7QND,7QNC,7QNB,7QNA,7QN9,7QN8,7QN7,7QN6,7QN5,9CXC,9CX7,9CTJ,9CSB,9FGH,9FGG,9FGF,9FGD,9FGC,9FGB,9FGA,9FG9,9FG8,9FG7,9FG6,9FG5,9FG4,6I53,6HUP,6HUO,6HUK,6HUJ,6HUG,8PET,9FAW,9RGD,9FAT,9FAS,9FAM,9FAK,9FAJ,9RGE,9FAX,9FAV,9FAU,9FAQ,9FAP,9RPB,9RL5,9HUM,9HNT,9HNS,9HNR,9HNQ,9HAA,6A96,4COF,9G2E,9G2D,9FG3,9FG2,9FG1,9FFZ,9FFY,9FFX,9FFW,9FFV,9FFU,9FFT,9FFS,9FFR,9FFQ,9FFP,9FFO,9FFN,9FFM,9FFL,9FF2,9FF1,9FEZ,9FEY,9FEX,9FEW,9FEV,9FEU,6QFA,8PVB,7A5V,9FF0,9FG0,6DW1,6DW0,6D6U,6D6T,7T0Z,7T0W,9YNN,9DRX,8VRN,8VQY,8SID,8SI9,8SGO,8DD3,8DD2,6X40,6X3Z,6X3X,6X3W,6X3V,6X3U,6X3T,6X3S,9OV4,9OUR,9OUQ,9OUP,9OUO,9OUN,9OUM,8G5H,8G5G,8G5F,8G4X,8G4O,8G4N,8FOI,9CXD,9CXB,9CTV,9CTP,9CT0,9CRV,9CRS,9TPQ,9TNS,9TNB,9QK0,9QJY,9QJX,9QJP,8BHG,9H9E,7PC0,7PBZ,7PBD,9QK1,9QJV,9QJS,9QJR,9QJQ",
+  "comments": null
+ },
+ "synonyms": [
+  "GABAA alpha1beta3gamma2",
+  "GABA-A receptor; alpha-1/beta-3/gamma-2",
+  "GABA receptor alpha-1/beta-3/gamma-2 subunit",
+  "Gamma-aminobutyric acid receptor subunit alpha-1/beta-3/gamma-2"
+ ],
+ "measurements_by_type": [
+  {
+   "affinity_type": "Ki",
+   "n_measurements": 1258,
+   "n_compounds": 1065,
+   "best_p_affinity": 10.3
+  },
+  {
+   "affinity_type": "EC50",
+   "n_measurements": 55,
+   "n_compounds": 45,
+   "best_p_affinity": 6.6
+  },
+  {
+   "affinity_type": "IC50",
+   "n_measurements": 12,
+   "n_compounds": 6,
+   "best_p_affinity": 6.4
+  }
+ ],
+ "components": [
+  {
+   "type": "Protein",
+   "polymerid": 5521,
+   "polymer_name": "Gamma-aminobutyric acid receptor subunit alpha-1",
+   "uniprot_raw": "P14867",
+   "monomerid": null
+  },
+  {
+   "type": "Protein",
+   "polymerid": 50000214,
+   "polymer_name": "Gamma-aminobutyric acid receptor subunit gamma-2",
+   "uniprot_raw": "P18507",
+   "monomerid": null
+  },
+  {
+   "type": "Protein",
+   "polymerid": 50001801,
+   "polymer_name": "Gamma-aminobutyric acid receptor subunit beta-3",
+   "uniprot_raw": "P28472",
+   "monomerid": null
+  }
+ ]
+}

@@ -1,0 +1,2870 @@
+{
+ "row_count": 716,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 50237710,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p1001"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p1003"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p1017"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p10232"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p10246"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p10249"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p10264"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p10733"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p10757"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p1216"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p13"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p1325"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p1358"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p1402"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p1592"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p1612"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p1622"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p1653"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p1662"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p1663"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p1744"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p1747"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p1846"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p188"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p195"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p20"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p2107"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p2109"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p2111"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p2112"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p2113"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p2239"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p2700"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p2702"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p2711"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p2712"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p2732"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p2734"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p2737"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p2740"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p2741"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p2742"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p2744"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p2750"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p2762"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p2853"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p2857"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p2863"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p2869"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p2871"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p2875"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p2933"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p2939"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p3207"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p3413"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p3422"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p359"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p3667"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p3672"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p3674"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p3678"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p3688"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p3735"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p3877"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p3881"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p3907"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p3913"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p395"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p3989"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p4042"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p4366"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p4372"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p4442"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p4451"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p4456"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p4465"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p4474"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p4477"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p4481"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p4485"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p4493"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p4494"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p4500"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p4515"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p4516"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p4523"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p4527"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p4532"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p4537"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p4539"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p4540"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p4897"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p49001113"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p4904"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p4906"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p4916"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p4917"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p4918"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p4919"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p4981"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50000082"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50000347"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50000468"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50000507"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50000594"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50000938"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50000987"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50001101"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50001102"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50001146"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50001173"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50001257"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50001306"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50001420"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50001628"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50001635"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50001793"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50001795"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50001798"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50001898"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50002337"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50002511"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50002885"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50002896"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003020"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003021"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003023"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003048"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003049"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003050"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003051"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003053"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003055"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003058"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003060"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003061"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003062"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003068"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003069"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003070"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003140"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003549"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003573"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003585"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003593"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003596"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003646"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003654"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003665"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003671"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003688"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003691"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003715"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003716"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003770"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003772"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003773"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003781"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003785"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003788"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003795"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003796"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003798"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003809"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003813"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003818"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003871"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003919"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003920"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003922"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003923"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003928"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003931"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003960"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003961"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003962"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003966"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003969"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003971"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50003979"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004010"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004018"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004021"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004022"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004052"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004056"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004057"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004072"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004073"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004089"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004100"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004126"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004138"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004139"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004144"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004145"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004151"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004173"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004174"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004188"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004200"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004205"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004224"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004235"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004236"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004243"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004246"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004292"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004293"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004323"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004341"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004346"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004352"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004380"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004381"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004433"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004463"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004550"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004551"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004552"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004553"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004554"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004555"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004556"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004557"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004559"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004561"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004562"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004563"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004564"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004565"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004566"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004567"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004748"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004842"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004843"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004844"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004845"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004846"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004847"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004848"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004851"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004854"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004855"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004856"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004858"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50004859"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p50005048"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p507"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p5121"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p513"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p5143"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p5183"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p520"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p5236"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p5237"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p5245"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p5248"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p527"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p5399"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p5403"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p5404"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p5405"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p5413"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p5420"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p5421"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p5424"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p5429"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p5463"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p5478"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p5481"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p5506"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p5516"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p5611"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p5620"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p5623"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p5624"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p5715"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p575"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p5758"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p5778"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p5809"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p5811"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p586"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p5923"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p5974"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p603"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p604"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p605"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p6207"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p6211"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p6213"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p6217"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p6334"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p6337"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p6472"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p6477"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p6479"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p6643"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p6645"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p6652"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p6750"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p6797"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p6817"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p6818"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p690"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p692"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p694"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p7063"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p7285"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p7374"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p7381"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p7407"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p7547"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p7571"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p759"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p763"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p7735"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p7798"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p7806"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p7838"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p7874"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p796"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p799"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p8039"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p8061"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p8068"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p8119"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p8138"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p856"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p8597"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p8604"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p8772"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p8779"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p8886"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p8935"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p8936"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p8937"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p9189"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p919"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p9670"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p9671"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p969"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p995"
+  },
+  {
+   "monomerid": 50237710,
+   "tkey": "p997"
+  },
+  {
+   "monomerid": 50240406,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50240406,
+   "tkey": "c50000008"
+  },
+  {
+   "monomerid": 50240406,
+   "tkey": "c50000561"
+  },
+  {
+   "monomerid": 50240406,
+   "tkey": "p13"
+  },
+  {
+   "monomerid": 50240406,
+   "tkey": "p520"
+  },
+  {
+   "monomerid": 50240406,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50240406,
+   "tkey": "p599"
+  },
+  {
+   "monomerid": 50240406,
+   "tkey": "p603"
+  },
+  {
+   "monomerid": 50240407,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50240407,
+   "tkey": "c50000008"
+  },
+  {
+   "monomerid": 50240407,
+   "tkey": "c50000112"
+  },
+  {
+   "monomerid": 50240407,
+   "tkey": "c50000561"
+  },
+  {
+   "monomerid": 50240407,
+   "tkey": "p13"
+  },
+  {
+   "monomerid": 50240407,
+   "tkey": "p520"
+  },
+  {
+   "monomerid": 50240407,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50240407,
+   "tkey": "p599"
+  },
+  {
+   "monomerid": 50240407,
+   "tkey": "p603"
+  },
+  {
+   "monomerid": 50256927,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50256927,
+   "tkey": "p575"
+  },
+  {
+   "monomerid": 50256927,
+   "tkey": "p692"
+  },
+  {
+   "monomerid": 50256928,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50256928,
+   "tkey": "p575"
+  },
+  {
+   "monomerid": 50256928,
+   "tkey": "p692"
+  },
+  {
+   "monomerid": 50256929,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50256929,
+   "tkey": "p575"
+  },
+  {
+   "monomerid": 50256929,
+   "tkey": "p692"
+  },
+  {
+   "monomerid": 50287088,
+   "tkey": "c50000008"
+  },
+  {
+   "monomerid": 50287088,
+   "tkey": "c50000561"
+  },
+  {
+   "monomerid": 50287088,
+   "tkey": "p520"
+  },
+  {
+   "monomerid": 50287088,
+   "tkey": "p599"
+  },
+  {
+   "monomerid": 50287088,
+   "tkey": "p603"
+  },
+  {
+   "monomerid": 50287089,
+   "tkey": "c50000008"
+  },
+  {
+   "monomerid": 50287089,
+   "tkey": "c50000561"
+  },
+  {
+   "monomerid": 50287089,
+   "tkey": "p520"
+  },
+  {
+   "monomerid": 50287089,
+   "tkey": "p599"
+  },
+  {
+   "monomerid": 50287089,
+   "tkey": "p603"
+  },
+  {
+   "monomerid": 50287090,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50287090,
+   "tkey": "c50000008"
+  },
+  {
+   "monomerid": 50287090,
+   "tkey": "c50000561"
+  },
+  {
+   "monomerid": 50287090,
+   "tkey": "p13"
+  },
+  {
+   "monomerid": 50287090,
+   "tkey": "p520"
+  },
+  {
+   "monomerid": 50287090,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50287090,
+   "tkey": "p599"
+  },
+  {
+   "monomerid": 50287090,
+   "tkey": "p603"
+  },
+  {
+   "monomerid": 50287091,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50287091,
+   "tkey": "c50000008"
+  },
+  {
+   "monomerid": 50287091,
+   "tkey": "c50000561"
+  },
+  {
+   "monomerid": 50287091,
+   "tkey": "p13"
+  },
+  {
+   "monomerid": 50287091,
+   "tkey": "p520"
+  },
+  {
+   "monomerid": 50287091,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50287091,
+   "tkey": "p599"
+  },
+  {
+   "monomerid": 50287091,
+   "tkey": "p603"
+  },
+  {
+   "monomerid": 50287092,
+   "tkey": "c50000008"
+  },
+  {
+   "monomerid": 50287092,
+   "tkey": "c50000561"
+  },
+  {
+   "monomerid": 50287092,
+   "tkey": "p520"
+  },
+  {
+   "monomerid": 50287092,
+   "tkey": "p599"
+  },
+  {
+   "monomerid": 50287092,
+   "tkey": "p603"
+  },
+  {
+   "monomerid": 50287093,
+   "tkey": "c50000008"
+  },
+  {
+   "monomerid": 50287093,
+   "tkey": "c50000561"
+  },
+  {
+   "monomerid": 50287093,
+   "tkey": "p13"
+  },
+  {
+   "monomerid": 50287093,
+   "tkey": "p520"
+  },
+  {
+   "monomerid": 50287093,
+   "tkey": "p599"
+  },
+  {
+   "monomerid": 50287093,
+   "tkey": "p603"
+  },
+  {
+   "monomerid": 50287094,
+   "tkey": "c50000008"
+  },
+  {
+   "monomerid": 50287094,
+   "tkey": "c50000561"
+  },
+  {
+   "monomerid": 50287094,
+   "tkey": "p520"
+  },
+  {
+   "monomerid": 50287094,
+   "tkey": "p599"
+  },
+  {
+   "monomerid": 50287094,
+   "tkey": "p603"
+  },
+  {
+   "monomerid": 50287095,
+   "tkey": "c50000008"
+  },
+  {
+   "monomerid": 50287095,
+   "tkey": "c50000561"
+  },
+  {
+   "monomerid": 50287095,
+   "tkey": "p520"
+  },
+  {
+   "monomerid": 50287095,
+   "tkey": "p599"
+  },
+  {
+   "monomerid": 50287095,
+   "tkey": "p603"
+  },
+  {
+   "monomerid": 50287096,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50287096,
+   "tkey": "c50000008"
+  },
+  {
+   "monomerid": 50287096,
+   "tkey": "c50000561"
+  },
+  {
+   "monomerid": 50287096,
+   "tkey": "p13"
+  },
+  {
+   "monomerid": 50287096,
+   "tkey": "p520"
+  },
+  {
+   "monomerid": 50287096,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50287096,
+   "tkey": "p599"
+  },
+  {
+   "monomerid": 50287096,
+   "tkey": "p603"
+  },
+  {
+   "monomerid": 50287097,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50287097,
+   "tkey": "c50000008"
+  },
+  {
+   "monomerid": 50287097,
+   "tkey": "c50000561"
+  },
+  {
+   "monomerid": 50287097,
+   "tkey": "p13"
+  },
+  {
+   "monomerid": 50287097,
+   "tkey": "p520"
+  },
+  {
+   "monomerid": 50287097,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50287097,
+   "tkey": "p599"
+  },
+  {
+   "monomerid": 50287097,
+   "tkey": "p603"
+  },
+  {
+   "monomerid": 50287098,
+   "tkey": "c50000008"
+  },
+  {
+   "monomerid": 50287098,
+   "tkey": "c50000561"
+  },
+  {
+   "monomerid": 50287098,
+   "tkey": "p520"
+  },
+  {
+   "monomerid": 50287098,
+   "tkey": "p599"
+  },
+  {
+   "monomerid": 50287098,
+   "tkey": "p603"
+  },
+  {
+   "monomerid": 50290410,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50290410,
+   "tkey": "c50000008"
+  },
+  {
+   "monomerid": 50290410,
+   "tkey": "p13"
+  },
+  {
+   "monomerid": 50290410,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50290410,
+   "tkey": "p599"
+  },
+  {
+   "monomerid": 50290410,
+   "tkey": "p603"
+  },
+  {
+   "monomerid": 50290411,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50290411,
+   "tkey": "c50000008"
+  },
+  {
+   "monomerid": 50290411,
+   "tkey": "c50000561"
+  },
+  {
+   "monomerid": 50290411,
+   "tkey": "p13"
+  },
+  {
+   "monomerid": 50290411,
+   "tkey": "p520"
+  },
+  {
+   "monomerid": 50290411,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50290411,
+   "tkey": "p599"
+  },
+  {
+   "monomerid": 50290411,
+   "tkey": "p603"
+  },
+  {
+   "monomerid": 50290412,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50290412,
+   "tkey": "c50000008"
+  },
+  {
+   "monomerid": 50290412,
+   "tkey": "c50000561"
+  },
+  {
+   "monomerid": 50290412,
+   "tkey": "p13"
+  },
+  {
+   "monomerid": 50290412,
+   "tkey": "p520"
+  },
+  {
+   "monomerid": 50290412,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50290414,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50290414,
+   "tkey": "c50000008"
+  },
+  {
+   "monomerid": 50290414,
+   "tkey": "c50000561"
+  },
+  {
+   "monomerid": 50290414,
+   "tkey": "p13"
+  },
+  {
+   "monomerid": 50290414,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50290415,
+   "tkey": "c50000008"
+  },
+  {
+   "monomerid": 50290415,
+   "tkey": "p13"
+  },
+  {
+   "monomerid": 50290415,
+   "tkey": "p520"
+  },
+  {
+   "monomerid": 50290415,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50290417,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50290417,
+   "tkey": "c50000008"
+  },
+  {
+   "monomerid": 50290417,
+   "tkey": "c50000561"
+  },
+  {
+   "monomerid": 50290417,
+   "tkey": "p1003"
+  },
+  {
+   "monomerid": 50290417,
+   "tkey": "p13"
+  },
+  {
+   "monomerid": 50290417,
+   "tkey": "p5118"
+  },
+  {
+   "monomerid": 50290417,
+   "tkey": "p520"
+  },
+  {
+   "monomerid": 50290417,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50290417,
+   "tkey": "p599"
+  },
+  {
+   "monomerid": 50290417,
+   "tkey": "p603"
+  },
+  {
+   "monomerid": 50290418,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50290418,
+   "tkey": "c50000008"
+  },
+  {
+   "monomerid": 50290418,
+   "tkey": "c50000561"
+  },
+  {
+   "monomerid": 50290418,
+   "tkey": "p13"
+  },
+  {
+   "monomerid": 50290418,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50290419,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50290419,
+   "tkey": "c50000008"
+  },
+  {
+   "monomerid": 50290419,
+   "tkey": "c50000561"
+  },
+  {
+   "monomerid": 50290419,
+   "tkey": "p13"
+  },
+  {
+   "monomerid": 50290419,
+   "tkey": "p520"
+  },
+  {
+   "monomerid": 50290419,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50290421,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50290421,
+   "tkey": "c50000008"
+  },
+  {
+   "monomerid": 50290421,
+   "tkey": "c50000561"
+  },
+  {
+   "monomerid": 50290421,
+   "tkey": "p13"
+  },
+  {
+   "monomerid": 50290421,
+   "tkey": "p520"
+  },
+  {
+   "monomerid": 50290421,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50290421,
+   "tkey": "p599"
+  },
+  {
+   "monomerid": 50290421,
+   "tkey": "p603"
+  },
+  {
+   "monomerid": 50290422,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50290422,
+   "tkey": "c50000008"
+  },
+  {
+   "monomerid": 50290422,
+   "tkey": "c50000112"
+  },
+  {
+   "monomerid": 50290422,
+   "tkey": "c50000561"
+  },
+  {
+   "monomerid": 50290422,
+   "tkey": "p13"
+  },
+  {
+   "monomerid": 50290422,
+   "tkey": "p50006643"
+  },
+  {
+   "monomerid": 50290422,
+   "tkey": "p520"
+  },
+  {
+   "monomerid": 50290422,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50290422,
+   "tkey": "p633"
+  },
+  {
+   "monomerid": 50290422,
+   "tkey": "p763"
+  },
+  {
+   "monomerid": 50290423,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50290423,
+   "tkey": "c50000008"
+  },
+  {
+   "monomerid": 50290423,
+   "tkey": "c50000561"
+  },
+  {
+   "monomerid": 50290423,
+   "tkey": "p13"
+  },
+  {
+   "monomerid": 50290423,
+   "tkey": "p520"
+  },
+  {
+   "monomerid": 50290423,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50290423,
+   "tkey": "p599"
+  },
+  {
+   "monomerid": 50290423,
+   "tkey": "p603"
+  },
+  {
+   "monomerid": 50290427,
+   "tkey": "c50000008"
+  },
+  {
+   "monomerid": 50290427,
+   "tkey": "c50000561"
+  },
+  {
+   "monomerid": 50290427,
+   "tkey": "p13"
+  },
+  {
+   "monomerid": 50290427,
+   "tkey": "p520"
+  },
+  {
+   "monomerid": 50290427,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50290428,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50290428,
+   "tkey": "c50000008"
+  },
+  {
+   "monomerid": 50290428,
+   "tkey": "c50000561"
+  },
+  {
+   "monomerid": 50290428,
+   "tkey": "p13"
+  },
+  {
+   "monomerid": 50290428,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50290429,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50290429,
+   "tkey": "c50000008"
+  },
+  {
+   "monomerid": 50290429,
+   "tkey": "c50000561"
+  },
+  {
+   "monomerid": 50290429,
+   "tkey": "p13"
+  },
+  {
+   "monomerid": 50290429,
+   "tkey": "p520"
+  },
+  {
+   "monomerid": 50290429,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50290429,
+   "tkey": "p599"
+  },
+  {
+   "monomerid": 50290429,
+   "tkey": "p603"
+  },
+  {
+   "monomerid": 50290430,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50290430,
+   "tkey": "c50000008"
+  },
+  {
+   "monomerid": 50290430,
+   "tkey": "c50000561"
+  },
+  {
+   "monomerid": 50290430,
+   "tkey": "p13"
+  },
+  {
+   "monomerid": 50290430,
+   "tkey": "p520"
+  },
+  {
+   "monomerid": 50290430,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50290431,
+   "tkey": "c50000008"
+  },
+  {
+   "monomerid": 50290431,
+   "tkey": "p13"
+  },
+  {
+   "monomerid": 50290431,
+   "tkey": "p520"
+  },
+  {
+   "monomerid": 50290431,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50290431,
+   "tkey": "p599"
+  },
+  {
+   "monomerid": 50290431,
+   "tkey": "p603"
+  },
+  {
+   "monomerid": 50308197,
+   "tkey": "p2700"
+  },
+  {
+   "monomerid": 50308197,
+   "tkey": "p692"
+  },
+  {
+   "monomerid": 50308198,
+   "tkey": "p2700"
+  },
+  {
+   "monomerid": 50308198,
+   "tkey": "p692"
+  },
+  {
+   "monomerid": 50308199,
+   "tkey": "p2700"
+  },
+  {
+   "monomerid": 50308199,
+   "tkey": "p692"
+  },
+  {
+   "monomerid": 50308200,
+   "tkey": "p2700"
+  },
+  {
+   "monomerid": 50308200,
+   "tkey": "p692"
+  },
+  {
+   "monomerid": 50308201,
+   "tkey": "p2700"
+  },
+  {
+   "monomerid": 50308201,
+   "tkey": "p692"
+  },
+  {
+   "monomerid": 50313640,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50313640,
+   "tkey": "p359"
+  },
+  {
+   "monomerid": 50323918,
+   "tkey": "p2857"
+  },
+  {
+   "monomerid": 50323918,
+   "tkey": "p3881"
+  },
+  {
+   "monomerid": 50323918,
+   "tkey": "p50001750"
+  },
+  {
+   "monomerid": 50323922,
+   "tkey": "p2857"
+  },
+  {
+   "monomerid": 50323922,
+   "tkey": "p3881"
+  },
+  {
+   "monomerid": 50341234,
+   "tkey": "p359"
+  },
+  {
+   "monomerid": 50341234,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50341234,
+   "tkey": "p5778"
+  },
+  {
+   "monomerid": 50341235,
+   "tkey": "p359"
+  },
+  {
+   "monomerid": 50341235,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50341235,
+   "tkey": "p5778"
+  },
+  {
+   "monomerid": 50341236,
+   "tkey": "p359"
+  },
+  {
+   "monomerid": 50341236,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50341236,
+   "tkey": "p5778"
+  },
+  {
+   "monomerid": 50341237,
+   "tkey": "p359"
+  },
+  {
+   "monomerid": 50341237,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50341237,
+   "tkey": "p5778"
+  },
+  {
+   "monomerid": 50341238,
+   "tkey": "p359"
+  },
+  {
+   "monomerid": 50341238,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50341238,
+   "tkey": "p5778"
+  },
+  {
+   "monomerid": 50358831,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50358832,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50382805,
+   "tkey": "p1744"
+  },
+  {
+   "monomerid": 50382805,
+   "tkey": "p796"
+  },
+  {
+   "monomerid": 50384864,
+   "tkey": "p1358"
+  },
+  {
+   "monomerid": 50384864,
+   "tkey": "p4916"
+  },
+  {
+   "monomerid": 50384864,
+   "tkey": "p4917"
+  },
+  {
+   "monomerid": 50384864,
+   "tkey": "p4918"
+  },
+  {
+   "monomerid": 50384864,
+   "tkey": "p4919"
+  },
+  {
+   "monomerid": 50384864,
+   "tkey": "p796"
+  },
+  {
+   "monomerid": 50384865,
+   "tkey": "p1358"
+  },
+  {
+   "monomerid": 50384865,
+   "tkey": "p4916"
+  },
+  {
+   "monomerid": 50384865,
+   "tkey": "p4917"
+  },
+  {
+   "monomerid": 50384865,
+   "tkey": "p4918"
+  },
+  {
+   "monomerid": 50384865,
+   "tkey": "p4919"
+  },
+  {
+   "monomerid": 50384865,
+   "tkey": "p796"
+  },
+  {
+   "monomerid": 50384870,
+   "tkey": "p1358"
+  },
+  {
+   "monomerid": 50384870,
+   "tkey": "p4916"
+  },
+  {
+   "monomerid": 50384870,
+   "tkey": "p4917"
+  },
+  {
+   "monomerid": 50384870,
+   "tkey": "p4918"
+  },
+  {
+   "monomerid": 50384870,
+   "tkey": "p4919"
+  },
+  {
+   "monomerid": 50384870,
+   "tkey": "p796"
+  },
+  {
+   "monomerid": 50421671,
+   "tkey": "c50000025"
+  },
+  {
+   "monomerid": 50421671,
+   "tkey": "p50004854"
+  },
+  {
+   "monomerid": 50425385,
+   "tkey": "p1358"
+  },
+  {
+   "monomerid": 50425385,
+   "tkey": "p359"
+  },
+  {
+   "monomerid": 50425385,
+   "tkey": "p507"
+  },
+  {
+   "monomerid": 50425385,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50425385,
+   "tkey": "p5481"
+  },
+  {
+   "monomerid": 50425385,
+   "tkey": "p575"
+  },
+  {
+   "monomerid": 50425385,
+   "tkey": "p5778"
+  },
+  {
+   "monomerid": 50425386,
+   "tkey": "p1358"
+  },
+  {
+   "monomerid": 50425386,
+   "tkey": "p359"
+  },
+  {
+   "monomerid": 50425386,
+   "tkey": "p507"
+  },
+  {
+   "monomerid": 50425386,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50425386,
+   "tkey": "p5481"
+  },
+  {
+   "monomerid": 50425386,
+   "tkey": "p575"
+  },
+  {
+   "monomerid": 50425386,
+   "tkey": "p5778"
+  },
+  {
+   "monomerid": 50425387,
+   "tkey": "p1358"
+  },
+  {
+   "monomerid": 50425387,
+   "tkey": "p359"
+  },
+  {
+   "monomerid": 50425387,
+   "tkey": "p507"
+  },
+  {
+   "monomerid": 50425387,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50425387,
+   "tkey": "p5481"
+  },
+  {
+   "monomerid": 50425387,
+   "tkey": "p575"
+  },
+  {
+   "monomerid": 50425387,
+   "tkey": "p5778"
+  },
+  {
+   "monomerid": 50432859,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50432860,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50432865,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50432866,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50432867,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50432868,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50432869,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50432872,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50432873,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50433223,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50433224,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50433225,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50433226,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50433227,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50433228,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50433229,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50433230,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50433231,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50433232,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50433233,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50433234,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50433235,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50433236,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50433237,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50434581,
+   "tkey": "p359"
+  },
+  {
+   "monomerid": 50434581,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50434582,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50434582,
+   "tkey": "p5758"
+  },
+  {
+   "monomerid": 50444656,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50444657,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50444658,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50462213,
+   "tkey": "p359"
+  },
+  {
+   "monomerid": 50462213,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50462213,
+   "tkey": "p575"
+  },
+  {
+   "monomerid": 50462213,
+   "tkey": "p5778"
+  },
+  {
+   "monomerid": 50509975,
+   "tkey": "p692"
+  },
+  {
+   "monomerid": 50509976,
+   "tkey": "p692"
+  },
+  {
+   "monomerid": 50509977,
+   "tkey": "p692"
+  },
+  {
+   "monomerid": 50509978,
+   "tkey": "p692"
+  },
+  {
+   "monomerid": 50509979,
+   "tkey": "p692"
+  },
+  {
+   "monomerid": 50509980,
+   "tkey": "p692"
+  },
+  {
+   "monomerid": 50533531,
+   "tkey": "c200"
+  },
+  {
+   "monomerid": 50560735,
+   "tkey": "p796"
+  },
+  {
+   "monomerid": 50560735,
+   "tkey": "p997"
+  },
+  {
+   "monomerid": 50560736,
+   "tkey": "p997"
+  },
+  {
+   "monomerid": 50560737,
+   "tkey": "p997"
+  },
+  {
+   "monomerid": 50560738,
+   "tkey": "p997"
+  },
+  {
+   "monomerid": 50564790,
+   "tkey": "c112"
+  },
+  {
+   "monomerid": 50564790,
+   "tkey": "c113"
+  },
+  {
+   "monomerid": 50564790,
+   "tkey": "c97"
+  },
+  {
+   "monomerid": 50573935,
+   "tkey": "c113"
+  },
+  {
+   "monomerid": 50598058,
+   "tkey": "c113"
+  },
+  {
+   "monomerid": 50599039,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50599045,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50600441,
+   "tkey": "p1325"
+  },
+  {
+   "monomerid": 50600441,
+   "tkey": "p4981"
+  },
+  {
+   "monomerid": 50600442,
+   "tkey": "p1325"
+  },
+  {
+   "monomerid": 50600442,
+   "tkey": "p4981"
+  },
+  {
+   "monomerid": 50600443,
+   "tkey": "p1325"
+  },
+  {
+   "monomerid": 50600443,
+   "tkey": "p4981"
+  },
+  {
+   "monomerid": 50612375,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50612376,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50612377,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50612378,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50612379,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50612380,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50612381,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50612382,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50612383,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50634633,
+   "tkey": "c261"
+  },
+  {
+   "monomerid": 50635863,
+   "tkey": "p13"
+  },
+  {
+   "monomerid": 50635863,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50635864,
+   "tkey": "p13"
+  },
+  {
+   "monomerid": 50635864,
+   "tkey": "p5221"
+  },
+  {
+   "monomerid": 50649915,
+   "tkey": "p1358"
+  },
+  {
+   "monomerid": 50649915,
+   "tkey": "p799"
+  },
+  {
+   "monomerid": 50665118,
+   "tkey": "p1358"
+  },
+  {
+   "monomerid": 50665118,
+   "tkey": "p799"
+  },
+  {
+   "monomerid": 50665119,
+   "tkey": "p1358"
+  },
+  {
+   "monomerid": 50665119,
+   "tkey": "p799"
+  },
+  {
+   "monomerid": 50666053,
+   "tkey": "p1653"
+  },
+  {
+   "monomerid": 50666053,
+   "tkey": "p1662"
+  },
+  {
+   "monomerid": 50666053,
+   "tkey": "p1663"
+  },
+  {
+   "monomerid": 50666838,
+   "tkey": "c113"
+  },
+  {
+   "monomerid": 50666838,
+   "tkey": "c97"
+  },
+  {
+   "monomerid": 50666839,
+   "tkey": "c113"
+  },
+  {
+   "monomerid": 50666839,
+   "tkey": "c97"
+  },
+  {
+   "monomerid": 50666840,
+   "tkey": "c113"
+  },
+  {
+   "monomerid": 50666840,
+   "tkey": "c97"
+  },
+  {
+   "monomerid": 50666841,
+   "tkey": "c113"
+  },
+  {
+   "monomerid": 50666841,
+   "tkey": "c97"
+  },
+  {
+   "monomerid": 50668888,
+   "tkey": "p50001652"
+  }
+ ]
+}

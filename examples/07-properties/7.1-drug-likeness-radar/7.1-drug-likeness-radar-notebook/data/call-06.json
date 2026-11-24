@@ -1,0 +1,78 @@
+{
+ "row_count": 6,
+ "truncated": true,
+ "rows": [
+  {
+   "target_kind": "polymer",
+   "target_id": 1234,
+   "name": "Dipeptidyl peptidase 4",
+   "uniprot": "P27487",
+   "uniprot_raw": "P27487",
+   "organism": "Homo sapiens",
+   "type": "Enzyme",
+   "n_activities": 6371,
+   "n_compounds": 5246,
+   "matched_name": "DPP4"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1264,
+   "name": "Dipeptidyl peptidase 4",
+   "uniprot": "P14740",
+   "uniprot_raw": "P14740",
+   "organism": "Rattus norvegicus",
+   "type": "Enzyme",
+   "n_activities": 224,
+   "n_compounds": 207,
+   "matched_name": "Dpp4"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1262,
+   "name": "Dipeptidyl peptidase 4",
+   "uniprot": "P22411",
+   "uniprot_raw": "P22411",
+   "organism": "Sus scrofa",
+   "type": "Enzyme",
+   "n_activities": 133,
+   "n_compounds": 115,
+   "matched_name": "DPP4"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50002948,
+   "name": "Dipeptidyl peptidase 4",
+   "uniprot": "P28843",
+   "uniprot_raw": "P28843",
+   "organism": "Mus musculus",
+   "type": "PROTEIN",
+   "n_activities": 63,
+   "n_compounds": 60,
+   "matched_name": "Dpp4"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 7424,
+   "name": "Dipeptidyl peptidase 4 [K6R,T557I]",
+   "uniprot": "P27487",
+   "uniprot_raw": "P27487[K6R,T557I]",
+   "organism": "Homo sapiens",
+   "type": "Protein",
+   "n_activities": 32,
+   "n_compounds": 32,
+   "matched_name": "DPP4"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50001013,
+   "name": "Dipeptidyl peptidase 4",
+   "uniprot": "P81425",
+   "uniprot_raw": "P81425",
+   "organism": "Bos taurus",
+   "type": "PROTEIN",
+   "n_activities": 5,
+   "n_compounds": 5,
+   "matched_name": "DPP4"
+  }
+ ]
+}

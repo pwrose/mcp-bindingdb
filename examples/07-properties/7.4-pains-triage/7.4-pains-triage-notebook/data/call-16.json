@@ -1,0 +1,97 @@
+{
+ "row_count": 13,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 50624927,
+   "name": "CHEMBL5398068",
+   "pains": "catechol_A(92)",
+   "assay_a_nm": 7.0,
+   "assay_b_nm": 320.0
+  },
+  {
+   "monomerid": 50624931,
+   "name": "CHEMBL5421129",
+   "pains": "catechol_A(92)",
+   "assay_a_nm": 7.0,
+   "assay_b_nm": 250.0
+  },
+  {
+   "monomerid": 50624929,
+   "name": "CHEMBL5395696",
+   "pains": "catechol_A(92)",
+   "assay_a_nm": 8.0,
+   "assay_b_nm": 230.0
+  },
+  {
+   "monomerid": 50624928,
+   "name": "CHEMBL5413117",
+   "pains": "catechol_A(92)",
+   "assay_a_nm": 10.0,
+   "assay_b_nm": 270.0
+  },
+  {
+   "monomerid": 50624930,
+   "name": "CHEMBL5401317",
+   "pains": "catechol_A(92)",
+   "assay_a_nm": 10.0,
+   "assay_b_nm": 2340.0
+  },
+  {
+   "monomerid": 50624922,
+   "name": "CHEMBL5418840",
+   "pains": "catechol_A(92)",
+   "assay_a_nm": 20.0,
+   "assay_b_nm": 260.0
+  },
+  {
+   "monomerid": 50624923,
+   "name": "CHEMBL5413658",
+   "pains": "catechol_A(92)",
+   "assay_a_nm": 20.0,
+   "assay_b_nm": 210.0
+  },
+  {
+   "monomerid": 50624926,
+   "name": "CHEMBL5425532",
+   "pains": "catechol_A(92)",
+   "assay_a_nm": 30.0,
+   "assay_b_nm": 1110.0
+  },
+  {
+   "monomerid": 50624925,
+   "name": "CHEMBL5441068",
+   "pains": "catechol_A(92)",
+   "assay_a_nm": 40.0,
+   "assay_b_nm": 240.0
+  },
+  {
+   "monomerid": 50624921,
+   "name": "4-Phenylcatechol",
+   "pains": "catechol_A(92)",
+   "assay_a_nm": 50.0,
+   "assay_b_nm": 470.0
+  },
+  {
+   "monomerid": 50624932,
+   "name": "CHEMBL5427414",
+   "pains": "catechol_A(92)",
+   "assay_a_nm": 76.0,
+   "assay_b_nm": 210.0
+  },
+  {
+   "monomerid": 50624924,
+   "name": "CHEMBL5403030",
+   "pains": "catechol_A(92)",
+   "assay_a_nm": 210.0,
+   "assay_b_nm": 1330.0
+  },
+  {
+   "monomerid": 50000541,
+   "name": "Leutrol",
+   "pains": "",
+   "assay_a_nm": 590.0,
+   "assay_b_nm": 900.0
+  }
+ ]
+}

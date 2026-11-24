@@ -1,0 +1,38 @@
+{
+ "row_count": 4,
+ "truncated": false,
+ "rows": [
+  {
+   "affinity_type": "IC50",
+   "n": 204,
+   "papers": 138,
+   "pmin": 4.03,
+   "pmax": 10.0,
+   "pmed": 7.6899999999999995
+  },
+  {
+   "affinity_type": "Kd",
+   "n": 42,
+   "papers": 12,
+   "pmin": 6.33,
+   "pmax": 9.28,
+   "pmed": 9.0
+  },
+  {
+   "affinity_type": "Ki",
+   "n": 8,
+   "papers": 3,
+   "pmin": 7.59,
+   "pmax": 9.4,
+   "pmed": 8.075
+  },
+  {
+   "affinity_type": "EC50",
+   "n": 2,
+   "papers": 2,
+   "pmin": 5.67,
+   "pmax": 7.46,
+   "pmed": 6.5649999999999995
+  }
+ ]
+}

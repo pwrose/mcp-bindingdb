@@ -1,0 +1,15 @@
+{
+ "row_count": 1,
+ "truncated": false,
+ "rows": [
+  {
+   "all_measurements": 3246372,
+   "patent_measurements": 1358065,
+   "all_compounds": 1446839,
+   "patent_compounds": 699143,
+   "patent_compounds_also_elsewhere": 25192,
+   "all_targets": 12002,
+   "patent_targets": 3224
+  }
+ ]
+}

@@ -1,0 +1,159 @@
+{
+ "query": {
+  "input": "c1ccc(Nc2ncnc3ccccc23)cc1",
+  "interpreted_as": "smiles",
+  "canonical": "c1ccc(Nc2ncnc3ccccc23)cc1"
+ },
+ "n_matching_compounds": 6323,
+ "n_targets": 681,
+ "n_compounds_measured": 6252,
+ "row_count": 10,
+ "truncated": true,
+ "rows": [
+  {
+   "target_kind": "polymer",
+   "target_id": 520,
+   "target_name": "Epidermal growth factor receptor",
+   "uniprot_raw": "P00533",
+   "organism": "Homo sapiens",
+   "n_compounds": 2819,
+   "n_measurements": 4689,
+   "affinity_types": [
+    "EC50",
+    "IC50",
+    "Kd",
+    "Ki"
+   ],
+   "best_p_affinity": 11.52
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 692,
+   "target_name": "Vascular endothelial growth factor receptor 2",
+   "uniprot_raw": "P35968",
+   "organism": "Homo sapiens",
+   "n_compounds": 1030,
+   "n_measurements": 1242,
+   "affinity_types": [
+    "IC50",
+    "Kd"
+   ],
+   "best_p_affinity": 9.22
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 188,
+   "target_name": "Receptor tyrosine-protein kinase erbB-2",
+   "uniprot_raw": "P04626",
+   "organism": "Homo sapiens",
+   "n_compounds": 1023,
+   "n_measurements": 1338,
+   "affinity_types": [
+    "EC50",
+    "IC50",
+    "Kd",
+    "Ki"
+   ],
+   "best_p_affinity": 10.4
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50000713,
+   "target_name": "Diacylglycerol kinase alpha",
+   "uniprot_raw": "P23743",
+   "organism": "Homo sapiens",
+   "n_compounds": 783,
+   "n_measurements": 961,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 9.0
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 5506,
+   "target_name": "MAP kinase-interacting serine/threonine-protein kinase 2",
+   "uniprot_raw": "Q9HBH9",
+   "organism": "Homo sapiens",
+   "n_compounds": 509,
+   "n_measurements": 812,
+   "affinity_types": [
+    "IC50",
+    "Kd"
+   ],
+   "best_p_affinity": 9.1
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50003028,
+   "target_name": "Ephrin type-A receptor 2",
+   "uniprot_raw": "P29317",
+   "organism": "Homo sapiens",
+   "n_compounds": 303,
+   "n_measurements": 364,
+   "affinity_types": [
+    "IC50",
+    "Kd"
+   ],
+   "best_p_affinity": 7.3
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 5496,
+   "target_name": "Ephrin type-B receptor 4",
+   "uniprot_raw": "P54760",
+   "organism": "Homo sapiens",
+   "n_compounds": 294,
+   "n_measurements": 374,
+   "affinity_types": [
+    "IC50",
+    "Kd"
+   ],
+   "best_p_affinity": 7.3
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 4026,
+   "target_name": "Broad substrate specificity ATP-binding cassette transporter ABCG2",
+   "uniprot_raw": "Q9UNQ0",
+   "organism": "Homo sapiens",
+   "n_compounds": 230,
+   "n_measurements": 429,
+   "affinity_types": [
+    "EC50",
+    "IC50",
+    "Ki"
+   ],
+   "best_p_affinity": 9.22
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 10482,
+   "target_name": "Mast/stem cell growth factor receptor Kit [544-976]",
+   "uniprot_raw": "P10721[544-976]",
+   "organism": "Homo sapiens",
+   "n_compounds": 212,
+   "n_measurements": 213,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_p_affinity": 8.0
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 13,
+   "target_name": "Proto-oncogene tyrosine-protein kinase Src",
+   "uniprot_raw": "P12931",
+   "organism": "Homo sapiens",
+   "n_compounds": 174,
+   "n_measurements": 219,
+   "affinity_types": [
+    "IC50",
+    "Kd"
+   ],
+   "best_p_affinity": 9.0
+  }
+ ],
+ "compounds_searched": 1466457,
+ "search_set_size": 1466457
+}

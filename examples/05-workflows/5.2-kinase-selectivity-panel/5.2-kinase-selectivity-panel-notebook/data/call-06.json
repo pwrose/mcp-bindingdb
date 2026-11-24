@@ -1,0 +1,10 @@
+{
+ "row_count": 1,
+ "truncated": false,
+ "rows": [
+  {
+   "n_all4": 371,
+   "n_ge8": 48
+  }
+ ]
+}

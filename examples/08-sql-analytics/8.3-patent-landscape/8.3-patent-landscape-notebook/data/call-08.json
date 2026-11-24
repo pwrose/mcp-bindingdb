@@ -1,0 +1,976 @@
+{
+ "row_count": 194,
+ "truncated": false,
+ "rows": [
+  {
+   "year": 2013,
+   "class": "CYP450",
+   "patents": 1
+  },
+  {
+   "year": 2013,
+   "class": "E3",
+   "patents": 1
+  },
+  {
+   "year": 2013,
+   "class": "Epigenetic",
+   "patents": 5
+  },
+  {
+   "year": 2013,
+   "class": "GPCR",
+   "patents": 48
+  },
+  {
+   "year": 2013,
+   "class": "IO",
+   "patents": 1
+  },
+  {
+   "year": 2013,
+   "class": "Ion",
+   "patents": 5
+  },
+  {
+   "year": 2013,
+   "class": "Kinase",
+   "patents": 74
+  },
+  {
+   "year": 2013,
+   "class": "NR",
+   "patents": 2
+  },
+  {
+   "year": 2013,
+   "class": "Other",
+   "patents": 52
+  },
+  {
+   "year": 2013,
+   "class": "PDE",
+   "patents": 6
+  },
+  {
+   "year": 2013,
+   "class": "Protease",
+   "patents": 23
+  },
+  {
+   "year": 2013,
+   "class": "Transporter",
+   "patents": 7
+  },
+  {
+   "year": 2013,
+   "class": "Viral",
+   "patents": 9
+  },
+  {
+   "year": 2014,
+   "class": "CYP450",
+   "patents": 4
+  },
+  {
+   "year": 2014,
+   "class": "E3",
+   "patents": 6
+  },
+  {
+   "year": 2014,
+   "class": "Epigenetic",
+   "patents": 14
+  },
+  {
+   "year": 2014,
+   "class": "GPCR",
+   "patents": 77
+  },
+  {
+   "year": 2014,
+   "class": "Ion",
+   "patents": 13
+  },
+  {
+   "year": 2014,
+   "class": "Kinase",
+   "patents": 112
+  },
+  {
+   "year": 2014,
+   "class": "NR",
+   "patents": 6
+  },
+  {
+   "year": 2014,
+   "class": "Other",
+   "patents": 80
+  },
+  {
+   "year": 2014,
+   "class": "PDE",
+   "patents": 27
+  },
+  {
+   "year": 2014,
+   "class": "Phosphatase",
+   "patents": 1
+  },
+  {
+   "year": 2014,
+   "class": "Protease",
+   "patents": 40
+  },
+  {
+   "year": 2014,
+   "class": "Transporter",
+   "patents": 7
+  },
+  {
+   "year": 2014,
+   "class": "Viral",
+   "patents": 8
+  },
+  {
+   "year": 2015,
+   "class": "CYP450",
+   "patents": 11
+  },
+  {
+   "year": 2015,
+   "class": "E3",
+   "patents": 10
+  },
+  {
+   "year": 2015,
+   "class": "Epigenetic",
+   "patents": 19
+  },
+  {
+   "year": 2015,
+   "class": "GPCR",
+   "patents": 97
+  },
+  {
+   "year": 2015,
+   "class": "IO",
+   "patents": 1
+  },
+  {
+   "year": 2015,
+   "class": "Ion",
+   "patents": 54
+  },
+  {
+   "year": 2015,
+   "class": "Kinase",
+   "patents": 171
+  },
+  {
+   "year": 2015,
+   "class": "NR",
+   "patents": 15
+  },
+  {
+   "year": 2015,
+   "class": "Other",
+   "patents": 166
+  },
+  {
+   "year": 2015,
+   "class": "PDE",
+   "patents": 25
+  },
+  {
+   "year": 2015,
+   "class": "Phosphatase",
+   "patents": 3
+  },
+  {
+   "year": 2015,
+   "class": "Protease",
+   "patents": 64
+  },
+  {
+   "year": 2015,
+   "class": "Transporter",
+   "patents": 17
+  },
+  {
+   "year": 2015,
+   "class": "Viral",
+   "patents": 12
+  },
+  {
+   "year": 2016,
+   "class": "CYP450",
+   "patents": 17
+  },
+  {
+   "year": 2016,
+   "class": "E3",
+   "patents": 14
+  },
+  {
+   "year": 2016,
+   "class": "Epigenetic",
+   "patents": 28
+  },
+  {
+   "year": 2016,
+   "class": "GPCR",
+   "patents": 90
+  },
+  {
+   "year": 2016,
+   "class": "IO",
+   "patents": 6
+  },
+  {
+   "year": 2016,
+   "class": "Ion",
+   "patents": 39
+  },
+  {
+   "year": 2016,
+   "class": "Kinase",
+   "patents": 198
+  },
+  {
+   "year": 2016,
+   "class": "NR",
+   "patents": 13
+  },
+  {
+   "year": 2016,
+   "class": "Other",
+   "patents": 126
+  },
+  {
+   "year": 2016,
+   "class": "PDE",
+   "patents": 22
+  },
+  {
+   "year": 2016,
+   "class": "Phosphatase",
+   "patents": 4
+  },
+  {
+   "year": 2016,
+   "class": "Protease",
+   "patents": 73
+  },
+  {
+   "year": 2016,
+   "class": "Transporter",
+   "patents": 12
+  },
+  {
+   "year": 2016,
+   "class": "Viral",
+   "patents": 20
+  },
+  {
+   "year": 2017,
+   "class": "CYP450",
+   "patents": 14
+  },
+  {
+   "year": 2017,
+   "class": "E3",
+   "patents": 9
+  },
+  {
+   "year": 2017,
+   "class": "Epigenetic",
+   "patents": 56
+  },
+  {
+   "year": 2017,
+   "class": "GPCR",
+   "patents": 117
+  },
+  {
+   "year": 2017,
+   "class": "IO",
+   "patents": 16
+  },
+  {
+   "year": 2017,
+   "class": "Ion",
+   "patents": 58
+  },
+  {
+   "year": 2017,
+   "class": "Kinase",
+   "patents": 246
+  },
+  {
+   "year": 2017,
+   "class": "NR",
+   "patents": 39
+  },
+  {
+   "year": 2017,
+   "class": "Other",
+   "patents": 131
+  },
+  {
+   "year": 2017,
+   "class": "PDE",
+   "patents": 28
+  },
+  {
+   "year": 2017,
+   "class": "Phosphatase",
+   "patents": 3
+  },
+  {
+   "year": 2017,
+   "class": "Protease",
+   "patents": 65
+  },
+  {
+   "year": 2017,
+   "class": "Transporter",
+   "patents": 8
+  },
+  {
+   "year": 2017,
+   "class": "Viral",
+   "patents": 6
+  },
+  {
+   "year": 2018,
+   "class": "CYP450",
+   "patents": 8
+  },
+  {
+   "year": 2018,
+   "class": "E3",
+   "patents": 1
+  },
+  {
+   "year": 2018,
+   "class": "Epigenetic",
+   "patents": 54
+  },
+  {
+   "year": 2018,
+   "class": "GPCR",
+   "patents": 74
+  },
+  {
+   "year": 2018,
+   "class": "IO",
+   "patents": 16
+  },
+  {
+   "year": 2018,
+   "class": "Ion",
+   "patents": 37
+  },
+  {
+   "year": 2018,
+   "class": "Kinase",
+   "patents": 198
+  },
+  {
+   "year": 2018,
+   "class": "NR",
+   "patents": 20
+  },
+  {
+   "year": 2018,
+   "class": "Other",
+   "patents": 93
+  },
+  {
+   "year": 2018,
+   "class": "PDE",
+   "patents": 12
+  },
+  {
+   "year": 2018,
+   "class": "Phosphatase",
+   "patents": 4
+  },
+  {
+   "year": 2018,
+   "class": "Protease",
+   "patents": 49
+  },
+  {
+   "year": 2018,
+   "class": "Transporter",
+   "patents": 11
+  },
+  {
+   "year": 2018,
+   "class": "Viral",
+   "patents": 26
+  },
+  {
+   "year": 2019,
+   "class": "CYP450",
+   "patents": 3
+  },
+  {
+   "year": 2019,
+   "class": "E3",
+   "patents": 4
+  },
+  {
+   "year": 2019,
+   "class": "Epigenetic",
+   "patents": 62
+  },
+  {
+   "year": 2019,
+   "class": "GPCR",
+   "patents": 95
+  },
+  {
+   "year": 2019,
+   "class": "IO",
+   "patents": 23
+  },
+  {
+   "year": 2019,
+   "class": "Ion",
+   "patents": 43
+  },
+  {
+   "year": 2019,
+   "class": "Kinase",
+   "patents": 225
+  },
+  {
+   "year": 2019,
+   "class": "NR",
+   "patents": 42
+  },
+  {
+   "year": 2019,
+   "class": "Other",
+   "patents": 169
+  },
+  {
+   "year": 2019,
+   "class": "PDE",
+   "patents": 16
+  },
+  {
+   "year": 2019,
+   "class": "Phosphatase",
+   "patents": 10
+  },
+  {
+   "year": 2019,
+   "class": "Protease",
+   "patents": 48
+  },
+  {
+   "year": 2019,
+   "class": "Transporter",
+   "patents": 12
+  },
+  {
+   "year": 2019,
+   "class": "Viral",
+   "patents": 21
+  },
+  {
+   "year": 2020,
+   "class": "CYP450",
+   "patents": 1
+  },
+  {
+   "year": 2020,
+   "class": "E3",
+   "patents": 6
+  },
+  {
+   "year": 2020,
+   "class": "Epigenetic",
+   "patents": 58
+  },
+  {
+   "year": 2020,
+   "class": "GPCR",
+   "patents": 94
+  },
+  {
+   "year": 2020,
+   "class": "IO",
+   "patents": 25
+  },
+  {
+   "year": 2020,
+   "class": "Ion",
+   "patents": 42
+  },
+  {
+   "year": 2020,
+   "class": "Kinase",
+   "patents": 230
+  },
+  {
+   "year": 2020,
+   "class": "NR",
+   "patents": 27
+  },
+  {
+   "year": 2020,
+   "class": "Other",
+   "patents": 148
+  },
+  {
+   "year": 2020,
+   "class": "PDE",
+   "patents": 19
+  },
+  {
+   "year": 2020,
+   "class": "Phosphatase",
+   "patents": 5
+  },
+  {
+   "year": 2020,
+   "class": "Protease",
+   "patents": 42
+  },
+  {
+   "year": 2020,
+   "class": "Transporter",
+   "patents": 10
+  },
+  {
+   "year": 2020,
+   "class": "Viral",
+   "patents": 12
+  },
+  {
+   "year": 2021,
+   "class": "CYP450",
+   "patents": 3
+  },
+  {
+   "year": 2021,
+   "class": "E3",
+   "patents": 7
+  },
+  {
+   "year": 2021,
+   "class": "Epigenetic",
+   "patents": 53
+  },
+  {
+   "year": 2021,
+   "class": "GPCR",
+   "patents": 63
+  },
+  {
+   "year": 2021,
+   "class": "IO",
+   "patents": 39
+  },
+  {
+   "year": 2021,
+   "class": "Ion",
+   "patents": 29
+  },
+  {
+   "year": 2021,
+   "class": "Kinase",
+   "patents": 241
+  },
+  {
+   "year": 2021,
+   "class": "NR",
+   "patents": 30
+  },
+  {
+   "year": 2021,
+   "class": "Other",
+   "patents": 163
+  },
+  {
+   "year": 2021,
+   "class": "PDE",
+   "patents": 15
+  },
+  {
+   "year": 2021,
+   "class": "Phosphatase",
+   "patents": 11
+  },
+  {
+   "year": 2021,
+   "class": "Protease",
+   "patents": 53
+  },
+  {
+   "year": 2021,
+   "class": "Transporter",
+   "patents": 7
+  },
+  {
+   "year": 2021,
+   "class": "Viral",
+   "patents": 15
+  },
+  {
+   "year": 2022,
+   "class": "CYP450",
+   "patents": 6
+  },
+  {
+   "year": 2022,
+   "class": "E3",
+   "patents": 15
+  },
+  {
+   "year": 2022,
+   "class": "Epigenetic",
+   "patents": 57
+  },
+  {
+   "year": 2022,
+   "class": "GPCR",
+   "patents": 50
+  },
+  {
+   "year": 2022,
+   "class": "IO",
+   "patents": 38
+  },
+  {
+   "year": 2022,
+   "class": "Ion",
+   "patents": 20
+  },
+  {
+   "year": 2022,
+   "class": "Kinase",
+   "patents": 208
+  },
+  {
+   "year": 2022,
+   "class": "NR",
+   "patents": 13
+  },
+  {
+   "year": 2022,
+   "class": "Other",
+   "patents": 139
+  },
+  {
+   "year": 2022,
+   "class": "PDE",
+   "patents": 17
+  },
+  {
+   "year": 2022,
+   "class": "Phosphatase",
+   "patents": 10
+  },
+  {
+   "year": 2022,
+   "class": "Protease",
+   "patents": 28
+  },
+  {
+   "year": 2022,
+   "class": "Transporter",
+   "patents": 2
+  },
+  {
+   "year": 2022,
+   "class": "Viral",
+   "patents": 40
+  },
+  {
+   "year": 2023,
+   "class": "CYP450",
+   "patents": 7
+  },
+  {
+   "year": 2023,
+   "class": "E3",
+   "patents": 12
+  },
+  {
+   "year": 2023,
+   "class": "Epigenetic",
+   "patents": 40
+  },
+  {
+   "year": 2023,
+   "class": "GPCR",
+   "patents": 57
+  },
+  {
+   "year": 2023,
+   "class": "IO",
+   "patents": 38
+  },
+  {
+   "year": 2023,
+   "class": "Ion",
+   "patents": 25
+  },
+  {
+   "year": 2023,
+   "class": "Kinase",
+   "patents": 228
+  },
+  {
+   "year": 2023,
+   "class": "NR",
+   "patents": 12
+  },
+  {
+   "year": 2023,
+   "class": "Other",
+   "patents": 162
+  },
+  {
+   "year": 2023,
+   "class": "PDE",
+   "patents": 6
+  },
+  {
+   "year": 2023,
+   "class": "Phosphatase",
+   "patents": 22
+  },
+  {
+   "year": 2023,
+   "class": "Protease",
+   "patents": 50
+  },
+  {
+   "year": 2023,
+   "class": "Transporter",
+   "patents": 7
+  },
+  {
+   "year": 2023,
+   "class": "Viral",
+   "patents": 13
+  },
+  {
+   "year": 2024,
+   "class": "CYP450",
+   "patents": 15
+  },
+  {
+   "year": 2024,
+   "class": "E3",
+   "patents": 15
+  },
+  {
+   "year": 2024,
+   "class": "Epigenetic",
+   "patents": 47
+  },
+  {
+   "year": 2024,
+   "class": "GPCR",
+   "patents": 68
+  },
+  {
+   "year": 2024,
+   "class": "IO",
+   "patents": 35
+  },
+  {
+   "year": 2024,
+   "class": "Ion",
+   "patents": 45
+  },
+  {
+   "year": 2024,
+   "class": "Kinase",
+   "patents": 254
+  },
+  {
+   "year": 2024,
+   "class": "NR",
+   "patents": 12
+  },
+  {
+   "year": 2024,
+   "class": "Other",
+   "patents": 257
+  },
+  {
+   "year": 2024,
+   "class": "PDE",
+   "patents": 12
+  },
+  {
+   "year": 2024,
+   "class": "Phosphatase",
+   "patents": 19
+  },
+  {
+   "year": 2024,
+   "class": "Protease",
+   "patents": 31
+  },
+  {
+   "year": 2024,
+   "class": "Transporter",
+   "patents": 11
+  },
+  {
+   "year": 2024,
+   "class": "Viral",
+   "patents": 34
+  },
+  {
+   "year": 2025,
+   "class": "CYP450",
+   "patents": 15
+  },
+  {
+   "year": 2025,
+   "class": "E3",
+   "patents": 27
+  },
+  {
+   "year": 2025,
+   "class": "Epigenetic",
+   "patents": 73
+  },
+  {
+   "year": 2025,
+   "class": "GPCR",
+   "patents": 67
+  },
+  {
+   "year": 2025,
+   "class": "IO",
+   "patents": 25
+  },
+  {
+   "year": 2025,
+   "class": "Ion",
+   "patents": 41
+  },
+  {
+   "year": 2025,
+   "class": "Kinase",
+   "patents": 312
+  },
+  {
+   "year": 2025,
+   "class": "NR",
+   "patents": 14
+  },
+  {
+   "year": 2025,
+   "class": "Other",
+   "patents": 253
+  },
+  {
+   "year": 2025,
+   "class": "PDE",
+   "patents": 14
+  },
+  {
+   "year": 2025,
+   "class": "Phosphatase",
+   "patents": 19
+  },
+  {
+   "year": 2025,
+   "class": "Protease",
+   "patents": 46
+  },
+  {
+   "year": 2025,
+   "class": "Transporter",
+   "patents": 8
+  },
+  {
+   "year": 2025,
+   "class": "Viral",
+   "patents": 25
+  },
+  {
+   "year": 2026,
+   "class": "CYP450",
+   "patents": 4
+  },
+  {
+   "year": 2026,
+   "class": "E3",
+   "patents": 19
+  },
+  {
+   "year": 2026,
+   "class": "Epigenetic",
+   "patents": 17
+  },
+  {
+   "year": 2026,
+   "class": "GPCR",
+   "patents": 19
+  },
+  {
+   "year": 2026,
+   "class": "IO",
+   "patents": 9
+  },
+  {
+   "year": 2026,
+   "class": "Ion",
+   "patents": 10
+  },
+  {
+   "year": 2026,
+   "class": "Kinase",
+   "patents": 108
+  },
+  {
+   "year": 2026,
+   "class": "NR",
+   "patents": 1
+  },
+  {
+   "year": 2026,
+   "class": "Other",
+   "patents": 94
+  },
+  {
+   "year": 2026,
+   "class": "PDE",
+   "patents": 2
+  },
+  {
+   "year": 2026,
+   "class": "Phosphatase",
+   "patents": 5
+  },
+  {
+   "year": 2026,
+   "class": "Protease",
+   "patents": 12
+  },
+  {
+   "year": 2026,
+   "class": "Transporter",
+   "patents": 1
+  },
+  {
+   "year": 2026,
+   "class": "Viral",
+   "patents": 8
+  }
+ ]
+}

@@ -1,0 +1,3756 @@
+{
+ "row_count": 375,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 21398,
+   "name": "Haloperidol",
+   "smiles": "c1cc(ccc1C(=O)CCCN2CCC(CC2)(c3ccc(cc3)Cl)O)F",
+   "p_human": 8.82,
+   "p_rat": 8.74,
+   "n_human": 136,
+   "n_rat": 95,
+   "diff": 0.08
+  },
+  {
+   "monomerid": 50001884,
+   "name": "CLOZARIL",
+   "smiles": "CN1CCN(CC1)C2=Nc3cc(ccc3Nc4c2cccc4)Cl",
+   "p_human": 6.97,
+   "p_rat": 6.89,
+   "n_human": 73,
+   "n_rat": 37,
+   "diff": 0.08
+  },
+  {
+   "monomerid": 21397,
+   "name": "SPIPERONE",
+   "smiles": "c1ccc(cc1)N2CNC(=O)C23CCN(CC3)CCCC(=O)c4ccc(cc4)F",
+   "p_human": 10.0,
+   "p_rat": 9.98,
+   "n_human": 32,
+   "n_rat": 34,
+   "diff": 0.02
+  },
+  {
+   "monomerid": 50001885,
+   "name": "RISPERDAL",
+   "smiles": "CC1=C(C(=O)N2CCCCC2=N1)CCN3CCC(CC3)c4c5ccc(cc5on4)F",
+   "p_human": 8.46,
+   "p_rat": 8.51,
+   "n_human": 36,
+   "n_rat": 28,
+   "diff": -0.05
+  },
+  {
+   "monomerid": 55121,
+   "name": "Dopamine",
+   "smiles": "c1cc(c(cc1CCN)O)O",
+   "p_human": 6.37,
+   "p_rat": 6.415,
+   "n_human": 43,
+   "n_rat": 20,
+   "diff": -0.045
+  },
+  {
+   "monomerid": 22869,
+   "name": "Leponex",
+   "smiles": "CN1CCN(C2=c3ccccc3=Nc3ccc(Cl)cc3N2)CC1",
+   "p_human": 6.825,
+   "p_rat": 6.945,
+   "n_human": 34,
+   "n_rat": 28,
+   "diff": -0.12
+  },
+  {
+   "monomerid": 50001888,
+   "name": "PROMAPAR",
+   "smiles": "CN(C)CCCN1c2ccccc2Sc3c1cc(cc3)Cl",
+   "p_human": 8.52,
+   "p_rat": 8.57,
+   "n_human": 26,
+   "n_rat": 31,
+   "diff": -0.05
+  },
+  {
+   "monomerid": 50130293,
+   "name": "ARIPIPRAZOLE",
+   "smiles": "c1cc(c(c(c1)Cl)Cl)N2CCN(CC2)CCCCOc3ccc4c(c3)NC(=O)CC4",
+   "p_human": 8.8,
+   "p_rat": 9.01,
+   "n_human": 43,
+   "n_rat": 10,
+   "diff": -0.21
+  },
+  {
+   "monomerid": 50001955,
+   "name": "APOKYN",
+   "smiles": "CN1CCc2cccc-3c2[C@H]1Cc4c3c(c(cc4)O)O",
+   "p_human": 7.38,
+   "p_rat": 7.695,
+   "n_human": 27,
+   "n_rat": 20,
+   "diff": -0.315
+  },
+  {
+   "monomerid": 11638,
+   "name": "Sulpiride",
+   "smiles": "CCN1CCCC1CNC(=O)c1cc(ccc1OC)S(N)(=O)=O",
+   "p_human": 7.42,
+   "p_rat": 7.15,
+   "n_human": 13,
+   "n_rat": 31,
+   "diff": 0.27
+  },
+  {
+   "monomerid": 84637,
+   "name": "QUINPIROLE",
+   "smiles": "CCCN1CCC[C@H]2[C@H]1Cc3cn[nH]c3C2",
+   "p_human": 6.05,
+   "p_rat": 6.84,
+   "n_human": 27,
+   "n_rat": 12,
+   "diff": -0.79
+  },
+  {
+   "monomerid": 50008735,
+   "name": "BUTACLAMOL",
+   "smiles": "CC(C)(C)[C@]1(O)CCN2C[C@H]3c4ccccc4CCc4cccc([C@@H]2C1)c34",
+   "p_human": 9.09,
+   "p_rat": 8.66,
+   "n_human": 18,
+   "n_rat": 21,
+   "diff": 0.43
+  },
+  {
+   "monomerid": 35254,
+   "name": "Olansek",
+   "smiles": "CN1CCN(CC1)C1=Nc2ccccc2Nc2sc(C)cc12 |t:8|",
+   "p_human": 7.77,
+   "p_rat": 7.46,
+   "n_human": 24,
+   "n_rat": 12,
+   "diff": 0.31
+  },
+  {
+   "monomerid": 50095890,
+   "name": "QUETIAPINE",
+   "smiles": "OCCOCCN1CCN(CC1)C1=Nc2ccccc2Sc2ccccc12 |t:13|",
+   "p_human": 6.51,
+   "p_rat": 6.77,
+   "n_human": 21,
+   "n_rat": 8,
+   "diff": -0.26
+  },
+  {
+   "monomerid": 50005118,
+   "name": "RACLOPRIDE",
+   "smiles": "CCN1CCC[C@H]1CNC(=O)c1c(O)c(Cl)cc(Cl)c1OC",
+   "p_human": 8.49,
+   "p_rat": 8.7,
+   "n_human": 11,
+   "n_rat": 17,
+   "diff": -0.21
+  },
+  {
+   "monomerid": 50048803,
+   "name": "GEODON",
+   "smiles": "c1ccc2c(c1)c(ns2)N3CCN(CC3)CCc4cc5c(cc4Cl)NC(=O)C5",
+   "p_human": 8.38,
+   "p_rat": 8.435,
+   "n_human": 23,
+   "n_rat": 4,
+   "diff": -0.055
+  },
+  {
+   "monomerid": 82247,
+   "name": "SCH 23388",
+   "smiles": "CN1CCc2cc(Cl)c(O)cc2[C@H](C1)c1ccccc1 |r|",
+   "p_human": 6.045,
+   "p_rat": 6.05,
+   "n_human": 6,
+   "n_rat": 20,
+   "diff": -0.005
+  },
+  {
+   "monomerid": 50002338,
+   "name": "MELLARIL",
+   "smiles": "CN1CCCC[C@H]1CCN2c3ccccc3Sc4c2cc(cc4)SC",
+   "p_human": 7.96,
+   "p_rat": 8.1,
+   "n_human": 13,
+   "n_rat": 12,
+   "diff": -0.14
+  },
+  {
+   "monomerid": 82479,
+   "name": "OLANZAPINE",
+   "smiles": "Cc1cc2c(s1)=Nc1ccccc1NC=2N1CCN(C)CC1",
+   "p_human": 7.51,
+   "p_rat": 7.865,
+   "n_human": 15,
+   "n_rat": 8,
+   "diff": -0.355
+  },
+  {
+   "monomerid": 50001786,
+   "name": "Sertindole",
+   "smiles": "Fc1ccc(cc1)-n1cc(C2CCN(CCN3CCNC3=O)CC2)c2cc(Cl)ccc12",
+   "p_human": 8.58,
+   "p_rat": 9.35,
+   "n_human": 16,
+   "n_rat": 5,
+   "diff": -0.77
+  },
+  {
+   "monomerid": 81774,
+   "name": "Sulpiride-S",
+   "smiles": "CCN1CCC[C@H]1CNC(=O)c2cc(ccc2OC)S(=O)(=O)N",
+   "p_human": 7.29,
+   "p_rat": 7.74,
+   "n_human": 8,
+   "n_rat": 12,
+   "diff": -0.45
+  },
+  {
+   "monomerid": 50020222,
+   "name": "7-OH-DPAT",
+   "smiles": "CCCN(CCC)C1CCc2ccc(O)cc2C1",
+   "p_human": 6.85,
+   "p_rat": 6.85,
+   "n_human": 9,
+   "n_rat": 11,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 81993,
+   "name": "BROMOCRIPTINE",
+   "smiles": "CC(C)C[C@H]1C(=O)N2CCC[C@H]2[C@]3(N1C(=O)[C@](O3)(C(C)C)NC(=O)[C@H]4CN([C@@H]5Cc6c7c(cccc7[nH]c6Br)C5=C4)C)O",
+   "p_human": 8.0,
+   "p_rat": 8.28,
+   "n_human": 11,
+   "n_rat": 7,
+   "diff": -0.28
+  },
+  {
+   "monomerid": 50026957,
+   "name": "Flupenthixol",
+   "smiles": "c1ccc2c(c1)/C(=C/CCN3CCN(CC3)CCO)/c4cc(ccc4S2)C(F)(F)F",
+   "p_human": 8.82,
+   "p_rat": 7.635,
+   "n_human": 8,
+   "n_rat": 10,
+   "diff": 1.185
+  },
+  {
+   "monomerid": 50116766,
+   "name": "PRAMIPEXOLE",
+   "smiles": "CCCN[C@H]1CCc2c(sc(n2)N)C1",
+   "p_human": 7.59,
+   "p_rat": 8.51,
+   "n_human": 17,
+   "n_rat": 1,
+   "diff": -0.92
+  },
+  {
+   "monomerid": 50334150,
+   "name": "Orap",
+   "smiles": "c1ccc2c(c1)NC(=O)N2C3CCN(CC3)CCCC(c4ccc(cc4)F)c5ccc(cc5)F",
+   "p_human": 8.62,
+   "p_rat": 8.62,
+   "n_human": 13,
+   "n_rat": 5,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 21393,
+   "name": "DPAT",
+   "smiles": "CCCN(CCC)C1CCc2cccc(O)c2C1",
+   "p_human": 5.97,
+   "p_rat": 5.91,
+   "n_human": 7,
+   "n_rat": 10,
+   "diff": 0.06
+  },
+  {
+   "monomerid": 50007422,
+   "name": "N-propylapomorphine",
+   "smiles": "CCCN1CCc2cccc-3c2[C@H]1Cc1ccc(O)c(O)c-31 |r|",
+   "p_human": 8.77,
+   "p_rat": 8.55,
+   "n_human": 11,
+   "n_rat": 6,
+   "diff": 0.22
+  },
+  {
+   "monomerid": 50007518,
+   "name": "ETICLOPRIDE",
+   "smiles": "CCc1cc(c(c(c1O)C(=O)NC[C@@H]2CCC[N@]2CC)OC)Cl",
+   "p_human": 9.965,
+   "p_rat": 9.72,
+   "n_human": 4,
+   "n_rat": 13,
+   "diff": 0.245
+  },
+  {
+   "monomerid": 50061669,
+   "name": "(R)-2-(Benzylamino-methyl)-chroman-7-ol; oxalic acid",
+   "smiles": "Oc1ccc2CC[C@H](CNCc3ccccc3)Oc2c1",
+   "p_human": 8.0,
+   "p_rat": 9.09,
+   "n_human": 9,
+   "n_rat": 8,
+   "diff": -1.09
+  },
+  {
+   "monomerid": 50241107,
+   "name": "DOMPERIDONE",
+   "smiles": "c1ccc2c(c1)NC(=O)N2CCCN3CCC(CC3)N4c5ccc(cc5NC4=O)Cl",
+   "p_human": 8.89,
+   "p_rat": 9.28,
+   "n_human": 3,
+   "n_rat": 13,
+   "diff": -0.39
+  },
+  {
+   "monomerid": 21395,
+   "name": "Ketanserin",
+   "smiles": "c1ccc2c(c1)C(=O)N(C(=O)N2)CCN3CCC(CC3)C(=O)c4ccc(cc4)F",
+   "p_human": 6.62,
+   "p_rat": 6.295,
+   "n_human": 1,
+   "n_rat": 14,
+   "diff": 0.325
+  },
+  {
+   "monomerid": 22871,
+   "name": "Loxapine",
+   "smiles": "CN1CCN(CC1)C1=Nc2ccccc2Oc2ccc(Cl)cc12 |t:8|",
+   "p_human": 7.7,
+   "p_rat": 8.1,
+   "n_human": 12,
+   "n_rat": 3,
+   "diff": -0.4
+  },
+  {
+   "monomerid": 50001859,
+   "name": "BUSPAR",
+   "smiles": "c1cnc(nc1)N2CCN(CC2)CCCCN3C(=O)CC4(CCCC4)CC3=O",
+   "p_human": 6.62,
+   "p_rat": 6.44,
+   "n_human": 7,
+   "n_rat": 8,
+   "diff": 0.18
+  },
+  {
+   "monomerid": 50119380,
+   "name": "N-(4-(4-(2-methoxyphenyl)piperazin-1-yl)butyl)-2-naphthamide",
+   "smiles": "COc1ccccc1N1CCN(CCCCNC(=O)c2ccc3ccccc3c2)CC1",
+   "p_human": 6.715,
+   "p_rat": 7.21,
+   "n_human": 14,
+   "n_rat": 1,
+   "diff": -0.495
+  },
+  {
+   "monomerid": 78433,
+   "name": "FLUPHENAZINE",
+   "smiles": "OCCN1CCN(CCCN2c3ccccc3Sc3ccc(cc23)C(F)(F)F)CC1",
+   "p_human": 9.27,
+   "p_rat": 9.3,
+   "n_human": 9,
+   "n_rat": 5,
+   "diff": -0.03
+  },
+  {
+   "monomerid": 50026045,
+   "name": "REMOXIPRIDE",
+   "smiles": "CCN1CCC[C@H]1CNC(=O)c1c(OC)ccc(Br)c1OC",
+   "p_human": 6.98,
+   "p_rat": 5.79,
+   "n_human": 7,
+   "n_rat": 7,
+   "diff": 1.19
+  },
+  {
+   "monomerid": 50119390,
+   "name": "N-(4-(4-(2,3-dichlorophenyl)piperazin-1-yl)butyl)benzo[b]thiophene-2-carboxamide",
+   "smiles": "Clc1cccc(N2CCN(CCCCNC(=O)c3cc4ccccc4s3)CC2)c1Cl",
+   "p_human": 5.59,
+   "p_rat": 5.44,
+   "n_human": 12,
+   "n_rat": 1,
+   "diff": 0.15
+  },
+  {
+   "monomerid": 48320,
+   "name": "METOCLOPRAMIDE",
+   "smiles": "CCN(CC)CCNC(=O)c1cc(Cl)c(N)cc1OC",
+   "p_human": 7.19,
+   "p_rat": 6.965,
+   "n_human": 2,
+   "n_rat": 10,
+   "diff": 0.225
+  },
+  {
+   "monomerid": 79181,
+   "name": "Trifluperazine",
+   "smiles": "CN1CCN(CC1)CCCN2c3ccccc3Sc4c2cc(cc4)C(F)(F)F",
+   "p_human": 8.925,
+   "p_rat": 9.39,
+   "n_human": 6,
+   "n_rat": 5,
+   "diff": -0.465
+  },
+  {
+   "monomerid": 50004822,
+   "name": "SK-38393",
+   "smiles": "Oc1cc2CCNC[C@H](c3ccccc3)c2cc1O",
+   "p_human": 5.19,
+   "p_rat": 5.095,
+   "n_human": 3,
+   "n_rat": 8,
+   "diff": 0.095
+  },
+  {
+   "monomerid": 50010617,
+   "name": "Preclamol",
+   "smiles": "CCCN1CCC[C@H](C1)c1cccc(O)c1",
+   "p_human": 7.57,
+   "p_rat": 7.035,
+   "n_human": 7,
+   "n_rat": 4,
+   "diff": 0.535
+  },
+  {
+   "monomerid": 50069907,
+   "name": "3-(4-Benzyl-piperazin-1-yl)-phenol",
+   "smiles": "Oc1cccc(c1)N1CCN(Cc2ccccc2)CC1",
+   "p_human": 6.775,
+   "p_rat": 7.02,
+   "n_human": 4,
+   "n_rat": 7,
+   "diff": -0.245
+  },
+  {
+   "monomerid": 50071959,
+   "name": "N-(4-(4-(2,3-dichlorophenyl)piperazin-1-yl)butyl)-9H-fluorene-2-carboxamide",
+   "smiles": "Clc1cccc(N2CCN(CCCCNC(=O)c3ccc-4c(Cc5ccccc-45)c3)CC2)c1Cl",
+   "p_human": 6.95,
+   "p_rat": 6.04,
+   "n_human": 8,
+   "n_rat": 3,
+   "diff": 0.91
+  },
+  {
+   "monomerid": 50130290,
+   "name": "Moban",
+   "smiles": "CCc1c(C)[nH]c2c1C(=O)C(CN1CCOCC1)CC2",
+   "p_human": 7.7,
+   "p_rat": 7.48,
+   "n_human": 7,
+   "n_rat": 4,
+   "diff": 0.22
+  },
+  {
+   "monomerid": 50366495,
+   "name": "(+)butaclamol",
+   "smiles": "CC(C)(C)[C@@]1(O)CCN2C[C@@H]3c4ccccc4CCc4cccc([C@H]2C1)c34 |r|",
+   "p_human": 9.22,
+   "p_rat": 8.995,
+   "n_human": 5,
+   "n_rat": 6,
+   "diff": 0.225
+  },
+  {
+   "monomerid": 50370572,
+   "name": "SB-277011",
+   "smiles": "N#Cc1ccc2c(c1)CCN(CC[C@H]1CC[C@H](NC(=O)c3ccnc4ccccc34)CC1)C2",
+   "p_human": 6.3,
+   "p_rat": 5.55,
+   "n_human": 10,
+   "n_rat": 1,
+   "diff": 0.75
+  },
+  {
+   "monomerid": 84636,
+   "name": "NPA-11-OH-R,(+)",
+   "smiles": "CCCN1CCc2cccc-3c2[C@H]1Cc1cccc(O)c-31 |r|",
+   "p_human": 6.94,
+   "p_rat": 7.55,
+   "n_human": 3,
+   "n_rat": 7,
+   "diff": -0.61
+  },
+  {
+   "monomerid": 50005120,
+   "name": "Nemonapride",
+   "smiles": "CNc1cc(OC)c(cc1Cl)C(=O)N[C@H]1CCN(Cc2ccccc2)[C@H]1C",
+   "p_human": 10.075,
+   "p_rat": 10.22,
+   "n_human": 6,
+   "n_rat": 4,
+   "diff": -0.145
+  },
+  {
+   "monomerid": 50008782,
+   "name": "EPIDEPRIDE",
+   "smiles": "CCN1CCC[C@H]1CNC(=O)c1cc(I)cc(OC)c1OC",
+   "p_human": 10.37,
+   "p_rat": 9.96,
+   "n_human": 4,
+   "n_rat": 6,
+   "diff": 0.41
+  },
+  {
+   "monomerid": 50018958,
+   "name": "QUINPIROLE",
+   "smiles": "CCCN1CCC[C@@H]2Cc3n[nH]cc3C[C@H]21",
+   "p_human": 7.15,
+   "p_rat": 7.2,
+   "n_human": 9,
+   "n_rat": 1,
+   "diff": -0.05
+  },
+  {
+   "monomerid": 50050467,
+   "name": "L-741626",
+   "smiles": "OC1(c2ccc(Cl)cc2)CCN(Cc2c[nH]c3ccccc23)CC1",
+   "p_human": 8.12,
+   "p_rat": 8.2,
+   "n_human": 9,
+   "n_rat": 1,
+   "diff": -0.08
+  },
+  {
+   "monomerid": 50252513,
+   "name": "Invega",
+   "smiles": "Cc1nc2C(O)CCCn2c(=O)c1CCN1CCC(CC1)c1noc2cc(F)ccc12",
+   "p_human": 8.55,
+   "p_rat": 8.4,
+   "n_human": 5,
+   "n_rat": 5,
+   "diff": 0.15
+  },
+  {
+   "monomerid": 35256,
+   "name": "Tolvon",
+   "smiles": "CN1CCN2c3ccccc3Cc4ccccc4[C@H]2C1",
+   "p_human": 5.73,
+   "p_rat": 5.77,
+   "n_human": 2,
+   "n_rat": 7,
+   "diff": -0.04
+  },
+  {
+   "monomerid": 35255,
+   "name": "Nipolept",
+   "smiles": "CN(C)CCOC1=Cc2ccccc2Sc3c1cc(cc3)Cl",
+   "p_human": 7.96,
+   "p_rat": 9.0,
+   "n_human": 5,
+   "n_rat": 3,
+   "diff": -1.04
+  },
+  {
+   "monomerid": 78434,
+   "name": "Compro",
+   "smiles": "CN1CCN(CC1)CCCN2c3ccccc3Sc4c2cc(cc4)Cl",
+   "p_human": 8.94,
+   "p_rat": 8.315,
+   "n_human": 6,
+   "n_rat": 2,
+   "diff": 0.625
+  },
+  {
+   "monomerid": 50020221,
+   "name": "5-hydroxy-2-(dipropylamino)tetralin",
+   "smiles": "CCCN(CCC)C1CCc2c(O)cccc2C1",
+   "p_human": 7.59,
+   "p_rat": 7.23,
+   "n_human": 3,
+   "n_rat": 5,
+   "diff": 0.36
+  },
+  {
+   "monomerid": 50020680,
+   "name": "ROPINIROLE",
+   "smiles": "CCCN(CCC)CCc1cccc2NC(=O)Cc12",
+   "p_human": 6.165,
+   "p_rat": 5.755,
+   "n_human": 6,
+   "n_rat": 2,
+   "diff": 0.41
+  },
+  {
+   "monomerid": 50054067,
+   "name": "7-Dipropylamino-5,6,7,8-tetrahydro-naphthalen-2-ol",
+   "smiles": "CCCN(CCC)[C@@H]1CCc2ccc(O)cc2C1",
+   "p_human": 7.4,
+   "p_rat": 6.47,
+   "n_human": 7,
+   "n_rat": 1,
+   "diff": 0.93
+  },
+  {
+   "monomerid": 50061642,
+   "name": "(S)-3-(Benzylamino-methyl)-2,3-dihydro-benzo[1,4]dioxin-6-ol; oxalic acid",
+   "smiles": "Oc1ccc2OC[C@H](CNCc3ccccc3)Oc2c1",
+   "p_human": 8.14,
+   "p_rat": 8.86,
+   "n_human": 2,
+   "n_rat": 6,
+   "diff": -0.72
+  },
+  {
+   "monomerid": 50069914,
+   "name": "3-(2-Benzylamino-ethoxy)-phenol",
+   "smiles": "Oc1cccc(OCCNCc2ccccc2)c1",
+   "p_human": 7.12,
+   "p_rat": 7.72,
+   "n_human": 2,
+   "n_rat": 6,
+   "diff": -0.6
+  },
+  {
+   "monomerid": 50088341,
+   "name": "LE 300",
+   "smiles": "CN1CCc2ccccc2Cc2[nH]c3ccccc3c2CC1",
+   "p_human": 7.35,
+   "p_rat": 8.22,
+   "n_human": 7,
+   "n_rat": 1,
+   "diff": -0.87
+  },
+  {
+   "monomerid": 50241119,
+   "name": "BIFEPRUNOX",
+   "smiles": "O=c1[nH]c2cccc(N3CCN(Cc4cccc(-c5ccccc5)c4)CC3)c2o1",
+   "p_human": 8.66,
+   "p_rat": 8.82,
+   "n_human": 7,
+   "n_rat": 1,
+   "diff": -0.16
+  },
+  {
+   "monomerid": 81771,
+   "name": "MELPERONE",
+   "smiles": "CC1CCN(CCCC(=O)c2ccc(F)cc2)CC1",
+   "p_human": 7.06,
+   "p_rat": 6.7,
+   "n_human": 5,
+   "n_rat": 2,
+   "diff": 0.36
+  },
+  {
+   "monomerid": 194780,
+   "name": "Rexulti",
+   "smiles": "O=c1ccc2ccc(OCCCCN3CCN(c4cccc5sccc45)CC3)cc2[nH]1",
+   "p_human": 9.405,
+   "p_rat": 9.7,
+   "n_human": 4,
+   "n_rat": 3,
+   "diff": -0.295
+  },
+  {
+   "monomerid": 50010686,
+   "name": "dihydrexidine",
+   "smiles": "Oc1cc2CC[C@H]3NCc4ccccc4[C@@H]3c2cc1O",
+   "p_human": 5.82,
+   "p_rat": 5.85,
+   "n_human": 6,
+   "n_rat": 1,
+   "diff": -0.03
+  },
+  {
+   "monomerid": 50041961,
+   "name": "UH-232",
+   "smiles": "CCCN(CCC)[C@@H]1CCc2c(OC)cccc2[C@@H]1C",
+   "p_human": 7.82,
+   "p_rat": 7.405,
+   "n_human": 3,
+   "n_rat": 4,
+   "diff": 0.415
+  },
+  {
+   "monomerid": 50115277,
+   "name": "(S)-(-)-5-hydroxy-2-(N,N-di-n-propylamino)tetralin",
+   "smiles": "CCCN(CCC)[C@H]1CCc2c(O)cccc2C1 |r|",
+   "p_human": 8.15,
+   "p_rat": 7.025,
+   "n_human": 3,
+   "n_rat": 4,
+   "diff": 1.125
+  },
+  {
+   "monomerid": 50130273,
+   "name": "Trilafon",
+   "smiles": "OCCN1CCN(CCCN2c3ccccc3Sc3ccc(Cl)cc23)CC1",
+   "p_human": 8.85,
+   "p_rat": 9.02,
+   "n_human": 4,
+   "n_rat": 3,
+   "diff": -0.17
+  },
+  {
+   "monomerid": 50132693,
+   "name": "Clebopride",
+   "smiles": "COc1cc(N)c(Cl)cc1C(=O)NC1CCN(Cc2ccccc2)CC1",
+   "p_human": 7.83,
+   "p_rat": 8.66,
+   "n_human": 2,
+   "n_rat": 5,
+   "diff": -0.83
+  },
+  {
+   "monomerid": 22872,
+   "name": "Clothepin",
+   "smiles": "CN1CCN(CC1)C1Cc2ccccc2Sc2ccc(Cl)cc12",
+   "p_human": 9.17,
+   "p_rat": 8.8,
+   "n_human": 3,
+   "n_rat": 3,
+   "diff": 0.37
+  },
+  {
+   "monomerid": 78576,
+   "name": "THIOTHIXENE",
+   "smiles": "CN(C)S(=O)(=O)c1ccc2Sc3ccccc3\\C(=C\\CCN3CCN(C)CC3)c2c1",
+   "p_human": 9.35,
+   "p_rat": 9.2,
+   "n_human": 3,
+   "n_rat": 3,
+   "diff": 0.15
+  },
+  {
+   "monomerid": 81486,
+   "name": "MOPERONE",
+   "smiles": "Cc1ccc(cc1)C1(O)CCN(CCCC(=O)c2ccc(F)cc2)CC1",
+   "p_human": 9.14,
+   "p_rat": 6.06,
+   "n_human": 5,
+   "n_rat": 1,
+   "diff": 3.08
+  },
+  {
+   "monomerid": 81790,
+   "name": "Amisulpride",
+   "smiles": "CCN1CCCC1CNC(=O)c1cc(c(N)cc1OC)S(=O)(=O)CC",
+   "p_human": 8.52,
+   "p_rat": 8.225,
+   "n_human": 4,
+   "n_rat": 2,
+   "diff": 0.295
+  },
+  {
+   "monomerid": 81924,
+   "name": "3PPP(+/-)",
+   "smiles": "CCCN1CCCC(C1)c1cccc(O)c1",
+   "p_human": 6.59,
+   "p_rat": 6.65,
+   "n_human": 2,
+   "n_rat": 4,
+   "diff": -0.06
+  },
+  {
+   "monomerid": 85672,
+   "name": "S33084",
+   "smiles": "O=C(NCCCCN1C[C@@H]2COc3ccc(cc3[C@H]2C1)C#N)c1ccc(cc1)-c1ccccc1 |r|",
+   "p_human": 7.495,
+   "p_rat": 6.995,
+   "n_human": 4,
+   "n_rat": 2,
+   "diff": 0.5
+  },
+  {
+   "monomerid": 50001775,
+   "name": "RITANSERIN",
+   "smiles": "CC1=C(C(=O)N2C=CSC2=N1)CCN3CCC(=C(c4ccc(cc4)F)c5ccc(cc5)F)CC3",
+   "p_human": 7.54,
+   "p_rat": 7.495,
+   "n_human": 2,
+   "n_rat": 4,
+   "diff": 0.045
+  },
+  {
+   "monomerid": 50010594,
+   "name": "ISOCLOZAPINE",
+   "smiles": "CN1CCN(CC1)C1=Nc2ccccc2Nc2ccc(Cl)cc12 |t:8|",
+   "p_human": 8.22,
+   "p_rat": 7.89,
+   "n_human": 3,
+   "n_rat": 3,
+   "diff": 0.33
+  },
+  {
+   "monomerid": 50017543,
+   "name": "Permax",
+   "smiles": "CCCN1C[C@H](CSC)C[C@@H]2c3cccc4[nH]cc(c34)C[C@H]21",
+   "p_human": 8.4,
+   "p_rat": 9.0,
+   "n_human": 5,
+   "n_rat": 1,
+   "diff": -0.6
+  },
+  {
+   "monomerid": 50029257,
+   "name": "mazapertine",
+   "smiles": "CC(C)Oc1ccccc1N1CCN(Cc2cccc(c2)C(=O)N2CCCCC2)CC1",
+   "p_human": 8.66,
+   "p_rat": 8.66,
+   "n_human": 1,
+   "n_rat": 5,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 50034043,
+   "name": "ILOPERIDONE",
+   "smiles": "COc1cc(ccc1OCCCN1CCC(CC1)c1noc2cc(F)ccc12)C(C)=O",
+   "p_human": 8.2,
+   "p_rat": 7.27,
+   "n_human": 5,
+   "n_rat": 1,
+   "diff": 0.93
+  },
+  {
+   "monomerid": 50034330,
+   "name": "(3aR,9bS) 3-Allyl-9-methoxy-2,3,3a,4,5,9b-hexahydro-1H-benzo[e]indole",
+   "smiles": "COc1cccc2CC[C@@H]3[C@@H](CCN3CC=C)c12",
+   "p_human": 7.11,
+   "p_rat": 6.57,
+   "n_human": 3,
+   "n_rat": 3,
+   "diff": 0.54
+  },
+  {
+   "monomerid": 50034346,
+   "name": "1-Allyl-2,3,3a,4,9,9a-hexahydro-1H-benzo[f]indol-5-ol",
+   "smiles": "Oc1cccc2C[C@@H]3[C@H](CCN3CC=C)Cc12",
+   "p_human": 6.63,
+   "p_rat": 7.33,
+   "n_human": 3,
+   "n_rat": 3,
+   "diff": -0.7
+  },
+  {
+   "monomerid": 50034352,
+   "name": "1-Propyl-2,3,3a,4,9,9a-hexahydro-1H-benzo[f]indol-5-ol",
+   "smiles": "CCCN1CC[C@@H]2Cc3c(O)cccc3C[C@@H]12",
+   "p_human": 8.62,
+   "p_rat": 7.77,
+   "n_human": 3,
+   "n_rat": 3,
+   "diff": 0.85
+  },
+  {
+   "monomerid": 50041959,
+   "name": "AJ76(+)",
+   "smiles": "CCCN[C@@H]1CCc2c(OC)cccc2[C@@H]1C",
+   "p_human": 6.92,
+   "p_rat": 6.52,
+   "n_human": 3,
+   "n_rat": 3,
+   "diff": 0.4
+  },
+  {
+   "monomerid": 50071854,
+   "name": "4-(4-Benzyl-piperazin-1-yl)-1,3-dihydro-benzoimidazol-2-one",
+   "smiles": "O=c1[nH]c2cccc(N3CCN(Cc4ccccc4)CC3)c2[nH]1",
+   "p_human": 7.06,
+   "p_rat": 7.34,
+   "n_human": 1,
+   "n_rat": 5,
+   "diff": -0.28
+  },
+  {
+   "monomerid": 50071856,
+   "name": "4-(4-Benzyl-piperazin-1-yl)-1,3-dihydro-indol-2-one",
+   "smiles": "O=C1Cc2c(N1)cccc2N1CCN(Cc2ccccc2)CC1",
+   "p_human": 8.1,
+   "p_rat": 8.1,
+   "n_human": 1,
+   "n_rat": 5,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 50071859,
+   "name": "4-(4-Benzyl-piperazin-1-yl)-5-chloro-1,3-dihydro-indol-2-one",
+   "smiles": "Clc1ccc2NC(=O)Cc2c1N1CCN(Cc2ccccc2)CC1",
+   "p_human": 6.27,
+   "p_rat": 6.39,
+   "n_human": 1,
+   "n_rat": 5,
+   "diff": -0.12
+  },
+  {
+   "monomerid": 50129426,
+   "name": "N-(4-(4-(2,3-dichlorophenyl)piperazin-1-yl)butyl)-4-(pyridin-2-yl)benzamide",
+   "smiles": "Clc1cccc(N2CCN(CCCCNC(=O)c3ccc(cc3)-c3ccccn3)CC2)c1Cl",
+   "p_human": 7.61,
+   "p_rat": 7.24,
+   "n_human": 4,
+   "n_rat": 2,
+   "diff": 0.37
+  },
+  {
+   "monomerid": 50129429,
+   "name": "N-(4-(4-(2,3-dichlorophenyl)piperazin-1-yl)but-2-enyl)-9H-fluorene-2-carboxamide",
+   "smiles": "Clc1cccc(N2CCN(C\\C=C\\CNC(=O)c3ccc-4c(Cc5ccccc-45)c3)CC2)c1Cl",
+   "p_human": 6.77,
+   "p_rat": 6.7,
+   "n_human": 4,
+   "n_rat": 2,
+   "diff": 0.07
+  },
+  {
+   "monomerid": 26948,
+   "name": "FLUSPIRILENE",
+   "smiles": "Fc1ccc(cc1)C(CCCN1CCC2(CC1)N(CNC2=O)c1ccccc1)c1ccc(F)cc1",
+   "p_human": 9.435,
+   "p_rat": 8.82,
+   "n_human": 4,
+   "n_rat": 1,
+   "diff": 0.615
+  },
+  {
+   "monomerid": 81775,
+   "name": "Sulpiride-R",
+   "smiles": "CCN1CCC[C@@H]1CNC(=O)c1cc(ccc1OC)S(N)(=O)=O |r|",
+   "p_human": 5.33,
+   "p_rat": 5.73,
+   "n_human": 1,
+   "n_rat": 4,
+   "diff": -0.4
+  },
+  {
+   "monomerid": 81777,
+   "name": "NPA",
+   "smiles": "c1ccc2c(c1)cccc2NC(=O)c3ccccc3C(=O)O",
+   "p_human": 6.08,
+   "p_rat": 8.32,
+   "n_human": 4,
+   "n_rat": 1,
+   "diff": -2.24
+  },
+  {
+   "monomerid": 84994,
+   "name": "ORG-5222",
+   "smiles": "CN1CC2C(C1)c1cc(Cl)ccc1Oc1ccccc21",
+   "p_human": 8.7,
+   "p_rat": 8.85,
+   "n_human": 3,
+   "n_rat": 2,
+   "diff": -0.15
+  },
+  {
+   "monomerid": 85067,
+   "name": "PNU 96415E",
+   "smiles": "Fc1ccc(cc1)N1CCN(CCC2OCCc3ccccc23)CC1",
+   "p_human": 6.7,
+   "p_rat": 6.75,
+   "n_human": 3,
+   "n_rat": 2,
+   "diff": -0.05
+  },
+  {
+   "monomerid": 86473,
+   "name": "S32504 (+)",
+   "smiles": "CCCN1CCO[C@H]2[C@H]1CCc1ccc(cc21)C(N)=O",
+   "p_human": 6.205,
+   "p_rat": 6.34,
+   "n_human": 4,
+   "n_rat": 1,
+   "diff": -0.135
+  },
+  {
+   "monomerid": 50002173,
+   "name": "roxindole",
+   "smiles": "Oc1ccc2[nH]cc(CCCCN3CC=C(c4ccccc4)CC3)c2c1",
+   "p_human": 8.455,
+   "p_rat": 8.04,
+   "n_human": 2,
+   "n_rat": 3,
+   "diff": 0.415
+  },
+  {
+   "monomerid": 50004823,
+   "name": "Ecopipam",
+   "smiles": "CN1CCc2cc(Cl)c(O)cc2[C@@H]2[C@@H]1CCc1ccccc21",
+   "p_human": 6.01,
+   "p_rat": 5.83,
+   "n_human": 3,
+   "n_rat": 2,
+   "diff": 0.18
+  },
+  {
+   "monomerid": 50012961,
+   "name": "N-(1-Ethyl-pyrrolidin-2-ylmethyl)-2-hydroxy-3-iodo-6-methoxy-benzamide",
+   "smiles": "CCN1CCC[C@H]1CNC(=O)c1c(O)c(I)ccc1OC",
+   "p_human": 8.38,
+   "p_rat": 9.37,
+   "n_human": 2,
+   "n_rat": 3,
+   "diff": -0.99
+  },
+  {
+   "monomerid": 50013515,
+   "name": "Johimbin",
+   "smiles": "COC(=O)[C@@H]1[C@H]2C[C@H]3c4[nH]c5ccccc5c4CCN3C[C@@H]2CC[C@@H]1O",
+   "p_human": 6.475,
+   "p_rat": 6.3,
+   "n_human": 2,
+   "n_rat": 3,
+   "diff": 0.175
+  },
+  {
+   "monomerid": 50025206,
+   "name": "TL99",
+   "smiles": "C[NH+](C)C1CCc2cc(O)c(O)cc2C1",
+   "p_human": 7.175,
+   "p_rat": 7.74,
+   "n_human": 4,
+   "n_rat": 1,
+   "diff": -0.565
+  },
+  {
+   "monomerid": 50028421,
+   "name": "Permax",
+   "smiles": "CCCN1C[C@H](CSC)C[C@@H]2c3cccc4[nH]cc(c34)C[C@H]21",
+   "p_human": 7.59,
+   "p_rat": 7.895,
+   "n_human": 3,
+   "n_rat": 2,
+   "diff": -0.305
+  },
+  {
+   "monomerid": 50034341,
+   "name": "(3aR,9bS)3-Allyl-6-methoxy-2,3,3a,4,5,9b-hexahydro-1H-benzo[e]indole",
+   "smiles": "COc1cccc2[C@@H]3CCN(CC=C)[C@@H]3CCc12",
+   "p_human": 7.74,
+   "p_rat": 7.6,
+   "n_human": 3,
+   "n_rat": 2,
+   "diff": 0.14
+  },
+  {
+   "monomerid": 50048299,
+   "name": "CI-1007",
+   "smiles": "C1=C(c2ccccc2)CCN(C[C@@H]2CCC=C(c3ccccc3)C2)C1",
+   "p_human": 7.59,
+   "p_rat": 7.88,
+   "n_human": 3,
+   "n_rat": 2,
+   "diff": -0.29
+  },
+  {
+   "monomerid": 50077569,
+   "name": "Benzyl-[(R)-1-(2,3,4,7-tetrahydro-pyrano[2,3-e]indol-2-yl)methyl]-amine",
+   "smiles": "c1ccc(CNC[C@H]2CCc3ccc4[nH]ccc4c3O2)cc1",
+   "p_human": 6.97,
+   "p_rat": 8.08,
+   "n_human": 1,
+   "n_rat": 4,
+   "diff": -1.11
+  },
+  {
+   "monomerid": 50077576,
+   "name": "Benzyl-[2-(1H-indol-4-yloxy)-ethyl]-amine",
+   "smiles": "c1ccc(CNCCOc2cccc3[nH]ccc23)cc1",
+   "p_human": 7.09,
+   "p_rat": 7.71,
+   "n_human": 1,
+   "n_rat": 4,
+   "diff": -0.62
+  },
+  {
+   "monomerid": 50077578,
+   "name": "4-(2-Benzylamino-ethoxy)-1,3-dihydro-indol-2-one",
+   "smiles": "O=C1Cc2c(N1)cccc2OCCNCc1ccccc1",
+   "p_human": 8.37,
+   "p_rat": 8.82,
+   "n_human": 1,
+   "n_rat": 4,
+   "diff": -0.45
+  },
+  {
+   "monomerid": 50077581,
+   "name": "(R)-2-(Benzylamino-methyl)-3,4,7,9-tetrahydro-2H-pyrano[2,3-e]indol-8-one",
+   "smiles": "O=C1Cc2c(N1)ccc1CC[C@H](CNCc3ccccc3)Oc21",
+   "p_human": 8.03,
+   "p_rat": 9.04,
+   "n_human": 1,
+   "n_rat": 4,
+   "diff": -1.01
+  },
+  {
+   "monomerid": 50098549,
+   "name": "3-Methyl-2-((R)-6-methyl-5,6,6a,7-tetrahydro-4H-dibenzo[de,g]quinolin-11-yl)-benzonitrile",
+   "smiles": "Cc1cccc(C#N)c1-c1cccc2c1-c1cccc3c1[C@@H](C2)N(C)CC3",
+   "p_human": 5.61,
+   "p_rat": 6.3,
+   "n_human": 2,
+   "n_rat": 3,
+   "diff": -0.69
+  },
+  {
+   "monomerid": 50099814,
+   "name": "4-Bromo-1-methoxy-naphthalene-2-carboxylic acid (1-benzyl-pyrrolidin-3-yl)-amide",
+   "smiles": "COc1c(cc(Br)c2ccccc12)C(=O)N[C@@H]1CCN(Cc2ccccc2)C1",
+   "p_human": 6.78,
+   "p_rat": 7.92,
+   "n_human": 4,
+   "n_rat": 1,
+   "diff": -1.14
+  },
+  {
+   "monomerid": 50104122,
+   "name": "9-Oxo-9H-fluorene-4-carboxylic acid {4-[4-(2,3-dichloro-phenyl)-piperazin-1-yl]-butyl}-amide",
+   "smiles": "Clc1cccc(N2CCN(CCCCNC(=O)c3cccc4C(=O)c5ccccc5-c34)CC2)c1Cl",
+   "p_human": 7.15,
+   "p_rat": 6.935,
+   "n_human": 3,
+   "n_rat": 2,
+   "diff": 0.215
+  },
+  {
+   "monomerid": 50117181,
+   "name": "Dinapsoline, (+/-)",
+   "smiles": "Oc1ccc2[C@@H]3CNCc4cccc(Cc2c1O)c34",
+   "p_human": 7.95,
+   "p_rat": 7.46,
+   "n_human": 1,
+   "n_rat": 4,
+   "diff": 0.49
+  },
+  {
+   "monomerid": 50119377,
+   "name": "N-(4-(4-(2-methoxyphenyl)piperazin-1-yl)butyl)benzofuran-2-carboxamide",
+   "smiles": "COc1ccccc1N1CCN(CCCCNC(=O)c2cc3ccccc3o2)CC1",
+   "p_human": 6.96,
+   "p_rat": 7.06,
+   "n_human": 4,
+   "n_rat": 1,
+   "diff": -0.1
+  },
+  {
+   "monomerid": 50129428,
+   "name": "N-{4-[4-(2,3-Dichloro-phenyl)-piperazin-1-yl]-butyl}-4-iodo-benzamide",
+   "smiles": "Clc1cccc(N2CCN(CCCCNC(=O)c3ccc(I)cc3)CC2)c1Cl",
+   "p_human": 7.41,
+   "p_rat": 7.06,
+   "n_human": 3,
+   "n_rat": 2,
+   "diff": 0.35
+  },
+  {
+   "monomerid": 50129432,
+   "name": "Quinoxaline-2-carboxylic acid {4-[4-(2,3-dichloro-phenyl)-piperazin-1-yl]-butyl}-amide",
+   "smiles": "Clc1cccc(N2CCN(CCCCNC(=O)c3cnc4ccccc4n3)CC2)c1Cl",
+   "p_human": 7.53,
+   "p_rat": 6.96,
+   "n_human": 3,
+   "n_rat": 2,
+   "diff": 0.57
+  },
+  {
+   "monomerid": 50129433,
+   "name": "N-{4-[4-(2,3-Dichloro-phenyl)-piperazin-1-yl]-but-2-enyl}-benzamide",
+   "smiles": "Clc1cccc(N2CCN(C\\C=C\\CNC(=O)c3ccccc3)CC2)c1Cl",
+   "p_human": 8.54,
+   "p_rat": 7.3,
+   "n_human": 3,
+   "n_rat": 2,
+   "diff": 1.24
+  },
+  {
+   "monomerid": 50131440,
+   "name": "Serentil",
+   "smiles": "CN1CCCCC1CCN1c2ccccc2Sc2ccc(cc12)S(C)=O",
+   "p_human": 7.72,
+   "p_rat": 8.2,
+   "n_human": 3,
+   "n_rat": 2,
+   "diff": -0.48
+  },
+  {
+   "monomerid": 50409510,
+   "name": "CHEMBL308480",
+   "smiles": "Fc1ccc(cc1)C(=O)C1CCN(CC2CC(=O)c3ccccc3C2)CC1",
+   "p_human": 6.65,
+   "p_rat": 7.68,
+   "n_human": 3,
+   "n_rat": 2,
+   "diff": -1.03
+  },
+  {
+   "monomerid": 22870,
+   "name": "Asendin",
+   "smiles": "Clc1ccc2Oc3ccccc3N=C(N3CCNCC3)c2c1 |t:13|",
+   "p_human": 7.8,
+   "p_rat": 7.7,
+   "n_human": 3,
+   "n_rat": 1,
+   "diff": 0.1
+  },
+  {
+   "monomerid": 81792,
+   "name": "UH232",
+   "smiles": "CCCN(CCC)C1C=Cc2c(OC)cccc2C1C |c:8|",
+   "p_human": 7.53,
+   "p_rat": 7.4,
+   "n_human": 3,
+   "n_rat": 1,
+   "diff": 0.13
+  },
+  {
+   "monomerid": 82517,
+   "name": "NAN-190",
+   "smiles": "COc1ccccc1N1CCN(CCCCN2C(=O)c3ccccc3C2=O)CC1",
+   "p_human": 7.315,
+   "p_rat": 7.19,
+   "n_human": 2,
+   "n_rat": 2,
+   "diff": 0.125
+  },
+  {
+   "monomerid": 86053,
+   "name": "Talipexole",
+   "smiles": "Nc1nc2CCN(CC=C)CCc2s1",
+   "p_human": 6.11,
+   "p_rat": 6.905,
+   "n_human": 2,
+   "n_rat": 2,
+   "diff": -0.795
+  },
+  {
+   "monomerid": 194808,
+   "name": "US9206167, 30",
+   "smiles": "CN1CCc2ccc(OCCCN3CCN(CC3)c3cccc4sccc34)cc2C1=O",
+   "p_human": 7.82,
+   "p_rat": 9.15,
+   "n_human": 1,
+   "n_rat": 3,
+   "diff": -1.33
+  },
+  {
+   "monomerid": 248056,
+   "name": "Adoprazine",
+   "smiles": "Fc1ccc(cc1)-c1cncc(CN2CCN(CC2)c2cccc3OCCOc23)c1",
+   "p_human": 8.4,
+   "p_rat": 8.4,
+   "n_human": 3,
+   "n_rat": 1,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 50004917,
+   "name": "SKF 82958",
+   "smiles": "Oc1cc2C(CN(CC=C)CCc2c(Cl)c1O)c1ccccc1",
+   "p_human": 5.89,
+   "p_rat": 6.58,
+   "n_human": 3,
+   "n_rat": 1,
+   "diff": -0.69
+  },
+  {
+   "monomerid": 50004923,
+   "name": "SK-38393",
+   "smiles": "Oc1cc2CCNCC(c3ccccc3)c2cc1O",
+   "p_human": 5.93,
+   "p_rat": 5.16,
+   "n_human": 2,
+   "n_rat": 2,
+   "diff": 0.77
+  },
+  {
+   "monomerid": 50007517,
+   "name": "3-Bromo-N-(1-ethyl-pyrrolidin-2-ylmethyl)-2-hydroxy-5,6-dimethoxy-benzamide",
+   "smiles": "CCN1CCC[C@H]1CNC(=O)c1c(O)c(Br)cc(OC)c1OC",
+   "p_human": 8.995,
+   "p_rat": 10.19,
+   "n_human": 2,
+   "n_rat": 2,
+   "diff": -1.195
+  },
+  {
+   "monomerid": 50007522,
+   "name": "5-Bromo-N-(1-ethyl-pyrrolidin-2-ylmethyl)-2,3-dimethoxy-benzamide",
+   "smiles": "CCN1CCC[C@H]1CNC(=O)c1cc(Br)cc(OC)c1OC |r|",
+   "p_human": 11.52,
+   "p_rat": 9.7,
+   "n_human": 1,
+   "n_rat": 3,
+   "diff": 1.82
+  },
+  {
+   "monomerid": 50007567,
+   "name": "OCTOCLOTHEPIN-R",
+   "smiles": "CN1CCN(CC1)[C@@H]1Cc2ccccc2Sc2ccc(Cl)cc12",
+   "p_human": 8.14,
+   "p_rat": 8.44,
+   "n_human": 1,
+   "n_rat": 3,
+   "diff": -0.3
+  },
+  {
+   "monomerid": 50010859,
+   "name": "Imipramin",
+   "smiles": "CN(C)CCCN1c2ccccc2CCc3c1cccc3",
+   "p_human": 6.14,
+   "p_rat": 6.03,
+   "n_human": 3,
+   "n_rat": 1,
+   "diff": 0.11
+  },
+  {
+   "monomerid": 50013019,
+   "name": "UH-301",
+   "smiles": "CCCN(CCC)[C@H]1CCc2c(F)ccc(O)c2C1",
+   "p_human": 5.42,
+   "p_rat": 6.21,
+   "n_human": 1,
+   "n_rat": 3,
+   "diff": -0.79
+  },
+  {
+   "monomerid": 50016777,
+   "name": "7-Dipropylamino-5,6,7,8-tetrahydro-naphthalen-1-ol",
+   "smiles": "CCCN(CCC)[C@@H]1CCc2cccc(c2C1)O",
+   "p_human": 7.03,
+   "p_rat": 6.08,
+   "n_human": 3,
+   "n_rat": 1,
+   "diff": 0.95
+  },
+  {
+   "monomerid": 50019960,
+   "name": "4-Fluoro-N-{2-[4-(2-methoxy-phenyl)-piperazin-1-yl]-ethyl}-benzamide",
+   "smiles": "COc1ccccc1N1CCN(CCNC(=O)c2ccc(F)cc2)CC1",
+   "p_human": 8.3,
+   "p_rat": 8.3,
+   "n_human": 1,
+   "n_rat": 3,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 50034324,
+   "name": "5-Methoxy-1-propyl-2,3,3a,4,9,9a-hexahydro-1H-benzo[f]indole",
+   "smiles": "CCCN1CC[C@@H]2Cc3c(C[C@@H]12)cccc3OC",
+   "p_human": 7.12,
+   "p_rat": 6.06,
+   "n_human": 3,
+   "n_rat": 1,
+   "diff": 1.06
+  },
+  {
+   "monomerid": 50034355,
+   "name": "(3aR,9bS)3-Allyl-2,3,3a,4,5,9b-hexahydro-1H-benzo[e]indol-6-ol",
+   "smiles": "Oc1cccc2[C@@H]3CCN(CC=C)[C@@H]3CCc12",
+   "p_human": 7.045,
+   "p_rat": 7.005,
+   "n_human": 2,
+   "n_rat": 2,
+   "diff": 0.04
+  },
+  {
+   "monomerid": 50036286,
+   "name": "(R)-(-)-10-methyl-11-hydroxyaporphine",
+   "smiles": "CN1CCc2cccc-3c2[C@H]1Cc1ccc(C)c(O)c-31",
+   "p_human": 5.97,
+   "p_rat": 5.455,
+   "n_human": 2,
+   "n_rat": 2,
+   "diff": 0.515
+  },
+  {
+   "monomerid": 50039749,
+   "name": "(S)-3-(3-(methylsulfonyl)phenyl)-1-propylpiperidine",
+   "smiles": "CCCN1CCC[C@H](C1)c1cccc(c1)S(C)(=O)=O",
+   "p_human": 6.12,
+   "p_rat": 5.2,
+   "n_human": 3,
+   "n_rat": 1,
+   "diff": 0.92
+  },
+  {
+   "monomerid": 50039760,
+   "name": "(-)-Trifluoro-methanesulfonic acid 3-(1-propyl-piperidin-3-yl)-phenyl ester",
+   "smiles": "CCCN1CCC[C@H](C1)c1cccc(OS(=O)(=O)C(F)(F)F)c1",
+   "p_human": 7.32,
+   "p_rat": 6.39,
+   "n_human": 1,
+   "n_rat": 3,
+   "diff": 0.93
+  },
+  {
+   "monomerid": 50040159,
+   "name": "3-Allyl-2,3,3a,4,5,9b-hexahydro-1H-benzo[e]indol-6-ol",
+   "smiles": "Oc1cccc2C3CCN(CC=C)C3CCc12",
+   "p_human": 7.12,
+   "p_rat": 6.7,
+   "n_human": 2,
+   "n_rat": 2,
+   "diff": 0.42
+  },
+  {
+   "monomerid": 50040170,
+   "name": "3-Allyl-6-methoxy-2,3,3a,4,5,9b-hexahydro-1H-benzo[e]indole",
+   "smiles": "COc1cccc2C3CCN(CC=C)[C@@H]3CCc12",
+   "p_human": 7.11,
+   "p_rat": 7.38,
+   "n_human": 2,
+   "n_rat": 2,
+   "diff": -0.27
+  },
+  {
+   "monomerid": 50064946,
+   "name": "Hydroxyhaloperidol",
+   "smiles": "OC(CCCN1CCC(O)(CC1)c1ccc(Cl)cc1)c1ccc(F)cc1",
+   "p_human": 7.04,
+   "p_rat": 6.625,
+   "n_human": 2,
+   "n_rat": 2,
+   "diff": 0.415
+  },
+  {
+   "monomerid": 50087024,
+   "name": "6-Methyl-1,5,5a,6,7,8-hexahydro-6-aza-benzo[mno]aceanthrylen-1-ylamine",
+   "smiles": "CN1CCc2ccc3[C@@H](N)c4cccc5C[C@@H]1c2c3-c45",
+   "p_human": 5.65,
+   "p_rat": 5.65,
+   "n_human": 3,
+   "n_rat": 1,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 50102325,
+   "name": "Perlapine",
+   "smiles": "CN1CCN(CC1)C1=Nc2ccccc2Cc2ccccc12 |t:8|",
+   "p_human": 7.22,
+   "p_rat": 6.3,
+   "n_human": 2,
+   "n_rat": 2,
+   "diff": 0.92
+  },
+  {
+   "monomerid": 50137976,
+   "name": "9-(4-Methyl-piperazin-1-yl)-4-thia-10a-aza-benzo[f]azulene",
+   "smiles": "CN1CCN(CC1)C1=Cn2cccc2Sc2ccccc12 |t:8|",
+   "p_human": 7.89,
+   "p_rat": 7.77,
+   "n_human": 1,
+   "n_rat": 3,
+   "diff": 0.12
+  },
+  {
+   "monomerid": 50240797,
+   "name": "GR218231",
+   "smiles": "CCCN(CCC)C1CCc2cc(CS(=O)(=O)c3ccc(OC)cc3)ccc2C1",
+   "p_human": 6.86,
+   "p_rat": 7.1,
+   "n_human": 3,
+   "n_rat": 1,
+   "diff": -0.24
+  },
+  {
+   "monomerid": 50251027,
+   "name": "(R)-(-)-2-(4-Hydroxyphenyl)-apomorphine hydrochloride",
+   "smiles": "CN1CCc2cc(cc-3c2[C@H]1Cc1ccc(O)c(O)c-31)-c1ccc(O)cc1 |r|",
+   "p_human": 8.42,
+   "p_rat": 8.39,
+   "n_human": 1,
+   "n_rat": 3,
+   "diff": 0.03
+  },
+  {
+   "monomerid": 50273937,
+   "name": "D-315",
+   "smiles": "CCCN(CCN1CCN(CC1)c1ccccc1)[C@@H]1CCc2ccc(O)cc2C1 |r|",
+   "p_human": 7.39,
+   "p_rat": 7.39,
+   "n_human": 1,
+   "n_rat": 3,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 50273996,
+   "name": "D-264",
+   "smiles": "CCCN(CCN1CCN(CC1)c1ccc(cc1)-c1ccccc1)[C@H]1CCc2nc(N)sc2C1 |r|",
+   "p_human": 6.58,
+   "p_rat": 6.58,
+   "n_human": 1,
+   "n_rat": 3,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 50285668,
+   "name": "2-(4-{3-[4-(2-Methoxy-phenyl)-piperazin-1-yl]-propoxy}-phenyl)-1H-benzoimidazole",
+   "smiles": "COc1ccccc1N1CCN(CCCOc2ccc(-c3nc4ccccc4[nH]3)cc2)CC1",
+   "p_human": 8.06,
+   "p_rat": 7.8,
+   "n_human": 3,
+   "n_rat": 1,
+   "diff": 0.26
+  },
+  {
+   "monomerid": 50492966,
+   "name": "CHEMBL2414991",
+   "smiles": "CN1CCc2cc(O)c(O)c3-c4ccccc4CC1c23",
+   "p_human": 6.47,
+   "p_rat": 7.41,
+   "n_human": 2,
+   "n_rat": 2,
+   "diff": -0.94
+  },
+  {
+   "monomerid": 31005,
+   "name": "MIANSERIN HYDROCHLORIDE",
+   "smiles": "CN1CCN2C(C1)c1ccccc1Cc1ccccc21",
+   "p_human": 5.66,
+   "p_rat": 6.04,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": -0.38
+  },
+  {
+   "monomerid": 77970,
+   "name": "CLOMIPRAMINE",
+   "smiles": "CN(C)CCCN1c2ccccc2CCc3c1cc(cc3)Cl",
+   "p_human": 6.95,
+   "p_rat": 7.25,
+   "n_human": 2,
+   "n_rat": 1,
+   "diff": -0.3
+  },
+  {
+   "monomerid": 81483,
+   "name": "PIPAMPERONE",
+   "smiles": "NC(=O)C1(CCN(CCCC(=O)c2ccc(F)cc2)CC1)N1CCCCC1",
+   "p_human": 6.94,
+   "p_rat": 7.03,
+   "n_human": 2,
+   "n_rat": 1,
+   "diff": -0.09
+  },
+  {
+   "monomerid": 81493,
+   "name": "TRIFLUORPERIDOL",
+   "smiles": "OC1(CCN(CC1)C(F)CCC(=O)c1ccccc1)c1cccc(c1)C(F)(F)F",
+   "p_human": 9.55,
+   "p_rat": 6.7,
+   "n_human": 2,
+   "n_rat": 1,
+   "diff": 2.85
+  },
+  {
+   "monomerid": 81791,
+   "name": "GPP(NH)P(+)",
+   "smiles": "Nc1nc2c(ncn2[C@@H]2O[C@H](COP(=O)(O)OP(=O)(O)NP(=O)(O)O)[C@@H](O)[C@H]2O)c(=O)[nH]1",
+   "p_human": 5.69,
+   "p_rat": 5.695,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": -0.005
+  },
+  {
+   "monomerid": 81793,
+   "name": "Thioproperazine",
+   "smiles": "CN(C)S(=O)(=O)c1ccc2Sc3ccccc3N(CCCN3CCN(C)CC3)c2c1",
+   "p_human": 9.35,
+   "p_rat": 9.68,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": -0.33
+  },
+  {
+   "monomerid": 82073,
+   "name": "Tiapride",
+   "smiles": "CCN(CC)CCNC(=O)c1cc(ccc1OC)S(C)(=O)=O",
+   "p_human": 7.08,
+   "p_rat": 7.11,
+   "n_human": 2,
+   "n_rat": 1,
+   "diff": -0.03
+  },
+  {
+   "monomerid": 85092,
+   "name": "Piribedil",
+   "smiles": "C(N1CCN(CC1)c1ncccn1)c1ccc2OCOc2c1",
+   "p_human": 6.88,
+   "p_rat": 6.74,
+   "n_human": 2,
+   "n_rat": 1,
+   "diff": 0.14
+  },
+  {
+   "monomerid": 85222,
+   "name": "Lurasidone",
+   "smiles": "O=C1[C@H]2[C@@H]3CC[C@@H](C3)[C@H]2C(=O)N1C[C@@H]1CCCC[C@H]1CN1CCN(CC1)c1nsc2ccccc12",
+   "p_human": 8.845,
+   "p_rat": 8.77,
+   "n_human": 2,
+   "n_rat": 1,
+   "diff": 0.075
+  },
+  {
+   "monomerid": 86178,
+   "name": "Dinapsoline,(+/-)-N-propyl",
+   "smiles": "CCCN1C[C@H]2c3ccc(O)c(O)c3Cc3cccc(C1)c23",
+   "p_human": 7.82,
+   "p_rat": 7.315,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": 0.505
+  },
+  {
+   "monomerid": 86282,
+   "name": "CAS_1218",
+   "smiles": "Oc1cc2C(CNCCc2c(Cl)c1O)c1ccccc1",
+   "p_human": 5.805,
+   "p_rat": 5.9,
+   "n_human": 2,
+   "n_rat": 1,
+   "diff": -0.095
+  },
+  {
+   "monomerid": 86474,
+   "name": "S31411 (+-)",
+   "smiles": "CCCC1CC2=C(OCC=N2)C2(NC(=O)CC(=O)O)C=CCCC12",
+   "p_human": 5.98,
+   "p_rat": 6.14,
+   "n_human": 2,
+   "n_rat": 1,
+   "diff": -0.16
+  },
+  {
+   "monomerid": 86708,
+   "name": "NSC_104911",
+   "smiles": "COc1ccccc1N1CCN(CCN(C(=O)C2CCCCC2)c2ccccn2)CC1",
+   "p_human": 6.565,
+   "p_rat": 6.46,
+   "n_human": 2,
+   "n_rat": 1,
+   "diff": 0.105
+  },
+  {
+   "monomerid": 194807,
+   "name": "US9206167, 28",
+   "smiles": "O=C1NCCc2ccc(OCCCN3CCN(CC3)c3cccc4sccc34)cc12",
+   "p_human": 7.45,
+   "p_rat": 8.92,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": -1.47
+  },
+  {
+   "monomerid": 50001862,
+   "name": "EN300-33366",
+   "smiles": "COc1ccccc1N1CCNCC1",
+   "p_human": 5.78,
+   "p_rat": 5.92,
+   "n_human": 2,
+   "n_rat": 1,
+   "diff": -0.14
+  },
+  {
+   "monomerid": 50004813,
+   "name": "8-[4-(4-Fluoro-phenyl)-4-oxo-butyl]-3-methyl-1-phenyl-1,3,8-triaza-spiro[4.5]decan-4-one",
+   "smiles": "CN1CN(c2ccccc2)C2(CCN(CCCC(=O)c3ccc(F)cc3)CC2)C1=O",
+   "p_human": 9.61,
+   "p_rat": 9.93,
+   "n_human": 2,
+   "n_rat": 1,
+   "diff": -0.32
+  },
+  {
+   "monomerid": 50005117,
+   "name": "5'-(5-Ethanesulfonyl-2-methoxy-phenyl)-1-ethyl-2,3,4,5-tetrahydro-1H,1'H-[2,2']bipyrrolyl",
+   "smiles": "CCN1CCCC1c1ccc(-c2cc(S(=O)(=O)CC)ccc2OC)[nH]1",
+   "p_human": 7.6,
+   "p_rat": 7.54,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": 0.06
+  },
+  {
+   "monomerid": 50007568,
+   "name": "OCTOCLOTHEPIN-S",
+   "smiles": "CN1CCN(CC1)[C@H]1Cc2ccccc2Sc2ccc(Cl)cc12",
+   "p_human": 8.96,
+   "p_rat": 9.4,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": -0.44
+  },
+  {
+   "monomerid": 50010684,
+   "name": "N-n-propyldihydrexidine, N-Pr-DHX",
+   "smiles": "CCCN1Cc2ccccc2[C@H]2[C@H]1CCc1cc(O)c(O)cc21",
+   "p_human": 5.68,
+   "p_rat": 7.945,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": -2.265
+  },
+  {
+   "monomerid": 50020712,
+   "name": "Amitriptylin",
+   "smiles": "CN(C)CCC=C1c2ccccc2CCc3c1cccc3",
+   "p_human": 6.275,
+   "p_rat": 6.07,
+   "n_human": 2,
+   "n_rat": 1,
+   "diff": 0.205
+  },
+  {
+   "monomerid": 50026917,
+   "name": "BMY 7378",
+   "smiles": "COc1ccccc1N1CCN(CCN2C(=O)CC3(CCCC3)CC2=O)CC1",
+   "p_human": 7.85,
+   "p_rat": 7.315,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": 0.535
+  },
+  {
+   "monomerid": 50028980,
+   "name": "Isoloxapine",
+   "smiles": "CN1CCN(CC1)C1=Nc2cc(Cl)ccc2Oc2ccccc12 |t:8|",
+   "p_human": 7.52,
+   "p_rat": 6.82,
+   "n_human": 2,
+   "n_rat": 1,
+   "diff": 0.7
+  },
+  {
+   "monomerid": 50033114,
+   "name": "A-86929",
+   "smiles": "CCCc1cc2[C@H]3[C@@H](CCc4cc(O)c(O)cc34)NCc2s1",
+   "p_human": 6.15,
+   "p_rat": 6.1,
+   "n_human": 2,
+   "n_rat": 1,
+   "diff": 0.05
+  },
+  {
+   "monomerid": 50034354,
+   "name": "(R)5-Dipropylamino-5,6-dihydro-1H,4H-imidazo[4,5,1-ij]quinolin-2-one",
+   "smiles": "CCCN(CCC)[C@@H]1Cc2cccc3[nH]c(=O)n(c23)C1",
+   "p_human": 8.365,
+   "p_rat": 8.27,
+   "n_human": 2,
+   "n_rat": 1,
+   "diff": 0.095
+  },
+  {
+   "monomerid": 50034364,
+   "name": "(3aR,9bR)-3-Allyl-6-methoxy-2,3,3a,4,5,9b-hexahydro-1H-benzo[e]indole",
+   "smiles": "COc1cccc2[C@H]3CCN(CC=C)[C@@H]3CCc12",
+   "p_human": 7.3,
+   "p_rat": 7.0,
+   "n_human": 2,
+   "n_rat": 1,
+   "diff": 0.3
+  },
+  {
+   "monomerid": 50038276,
+   "name": "7-[(3-Iodo-allyl)-propyl-amino]-5,6,7,8-tetrahydro-naphthalen-2-ol",
+   "smiles": "CCCN(C\\C=C\\I)C1CCc2ccc(O)cc2C1",
+   "p_human": 7.38,
+   "p_rat": 6.58,
+   "n_human": 2,
+   "n_rat": 1,
+   "diff": 0.8
+  },
+  {
+   "monomerid": 50039735,
+   "name": "3-[(S)-1-(3-Phenyl-propyl)-piperidin-3-yl]-benzonitrile",
+   "smiles": "N#Cc1cccc(c1)[C@@H]1CCCN(CCCc2ccccc2)C1",
+   "p_human": 7.38,
+   "p_rat": 7.1,
+   "n_human": 2,
+   "n_rat": 1,
+   "diff": 0.28
+  },
+  {
+   "monomerid": 50039738,
+   "name": "N,N-Dimethyl-3-((S)-1-propyl-piperidin-3-yl)-benzenesulfonamide",
+   "smiles": "CCCN1CCC[C@H](C1)c1cccc(c1)S(=O)(=O)N(C)C",
+   "p_human": 6.84,
+   "p_rat": 5.47,
+   "n_human": 2,
+   "n_rat": 1,
+   "diff": 1.37
+  },
+  {
+   "monomerid": 50039763,
+   "name": "3-[(S)-1-(2-Ethyl-thiophen-3-yl)-piperidin-3-yl]-benzonitrile",
+   "smiles": "CCc1sccc1N1CCC[C@H](C1)c1cccc(c1)C#N",
+   "p_human": 7.415,
+   "p_rat": 6.99,
+   "n_human": 2,
+   "n_rat": 1,
+   "diff": 0.425
+  },
+  {
+   "monomerid": 50039769,
+   "name": "3-((S)-1-Propyl-piperidin-3-yl)-benzonitrile",
+   "smiles": "CCCN1CCC[C@H](C1)c1cccc(c1)C#N",
+   "p_human": 6.75,
+   "p_rat": 5.94,
+   "n_human": 2,
+   "n_rat": 1,
+   "diff": 0.81
+  },
+  {
+   "monomerid": 50039778,
+   "name": "3-((S)-1-sec-Butyl-piperidin-3-yl)-benzonitrile",
+   "smiles": "CCC(C)N1CCC[C@H](C1)c1cccc(c1)C#N",
+   "p_human": 6.87,
+   "p_rat": 5.98,
+   "n_human": 2,
+   "n_rat": 1,
+   "diff": 0.89
+  },
+  {
+   "monomerid": 50040174,
+   "name": "3-Propyl-2,3,3a,4,5,9b-hexahydro-1H-benzo[e]indol-6-ol",
+   "smiles": "CCCN1CCC2C1CCc1c(O)cccc21",
+   "p_human": 7.03,
+   "p_rat": 7.48,
+   "n_human": 2,
+   "n_rat": 1,
+   "diff": -0.45
+  },
+  {
+   "monomerid": 50040237,
+   "name": "Clothiapine",
+   "smiles": "CN1CCN(CC1)C1=Nc2ccccc2Sc2ccc(Cl)cc12 |t:8|",
+   "p_human": 9.31,
+   "p_rat": 8.355,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": 0.955
+  },
+  {
+   "monomerid": 50040245,
+   "name": "8-Methyl-6-(4-methyl-piperazin-1-yl)-11H-benzo[e]pyrido[3,2-b][1,4]diazepine",
+   "smiles": "CN1CCN(CC1)C1=Nc2cccnc2Nc2ccc(C)cc12 |t:8|",
+   "p_human": 5.23,
+   "p_rat": 6.28,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": -1.05
+  },
+  {
+   "monomerid": 50047138,
+   "name": "SDZ-208-912",
+   "smiles": "CN1C[C@@H](NC(=O)C(C)(C)C)CC2c3cccc4[nH]c(Cl)c(c34)C[C@H]21",
+   "p_human": 8.745,
+   "p_rat": 9.33,
+   "n_human": 2,
+   "n_rat": 1,
+   "diff": -0.585
+  },
+  {
+   "monomerid": 50061635,
+   "name": "(S)-2-(3,4-Dihydro-1H-isoquinolin-2-ylmethyl)-chroman-7-ol; oxalic acid",
+   "smiles": "Oc1ccc2CC[C@@H](CN3CCc4ccccc4C3)Oc2c1",
+   "p_human": 7.13,
+   "p_rat": 7.18,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": -0.05
+  },
+  {
+   "monomerid": 50061640,
+   "name": "(R)-2-(Benzylamino-methyl)-6-chloro-chroman-7-ol; oxalic acid",
+   "smiles": "Oc1cc2O[C@@H](CNCc3ccccc3)CCc2cc1Cl",
+   "p_human": 8.15,
+   "p_rat": 8.94,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": -0.79
+  },
+  {
+   "monomerid": 50061653,
+   "name": "2-(Benzylamino-methyl)-6-chloro-chroman-7-ol; oxalic acid",
+   "smiles": "Oc1cc2OC(CNCc3ccccc3)CCc2cc1Cl",
+   "p_human": 8.28,
+   "p_rat": 8.575,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": -0.295
+  },
+  {
+   "monomerid": 50061654,
+   "name": "2-(3,4-Dihydro-1H-isoquinolin-2-ylmethyl)-chroman-7-ol; oxalic acid",
+   "smiles": "Oc1ccc2CCC(CN3CCc4ccccc4C3)Oc2c1",
+   "p_human": 8.37,
+   "p_rat": 8.855,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": -0.485
+  },
+  {
+   "monomerid": 50061659,
+   "name": "(S)-2-(Benzylamino-methyl)-6-chloro-chroman-7-ol; oxalic acid",
+   "smiles": "Oc1cc2O[C@H](CNCc3ccccc3)CCc2cc1Cl",
+   "p_human": 7.11,
+   "p_rat": 7.52,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": -0.41
+  },
+  {
+   "monomerid": 50061667,
+   "name": "(S)-2-(Benzylamino-methyl)-chroman-7-ol; oxalic acid",
+   "smiles": "Oc1ccc2CC[C@@H](CNCc3ccccc3)Oc2c1",
+   "p_human": 6.64,
+   "p_rat": 7.44,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": -0.8
+  },
+  {
+   "monomerid": 50061681,
+   "name": "(R)-2-(3,4-Dihydro-1H-isoquinolin-2-ylmethyl)-chroman-7-ol; oxalic acid",
+   "smiles": "Oc1ccc2CC[C@H](CN3CCc4ccccc4C3)Oc2c1",
+   "p_human": 8.6,
+   "p_rat": 8.82,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": -0.22
+  },
+  {
+   "monomerid": 50061684,
+   "name": "2-(Benzylamino-methyl)-chroman-7-ol; oxalic acid",
+   "smiles": "Oc1ccc2CCC(CNCc3ccccc3)Oc2c1",
+   "p_human": 8.01,
+   "p_rat": 8.89,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": -0.88
+  },
+  {
+   "monomerid": 50069906,
+   "name": "2-(2-Benzylamino-ethoxy)-phenol",
+   "smiles": "Oc1ccccc1OCCNCc1ccccc1",
+   "p_human": 6.34,
+   "p_rat": 7.37,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": -1.03
+  },
+  {
+   "monomerid": 50069908,
+   "name": "N-(2-Chloro-5-{2-[(thiophen-2-ylmethyl)-amino]-ethoxy}-phenyl)-methanesulfonamide",
+   "smiles": "CS(=O)(=O)Nc1cc(OCCNCc2cccs2)ccc1Cl",
+   "p_human": 8.05,
+   "p_rat": 8.405,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": -0.355
+  },
+  {
+   "monomerid": 50069918,
+   "name": "N-[3-(2-Benzylamino-ethoxy)-phenyl]-methanesulfonamide",
+   "smiles": "CS(=O)(=O)Nc1cccc(OCCNCc2ccccc2)c1",
+   "p_human": 7.42,
+   "p_rat": 7.95,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": -0.53
+  },
+  {
+   "monomerid": 50069921,
+   "name": "N-[5-(2-Benzylamino-ethoxy)-2-chloro-phenyl]-methanesulfonamide",
+   "smiles": "CS(=O)(=O)Nc1cc(OCCNCc2ccccc2)ccc1Cl",
+   "p_human": 7.12,
+   "p_rat": 8.52,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": -1.4
+  },
+  {
+   "monomerid": 50071852,
+   "name": "4-(4-Benzyl-piperazin-1-yl)-1H-benzoimidazole",
+   "smiles": "c1ccc(CN2CCN(c3cccc4[nH]cnc34)CC2)cc1",
+   "p_human": 6.59,
+   "p_rat": 6.97,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": -0.38
+  },
+  {
+   "monomerid": 50071853,
+   "name": "4-(4-Benzyl-piperazin-1-yl)-7-bromo-1H-indole",
+   "smiles": "Brc1ccc(N2CCN(Cc3ccccc3)CC2)c2cc[nH]c12",
+   "p_human": 7.33,
+   "p_rat": 7.745,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": -0.415
+  },
+  {
+   "monomerid": 50071855,
+   "name": "4-(4-Benzyl-piperazin-1-yl)-2-trifluoromethyl-1H-benzoimidazole",
+   "smiles": "FC(F)(F)c1nc2c(N3CCN(Cc4ccccc4)CC3)cccc2[nH]1",
+   "p_human": 8.39,
+   "p_rat": 8.885,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": -0.495
+  },
+  {
+   "monomerid": 50071857,
+   "name": "4-(4-Benzyl-piperazin-1-yl)-1H-indole",
+   "smiles": "c1ccc(CN2CCN(c3cccc4[nH]ccc34)CC2)cc1",
+   "p_human": 7.28,
+   "p_rat": 8.13,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": -0.85
+  },
+  {
+   "monomerid": 50071858,
+   "name": "4-(4-Benzyl-piperazin-1-yl)-5-chloro-1H-indole",
+   "smiles": "Clc1ccc2[nH]ccc2c1N1CCN(Cc2ccccc2)CC1",
+   "p_human": 7.09,
+   "p_rat": 7.71,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": -0.62
+  },
+  {
+   "monomerid": 50073272,
+   "name": "4-Methyl-7-[3-(4-phenyl-piperazin-1-yl)-propoxy]-chromen-2-one",
+   "smiles": "Cc1cc(=O)oc2cc(OCCCN3CCN(CC3)c3ccccc3)ccc12",
+   "p_human": 7.905,
+   "p_rat": 7.34,
+   "n_human": 2,
+   "n_rat": 1,
+   "diff": 0.565
+  },
+  {
+   "monomerid": 50081104,
+   "name": "Benzyl-[2-(2-methyl-1H-benzoimidazol-4-yloxy)-ethyl]-amine",
+   "smiles": "Cc1nc2cccc(OCCNCc3ccccc3)c2[nH]1",
+   "p_human": 7.82,
+   "p_rat": 7.965,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": -0.145
+  },
+  {
+   "monomerid": 50081105,
+   "name": "Benzyl-[2-(6-chloro-2-trifluoromethyl-1H-benzoimidazol-4-yloxy)-ethyl]-amine",
+   "smiles": "FC(F)(F)c1nc2c(OCCNCc3ccccc3)cc(Cl)cc2[nH]1",
+   "p_human": 7.49,
+   "p_rat": 8.535,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": -1.045
+  },
+  {
+   "monomerid": 50081106,
+   "name": "4-(2-Benzylamino-ethoxy)-6-chloro-1,3-dihydro-benzoimidazol-2-one",
+   "smiles": "O=c1[nH]c2cc(Cl)cc(OCCNCc3ccccc3)c2[nH]1",
+   "p_human": 8.59,
+   "p_rat": 9.085,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": -0.495
+  },
+  {
+   "monomerid": 50081107,
+   "name": "4-(2-Benzylamino-ethoxy)-6-chloro-1,3-dihydro-benzoimidazole-2-thione",
+   "smiles": "S=c1[nH]c2cc(Cl)cc(OCCNCc3ccccc3)c2[nH]1",
+   "p_human": 8.19,
+   "p_rat": 9.015,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": -0.825
+  },
+  {
+   "monomerid": 50081108,
+   "name": "4-(2-Benzylamino-ethoxy)-1,3-dihydro-benzoimidazole-2-thione",
+   "smiles": "S=c1[nH]c2cccc(OCCNCc3ccccc3)c2[nH]1",
+   "p_human": 8.52,
+   "p_rat": 9.165,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": -0.645
+  },
+  {
+   "monomerid": 50081109,
+   "name": "Benzyl-[2-(1H-indazol-4-yloxy)-ethyl]-amine",
+   "smiles": "c1ccc(CNCCOc2cccc3[nH]ncc23)cc1",
+   "p_human": 7.1,
+   "p_rat": 8.2,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": -1.1
+  },
+  {
+   "monomerid": 50081110,
+   "name": "Benzyl-[2-(2-trifluoromethyl-1H-benzoimidazol-4-yloxy)-ethyl]-amine",
+   "smiles": "FC(F)(F)c1nc2cccc(OCCNCc3ccccc3)c2[nH]1",
+   "p_human": 8.74,
+   "p_rat": 9.23,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": -0.49
+  },
+  {
+   "monomerid": 50081111,
+   "name": "[2-(1H-Benzoimidazol-4-yloxy)-ethyl]-benzyl-amine",
+   "smiles": "c1ccc(CNCCOc2cccc3nc[nH]c23)cc1",
+   "p_human": 7.07,
+   "p_rat": 7.45,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": -0.38
+  },
+  {
+   "monomerid": 50081112,
+   "name": "4-(2-Benzylamino-ethoxy)-1,3-dihydro-benzoimidazol-2-one",
+   "smiles": "O=c1[nH]c2cccc(OCCNCc3ccccc3)c2[nH]1",
+   "p_human": 8.41,
+   "p_rat": 9.035,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": -0.625
+  },
+  {
+   "monomerid": 50087029,
+   "name": "1-Methoxy-1,6-dimethyl-1,5,5a,6,7,8-hexahydro-6-aza-benzo[mno]aceanthrylene",
+   "smiles": "CO[C@@]1(C)c2cccc3C[C@H]4N(C)CCc5ccc1c(-c23)c45",
+   "p_human": 7.15,
+   "p_rat": 7.15,
+   "n_human": 2,
+   "n_rat": 1,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 50087033,
+   "name": "1-Methoxy-1,6-dimethyl-1,5,5a,6,7,8-hexahydro-6-aza-benzo[mno]aceanthrylene",
+   "smiles": "CO[C@]1(C)c2cccc3C[C@H]4N(C)CCc5ccc1c(-c23)c45",
+   "p_human": 8.15,
+   "p_rat": 8.15,
+   "n_human": 2,
+   "n_rat": 1,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 50087035,
+   "name": "6-Methyl-1,5,5a,6,7,8-hexahydro-6-aza-benzo[mno]aceanthrylen-1-ylamine",
+   "smiles": "CN1CCc2ccc3[C@H](N)c4cccc5C[C@@H]1c2c3-c45",
+   "p_human": 6.58,
+   "p_rat": 6.59,
+   "n_human": 2,
+   "n_rat": 1,
+   "diff": -0.01
+  },
+  {
+   "monomerid": 50109019,
+   "name": "Benzyl-(2-trifluoromethyl-3,6,7,8-tetrahydro-chromeno[7,8-d]imidazol-8-ylmethyl)-amine",
+   "smiles": "FC(F)(F)c1nc2ccc3c(c2[nH]1)OC(CNCc1ccccc1)CC3",
+   "p_human": 6.88,
+   "p_rat": 7.715,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": -0.835
+  },
+  {
+   "monomerid": 50109020,
+   "name": "8-(Benzylamino-methyl)-3,6,7,8-tetrahydro-1H-chromeno[7,8-d]imidazol-2-one",
+   "smiles": "O=c1[nH]c2ccc3c(c2[nH]1)OC(CNCc1ccccc1)CC3",
+   "p_human": 8.3,
+   "p_rat": 9.0,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": -0.7
+  },
+  {
+   "monomerid": 50109021,
+   "name": "(R)-8-(Benzylamino-methyl)-3,6,7,8-tetrahydro-1H-chromeno[7,8-d]imidazol-2-one",
+   "smiles": "O=c1[nH]c2ccc3c(c2[nH]1)O[C@@H](CNCc1ccccc1)CC3",
+   "p_human": 8.52,
+   "p_rat": 9.235,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": -0.715
+  },
+  {
+   "monomerid": 50109024,
+   "name": "(S)-8-(Benzylamino-methyl)-3,6,7,8-tetrahydro-1H-chromeno[7,8-d]imidazol-2-one",
+   "smiles": "O=c1[nH]c2ccc3c(c2[nH]1)O[C@H](CNCc1ccccc1)CC3",
+   "p_human": 7.17,
+   "p_rat": 7.715,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": -0.545
+  },
+  {
+   "monomerid": 50109926,
+   "name": "7-{[2-(4-Phenyl-piperazin-1-yl)ethyl]propylamino}-5,6,7,8-tetrahydronaphthalen-2-ol",
+   "smiles": "CCCN(CCN1CCN(CC1)c1ccccc1)C1CCc2ccc(O)cc2C1",
+   "p_human": 6.76,
+   "p_rat": 6.85,
+   "n_human": 2,
+   "n_rat": 1,
+   "diff": -0.09
+  },
+  {
+   "monomerid": 50122807,
+   "name": "1-(2-{4-[1-(4-Fluoro-phenyl)-5-(1-methyl-1H-[1,2,3]triazol-4-yl)-1H-indol-3-yl]-piperidin-1-yl}-ethyl)-imidazolidin-2-one",
+   "smiles": "Cn1cc(nn1)-c1ccc2n(cc(C3CCN(CCN4CCNC4=O)CC3)c2c1)-c1ccc(F)cc1",
+   "p_human": 6.51,
+   "p_rat": 6.51,
+   "n_human": 2,
+   "n_rat": 1,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 50122815,
+   "name": "1-(2-{4-[1-(4-Fluoro-phenyl)-5-(2-methyl-2H-tetrazol-5-yl)-1H-indol-3-yl]-piperidin-1-yl}-ethyl)-imidazolidin-2-one",
+   "smiles": "Cn1nnc(n1)-c1ccc2n(cc(C3CCN(CCN4CCNC4=O)CC3)c2c1)-c1ccc(F)cc1",
+   "p_human": 6.85,
+   "p_rat": 6.85,
+   "n_human": 2,
+   "n_rat": 1,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 50129431,
+   "name": "9H-Fluorene-4-carboxylic acid {4-[4-(2,3-dichloro-phenyl)-piperazin-1-yl]-but-2-enyl}-amide",
+   "smiles": "Clc1cccc(N2CCN(C\\C=C\\CNC(=O)c3cccc4Cc5ccccc5-c34)CC2)c1Cl",
+   "p_human": 7.2,
+   "p_rat": 6.97,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": 0.23
+  },
+  {
+   "monomerid": 50131922,
+   "name": "N-(4-(4-(2-methoxyphenyl)piperazin-1-yl)butyl)-1H-indole-2-carboxamide",
+   "smiles": "COc1ccccc1N1CCN(CCCCNC(=O)c2cc3ccccc3[nH]2)CC1",
+   "p_human": 7.43,
+   "p_rat": 6.8,
+   "n_human": 2,
+   "n_rat": 1,
+   "diff": 0.63
+  },
+  {
+   "monomerid": 50131934,
+   "name": "Quinoline-2-carboxylic acid {4-[4-(2-methoxy-phenyl)-piperazin-1-yl]-butyl}-amide",
+   "smiles": "COc1ccccc1N1CCN(CCCCNC(=O)c2ccc3ccccc3n2)CC1",
+   "p_human": 7.22,
+   "p_rat": 7.08,
+   "n_human": 2,
+   "n_rat": 1,
+   "diff": 0.14
+  },
+  {
+   "monomerid": 50137626,
+   "name": "5-Bromo-N-{4-[4-(2,3-dichloro-phenyl)-piperazin-1-yl]-butyl}-2,3-dimethoxy-benzamide",
+   "smiles": "COc1cc(Br)cc(C(=O)NCCCCN2CCN(CC2)c2cccc(Cl)c2Cl)c1OC",
+   "p_human": 7.23,
+   "p_rat": 7.23,
+   "n_human": 2,
+   "n_rat": 1,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 50145347,
+   "name": "1-{2-[4-(6-Fluoro-1H-indol-3-yl)-3,6-dihydro-2H-pyridin-1-yl]-ethyl}-isochroman-6-carboxylic acid amide",
+   "smiles": "NC(=O)c1ccc2c(c1)CCOC2CCN1CC=C(c2c[nH]c3cc(F)ccc23)CC1",
+   "p_human": 8.33,
+   "p_rat": 7.855,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": 0.475
+  },
+  {
+   "monomerid": 50202291,
+   "name": "Acetic acid (R)-6-propyl-5,6,6a,7-tetrahydro-4H-dibenzo[de,g]quinolin-11-yl ester",
+   "smiles": "CCCN1CCc2cccc-3c2[C@H]1Cc1cccc(OC(C)=O)c-31 |r|",
+   "p_human": 7.14,
+   "p_rat": 7.14,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 50202292,
+   "name": "11-valeryloxynoraporphine",
+   "smiles": "CCCCC(=O)Oc1cccc2C[C@H]3N(CCC)CCc4cccc(c34)-c12 |r|",
+   "p_human": 6.47,
+   "p_rat": 6.97,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": -0.5
+  },
+  {
+   "monomerid": 50216051,
+   "name": "2-(4-(4-(3-a,a,a-trifluorotolyl)-1-piperazinyl)butyl)-1, 2-benzisothiazole-3(2H)-one 1,1-dioxide",
+   "smiles": "FC(F)(F)c1cccc(c1)N1CCN(CCCCN2C(=O)c3ccccc3S2(=O)=O)CC1",
+   "p_human": 6.95,
+   "p_rat": 5.65,
+   "n_human": 2,
+   "n_rat": 1,
+   "diff": 1.3
+  },
+  {
+   "monomerid": 50251026,
+   "name": "(R)-(-)-2-Phenyl-apomorphine hydrochloride",
+   "smiles": "CN1CCc2cc(cc-3c2[C@H]1Cc1ccc(O)c(O)c-31)-c1ccccc1 |r|",
+   "p_human": 7.06,
+   "p_rat": 7.925,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": -0.865
+  },
+  {
+   "monomerid": 50265376,
+   "name": "N-(4-(4-m-tolylpiperazin-1-yl)butyl)benzofuran-2-carboxamide",
+   "smiles": "Cc1cccc(c1)N1CCN(CCCCNC(=O)c2cc3ccccc3o2)CC1",
+   "p_human": 6.58,
+   "p_rat": 7.465,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": -0.885
+  },
+  {
+   "monomerid": 50303791,
+   "name": "(-)-(S)-N6-(2-(4-(Isoquinolin-1-yl)piperazin-1-yl)ethyl)-N6-propyl-4,5,6,7-tetrahydrobenzo[d]-thiazole-2,6-diamine",
+   "smiles": "CCCN(CCN1CCN(CC1)c1nccc2ccccc12)[C@H]1CCc2nc(N)sc2C1 |r|",
+   "p_human": 6.57,
+   "p_rat": 6.57,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 50336856,
+   "name": "2-methoxy-11-hydroxy-N-propylnoraporphine",
+   "smiles": "CCCN1CCc2cc(OC)cc-3c2[C@H]1Cc1cccc(O)c-31 |r|",
+   "p_human": 7.36,
+   "p_rat": 6.775,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": 0.585
+  },
+  {
+   "monomerid": 50336860,
+   "name": "N-propyl-2-fluoropropanoxy-11-monohydroxy aporphine",
+   "smiles": "CCCN1CCc2cc(OCCCF)cc-3c2[C@H]1Cc1cccc(O)c-31 |r|",
+   "p_human": 6.31,
+   "p_rat": 7.79,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": -1.48
+  },
+  {
+   "monomerid": 50336863,
+   "name": "(R)-6-ethyl-2-(2-fluoroethoxy)-5,6,6a,7-tetrahydro-4H-dibenzo[de,g]quinolin-11-ol",
+   "smiles": "CCN1CCc2cc(OCCF)cc-3c2[C@H]1Cc1cccc(O)c-31 |r|",
+   "p_human": 6.12,
+   "p_rat": 7.6,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": -1.48
+  },
+  {
+   "monomerid": 50409503,
+   "name": "CHEMBL310153",
+   "smiles": "COc1ccccc1N1CCN(CC2CC(=O)c3ccccc3C2)CC1",
+   "p_human": 6.69,
+   "p_rat": 8.19,
+   "n_human": 1,
+   "n_rat": 2,
+   "diff": -1.5
+  },
+  {
+   "monomerid": 22165,
+   "name": "Vanoxerine",
+   "smiles": "c1ccc(cc1)CCCN2CCN(CC2)CCOC(c3ccc(cc3)F)c4ccc(cc4)F",
+   "p_human": 6.13,
+   "p_rat": 6.57,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": -0.44
+  },
+  {
+   "monomerid": 29643,
+   "name": "Apomorphine,(+)",
+   "smiles": "CN1CCc2cccc-3c2[C@@H]1Cc1ccc(O)c(O)c-31",
+   "p_human": 6.54,
+   "p_rat": 7.24,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": -0.7
+  },
+  {
+   "monomerid": 29644,
+   "name": "APOMORPHINE HYDROCHLORIDE",
+   "smiles": "CN1CCc2cccc-3c2[C@H]1Cc1ccc(O)c(O)c-31",
+   "p_human": 7.38,
+   "p_rat": 7.32,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.06
+  },
+  {
+   "monomerid": 35234,
+   "name": "NOREPINEPHRINE",
+   "smiles": "NCC(O)c1ccc(O)c(O)c1",
+   "p_human": 5.5,
+   "p_rat": 5.65,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": -0.15
+  },
+  {
+   "monomerid": 60917,
+   "name": "FENOLDOPAM",
+   "smiles": "Oc1ccc(cc1)C1CNCCc2c(Cl)c(O)c(O)cc12",
+   "p_human": 6.09,
+   "p_rat": 7.89,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": -1.8
+  },
+  {
+   "monomerid": 81796,
+   "name": "Iodosulpride",
+   "smiles": "CCS(=O)(=O)c1cc(C(=O)NCC2CCCN2CC2CC2)c(OC)cc1I",
+   "p_human": 9.3,
+   "p_rat": 9.21,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.09
+  },
+  {
+   "monomerid": 82248,
+   "name": "CAS_73445-63-3",
+   "smiles": "CN1CCc2cc(Cl)c(O)cc2[C@@H](C1)c1ccccc1 |r|",
+   "p_human": 7.7,
+   "p_rat": 6.01,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 1.69
+  },
+  {
+   "monomerid": 82437,
+   "name": "Lofepramine",
+   "smiles": "CN(CCCN1c2ccccc2CCc2ccccc12)CC(=O)c1ccc(Cl)cc1",
+   "p_human": 5.7,
+   "p_rat": 5.17,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.53
+  },
+  {
+   "monomerid": 85047,
+   "name": "SDZ GLC 756",
+   "smiles": "CN1C[C@H](CSc2ccccn2)C[C@@H]2Cc3c(O)cccc3C[C@@H]12 |r|",
+   "p_human": 7.12,
+   "p_rat": 8.15,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": -1.03
+  },
+  {
+   "monomerid": 85595,
+   "name": "Fluparoxan",
+   "smiles": "Fc1cccc2OC3CNCC3Oc12",
+   "p_human": 6.0,
+   "p_rat": 5.5,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.5
+  },
+  {
+   "monomerid": 423295,
+   "name": "US10501452, Compound 1",
+   "smiles": "CN1CCc2ccc(OCCCCN3CCC(CC3)c3noc4cc(F)ccc34)cc2C1=O",
+   "p_human": 7.9,
+   "p_rat": 7.38,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.52
+  },
+  {
+   "monomerid": 423297,
+   "name": "US10501452, Compound 3",
+   "smiles": "CN1CCc2ccc(OCCCCN3CCN(CC3)c3cccc(c3)C(F)(F)F)cc2C1=O",
+   "p_human": 7.76,
+   "p_rat": 6.58,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 1.18
+  },
+  {
+   "monomerid": 423298,
+   "name": "US10501452, Compound 4",
+   "smiles": "CN1CCc2ccc(OCC(O)CN3CCC(CC3)c3noc4cc(F)ccc34)cc2C1=O",
+   "p_human": 7.82,
+   "p_rat": 5.91,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 1.91
+  },
+  {
+   "monomerid": 423299,
+   "name": "US10501452, Compound 5",
+   "smiles": "CN1CCc2ccc(OCCCN3CCC(CC3)c3noc4cc(F)ccc34)cc2C1=O",
+   "p_human": 9.0,
+   "p_rat": 8.16,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.84
+  },
+  {
+   "monomerid": 423301,
+   "name": "US10501452, Compound 7",
+   "smiles": "CCN1CCc2ccc(OCCCN3CCC(CC3)c3noc4cc(F)ccc34)cc2C1=O",
+   "p_human": 7.88,
+   "p_rat": 6.6,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 1.28
+  },
+  {
+   "monomerid": 423305,
+   "name": "US10501452, Compound 11",
+   "smiles": "CN1COc2ccc(OCCCN3CCC(CC3)c3noc4cc(F)ccc34)cc2C1=O",
+   "p_human": 7.86,
+   "p_rat": 6.16,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 1.7
+  },
+  {
+   "monomerid": 423313,
+   "name": "US10501452, Compound 19",
+   "smiles": "CN1CCc2ccc(OCCCN3CCN(CC3)c3ccc(F)cc3)cc2C1=O",
+   "p_human": 5.78,
+   "p_rat": 6.27,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": -0.49
+  },
+  {
+   "monomerid": 423314,
+   "name": "US10501452, Compound 20",
+   "smiles": "CN1CCc2ccc(OCCCN3CCN(CC3)c3ccccc3F)cc2C1=O",
+   "p_human": 7.26,
+   "p_rat": 6.93,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.33
+  },
+  {
+   "monomerid": 423316,
+   "name": "US10501452, Compound 22",
+   "smiles": "COc1ccccc1N1CCN(CCCOc2ccc3CCN(C)C(=O)c3c2)CC1",
+   "p_human": 8.02,
+   "p_rat": 6.05,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 1.97
+  },
+  {
+   "monomerid": 423318,
+   "name": "US10501452, Compound 24",
+   "smiles": "CN1CCc2ccc(OCCCN3CCN(CC3)c3ncccn3)cc2C1=O",
+   "p_human": 7.92,
+   "p_rat": 5.86,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 2.06
+  },
+  {
+   "monomerid": 50004796,
+   "name": "8-Chloro-5-phenyl-2,3,4,5-tetrahydro-1H-benzo[d]azepin-7-ol; hydrobromide",
+   "smiles": "Oc1cc2C(CNCCc2cc1Cl)c1ccccc1",
+   "p_human": 5.86,
+   "p_rat": 6.17,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": -0.31
+  },
+  {
+   "monomerid": 50004918,
+   "name": "SKF 77434",
+   "smiles": "Oc1cc2CCN(CC=C)CC(c3ccccc3)c2cc1O",
+   "p_human": 6.24,
+   "p_rat": 6.0,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.24
+  },
+  {
+   "monomerid": 50012994,
+   "name": "NPA,(+)",
+   "smiles": "CCCN1CCc2cccc-3c2[C@H]1Cc1ccc(O)c(O)c-31",
+   "p_human": 6.59,
+   "p_rat": 9.1,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": -2.51
+  },
+  {
+   "monomerid": 50020174,
+   "name": "Elopiprazole",
+   "smiles": "Fc1ccc(-c2ccc(CN3CCN(c4cccc5ccoc45)CC3)[nH]2)cc1",
+   "p_human": 9.38,
+   "p_rat": 9.35,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.03
+  },
+  {
+   "monomerid": 50028599,
+   "name": "1-(2-Chloro-5H-dibenzo[a,d]cyclohepten-10-yl)-4-methyl-piperazine",
+   "smiles": "CN1CCN(CC1)C1=Cc2cc(Cl)ccc2Cc2ccccc12 |t:8|",
+   "p_human": 6.28,
+   "p_rat": 6.28,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 50028601,
+   "name": "1-(8-Chloro-5H-dibenzo[a,d]cyclohepten-10-yl)-4-methyl-piperazine",
+   "smiles": "CN1CCN(CC1)C1=Cc2ccccc2Cc2ccc(Cl)cc12 |t:8|",
+   "p_human": 9.0,
+   "p_rat": 9.0,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 50033115,
+   "name": "(5aS,11bR)-2-Propyl-4,5,5a,6,7,11b-hexahydro-3-thia-5-aza-cyclopenta[c]phenanthrene-9,10-diol; hydrochloride",
+   "smiles": "CCCc1cc2[C@@H]3[C@H](CCc4cc(O)c(O)cc34)NCc2s1",
+   "p_human": 5.4,
+   "p_rat": 5.27,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.13
+  },
+  {
+   "monomerid": 50033116,
+   "name": "A-77636",
+   "smiles": "c1cc(c(c2c1[C@@H](O[C@@H](C2)C34CC5CC(C3)CC(C5)C4)CN)O)O",
+   "p_human": 5.81,
+   "p_rat": 5.74,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.07
+  },
+  {
+   "monomerid": 50034334,
+   "name": "(3aR,9aR)-1-Allyl-2,3,3a,4,9,9a-hexahydro-1H-benzo[f]indol-5-ol",
+   "smiles": "Oc1cccc2C[C@@H]3[C@@H](CCN3CC=C)Cc12",
+   "p_human": 6.63,
+   "p_rat": 7.33,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": -0.7
+  },
+  {
+   "monomerid": 50034339,
+   "name": "(Recemic)3-Allyl-9-methoxy-2,3,3a,4,5,9b-hexahydro-1H-benzo[e]indole",
+   "smiles": "COc1cccc2CC[C@@H]3[C@H](CCN3CC=C)c12",
+   "p_human": 8.07,
+   "p_rat": 7.89,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.18
+  },
+  {
+   "monomerid": 50034349,
+   "name": "(3aR,9bR)-3-Propyl-2,3,3a,4,5,9b-hexahydro-1H-benzo[e]indol-6-ol",
+   "smiles": "CCCN1CC[C@H]2[C@H]1CCc1c(O)cccc21",
+   "p_human": 7.03,
+   "p_rat": 7.48,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": -0.45
+  },
+  {
+   "monomerid": 50034356,
+   "name": "(3aR,9bR)-3-Allyl-2,3,3a,4,5,9b-hexahydro-1H-benzo[e]indol-6-ol",
+   "smiles": "Oc1cccc2[C@H]3CCN(CC=C)[C@@H]3CCc12",
+   "p_human": 8.39,
+   "p_rat": 7.27,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 1.12
+  },
+  {
+   "monomerid": 50034360,
+   "name": "(Recemic)3-Allyl-2,3,3a,4,5,9b-hexahydro-1H-benzo[e]indol-9-ol",
+   "smiles": "Oc1cccc2CC[C@@H]3[C@@H](CCN3CC=C)c12",
+   "p_human": 6.82,
+   "p_rat": 6.82,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 50034366,
+   "name": "Trifluoro-methanesulfonic acid 7-dipropylamino-5,6,7,8-tetrahydro-naphthalen-1-yl ester",
+   "smiles": "CCCN(CCC)C1CCc2cccc(OS(=O)(=O)C(F)(F)F)c2C1",
+   "p_human": 7.21,
+   "p_rat": 6.17,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 1.04
+  },
+  {
+   "monomerid": 50034368,
+   "name": "Trifluoro-methanesulfonic acid 7-propylamino-5,6,7,8-tetrahydro-naphthalen-1-yl ester",
+   "smiles": "CCCNC1CCc2cccc(OS(=O)(=O)C(F)(F)F)c2C1",
+   "p_human": 6.97,
+   "p_rat": 5.87,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 1.1
+  },
+  {
+   "monomerid": 50036734,
+   "name": "(S)-4-(4-Chloro-phenyl)-1-[4-(4-fluoro-phenyl)-4-hydroxy-butyl]-piperidin-4-ol",
+   "smiles": "O[C@@H](CCCN1CCC(O)(CC1)c1ccc(Cl)cc1)c1ccc(F)cc1",
+   "p_human": 7.14,
+   "p_rat": 7.15,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": -0.01
+  },
+  {
+   "monomerid": 50036738,
+   "name": "(R)-4-(4-Chloro-phenyl)-1-[4-(4-fluoro-phenyl)-4-hydroxy-butyl]-piperidin-4-ol",
+   "smiles": "O[C@H](CCCN1CCC(O)(CC1)c1ccc(Cl)cc1)c1ccc(F)cc1",
+   "p_human": 6.55,
+   "p_rat": 6.59,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": -0.04
+  },
+  {
+   "monomerid": 50036764,
+   "name": "1'-benzylspiro[1,2,3,4-tetrahydronaphthalene-2,4'-(hexahydropyridine)]-1-one; hydrochloride",
+   "smiles": "O=C1c2ccccc2CCC11CCN(Cc2ccccc2)CC1",
+   "p_human": 5.46,
+   "p_rat": 5.26,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.2
+  },
+  {
+   "monomerid": 50037272,
+   "name": "(R)-8-Dipropylamino-6,7,8,9-tetrahydro-3H-benzo[e]indole-2-carbonitrile",
+   "smiles": "CCCN(CCC)[C@@H]1CCc2ccc3[nH]c(C#N)cc3c2C1",
+   "p_human": 7.46,
+   "p_rat": 6.27,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 1.19
+  },
+  {
+   "monomerid": 50038349,
+   "name": "6-Chloro-2-methyl-1-phenyl-1,2,3,4-tetrahydro-isoquinolin-7-ol",
+   "smiles": "CN1CCc2cc(Cl)c(O)cc2[C@@H]1c1ccccc1",
+   "p_human": 5.73,
+   "p_rat": 5.73,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 50038350,
+   "name": "6-Chloro-2-methyl-1-phenyl-1,2,3,4-tetrahydro-isoquinolin-7-ol",
+   "smiles": "CN1CCc2cc(Cl)c(O)cc2[C@H]1c1ccccc1",
+   "p_human": 4.72,
+   "p_rat": 4.72,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 50039736,
+   "name": "Trifluoro-methanesulfonic acid 3-((S)-1-phenethyl-piperidin-3-yl)-phenyl ester",
+   "smiles": "FC(F)(F)S(=O)(=O)Oc1cccc(c1)[C@@H]1CCCN(CCc2ccccc2)C1",
+   "p_human": 7.14,
+   "p_rat": 7.4,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": -0.26
+  },
+  {
+   "monomerid": 50039739,
+   "name": "3-((S)-1-Allyl-piperidin-3-yl)-benzonitrile",
+   "smiles": "C=CCN1CCC[C@H](C1)c1cccc(c1)C#N",
+   "p_human": 6.6,
+   "p_rat": 5.72,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.88
+  },
+  {
+   "monomerid": 50039740,
+   "name": "(S)-3-(3-Methoxy-phenyl)-1-propyl-piperidine",
+   "smiles": "CCCN1CCC[C@H](C1)c1cccc(OC)c1",
+   "p_human": 6.22,
+   "p_rat": 5.46,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.76
+  },
+  {
+   "monomerid": 50039741,
+   "name": "[3-((S)-1-Propyl-piperidin-3-yl)-phenyl]-acetonitrile",
+   "smiles": "CCCN1CCC[C@H](C1)c1cccc(CC#N)c1",
+   "p_human": 7.16,
+   "p_rat": 5.91,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 1.25
+  },
+  {
+   "monomerid": 50039744,
+   "name": "[3-((S)-1-Propyl-piperidin-3-yl)-phenyl]-methanol",
+   "smiles": "CCCN1CCC[C@H](C1)c1cccc(CO)c1",
+   "p_human": 6.62,
+   "p_rat": 6.39,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.23
+  },
+  {
+   "monomerid": 50039747,
+   "name": "Methanesulfonic acid 3-((S)-1-propyl-piperidin-3-yl)-phenyl ester",
+   "smiles": "CCCN1CCC[C@H](C1)c1cccc(OS(C)(=O)=O)c1",
+   "p_human": 6.72,
+   "p_rat": 5.38,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 1.34
+  },
+  {
+   "monomerid": 50039748,
+   "name": "(S)-1-Propyl-3-[3-(2,2,2-trifluoro-ethoxy)-phenyl]-piperidine",
+   "smiles": "CCCN1CCC[C@H](C1)c1cccc(OCC(F)(F)F)c1",
+   "p_human": 6.09,
+   "p_rat": 5.78,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.31
+  },
+  {
+   "monomerid": 50039751,
+   "name": "3-((S)-1-Phenethyl-piperidin-3-yl)-benzonitrile",
+   "smiles": "N#Cc1cccc(c1)[C@@H]1CCCN(CCc2ccccc2)C1",
+   "p_human": 7.66,
+   "p_rat": 6.98,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.68
+  },
+  {
+   "monomerid": 50039756,
+   "name": "(S)-3-Piperidin-3-yl-benzonitrile",
+   "smiles": "N#Cc1cccc(c1)[C@@H]1CCCNC1",
+   "p_human": 6.5,
+   "p_rat": 5.57,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.93
+  },
+  {
+   "monomerid": 50039758,
+   "name": "3-((S)-1-Ethyl-piperidin-3-yl)-benzonitrile",
+   "smiles": "CCN1CCC[C@H](C1)c1cccc(c1)C#N",
+   "p_human": 6.63,
+   "p_rat": 5.63,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 1.0
+  },
+  {
+   "monomerid": 50039759,
+   "name": "3-((S)-1-Isopropyl-piperidin-3-yl)-benzonitrile",
+   "smiles": "CC(C)N1CCC[C@H](C1)c1cccc(c1)C#N",
+   "p_human": 6.97,
+   "p_rat": 6.14,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.83
+  },
+  {
+   "monomerid": 50039765,
+   "name": "(S)-1-Propyl-3-(3-thiophen-3-yl-phenyl)-piperidine",
+   "smiles": "CCCN1CCC[C@H](C1)c1cccc(c1)-c1ccsc1",
+   "p_human": 6.87,
+   "p_rat": 6.12,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.75
+  },
+  {
+   "monomerid": 50039766,
+   "name": "3-((S)-1-Methyl-piperidin-3-yl)-benzonitrile",
+   "smiles": "CN1CCC[C@H](C1)c1cccc(c1)C#N",
+   "p_human": 5.98,
+   "p_rat": 5.08,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.9
+  },
+  {
+   "monomerid": 50039768,
+   "name": "(S)-3-(3-Bromo-phenyl)-1-propyl-piperidine",
+   "smiles": "CCCN1CCC[C@H](C1)c1cccc(Br)c1",
+   "p_human": 6.77,
+   "p_rat": 6.27,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.5
+  },
+  {
+   "monomerid": 50039772,
+   "name": "3-((S)-1-Cyclopropylmethyl-piperidin-3-yl)-benzonitrile",
+   "smiles": "N#Cc1cccc(c1)[C@@H]1CCCN(CC2CC2)C1",
+   "p_human": 6.28,
+   "p_rat": 5.51,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.77
+  },
+  {
+   "monomerid": 50039781,
+   "name": "3-((S)-1-Propyl-piperidin-3-yl)-benzaldehyde",
+   "smiles": "CCCN1CCC[C@H](C1)c1cccc(C=O)c1",
+   "p_human": 6.84,
+   "p_rat": 5.95,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.89
+  },
+  {
+   "monomerid": 50040165,
+   "name": "3-Allyl-2,3,3a,4,5,9b-hexahydro-1H-benzo[e]indol-6-ol",
+   "smiles": "Oc1cccc2C3CCN(CC=C)[C@@H]3CCc12",
+   "p_human": 6.97,
+   "p_rat": 7.31,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": -0.34
+  },
+  {
+   "monomerid": 50040166,
+   "name": "3-Allyl-9-methoxy-2,3,3a,4,5,9b-hexahydro-1H-benzo[e]indole",
+   "smiles": "COc1cccc2CC[C@H]3C(CCN3CC=C)c12",
+   "p_human": 7.11,
+   "p_rat": 6.57,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.54
+  },
+  {
+   "monomerid": 50040168,
+   "name": "3-Allyl-6-methoxy-2,3,3a,4,5,9b-hexahydro-1H-benzo[e]indole",
+   "smiles": "COc1cccc2C3CCN(CC=C)[C@H]3CCc12",
+   "p_human": 7.3,
+   "p_rat": 7.0,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.3
+  },
+  {
+   "monomerid": 50040177,
+   "name": "3-Allyl-9-methoxy-2,3,3a,4,5,9b-hexahydro-1H-benzo[e]indole",
+   "smiles": "COc1cccc2CC[C@@H]3C(CCN3CC=C)c12",
+   "p_human": 8.17,
+   "p_rat": 8.28,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": -0.11
+  },
+  {
+   "monomerid": 50040179,
+   "name": "3-Allyl-2,3,3a,4,5,9b-hexahydro-1H-benzo[e]indol-6-ol",
+   "smiles": "Oc1cccc2C3CCN(CC=C)[C@H]3CCc12",
+   "p_human": 7.23,
+   "p_rat": 6.59,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.64
+  },
+  {
+   "monomerid": 50040183,
+   "name": "1-Allyl-2,3,3a,4,9,9a-hexahydro-1H-benzo[f]indol-5-ol",
+   "smiles": "Oc1cccc2C[C@H]3[C@@H](CCN3CC=C)Cc12",
+   "p_human": 6.63,
+   "p_rat": 7.33,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": -0.7
+  },
+  {
+   "monomerid": 50040250,
+   "name": "8-Chloro-6-(4-methyl-piperazin-1-yl)-11H-benzo[e]pyrido[3,2-b][1,4]diazepine",
+   "smiles": "CN1CCN(CC1)C1=Nc2cccnc2Nc2ccc(Cl)cc12 |t:8|",
+   "p_human": 5.65,
+   "p_rat": 6.93,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": -1.28
+  },
+  {
+   "monomerid": 50042343,
+   "name": "(5-Methoxy-1,2,3,4-tetrahydro-naphthalen-2-yl)-dipropyl-amine",
+   "smiles": "CCCN(CCC)C1CCc2c(C1)cccc2OC",
+   "p_human": 6.38,
+   "p_rat": 7.0,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": -0.62
+  },
+  {
+   "monomerid": 50042732,
+   "name": "BRL-26175",
+   "smiles": "COc1cc(N)c(Cl)cc1C(=O)NC1CC2CCCC(C1)N2Cc1ccccc1 |THB:12:13:21:16.18.17|",
+   "p_human": 9.6,
+   "p_rat": 10.44,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": -0.84
+  },
+  {
+   "monomerid": 50044237,
+   "name": "R-(+)-1-(8-Dipropylamino-6,7,8,9-tetrahydro-3H-benzo[e]indol-1-yl)-ethanone",
+   "smiles": "CCCN(CCC)[C@@H]1CCc2ccc3[nH]cc(C(C)=O)c3c2C1",
+   "p_human": 7.77,
+   "p_rat": 6.42,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 1.35
+  },
+  {
+   "monomerid": 50044238,
+   "name": "S-(-)-1-(8-Dipropylamino-6,7,8,9-tetrahydro-3H-benzo[e]indol-1-yl)-ethanone",
+   "smiles": "CCCN(CCC)[C@H]1CCc2ccc3[nH]cc(C(C)=O)c3c2C1",
+   "p_human": 6.37,
+   "p_rat": 5.44,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.93
+  },
+  {
+   "monomerid": 50047135,
+   "name": "(Terguride)1,1-Diethyl-3-(7-methyl-4,6,6a,7,8,9,10,10a-octahydro-indeno[7,1-f]quinolin-9-yl)-urea",
+   "smiles": "CCN(CC)C(=O)N[C@@H]1C[C@H]2[C@@H](CC3=CCc4cccc2c34)N(C)C1 |t:13|",
+   "p_human": 9.1,
+   "p_rat": 9.02,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.08
+  },
+  {
+   "monomerid": 50047136,
+   "name": "(Recemic)1-Allyl-2,3,3a,4,9,9a-hexahydro-1H-benzo[f]indol-5-ol",
+   "smiles": "Oc1cccc2C[C@@H]3C(CCN3CC=C)Cc12",
+   "p_human": 8.85,
+   "p_rat": 7.6,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 1.25
+  },
+  {
+   "monomerid": 50047143,
+   "name": "1,2,3,4,4a,5,6,10b-Octahydro-benzo[f]quinolin-7-ol",
+   "smiles": "[H][C@]12CCc3c(O)cccc3[C@]1([H])CCCN2",
+   "p_human": 7.96,
+   "p_rat": 7.42,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.54
+  },
+  {
+   "monomerid": 50047144,
+   "name": "(Recemic) 5-Methoxy-1-propyl-2,3,3a,4,9,9a-hexahydro-1H-benzo[f]indole",
+   "smiles": "CCCN1CCC2Cc3c(C[C@@H]12)cccc3OC",
+   "p_human": 7.0,
+   "p_rat": 6.06,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.94
+  },
+  {
+   "monomerid": 50047145,
+   "name": "(Recemic)5-Dipropylamino-5,6-dihydro-1H,4H-imidazo[4,5,1-ij]quinoline-2-thione",
+   "smiles": "CCCN(CCC)[C@@H]1Cc2cccc3[nH]c(=S)n(c23)C1",
+   "p_human": 9.22,
+   "p_rat": 7.41,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 1.81
+  },
+  {
+   "monomerid": 50047146,
+   "name": "SDZ-208-911",
+   "smiles": "Cc1[nH]c2cccc3c2c1C[C@@H]1C3C[C@H](NC(=O)C(C)(C)C)CN1C",
+   "p_human": 8.51,
+   "p_rat": 9.13,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": -0.62
+  },
+  {
+   "monomerid": 50047147,
+   "name": "(Recemic)6-Dipropylamino-6,7-dihydro-5H-pyrido[3,2,1-ij]quinolin-3-one",
+   "smiles": "CCCN(CCC)[C@@H]1Cc2cccc3ccc(=O)n(C1)c23",
+   "p_human": 8.46,
+   "p_rat": 7.72,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.74
+  },
+  {
+   "monomerid": 50047149,
+   "name": "(Racemic) 1-Propyl-2,3,3a,4,9,9a-hexahydro-1H-benzo[f]indol-5-ol",
+   "smiles": "CCCN1CCC2Cc3c(O)cccc3C[C@@H]12",
+   "p_human": 8.62,
+   "p_rat": 7.77,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.85
+  },
+  {
+   "monomerid": 50051562,
+   "name": "1-(2-Isochroman-1-yl-ethyl)-4-(4-methoxy-phenyl)-piperazine",
+   "smiles": "COc1ccc(cc1)N1CCN(CCC2OCCc3ccccc23)CC1",
+   "p_human": 5.84,
+   "p_rat": 5.96,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": -0.12
+  },
+  {
+   "monomerid": 50052851,
+   "name": "(R)-10-Methyl-6-propyl-5,6,6a,7-tetrahydro-4H-dibenzo[de,g]quinolin-11-ol",
+   "smiles": "CCCN1CCc2cccc-3c2[C@H]1Cc1ccc(C)c(O)c-31",
+   "p_human": 6.6,
+   "p_rat": 6.6,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 50052864,
+   "name": "(R)-11-Ethyl-6-methyl-5,6,6a,7-tetrahydro-4H-dibenzo[de,g]quinoline",
+   "smiles": "CCc1cccc2C[C@H]3N(C)CCc4cccc(c34)-c12",
+   "p_human": 7.1,
+   "p_rat": 7.1,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 50068362,
+   "name": "3-Methoxy-N-{2-[4-(2-methoxy-phenyl)-piperazin-1-yl]-ethyl}-benzamide",
+   "smiles": "COc1cccc(c1)C(=O)NCCN1CCN(CC1)c1ccccc1OC",
+   "p_human": 6.33,
+   "p_rat": 6.85,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": -0.52
+  },
+  {
+   "monomerid": 50069447,
+   "name": "NEFAZODONE",
+   "smiles": "CCC1=NN(C(=O)N1CCOc2ccccc2)CCCN3CCN(CC3)c4cccc(c4)Cl",
+   "p_human": 6.04,
+   "p_rat": 6.74,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": -0.7
+  },
+  {
+   "monomerid": 50079939,
+   "name": "(7-Chloro-2,3-dihydro-benzo[1,4]dioxin-2-ylmethyl)-[1-(2-methoxy-phenyl)-piperidin-4-ylmethyl]-amine",
+   "smiles": "COc1ccccc1N1CCC(CNCC2COc3ccc(Cl)cc3O2)CC1",
+   "p_human": 7.88,
+   "p_rat": 7.36,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.52
+  },
+  {
+   "monomerid": 50086852,
+   "name": "6-Chloro-4-methyl-3,4-dihydro-2H-benzo[1,4]oxazine-8-carboxylic acid ((S)-1-butyl-pyrrolidin-2-ylmethyl)-amide",
+   "smiles": "CCCCN1CCC[C@H]1CNC(=O)c1cc(Cl)cc2N(C)CCOc12",
+   "p_human": 7.92,
+   "p_rat": 7.92,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 50086858,
+   "name": "6-Chloro-4-methyl-3,4-dihydro-2H-benzo[1,4]oxazine-8-carboxylic acid ((S)-1-phenethyl-pyrrolidin-2-ylmethyl)-amide",
+   "smiles": "CN1CCOc2c1cc(Cl)cc2C(=O)NC[C@@H]1CCCN1CCc1ccccc1",
+   "p_human": 6.1,
+   "p_rat": 6.1,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 50086862,
+   "name": "6-Chloro-4-methyl-3,4-dihydro-2H-benzo[1,4]oxazine-8-carboxylic acid ((R)-1-phenethyl-pyrrolidin-2-ylmethyl)-amide",
+   "smiles": "CN1CCOc2c1cc(Cl)cc2C(=O)NC[C@H]1CCCN1CCc1ccccc1",
+   "p_human": 7.24,
+   "p_rat": 7.24,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 50086863,
+   "name": "6-Chloro-4-methyl-3,4-dihydro-2H-benzo[1,4]oxazine-8-carboxylic acid ((R)-1-butyl-pyrrolidin-2-ylmethyl)-amide",
+   "smiles": "CCCCN1CCC[C@@H]1CNC(=O)c1cc(Cl)cc2N(C)CCOc12",
+   "p_human": 6.2,
+   "p_rat": 6.2,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 50087025,
+   "name": "1,6-Dimethyl-1,5,5a,6,7,8-hexahydro-6-aza-benzo[mno]aceanthrylene",
+   "smiles": "C[C@@H]1c2cccc3C[C@H]4N(C)CCc5ccc1c(-c23)c45",
+   "p_human": 7.71,
+   "p_rat": 7.72,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": -0.01
+  },
+  {
+   "monomerid": 50087028,
+   "name": "6-Methyl-1,5,5a,6,7,8-hexahydro-6-aza-benzo[mno]aceanthrylen-1-ol",
+   "smiles": "CN1CCc2ccc3[C@H](O)c4cccc5C[C@@H]1c2c3-c45",
+   "p_human": 7.62,
+   "p_rat": 7.62,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 50087030,
+   "name": "1,6-Dimethyl-1,5,5a,6,7,8-hexahydro-6-aza-benzo[mno]aceanthrylene",
+   "smiles": "C[C@H]1c2cccc3C[C@H]4N(C)CCc5ccc1c(-c23)c45",
+   "p_human": 7.41,
+   "p_rat": 7.41,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 50087031,
+   "name": "1,6-Dimethyl-1,5,5a,6,7,8-hexahydro-6-aza-benzo[mno]aceanthrylen-1-ol",
+   "smiles": "CN1CCc2ccc3c4-c5c(cccc5C[C@@H]1c24)[C@]3(C)O",
+   "p_human": 7.59,
+   "p_rat": 7.59,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 50087032,
+   "name": "N-(6-Methyl-1,5,5a,6,7,8-hexahydro-6-aza-benzo[mno]aceanthrylen-1-yl)-acetamide",
+   "smiles": "CN1CCc2ccc3[C@H](NC(C)=O)c4cccc5C[C@@H]1c2c3-c45",
+   "p_human": 5.44,
+   "p_rat": 5.44,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 50087034,
+   "name": "6-Methyl-1,5,5a,6,7,8-hexahydro-6-aza-benzo[mno]aceanthrylen-1-ol",
+   "smiles": "CN1CCc2ccc3[C@@H](O)c4cccc5C[C@@H]1c2c3-c45",
+   "p_human": 6.67,
+   "p_rat": 6.68,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": -0.01
+  },
+  {
+   "monomerid": 50087038,
+   "name": "N-(6-Methyl-1,5,5a,6,7,8-hexahydro-6-aza-benzo[mno]aceanthrylen-1-yl)-acetamide",
+   "smiles": "CN1CCc2ccc3[C@@H](NC(C)=O)c4cccc5C[C@@H]1c2c3-c45",
+   "p_human": 5.1,
+   "p_rat": 5.1,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 50087039,
+   "name": "1,6-Dimethyl-1,5,5a,6,7,8-hexahydro-6-aza-benzo[mno]aceanthrylen-1-ol",
+   "smiles": "CN1CCc2ccc3c4-c5c(cccc5C[C@@H]1c24)[C@@]3(C)O",
+   "p_human": 6.74,
+   "p_rat": 6.74,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 50091032,
+   "name": "Aminotetralin-6,7-dihydroxy-(+)",
+   "smiles": "[NH3+][C@@H]1CCc2cc(O)c(O)cc2C1",
+   "p_human": 5.38,
+   "p_rat": 7.23,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": -1.85
+  },
+  {
+   "monomerid": 50096739,
+   "name": "(R)-7-methyl-6a,7,8,9-tetrahydro-6H-1-oxa-7-aza-benzo[cd]pyren-2-one",
+   "smiles": "CN1CCc2ccc3oc(=O)c4cccc5C[C@@H]1c2c3c45",
+   "p_human": 6.58,
+   "p_rat": 6.27,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.31
+  },
+  {
+   "monomerid": 50096740,
+   "name": "(R)-7-Methyl-6a,7,8,9-tetrahydro-6H-2-oxa-7-aza-benzo[cd]pyren-1-one",
+   "smiles": "CN1CCc2ccc3c4c2[C@H]1Cc1cccc(oc3=O)c41",
+   "p_human": 6.27,
+   "p_rat": 6.57,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": -0.3
+  },
+  {
+   "monomerid": 50104121,
+   "name": "9H-Fluorene-9-carboxylic acid [3-(4-phenyl-piperazin-1-yl)-propyl]-amide",
+   "smiles": "O=C(NCCCN1CCN(CC1)c1ccccc1)C1c2ccccc2-c2ccccc12",
+   "p_human": 6.22,
+   "p_rat": 5.99,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.23
+  },
+  {
+   "monomerid": 50104124,
+   "name": "9H-Fluorene-2-carboxylic acid {3-[4-(2,3-dichloro-phenyl)-piperazin-1-yl]-propyl}-amide",
+   "smiles": "Clc1cccc(N2CCN(CCCNC(=O)c3ccc-4c(Cc5ccccc-45)c3)CC2)c1Cl",
+   "p_human": 5.59,
+   "p_rat": 6.4,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": -0.81
+  },
+  {
+   "monomerid": 50104125,
+   "name": "2-{4-[4-(2,3-Dichloro-phenyl)-piperazin-1-yl]-butyl}-isoindole-1,3-dione",
+   "smiles": "Clc1cccc(N2CCN(CCCCN3C(=O)c4ccccc4C3=O)CC2)c1Cl",
+   "p_human": 6.92,
+   "p_rat": 6.99,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": -0.07
+  },
+  {
+   "monomerid": 50104129,
+   "name": "9-Oxo-9H-fluorene-4-carboxylic acid {3-[4-(2,3-dichloro-phenyl)-piperazin-1-yl]-propyl}-amide",
+   "smiles": "Clc1cccc(N2CCN(CCCNC(=O)c3cccc4C(=O)c5ccccc5-c34)CC2)c1Cl",
+   "p_human": 6.29,
+   "p_rat": 6.82,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": -0.53
+  },
+  {
+   "monomerid": 50104130,
+   "name": "9-Oxo-9H-fluorene-4-carboxylic acid {5-[4-(2,3-dichloro-phenyl)-piperazin-1-yl]-pentyl}-amide",
+   "smiles": "Clc1cccc(N2CCN(CCCCCNC(=O)c3cccc4C(=O)c5ccccc5-c34)CC2)c1Cl",
+   "p_human": 8.3,
+   "p_rat": 7.46,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.84
+  },
+  {
+   "monomerid": 50104133,
+   "name": "2-{5-[4-(2,3-Dichloro-phenyl)-piperazin-1-yl]-pentyl}-isoindole-1,3-dione",
+   "smiles": "Clc1cccc(N2CCN(CCCCCN3C(=O)c4ccccc4C3=O)CC2)c1Cl",
+   "p_human": 7.96,
+   "p_rat": 7.07,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.89
+  },
+  {
+   "monomerid": 50104140,
+   "name": "9H-Fluorene-9-carboxylic acid {4-[4-(2,3-dichloro-phenyl)-piperazin-1-yl]-butyl}-amide",
+   "smiles": "Clc1cccc(N2CCN(CCCCNC(=O)C3c4ccccc4-c4ccccc34)CC2)c1Cl",
+   "p_human": 8.0,
+   "p_rat": 7.26,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.74
+  },
+  {
+   "monomerid": 50104142,
+   "name": "9H-Fluorene-9-carboxylic acid {3-[4-(2,3-dichloro-phenyl)-piperazin-1-yl]-propyl}-amide",
+   "smiles": "Clc1cccc(N2CCN(CCCNC(=O)C3c4ccccc4-c4ccccc34)CC2)c1Cl",
+   "p_human": 6.38,
+   "p_rat": 6.6,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": -0.22
+  },
+  {
+   "monomerid": 50113332,
+   "name": "altanserin",
+   "smiles": "O=C(c1ccc(F)cc1)C1CCN(CCn2c(=S)[nH]c3ccccc3c2=O)CC1",
+   "p_human": 7.21,
+   "p_rat": 7.21,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 50117182,
+   "name": "Dinapsoline, (+/-)",
+   "smiles": "Oc1ccc2C3CNCc4cccc(Cc2c1O)c34",
+   "p_human": 7.97,
+   "p_rat": 7.25,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.72
+  },
+  {
+   "monomerid": 50122031,
+   "name": "4-Bromo-1-methoxy-naphthalene-2-carboxylic acid {4-[4-(2,3-dichloro-phenyl)-piperazin-1-yl]-butyl}-amide",
+   "smiles": "COc1c(cc(Br)c2ccccc12)C(=O)NCCCCN1CCN(CC1)c1cccc(Cl)c1Cl",
+   "p_human": 5.42,
+   "p_rat": 6.97,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": -1.55
+  },
+  {
+   "monomerid": 50122041,
+   "name": "N-(4-(4-(2,3-dichlorophenyl)piperazin-1-yl)butyl)-1-methoxy-2-naphthamide",
+   "smiles": "COc1c(ccc2ccccc12)C(=O)NCCCCN1CCN(CC1)c1cccc(Cl)c1Cl",
+   "p_human": 6.08,
+   "p_rat": 6.14,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": -0.06
+  },
+  {
+   "monomerid": 50122803,
+   "name": "SNAP-8719",
+   "smiles": "C[C@H](CN1CCN(CC1)c1cc(F)c(F)cc1F)N1C(=O)CC2(CCCC2)CC1=O",
+   "p_human": 6.24,
+   "p_rat": 6.01,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.23
+  },
+  {
+   "monomerid": 50125260,
+   "name": "2-{2-[4-(5-Fluoro-2-oxo-2,3-dihydro-benzoimidazol-1-yl)-piperidin-1-yl]-ethyl}-2,3,4,5-tetrahydro-benzo[c]azepin-1-one",
+   "smiles": "O=C1c2ccccc2CCCN1CCN1CCC(n2c(=O)[nH]c3cc(F)ccc32)CC1",
+   "p_human": 6.63,
+   "p_rat": 6.63,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 50129425,
+   "name": "N-(4-(4-(2,3-dichlorophenyl)piperazin-1-yl)butyl)-5-fluoro-1H-indole-2-carboxamide",
+   "smiles": "O=C(NCCCCN1CCN(c2cccc(Cl)c2Cl)CC1)c1cc2cc(F)ccc2[nH]1",
+   "p_human": 7.43,
+   "p_rat": 7.08,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.35
+  },
+  {
+   "monomerid": 50131926,
+   "name": "Isoquinoline-3-carboxylic acid {4-[4-(2-methoxy-phenyl)-piperazin-1-yl]-butyl}-amide",
+   "smiles": "COc1ccccc1N1CCN(CCCCNC(=O)c2cc3ccccc3cn2)CC1",
+   "p_human": 7.56,
+   "p_rat": 7.12,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.44
+  },
+  {
+   "monomerid": 50133184,
+   "name": "6-Dipropylamino-3,4,5,6,7,8-hexahydro-2H-naphthalen-1-one oxime",
+   "smiles": "CCCN(CCC)C1CCC2=C(CCCC2C1)N=O |t:10|",
+   "p_human": 5.65,
+   "p_rat": 5.65,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 50137617,
+   "name": "N-[2-(6,7-Dimethoxy-3,4-dihydro-1H-isoquinolin-2-yl)-ethyl]-2-methoxy-5-methyl-benzamide",
+   "smiles": "COc1cc2CCN(CCNC(=O)c3cc(C)ccc3OC)Cc2cc1OC",
+   "p_human": 5.55,
+   "p_rat": 5.55,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 50137618,
+   "name": "5-bromo-N-(4-(6,7-dimethoxy-3,4-dihydroisoquinolin-2(1H)-yl)butyl)-2,3-dimethoxybenzamide",
+   "smiles": "COc1cc2CCN(CCCCNC(=O)c3cc(Br)cc(OC)c3OC)Cc2cc1OC",
+   "p_human": 5.66,
+   "p_rat": 5.66,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 50150673,
+   "name": "[(S)-5-(2,6-Dimethoxy-phenyl)-1,2,3,4-tetrahydro-naphthalen-2-yl]-dimethyl-amine",
+   "smiles": "COc1cccc(OC)c1-c1cccc2c1CC[C@H](N(C)C)C2",
+   "p_human": 6.62,
+   "p_rat": 6.62,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 50150674,
+   "name": "[(S)-5-(2,6-Dimethoxy-phenyl)-1,2,3,4-tetrahydro-naphthalen-2-yl]-dipropyl-amine",
+   "smiles": "CCCN(CCC)[C@H]1CCc2c(cccc2-c2c(OC)cccc2OC)C1",
+   "p_human": 5.92,
+   "p_rat": 5.92,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 50160807,
+   "name": "Blonanserin",
+   "smiles": "CCN1CCN(CC1)c1cc(-c2ccc(F)cc2)c2CCCCCCc2n1",
+   "p_human": 9.85,
+   "p_rat": 7.83,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 2.02
+  },
+  {
+   "monomerid": 50167898,
+   "name": "SB-277011",
+   "smiles": "N#Cc1ccc2c(c1)CCN(CCC1CCC(NC(=O)c3ccnc4ccccc34)CC1)C2",
+   "p_human": 5.98,
+   "p_rat": 5.55,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.43
+  },
+  {
+   "monomerid": 50176070,
+   "name": "N-(4-(4-(2,3-dichlorophenyl)piperazin-1-yl)butyl)-7-methoxybenzofuran-2-carboxamide",
+   "smiles": "COc1cccc2cc(oc12)C(=O)NCCCCN1CCN(CC1)c1cccc(Cl)c1Cl",
+   "p_human": 6.43,
+   "p_rat": 6.14,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.29
+  },
+  {
+   "monomerid": 50202298,
+   "name": "(R)-7-Methyl-1,6,6a,7,8,9-hexahydro-1,7-diaza-benzo[cd]pyren-2-one",
+   "smiles": "CN1CCc2ccc3[nH]c(=O)c4cccc5c4c3c2[C@H]1C5",
+   "p_human": 5.21,
+   "p_rat": 7.26,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": -2.05
+  },
+  {
+   "monomerid": 50202333,
+   "name": "(R)-7-Methyl-6a,7,8,9-tetrahydro-2H,6H-2,7-diaza-benzo[cd]pyren-1-one",
+   "smiles": "CN1CCc2ccc3c(=O)[nH]c4cccc5c4c3c2[C@H]1C5",
+   "p_human": 7.26,
+   "p_rat": 5.21,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 2.05
+  },
+  {
+   "monomerid": 50208447,
+   "name": "CHEMBL3883955",
+   "smiles": "O=c1ccc(OCCCN2CCC(c3noc4cc(F)ccc34)CC2)nn1-c1c(F)cccc1F",
+   "p_human": 8.3,
+   "p_rat": 9.3,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": -1.0
+  },
+  {
+   "monomerid": 50273939,
+   "name": "D-237",
+   "smiles": "CCCN(CCN1CCN(CC1)c1ccccc1)[C@@H]1CCc2c(O)cccc2C1 |r|",
+   "p_human": 7.59,
+   "p_rat": 6.62,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.97
+  },
+  {
+   "monomerid": 50290931,
+   "name": "3-(1-Propyl-pyrrolidin-3-yl)-phenol",
+   "smiles": "CCCN1CCC(C1)c1cccc(O)c1",
+   "p_human": 7.17,
+   "p_rat": 7.17,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 50343299,
+   "name": "2-((4-(2-fluorophenyl)piperidin-1-yl)methyl)-1-methyl-1H-benzo[d]imidazole",
+   "smiles": "Cn1c(CN2CCC(CC2)c2ccccc2F)nc2ccccc12",
+   "p_human": 7.4,
+   "p_rat": 7.03,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.37
+  },
+  {
+   "monomerid": 50343306,
+   "name": "1-methyl-2-((4-(4-(trifluoromethyl)phenyl)piperidin-1-yl)methyl)-1H-benzo[d]imidazole",
+   "smiles": "Cn1c(CN2CCC(CC2)c2ccc(cc2)C(F)(F)F)nc2ccccc12",
+   "p_human": 6.6,
+   "p_rat": 6.25,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.35
+  },
+  {
+   "monomerid": 50367601,
+   "name": "CHEMBL293828",
+   "smiles": "CCCN1CCc2cc(Cl)c(O)cc2[C@@H]1c1ccccc1",
+   "p_human": 5.72,
+   "p_rat": 5.72,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 50367602,
+   "name": "CHEMBL65397",
+   "smiles": "Oc1cc2[C@@H](NCCc2cc1Cl)c1ccccc1",
+   "p_human": 5.43,
+   "p_rat": 5.43,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 50374598,
+   "name": "CHEMBL272603",
+   "smiles": "S=c1sc2ccccc2n1CCCCN1CCN(CC1)C1CCCCC1",
+   "p_human": 5.98,
+   "p_rat": 5.98,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 50404053,
+   "name": "CHEMBL51767",
+   "smiles": "COc1ccccc1N1CCN(CCCOc2ccc3c(C)cc(=O)oc3c2)CC1",
+   "p_human": 7.92,
+   "p_rat": 7.92,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.0
+  },
+  {
+   "monomerid": 50454212,
+   "name": "Emonapride",
+   "smiles": "CNc1cc(OC)c(cc1Cl)C(=O)NC1CCN(Cc2ccccc2)C1C",
+   "p_human": 8.8,
+   "p_rat": 9.8,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": -1.0
+  },
+  {
+   "monomerid": 50455993,
+   "name": "CHEMBL273412",
+   "smiles": "COc1cccc2CCC3C(CCN3CC=C)c12",
+   "p_human": 8.07,
+   "p_rat": 7.89,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.18
+  },
+  {
+   "monomerid": 50455996,
+   "name": "CHEMBL566133",
+   "smiles": "[H][C@]12CCc3c(O)cccc3[C@@]1([H])CCN2CC=C |r|",
+   "p_human": 7.23,
+   "p_rat": 6.59,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.64
+  },
+  {
+   "monomerid": 50455999,
+   "name": "CHEMBL2114337",
+   "smiles": "CCCN1CCC2Cc3c(O)cccc3CC12",
+   "p_human": 7.96,
+   "p_rat": 6.53,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 1.43
+  },
+  {
+   "monomerid": 50469497,
+   "name": "CHEMBL4289498",
+   "smiles": "Fc1ccc2c(noc2c1)C1CCN(CCCC(=O)c2cc3CCN4c3c(CCC4=O)c2)CC1",
+   "p_human": 8.54,
+   "p_rat": 8.0,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.54
+  },
+  {
+   "monomerid": 50469504,
+   "name": "CHEMBL4293999",
+   "smiles": "Fc1ccc2c(noc2c1)C1CCN(CCCCC(=O)c2cc3CCN4c3c(CCC4=O)c2)CC1",
+   "p_human": 8.54,
+   "p_rat": 8.54,
+   "n_human": 1,
+   "n_rat": 1,
+   "diff": 0.0
+  }
+ ]
+}

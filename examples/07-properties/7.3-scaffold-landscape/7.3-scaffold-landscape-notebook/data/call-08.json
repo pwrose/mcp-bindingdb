@@ -1,0 +1,17 @@
+{
+ "row_count": 1,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 50166893,
+   "bdbm_id": "BDBM50166893",
+   "name": "BAY-60-7550",
+   "inchi_key": "MYTWFJKBZGMYCS-NQIIRXRSSA-N",
+   "smiles": "Cc1c2n(c(n1)[C@@H](CCCc3ccccc3)[C@@H](C)O)N=C(NC2=O)Cc4ccc(c(c4)OC)OC",
+   "mol_weight": 476.24,
+   "n_activities": 17,
+   "n_targets": 2,
+   "matched_name": "US11419874, BAY 60-7550"
+  }
+ ]
+}

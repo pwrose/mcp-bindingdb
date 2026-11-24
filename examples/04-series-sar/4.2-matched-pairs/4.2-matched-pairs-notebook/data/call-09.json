@@ -1,0 +1,27 @@
+{
+ "row_count": 3,
+ "truncated": false,
+ "rows": [
+  {
+   "target_id": 1341,
+   "target": "Coagulation factor X",
+   "n": 15,
+   "best_nm": 0.075,
+   "median_nm": 0.08
+  },
+  {
+   "target_id": 334,
+   "target": "Prothrombin",
+   "n": 2,
+   "best_nm": 3100.0,
+   "median_nm": 3100.0
+  },
+  {
+   "target_id": 1789,
+   "target": "Coagulation factor X",
+   "n": 2,
+   "best_nm": 1.3,
+   "median_nm": 15.65
+  }
+ ]
+}

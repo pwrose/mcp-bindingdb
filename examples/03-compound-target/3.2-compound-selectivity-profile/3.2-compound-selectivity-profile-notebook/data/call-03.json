@@ -1,0 +1,134 @@
+{
+ "row_count": 16,
+ "truncated": false,
+ "rows": [
+  {
+   "polymerid": 5221,
+   "target_name": "Tyrosine-protein kinase ABL1",
+   "uniprot": "P00519",
+   "n": 85,
+   "median_p_affinity": 6.77,
+   "n_le_100nM": 38
+  },
+  {
+   "polymerid": 359,
+   "target_name": "Mast/stem cell growth factor receptor Kit",
+   "uniprot": "P10721",
+   "n": 52,
+   "median_p_affinity": 7.0,
+   "n_le_100nM": 27
+  },
+  {
+   "polymerid": 520,
+   "target_name": "Epidermal growth factor receptor",
+   "uniprot": "P00533",
+   "n": 25,
+   "median_p_affinity": 5.0,
+   "n_le_100nM": 1
+  },
+  {
+   "polymerid": 5778,
+   "target_name": "Platelet-derived growth factor receptor alpha",
+   "uniprot": "P16234",
+   "n": 17,
+   "median_p_affinity": 7.51,
+   "n_le_100nM": 13
+  },
+  {
+   "polymerid": 575,
+   "target_name": "Platelet-derived growth factor receptor beta",
+   "uniprot": "P09619",
+   "n": 10,
+   "median_p_affinity": 7.35,
+   "n_le_100nM": 6
+  },
+  {
+   "polymerid": 50001306,
+   "target_name": "Tyrosine-protein kinase ABL2",
+   "uniprot": "P42684",
+   "n": 10,
+   "median_p_affinity": 7.95,
+   "n_le_100nM": 6
+  },
+  {
+   "polymerid": 507,
+   "target_name": "Tyrosine-protein kinase Lck",
+   "uniprot": "P06239",
+   "n": 9,
+   "median_p_affinity": 7.21,
+   "n_le_100nM": 5
+  },
+  {
+   "polymerid": 3993,
+   "target_name": "Epithelial discoidin domain-containing receptor 1",
+   "uniprot": "Q08345",
+   "n": 9,
+   "median_p_affinity": 7.37,
+   "n_le_100nM": 6
+  },
+  {
+   "polymerid": 879,
+   "target_name": "Macrophage colony-stimulating factor 1 receptor",
+   "uniprot": "P07333",
+   "n": 7,
+   "median_p_affinity": 7.72,
+   "n_le_100nM": 4
+  },
+  {
+   "polymerid": 5709,
+   "target_name": "Discoidin domain-containing receptor 2",
+   "uniprot": "Q16832",
+   "n": 5,
+   "median_p_affinity": 6.85,
+   "n_le_100nM": 2
+  },
+  {
+   "polymerid": 5286,
+   "target_name": "Ribosyldihydronicotinamide dehydrogenase [quinone]",
+   "uniprot": "P16083",
+   "n": 4,
+   "median_p_affinity": 7.23,
+   "n_le_100nM": 3
+  },
+  {
+   "polymerid": 188,
+   "target_name": "Receptor tyrosine-protein kinase erbB-2",
+   "uniprot": "P04626",
+   "n": 3,
+   "median_p_affinity": 5.0,
+   "n_le_100nM": 1
+  },
+  {
+   "polymerid": 50006151,
+   "target_name": "Multidrug and toxin extrusion protein 1",
+   "uniprot": "Q96FL8",
+   "n": 3,
+   "median_p_affinity": 7.3,
+   "n_le_100nM": 2
+  },
+  {
+   "polymerid": 1192,
+   "target_name": "Carbonic anhydrase 1",
+   "uniprot": "P00915",
+   "n": 1,
+   "median_p_affinity": 7.5,
+   "n_le_100nM": 1
+  },
+  {
+   "polymerid": 1193,
+   "target_name": "Carbonic anhydrase 2",
+   "uniprot": "P00918",
+   "n": 1,
+   "median_p_affinity": 7.52,
+   "n_le_100nM": 1
+  },
+  {
+   "polymerid": 1233,
+   "target_name": "Carbonic anhydrase 9",
+   "uniprot": "Q16790",
+   "n": 1,
+   "median_p_affinity": 7.12,
+   "n_le_100nM": 1
+  }
+ ]
+}

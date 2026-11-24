@@ -1,0 +1,138 @@
+{
+ "row_count": 11,
+ "truncated": false,
+ "rows": [
+  {
+   "target_kind": "polymer",
+   "target_id": 5093,
+   "name": "Beta-secretase 1",
+   "uniprot": "P56817",
+   "uniprot_raw": "P56817",
+   "organism": "Homo sapiens",
+   "type": "Protein",
+   "n_activities": 14808,
+   "n_compounds": 10964,
+   "matched_name": "BACE1"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 198,
+   "name": "Beta-secretase 1 [1-458]",
+   "uniprot": "P56817",
+   "uniprot_raw": "P56817[1-458]",
+   "organism": "Homo sapiens",
+   "type": null,
+   "n_activities": 549,
+   "n_compounds": 541,
+   "matched_name": "BACE1"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 512,
+   "name": "Beta-secretase 1 [1-460]",
+   "uniprot": "P56817",
+   "uniprot_raw": "P56817[1-460]",
+   "organism": "Homo sapiens",
+   "type": "Protein",
+   "n_activities": 195,
+   "n_compounds": 169,
+   "matched_name": "BACE1"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 5986,
+   "name": "Isoform C of Beta-secretase 1 (BACE-I-457)",
+   "uniprot": "P56817",
+   "uniprot_raw": "P56817-3",
+   "organism": "Homo sapiens",
+   "type": "Enzyme",
+   "n_activities": 166,
+   "n_compounds": 163,
+   "matched_name": "BACE1"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 8666,
+   "name": "Isoform D of Beta-secretase 1 (BACE-I-432)",
+   "uniprot": "P56817",
+   "uniprot_raw": "P56817-4",
+   "organism": "Homo sapiens",
+   "type": "Protein",
+   "n_activities": 126,
+   "n_compounds": 123,
+   "matched_name": "BACE1"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1671,
+   "name": "Beta-secretase 1 [1-453]",
+   "uniprot": "P56817",
+   "uniprot_raw": "P56817[1-453]",
+   "organism": "Homo sapiens",
+   "type": "Enzyme",
+   "n_activities": 56,
+   "n_compounds": 56,
+   "matched_name": "BACE1"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 7404,
+   "name": "Beta-secretase 1",
+   "uniprot": "P56818",
+   "uniprot_raw": "P56818",
+   "organism": "Mus musculus",
+   "type": "Enzyme",
+   "n_activities": 43,
+   "n_compounds": 43,
+   "matched_name": "Bace1"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 8809,
+   "name": "Beta-secretase 1 [1-454]",
+   "uniprot": "P56817",
+   "uniprot_raw": "P56817[1-454]",
+   "organism": "Homo sapiens",
+   "type": "Protein",
+   "n_activities": 36,
+   "n_compounds": 36,
+   "matched_name": "BACE1"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 4009,
+   "name": "Beta-secretase 1 [22-457]",
+   "uniprot": "P56817",
+   "uniprot_raw": "P56817[22-457]",
+   "organism": "Homo sapiens",
+   "type": "Extracellular Domain",
+   "n_activities": 11,
+   "n_compounds": 11,
+   "matched_name": "BACE1"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1712,
+   "name": "Beta-secretase 1 [22-454]",
+   "uniprot": "P56817",
+   "uniprot_raw": "P56817[22-454]",
+   "organism": "Homo sapiens",
+   "type": "Enzyme",
+   "n_activities": 7,
+   "n_compounds": 7,
+   "matched_name": "BACE1"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50006601,
+   "name": "Beta-secretase 1",
+   "uniprot": "P56819",
+   "uniprot_raw": "P56819",
+   "organism": "Rattus norvegicus",
+   "type": "PROTEIN",
+   "n_activities": 5,
+   "n_compounds": 5,
+   "matched_name": "Bace1"
+  }
+ ]
+}

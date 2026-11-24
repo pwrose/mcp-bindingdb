@@ -1,0 +1,25 @@
+{
+ "query": "pimozide",
+ "resolved": true,
+ "source": "bindingdb",
+ "smiles": "c1ccc2c(c1)NC(=O)N2C3CCN(CC3)CCCC(c4ccc(cc4)F)c5ccc(cc5)F",
+ "inchi_key": "YVUQSNJEYSNKRX-UHFFFAOYSA-N",
+ "monomerid": 50334150,
+ "ambiguous": false,
+ "candidates": [
+  {
+   "monomerid": 50334150,
+   "bdbm_id": "BDBM50334150",
+   "name": "Orap",
+   "inchi_key": "YVUQSNJEYSNKRX-UHFFFAOYSA-N",
+   "smiles": "c1ccc2c(c1)NC(=O)N2C3CCN(CC3)CCCC(c4ccc(cc4)F)c5ccc(cc5)F",
+   "n_activities": 135
+  }
+ ],
+ "sources_tried": [
+  {
+   "source": "bindingdb",
+   "status": "found"
+  }
+ ]
+}

@@ -1,0 +1,145 @@
+{
+ "grouped_by": "scaffold",
+ "n_scaffolds": 170,
+ "n_compounds": 950,
+ "row_count": 15,
+ "truncated": true,
+ "rows": [
+  {
+   "scaffold_smiles": "O=c1[nH]cnc2c1cnn2Cc1ccccc1",
+   "n_compounds": 115,
+   "n_measurements": 179,
+   "best_p_affinity": 10.8,
+   "median_p_affinity": 9.38,
+   "best_monomerid": 320811,
+   "best_compound_name": "(R)- or (S)-1-(1-(4-(1,1-Difluoroethyl)-3- fluorophenyl)propyl)-6-(dimethylamino)-3- (fluoromethyl)-1H-pyrazolo[3,4- d]pyrimidin-4(5H)-one"
+  },
+  {
+   "scaffold_smiles": "O=C(NCc1ccccc1)c1cc(=O)[nH]cn1",
+   "n_compounds": 111,
+   "n_measurements": 116,
+   "best_p_affinity": 10.14,
+   "median_p_affinity": 8.66,
+   "best_monomerid": 384991,
+   "best_compound_name": "2-(dimethylamino)-N-{(1S)-2- hydroxy-2-methyl-1-[4- (pentafluoro-lambda6- sulfanyl)phenyl]propyl}-6-oxo- 1,6-dihydropyrimidine-4- carboxamide"
+  },
+  {
+   "scaffold_smiles": "O=C(NCc1ccccc1)c1cc(=O)[nH]c(-c2ccccc2)n1",
+   "n_compounds": 41,
+   "n_measurements": 44,
+   "best_p_affinity": 9.3,
+   "median_p_affinity": 8.54,
+   "best_monomerid": 355552,
+   "best_compound_name": "N-{(1S)-1-[2-chloro-4- (trifluoromethyl)phenyl]-2-hydroxy- 1-methylethyl}-6-oxo-2-phenyl-1,6- dihydropyrimidine-4-carboxamide"
+  },
+  {
+   "scaffold_smiles": "O=C(NCc1ccccc1)c1cc(=O)[nH]c(Cc2ccccc2)n1",
+   "n_compounds": 39,
+   "n_measurements": 39,
+   "best_p_affinity": 9.31,
+   "median_p_affinity": 8.82,
+   "best_monomerid": 355376,
+   "best_compound_name": "N-{(1R)-2,2-dimethyl-1-[4- (trifluoromethoxy)phenyl]propyl}- 2-(4-methoxybenzyl)-6-oxo-1,6- dihydropyrimidine-4-carboxamide"
+  },
+  {
+   "scaffold_smiles": "c1ccc(-c2nnc3cnc4ccccc4n23)cc1",
+   "n_compounds": 37,
+   "n_measurements": 39,
+   "best_p_affinity": 9.55,
+   "median_p_affinity": 8.3,
+   "best_monomerid": 50425140,
+   "best_compound_name": "CHEMBL2313250"
+  },
+  {
+   "scaffold_smiles": "c1ccc(-c2[nH]ncc2-c2ncn3ncnc(N4CCC4)c23)cc1",
+   "n_compounds": 32,
+   "n_measurements": 33,
+   "best_p_affinity": 9.52,
+   "median_p_affinity": 8.9,
+   "best_monomerid": 107776,
+   "best_compound_name": "US8598155, 13"
+  },
+  {
+   "scaffold_smiles": "O=C(NCc1ccccc1)c1cc(=O)[nH]c(-c2ncccn2)n1",
+   "n_compounds": 26,
+   "n_measurements": 26,
+   "best_p_affinity": 8.89,
+   "median_p_affinity": 8.3,
+   "best_monomerid": 355154,
+   "best_compound_name": "N-[(1R)-1-{3-fluoro-4- [(trifluoromethyl)sulfanyl]phenyl}-2- methylpropyl]-6-oxo-1,6-dihydro-2,2'- bipyrimidine-4-carboxamide"
+  },
+  {
+   "scaffold_smiles": "O=C(N[C@@H](c1ccccc1)C1CC1)c1cc(=O)[nH]cn1",
+   "n_compounds": 25,
+   "n_measurements": 25,
+   "best_p_affinity": 9.51,
+   "median_p_affinity": 8.72,
+   "best_monomerid": 384841,
+   "best_compound_name": "2-(dimethylamino)-N-{(R)-(1- methylcyclopropyl)[4-(pentafluoro-lambda6- sulfanyl)phenyl]methyl}-6-oxo-1,6- dihydropyrimidine-4-carboxamide"
+  },
+  {
+   "scaffold_smiles": "O=C(NCc1ccccc1)c1cc(=O)[nH]c(C2CC2)n1",
+   "n_compounds": 25,
+   "n_measurements": 25,
+   "best_p_affinity": 9.1,
+   "median_p_affinity": 8.51,
+   "best_monomerid": 355171,
+   "best_compound_name": "2-cyclopropyl-N-{(1R)-2,2-dimethyl- 1-[4-(trifluoromethyl)phenyl]propyl}- 6-oxo-1,6-dihydropyrimidine-4- carboxamide"
+  },
+  {
+   "scaffold_smiles": "c1ccc(-c2[nH]ncc2-c2n[nH]c3ncnc(N4CCC4)c23)cc1",
+   "n_compounds": 24,
+   "n_measurements": 34,
+   "best_p_affinity": 8.83,
+   "median_p_affinity": 8.18,
+   "best_monomerid": 9049,
+   "best_compound_name": "US8829010, 35"
+  },
+  {
+   "scaffold_smiles": "O=c1[nH]cnc2c1cnn2C(c1ccccc1)C1CC1",
+   "n_compounds": 23,
+   "n_measurements": 43,
+   "best_p_affinity": 10.7,
+   "median_p_affinity": 9.85,
+   "best_monomerid": 320946,
+   "best_compound_name": "(R)- or (S)-1- (Cyclopropyl(4-(1,1- difluoroethyl)-3- fluorophenyl)methyl)- 6-(dimethylamino)-3- (hydroxymethyl)-1H- pyrazolo[3,4- d]pyrimidin-4(5H)-one"
+  },
+  {
+   "scaffold_smiles": "O=C(NCc1ccccc1)c1cc(=O)[nH]c(N2CCCC2)n1",
+   "n_compounds": 15,
+   "n_measurements": 16,
+   "best_p_affinity": 9.96,
+   "median_p_affinity": 9.35,
+   "best_monomerid": 384950,
+   "best_compound_name": "N-{(1R)-2,2-dimethyl-1-[4- (trifluoromethyl)phenyl]propyl}-2- [(3S)-3- methoxypyrrolidin-1-yl]-6-oxo-1,6- dihydropyrimidine-4-carboxamide"
+  },
+  {
+   "scaffold_smiles": "O=C(NC1(c2ccccc2)CC1)c1cc(=O)[nH]cn1",
+   "n_compounds": 15,
+   "n_measurements": 17,
+   "best_p_affinity": 9.05,
+   "median_p_affinity": 8.31,
+   "best_monomerid": 50204595,
+   "best_compound_name": "CHEMBL3889667"
+  },
+  {
+   "scaffold_smiles": "c1ccc(-c2nnc3cnc4cccnc4n23)cc1",
+   "n_compounds": 15,
+   "n_measurements": 18,
+   "best_p_affinity": 8.7,
+   "median_p_affinity": 8.15,
+   "best_monomerid": 171838,
+   "best_compound_name": "US9085584, 8"
+  },
+  {
+   "scaffold_smiles": "O=c1[nH]cnn2c(-c3cn[nH]c3-c3ccccc3)ncc12",
+   "n_compounds": 14,
+   "n_measurements": 16,
+   "best_p_affinity": 10.22,
+   "median_p_affinity": 9.02,
+   "best_monomerid": 50263751,
+   "best_compound_name": "CHEMBL4071033"
+  }
+ ],
+ "note": "scaffold_smiles is null for compounds without a ring"
+}

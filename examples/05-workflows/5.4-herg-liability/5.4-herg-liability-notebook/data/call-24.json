@@ -1,0 +1,41 @@
+{
+ "query": "fluoxetine",
+ "resolved": true,
+ "source": "bindingdb",
+ "smiles": "CNCC[C@H](c1ccccc1)Oc2ccc(cc2)C(F)(F)F",
+ "inchi_key": "RTHCYVBBDHJXIQ-MRXNPFEDSA-N",
+ "monomerid": 30130,
+ "ambiguous": false,
+ "candidates": [
+  {
+   "monomerid": 30130,
+   "bdbm_id": "BDBM30130",
+   "name": "Prozac",
+   "inchi_key": "RTHCYVBBDHJXIQ-MRXNPFEDSA-N",
+   "smiles": "CNCC[C@H](c1ccccc1)Oc2ccc(cc2)C(F)(F)F",
+   "n_activities": 266
+  },
+  {
+   "monomerid": 50136166,
+   "bdbm_id": "BDBM50136166",
+   "name": "FLUOXETINE",
+   "inchi_key": "RTHCYVBBDHJXIQ-MRXNPFEDSA-N",
+   "smiles": "CNCC[C@@H](Oc1ccc(cc1)C(F)(F)F)c1ccccc1 |r|",
+   "n_activities": 11
+  },
+  {
+   "monomerid": 50667278,
+   "bdbm_id": "BDBM50667278",
+   "name": "Fluval",
+   "inchi_key": "RTHCYVBBDHJXIQ-UHFFFAOYSA-N",
+   "smiles": "CNCCC(Oc1ccc(C(F)(F)F)cc1)c1ccccc1",
+   "n_activities": 1
+  }
+ ],
+ "sources_tried": [
+  {
+   "source": "bindingdb",
+   "status": "found"
+  }
+ ]
+}

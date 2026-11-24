@@ -1,0 +1,34 @@
+{
+ "query": "50-78-2",
+ "resolved": true,
+ "source": "pubchem",
+ "smiles": "CC(=O)Oc1ccccc1C(=O)O",
+ "inchi_key": "BSYNRYMUTXBXSQ-UHFFFAOYSA-N",
+ "pubchem_name": "Aspirin",
+ "pubchem_cid": 2244,
+ "bindingdb_matches": [
+  {
+   "monomerid": 22360,
+   "bdbm_id": "BDBM22360",
+   "name": "Aspirin",
+   "inchi_key": "BSYNRYMUTXBXSQ-UHFFFAOYSA-N",
+   "smiles": "CC(=O)Oc1ccccc1C(=O)O",
+   "n_activities": 137,
+   "exact_match": true
+  }
+ ],
+ "sources_tried": [
+  {
+   "source": "bindingdb",
+   "status": "not found"
+  },
+  {
+   "source": "opsin",
+   "status": "not found"
+  },
+  {
+   "source": "pubchem",
+   "status": "found"
+  }
+ ]
+}

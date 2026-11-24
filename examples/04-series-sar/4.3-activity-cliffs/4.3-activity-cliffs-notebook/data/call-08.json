@@ -1,0 +1,50 @@
+{
+ "row_count": 4,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 506342,
+   "compound_name": "(1S,2R)-2-((S)-(1-((1-(4-((4- acrylamidophenyl)sulfonyl)phenyl)azetidin-3- yl)methyl)piperidin-4-yl)(cyano)(3- fluorophenyl)methyl)cyclopentyl methylcarbamate",
+   "source_id": "US11045448-B2",
+   "nm": 2.0,
+   "assay_name": "Menin Binding Affinity",
+   "ph": null,
+   "temp_k": null,
+   "entryid": 9993,
+   "smiles": "CNC(=O)O[C@H]1CCC[C@@H]1[C@@](C#N)(C1CCN(CC2CN(C2)c2ccc(cc2)S(=O)(=O)c2ccc(NC(=O)C=C)cc2)CC1)c1cccc(F)c1 |r|"
+  },
+  {
+   "monomerid": 506343,
+   "compound_name": "(1S,2R)-2-((R)-(1-((1-(4-((4- acrylamidophenyl)sulfonyl)phenyl)azetidin-3- yl)methyl)piperidin-4-yl)(cyano)(3- fluorophenyl)methyl)cyclopentyl methylcarbamate",
+   "source_id": "US11045448-B2",
+   "nm": 2200.0,
+   "assay_name": "Menin Binding Affinity",
+   "ph": null,
+   "temp_k": null,
+   "entryid": 9993,
+   "smiles": "CNC(=O)O[C@H]1CCC[C@@H]1[C@](C#N)(C1CCN(CC2CN(C2)c2ccc(cc2)S(=O)(=O)c2ccc(NC(=O)C=C)cc2)CC1)c1cccc(F)c1 |r|"
+  },
+  {
+   "monomerid": 787682,
+   "compound_name": "US12473295, Compound 122",
+   "source_id": "US12473295-B2",
+   "nm": 65.0,
+   "assay_name": "Menin/MLL Homogenous Time-Resolved Fluorescence (HTRF) Assay",
+   "ph": null,
+   "temp_k": null,
+   "entryid": 13412,
+   "smiles": "CCN(C(=O)c1cc(F)ccc1Oc1nncnc1N1CCC2(C1)CN([C@H](CCCN(C)C(C)C)C(C)C)C2)C(C)C"
+  },
+  {
+   "monomerid": 787729,
+   "compound_name": "US12473295, Compound 215",
+   "source_id": "US12473295-B2",
+   "nm": 88840.0,
+   "assay_name": "Menin/MLL Homogenous Time-Resolved Fluorescence (HTRF) Assay",
+   "ph": null,
+   "temp_k": null,
+   "entryid": 13412,
+   "smiles": "CCN(C(=O)c1cc(F)ccc1Oc1nncnc1N1CCC2(C1)CN([C@@H](CCO)C(C)C)C2)C(C)C"
+  }
+ ]
+}

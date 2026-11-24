@@ -1,0 +1,46 @@
+{
+ "row_count": 4,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 689587,
+   "compound_name": "US12473295, Compound 397",
+   "source_id": "US20240261292-A1",
+   "nm": 0.11,
+   "relation": "=",
+   "assay_name": "Homogenous Time-Resolved Fluorescence (HTRF) Assay",
+   "year": 2024,
+   "smiles": "CCN(C(C)C)C(=O)c1cc(F)ccc1Oc1nncnc1N1CCC2(CN(C2)[C@H](CCCNCCOC)C(C)C)C1"
+  },
+  {
+   "monomerid": 689587,
+   "compound_name": "US12473295, Compound 397",
+   "source_id": "US20240261292-A1",
+   "nm": 0.09,
+   "relation": "=",
+   "assay_name": "Homogenous Time-Resolved Fluorescence (HTRF) Assay",
+   "year": 2024,
+   "smiles": "CCN(C(C)C)C(=O)c1cc(F)ccc1Oc1nncnc1N1CCC2(CN(C2)[C@H](CCCNCCOC)C(C)C)C1"
+  },
+  {
+   "monomerid": 689589,
+   "compound_name": "oxalate",
+   "source_id": "US20240261292-A1",
+   "nm": 0.098,
+   "relation": "=",
+   "assay_name": "Homogenous Time-Resolved Fluorescence (HTRF) Assay",
+   "year": 2024,
+   "smiles": "CCN(C(C)C)C(=O)c1cc(ccc1Oc2c(ncnn2)N3CCC4(C3)CN(C4)[C@H](CCCN(C)CCOC)C(C)C)F"
+  },
+  {
+   "monomerid": 689590,
+   "compound_name": "US12473295, Compound 70a",
+   "source_id": "US20240261292-A1",
+   "nm": 0.18,
+   "relation": "=",
+   "assay_name": "Homogenous Time-Resolved Fluorescence (HTRF) Assay",
+   "year": 2024,
+   "smiles": "CCN(C(C)C)C(=O)c1cc(ccc1Oc2c(ncnn2)N3CCC4(C3)CN(C4)[C@H](CCCN(C)CCOC)C(C)C)F"
+  }
+ ]
+}

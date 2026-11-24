@@ -1,0 +1,256 @@
+{
+ "row_count": 25,
+ "truncated": false,
+ "rows": [
+  {
+   "kinase": "CDK1",
+   "target_name": "CDK1/Cyclin E",
+   "palbo_exact": 0,
+   "palbo_censored": 1,
+   "ribo_exact": 0,
+   "ribo_censored": 0,
+   "abema_exact": 0,
+   "abema_censored": 0
+  },
+  {
+   "kinase": "CDK1",
+   "target_name": "Cyclin-A2/Cyclin-dependent kinase 1",
+   "palbo_exact": 0,
+   "palbo_censored": 0,
+   "ribo_exact": 0,
+   "ribo_censored": 0,
+   "abema_exact": 1,
+   "abema_censored": 0
+  },
+  {
+   "kinase": "CDK1",
+   "target_name": "Cyclin-dependent kinase 1",
+   "palbo_exact": 0,
+   "palbo_censored": 2,
+   "ribo_exact": 1,
+   "ribo_censored": 3,
+   "abema_exact": 3,
+   "abema_censored": 2
+  },
+  {
+   "kinase": "CDK1",
+   "target_name": "Cyclin-dependent kinase 1/G1/S-specific cyclin-D3",
+   "palbo_exact": 0,
+   "palbo_censored": 0,
+   "ribo_exact": 0,
+   "ribo_censored": 0,
+   "abema_exact": 4,
+   "abema_censored": 0
+  },
+  {
+   "kinase": "CDK1",
+   "target_name": "Cyclin-dependent kinase/G2/mitotic-specific cyclin- 1",
+   "palbo_exact": 1,
+   "palbo_censored": 5,
+   "ribo_exact": 0,
+   "ribo_censored": 2,
+   "abema_exact": 9,
+   "abema_censored": 0
+  },
+  {
+   "kinase": "CDK2",
+   "target_name": "Cyclin-A2/Cyclin-dependent kinase 2",
+   "palbo_exact": 5,
+   "palbo_censored": 6,
+   "ribo_exact": 1,
+   "ribo_censored": 1,
+   "abema_exact": 6,
+   "abema_censored": 0
+  },
+  {
+   "kinase": "CDK2",
+   "target_name": "Cyclin-dependent kinase 2",
+   "palbo_exact": 1,
+   "palbo_censored": 2,
+   "ribo_exact": 1,
+   "ribo_censored": 3,
+   "abema_exact": 4,
+   "abema_censored": 2
+  },
+  {
+   "kinase": "CDK2",
+   "target_name": "Cyclin-dependent kinase 2/G1/S-specific cyclin-E1",
+   "palbo_exact": 8,
+   "palbo_censored": 2,
+   "ribo_exact": 0,
+   "ribo_censored": 3,
+   "abema_exact": 7,
+   "abema_censored": 0
+  },
+  {
+   "kinase": "CDK2",
+   "target_name": "Cyclin-dependent kinase/G1/S-specific cyclin- 2",
+   "palbo_exact": 0,
+   "palbo_censored": 0,
+   "ribo_exact": 0,
+   "ribo_censored": 0,
+   "abema_exact": 4,
+   "abema_censored": 0
+  },
+  {
+   "kinase": "CDK4",
+   "target_name": "Cyclin-dependent kinase 4",
+   "palbo_exact": 15,
+   "palbo_censored": 1,
+   "ribo_exact": 11,
+   "ribo_censored": 0,
+   "abema_exact": 14,
+   "abema_censored": 0
+  },
+  {
+   "kinase": "CDK4",
+   "target_name": "Cyclin-dependent kinase 4/G1/S-specific cyclin-D1",
+   "palbo_exact": 25,
+   "palbo_censored": 0,
+   "ribo_exact": 8,
+   "ribo_censored": 0,
+   "abema_exact": 14,
+   "abema_censored": 0
+  },
+  {
+   "kinase": "CDK4",
+   "target_name": "Cyclin-dependent kinase 4/G1/S-specific cyclin-D3",
+   "palbo_exact": 6,
+   "palbo_censored": 0,
+   "ribo_exact": 3,
+   "ribo_censored": 0,
+   "abema_exact": 9,
+   "abema_censored": 0
+  },
+  {
+   "kinase": "CDK4",
+   "target_name": "Cyclin-dependent kinase 4/G1/S-specific cyclin-E1",
+   "palbo_exact": 0,
+   "palbo_censored": 0,
+   "ribo_exact": 0,
+   "ribo_censored": 0,
+   "abema_exact": 2,
+   "abema_censored": 0
+  },
+  {
+   "kinase": "CDK5",
+   "target_name": "Cyclin-dependent kinase 5",
+   "palbo_exact": 0,
+   "palbo_censored": 2,
+   "ribo_exact": 0,
+   "ribo_censored": 0,
+   "abema_exact": 4,
+   "abema_censored": 0
+  },
+  {
+   "kinase": "CDK5",
+   "target_name": "Cyclin-dependent kinase 5 activator 1",
+   "palbo_exact": 0,
+   "palbo_censored": 2,
+   "ribo_exact": 0,
+   "ribo_censored": 1,
+   "abema_exact": 7,
+   "abema_censored": 0
+  },
+  {
+   "kinase": "CDK6",
+   "target_name": "CDK6/cyclin D1",
+   "palbo_exact": 12,
+   "palbo_censored": 0,
+   "ribo_exact": 2,
+   "ribo_censored": 0,
+   "abema_exact": 10,
+   "abema_censored": 0
+  },
+  {
+   "kinase": "CDK6",
+   "target_name": "Cyclin-dependent kinase 6",
+   "palbo_exact": 11,
+   "palbo_censored": 1,
+   "ribo_exact": 9,
+   "ribo_censored": 0,
+   "abema_exact": 15,
+   "abema_censored": 0
+  },
+  {
+   "kinase": "CDK6",
+   "target_name": "Cyclin-dependent kinase 6/G1/S-specific cyclin-D1/D2/D3",
+   "palbo_exact": 1,
+   "palbo_censored": 0,
+   "ribo_exact": 1,
+   "ribo_censored": 0,
+   "abema_exact": 1,
+   "abema_censored": 0
+  },
+  {
+   "kinase": "CDK6",
+   "target_name": "Cyclin-dependent kinase 6/G1/S-specific cyclin-D3",
+   "palbo_exact": 10,
+   "palbo_censored": 0,
+   "ribo_exact": 4,
+   "ribo_censored": 0,
+   "abema_exact": 12,
+   "abema_censored": 0
+  },
+  {
+   "kinase": "CDK7",
+   "target_name": "CDK-activating kinase assembly factor MAT1/Cyclin-H/Cyclin-dependent kinase 7",
+   "palbo_exact": 0,
+   "palbo_censored": 1,
+   "ribo_exact": 0,
+   "ribo_censored": 1,
+   "abema_exact": 4,
+   "abema_censored": 0
+  },
+  {
+   "kinase": "CDK7",
+   "target_name": "Cyclin-H/Cyclin-dependent kinase 7",
+   "palbo_exact": 0,
+   "palbo_censored": 2,
+   "ribo_exact": 0,
+   "ribo_censored": 0,
+   "abema_exact": 2,
+   "abema_censored": 0
+  },
+  {
+   "kinase": "CDK7",
+   "target_name": "Cyclin-dependent kinase 7",
+   "palbo_exact": 0,
+   "palbo_censored": 1,
+   "ribo_exact": 0,
+   "ribo_censored": 0,
+   "abema_exact": 3,
+   "abema_censored": 0
+  },
+  {
+   "kinase": "CDK9",
+   "target_name": "Cyclin-T1/Cyclin-dependent kinase 9",
+   "palbo_exact": 4,
+   "palbo_censored": 1,
+   "ribo_exact": 4,
+   "ribo_censored": 0,
+   "abema_exact": 8,
+   "abema_censored": 0
+  },
+  {
+   "kinase": "CDK9",
+   "target_name": "Cyclin-dependent kinase 9",
+   "palbo_exact": 2,
+   "palbo_censored": 1,
+   "ribo_exact": 0,
+   "ribo_censored": 0,
+   "abema_exact": 4,
+   "abema_censored": 0
+  },
+  {
+   "kinase": "CDK12",
+   "target_name": "Cyclin-dependent kinase 12",
+   "palbo_exact": 0,
+   "palbo_censored": 1,
+   "ribo_exact": 0,
+   "ribo_censored": 0,
+   "abema_exact": 0,
+   "abema_censored": 0
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "query": {
+  "input": "C[C@H](Oc1cc(-c2cnn(C3CCNCC3)c2)cnc1N)c1c(Cl)ccc(F)c1Cl",
+  "canonical": "C[C@H](Oc1cc(-c2cnn(C3CCNCC3)c2)cnc1N)c1c(Cl)ccc(F)c1Cl",
+  "threshold": 1.0,
+  "fingerprint": "Morgan radius 2, 2048 bits, largest fragment"
+ },
+ "row_count": 3,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 50306682,
+   "bdbm_id": "BDBM50306682",
+   "name": "CRIZOTINIB",
+   "smiles": "C[C@@H](Oc1cc(cnc1N)-c1cnn(c1)C1CCNCC1)c1c(Cl)ccc(F)c1Cl |r|",
+   "mol_weight": 450.33668,
+   "n_activities": 813,
+   "n_targets": 402,
+   "similarity": 1.0
+  },
+  {
+   "monomerid": 50352564,
+   "bdbm_id": "BDBM50352564",
+   "name": "CHEMBL1825141",
+   "smiles": "C[C@H](Oc1cc(cnc1N)-c1cnn(c1)C1CCNCC1)c1c(Cl)ccc(F)c1Cl |r|",
+   "mol_weight": 449.12,
+   "n_activities": 13,
+   "n_targets": 4,
+   "similarity": 1.0
+  },
+  {
+   "monomerid": 179803,
+   "bdbm_id": "BDBM179803",
+   "name": "3-[1-(2,6-dichloro-3-fluorophenyl)ethoxy]-5-[1-(piperidin-4-yl)-1H-pyrazol-4-yl]pyridin-2-amine (11a)",
+   "smiles": "CC(Oc1cc(cnc1N)-c1cnn(c1)C1CCNCC1)c1c(Cl)ccc(F)c1Cl",
+   "mol_weight": 449.12,
+   "n_activities": 10,
+   "n_targets": 6,
+   "similarity": 1.0
+  }
+ ],
+ "n_similar_compounds": 3,
+ "compounds_searched": 1466457,
+ "search_set_size": 1466457
+}

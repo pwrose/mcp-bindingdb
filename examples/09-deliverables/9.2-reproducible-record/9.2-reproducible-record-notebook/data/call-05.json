@@ -1,0 +1,111 @@
+{
+ "row_count": 15,
+ "truncated": false,
+ "rows": [
+  {
+   "drug": "Abemaciclib",
+   "kinase": "CDK4",
+   "n": 39,
+   "median_p": 8.7,
+   "median_nM": 2.0
+  },
+  {
+   "drug": "Abemaciclib",
+   "kinase": "CDK6",
+   "n": 38,
+   "median_p": 8.07,
+   "median_nM": 9.0
+  },
+  {
+   "drug": "Abemaciclib",
+   "kinase": "CDK9",
+   "n": 12,
+   "median_p": 7.24,
+   "median_nM": 58.0
+  },
+  {
+   "drug": "Abemaciclib",
+   "kinase": "CDK5",
+   "n": 11,
+   "median_p": 6.54,
+   "median_nM": 288.0
+  },
+  {
+   "drug": "Abemaciclib",
+   "kinase": "CDK2",
+   "n": 21,
+   "median_p": 6.5,
+   "median_nM": 316.0
+  },
+  {
+   "drug": "Abemaciclib",
+   "kinase": "CDK1",
+   "n": 17,
+   "median_p": 6.43,
+   "median_nM": 372.0
+  },
+  {
+   "drug": "Abemaciclib",
+   "kinase": "CDK7",
+   "n": 9,
+   "median_p": 5.68,
+   "median_nM": 2089.0
+  },
+  {
+   "drug": "Palbociclib",
+   "kinase": "CDK4",
+   "n": 46,
+   "median_p": 7.96,
+   "median_nM": 11.0
+  },
+  {
+   "drug": "Palbociclib",
+   "kinase": "CDK6",
+   "n": 34,
+   "median_p": 7.81,
+   "median_nM": 15.0
+  },
+  {
+   "drug": "Palbociclib",
+   "kinase": "CDK9",
+   "n": 6,
+   "median_p": 6.07,
+   "median_nM": 841.0
+  },
+  {
+   "drug": "Palbociclib",
+   "kinase": "CDK2",
+   "n": 14,
+   "median_p": 5.05,
+   "median_nM": 8913.0
+  },
+  {
+   "drug": "Ribociclib",
+   "kinase": "CDK4",
+   "n": 22,
+   "median_p": 8.0,
+   "median_nM": 10.0
+  },
+  {
+   "drug": "Ribociclib",
+   "kinase": "CDK6",
+   "n": 16,
+   "median_p": 7.41,
+   "median_nM": 39.0
+  },
+  {
+   "drug": "Ribociclib",
+   "kinase": "CDK9",
+   "n": 4,
+   "median_p": 6.71,
+   "median_nM": 195.0
+  },
+  {
+   "drug": "Ribociclib",
+   "kinase": "CDK2",
+   "n": 2,
+   "median_p": 4.12,
+   "median_nM": 75858.0
+  }
+ ]
+}

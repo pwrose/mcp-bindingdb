@@ -1,0 +1,46 @@
+{
+ "row_count": 8,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 50121730,
+   "name": "{1-[(S)-3-{N-Benzyl-N'-[2-(2,6-dimethyl-phenoxy)-acetyl]-hydrazino}-2-hydroxy-3-oxo-1-((S)-phenylmethyl)-propylcarbamoyl]-2-methylsulfanyl-ethyl}-carbamic acid isoquinolin-5-ylmethyl ester",
+   "smiles": "CSC[C@H](NC(=O)OCc1cccc2cnccc12)C(=O)N[C@@H](Cc1ccccc1)[C@H](O)C(=O)N(Cc1ccccc1)NC(=O)COc1c(C)cccc1C"
+  },
+  {
+   "monomerid": 50121731,
+   "name": "KNI-1278",
+   "smiles": "Cc1cccc(C)c1OCC(=O)N[C@@H](Cc1ccccc1)[C@H](O)C(=O)N(Cc1ccccc1)NC(=O)COc1c(C)cccc1C"
+  },
+  {
+   "monomerid": 50121732,
+   "name": "{1-[(S)-3-[N-Benzyl-N'-(3-hydroxy-2-methyl-benzoyl)-hydrazino]-2-hydroxy-3-oxo-1-((S)-phenylmethyl)-propylcarbamoyl]-2-methylsulfanyl-ethyl}-carbamic acid isoquinolin-5-ylmethyl ester",
+   "smiles": "CSC[C@H](NC(=O)OCc1cccc2cnccc12)C(=O)N[C@@H](Cc1ccccc1)[C@H](O)C(=O)N(Cc1ccccc1)NC(=O)c1cccc(O)c1C"
+  },
+  {
+   "monomerid": 50121735,
+   "name": "KNI-1277",
+   "smiles": "Cc1cccc(C)c1OCC(=O)N[C@@H](Cc1ccccc1)[C@H](O)C(=O)N(Cc1ccccc1)NC(=O)c1cccc(O)c1C"
+  },
+  {
+   "monomerid": 50541883,
+   "name": "CHEMBL4643409",
+   "smiles": "COc1ccc(cc1)S(=O)(=O)N(CC(C)C)C[C@@H](O)[C@H](Cc1ccccc1)NC(=O)N1CCOCC1 |r|"
+  },
+  {
+   "monomerid": 50541884,
+   "name": "CHEMBL4633046",
+   "smiles": "CC(C)CN(C[C@@H](O)[C@H](Cc1ccccc1)NC(=O)N1CCOCC1)S(=O)(=O)c1ccc(cc1)C(F)(F)F |r|"
+  },
+  {
+   "monomerid": 50541886,
+   "name": "CHEMBL4635226",
+   "smiles": "COc1ccc(cc1)S(=O)(=O)N(CC(C)C)C[C@@H](O)[C@H](Cc1ccccc1)NCC(=O)N1CCOCC1 |r|"
+  },
+  {
+   "monomerid": 50541887,
+   "name": "CHEMBL4643674",
+   "smiles": "CC(C)CN(C[C@@H](O)[C@H](Cc1ccccc1)NCC(=O)N1CCOCC1)S(=O)(=O)c1ccc(cc1)C(F)(F)F |r|"
+  }
+ ]
+}

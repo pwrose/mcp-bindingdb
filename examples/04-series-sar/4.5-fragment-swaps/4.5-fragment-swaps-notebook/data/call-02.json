@@ -1,0 +1,51 @@
+{
+ "row_count": 9,
+ "truncated": false,
+ "rows": [
+  {
+   "relation": "=",
+   "affinity_type": "IC50",
+   "n": 2144
+  },
+  {
+   "relation": "=",
+   "affinity_type": "Ki",
+   "n": 1999
+  },
+  {
+   "relation": ">",
+   "affinity_type": "IC50",
+   "n": 135
+  },
+  {
+   "relation": "=",
+   "affinity_type": "Kd",
+   "n": 84
+  },
+  {
+   "relation": ">",
+   "affinity_type": "Ki",
+   "n": 40
+  },
+  {
+   "relation": "<",
+   "affinity_type": "IC50",
+   "n": 25
+  },
+  {
+   "relation": "<",
+   "affinity_type": "Ki",
+   "n": 23
+  },
+  {
+   "relation": ">",
+   "affinity_type": "EC50",
+   "n": 21
+  },
+  {
+   "relation": "=",
+   "affinity_type": "EC50",
+   "n": 19
+  }
+ ]
+}

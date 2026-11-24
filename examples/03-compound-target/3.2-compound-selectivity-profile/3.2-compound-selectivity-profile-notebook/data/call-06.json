@@ -1,0 +1,136 @@
+{
+ "row_count": 13,
+ "truncated": false,
+ "rows": [
+  {
+   "polymerid": 359,
+   "affinity_type": "Ki",
+   "relation": "=",
+   "value": 14.0,
+   "source_id": "16492761",
+   "year": 2006,
+   "assay_name": null,
+   "ki_result_id": 189446
+  },
+  {
+   "polymerid": 359,
+   "affinity_type": "Ki",
+   "relation": "=",
+   "value": 30.7,
+   "source_id": "US10906896-B2",
+   "year": 2021,
+   "assay_name": "Kinase Assay",
+   "ki_result_id": 1000362
+  },
+  {
+   "polymerid": 359,
+   "affinity_type": "Ki",
+   "relation": "=",
+   "value": 14000.0,
+   "source_id": "aid1433",
+   "year": 2008,
+   "assay_name": "Kinase Inhibitor Selectivity Profiling Assay",
+   "ki_result_id": 62794
+  },
+  {
+   "polymerid": 359,
+   "affinity_type": "Ki",
+   "relation": "=",
+   "value": 15000.0,
+   "source_id": "aid1433",
+   "year": 2008,
+   "assay_name": "Kinase Inhibitor Selectivity Profiling Assay",
+   "ki_result_id": 62877
+  },
+  {
+   "polymerid": 359,
+   "affinity_type": "Ki",
+   "relation": "=",
+   "value": 71000.0,
+   "source_id": "aid1433",
+   "year": 2008,
+   "assay_name": "Kinase Inhibitor Selectivity Profiling Assay",
+   "ki_result_id": 62856
+  },
+  {
+   "polymerid": 359,
+   "affinity_type": "Ki",
+   "relation": "=",
+   "value": 820000.0,
+   "source_id": "aid1433",
+   "year": 2008,
+   "assay_name": "Kinase Inhibitor Selectivity Profiling Assay",
+   "ki_result_id": 62817
+  },
+  {
+   "polymerid": 359,
+   "affinity_type": "Ki",
+   "relation": "=",
+   "value": 2900000.0,
+   "source_id": "aid1433",
+   "year": 2008,
+   "assay_name": "Kinase Inhibitor Selectivity Profiling Assay",
+   "ki_result_id": 62837
+  },
+  {
+   "polymerid": 5221,
+   "affinity_type": "Ki",
+   "relation": "=",
+   "value": 13.0,
+   "source_id": "18078752",
+   "year": 2008,
+   "assay_name": null,
+   "ki_result_id": 189869
+  },
+  {
+   "polymerid": 5221,
+   "affinity_type": "Ki",
+   "relation": "=",
+   "value": 13.0,
+   "source_id": "18342402",
+   "year": 2008,
+   "assay_name": "ChEMBL_518628 (CHEMBL962773)",
+   "ki_result_id": 50412055
+  },
+  {
+   "polymerid": 5221,
+   "affinity_type": "Ki",
+   "relation": "=",
+   "value": 13.0,
+   "source_id": "21443205",
+   "year": 2011,
+   "assay_name": "ChEMBL_745920 (CHEMBL1776290)",
+   "ki_result_id": 50638776
+  },
+  {
+   "polymerid": 5221,
+   "affinity_type": "Ki",
+   "relation": "=",
+   "value": 37.0,
+   "source_id": "16783341",
+   "year": 2006,
+   "assay_name": "ChEMBL_660971 (CHEMBL1249638)",
+   "ki_result_id": 50594513
+  },
+  {
+   "polymerid": 5221,
+   "affinity_type": "Ki",
+   "relation": "=",
+   "value": 298.0,
+   "source_id": "16492761",
+   "year": 2006,
+   "assay_name": null,
+   "ki_result_id": 189444
+  },
+  {
+   "polymerid": 5221,
+   "affinity_type": "Ki",
+   "relation": "=",
+   "value": 7000.0,
+   "source_id": "16783341",
+   "year": 2006,
+   "assay_name": "ChEMBL_660972 (CHEMBL1249639)",
+   "ki_result_id": 50165387
+  }
+ ]
+}

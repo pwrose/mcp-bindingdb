@@ -1,0 +1,104 @@
+{
+ "row_count": 14,
+ "truncated": false,
+ "rows": [
+  {
+   "source_id": "US10676434-B2",
+   "year": 2020,
+   "comps": 178,
+   "sub1nm": 132,
+   "best": 0.046
+  },
+  {
+   "source_id": "US10266491-B2",
+   "year": 2019,
+   "comps": 168,
+   "sub1nm": 122,
+   "best": 0.046
+  },
+  {
+   "source_id": "US11053197-B2",
+   "year": 2021,
+   "comps": 165,
+   "sub1nm": 119,
+   "best": 0.046
+  },
+  {
+   "source_id": "US9481682-B2",
+   "year": 2016,
+   "comps": 220,
+   "sub1nm": 105,
+   "best": 0.058
+  },
+  {
+   "source_id": "US9688629-B2",
+   "year": 2017,
+   "comps": 223,
+   "sub1nm": 93,
+   "best": 0.04
+  },
+  {
+   "source_id": "US10604504-B2",
+   "year": 2020,
+   "comps": 222,
+   "sub1nm": 92,
+   "best": 0.04
+  },
+  {
+   "source_id": "US11623921-B2",
+   "year": 2023,
+   "comps": 223,
+   "sub1nm": 91,
+   "best": 0.04
+  },
+  {
+   "source_id": "US9920031-B2",
+   "year": 2018,
+   "comps": 218,
+   "sub1nm": 89,
+   "best": 0.04
+  },
+  {
+   "source_id": "US10087188-B2",
+   "year": 2018,
+   "comps": 192,
+   "sub1nm": 87,
+   "best": 0.13
+  },
+  {
+   "source_id": "US9802915-B2",
+   "year": 2017,
+   "comps": 215,
+   "sub1nm": 87,
+   "best": 0.04
+  },
+  {
+   "source_id": "US9334290-B2",
+   "year": 2016,
+   "comps": 60,
+   "sub1nm": 50,
+   "best": 0.18
+  },
+  {
+   "source_id": "US10214546-B2",
+   "year": 2019,
+   "comps": 174,
+   "sub1nm": 41,
+   "best": 0.07
+  },
+  {
+   "source_id": "US20250340560-A1",
+   "year": 2025,
+   "comps": 218,
+   "sub1nm": 41,
+   "best": 0.13
+  },
+  {
+   "source_id": "US9447106-B2",
+   "year": 2016,
+   "comps": 217,
+   "sub1nm": 41,
+   "best": 0.13
+  }
+ ]
+}

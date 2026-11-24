@@ -1,0 +1,54 @@
+{
+ "row_count": 4,
+ "truncated": true,
+ "rows": [
+  {
+   "target_kind": "polymer",
+   "target_id": 5093,
+   "name": "Beta-secretase 1",
+   "uniprot": "P56817",
+   "uniprot_raw": "P56817",
+   "organism": "Homo sapiens",
+   "type": "Protein",
+   "n_activities": 14808,
+   "n_compounds": 10964,
+   "matched_name": "Beta-secretase 1"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 198,
+   "name": "Beta-secretase 1 [1-458]",
+   "uniprot": "P56817",
+   "uniprot_raw": "P56817[1-458]",
+   "organism": "Homo sapiens",
+   "type": null,
+   "n_activities": 549,
+   "n_compounds": 541,
+   "matched_name": "Beta-secretase 1 [1-458]"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 512,
+   "name": "Beta-secretase 1 [1-460]",
+   "uniprot": "P56817",
+   "uniprot_raw": "P56817[1-460]",
+   "organism": "Homo sapiens",
+   "type": "Protein",
+   "n_activities": 195,
+   "n_compounds": 169,
+   "matched_name": "Beta-secretase 1 (BACE1)"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 5986,
+   "name": "Isoform C of Beta-secretase 1 (BACE-I-457)",
+   "uniprot": "P56817",
+   "uniprot_raw": "P56817-3",
+   "organism": "Homo sapiens",
+   "type": "Enzyme",
+   "n_activities": 166,
+   "n_compounds": 163,
+   "matched_name": "Beta-secretase 1 (BACE)"
+  }
+ ]
+}

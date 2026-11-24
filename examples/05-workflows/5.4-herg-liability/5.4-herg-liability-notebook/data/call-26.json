@@ -1,0 +1,33 @@
+{
+ "query": "citalopram",
+ "resolved": true,
+ "source": "bindingdb",
+ "smiles": "CN(C)CCCC1(OCc2cc(ccc12)C#N)c1ccc(F)cc1",
+ "inchi_key": "WSEQXVZVJXJVFP-UHFFFAOYSA-N",
+ "monomerid": 25870,
+ "ambiguous": false,
+ "candidates": [
+  {
+   "monomerid": 25870,
+   "bdbm_id": "BDBM25870",
+   "name": "CITALOPRAM",
+   "inchi_key": "WSEQXVZVJXJVFP-UHFFFAOYSA-N",
+   "smiles": "CN(C)CCCC1(OCc2cc(ccc12)C#N)c1ccc(F)cc1",
+   "n_activities": 158
+  },
+  {
+   "monomerid": 50302225,
+   "bdbm_id": "BDBM50302225",
+   "name": "CITALOPRAM",
+   "inchi_key": "WSEQXVZVJXJVFP-FQEVSTJZSA-N",
+   "smiles": "CN(C)CCC[C@@]1(c2ccc(cc2CO1)C#N)c3ccc(cc3)F",
+   "n_activities": 20
+  }
+ ],
+ "sources_tried": [
+  {
+   "source": "bindingdb",
+   "status": "found"
+  }
+ ]
+}

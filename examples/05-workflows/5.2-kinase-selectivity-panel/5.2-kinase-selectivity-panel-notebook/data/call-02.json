@@ -1,0 +1,25 @@
+{
+ "query": "nilotinib",
+ "resolved": true,
+ "source": "bindingdb",
+ "smiles": "Cc1cn(cn1)-c1cc(NC(=O)c2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)cc(c1)C(F)(F)F",
+ "inchi_key": "HHZIURLSWUIHRB-UHFFFAOYSA-N",
+ "monomerid": 50237710,
+ "ambiguous": false,
+ "candidates": [
+  {
+   "monomerid": 50237710,
+   "bdbm_id": "BDBM50237710",
+   "name": "NILOTINIB",
+   "inchi_key": "HHZIURLSWUIHRB-UHFFFAOYSA-N",
+   "smiles": "Cc1cn(cn1)-c1cc(NC(=O)c2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)cc(c1)C(F)(F)F",
+   "n_activities": 614
+  }
+ ],
+ "sources_tried": [
+  {
+   "source": "bindingdb",
+   "status": "found"
+  }
+ ]
+}

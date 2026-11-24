@@ -1,0 +1,78 @@
+{
+ "row_count": 6,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 50357312,
+   "name": "IBRUTINIB",
+   "smiles": "Nc1ncnc2n(nc(-c3ccc(Oc4ccccc4)cc3)c12)[C@@H]1CCCN(C1)C(=O)C=C",
+   "heavy_atoms": 33,
+   "mw": 440.51,
+   "clogp": 4.22,
+   "brenk": "Michael_acceptor_1",
+   "best_ic50_nm": 0.08,
+   "n_measurements": 134,
+   "sources": "35939993, 27994736, 35671249, US10793576-B2, 36923918, US10793575-B2, 21958547, 28432946, US11339167-B2, 31620235, 37801827, 33609659, US11078206-B2, 33359446, 37944414, 33062165, 31879210, 30893553, 39119945, 29715023, 30875504, 29567295, 35104138, 31381333, 36439976, 27210433, US10112922-B2, 34529443, 31234030, 29457982, 31843459, 30006143, 34672559, US11084823-B2, 32083858, 31395509, 30343954, 40015119, US9181263-B2, 32731189, 32432477, 26344595, 36399923, 24915291, 29324347, US10711006-B2, 36462441, 28315597, 40191988, 27956037, 33539089, 33540357, 35439421, 39255645, 30522954, US20250304585-A1, US9278100-B2, 26277759, 34479103, 30605829, 36912866, 31221612, 37989057, 30122225, 29146136, 36561076, 33773287, 32402933, 30243592, 30655951, 22621397, US11407754-B2, 35594541, 27903679, 34839996, US20240059694-A1, 28945083, US20240139326-A1, 30216722, 27912175, 38321747, 36155354, 30077608, 26641137, 30290988, 32527559, 28280261, US12606566-B2, 35099969, 38852338"
+  },
+  {
+   "monomerid": 764304,
+   "name": "US12384786, Example 8A",
+   "smiles": "Nc1ncnc2c1c(-c1ccc(Oc3ccccc3)cc1)nn2[C@H]1CC[C@@H](O)CC1",
+   "heavy_atoms": 30,
+   "mw": 401.47,
+   "clogp": 4.34,
+   "brenk": null,
+   "best_ic50_nm": 2.5,
+   "n_measurements": 1,
+   "sources": "US12384786-B2"
+  },
+  {
+   "monomerid": 764305,
+   "name": "(1R,3R)-3-(4-amino-3-(4-(3-fluorophenoxy)-1H-pyrazolo[3,4-d]pyrimidin-1-yl) cyclohex-1-ol",
+   "smiles": "Nc1ncnc2c1c(-c1ccc(Oc3cccc(F)c3)cc1)nn2[C@@H]1CCC[C@@H](O)C1",
+   "heavy_atoms": 31,
+   "mw": 419.46,
+   "clogp": 4.48,
+   "brenk": null,
+   "best_ic50_nm": 3.8,
+   "n_measurements": 1,
+   "sources": "US12384786-B2"
+  },
+  {
+   "monomerid": 50594228,
+   "name": "CHEMBL5197089",
+   "smiles": "CCC(=O)N1CCC[C@H](C1)n1nc(-c2ccc(Cc3ccccc3)cc2)c2c(N)ncnc12 |r|",
+   "heavy_atoms": 33,
+   "mw": 440.55,
+   "clogp": 4.24,
+   "brenk": null,
+   "best_ic50_nm": 4.7,
+   "n_measurements": 4,
+   "sources": "35594541"
+  },
+  {
+   "monomerid": 764303,
+   "name": "(1R,3R)-3-(4-amino-3-(4-phenoxyphenyl)-1h-pyrazole[3,4-d]pyrimidin-1-yl)cyclohex-1-ol",
+   "smiles": "Nc1ncnc2c1c(-c1ccc(Oc3ccccc3)cc1)nn2[C@@H]1CCC[C@@H](O)C1",
+   "heavy_atoms": 30,
+   "mw": 401.47,
+   "clogp": 4.34,
+   "brenk": null,
+   "best_ic50_nm": 8.1,
+   "n_measurements": 1,
+   "sources": "US12384786-B2"
+  },
+  {
+   "monomerid": 50388180,
+   "name": "CHEMBL2057912",
+   "smiles": "Nc1ncnc2n(nc(-c3ccc(Oc4ccccc4)cc3)c12)C1CCCC1",
+   "heavy_atoms": 28,
+   "mw": 371.44,
+   "clogp": 4.98,
+   "brenk": null,
+   "best_ic50_nm": 8.2,
+   "n_measurements": 5,
+   "sources": "36155354, 36324498, 39236467, 27994757, 22394077"
+  }
+ ]
+}

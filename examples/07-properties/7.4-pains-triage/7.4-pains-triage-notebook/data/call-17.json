@@ -1,0 +1,51 @@
+{
+ "row_count": 5,
+ "truncated": false,
+ "rows": [
+  {
+   "source_id": "21958737",
+   "year": 2011,
+   "affinity_type": "IC50",
+   "value": 25.0,
+   "relation": "=",
+   "assay_name": "ChEMBL_787580 (CHEMBL1917973)",
+   "doi": "10.1016/j.bmc.2011.09.003"
+  },
+  {
+   "source_id": "19848434",
+   "year": 2009,
+   "affinity_type": "IC50",
+   "value": 110.0,
+   "relation": "=",
+   "assay_name": "ChEMBL_636734 (CHEMBL1167023)",
+   "doi": "10.1021/np900465e"
+  },
+  {
+   "source_id": "21958738",
+   "year": 2011,
+   "affinity_type": "IC50",
+   "value": 120.0,
+   "relation": "=",
+   "assay_name": "ChEMBL_787590 (CHEMBL1917983)",
+   "doi": "10.1016/j.bmc.2011.09.001"
+  },
+  {
+   "source_id": "20667741",
+   "year": 2010,
+   "affinity_type": "IC50",
+   "value": 1500.0,
+   "relation": "=",
+   "assay_name": "ChEMBL_649691 (CHEMBL1219389)",
+   "doi": "10.1016/j.bmc.2010.06.107"
+  },
+  {
+   "source_id": "1848292",
+   "year": 1991,
+   "affinity_type": "EC50",
+   "value": 330000.0,
+   "relation": ">",
+   "assay_name": "ChEMBL_98489 (CHEMBL879813)",
+   "doi": "10.1021/jm00107a023"
+  }
+ ]
+}

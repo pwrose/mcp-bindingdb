@@ -1,0 +1,60 @@
+{
+ "row_count": 9,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 50516547,
+   "assay_name": "ChEMBL_1865913 (CHEMBL4366888)",
+   "n": 1,
+   "best_nm": 71.0
+  },
+  {
+   "monomerid": 50516551,
+   "assay_name": "ChEMBL_1865913 (CHEMBL4366888)",
+   "n": 1,
+   "best_nm": 3500.0
+  },
+  {
+   "monomerid": 50516555,
+   "assay_name": "ChEMBL_1865913 (CHEMBL4366888)",
+   "n": 1,
+   "best_nm": 21200.0
+  },
+  {
+   "monomerid": 50516558,
+   "assay_name": "ChEMBL_1865913 (CHEMBL4366888)",
+   "n": 1,
+   "best_nm": 6600.0
+  },
+  {
+   "monomerid": 50516559,
+   "assay_name": "ChEMBL_1865913 (CHEMBL4366888)",
+   "n": 1,
+   "best_nm": 36.0
+  },
+  {
+   "monomerid": 50516571,
+   "assay_name": "ChEMBL_1865913 (CHEMBL4366888)",
+   "n": 1,
+   "best_nm": 7.0
+  },
+  {
+   "monomerid": 50516573,
+   "assay_name": "ChEMBL_1865913 (CHEMBL4366888)",
+   "n": 1,
+   "best_nm": 1130.0
+  },
+  {
+   "monomerid": 50516579,
+   "assay_name": "ChEMBL_1865913 (CHEMBL4366888)",
+   "n": 1,
+   "best_nm": 33.0
+  },
+  {
+   "monomerid": 50516581,
+   "assay_name": "ChEMBL_1865913 (CHEMBL4366888)",
+   "n": 1,
+   "best_nm": 11.0
+  }
+ ]
+}

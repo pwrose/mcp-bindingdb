@@ -1,0 +1,27 @@
+{
+ "row_count": 3,
+ "truncated": false,
+ "rows": [
+  {
+   "uniprot_raw": "P16234",
+   "target_name": "Platelet-derived growth factor receptor alpha",
+   "n": 17,
+   "types": "EC50, IC50, Kd, Ki",
+   "median_nm": 31.0
+  },
+  {
+   "uniprot_raw": "P10721",
+   "target_name": "Mast/stem cell growth factor receptor Kit",
+   "n": 52,
+   "types": "EC50, IC50, Kd, Ki",
+   "median_nm": 100.0
+  },
+  {
+   "uniprot_raw": "P00519",
+   "target_name": "Tyrosine-protein kinase ABL1",
+   "n": 78,
+   "types": "EC50, IC50, Kd, Ki",
+   "median_nm": 110.0
+  }
+ ]
+}

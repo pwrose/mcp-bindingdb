@@ -1,0 +1,31 @@
+{
+ "row_count": 2,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 377365,
+   "n": 3,
+   "med": 0.046,
+   "best": 0.046,
+   "srcs": [
+    "US10266491-B2",
+    "US10676434-B2",
+    "US11053197-B2"
+   ]
+  },
+  {
+   "monomerid": 165511,
+   "n": 10,
+   "med": 0.205,
+   "best": 0.04,
+   "srcs": [
+    "US10604504-B2",
+    "US11623921-B2",
+    "US9688629-B2",
+    "US9802915-B2",
+    "US9920031-B2"
+   ]
+  }
+ ],
+ "order_warning": "The query has no ORDER BY, so its 2 rows can come back in a different order. Add an ORDER BY that ends with a unique column (e.g. monomerid; ki_result_id, affinity_type for measurements) so the result is the same on every run and a notebook's rerun check passes."
+}

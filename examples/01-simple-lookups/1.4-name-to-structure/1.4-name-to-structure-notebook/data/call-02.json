@@ -1,0 +1,46 @@
+{
+ "query": "N-(3-chloro-4-fluorophenyl)-7-methoxy-6-(3-morpholin-4-ylpropoxy)quinazolin-4-amine",
+ "resolved": true,
+ "source": "opsin",
+ "smiles": "COc1cc2ncnc(Nc3ccc(F)c(Cl)c3)c2cc1OCCCN1CCOCC1",
+ "inchi_key": "XGALLCVXEZPNRQ-UHFFFAOYSA-N",
+ "bindingdb_matches": [
+  {
+   "monomerid": 5447,
+   "bdbm_id": "BDBM5447",
+   "name": "Iressa",
+   "inchi_key": "XGALLCVXEZPNRQ-UHFFFAOYSA-N",
+   "smiles": "COc1cc2c(cc1OCCCN3CCOCC3)c(ncn2)Nc4ccc(c(c4)Cl)F",
+   "n_activities": 1177,
+   "exact_match": true
+  },
+  {
+   "monomerid": 50338602,
+   "bdbm_id": "BDBM50338602",
+   "name": "Iressa",
+   "inchi_key": "XGALLCVXEZPNRQ-UHFFFAOYSA-N",
+   "smiles": "COc1cc2c(cc1OCCCN3CCOCC3)c(ncn2)Nc4ccc(c(c4)Cl)F",
+   "n_activities": 6,
+   "exact_match": true
+  },
+  {
+   "monomerid": 32367,
+   "bdbm_id": "BDBM32367",
+   "name": "GEFITINIB",
+   "inchi_key": "XGALLCVXEZPNRQ-UHFFFAOYSA-N",
+   "smiles": "COc1cc2c(cc1OCCCN3CCOCC3)c(ncn2)Nc4ccc(c(c4)Cl)F",
+   "n_activities": 0,
+   "exact_match": true
+  }
+ ],
+ "sources_tried": [
+  {
+   "source": "bindingdb",
+   "status": "not found"
+  },
+  {
+   "source": "opsin",
+   "status": "found"
+  }
+ ]
+}

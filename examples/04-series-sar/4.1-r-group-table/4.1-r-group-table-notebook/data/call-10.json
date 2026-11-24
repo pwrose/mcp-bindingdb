@@ -1,0 +1,20 @@
+{
+ "row_count": 2,
+ "truncated": false,
+ "rows": [
+  {
+   "target_id": 2262,
+   "source_id": "17714833",
+   "year": 2008,
+   "nm": 0.52,
+   "assay_name": "ChEMBL_510899 (CHEMBL997791)"
+  },
+  {
+   "target_id": 7854,
+   "source_id": "36481449",
+   "year": 2023,
+   "nm": 13.0,
+   "assay_name": "ChEMBL_2279622"
+  }
+ ]
+}

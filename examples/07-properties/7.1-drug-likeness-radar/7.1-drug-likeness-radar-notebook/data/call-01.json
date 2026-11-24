@@ -1,0 +1,33 @@
+{
+ "query": "sitagliptin",
+ "resolved": true,
+ "source": "bindingdb",
+ "smiles": "N[C@@H](CC(=O)N1CCn2c(C1)nnc2C(F)(F)F)Cc1cc(F)c(F)cc1F |r|",
+ "inchi_key": "MFFMDFFZMYYVKS-SECBINFHSA-N",
+ "monomerid": 11162,
+ "ambiguous": false,
+ "candidates": [
+  {
+   "monomerid": 11162,
+   "bdbm_id": "BDBM11162",
+   "name": "Sitagliptin",
+   "inchi_key": "MFFMDFFZMYYVKS-SECBINFHSA-N",
+   "smiles": "N[C@@H](CC(=O)N1CCn2c(C1)nnc2C(F)(F)F)Cc1cc(F)c(F)cc1F |r|",
+   "n_activities": 188
+  },
+  {
+   "monomerid": 13513,
+   "bdbm_id": "BDBM13513",
+   "name": "Sitagliptin",
+   "inchi_key": "MFFMDFFZMYYVKS-SECBINFHSA-N",
+   "smiles": "N[C@@H](CC(=O)N1CCn2c(C1)nnc2C(F)(F)F)Cc3cc(F)c(F)cc3F",
+   "n_activities": 2
+  }
+ ],
+ "sources_tried": [
+  {
+   "source": "bindingdb",
+   "status": "found"
+  }
+ ]
+}

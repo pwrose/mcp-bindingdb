@@ -1,0 +1,56 @@
+{
+ "row_count": 10,
+ "truncated": false,
+ "rows": [
+  {
+   "n_names": 0,
+   "n_patents": 14,
+   "n_values": 1036
+  },
+  {
+   "n_names": 1,
+   "n_patents": 6970,
+   "n_values": 737832
+  },
+  {
+   "n_names": 2,
+   "n_patents": 1255,
+   "n_values": 206540
+  },
+  {
+   "n_names": 3,
+   "n_patents": 272,
+   "n_values": 50472
+  },
+  {
+   "n_names": 4,
+   "n_patents": 106,
+   "n_values": 20811
+  },
+  {
+   "n_names": 5,
+   "n_patents": 30,
+   "n_values": 5394
+  },
+  {
+   "n_names": 6,
+   "n_patents": 16,
+   "n_values": 4970
+  },
+  {
+   "n_names": 7,
+   "n_patents": 12,
+   "n_values": 2563
+  },
+  {
+   "n_names": 8,
+   "n_patents": 4,
+   "n_values": 1288
+  },
+  {
+   "n_names": 10,
+   "n_patents": 1,
+   "n_values": 33
+  }
+ ]
+}

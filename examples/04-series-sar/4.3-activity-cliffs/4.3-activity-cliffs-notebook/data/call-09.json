@@ -1,0 +1,16 @@
+{
+ "row_count": 2,
+ "truncated": false,
+ "rows": [
+  {
+   "entryid": 9993,
+   "assay_name": "Menin Binding Affinity",
+   "description": "A fluorescence polarization (FP) competitive binding assay was used to determine the binding affinities of representative menin inhibitors. A FAM labeled fluorescent probe was designed and synthesized based on a MLL1 peptide (FAM-MM2). Equilibrium dissociation constant (Kd) value of FAM-MM2 to menin protein was determined from protein saturation experiments by monitoring the total fluorescence polarization of mixtures composed with the fluorescent probe at a fixed concentration and the protein with increasing concentrations up to full saturation. Serial dilutions of the protein were mixed with FAM-MM2 to a final volume of 200 &#956;l in the assay buffer (PBS with 0.02% Bovine &#947;-Globulin and 4% DMSO. 0.01% Triton X-100 was added right before assays). Final FAM-MM2 concentration was 2 nM. Plates were incubated at room temperature for 30 minutes with gentle shaking to assure equilibrium. FP values in millipolarization units (mP) were measured using the Infinite M-1000 plate reader (Tecan U.S., Research Triangle Park, N.C.) in Microfluor 1 96-well, black, v-bottom plates (Thermo Scientific, Waltham, Mass.) at an excitation wavelength of 485 nm and an emission wavelength of 530 nm. Kd value of FAM-MM2, which was calculated by fitting the sigmoidal dose-dependent FP increases as a function of protein concentrations using Graphpad Prism 6.0 software (Graphpad Software, San Diego, Calif.), was determined as 1.4 nM."
+  },
+  {
+   "entryid": 13412,
+   "assay_name": "Menin/MLL Homogenous Time-Resolved Fluorescence (HTRF) Assay",
+   "description": "To an untreated, white 384-well microtiter plate was added 40 nL 200× test compound in DMSO and 4 μL 2× terbium chelate-labeled menin (vide infra for preparation) in assay buffer (40 mM Tris.HCl, pH 7.5, 50 mM NaCl, 1 mM DTT (dithiothreitol) and 0.05% Pluronic F-127). After incubation of test compound and terbium chelate-labeled menin for 30 min at ambient temperature, 4 μL 2×FITC-MBM1 peptide (FITC-β-alanine-SARWRFPARPGT-NH2 (SEQ ID NO: 2)) (“FITC” means fluorescein isothiocyanate) in assay buffer was added, the microtiter plate centrifuged at 1000 rpm for 1 min and the assay mixtures incubated for 15 min at ambient temperature. The relative amount of menin.FITC-MBM1 complex present in an assay mixture is determined by measuring the homogenous time-resolved fluorescence (HTRF) of the terbium/FITC donor/acceptor fluorphore pair using an EnVision microplate reader (ex. 337 nm/terbium em. 490 nm/FITC em. 520 nm) at ambient temperature. The degree of fluorescence resonance energy transfer (the HTRF value) is expressed as the ratio of the fluorescence emission intensities of the FITC and terbium fluorophores (Fem 520 nm/Fem 490 nm). The final concentrations of reagents in the binding assay are 200 pM terbium chelate-labeled menin, 75 nM FITC-MBM1 peptide and 0.5% DMSO in assay buffer. Dose-response titrations of test compounds are conducted using an 11 point, four-fold serial dilution scheme, starting typically at 10 μM."
+  }
+ ]
+}

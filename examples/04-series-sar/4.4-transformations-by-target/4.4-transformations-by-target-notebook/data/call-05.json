@@ -1,0 +1,18 @@
+{
+ "row_count": 1,
+ "truncated": false,
+ "rows": [
+  {
+   "target_kind": "polymer",
+   "target_id": 2130,
+   "name": "Adenosine receptor A2a",
+   "uniprot": "P29274",
+   "uniprot_raw": "P29274",
+   "organism": "Homo sapiens",
+   "type": "G Protein-Coupled Receptor (GPCR)",
+   "n_activities": 11958,
+   "n_compounds": 9910,
+   "matched_name": "Adenosine A2A receptor (A2AAR)"
+  }
+ ]
+}

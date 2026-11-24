@@ -1,0 +1,126 @@
+{
+ "row_count": 20,
+ "truncated": false,
+ "rows": [
+  {
+   "source_id": "US10899738-B2",
+   "n_values": 386,
+   "n_assay_names": 1,
+   "assay_name": "Fluorescence Polarization (FP) Competitive Binding Assay"
+  },
+  {
+   "source_id": "US12473295-B2",
+   "n_values": 204,
+   "n_assay_names": 1,
+   "assay_name": "Menin/MLL Homogenous Time-Resolved Fluorescence (HTRF) Assay"
+  },
+  {
+   "source_id": "US20240335431-A1",
+   "n_values": 78,
+   "n_assay_names": 1,
+   "assay_name": "Fluorescence Polarization (FP) Assay"
+  },
+  {
+   "source_id": "US8993552-B2",
+   "n_values": 72,
+   "n_assay_names": 3,
+   "assay_name": "Fluorescence Polarization Assay"
+  },
+  {
+   "source_id": "31244110",
+   "n_values": 39,
+   "n_assay_names": 2,
+   "assay_name": "ChEMBL_1865912 (CHEMBL4366887)"
+  },
+  {
+   "source_id": "US11045448-B2",
+   "n_values": 37,
+   "n_assay_names": 1,
+   "assay_name": "Menin Binding Affinity"
+  },
+  {
+   "source_id": "23244744",
+   "n_values": 34,
+   "n_assay_names": 1,
+   "assay_name": "ChEMBL_934332 (CHEMBL2320318)"
+  },
+  {
+   "source_id": "29738674",
+   "n_values": 29,
+   "n_assay_names": 1,
+   "assay_name": "ChEMBL_1755017 (CHEMBL4189777)"
+  },
+  {
+   "source_id": "24472025",
+   "n_values": 28,
+   "n_assay_names": 1,
+   "assay_name": "ChEMBL_1298276 (CHEMBL3130541)"
+  },
+  {
+   "source_id": "34196551",
+   "n_values": 20,
+   "n_assay_names": 1,
+   "assay_name": "ChEMBL_2155531 (CHEMBL5040191)"
+  },
+  {
+   "source_id": "32338903",
+   "n_values": 15,
+   "n_assay_names": 2,
+   "assay_name": "ChEMBL_1846020 (CHEMBL4346447)"
+  },
+  {
+   "source_id": "38367493",
+   "n_values": 12,
+   "n_assay_names": 2,
+   "assay_name": "ChEMBL_2428620"
+  },
+  {
+   "source_id": "26288158",
+   "n_values": 9,
+   "n_assay_names": 1,
+   "assay_name": "ChEMBL_1515211 (CHEMBL3614558)"
+  },
+  {
+   "source_id": "29795748",
+   "n_values": 9,
+   "n_assay_names": 1,
+   "assay_name": "ChEMBL_1734172 (CHEMBL4149708)"
+  },
+  {
+   "source_id": "29254892",
+   "n_values": 7,
+   "n_assay_names": 3,
+   "assay_name": "ChEMBL_1752090 (CHEMBL4186850)"
+  },
+  {
+   "source_id": "US20240261292-A1",
+   "n_values": 4,
+   "n_assay_names": 1,
+   "assay_name": "Homogenous Time-Resolved Fluorescence (HTRF) Assay"
+  },
+  {
+   "source_id": "US20250197392-A1",
+   "n_values": 2,
+   "n_assay_names": 1,
+   "assay_name": "Menin/MLL Homogenous Time-Resolved Fluorescence (HTRF) Assay"
+  },
+  {
+   "source_id": "29775308",
+   "n_values": 1,
+   "n_assay_names": 1,
+   "assay_name": "ChEBML_1734065"
+  },
+  {
+   "source_id": "34726905",
+   "n_values": 1,
+   "n_assay_names": 1,
+   "assay_name": "ChEMBL_2269168"
+  },
+  {
+   "source_id": "39366253",
+   "n_values": 1,
+   "n_assay_names": 1,
+   "assay_name": "ChEMBL_2616495"
+  }
+ ]
+}

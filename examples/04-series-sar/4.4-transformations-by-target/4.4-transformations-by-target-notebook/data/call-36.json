@@ -1,0 +1,2162 @@
+{
+ "row_count": 308,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid_from": 14001,
+   "monomerid_to": 14003,
+   "source_id": "19534531",
+   "assay_name": "ChEMBL_545772 (CHEMBL1027667)",
+   "delta": 0.5913
+  },
+  {
+   "monomerid_from": 24226,
+   "monomerid_to": 50451597,
+   "source_id": "29042223",
+   "assay_name": "ChEMBL_1745714 (CHEMBL4180224)",
+   "delta": 0.2339
+  },
+  {
+   "monomerid_from": 289617,
+   "monomerid_to": 289641,
+   "source_id": "28406621",
+   "assay_name": "ChEMBL_1661931 (CHEMBL4011543)",
+   "delta": -0.2413
+  },
+  {
+   "monomerid_from": 300924,
+   "monomerid_to": 300952,
+   "source_id": "US10590130-B2",
+   "assay_name": "Binding Assay ",
+   "delta": -0.6495
+  },
+  {
+   "monomerid_from": 300930,
+   "monomerid_to": 300954,
+   "source_id": "US10590130-B2",
+   "assay_name": "Binding Assay ",
+   "delta": -0.2316
+  },
+  {
+   "monomerid_from": 300930,
+   "monomerid_to": 300987,
+   "source_id": "US10590130-B2",
+   "assay_name": "Binding Assay ",
+   "delta": 0.1886
+  },
+  {
+   "monomerid_from": 300950,
+   "monomerid_to": 300965,
+   "source_id": "US10590130-B2",
+   "assay_name": "Binding Assay ",
+   "delta": -0.2751
+  },
+  {
+   "monomerid_from": 300955,
+   "monomerid_to": 300953,
+   "source_id": "US10131663-B2",
+   "assay_name": "hERG Binding Assay",
+   "delta": -0.0081
+  },
+  {
+   "monomerid_from": 300955,
+   "monomerid_to": 300953,
+   "source_id": "US10590130-B2",
+   "assay_name": "Binding Assay ",
+   "delta": -0.0928
+  },
+  {
+   "monomerid_from": 300955,
+   "monomerid_to": 300962,
+   "source_id": "US10131663-B2",
+   "assay_name": "hERG Binding Assay",
+   "delta": -0.1678
+  },
+  {
+   "monomerid_from": 300955,
+   "monomerid_to": 300962,
+   "source_id": "US10590130-B2",
+   "assay_name": "Binding Assay ",
+   "delta": -0.4337
+  },
+  {
+   "monomerid_from": 300955,
+   "monomerid_to": 300979,
+   "source_id": "US10131663-B2",
+   "assay_name": "hERG Binding Assay",
+   "delta": 0.101
+  },
+  {
+   "monomerid_from": 300955,
+   "monomerid_to": 300979,
+   "source_id": "US10590130-B2",
+   "assay_name": "Binding Assay ",
+   "delta": 0.1181
+  },
+  {
+   "monomerid_from": 300959,
+   "monomerid_to": 300969,
+   "source_id": "US10590130-B2",
+   "assay_name": "Binding Assay ",
+   "delta": 0.4367
+  },
+  {
+   "monomerid_from": 300959,
+   "monomerid_to": 300978,
+   "source_id": "US10590130-B2",
+   "assay_name": "Binding Assay ",
+   "delta": -0.3695
+  },
+  {
+   "monomerid_from": 300959,
+   "monomerid_to": 300980,
+   "source_id": "US10590130-B2",
+   "assay_name": "Binding Assay ",
+   "delta": 0.0565
+  },
+  {
+   "monomerid_from": 300959,
+   "monomerid_to": 300981,
+   "source_id": "US10590130-B2",
+   "assay_name": "Binding Assay ",
+   "delta": 0.5336
+  },
+  {
+   "monomerid_from": 300961,
+   "monomerid_to": 300975,
+   "source_id": "US10131663-B2",
+   "assay_name": "hERG Binding Assay",
+   "delta": 0.0847
+  },
+  {
+   "monomerid_from": 300961,
+   "monomerid_to": 300975,
+   "source_id": "US10590130-B2",
+   "assay_name": "Binding Assay ",
+   "delta": -0.4717
+  },
+  {
+   "monomerid_from": 300963,
+   "monomerid_to": 300973,
+   "source_id": "US10131663-B2",
+   "assay_name": "hERG Binding Assay",
+   "delta": 0.2852
+  },
+  {
+   "monomerid_from": 300963,
+   "monomerid_to": 300973,
+   "source_id": "US10590130-B2",
+   "assay_name": "Binding Assay ",
+   "delta": 0.231
+  },
+  {
+   "monomerid_from": 300964,
+   "monomerid_to": 300967,
+   "source_id": "US10590130-B2",
+   "assay_name": "Binding Assay ",
+   "delta": 0.1091
+  },
+  {
+   "monomerid_from": 300969,
+   "monomerid_to": 300963,
+   "source_id": "US10590130-B2",
+   "assay_name": "Binding Assay ",
+   "delta": -0.028
+  },
+  {
+   "monomerid_from": 300969,
+   "monomerid_to": 300964,
+   "source_id": "US10590130-B2",
+   "assay_name": "Binding Assay ",
+   "delta": -0.0792
+  },
+  {
+   "monomerid_from": 300976,
+   "monomerid_to": 300972,
+   "source_id": "US10131663-B2",
+   "assay_name": "hERG Binding Assay",
+   "delta": -0.3576
+  },
+  {
+   "monomerid_from": 300976,
+   "monomerid_to": 300972,
+   "source_id": "US10590130-B2",
+   "assay_name": "Binding Assay ",
+   "delta": 0.7409
+  },
+  {
+   "monomerid_from": 300977,
+   "monomerid_to": 300968,
+   "source_id": "US10590130-B2",
+   "assay_name": "Binding Assay ",
+   "delta": 0.334
+  },
+  {
+   "monomerid_from": 300980,
+   "monomerid_to": 300964,
+   "source_id": "US10590130-B2",
+   "assay_name": "Binding Assay ",
+   "delta": 0.301
+  },
+  {
+   "monomerid_from": 300981,
+   "monomerid_to": 300963,
+   "source_id": "US10590130-B2",
+   "assay_name": "Binding Assay ",
+   "delta": -0.1249
+  },
+  {
+   "monomerid_from": 300982,
+   "monomerid_to": 300961,
+   "source_id": "US10590130-B2",
+   "assay_name": "Binding Assay ",
+   "delta": 0.2676
+  },
+  {
+   "monomerid_from": 300983,
+   "monomerid_to": 300933,
+   "source_id": "US10590130-B2",
+   "assay_name": "Binding Assay ",
+   "delta": -0.1249
+  },
+  {
+   "monomerid_from": 300984,
+   "monomerid_to": 300976,
+   "source_id": "US10131663-B2",
+   "assay_name": "hERG Binding Assay",
+   "delta": 0.2163
+  },
+  {
+   "monomerid_from": 300984,
+   "monomerid_to": 300976,
+   "source_id": "US10590130-B2",
+   "assay_name": "Binding Assay ",
+   "delta": -0.1484
+  },
+  {
+   "monomerid_from": 300992,
+   "monomerid_to": 300993,
+   "source_id": "US10590130-B2",
+   "assay_name": "Binding Assay ",
+   "delta": -0.5351
+  },
+  {
+   "monomerid_from": 300992,
+   "monomerid_to": 436275,
+   "source_id": "US10590130-B2",
+   "assay_name": "Binding Assay ",
+   "delta": 0.3777
+  },
+  {
+   "monomerid_from": 300999,
+   "monomerid_to": 300997,
+   "source_id": "US10131663-B2",
+   "assay_name": "hERG Binding Assay",
+   "delta": 0.301
+  },
+  {
+   "monomerid_from": 300999,
+   "monomerid_to": 300997,
+   "source_id": "US10590130-B2",
+   "assay_name": "Binding Assay ",
+   "delta": 0.0908
+  },
+  {
+   "monomerid_from": 301001,
+   "monomerid_to": 300953,
+   "source_id": "US10131663-B2",
+   "assay_name": "hERG Binding Assay",
+   "delta": 0.4137
+  },
+  {
+   "monomerid_from": 301001,
+   "monomerid_to": 300953,
+   "source_id": "US10590130-B2",
+   "assay_name": "Binding Assay ",
+   "delta": 0.284
+  },
+  {
+   "monomerid_from": 301001,
+   "monomerid_to": 300998,
+   "source_id": "US10131663-B2",
+   "assay_name": "hERG Binding Assay",
+   "delta": 0.0322
+  },
+  {
+   "monomerid_from": 301001,
+   "monomerid_to": 300998,
+   "source_id": "US10590130-B2",
+   "assay_name": "Binding Assay ",
+   "delta": -0.0864
+  },
+  {
+   "monomerid_from": 301003,
+   "monomerid_to": 300997,
+   "source_id": "US10131663-B2",
+   "assay_name": "hERG Binding Assay",
+   "delta": 0.2663
+  },
+  {
+   "monomerid_from": 301003,
+   "monomerid_to": 300997,
+   "source_id": "US10590130-B2",
+   "assay_name": "Binding Assay ",
+   "delta": 0.3159
+  },
+  {
+   "monomerid_from": 301007,
+   "monomerid_to": 301006,
+   "source_id": "US10590130-B2",
+   "assay_name": "Binding Assay ",
+   "delta": 0.0691
+  },
+  {
+   "monomerid_from": 310952,
+   "monomerid_to": 310950,
+   "source_id": "US10155727-B2",
+   "assay_name": "Inhibition of Specific Binding to the hERG-Receptor (HERGBD)",
+   "delta": 0.0059
+  },
+  {
+   "monomerid_from": 310952,
+   "monomerid_to": 310950,
+   "source_id": "USRE49517-E1",
+   "assay_name": "Inhibition of Specific Binding to the hERG Receptor (HERGBD)",
+   "delta": 0.4409
+  },
+  {
+   "monomerid_from": 310960,
+   "monomerid_to": 310961,
+   "source_id": "US10155727-B2",
+   "assay_name": "Inhibition of Specific Binding to the hERG-Receptor (HERGBD)",
+   "delta": -0.3302
+  },
+  {
+   "monomerid_from": 310960,
+   "monomerid_to": 310961,
+   "source_id": "USRE49517-E1",
+   "assay_name": "Inhibition of Specific Binding to the hERG Receptor (HERGBD)",
+   "delta": 0.3076
+  },
+  {
+   "monomerid_from": 310962,
+   "monomerid_to": 311027,
+   "source_id": "US10155727-B2",
+   "assay_name": "Inhibition of Specific Binding to the hERG-Receptor (HERGBD)",
+   "delta": -0.568
+  },
+  {
+   "monomerid_from": 310962,
+   "monomerid_to": 311027,
+   "source_id": "USRE49517-E1",
+   "assay_name": "Inhibition of Specific Binding to the hERG Receptor (HERGBD)",
+   "delta": 0.1754
+  },
+  {
+   "monomerid_from": 310962,
+   "monomerid_to": 50201026,
+   "source_id": "US10155727-B2",
+   "assay_name": "Inhibition of Specific Binding to the hERG-Receptor (HERGBD)",
+   "delta": -0.1343
+  },
+  {
+   "monomerid_from": 310962,
+   "monomerid_to": 50201026,
+   "source_id": "USRE49517-E1",
+   "assay_name": "Inhibition of Specific Binding to the hERG Receptor (HERGBD)",
+   "delta": 0.2668
+  },
+  {
+   "monomerid_from": 310977,
+   "monomerid_to": 310984,
+   "source_id": "US10155727-B2",
+   "assay_name": "Inhibition of Specific Binding to the hERG-Receptor (HERGBD)",
+   "delta": -0.2248
+  },
+  {
+   "monomerid_from": 310979,
+   "monomerid_to": 310991,
+   "source_id": "US10155727-B2",
+   "assay_name": "Inhibition of Specific Binding to the hERG-Receptor (HERGBD)",
+   "delta": 0.1527
+  },
+  {
+   "monomerid_from": 310981,
+   "monomerid_to": 310990,
+   "source_id": "US10155727-B2",
+   "assay_name": "Inhibition of Specific Binding to the hERG-Receptor (HERGBD)",
+   "delta": 0.0125
+  },
+  {
+   "monomerid_from": 310986,
+   "monomerid_to": 310987,
+   "source_id": "US10155727-B2",
+   "assay_name": "Inhibition of Specific Binding to the hERG-Receptor (HERGBD)",
+   "delta": -0.3848
+  },
+  {
+   "monomerid_from": 310986,
+   "monomerid_to": 310987,
+   "source_id": "USRE49517-E1",
+   "assay_name": "Inhibition of Specific Binding to the hERG Receptor (HERGBD)",
+   "delta": 0.1632
+  },
+  {
+   "monomerid_from": 310988,
+   "monomerid_to": 310989,
+   "source_id": "US10155727-B2",
+   "assay_name": "Inhibition of Specific Binding to the hERG-Receptor (HERGBD)",
+   "delta": 0.1782
+  },
+  {
+   "monomerid_from": 310988,
+   "monomerid_to": 310989,
+   "source_id": "USRE49517-E1",
+   "assay_name": "Inhibition of Specific Binding to the hERG Receptor (HERGBD)",
+   "delta": 0.096
+  },
+  {
+   "monomerid_from": 310989,
+   "monomerid_to": 310992,
+   "source_id": "US10155727-B2",
+   "assay_name": "Inhibition of Specific Binding to the hERG-Receptor (HERGBD)",
+   "delta": 0.1018
+  },
+  {
+   "monomerid_from": 310989,
+   "monomerid_to": 310992,
+   "source_id": "USRE49517-E1",
+   "assay_name": "Inhibition of Specific Binding to the hERG Receptor (HERGBD)",
+   "delta": -0.1038
+  },
+  {
+   "monomerid_from": 311032,
+   "monomerid_to": 310990,
+   "source_id": "US10155727-B2",
+   "assay_name": "Inhibition of Specific Binding to the hERG-Receptor (HERGBD)",
+   "delta": 0.1684
+  },
+  {
+   "monomerid_from": 311033,
+   "monomerid_to": 50201022,
+   "source_id": "US10155727-B2",
+   "assay_name": "Inhibition of Specific Binding to the hERG-Receptor (HERGBD)",
+   "delta": 1.7288
+  },
+  {
+   "monomerid_from": 311033,
+   "monomerid_to": 50201022,
+   "source_id": "USRE49517-E1",
+   "assay_name": "Inhibition of Specific Binding to the hERG Receptor (HERGBD)",
+   "delta": 1.0987
+  },
+  {
+   "monomerid_from": 311033,
+   "monomerid_to": 50201028,
+   "source_id": "US10155727-B2",
+   "assay_name": "Inhibition of Specific Binding to the hERG-Receptor (HERGBD)",
+   "delta": 1.542
+  },
+  {
+   "monomerid_from": 311033,
+   "monomerid_to": 50201028,
+   "source_id": "USRE49517-E1",
+   "assay_name": "Inhibition of Specific Binding to the hERG Receptor (HERGBD)",
+   "delta": -0.0512
+  },
+  {
+   "monomerid_from": 396811,
+   "monomerid_to": 396820,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": 0.0784
+  },
+  {
+   "monomerid_from": 396811,
+   "monomerid_to": 396820,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": 0.0784
+  },
+  {
+   "monomerid_from": 396811,
+   "monomerid_to": 396827,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": 0.7836
+  },
+  {
+   "monomerid_from": 396811,
+   "monomerid_to": 396827,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": 0.7836
+  },
+  {
+   "monomerid_from": 396816,
+   "monomerid_to": 396828,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": 1.0195
+  },
+  {
+   "monomerid_from": 396816,
+   "monomerid_to": 396828,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": 1.0195
+  },
+  {
+   "monomerid_from": 396816,
+   "monomerid_to": 396864,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": 1.2384
+  },
+  {
+   "monomerid_from": 396816,
+   "monomerid_to": 396864,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": 1.2384
+  },
+  {
+   "monomerid_from": 396817,
+   "monomerid_to": 396818,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": 0.1727
+  },
+  {
+   "monomerid_from": 396817,
+   "monomerid_to": 396818,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": 0.1727
+  },
+  {
+   "monomerid_from": 396817,
+   "monomerid_to": 396825,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": 0.8924
+  },
+  {
+   "monomerid_from": 396817,
+   "monomerid_to": 396843,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": 0.258
+  },
+  {
+   "monomerid_from": 396817,
+   "monomerid_to": 396843,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": 0.258
+  },
+  {
+   "monomerid_from": 396817,
+   "monomerid_to": 396848,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": 1.3695
+  },
+  {
+   "monomerid_from": 396817,
+   "monomerid_to": 396848,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": 1.3695
+  },
+  {
+   "monomerid_from": 396818,
+   "monomerid_to": 396811,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": -0.2568
+  },
+  {
+   "monomerid_from": 396818,
+   "monomerid_to": 396811,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": -0.2568
+  },
+  {
+   "monomerid_from": 396818,
+   "monomerid_to": 396816,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": -0.4771
+  },
+  {
+   "monomerid_from": 396818,
+   "monomerid_to": 396816,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": -0.4771
+  },
+  {
+   "monomerid_from": 396818,
+   "monomerid_to": 396826,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": 0.7442
+  },
+  {
+   "monomerid_from": 396818,
+   "monomerid_to": 396826,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": 0.7442
+  },
+  {
+   "monomerid_from": 396818,
+   "monomerid_to": 396863,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": 1.1468
+  },
+  {
+   "monomerid_from": 396818,
+   "monomerid_to": 396863,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": 1.1468
+  },
+  {
+   "monomerid_from": 396820,
+   "monomerid_to": 396830,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": 0.7549
+  },
+  {
+   "monomerid_from": 396820,
+   "monomerid_to": 396830,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": 0.7549
+  },
+  {
+   "monomerid_from": 396822,
+   "monomerid_to": 396829,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": 0.7285
+  },
+  {
+   "monomerid_from": 396822,
+   "monomerid_to": 396829,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": 0.7285
+  },
+  {
+   "monomerid_from": 396822,
+   "monomerid_to": 396854,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": 0.4803
+  },
+  {
+   "monomerid_from": 396822,
+   "monomerid_to": 396854,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": 0.4803
+  },
+  {
+   "monomerid_from": 396822,
+   "monomerid_to": 396858,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": 0.8879
+  },
+  {
+   "monomerid_from": 396822,
+   "monomerid_to": 396858,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": 0.8879
+  },
+  {
+   "monomerid_from": 396825,
+   "monomerid_to": 396826,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": 0.0245
+  },
+  {
+   "monomerid_from": 396826,
+   "monomerid_to": 396827,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": -0.2173
+  },
+  {
+   "monomerid_from": 396826,
+   "monomerid_to": 396827,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": -0.2173
+  },
+  {
+   "monomerid_from": 396826,
+   "monomerid_to": 396828,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": -0.2018
+  },
+  {
+   "monomerid_from": 396826,
+   "monomerid_to": 396828,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": -0.2018
+  },
+  {
+   "monomerid_from": 396826,
+   "monomerid_to": 396834,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": -0.7508
+  },
+  {
+   "monomerid_from": 396826,
+   "monomerid_to": 396834,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": -0.7508
+  },
+  {
+   "monomerid_from": 396827,
+   "monomerid_to": 396830,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": 0.0497
+  },
+  {
+   "monomerid_from": 396827,
+   "monomerid_to": 396830,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": 0.0497
+  },
+  {
+   "monomerid_from": 396828,
+   "monomerid_to": 396831,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": -1.8518
+  },
+  {
+   "monomerid_from": 396828,
+   "monomerid_to": 396831,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": -1.8518
+  },
+  {
+   "monomerid_from": 396835,
+   "monomerid_to": 396836,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": -0.2923
+  },
+  {
+   "monomerid_from": 396835,
+   "monomerid_to": 396836,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": -0.2923
+  },
+  {
+   "monomerid_from": 396836,
+   "monomerid_to": 396838,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": 0.1076
+  },
+  {
+   "monomerid_from": 396836,
+   "monomerid_to": 396838,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": 0.1076
+  },
+  {
+   "monomerid_from": 396844,
+   "monomerid_to": 396835,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": 0.145
+  },
+  {
+   "monomerid_from": 396844,
+   "monomerid_to": 396835,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": 0.145
+  },
+  {
+   "monomerid_from": 396848,
+   "monomerid_to": 396863,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": -0.05
+  },
+  {
+   "monomerid_from": 396848,
+   "monomerid_to": 396863,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": -0.05
+  },
+  {
+   "monomerid_from": 396850,
+   "monomerid_to": 396865,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": -0.199
+  },
+  {
+   "monomerid_from": 396850,
+   "monomerid_to": 396865,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": -0.199
+  },
+  {
+   "monomerid_from": 396851,
+   "monomerid_to": 396849,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": 0.165
+  },
+  {
+   "monomerid_from": 396851,
+   "monomerid_to": 396849,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": 0.165
+  },
+  {
+   "monomerid_from": 396861,
+   "monomerid_to": 396859,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": 0.3821
+  },
+  {
+   "monomerid_from": 396861,
+   "monomerid_to": 396859,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": 0.3821
+  },
+  {
+   "monomerid_from": 396863,
+   "monomerid_to": 396864,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": -0.3855
+  },
+  {
+   "monomerid_from": 396863,
+   "monomerid_to": 396864,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": -0.3855
+  },
+  {
+   "monomerid_from": 396863,
+   "monomerid_to": 396868,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": -0.8655
+  },
+  {
+   "monomerid_from": 396863,
+   "monomerid_to": 396868,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": -0.8655
+  },
+  {
+   "monomerid_from": 396865,
+   "monomerid_to": 396866,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": -0.4576
+  },
+  {
+   "monomerid_from": 396865,
+   "monomerid_to": 396866,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": -0.4576
+  },
+  {
+   "monomerid_from": 396874,
+   "monomerid_to": 396876,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": -0.0306
+  },
+  {
+   "monomerid_from": 396874,
+   "monomerid_to": 396876,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": -0.0306
+  },
+  {
+   "monomerid_from": 396874,
+   "monomerid_to": 396898,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": -0.0243
+  },
+  {
+   "monomerid_from": 396874,
+   "monomerid_to": 396898,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": -0.0243
+  },
+  {
+   "monomerid_from": 396876,
+   "monomerid_to": 396877,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": -0.4276
+  },
+  {
+   "monomerid_from": 396876,
+   "monomerid_to": 396877,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": -0.4276
+  },
+  {
+   "monomerid_from": 396876,
+   "monomerid_to": 396878,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": 0.0824
+  },
+  {
+   "monomerid_from": 396876,
+   "monomerid_to": 396878,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": 0.0824
+  },
+  {
+   "monomerid_from": 396877,
+   "monomerid_to": 396880,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": -1.0759
+  },
+  {
+   "monomerid_from": 396877,
+   "monomerid_to": 396880,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": -1.0759
+  },
+  {
+   "monomerid_from": 396878,
+   "monomerid_to": 396879,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": -0.101
+  },
+  {
+   "monomerid_from": 396878,
+   "monomerid_to": 396879,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": -0.101
+  },
+  {
+   "monomerid_from": 396881,
+   "monomerid_to": 396899,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": 0.254
+  },
+  {
+   "monomerid_from": 396881,
+   "monomerid_to": 396899,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": 0.254
+  },
+  {
+   "monomerid_from": 396882,
+   "monomerid_to": 396849,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": -0.5479
+  },
+  {
+   "monomerid_from": 396882,
+   "monomerid_to": 396849,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": -0.5479
+  },
+  {
+   "monomerid_from": 396882,
+   "monomerid_to": 396884,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": 0.142
+  },
+  {
+   "monomerid_from": 396882,
+   "monomerid_to": 396884,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": 0.142
+  },
+  {
+   "monomerid_from": 396883,
+   "monomerid_to": 396859,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": -0.3923
+  },
+  {
+   "monomerid_from": 396883,
+   "monomerid_to": 396859,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": -0.3923
+  },
+  {
+   "monomerid_from": 396884,
+   "monomerid_to": 396885,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": -0.3337
+  },
+  {
+   "monomerid_from": 396884,
+   "monomerid_to": 396885,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": -0.3337
+  },
+  {
+   "monomerid_from": 396886,
+   "monomerid_to": 396889,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": -0.1249
+  },
+  {
+   "monomerid_from": 396889,
+   "monomerid_to": 396890,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": -0.29
+  },
+  {
+   "monomerid_from": 396889,
+   "monomerid_to": 396890,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": -0.29
+  },
+  {
+   "monomerid_from": 396889,
+   "monomerid_to": 396892,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": -0.5755
+  },
+  {
+   "monomerid_from": 396889,
+   "monomerid_to": 396892,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": -0.5755
+  },
+  {
+   "monomerid_from": 396890,
+   "monomerid_to": 396888,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": -1.3686
+  },
+  {
+   "monomerid_from": 396890,
+   "monomerid_to": 396888,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": -1.3686
+  },
+  {
+   "monomerid_from": 396903,
+   "monomerid_to": 398608,
+   "source_id": "US10323021-B2",
+   "assay_name": "hERG receptor binding assay",
+   "delta": 0.1053
+  },
+  {
+   "monomerid_from": 396904,
+   "monomerid_to": 396905,
+   "source_id": "US9981950-B2",
+   "assay_name": "Inhibition Assay",
+   "delta": -0.0263
+  },
+  {
+   "monomerid_from": 494073,
+   "monomerid_to": 50616086,
+   "source_id": "36538027",
+   "assay_name": "ChEMBL_2307090",
+   "delta": -0.8239
+  },
+  {
+   "monomerid_from": 610436,
+   "monomerid_to": 610438,
+   "source_id": "36883854",
+   "assay_name": "ChEMBL_2291086",
+   "delta": 0.2278
+  },
+  {
+   "monomerid_from": 610439,
+   "monomerid_to": 610436,
+   "source_id": "36883854",
+   "assay_name": "ChEMBL_2291086",
+   "delta": 0.4237
+  },
+  {
+   "monomerid_from": 610443,
+   "monomerid_to": 610444,
+   "source_id": "36883854",
+   "assay_name": "ChEMBL_2291086",
+   "delta": 0.2366
+  },
+  {
+   "monomerid_from": 610446,
+   "monomerid_to": 610448,
+   "source_id": "36883854",
+   "assay_name": "ChEMBL_2291086",
+   "delta": 0.1794
+  },
+  {
+   "monomerid_from": 688394,
+   "monomerid_to": 688396,
+   "source_id": "US20240190824-A1",
+   "assay_name": "TREK-1 Manual Patch Clamp (hMPC) assay",
+   "delta": -0.2041
+  },
+  {
+   "monomerid_from": 688394,
+   "monomerid_to": 688396,
+   "source_id": "US20240190824-A1",
+   "assay_name": "Thallium flux assay",
+   "delta": -0.1597
+  },
+  {
+   "monomerid_from": 688426,
+   "monomerid_to": 688489,
+   "source_id": "US20240190824-A1",
+   "assay_name": "Thallium flux assay",
+   "delta": 0.1065
+  },
+  {
+   "monomerid_from": 688429,
+   "monomerid_to": 688397,
+   "source_id": "US20240190824-A1",
+   "assay_name": "Thallium flux assay",
+   "delta": -0.1761
+  },
+  {
+   "monomerid_from": 688429,
+   "monomerid_to": 688409,
+   "source_id": "US20240190824-A1",
+   "assay_name": "Thallium flux assay",
+   "delta": -0.2688
+  },
+  {
+   "monomerid_from": 688429,
+   "monomerid_to": 688435,
+   "source_id": "US20240190824-A1",
+   "assay_name": "Thallium flux assay",
+   "delta": -0.4102
+  },
+  {
+   "monomerid_from": 688429,
+   "monomerid_to": 688436,
+   "source_id": "US20240190824-A1",
+   "assay_name": "Thallium flux assay",
+   "delta": -0.4559
+  },
+  {
+   "monomerid_from": 688429,
+   "monomerid_to": 688443,
+   "source_id": "US20240190824-A1",
+   "assay_name": "Thallium flux assay",
+   "delta": -0.5863
+  },
+  {
+   "monomerid_from": 688432,
+   "monomerid_to": 688414,
+   "source_id": "US20240190824-A1",
+   "assay_name": "Thallium flux assay",
+   "delta": -0.0322
+  },
+  {
+   "monomerid_from": 688432,
+   "monomerid_to": 688415,
+   "source_id": "US20240190824-A1",
+   "assay_name": "Thallium flux assay",
+   "delta": 0.0532
+  },
+  {
+   "monomerid_from": 688460,
+   "monomerid_to": 688469,
+   "source_id": "US20240190824-A1",
+   "assay_name": "Thallium flux assay",
+   "delta": -0.2285
+  },
+  {
+   "monomerid_from": 688462,
+   "monomerid_to": 688477,
+   "source_id": "US20240190824-A1",
+   "assay_name": "Thallium flux assay",
+   "delta": -0.4491
+  },
+  {
+   "monomerid_from": 688474,
+   "monomerid_to": 688417,
+   "source_id": "US20240190824-A1",
+   "assay_name": "Thallium flux assay",
+   "delta": 0.0859
+  },
+  {
+   "monomerid_from": 688476,
+   "monomerid_to": 688471,
+   "source_id": "US20240190824-A1",
+   "assay_name": "Thallium flux assay",
+   "delta": 0.2382
+  },
+  {
+   "monomerid_from": 688479,
+   "monomerid_to": 688475,
+   "source_id": "US20240190824-A1",
+   "assay_name": "Thallium flux assay",
+   "delta": 0.0593
+  },
+  {
+   "monomerid_from": 688494,
+   "monomerid_to": 688495,
+   "source_id": "US20240190824-A1",
+   "assay_name": "Thallium flux assay",
+   "delta": -0.0223
+  },
+  {
+   "monomerid_from": 688498,
+   "monomerid_to": 688493,
+   "source_id": "US20240190824-A1",
+   "assay_name": "Thallium flux assay",
+   "delta": 0.3485
+  },
+  {
+   "monomerid_from": 50001778,
+   "monomerid_to": 50001786,
+   "source_id": "12729675",
+   "assay_name": "ChEBML_158542",
+   "delta": 0.368
+  },
+  {
+   "monomerid_from": 50001778,
+   "monomerid_to": 50001786,
+   "source_id": "21185626",
+   "assay_name": "ChEMBL_725152 (CHEMBL1676103)",
+   "delta": -0.3299
+  },
+  {
+   "monomerid_from": 50044632,
+   "monomerid_to": 50044630,
+   "source_id": "24856064",
+   "assay_name": "ChEMBL_1447392 (CHEMBL3380409)",
+   "delta": 0.1154
+  },
+  {
+   "monomerid_from": 50082303,
+   "monomerid_to": 50082380,
+   "source_id": "25911300",
+   "assay_name": "ChEMBL_1475692 (CHEMBL3424851)",
+   "delta": 3.4589
+  },
+  {
+   "monomerid_from": 50082303,
+   "monomerid_to": 50082381,
+   "source_id": "25911300",
+   "assay_name": "ChEMBL_1475692 (CHEMBL3424851)",
+   "delta": 2.8598
+  },
+  {
+   "monomerid_from": 50082303,
+   "monomerid_to": 50113633,
+   "source_id": "26141771",
+   "assay_name": "ChEMBL_1510551 (CHEMBL3607786)",
+   "delta": 0.8239
+  },
+  {
+   "monomerid_from": 50082303,
+   "monomerid_to": 50113633,
+   "source_id": "26141771",
+   "assay_name": "ChEMBL_1510552 (CHEMBL3607787)",
+   "delta": -0.5229
+  },
+  {
+   "monomerid_from": 50082306,
+   "monomerid_to": 50082303,
+   "source_id": "25911300",
+   "assay_name": "ChEMBL_1475692 (CHEMBL3424851)",
+   "delta": -0.574
+  },
+  {
+   "monomerid_from": 50082306,
+   "monomerid_to": 50082303,
+   "source_id": "25911300",
+   "assay_name": "ChEMBL_1475693 (CHEMBL3424852)",
+   "delta": 0.3358
+  },
+  {
+   "monomerid_from": 50082306,
+   "monomerid_to": 50082304,
+   "source_id": "25911300",
+   "assay_name": "ChEMBL_1475692 (CHEMBL3424851)",
+   "delta": 0.243
+  },
+  {
+   "monomerid_from": 50082306,
+   "monomerid_to": 50082389,
+   "source_id": "25911300",
+   "assay_name": "ChEMBL_1475692 (CHEMBL3424851)",
+   "delta": 2.1249
+  },
+  {
+   "monomerid_from": 50082306,
+   "monomerid_to": 50082391,
+   "source_id": "25911300",
+   "assay_name": "ChEMBL_1475692 (CHEMBL3424851)",
+   "delta": 2.3502
+  },
+  {
+   "monomerid_from": 50082306,
+   "monomerid_to": 50082409,
+   "source_id": "25911300",
+   "assay_name": "ChEMBL_1475692 (CHEMBL3424851)",
+   "delta": 2.0322
+  },
+  {
+   "monomerid_from": 50082381,
+   "monomerid_to": 50082382,
+   "source_id": "25911300",
+   "assay_name": "ChEMBL_1475692 (CHEMBL3424851)",
+   "delta": 0.3832
+  },
+  {
+   "monomerid_from": 50082390,
+   "monomerid_to": 50082379,
+   "source_id": "25911300",
+   "assay_name": "ChEMBL_1475692 (CHEMBL3424851)",
+   "delta": -1.0
+  },
+  {
+   "monomerid_from": 50082391,
+   "monomerid_to": 50082380,
+   "source_id": "25911300",
+   "assay_name": "ChEMBL_1475692 (CHEMBL3424851)",
+   "delta": 0.5346
+  },
+  {
+   "monomerid_from": 50082409,
+   "monomerid_to": 50082381,
+   "source_id": "25911300",
+   "assay_name": "ChEMBL_1475692 (CHEMBL3424851)",
+   "delta": 0.2536
+  },
+  {
+   "monomerid_from": 50082433,
+   "monomerid_to": 50082384,
+   "source_id": "25911300",
+   "assay_name": "ChEMBL_1475692 (CHEMBL3424851)",
+   "delta": -0.2531
+  },
+  {
+   "monomerid_from": 50082445,
+   "monomerid_to": 50082385,
+   "source_id": "25911300",
+   "assay_name": "ChEMBL_1475692 (CHEMBL3424851)",
+   "delta": -0.3583
+  },
+  {
+   "monomerid_from": 50082517,
+   "monomerid_to": 50082387,
+   "source_id": "25911300",
+   "assay_name": "ChEMBL_1475692 (CHEMBL3424851)",
+   "delta": 0.1717
+  },
+  {
+   "monomerid_from": 50084125,
+   "monomerid_to": 50084144,
+   "source_id": "25978963",
+   "assay_name": "ChEMBL_1477140 (CHEMBL3428449)",
+   "delta": -0.301
+  },
+  {
+   "monomerid_from": 50084145,
+   "monomerid_to": 50084126,
+   "source_id": "25978963",
+   "assay_name": "ChEMBL_1477140 (CHEMBL3428449)",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 50091559,
+   "monomerid_to": 50091556,
+   "source_id": "26005524",
+   "assay_name": "ChEMBL_1498163 (CHEMBL3583383)",
+   "delta": 0.0706
+  },
+  {
+   "monomerid_from": 50095761,
+   "monomerid_to": 50494716,
+   "source_id": "24224763",
+   "assay_name": "ChEMBL_1278260 (CHEMBL3096732)",
+   "delta": 0.5553
+  },
+  {
+   "monomerid_from": 50113633,
+   "monomerid_to": 50113634,
+   "source_id": "26141771",
+   "assay_name": "ChEMBL_1510551 (CHEMBL3607786)",
+   "delta": -0.2218
+  },
+  {
+   "monomerid_from": 50113633,
+   "monomerid_to": 50113634,
+   "source_id": "26141771",
+   "assay_name": "ChEMBL_1510552 (CHEMBL3607787)",
+   "delta": -0.3617
+  },
+  {
+   "monomerid_from": 50127989,
+   "monomerid_to": 50001786,
+   "source_id": "12729675",
+   "assay_name": "ChEBML_158542",
+   "delta": 1.4674
+  },
+  {
+   "monomerid_from": 50127989,
+   "monomerid_to": 50001786,
+   "source_id": "21185626",
+   "assay_name": "ChEMBL_725152 (CHEMBL1676103)",
+   "delta": 0.77
+  },
+  {
+   "monomerid_from": 50154532,
+   "monomerid_to": 50154520,
+   "source_id": "26898814",
+   "assay_name": "ChEMBL_1560972 (CHEMBL3779605)",
+   "delta": -0.1075
+  },
+  {
+   "monomerid_from": 50154533,
+   "monomerid_to": 50154521,
+   "source_id": "26898814",
+   "assay_name": "ChEMBL_1560972 (CHEMBL3779605)",
+   "delta": -0.1324
+  },
+  {
+   "monomerid_from": 50154902,
+   "monomerid_to": 50154843,
+   "source_id": "26951894",
+   "assay_name": "ChEMBL_1561632 (CHEMBL3776609)",
+   "delta": 0.0022
+  },
+  {
+   "monomerid_from": 50166802,
+   "monomerid_to": 50166788,
+   "source_id": "15878274",
+   "assay_name": "ChEMBL_306311 (CHEMBL827704)",
+   "delta": 0.6532
+  },
+  {
+   "monomerid_from": 50175387,
+   "monomerid_to": 50161093,
+   "source_id": "19821575",
+   "assay_name": "ChEMBL_591458 (CHEMBL1052905)",
+   "delta": 0.028
+  },
+  {
+   "monomerid_from": 50185042,
+   "monomerid_to": 50197135,
+   "source_id": "17064075",
+   "assay_name": "ChEMBL_408752 (CHEMBL909940)",
+   "delta": -0.1407
+  },
+  {
+   "monomerid_from": 50192235,
+   "monomerid_to": 50192247,
+   "source_id": "27564135",
+   "assay_name": "ChEMBL_1613479 (CHEMBL3855279)",
+   "delta": -0.1186
+  },
+  {
+   "monomerid_from": 50192309,
+   "monomerid_to": 50192098,
+   "source_id": "27564135",
+   "assay_name": "ChEMBL_1613479 (CHEMBL3855279)",
+   "delta": -0.0798
+  },
+  {
+   "monomerid_from": 50197113,
+   "monomerid_to": 50197136,
+   "source_id": "17064075",
+   "assay_name": "ChEMBL_408752 (CHEMBL909940)",
+   "delta": -0.1903
+  },
+  {
+   "monomerid_from": 50197113,
+   "monomerid_to": 50197144,
+   "source_id": "17064075",
+   "assay_name": "ChEMBL_408752 (CHEMBL909940)",
+   "delta": -0.4191
+  },
+  {
+   "monomerid_from": 50197114,
+   "monomerid_to": 50197113,
+   "source_id": "17064075",
+   "assay_name": "ChEMBL_408752 (CHEMBL909940)",
+   "delta": 0.224
+  },
+  {
+   "monomerid_from": 50197114,
+   "monomerid_to": 50197124,
+   "source_id": "17064075",
+   "assay_name": "ChEMBL_408752 (CHEMBL909940)",
+   "delta": 0.2698
+  },
+  {
+   "monomerid_from": 50197114,
+   "monomerid_to": 50197139,
+   "source_id": "17064075",
+   "assay_name": "ChEMBL_408752 (CHEMBL909940)",
+   "delta": -0.3529
+  },
+  {
+   "monomerid_from": 50197118,
+   "monomerid_to": 50197119,
+   "source_id": "17064075",
+   "assay_name": "ChEMBL_408752 (CHEMBL909940)",
+   "delta": -0.0275
+  },
+  {
+   "monomerid_from": 50197120,
+   "monomerid_to": 50197123,
+   "source_id": "17064075",
+   "assay_name": "ChEMBL_408752 (CHEMBL909940)",
+   "delta": -0.197
+  },
+  {
+   "monomerid_from": 50197120,
+   "monomerid_to": 50197129,
+   "source_id": "17064075",
+   "assay_name": "ChEMBL_408752 (CHEMBL909940)",
+   "delta": -0.4349
+  },
+  {
+   "monomerid_from": 50197124,
+   "monomerid_to": 50185040,
+   "source_id": "17064075",
+   "assay_name": "ChEMBL_408752 (CHEMBL909940)",
+   "delta": 0.4102
+  },
+  {
+   "monomerid_from": 50197124,
+   "monomerid_to": 50197144,
+   "source_id": "17064075",
+   "assay_name": "ChEMBL_408752 (CHEMBL909940)",
+   "delta": -0.4649
+  },
+  {
+   "monomerid_from": 50197139,
+   "monomerid_to": 50197136,
+   "source_id": "17064075",
+   "assay_name": "ChEMBL_408752 (CHEMBL909940)",
+   "delta": 0.3866
+  },
+  {
+   "monomerid_from": 50197139,
+   "monomerid_to": 50197146,
+   "source_id": "17064075",
+   "assay_name": "ChEMBL_408752 (CHEMBL909940)",
+   "delta": 0.0486
+  },
+  {
+   "monomerid_from": 50201021,
+   "monomerid_to": 310955,
+   "source_id": "US10155727-B2",
+   "assay_name": "Inhibition of Specific Binding to the hERG-Receptor (HERGBD)",
+   "delta": -0.5544
+  },
+  {
+   "monomerid_from": 50201021,
+   "monomerid_to": 310955,
+   "source_id": "USRE49517-E1",
+   "assay_name": "Inhibition of Specific Binding to the hERG Receptor (HERGBD)",
+   "delta": -0.7054
+  },
+  {
+   "monomerid_from": 50201023,
+   "monomerid_to": 310962,
+   "source_id": "US10155727-B2",
+   "assay_name": "Inhibition of Specific Binding to the hERG-Receptor (HERGBD)",
+   "delta": -0.6984
+  },
+  {
+   "monomerid_from": 50201023,
+   "monomerid_to": 310962,
+   "source_id": "USRE49517-E1",
+   "assay_name": "Inhibition of Specific Binding to the hERG Receptor (HERGBD)",
+   "delta": -0.0899
+  },
+  {
+   "monomerid_from": 50237799,
+   "monomerid_to": 289617,
+   "source_id": "28406621",
+   "assay_name": "ChEMBL_1661931 (CHEMBL4011543)",
+   "delta": 0.2118
+  },
+  {
+   "monomerid_from": 50249754,
+   "monomerid_to": 50249755,
+   "source_id": "19459652",
+   "assay_name": "ChEMBL_498774 (CHEMBL1021966)",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 50253002,
+   "monomerid_to": 50253003,
+   "source_id": "18800760",
+   "assay_name": "ChEMBL_539362 (CHEMBL1027247)",
+   "delta": 0.3378
+  },
+  {
+   "monomerid_from": 50253003,
+   "monomerid_to": 50253031,
+   "source_id": "18800760",
+   "assay_name": "ChEMBL_539362 (CHEMBL1027247)",
+   "delta": 0.1165
+  },
+  {
+   "monomerid_from": 50253031,
+   "monomerid_to": 50253032,
+   "source_id": "18800760",
+   "assay_name": "ChEMBL_539362 (CHEMBL1027247)",
+   "delta": 0.2688
+  },
+  {
+   "monomerid_from": 50262492,
+   "monomerid_to": 50262526,
+   "source_id": "28958623",
+   "assay_name": "ChEMBL_1696845 (CHEMBL4047735)",
+   "delta": -0.2185
+  },
+  {
+   "monomerid_from": 50262492,
+   "monomerid_to": 50262538,
+   "source_id": "28958623",
+   "assay_name": "ChEMBL_1696845 (CHEMBL4047735)",
+   "delta": -0.0474
+  },
+  {
+   "monomerid_from": 50262495,
+   "monomerid_to": 50262496,
+   "source_id": "28958623",
+   "assay_name": "ChEMBL_1696845 (CHEMBL4047735)",
+   "delta": -0.0782
+  },
+  {
+   "monomerid_from": 50262495,
+   "monomerid_to": 50262518,
+   "source_id": "28958623",
+   "assay_name": "ChEMBL_1696845 (CHEMBL4047735)",
+   "delta": -0.418
+  },
+  {
+   "monomerid_from": 50262495,
+   "monomerid_to": 50262537,
+   "source_id": "28958623",
+   "assay_name": "ChEMBL_1696845 (CHEMBL4047735)",
+   "delta": 0.4184
+  },
+  {
+   "monomerid_from": 50262496,
+   "monomerid_to": 50262497,
+   "source_id": "28958623",
+   "assay_name": "ChEMBL_1696845 (CHEMBL4047735)",
+   "delta": -0.7112
+  },
+  {
+   "monomerid_from": 50262520,
+   "monomerid_to": 50262492,
+   "source_id": "28958623",
+   "assay_name": "ChEMBL_1696845 (CHEMBL4047735)",
+   "delta": -0.5911
+  },
+  {
+   "monomerid_from": 50262538,
+   "monomerid_to": 50262527,
+   "source_id": "28958623",
+   "assay_name": "ChEMBL_1696845 (CHEMBL4047735)",
+   "delta": 0.2961
+  },
+  {
+   "monomerid_from": 50267776,
+   "monomerid_to": 50267777,
+   "source_id": "19320488",
+   "assay_name": "ChEMBL_563071 (CHEMBL1011901)",
+   "delta": 1.0969
+  },
+  {
+   "monomerid_from": 50295987,
+   "monomerid_to": 50295989,
+   "source_id": "19487123",
+   "assay_name": "ChEMBL_579203 (CHEMBL1055593)",
+   "delta": -0.0792
+  },
+  {
+   "monomerid_from": 50295987,
+   "monomerid_to": 50295990,
+   "source_id": "19487123",
+   "assay_name": "ChEMBL_579203 (CHEMBL1055593)",
+   "delta": -0.1303
+  },
+  {
+   "monomerid_from": 50296182,
+   "monomerid_to": 50296183,
+   "source_id": "19520574",
+   "assay_name": "ChEMBL_579539 (CHEMBL1061548)",
+   "delta": -0.3424
+  },
+  {
+   "monomerid_from": 50296182,
+   "monomerid_to": 50296183,
+   "source_id": "21802950",
+   "assay_name": "ChEMBL_766668 (CHEMBL1827362)",
+   "delta": -0.3424
+  },
+  {
+   "monomerid_from": 50301699,
+   "monomerid_to": 50301700,
+   "source_id": "19683441",
+   "assay_name": "ChEMBL_597859 (CHEMBL1039122)",
+   "delta": -0.0083
+  },
+  {
+   "monomerid_from": 50301704,
+   "monomerid_to": 50301705,
+   "source_id": "19683441",
+   "assay_name": "ChEMBL_597859 (CHEMBL1039122)",
+   "delta": 0.2518
+  },
+  {
+   "monomerid_from": 50312272,
+   "monomerid_to": 50415714,
+   "source_id": "19891474",
+   "assay_name": "ChEMBL_622010 (CHEMBL1107671)",
+   "delta": 0.2
+  },
+  {
+   "monomerid_from": 50314292,
+   "monomerid_to": 50314294,
+   "source_id": "20188550",
+   "assay_name": "ChEMBL_624362 (CHEMBL1107892)",
+   "delta": -0.0549
+  },
+  {
+   "monomerid_from": 50314292,
+   "monomerid_to": 50314294,
+   "source_id": "21802950",
+   "assay_name": "ChEMBL_766668 (CHEMBL1827362)",
+   "delta": -0.0549
+  },
+  {
+   "monomerid_from": 50325855,
+   "monomerid_to": 50327248,
+   "source_id": "20727752",
+   "assay_name": "ChEMBL_664324 (CHEMBL1259359)",
+   "delta": 0.6392
+  },
+  {
+   "monomerid_from": 50325855,
+   "monomerid_to": 50327249,
+   "source_id": "20727752",
+   "assay_name": "ChEMBL_664324 (CHEMBL1259359)",
+   "delta": 0.0693
+  },
+  {
+   "monomerid_from": 50325855,
+   "monomerid_to": 50327250,
+   "source_id": "20727752",
+   "assay_name": "ChEMBL_664324 (CHEMBL1259359)",
+   "delta": -0.0071
+  },
+  {
+   "monomerid_from": 50325855,
+   "monomerid_to": 50327265,
+   "source_id": "20727752",
+   "assay_name": "ChEMBL_664324 (CHEMBL1259359)",
+   "delta": -0.9928
+  },
+  {
+   "monomerid_from": 50327243,
+   "monomerid_to": 50327244,
+   "source_id": "20727752",
+   "assay_name": "ChEMBL_664324 (CHEMBL1259359)",
+   "delta": 0.2185
+  },
+  {
+   "monomerid_from": 50327244,
+   "monomerid_to": 50327266,
+   "source_id": "20727752",
+   "assay_name": "ChEMBL_664324 (CHEMBL1259359)",
+   "delta": -0.7891
+  },
+  {
+   "monomerid_from": 50327250,
+   "monomerid_to": 50327267,
+   "source_id": "20727752",
+   "assay_name": "ChEMBL_664324 (CHEMBL1259359)",
+   "delta": -0.8978
+  },
+  {
+   "monomerid_from": 50327251,
+   "monomerid_to": 50327272,
+   "source_id": "20727752",
+   "assay_name": "ChEMBL_664324 (CHEMBL1259359)",
+   "delta": -0.3921
+  },
+  {
+   "monomerid_from": 50327265,
+   "monomerid_to": 50327267,
+   "source_id": "20727752",
+   "assay_name": "ChEMBL_664324 (CHEMBL1259359)",
+   "delta": 0.088
+  },
+  {
+   "monomerid_from": 50327265,
+   "monomerid_to": 50327270,
+   "source_id": "20727752",
+   "assay_name": "ChEMBL_664324 (CHEMBL1259359)",
+   "delta": 0.1061
+  },
+  {
+   "monomerid_from": 50328440,
+   "monomerid_to": 50417124,
+   "source_id": "20839775",
+   "assay_name": "ChEMBL_665566 (CHEMBL1261450)",
+   "delta": -0.5
+  },
+  {
+   "monomerid_from": 50333597,
+   "monomerid_to": 50301081,
+   "source_id": "21190859",
+   "assay_name": "ChEMBL_699750 (CHEMBL1648563)",
+   "delta": -0.0458
+  },
+  {
+   "monomerid_from": 50333597,
+   "monomerid_to": 50333613,
+   "source_id": "21190859",
+   "assay_name": "ChEMBL_699750 (CHEMBL1648563)",
+   "delta": 0.275
+  },
+  {
+   "monomerid_from": 50333597,
+   "monomerid_to": 50333614,
+   "source_id": "21190859",
+   "assay_name": "ChEMBL_699750 (CHEMBL1648563)",
+   "delta": 0.4461
+  },
+  {
+   "monomerid_from": 50333597,
+   "monomerid_to": 50333615,
+   "source_id": "21190859",
+   "assay_name": "ChEMBL_699750 (CHEMBL1648563)",
+   "delta": 0.678
+  },
+  {
+   "monomerid_from": 50333597,
+   "monomerid_to": 50333618,
+   "source_id": "21190859",
+   "assay_name": "ChEMBL_699750 (CHEMBL1648563)",
+   "delta": 0.6297
+  },
+  {
+   "monomerid_from": 50370682,
+   "monomerid_to": 50609447,
+   "source_id": "36368496",
+   "assay_name": "ChEMBL_2277957",
+   "delta": -0.1001
+  },
+  {
+   "monomerid_from": 50389590,
+   "monomerid_to": 50154530,
+   "source_id": "26898814",
+   "assay_name": "ChEMBL_1560972 (CHEMBL3779605)",
+   "delta": 0.5755
+  },
+  {
+   "monomerid_from": 50389590,
+   "monomerid_to": 50154531,
+   "source_id": "26898814",
+   "assay_name": "ChEMBL_1560972 (CHEMBL3779605)",
+   "delta": 0.4214
+  },
+  {
+   "monomerid_from": 50389590,
+   "monomerid_to": 50154532,
+   "source_id": "26898814",
+   "assay_name": "ChEMBL_1560972 (CHEMBL3779605)",
+   "delta": -0.1148
+  },
+  {
+   "monomerid_from": 50389590,
+   "monomerid_to": 50154533,
+   "source_id": "26898814",
+   "assay_name": "ChEMBL_1560972 (CHEMBL3779605)",
+   "delta": 0.1682
+  },
+  {
+   "monomerid_from": 50389590,
+   "monomerid_to": 50400519,
+   "source_id": "26898814",
+   "assay_name": "ChEMBL_1560972 (CHEMBL3779605)",
+   "delta": 0.0034
+  },
+  {
+   "monomerid_from": 50391768,
+   "monomerid_to": 50391781,
+   "source_id": "24900480",
+   "assay_name": "ChEMBL_849882 (CHEMBL2148626)",
+   "delta": 0.403
+  },
+  {
+   "monomerid_from": 50391768,
+   "monomerid_to": 50391786,
+   "source_id": "24900480",
+   "assay_name": "ChEMBL_849882 (CHEMBL2148626)",
+   "delta": 0.5543
+  },
+  {
+   "monomerid_from": 50391770,
+   "monomerid_to": 50391760,
+   "source_id": "24900480",
+   "assay_name": "ChEMBL_849882 (CHEMBL2148626)",
+   "delta": 0.1079
+  },
+  {
+   "monomerid_from": 50391770,
+   "monomerid_to": 50391763,
+   "source_id": "24900480",
+   "assay_name": "ChEMBL_849882 (CHEMBL2148626)",
+   "delta": 0.8182
+  },
+  {
+   "monomerid_from": 50391770,
+   "monomerid_to": 50391764,
+   "source_id": "24900480",
+   "assay_name": "ChEMBL_849882 (CHEMBL2148626)",
+   "delta": 0.2076
+  },
+  {
+   "monomerid_from": 50400519,
+   "monomerid_to": 50154520,
+   "source_id": "26898814",
+   "assay_name": "ChEMBL_1560972 (CHEMBL3779605)",
+   "delta": -0.2257
+  },
+  {
+   "monomerid_from": 50400519,
+   "monomerid_to": 50154521,
+   "source_id": "26898814",
+   "assay_name": "ChEMBL_1560972 (CHEMBL3779605)",
+   "delta": 0.0323
+  },
+  {
+   "monomerid_from": 50411387,
+   "monomerid_to": 50411390,
+   "source_id": "17867665",
+   "assay_name": "ChEMBL_446344 (CHEMBL895464)",
+   "delta": 0.4
+  },
+  {
+   "monomerid_from": 50411396,
+   "monomerid_to": 50411390,
+   "source_id": "17867665",
+   "assay_name": "ChEMBL_446344 (CHEMBL895464)",
+   "delta": 0.9
+  },
+  {
+   "monomerid_from": 50494735,
+   "monomerid_to": 50095760,
+   "source_id": "24224763",
+   "assay_name": "ChEMBL_1278260 (CHEMBL3096732)",
+   "delta": 1.0707
+  },
+  {
+   "monomerid_from": 50504113,
+   "monomerid_to": 50504110,
+   "source_id": "31335138",
+   "assay_name": "ChEMBL_1813578 (CHEMBL4313152)",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 50504113,
+   "monomerid_to": 50504111,
+   "source_id": "31335138",
+   "assay_name": "ChEMBL_1813578 (CHEMBL4313152)",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 50514234,
+   "monomerid_to": 50514233,
+   "source_id": "31743642",
+   "assay_name": "ChEMBL_1855928 (CHEMBL4356657)",
+   "delta": 0.6021
+  },
+  {
+   "monomerid_from": 50514234,
+   "monomerid_to": 50514248,
+   "source_id": "31743642",
+   "assay_name": "ChEMBL_1855928 (CHEMBL4356657)",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 50514234,
+   "monomerid_to": 50514259,
+   "source_id": "31743642",
+   "assay_name": "ChEMBL_1855928 (CHEMBL4356657)",
+   "delta": -0.1761
+  },
+  {
+   "monomerid_from": 50514234,
+   "monomerid_to": 50514273,
+   "source_id": "31743642",
+   "assay_name": "ChEMBL_1855928 (CHEMBL4356657)",
+   "delta": 0.6021
+  },
+  {
+   "monomerid_from": 50558168,
+   "monomerid_to": 50558167,
+   "source_id": "27240550",
+   "assay_name": "ChEMBL_2062193 (CHEMBL4717446)",
+   "delta": 0.4088
+  },
+  {
+   "monomerid_from": 50558170,
+   "monomerid_to": 50558169,
+   "source_id": "27240550",
+   "assay_name": "ChEMBL_2062193 (CHEMBL4717446)",
+   "delta": 0.0651
+  },
+  {
+   "monomerid_from": 50558171,
+   "monomerid_to": 50558170,
+   "source_id": "27240550",
+   "assay_name": "ChEMBL_2062193 (CHEMBL4717446)",
+   "delta": 0.157
+  },
+  {
+   "monomerid_from": 50562525,
+   "monomerid_to": 50562526,
+   "source_id": "33261899",
+   "assay_name": "ChEMBL_2079116 (CHEMBL4734907)",
+   "delta": 0.3882
+  },
+  {
+   "monomerid_from": 50577255,
+   "monomerid_to": 50577259,
+   "source_id": "34413963",
+   "assay_name": "ChEMBL_2129860 (CHEMBL4839289)",
+   "delta": 0.0
+  },
+  {
+   "monomerid_from": 50578649,
+   "monomerid_to": 50578654,
+   "source_id": "34292726",
+   "assay_name": "ChEMBL_2133671 (CHEMBL4843281)",
+   "delta": -0.5006
+  },
+  {
+   "monomerid_from": 50613167,
+   "monomerid_to": 50613169,
+   "source_id": "36883854",
+   "assay_name": "ChEMBL_2291086",
+   "delta": 0.1513
+  },
+  {
+   "monomerid_from": 50613168,
+   "monomerid_to": 50613170,
+   "source_id": "36883854",
+   "assay_name": "ChEMBL_2291086",
+   "delta": 0.0902
+  },
+  {
+   "monomerid_from": 50613169,
+   "monomerid_to": 50613165,
+   "source_id": "36883854",
+   "assay_name": "ChEMBL_2291086",
+   "delta": 0.1397
+  },
+  {
+   "monomerid_from": 50613169,
+   "monomerid_to": 50613172,
+   "source_id": "36883854",
+   "assay_name": "ChEMBL_2291086",
+   "delta": 0.2341
+  },
+  {
+   "monomerid_from": 50613170,
+   "monomerid_to": 50613166,
+   "source_id": "36883854",
+   "assay_name": "ChEMBL_2291086",
+   "delta": 0.0348
+  },
+  {
+   "monomerid_from": 50613172,
+   "monomerid_to": 50613173,
+   "source_id": "36883854",
+   "assay_name": "ChEMBL_2291086",
+   "delta": -0.03
+  },
+  {
+   "monomerid_from": 50613182,
+   "monomerid_to": 610138,
+   "source_id": "36883854",
+   "assay_name": "ChEMBL_2291086",
+   "delta": 0.2536
+  },
+  {
+   "monomerid_from": 50613185,
+   "monomerid_to": 50613186,
+   "source_id": "36883854",
+   "assay_name": "ChEMBL_2291086",
+   "delta": 0.1526
+  }
+ ]
+}

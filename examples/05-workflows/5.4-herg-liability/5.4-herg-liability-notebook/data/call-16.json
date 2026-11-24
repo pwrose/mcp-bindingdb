@@ -1,0 +1,33 @@
+{
+ "query": "loratadine",
+ "resolved": true,
+ "source": "bindingdb",
+ "smiles": "CCOC(=O)N1CCC(=C2c3ccc(Cl)cc3CCc3cccnc32)CC1",
+ "inchi_key": "JCCNYMKQOSZNPW-UHFFFAOYSA-N",
+ "monomerid": 22876,
+ "ambiguous": false,
+ "candidates": [
+  {
+   "monomerid": 22876,
+   "bdbm_id": "BDBM22876",
+   "name": "Claritin",
+   "inchi_key": "JCCNYMKQOSZNPW-UHFFFAOYSA-N",
+   "smiles": "CCOC(=O)N1CCC(=C2c3ccc(Cl)cc3CCc3cccnc32)CC1",
+   "n_activities": 36
+  },
+  {
+   "monomerid": 50637414,
+   "bdbm_id": "BDBM50637414",
+   "name": "Alavert",
+   "inchi_key": "JCCNYMKQOSZNPW-UHFFFAOYSA-N",
+   "smiles": "CCOC(=O)N1CCC(=C2c3ccc(Cl)cc3CCc3cccnc32)CC1",
+   "n_activities": 1
+  }
+ ],
+ "sources_tried": [
+  {
+   "source": "bindingdb",
+   "status": "found"
+  }
+ ]
+}

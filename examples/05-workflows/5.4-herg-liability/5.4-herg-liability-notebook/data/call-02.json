@@ -1,0 +1,11 @@
+{
+ "row_count": 1,
+ "truncated": false,
+ "rows": [
+  {
+   "n_measurements": 18767,
+   "n_compounds": 14872,
+   "n_sources": 2018
+  }
+ ]
+}

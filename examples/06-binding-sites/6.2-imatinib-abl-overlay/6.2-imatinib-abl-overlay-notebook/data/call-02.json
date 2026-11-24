@@ -1,0 +1,17 @@
+{
+ "row_count": 1,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 50237710,
+   "bdbm_id": "BDBM50237710",
+   "name": "NILOTINIB",
+   "inchi_key": "HHZIURLSWUIHRB-UHFFFAOYSA-N",
+   "smiles": "Cc1cn(cn1)-c1cc(NC(=O)c2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)cc(c1)C(F)(F)F",
+   "mol_weight": 529.18,
+   "n_activities": 614,
+   "n_targets": 409,
+   "matched_name": "NILOTINIB"
+  }
+ ]
+}

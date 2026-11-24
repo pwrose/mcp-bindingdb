@@ -1,0 +1,66 @@
+{
+ "row_count": 5,
+ "truncated": false,
+ "rows": [
+  {
+   "target_kind": "polymer",
+   "target_id": 223,
+   "name": "Gag-Pol polyprotein [489-587]",
+   "uniprot": "P04585",
+   "uniprot_raw": "P04585[489-587]",
+   "organism": "Human immunodeficiency virus 1",
+   "type": "Enzyme Subunit",
+   "n_activities": 4568,
+   "n_compounds": 3548,
+   "matched_name": "Gag-Pol polyprotein [489-587]"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 150,
+   "name": "Gag-Pol polyprotein [489-587]",
+   "uniprot": "P12497",
+   "uniprot_raw": "P12497[489-587]",
+   "organism": "Human immunodeficiency virus 1",
+   "type": "Enzyme Subunit",
+   "n_activities": 0,
+   "n_compounds": 0,
+   "matched_name": "Gag-Pol polyprotein [489-587]"
+  },
+  {
+   "target_kind": "complex",
+   "target_id": 50,
+   "name": "Dimer of Gag-Pol polyprotein [489-587]",
+   "uniprot": null,
+   "uniprot_raw": null,
+   "organism": null,
+   "type": "Protein Complex",
+   "n_activities": 1528,
+   "n_compounds": 1400,
+   "matched_name": "Dimer of Gag-Pol polyprotein [489-587]"
+  },
+  {
+   "target_kind": "complex",
+   "target_id": 57,
+   "name": "Dimer of Gag-Pol polyprotein [489-587]",
+   "uniprot": null,
+   "uniprot_raw": null,
+   "organism": null,
+   "type": "Tandem linked enzyme construct",
+   "n_activities": 161,
+   "n_compounds": 161,
+   "matched_name": "Dimer of Gag-Pol polyprotein [489-587]"
+  },
+  {
+   "target_kind": "complex",
+   "target_id": 142,
+   "name": "Dimer of Gag-Pol polyprotein [489-587]",
+   "uniprot": null,
+   "uniprot_raw": null,
+   "organism": null,
+   "type": "Protein Complex",
+   "n_activities": 7,
+   "n_compounds": 7,
+   "matched_name": "Dimer of Gag-Pol polyprotein [489-587]"
+  }
+ ]
+}

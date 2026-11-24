@@ -1,0 +1,186 @@
+{
+ "row_count": 30,
+ "truncated": false,
+ "rows": [
+  {
+   "ranking": "lead",
+   "target": "Tyrosine-protein kinase BTK",
+   "tkey": "Q06187",
+   "patents": 178
+  },
+  {
+   "ranking": "lead",
+   "target": "Tyrosine-protein kinase JAK2",
+   "tkey": "O60674",
+   "patents": 163
+  },
+  {
+   "ranking": "lead",
+   "target": "Epidermal growth factor receptor",
+   "tkey": "P00533",
+   "patents": 104
+  },
+  {
+   "ranking": "lead",
+   "target": "Beta-secretase 1",
+   "tkey": "P56817",
+   "patents": 103
+  },
+  {
+   "ranking": "lead",
+   "target": "Bromodomain-containing protein 4",
+   "tkey": "O60885",
+   "patents": 96
+  },
+  {
+   "ranking": "lead",
+   "target": "Phosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit delta isoform",
+   "tkey": "O00329",
+   "patents": 91
+  },
+  {
+   "ranking": "lead",
+   "target": "Lysine-specific histone demethylase 1A",
+   "tkey": "O60341",
+   "patents": 86
+  },
+  {
+   "ranking": "lead",
+   "target": "Nuclear receptor ROR-gamma",
+   "tkey": "P51449",
+   "patents": 82
+  },
+  {
+   "ranking": "lead",
+   "target": "Interleukin-1 receptor-associated kinase 4",
+   "tkey": "Q9NWZ3",
+   "patents": 80
+  },
+  {
+   "ranking": "lead",
+   "target": "Sodium channel protein type 9 subunit alpha",
+   "tkey": "Q15858",
+   "patents": 74
+  },
+  {
+   "ranking": "lead",
+   "target": "Fibroblast growth factor receptor 1",
+   "tkey": "P11362",
+   "patents": 68
+  },
+  {
+   "ranking": "lead",
+   "target": "Tyrosine-protein kinase JAK1",
+   "tkey": "P23458",
+   "patents": 68
+  },
+  {
+   "ranking": "lead",
+   "target": "High affinity nerve growth factor receptor",
+   "tkey": "P04629",
+   "patents": 65
+  },
+  {
+   "ranking": "lead",
+   "target": "cAMP and cAMP-inhibited cGMP 3',5'-cyclic phosphodiesterase 10A",
+   "tkey": "Q9Y233",
+   "patents": 65
+  },
+  {
+   "ranking": "lead",
+   "target": "Mitogen-activated protein kinase kinase kinase kinase 1",
+   "tkey": "Q92918",
+   "patents": 64
+  },
+  {
+   "ranking": "any target",
+   "target": "Tyrosine-protein kinase JAK2",
+   "tkey": "O60674",
+   "patents": 246
+  },
+  {
+   "ranking": "any target",
+   "target": "Tyrosine-protein kinase JAK1",
+   "tkey": "P23458",
+   "patents": 234
+  },
+  {
+   "ranking": "any target",
+   "target": "Tyrosine-protein kinase BTK",
+   "tkey": "Q06187",
+   "patents": 226
+  },
+  {
+   "ranking": "any target",
+   "target": "Tyrosine-protein kinase JAK3",
+   "tkey": "P52333",
+   "patents": 195
+  },
+  {
+   "ranking": "any target",
+   "target": "Epidermal growth factor receptor",
+   "tkey": "P00533",
+   "patents": 156
+  },
+  {
+   "ranking": "any target",
+   "target": "Non-receptor tyrosine-protein kinase TYK2",
+   "tkey": "P29597",
+   "patents": 152
+  },
+  {
+   "ranking": "any target",
+   "target": "Phosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit delta isoform",
+   "tkey": "O00329",
+   "patents": 125
+  },
+  {
+   "ranking": "any target",
+   "target": "Vascular endothelial growth factor receptor 2",
+   "tkey": "P35968",
+   "patents": 125
+  },
+  {
+   "ranking": "any target",
+   "target": "Beta-secretase 1",
+   "tkey": "P56817",
+   "patents": 122
+  },
+  {
+   "ranking": "any target",
+   "target": "Potassium voltage-gated channel subfamily H member 2",
+   "tkey": "Q12809",
+   "patents": 119
+  },
+  {
+   "ranking": "any target",
+   "target": "Bromodomain-containing protein 4",
+   "tkey": "O60885",
+   "patents": 108
+  },
+  {
+   "ranking": "any target",
+   "target": "Cytochrome P450 3A4",
+   "tkey": "P08684",
+   "patents": 108
+  },
+  {
+   "ranking": "any target",
+   "target": "Cytochrome P450 2D6",
+   "tkey": "P10635",
+   "patents": 94
+  },
+  {
+   "ranking": "any target",
+   "target": "Histone deacetylase 1",
+   "tkey": "Q13547",
+   "patents": 94
+  },
+  {
+   "ranking": "any target",
+   "target": "Interleukin-1 receptor-associated kinase 4",
+   "tkey": "Q9NWZ3",
+   "patents": 94
+  }
+ ]
+}

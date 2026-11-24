@@ -1,0 +1,258 @@
+{
+ "row_count": 28,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 50624927,
+   "name": "CHEMBL5398068",
+   "pains": "catechol_A(92)",
+   "best_nm": 7.0,
+   "n_sources": 1,
+   "y0": 2022,
+   "y1": 2022
+  },
+  {
+   "monomerid": 50624931,
+   "name": "CHEMBL5421129",
+   "pains": "catechol_A(92)",
+   "best_nm": 7.0,
+   "n_sources": 1,
+   "y0": 2022,
+   "y1": 2022
+  },
+  {
+   "monomerid": 50624929,
+   "name": "CHEMBL5395696",
+   "pains": "catechol_A(92)",
+   "best_nm": 8.0,
+   "n_sources": 1,
+   "y0": 2022,
+   "y1": 2022
+  },
+  {
+   "monomerid": 50624928,
+   "name": "CHEMBL5413117",
+   "pains": "catechol_A(92)",
+   "best_nm": 10.0,
+   "n_sources": 1,
+   "y0": 2022,
+   "y1": 2022
+  },
+  {
+   "monomerid": 50624930,
+   "name": "CHEMBL5401317",
+   "pains": "catechol_A(92)",
+   "best_nm": 10.0,
+   "n_sources": 1,
+   "y0": 2022,
+   "y1": 2022
+  },
+  {
+   "monomerid": 50006807,
+   "name": "4-({(3-Fluoro-benzyl)-[4-(quinolin-2-ylmethoxy)-phenyl]-amino}-methyl)-benzoic acid",
+   "pains": "anil_di_alk_C(246)",
+   "best_nm": 20.0,
+   "n_sources": 1,
+   "y0": 1992,
+   "y1": 1992
+  },
+  {
+   "monomerid": 50610884,
+   "name": "CHEMBL5280920",
+   "pains": "ene_five_het_G(10)",
+   "best_nm": 20.0,
+   "n_sources": 1,
+   "y0": 2021,
+   "y1": 2021
+  },
+  {
+   "monomerid": 50624922,
+   "name": "CHEMBL5418840",
+   "pains": "catechol_A(92)",
+   "best_nm": 20.0,
+   "n_sources": 1,
+   "y0": 2022,
+   "y1": 2022
+  },
+  {
+   "monomerid": 50624923,
+   "name": "CHEMBL5413658",
+   "pains": "catechol_A(92)",
+   "best_nm": 20.0,
+   "n_sources": 1,
+   "y0": 2022,
+   "y1": 2022
+  },
+  {
+   "monomerid": 22372,
+   "name": "NDGA",
+   "pains": "catechol_A(92)",
+   "best_nm": 25.0,
+   "n_sources": 4,
+   "y0": 2009,
+   "y1": 2011
+  },
+  {
+   "monomerid": 50231998,
+   "name": "CHEMBL4085835",
+   "pains": "catechol_A(92)",
+   "best_nm": 28.0,
+   "n_sources": 1,
+   "y0": 2017,
+   "y1": 2017
+  },
+  {
+   "monomerid": 50078888,
+   "name": "CHEMBL3416359",
+   "pains": "imine_one_A(321);quinone_D(2)",
+   "best_nm": 29.0,
+   "n_sources": 2,
+   "y0": 2015,
+   "y1": 2023
+  },
+  {
+   "monomerid": 50031143,
+   "name": "[1-{4-[5-((R)-2,2,4-Trimethyl-[1,3]dioxolan-4-yl)-thiazol-2-ylsulfanyl]-phenyl}-eth-(E)-ylideneaminooxy]-acetonitrile",
+   "pains": "thiazol_SC_A(3)",
+   "best_nm": 30.0,
+   "n_sources": 1,
+   "y0": 1995,
+   "y1": 1995
+  },
+  {
+   "monomerid": 50231991,
+   "name": "CHEMBL4093584",
+   "pains": "catechol_A(92)",
+   "best_nm": 30.0,
+   "n_sources": 1,
+   "y0": 2017,
+   "y1": 2017
+  },
+  {
+   "monomerid": 50231999,
+   "name": "CHEMBL4103758",
+   "pains": "catechol_A(92)",
+   "best_nm": 30.0,
+   "n_sources": 2,
+   "y0": 2017,
+   "y1": 2022
+  },
+  {
+   "monomerid": 50624926,
+   "name": "CHEMBL5425532",
+   "pains": "catechol_A(92)",
+   "best_nm": 30.0,
+   "n_sources": 1,
+   "y0": 2022,
+   "y1": 2022
+  },
+  {
+   "monomerid": 50078886,
+   "name": "CHEMBL3416361",
+   "pains": "imine_one_A(321);quinone_D(2)",
+   "best_nm": 40.0,
+   "n_sources": 1,
+   "y0": 2015,
+   "y1": 2015
+  },
+  {
+   "monomerid": 50624925,
+   "name": "CHEMBL5441068",
+   "pains": "catechol_A(92)",
+   "best_nm": 40.0,
+   "n_sources": 1,
+   "y0": 2022,
+   "y1": 2022
+  },
+  {
+   "monomerid": 50051857,
+   "name": "CHEMBL3318382",
+   "pains": "anil_di_alk_A(478)",
+   "best_nm": 50.0,
+   "n_sources": 1,
+   "y0": 2014,
+   "y1": 2014
+  },
+  {
+   "monomerid": 50380205,
+   "name": "NYMPHAEOL A",
+   "pains": "catechol_A(92)",
+   "best_nm": 50.0,
+   "n_sources": 1,
+   "y0": 2017,
+   "y1": 2017
+  },
+  {
+   "monomerid": 50516943,
+   "name": "CHEMBL332610",
+   "pains": "catechol_A(92)",
+   "best_nm": 50.0,
+   "n_sources": 1,
+   "y0": 2019,
+   "y1": 2019
+  },
+  {
+   "monomerid": 50624921,
+   "name": "4-Phenylcatechol",
+   "pains": "catechol_A(92)",
+   "best_nm": 50.0,
+   "n_sources": 1,
+   "y0": 2022,
+   "y1": 2022
+  },
+  {
+   "monomerid": 50012476,
+   "name": "2-(3,4-Dihydroxy-phenyl)-3-hexyl-5,7,8-trimethoxy-chromen-4-one",
+   "pains": "catechol_A(92)",
+   "best_nm": 58.0,
+   "n_sources": 1,
+   "y0": 1991,
+   "y1": 1991
+  },
+  {
+   "monomerid": 91673,
+   "name": "N-aryl-4-aryl-1,3-thiazole-2-amine, 31",
+   "pains": "anil_no_alk(40)",
+   "best_nm": 60.0,
+   "n_sources": 1,
+   "y0": 2012,
+   "y1": 2012
+  },
+  {
+   "monomerid": 50031147,
+   "name": "1-Methyl-7-[5-((R)-2,2,4-trimethyl-[1,3]dioxolan-4-yl)-thiazol-2-ylsulfanyl]-3,4-dihydro-1H-quinolin-2-one",
+   "pains": "thiazol_SC_A(3)",
+   "best_nm": 60.0,
+   "n_sources": 1,
+   "y0": 1995,
+   "y1": 1995
+  },
+  {
+   "monomerid": 50078850,
+   "name": "Embelin",
+   "pains": "quinone_A(370)",
+   "best_nm": 60.0,
+   "n_sources": 2,
+   "y0": 2015,
+   "y1": 2022
+  },
+  {
+   "monomerid": 50383636,
+   "name": "CHEMBL2029857",
+   "pains": "ene_five_het_B(90)",
+   "best_nm": 60.0,
+   "n_sources": 1,
+   "y0": 2012,
+   "y1": 2012
+  },
+  {
+   "monomerid": 50468223,
+   "name": "CHEMBL463675",
+   "pains": "catechol_A(92)",
+   "best_nm": 60.0,
+   "n_sources": 1,
+   "y0": 2017,
+   "y1": 2017
+  }
+ ]
+}

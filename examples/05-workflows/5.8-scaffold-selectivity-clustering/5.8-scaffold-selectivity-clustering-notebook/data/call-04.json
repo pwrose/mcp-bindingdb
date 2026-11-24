@@ -1,0 +1,4153 @@
+{
+ "query": {
+  "input": "c1ccc(Nc2nccc(-c3cccnc3)n2)cc1",
+  "interpreted_as": "smiles",
+  "canonical": "c1ccc(Nc2nccc(-c3cccnc3)n2)cc1"
+ },
+ "row_count": 460,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 13530,
+   "bdbm_id": "BDBM13530",
+   "name": "Gleevec",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)CC1",
+   "mol_weight": 493.26,
+   "n_activities": 1156,
+   "n_targets": 459
+  },
+  {
+   "monomerid": 50237710,
+   "bdbm_id": "BDBM50237710",
+   "name": "NILOTINIB",
+   "smiles": "Cc1cn(cn1)-c1cc(NC(=O)c2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)cc(c1)C(F)(F)F",
+   "mol_weight": 529.18,
+   "n_activities": 614,
+   "n_targets": 409
+  },
+  {
+   "monomerid": 86734,
+   "bdbm_id": "BDBM86734",
+   "name": "Gleevec",
+   "smiles": "Cc3ccc(NC(=O)c2ccc(CN1CCN(C)CC1)cc2)cc3Nc5nccc(c4cccnc4)n5",
+   "mol_weight": 493.26,
+   "n_activities": 66,
+   "n_targets": 10
+  },
+  {
+   "monomerid": 86633,
+   "bdbm_id": "BDBM86633",
+   "name": "JNK-IN-8",
+   "smiles": "CN(C)C\\C=C\\C(=O)Nc1cccc(c1)C(=O)Nc1ccc(Nc2nccc(n2)-c2cccnc2)c(C)c1",
+   "mol_weight": 507.24,
+   "n_activities": 27,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 86632,
+   "bdbm_id": "BDBM86632",
+   "name": "JNK-IN-7",
+   "smiles": "CN(C)C\\C=C\\C(=O)Nc1cccc(c1)C(=O)Nc1ccc(Nc2nccc(n2)-c2cccnc2)cc1",
+   "mol_weight": 493.22,
+   "n_activities": 22,
+   "n_targets": 5
+  },
+  {
+   "monomerid": 50175493,
+   "bdbm_id": "BDBM50175493",
+   "name": "N-[3-(4-Pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-benzamide",
+   "smiles": "O=C(Nc1cccc(Nc2nccc(n2)-c2cccnc2)c1)c1ccccc1",
+   "mol_weight": 367.14,
+   "n_activities": 20,
+   "n_targets": 9
+  },
+  {
+   "monomerid": 50175491,
+   "bdbm_id": "BDBM50175491",
+   "name": "4-Methyl-N-[4-methyl-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-benzamide",
+   "smiles": "Cc1ccc(cc1)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 395.17,
+   "n_activities": 19,
+   "n_targets": 8
+  },
+  {
+   "monomerid": 397156,
+   "bdbm_id": "BDBM397156",
+   "name": "US9987276, Compound I-56",
+   "smiles": "Cc1ccc(NC(=O)C=C)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 331.14,
+   "n_activities": 18,
+   "n_targets": 6
+  },
+  {
+   "monomerid": 50240407,
+   "bdbm_id": "BDBM50240407",
+   "name": "N-(4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)phenyl)benzamide",
+   "smiles": "Cc1ccc(NC(=O)c2ccccc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 381.16,
+   "n_activities": 17,
+   "n_targets": 9
+  },
+  {
+   "monomerid": 50287097,
+   "bdbm_id": "BDBM50287097",
+   "name": "4-Methyl-N*3*-(4-pyridin-3-yl-pyrimidin-2-yl)-benzene-1,3-diamine",
+   "smiles": "Cc1ccc(N)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 277.3238,
+   "n_activities": 15,
+   "n_targets": 9
+  },
+  {
+   "monomerid": 50240406,
+   "bdbm_id": "BDBM50240406",
+   "name": "N-(4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)phenyl)acetamide",
+   "smiles": "CC(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 319.14,
+   "n_activities": 14,
+   "n_targets": 8
+  },
+  {
+   "monomerid": 50287090,
+   "bdbm_id": "BDBM50287090",
+   "name": "4-Chloro-N-[4-methyl-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-benzamide",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(Cl)cc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 415.87492,
+   "n_activities": 14,
+   "n_targets": 8
+  },
+  {
+   "monomerid": 50287091,
+   "bdbm_id": "BDBM50287091",
+   "name": "Naphthalene-2-carboxylic acid [4-methyl-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-amide",
+   "smiles": "Cc1ccc(NC(=O)c2ccc3ccccc3c2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 431.48854,
+   "n_activities": 14,
+   "n_targets": 8
+  },
+  {
+   "monomerid": 50287096,
+   "bdbm_id": "BDBM50287096",
+   "name": "2-Methoxy-N-[4-methyl-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-benzamide",
+   "smiles": "COc1ccccc1C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 411.45584,
+   "n_activities": 14,
+   "n_targets": 8
+  },
+  {
+   "monomerid": 50425385,
+   "bdbm_id": "BDBM50425385",
+   "name": "CHEMBL2311807",
+   "smiles": "Cc1cn(cn1)-c1cc(F)cc(NC(=O)c2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)c1",
+   "mol_weight": 479.51,
+   "n_activities": 14,
+   "n_targets": 8
+  },
+  {
+   "monomerid": 50425386,
+   "bdbm_id": "BDBM50425386",
+   "name": "CHEMBL2311808",
+   "smiles": "Cc1cn(cn1)-c1cccc(NC(=O)c2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)c1",
+   "mol_weight": 461.52,
+   "n_activities": 14,
+   "n_targets": 8
+  },
+  {
+   "monomerid": 50425387,
+   "bdbm_id": "BDBM50425387",
+   "name": "CHEMBL2311806",
+   "smiles": "Cc1cn(cn1)-c1cc(C)cc(NC(=O)c2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)c1",
+   "mol_weight": 475.54,
+   "n_activities": 14,
+   "n_targets": 8
+  },
+  {
+   "monomerid": 50290422,
+   "bdbm_id": "BDBM50290422",
+   "name": "4-(4-Methyl-piperazin-1-ylmethyl)-N-[3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-benzamide",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2cccc(Nc3nccc(n3)-c3cccnc3)c2)CC1",
+   "mol_weight": 479.57615,
+   "n_activities": 12,
+   "n_targets": 11
+  },
+  {
+   "monomerid": 86627,
+   "bdbm_id": "BDBM86627",
+   "name": "JNK-IN-2",
+   "smiles": "CN(C)C\\C=C\\C(=O)Nc1ccc(cc1)C(=O)Nc1cccc(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 493.22,
+   "n_activities": 11,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 50290417,
+   "bdbm_id": "BDBM50290417",
+   "name": "2-Amino-pyrimidine, 19",
+   "smiles": "O=C(Nc1cccc(Nc2nccc(n2)-c2cccnc2)c1)c1cccnc1",
+   "mol_weight": 368.39134,
+   "n_activities": 10,
+   "n_targets": 10
+  },
+  {
+   "monomerid": 86626,
+   "bdbm_id": "BDBM86626",
+   "name": "JNK-IN-1",
+   "smiles": "CN(C)C\\C=C\\C(=O)Nc1ccc(cc1)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 507.24,
+   "n_activities": 9,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 481131,
+   "bdbm_id": "BDBM481131",
+   "name": "US10906896, Cpd 832",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3ccn(C)n3)c2)CC1",
+   "mol_weight": 573.3,
+   "n_activities": 9,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 481135,
+   "bdbm_id": "BDBM481135",
+   "name": "BDBM481139",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3ccns3)c2)CC1",
+   "mol_weight": 576.24,
+   "n_activities": 9,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 50045528,
+   "bdbm_id": "BDBM50045528",
+   "name": "N-(4-Pyridin-3-yl-pyrimidin-2-yl)-benzene-1,3-diamine",
+   "smiles": "Nc1cccc(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 263.12,
+   "n_activities": 9,
+   "n_targets": 9
+  },
+  {
+   "monomerid": 50045481,
+   "bdbm_id": "BDBM50045481",
+   "name": "(3-Imidazol-1-yl-phenyl)-(4-pyridin-3-yl-pyrimidin-2-yl)-amine",
+   "smiles": "N(c1cccc(c1)-n1ccnc1)c1nccc(n1)-c1cccnc1",
+   "mol_weight": 314.13,
+   "n_activities": 8,
+   "n_targets": 8
+  },
+  {
+   "monomerid": 50045485,
+   "bdbm_id": "BDBM50045485",
+   "name": "(3-Chloro-phenyl)-(4-pyridin-3-yl-pyrimidin-2-yl)-amine",
+   "smiles": "Clc1cccc(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 282.07,
+   "n_activities": 8,
+   "n_targets": 8
+  },
+  {
+   "monomerid": 50045526,
+   "bdbm_id": "BDBM50045526",
+   "name": "[3-(2-Imidazol-1-yl-ethoxy)-phenyl]-(4-pyridin-3-yl-pyrimidin-2-yl)-amine",
+   "smiles": "C(Cn1ccnc1)Oc1cccc(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 358.15,
+   "n_activities": 8,
+   "n_targets": 8
+  },
+  {
+   "monomerid": 50290411,
+   "bdbm_id": "BDBM50290411",
+   "name": "4-Cyano-N-[3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-benzamide",
+   "smiles": "O=C(Nc1cccc(Nc2nccc(n2)-c2cccnc2)c1)c1ccc(cc1)C#N",
+   "mol_weight": 392.41274,
+   "n_activities": 8,
+   "n_targets": 8
+  },
+  {
+   "monomerid": 50290421,
+   "bdbm_id": "BDBM50290421",
+   "name": "N-[3-(4-Pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-isonicotinamide",
+   "smiles": "O=C(Nc1cccc(Nc2nccc(n2)-c2cccnc2)c1)c1ccncc1",
+   "mol_weight": 368.39134,
+   "n_activities": 8,
+   "n_targets": 8
+  },
+  {
+   "monomerid": 50290423,
+   "bdbm_id": "BDBM50290423",
+   "name": "(3-Nitro-phenyl)-(4-pyridin-3-yl-pyrimidin-2-yl)-amine",
+   "smiles": "[O-][N+](=O)c1cccc(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 293.28014,
+   "n_activities": 8,
+   "n_targets": 8
+  },
+  {
+   "monomerid": 50290429,
+   "bdbm_id": "BDBM50290429",
+   "name": "2-Methoxy-N-[3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-benzamide",
+   "smiles": "COc1ccccc1C(=O)Nc1cccc(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 397.42926,
+   "n_activities": 8,
+   "n_targets": 8
+  },
+  {
+   "monomerid": 50045424,
+   "bdbm_id": "BDBM50045424",
+   "name": "Phenyl-(4-pyridin-3-yl-pyrimidin-2-yl)-amine",
+   "smiles": "N(c1ccccc1)c1nccc(n1)-c1cccnc1",
+   "mol_weight": 248.11,
+   "n_activities": 7,
+   "n_targets": 7
+  },
+  {
+   "monomerid": 106562,
+   "bdbm_id": "BDBM106562",
+   "name": "US8586600, III-14",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1ccc(NC(=O)CCl)c(c1)C(F)(F)F",
+   "mol_weight": 540.13,
+   "n_activities": 6,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 120388,
+   "bdbm_id": "BDBM120388",
+   "name": "US8703771, 1",
+   "smiles": "CN1CCN(CC1)C1CCc2cc(ccc12)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 519.27,
+   "n_activities": 6,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 481127,
+   "bdbm_id": "BDBM481127",
+   "name": "US10906896, Cpd 806",
+   "smiles": "Cc1cc(on1)-c1cncc(c1)-c1ccnc(Nc2cc(NC(=O)c3ccc(CN4CCNCC4)cc3)ccc2C)n1",
+   "mol_weight": 560.26,
+   "n_activities": 6,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 481128,
+   "bdbm_id": "BDBM481128",
+   "name": "US10906896, Cpd 809",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3oncc3C)c2)CC1",
+   "mol_weight": 574.28,
+   "n_activities": 6,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 481129,
+   "bdbm_id": "BDBM481129",
+   "name": "US10906896, Cpd 820",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3ccc(C)cn3)c2)CC1",
+   "mol_weight": 584.3,
+   "n_activities": 6,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 481130,
+   "bdbm_id": "BDBM481130",
+   "name": "US10906896, Cpd 830",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3cc(C)ccn3)c2)CC1",
+   "mol_weight": 584.3,
+   "n_activities": 6,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 481132,
+   "bdbm_id": "BDBM481132",
+   "name": "US10906896, Cpd 880",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCNCC3)cc2)cc1Nc1nccc(n1)-c1cncc(c1)-c1ccccn1",
+   "mol_weight": 556.27,
+   "n_activities": 6,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 481133,
+   "bdbm_id": "BDBM481133",
+   "name": "US10906896, Cpd 8120",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3nnco3)c2)CC1",
+   "mol_weight": 561.26,
+   "n_activities": 6,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 481134,
+   "bdbm_id": "BDBM481134",
+   "name": "US10906896, Cpd 8130",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3nnc(C)o3)c2)CC1",
+   "mol_weight": 575.28,
+   "n_activities": 6,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 481136,
+   "bdbm_id": "BDBM481136",
+   "name": "US10906896, Cpd 8180",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3sncc3C)c2)CC1",
+   "mol_weight": 590.26,
+   "n_activities": 6,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 481137,
+   "bdbm_id": "BDBM481137",
+   "name": "US10906896, Cpd 8190",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3cc(C)ns3)c2)CC1",
+   "mol_weight": 590.26,
+   "n_activities": 6,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 481138,
+   "bdbm_id": "BDBM481138",
+   "name": "US10906896, Cpd 8200",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3cnsc3)c2)CC1",
+   "mol_weight": 576.24,
+   "n_activities": 6,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 481140,
+   "bdbm_id": "BDBM481140",
+   "name": "US10906896, Cpd 8240",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3snnc3C)c2)CC1",
+   "mol_weight": 591.25,
+   "n_activities": 6,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 481141,
+   "bdbm_id": "BDBM481141",
+   "name": "US10906896, Cpd 8250",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3nncs3)c2)CC1",
+   "mol_weight": 577.24,
+   "n_activities": 6,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 481142,
+   "bdbm_id": "BDBM481142",
+   "name": "US10906896, Cpd 8260",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3nnc(C)s3)c2)CC1",
+   "mol_weight": 591.25,
+   "n_activities": 6,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 481143,
+   "bdbm_id": "BDBM481143",
+   "name": "US10906896, Cpd 8270",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3nccs3)c2)CC1",
+   "mol_weight": 576.24,
+   "n_activities": 6,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 481144,
+   "bdbm_id": "BDBM481144",
+   "name": "US10906896, Cpd 8280",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3ncc(C)s3)c2)CC1",
+   "mol_weight": 590.26,
+   "n_activities": 6,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 481145,
+   "bdbm_id": "BDBM481145",
+   "name": "US10906896, Cpd 8290",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3nc(C)cs3)c2)CC1",
+   "mol_weight": 590.26,
+   "n_activities": 6,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 612772,
+   "bdbm_id": "BDBM612772",
+   "name": "US11725005, Compound 113",
+   "smiles": "Cc1cc(-c2cncc(-c3ccnc(Nc4cc(NC(=O)c5ccc(CN6CCN(C)CC6)cc5)ccc4C)n3)c2)[nH]n1",
+   "mol_weight": 573.3,
+   "n_activities": 6,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 50083641,
+   "bdbm_id": "BDBM50083641",
+   "name": "Aminopyrimidine (Scaffold II)",
+   "smiles": "COc1cc(Nc2nccc(n2)-c2ccc(NCCN)nc2)cc(OC)c1OC",
+   "mol_weight": 396.19,
+   "n_activities": 6,
+   "n_targets": 6
+  },
+  {
+   "monomerid": 50256927,
+   "bdbm_id": "BDBM50256927",
+   "name": "N-(2-aminophenyl)-4-((4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)phenylamino)methyl)benzamide",
+   "smiles": "Cc1ccc(NCc2ccc(cc2)C(=O)Nc2ccccc2N)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 501.58168,
+   "n_activities": 6,
+   "n_targets": 4
+  },
+  {
+   "monomerid": 50287093,
+   "bdbm_id": "BDBM50287093",
+   "name": "(2-Methyl-5-nitro-phenyl)-(4-pyridin-3-yl-pyrimidin-2-yl)-amine",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)[N+]([O-])=O",
+   "mol_weight": 307.30672,
+   "n_activities": 6,
+   "n_targets": 6
+  },
+  {
+   "monomerid": 50290410,
+   "bdbm_id": "BDBM50290410",
+   "name": "3-(4-Pyridin-3-yl-pyrimidin-2-ylamino)-benzoic acid",
+   "smiles": "OC(=O)c1cccc(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 292.29208,
+   "n_activities": 6,
+   "n_targets": 6
+  },
+  {
+   "monomerid": 50290412,
+   "bdbm_id": "BDBM50290412",
+   "name": "4-Fluoro-N-[3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-benzamide",
+   "smiles": "Fc1ccc(cc1)C(=O)Nc1cccc(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 385.39374,
+   "n_activities": 6,
+   "n_targets": 6
+  },
+  {
+   "monomerid": 50290419,
+   "bdbm_id": "BDBM50290419",
+   "name": "Cyclohexanecarboxylic acid [3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-amide",
+   "smiles": "O=C(Nc1cccc(Nc2nccc(n2)-c2cccnc2)c1)C1CCCCC1",
+   "mol_weight": 373.45091,
+   "n_activities": 6,
+   "n_targets": 6
+  },
+  {
+   "monomerid": 50290430,
+   "bdbm_id": "BDBM50290430",
+   "name": "4-Methyl-N-[3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-benzamide",
+   "smiles": "Cc1ccc(cc1)C(=O)Nc1cccc(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 381.42986,
+   "n_activities": 6,
+   "n_targets": 6
+  },
+  {
+   "monomerid": 50290431,
+   "bdbm_id": "BDBM50290431",
+   "name": "Hexanoic acid [3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-amide",
+   "smiles": "CCCCCC(=O)Nc1cccc(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 361.44021,
+   "n_activities": 6,
+   "n_targets": 6
+  },
+  {
+   "monomerid": 50384864,
+   "bdbm_id": "BDBM50384864",
+   "name": "CHEMBL2035045",
+   "smiles": "CN1C\\C=C\\COCc2cncc(c2)-c2ccnc(Nc3cccc(C1)c3)n2 |t:3|",
+   "mol_weight": 373.19,
+   "n_activities": 6,
+   "n_targets": 6
+  },
+  {
+   "monomerid": 50384865,
+   "bdbm_id": "BDBM50384865",
+   "name": "CHEMBL2035046",
+   "smiles": "C1OCc2cccc(Nc3nccc(n3)-c3cncc(COC\\C=C\\1)c3)c2 |t:24|",
+   "mol_weight": 360.16,
+   "n_activities": 6,
+   "n_targets": 6
+  },
+  {
+   "monomerid": 50384870,
+   "bdbm_id": "BDBM50384870",
+   "name": "CHEMBL2035051",
+   "smiles": "C(CN1CCCC1)Oc1ccc2Nc3nccc(n3)-c3cncc(COC\\C=C\\COCc1c2)c3 |t:29|",
+   "mol_weight": 473.24,
+   "n_activities": 6,
+   "n_targets": 6
+  },
+  {
+   "monomerid": 106561,
+   "bdbm_id": "BDBM106561",
+   "name": "US8586600, III-6",
+   "smiles": "CN(C)C\\C=C\\C(=O)Nc1ccc(NC(=O)c2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)cc1C(F)(F)F",
+   "mol_weight": 575.23,
+   "n_activities": 5,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 50083639,
+   "bdbm_id": "BDBM50083639",
+   "name": "{4-[6-((S)-3-Ethyl-piperazin-1-yl)-pyridin-3-yl]-pyrimidin-2-yl}-(3,4,5-trimethoxy-phenyl)-amine",
+   "smiles": "CC[C@H]1CN(CCN1)c1ccc(cn1)-c1ccnc(Nc2cc(OC)c(OC)c(OC)c2)n1",
+   "mol_weight": 450.24,
+   "n_activities": 5,
+   "n_targets": 5
+  },
+  {
+   "monomerid": 50083643,
+   "bdbm_id": "BDBM50083643",
+   "name": "(4-Pyridin-3-yl-pyrimidin-2-yl)-(3,4,5-trimethoxy-phenyl)-amine",
+   "smiles": "COc1cc(Nc2nccc(n2)-c2cccnc2)cc(OC)c1OC",
+   "mol_weight": 338.14,
+   "n_activities": 5,
+   "n_targets": 5
+  },
+  {
+   "monomerid": 50083644,
+   "bdbm_id": "BDBM50083644",
+   "name": "[4-(6-Piperazin-1-yl-pyridin-3-yl)-pyrimidin-2-yl]-(3,4,5-trimethoxy-phenyl)-amine",
+   "smiles": "COc1cc(Nc2nccc(n2)-c2ccc(nc2)N2CCNCC2)cc(OC)c1OC",
+   "mol_weight": 422.21,
+   "n_activities": 5,
+   "n_targets": 5
+  },
+  {
+   "monomerid": 50256928,
+   "bdbm_id": "BDBM50256928",
+   "name": "(E)-N-hydroxy-3-(4-((4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)phenylamino)methyl)phenyl)acrylamide",
+   "smiles": "Cc1ccc(NCc2ccc(\\C=C\\C(=O)NO)cc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 452.50776,
+   "n_activities": 5,
+   "n_targets": 5
+  },
+  {
+   "monomerid": 50256929,
+   "bdbm_id": "BDBM50256929",
+   "name": "N1-(2-aminophenyl)-N4-(3-(methyl(4-(pyridin-3-yl)pyrimidin-2-yl)amino)phenyl)terephthalamide",
+   "smiles": "CN(C(=O)c1ccc(cc1)C(=O)Nc1ccccc1N)c1cccc(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 515.5652,
+   "n_activities": 5,
+   "n_targets": 5
+  },
+  {
+   "monomerid": 50287088,
+   "bdbm_id": "BDBM50287088",
+   "name": "N-[4-Methoxy-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-benzamide",
+   "smiles": "COc1ccc(NC(=O)c2ccccc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 397.42926,
+   "n_activities": 5,
+   "n_targets": 5
+  },
+  {
+   "monomerid": 50287089,
+   "bdbm_id": "BDBM50287089",
+   "name": "N-Methyl-N-[4-methyl-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-benzamide",
+   "smiles": "CN(C(=O)c1ccccc1)c1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 395.45644,
+   "n_activities": 5,
+   "n_targets": 5
+  },
+  {
+   "monomerid": 50287092,
+   "bdbm_id": "BDBM50287092",
+   "name": "N-Benzoyl-N-[4-methyl-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-benzamide",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)N(C(=O)c1ccccc1)C(=O)c1ccccc1",
+   "mol_weight": 485.53592,
+   "n_activities": 5,
+   "n_targets": 5
+  },
+  {
+   "monomerid": 50287094,
+   "bdbm_id": "BDBM50287094",
+   "name": "N-[4-Chloro-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-benzamide",
+   "smiles": "Clc1ccc(NC(=O)c2ccccc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 401.84834,
+   "n_activities": 5,
+   "n_targets": 5
+  },
+  {
+   "monomerid": 50287095,
+   "bdbm_id": "BDBM50287095",
+   "name": "4,N*1*-Dimethyl-N*3*-(4-pyridin-3-yl-pyrimidin-2-yl)-benzene-1,3-diamine",
+   "smiles": "CNc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 291.35037,
+   "n_activities": 5,
+   "n_targets": 5
+  },
+  {
+   "monomerid": 50287098,
+   "bdbm_id": "BDBM50287098",
+   "name": "N-{4-Methyl-3-[4-(1-oxy-pyridin-3-yl)-pyrimidin-2-ylamino]-phenyl}-benzamide",
+   "smiles": "Cc1ccc(NC(=O)c2ccccc2)cc1Nc1nccc(n1)-c1ccc[n+]([O-])c1",
+   "mol_weight": 397.42926,
+   "n_activities": 5,
+   "n_targets": 5
+  },
+  {
+   "monomerid": 50290414,
+   "bdbm_id": "BDBM50290414",
+   "name": "N-[3-(4-Pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-phthalamic acid",
+   "smiles": "OC(=O)c1ccccc1C(=O)Nc1cccc(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 411.41278,
+   "n_activities": 5,
+   "n_targets": 5
+  },
+  {
+   "monomerid": 50290418,
+   "bdbm_id": "BDBM50290418",
+   "name": "3-(4-Pyridin-3-yl-pyrimidin-2-ylamino)-benzoic acid methyl ester",
+   "smiles": "COC(=O)c1cccc(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 306.31866,
+   "n_activities": 5,
+   "n_targets": 5
+  },
+  {
+   "monomerid": 50290427,
+   "bdbm_id": "BDBM50290427",
+   "name": "Thiophene-2-carboxylic acid [3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-amide",
+   "smiles": "O=C(Nc1cccc(Nc2nccc(n2)-c2cccnc2)c1)c1cccs1",
+   "mol_weight": 373.431,
+   "n_activities": 5,
+   "n_targets": 5
+  },
+  {
+   "monomerid": 50290428,
+   "bdbm_id": "BDBM50290428",
+   "name": "Pyridine-2-carboxylic acid [3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-amide",
+   "smiles": "O=C(Nc1cccc(Nc2nccc(n2)-c2cccnc2)c1)c1ccccn1",
+   "mol_weight": 368.39134,
+   "n_activities": 5,
+   "n_targets": 5
+  },
+  {
+   "monomerid": 50434582,
+   "bdbm_id": "BDBM50434582",
+   "name": "CHEMBL2386594",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCNCC3)cc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 575.68,
+   "n_activities": 5,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 50462213,
+   "bdbm_id": "BDBM50462213",
+   "name": "CHEMBL4247298",
+   "smiles": "CN(C)CCN(Cc1ccc(cc1)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1)C(=O)c1cccnc1",
+   "mol_weight": 586.7,
+   "n_activities": 5,
+   "n_targets": 5
+  },
+  {
+   "monomerid": 50564790,
+   "bdbm_id": "BDBM50564790",
+   "name": "CHEMBL4781627",
+   "smiles": "CC(=O)c1c(C)c2ccc(Nc3nccc(n3)-c3cccnc3)cc2oc1=O",
+   "mol_weight": 372.38,
+   "n_activities": 5,
+   "n_targets": 4
+  },
+  {
+   "monomerid": 414520,
+   "bdbm_id": "BDBM414520",
+   "name": "N-(5-(5-chloro-4-(1-methyl-1H-pyrrolo[2,3-b]pyridin-5-yl)pyrimidin-2-amino)-2-((2-(dimethylamino)ethyl)methylamino)-4-methoxyphenyl)acrylamide",
+   "smiles": "COc1cc(N(C)CCN(C)C)c(NC(=O)C=C)cc1Nc1ncc(Cl)c(n1)-c1cnc2n(C)ccc2c1",
+   "mol_weight": 534.23,
+   "n_activities": 4,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 414522,
+   "bdbm_id": "BDBM414522",
+   "name": "N-(2-(4-(dimethylamino)piperidin-1-yl)-4-methoxy-5-(4-(1-methyl-1H-pyrazolo[3,4-b]pyridin-5-yl)pyrimidin-2-ylamino)phenyl)acrylamide",
+   "smiles": "COc1cc(N2CCC(CC2)N(C)C)c(NC(=O)C=C)cc1Nc1nccc(n1)-c1cnc2n(C)ccc2c1",
+   "mol_weight": 526.28,
+   "n_activities": 4,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 414525,
+   "bdbm_id": "BDBM414525",
+   "name": "N-(2-((2-(dimethylamino)ethyl)(methyl)amino)-4-methoxy-5-((4-(1-methyl-1H-pyrrolo[2,3-b]pyridin-5-yl)pyrimidin-2-yl)amino)phenyl)acrylamide",
+   "smiles": "COc1cc(N(C)CCN(C)C)c(NC(=O)C=C)cc1Nc1nccc(n1)-c1cnc2n(C)ccc2c1",
+   "mol_weight": 500.26,
+   "n_activities": 4,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 414544,
+   "bdbm_id": "BDBM414544",
+   "name": "US10435400, Compound comparative",
+   "smiles": "COc1cc(N2CCC(CC2)N(C)C)c(NC(=O)C=C)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 473.25,
+   "n_activities": 4,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 50290415,
+   "bdbm_id": "BDBM50290415",
+   "name": "N-(3-Amino-propyl)-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-benzamide",
+   "smiles": "NCCCNC(=O)c1cccc(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 348.4017,
+   "n_activities": 4,
+   "n_targets": 4
+  },
+  {
+   "monomerid": 50308199,
+   "bdbm_id": "BDBM50308199",
+   "name": "2-(4-Ethoxyanilino)-5,7-dihydro-6H-pyrido[4,3-b]pyrimido[4,5-d]azepin-6-one",
+   "smiles": "CCOc1ccc(Nc2ncc3CC(=O)Nc4ccncc4-c3n2)cc1",
+   "mol_weight": 347.37057,
+   "n_activities": 4,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 50421671,
+   "bdbm_id": "BDBM50421671",
+   "name": "CHEMBL5266831",
+   "smiles": "CN1CCN(CC1)c1ccc(Nc2nccc(n2)-c2cccnc2)cc1C(F)(F)F",
+   "mol_weight": 414.44,
+   "n_activities": 4,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 50500700,
+   "bdbm_id": "BDBM50500700",
+   "name": "CHEMBL3752481",
+   "smiles": "Cc1ccc-2c(SCc3cnc(Nc4ccc(cc4)S(N)(=O)=O)nc-23)n1",
+   "mol_weight": 385.47,
+   "n_activities": 4,
+   "n_targets": 4
+  },
+  {
+   "monomerid": 50500708,
+   "bdbm_id": "BDBM50500708",
+   "name": "CHEMBL3754807",
+   "smiles": "NS(=O)(=O)c1ccc(Nc2ncc3CSc4ncccc4-c3n2)cc1",
+   "mol_weight": 371.45,
+   "n_activities": 4,
+   "n_targets": 4
+  },
+  {
+   "monomerid": 86629,
+   "bdbm_id": "BDBM86629",
+   "name": "JNK-IN-4",
+   "smiles": "CN(C)C\\C=C\\C(=O)NCc1ccc(cc1)C(=O)Nc1cccc(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 507.24,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 86630,
+   "bdbm_id": "BDBM86630",
+   "name": "JNK-IN-5",
+   "smiles": "C=CC(=O)Nc1cccc(c1)C(=O)Nc1ccc(Nc2nccc(n2)-c2cccnc2)cc1",
+   "mol_weight": 436.16,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 106553,
+   "bdbm_id": "BDBM106553",
+   "name": "US8586600, II-2",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(NC(=O)C=C)c(c2)C(F)(F)F)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 518.17,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 106558,
+   "bdbm_id": "BDBM106558",
+   "name": "US8586600, II-53",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(NC(=O)CCl)cc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 472.14,
+   "n_activities": 3,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 106560,
+   "bdbm_id": "BDBM106560",
+   "name": "US8586600, II-55",
+   "smiles": "CN(C)C\\C=C\\C(=O)Nc1ccc(cc1C(F)(F)F)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 575.23,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 120389,
+   "bdbm_id": "BDBM120389",
+   "name": "US8703771, 2",
+   "smiles": "Cc1ccc(NC(=O)c2ccc3C(CCc3c2)N2CCN(CC2)C(=O)OC(C)(C)C)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 605.31,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 120390,
+   "bdbm_id": "BDBM120390",
+   "name": "US8703771, 3",
+   "smiles": "Cc1ccc(NC(=O)c2ccc3C(CCc3c2)N2CCNCC2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 505.26,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 120391,
+   "bdbm_id": "BDBM120391",
+   "name": "US8703771, 4",
+   "smiles": "CCN1CCN(CC1)C1CCc2cc(ccc12)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 533.29,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 120392,
+   "bdbm_id": "BDBM120392",
+   "name": "US8703771, 5",
+   "smiles": "CC(C)N1CCN(CC1)C1CCc2cc(ccc12)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 547.31,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 120393,
+   "bdbm_id": "BDBM120393",
+   "name": "US8703771, 6",
+   "smiles": "Cc1ccc(NC(=O)c2ccc3C(CCc3c2)N2CCN(CCO)CC2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 549.29,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 120394,
+   "bdbm_id": "BDBM120394",
+   "name": "US8703771, 7",
+   "smiles": "CC(=O)N1CCN(CC1)C1CCc2cc(ccc12)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 547.27,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 120396,
+   "bdbm_id": "BDBM120396",
+   "name": "US8703771, 9",
+   "smiles": "CN(C)C1CCN(C1)C1CCc2cc(ccc12)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 533.29,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 120397,
+   "bdbm_id": "BDBM120397",
+   "name": "US8703771, 10",
+   "smiles": "CN(C)[C@@H]1CCN(C1)C1CCc2cc(ccc12)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1 |r|",
+   "mol_weight": 533.29,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 120398,
+   "bdbm_id": "BDBM120398",
+   "name": "US8703771, 11",
+   "smiles": "CN1CCN(CC1)[C@H]1CCc2cc(ccc12)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1 |r|",
+   "mol_weight": 519.27,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 481104,
+   "bdbm_id": "BDBM481104",
+   "name": "US10906896, Cpd 101",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cncc(C3=NN=C(C(=O)Nc4cccnc4)C3)c2)n1",
+   "mol_weight": 679.31,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 481105,
+   "bdbm_id": "BDBM481105",
+   "name": "US10906896, Cpd 102",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cncc(C3=NN=C(C(=O)Nc4ccccn4)C3)c2)n1",
+   "mol_weight": 679.31,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 481106,
+   "bdbm_id": "BDBM481106",
+   "name": "US10906896, Cpd 103",
+   "smiles": "Cc1cc(NC(=O)C2=NN=C(c3cncc(-c4ccnc(Nc5cc(NC(=O)c6ccc(CN7CCN(C)CC7)cc6)ccc5C)n4)c3)C2)ccn1",
+   "mol_weight": 693.33,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 481107,
+   "bdbm_id": "BDBM481107",
+   "name": "US10906896, Cpd 107",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cncc(C3=NN=C(C(=O)Nc4ccn[nH]4)C3)c2)n1",
+   "mol_weight": 668.31,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 481108,
+   "bdbm_id": "BDBM481108",
+   "name": "US10906896, Cpd 108",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cncc(C3=NN=C(C(=O)Nc4[nH]ncc4C)C3)c2)n1",
+   "mol_weight": 682.32,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 481109,
+   "bdbm_id": "BDBM481109",
+   "name": "US10906896, Cpd 113",
+   "smiles": "Cc1cc(NC(=O)C2=NN=C(c3cncc(-c4ccnc(Nc5cc(NC(=O)c6ccc(CN7CCN(C)CC7)cc6)ccc5C)n4)c3)C2)[nH]n1",
+   "mol_weight": 682.32,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 481110,
+   "bdbm_id": "BDBM481110",
+   "name": "US10906896, Cpd 114",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cncc(C3=NN=C(C(=O)Nc4cc(C(=O)O)n[nH]4)C3)c2)n1",
+   "mol_weight": 712.3,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 481111,
+   "bdbm_id": "BDBM481111",
+   "name": "US10906896, Cpd 115",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cncc(C3=NN=C(C(=O)Nc4cc(C(N)=O)n[nH]4)C3)c2)n1",
+   "mol_weight": 711.31,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 481112,
+   "bdbm_id": "BDBM481112",
+   "name": "US10906896, Cpd 116",
+   "smiles": "CNC(=O)c1cc(NC(=O)C2=NN=C(c3cncc(-c4ccnc(Nc5cc(NC(=O)c6ccc(CN7CCN(C)CC7)cc6)ccc5C)n4)c3)C2)[nH]n1",
+   "mol_weight": 725.33,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 481113,
+   "bdbm_id": "BDBM481113",
+   "name": "US10906896, Cpd 117",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cncc(C3=NN=C(C(=O)Nc4cc(C(=O)N(C)C)n[nH]4)C3)c2)n1",
+   "mol_weight": 739.35,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 481114,
+   "bdbm_id": "BDBM481114",
+   "name": "US10906896, Cpd 118",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cncc(C3=NN=C(C(=O)Nc4cn[nH]c4)C3)c2)n1",
+   "mol_weight": 668.31,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 481115,
+   "bdbm_id": "BDBM481115",
+   "name": "US10906896, Cpd 119",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cncc(C3=NN=C(C(=O)Nc4cn[nH]c4C)C3)c2)n1",
+   "mol_weight": 682.32,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 481116,
+   "bdbm_id": "BDBM481116",
+   "name": "US10906896, Cpd 201",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cncc(C3=NN=C(C(=O)Nc4ncco4)C3)c2)n1",
+   "mol_weight": 669.29,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 481117,
+   "bdbm_id": "BDBM481117",
+   "name": "US10906896, Cpd 202",
+   "smiles": "Cc1coc(NC(=O)C2=NN=C(c3cncc(-c4ccnc(Nc5cc(NC(=O)c6ccc(CN7CCN(C)CC7)cc6)ccc5C)n4)c3)C2)n1",
+   "mol_weight": 683.31,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 481118,
+   "bdbm_id": "BDBM481118",
+   "name": "US10906896, Cpd 203",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cncc(C3=NN=C(C(=O)Nc4nc(C(N)=O)co4)C3)c2)n1",
+   "mol_weight": 712.3,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 481119,
+   "bdbm_id": "BDBM481119",
+   "name": "US10906896, Cpd 207",
+   "smiles": "Cc1cc(NC(=O)C2=NN=C(c3cncc(-c4ccnc(Nc5cc(NC(=O)c6ccc(CN7CCN(C)CC7)cc6)ccc5C)n4)c3)C2)on1",
+   "mol_weight": 683.31,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 481120,
+   "bdbm_id": "BDBM481120",
+   "name": "US10906896, Cpd 303",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cncc(C3=NN=C(C(=O)C4N=CC=N4)C3)c2)n1",
+   "mol_weight": 653.3,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 481121,
+   "bdbm_id": "BDBM481121",
+   "name": "US10906896, Cpd 305",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cncc(C3=NN=C(C(=O)N4CCCC4)C3)c2)n1",
+   "mol_weight": 656.33,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 481122,
+   "bdbm_id": "BDBM481122",
+   "name": "US10906896, Cpd 309",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cncc(C3=NN=C(C(=O)Nc4ccccc4)C3)c2)n1",
+   "mol_weight": 678.32,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 481123,
+   "bdbm_id": "BDBM481123",
+   "name": "US10906896, Cpd 401",
+   "smiles": "Cc1cccc(NC(=O)C2=NN=C(c3cncc(-c4ccnc(Nc5cc(NC(=O)c6ccc(CN7CCN(C)CC7)cc6)ccc5C)n4)c3)C2)c1",
+   "mol_weight": 692.33,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 481124,
+   "bdbm_id": "BDBM481124",
+   "name": "US10906896, Cpd 402",
+   "smiles": "Cc1ccc(NC(=O)C2=NN=C(c3cncc(-c4ccnc(Nc5cc(NC(=O)c6ccc(CN7CCN(C)CC7)cc6)ccc5C)n4)c3)C2)cc1",
+   "mol_weight": 692.33,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 481125,
+   "bdbm_id": "BDBM481125",
+   "name": "US10906896, Cpd 404",
+   "smiles": "COc1cccc(NC(=O)C2=NN=C(c3cncc(-c4ccnc(Nc5cc(NC(=O)c6ccc(CN7CCN(C)CC7)cc6)ccc5C)n4)c3)C2)c1",
+   "mol_weight": 708.33,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 481126,
+   "bdbm_id": "BDBM481126",
+   "name": "US10906896, Cpd 405",
+   "smiles": "COc1ccc(NC(=O)C2=NN=C(c3cncc(-c4ccnc(Nc5cc(NC(=O)c6ccc(CN7CCN(C)CC7)cc6)ccc5C)n4)c3)C2)cc1",
+   "mol_weight": 708.33,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 557265,
+   "bdbm_id": "BDBM557265",
+   "name": "US11352354, Example V-c-17",
+   "smiles": "COc1ccc(C(=O)Nc2cccc(C(F)(F)F)c2)cc1Nc1nc(-c2cccnc2)c2[nH]ccc2n1",
+   "mol_weight": 504.15,
+   "n_activities": 3,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 612739,
+   "bdbm_id": "BDBM612739",
+   "name": "US11725005, Compound 101",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3cccnc3)c2)CC1",
+   "mol_weight": 570.29,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 612740,
+   "bdbm_id": "BDBM612740",
+   "name": "US11725005, Compound 102",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3ccccn3)c2)CC1",
+   "mol_weight": 570.29,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 612741,
+   "bdbm_id": "BDBM612741",
+   "name": "US11725005, Compound 103",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3ccncc3)c2)CC1",
+   "mol_weight": 570.29,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 612764,
+   "bdbm_id": "BDBM612764",
+   "name": "US11725005, Compound 107",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cncc(-c3ccn[nH]3)c2)n1",
+   "mol_weight": 559.28,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 612767,
+   "bdbm_id": "BDBM612767",
+   "name": "US11725005, Compound 108",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cncc(-c3[nH]ncc3C)c2)n1",
+   "mol_weight": 573.3,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 612775,
+   "bdbm_id": "BDBM612775",
+   "name": "US11725005, Compound 114",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cncc(-c3cc(C(N)=O)n[nH]3)c2)n1",
+   "mol_weight": 602.29,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 612779,
+   "bdbm_id": "BDBM612779",
+   "name": "US11725005, Compound 116",
+   "smiles": "CNC(=O)c1cc(-c2cncc(-c3ccnc(Nc4cc(NC(=O)c5ccc(CN6CCN(C)CC6)cc5)ccc4C)n3)c2)[nH]n1",
+   "mol_weight": 616.3,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 612783,
+   "bdbm_id": "BDBM612783",
+   "name": "US11725005, Compound 117",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cncc(-c3cc(C(=O)N(C)C)n[nH]3)c2)n1",
+   "mol_weight": 630.32,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 612784,
+   "bdbm_id": "BDBM612784",
+   "name": "US11725005, Compound 118",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cncc(-c3cn[nH]c3)c2)n1",
+   "mol_weight": 559.28,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 612785,
+   "bdbm_id": "BDBM612785",
+   "name": "US11725005, Compound 119",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cncc(-c3cn[nH]c3C)c2)n1",
+   "mol_weight": 573.3,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 612786,
+   "bdbm_id": "BDBM612786",
+   "name": "US11725005, Compound 201",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3ncco3)c2)CC1",
+   "mol_weight": 560.26,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 612789,
+   "bdbm_id": "BDBM612789",
+   "name": "US11725005, Compound 202",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3nc(C)co3)c2)CC1",
+   "mol_weight": 574.28,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 612790,
+   "bdbm_id": "BDBM612790",
+   "name": "US11725005, Compound 203",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3nc(co3)C(N)=O)c2)CC1",
+   "mol_weight": 603.27,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 612791,
+   "bdbm_id": "BDBM612791",
+   "name": "US11725005, Compound 207",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3cc(C)no3)c2)CC1",
+   "mol_weight": 574.28,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 612796,
+   "bdbm_id": "BDBM612796",
+   "name": "US11725005, Compound 303",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-n3cccn3)c2)CC1",
+   "mol_weight": 559.28,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 612798,
+   "bdbm_id": "BDBM612798",
+   "name": "US11725005, Compound 305",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)N3CCCC3)c2)CC1",
+   "mol_weight": 562.32,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 612799,
+   "bdbm_id": "BDBM612799",
+   "name": "US11725005, Compound 309",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3ccccc3)c2)CC1",
+   "mol_weight": 569.29,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 612807,
+   "bdbm_id": "BDBM612807",
+   "name": "US11725005, Compound 401",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3cccc(C)c3)c2)CC1",
+   "mol_weight": 583.31,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 612811,
+   "bdbm_id": "BDBM612811",
+   "name": "US11725005, Compound 402",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3ccc(C)cc3)c2)CC1",
+   "mol_weight": 583.31,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 612837,
+   "bdbm_id": "BDBM612837",
+   "name": "US11725005, Compound 404",
+   "smiles": "COc1cccc(c1)-c1cncc(c1)-c1ccnc(Nc2cc(NC(=O)c3ccc(CN4CCN(C)CC4)cc3)ccc2C)n1",
+   "mol_weight": 599.3,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 612841,
+   "bdbm_id": "BDBM612841",
+   "name": "US11725005, Compound 405",
+   "smiles": "COc1ccc(cc1)-c1cncc(c1)-c1ccnc(Nc2cc(NC(=O)c3ccc(CN4CCN(C)CC4)cc3)ccc2C)n1",
+   "mol_weight": 599.3,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 612865,
+   "bdbm_id": "BDBM612865",
+   "name": "US11725005, Compound 8230",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3cnns3)c2)CC1",
+   "mol_weight": 577.24,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 612893,
+   "bdbm_id": "BDBM612893",
+   "name": "US11725005, Compound 8300",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3cnn(C)c3)c2)CC1",
+   "mol_weight": 573.3,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 50132709,
+   "bdbm_id": "BDBM50132709",
+   "name": "4-amino-N-(4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)phenyl)benzamide",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(N)cc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 396.17,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 50155557,
+   "bdbm_id": "BDBM50155557",
+   "name": "1-(4-Diethylamino-phenyl)-3-[4-methyl-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-urea",
+   "smiles": "CCN(CC)c1ccc(NC(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)cc1",
+   "mol_weight": 467.24,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 50155559,
+   "bdbm_id": "BDBM50155559",
+   "name": "1-(4-Dimethylamino-phenyl)-3-[4-methyl-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-urea",
+   "smiles": "CN(C)c1ccc(NC(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)cc1",
+   "mol_weight": 439.21,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 50155562,
+   "bdbm_id": "BDBM50155562",
+   "name": "1-[4-Methyl-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-3-(3-pyrrolidin-1-yl-phenyl)-urea",
+   "smiles": "Cc1ccc(NC(=O)Nc2cccc(c2)N2CCCC2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 465.23,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 50155565,
+   "bdbm_id": "BDBM50155565",
+   "name": "Piperidine-1-carboxylic acid [4-methyl-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-amide",
+   "smiles": "Cc1ccc(NC(=O)N2CCCCC2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 388.2,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 50155567,
+   "bdbm_id": "BDBM50155567",
+   "name": "1-(3-Dimethylamino-phenyl)-3-[4-methyl-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-urea",
+   "smiles": "CN(C)c1cccc(NC(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)c1",
+   "mol_weight": 439.21,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 50155568,
+   "bdbm_id": "BDBM50155568",
+   "name": "1-(3-Diethylamino-phenyl)-3-[4-methyl-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-urea",
+   "smiles": "CCN(CC)c1cccc(NC(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)c1",
+   "mol_weight": 467.24,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 50178611,
+   "bdbm_id": "BDBM50178611",
+   "name": "3-bromo-N-(4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)phenyl)-4-((4-methylpiperazin-1-yl)methyl)benzamide",
+   "smiles": "CN1CCN(Cc2ccc(cc2Br)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)CC1",
+   "mol_weight": 571.17,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 50178615,
+   "bdbm_id": "BDBM50178615",
+   "name": "N-(4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)phenyl)-4-((4-methylpiperazin-1-yl)methyl)-3-(trifluoromethyl)benzamide",
+   "smiles": "CN1CCN(Cc2ccc(cc2C(F)(F)F)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)CC1",
+   "mol_weight": 561.25,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 50178617,
+   "bdbm_id": "BDBM50178617",
+   "name": "3-fluoro-N-(4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)phenyl)-4-((4-methylpiperazin-1-yl)methyl)benzamide",
+   "smiles": "CN1CCN(Cc2ccc(cc2F)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)CC1",
+   "mol_weight": 511.25,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 50215559,
+   "bdbm_id": "BDBM50215559",
+   "name": "4-(3,methylhydroxy3-methyltriaz-1-ene)-N-[4-methyl-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-benzamide",
+   "smiles": "CN(CO)N=Nc1ccc(cc1)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 468.2,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 50308197,
+   "bdbm_id": "BDBM50308197",
+   "name": "2-(4-Hydroxyanilino)-5,7-dihydro-6H-pyrido[4,3-b]pyrimido[4,5-d]azepin-6-one",
+   "smiles": "Oc1ccc(Nc2ncc3CC(=O)Nc4ccncc4-c3n2)cc1",
+   "mol_weight": 319.31741,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 50308198,
+   "bdbm_id": "BDBM50308198",
+   "name": "2-(4-Methoxyanilino)-5,7-dihydro-6H-pyrido[4,3-b]pyrimido[4,5-d]azepin-6-one",
+   "smiles": "COc1ccc(Nc2ncc3CC(=O)Nc4ccncc4-c3n2)cc1",
+   "mol_weight": 333.34399,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 50308200,
+   "bdbm_id": "BDBM50308200",
+   "name": "2-(3-Hydroxyanilino)-5,7-dihydro-6H-pyrido[4,3-b]pyrimido[4,5-d]azepin-6-one",
+   "smiles": "Oc1cccc(Nc2ncc3CC(=O)Nc4ccncc4-c3n2)c1",
+   "mol_weight": 319.31741,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 50308201,
+   "bdbm_id": "BDBM50308201",
+   "name": "2-(3-Chloro-4-hydroxyanilino)-5,7-dihydro-6H-pyrido[4,3-b]pyrimido[4,5-d]azepin-6-one",
+   "smiles": "Oc1ccc(Nc2ncc3CC(=O)Nc4ccncc4-c3n2)cc1Cl",
+   "mol_weight": 353.76248,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 50323918,
+   "bdbm_id": "BDBM50323918",
+   "name": "1-(3-tert-butyl-1-p-tolyl-1H-pyrazol-5-yl)-3-(4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)phenyl)urea",
+   "smiles": "Cc1ccc(cc1)-n1nc(cc1NC(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1)C(C)(C)C",
+   "mol_weight": 532.27,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 50341234,
+   "bdbm_id": "BDBM50341234",
+   "name": "4-(chloromethyl)-N-(4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)phenyl)benzamide",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CCl)cc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 429.14,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 50341235,
+   "bdbm_id": "BDBM50341235",
+   "name": "4-(aminomethyl)-N-(4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)phenyl)benzamide",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN)cc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 410.19,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 50341236,
+   "bdbm_id": "BDBM50341236",
+   "name": "4-((2-chloroacetamido)methyl)-N-(4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)phenyl)benzamide",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CNC(=O)CCl)cc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 486.16,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 50341237,
+   "bdbm_id": "BDBM50341237",
+   "name": "4-(but-2-enamidomethyl)-N-(4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)phenyl)benzamide",
+   "smiles": "C\\C=C\\C(=O)NCc1ccc(cc1)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 478.21,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 50341238,
+   "bdbm_id": "BDBM50341238",
+   "name": "4-(methacrylamidomethyl)-N-(4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)phenyl)benzamide",
+   "smiles": "CC(=C)C(=O)NCc1ccc(cc1)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 478.21,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 50560735,
+   "bdbm_id": "BDBM50560735",
+   "name": "CHEMBL4742169",
+   "smiles": "CC(C)N1[C@H](C)C(=O)N(C)c2ccc(Nc3nccc(n3)-c3cncc4ccccc34)cc12 |r|",
+   "mol_weight": 438.54,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 50666053,
+   "bdbm_id": "BDBM50666053",
+   "name": "CHEMBL6177069",
+   "smiles": "Cc1cc(NC(=O)c2cccc(NC(=O)/C=CCN(C)C)c2)ccc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 507.6,
+   "n_activities": 3,
+   "n_targets": 3
+  },
+  {
+   "monomerid": 68207,
+   "bdbm_id": "BDBM68207",
+   "name": "Type I progenitor, 1",
+   "smiles": "Cc1ccc(Cl)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 296.08,
+   "n_activities": 2,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 68208,
+   "bdbm_id": "BDBM68208",
+   "name": "Type II inhibitor, 2",
+   "smiles": "Cc1ccc(NC(=O)c2cccc(c2)C(F)(F)F)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 449.15,
+   "n_activities": 2,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 68209,
+   "bdbm_id": "BDBM68209",
+   "name": "Type II inhibitor, 3",
+   "smiles": "CN(C(=O)c1cccc(c1)C(F)(F)F)c1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 463.16,
+   "n_activities": 2,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 92355,
+   "bdbm_id": "BDBM92355",
+   "name": "2-Amino-pyrimidine, 18",
+   "smiles": "O=S(=O)(Nc1cccc(Nc2nccc(n2)-c2cccnc2)c1)c1cccc2cnccc12",
+   "mol_weight": 454.12,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 106559,
+   "bdbm_id": "BDBM106559",
+   "name": "US8586600, II-54",
+   "smiles": "CC(Cl)C(=O)Nc1ccc(cc1)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 486.16,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 106563,
+   "bdbm_id": "BDBM106563",
+   "name": "US8586600, II-6",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CNC(=O)C=C)cc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 464.2,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 106564,
+   "bdbm_id": "BDBM106564",
+   "name": "US8586600, II-23",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(NS(=O)(=O)C=C)cc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 486.15,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 106565,
+   "bdbm_id": "BDBM106565",
+   "name": "US8586600, II-45",
+   "smiles": "Cc1ccc(NC(=O)c2ccc3CN(CCc3c2)C(=O)C=C)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 490.21,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 106566,
+   "bdbm_id": "BDBM106566",
+   "name": "US8586600, II-52",
+   "smiles": "Cc1cc(nc(Nc2cc(NC(=O)c3ccc(NC(=O)C=C)cc3)ccc2C)n1)-c1cccnc1",
+   "mol_weight": 464.2,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 245929,
+   "bdbm_id": "BDBM245929",
+   "name": "US9433622, DMX- 1",
+   "smiles": "CN1CCC(CC1)NC(=O)c1cccc(Nc2nccc(n2)-c2cnc(N3CC[C@H](F)C3)c(c2)C#N)c1 |r|",
+   "mol_weight": 500.24,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 245930,
+   "bdbm_id": "BDBM245930",
+   "name": "US9433622, DMX- 2",
+   "smiles": "NC(=O)c1cccc(Nc2nccc(n2)-c2cnc(N3CCCC3)c(c2)C#N)c1",
+   "mol_weight": 385.17,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 245932,
+   "bdbm_id": "BDBM245932",
+   "name": "US9433622, DMX- 4",
+   "smiles": "F[C@H]1CCN(C1)c1ncc(cc1C#N)-c1ccnc(Nc2cccc(c2)C(=O)N2CCNCC2)n1 |r|",
+   "mol_weight": 472.21,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 245933,
+   "bdbm_id": "BDBM245933",
+   "name": "US9433622, DMX- 5",
+   "smiles": "N#Cc1cc(cnc1N1CCCC1)-c1ccnc(Nc2ccc(cc2)N2CCOCC2)n1",
+   "mol_weight": 427.21,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 245934,
+   "bdbm_id": "BDBM245934",
+   "name": "US9433622, DMX- 6",
+   "smiles": "CN1CCN(CC1)C(=O)c1cccc(Nc2nccc(n2)-c2cnc(N3CC[C@H](F)C3)c(c2)C#N)c1 |r|",
+   "mol_weight": 486.23,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 245939,
+   "bdbm_id": "BDBM245939",
+   "name": "US9433622, DMX- 11",
+   "smiles": "F[C@H]1CCN(C1)c1ncc(cc1C#N)-c1ccnc(Nc2cccc(c2)C(=O)NC2CCNCC2)n1 |r|",
+   "mol_weight": 486.23,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 245940,
+   "bdbm_id": "BDBM245940",
+   "name": "US9433622, DMX- 12",
+   "smiles": "CN1CCC(CC1)NC(=O)c1cccc(Nc2nccc(n2)-c2cnc(N3CC[C@H](O)C3)c(c2)C#N)c1 |r|",
+   "mol_weight": 498.25,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 245942,
+   "bdbm_id": "BDBM245942",
+   "name": "US9433622, DMX- 14",
+   "smiles": "CN1CCC(CC1)NC(=O)c1cccc(Nc2nccc(n2)-c2cnc(N3CCC(F)(F)C3)c(c2)C#N)c1",
+   "mol_weight": 518.24,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 245956,
+   "bdbm_id": "BDBM245956",
+   "name": "US9433622, DMX- 28",
+   "smiles": "CN1CCC(CC1)NC(=O)c1ccc(Nc2ncc(F)c(n2)-c2cnc(N3CC[C@H](F)C3)c(c2)C#N)cc1 |r|",
+   "mol_weight": 518.24,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 245958,
+   "bdbm_id": "BDBM245958",
+   "name": "US9433622, DMX- 30",
+   "smiles": "F[C@H]1CCN(C1)c1ncc(cc1C#N)-c1ccnc(Nc2ccc(CN3CCOCC3)cc2)n1 |r|",
+   "mol_weight": 459.22,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 245979,
+   "bdbm_id": "BDBM245979",
+   "name": "US9433622, DMX- 76",
+   "smiles": "CN1Cc2ccc(Nc3nccc(n3)-c3cnc(N4CC[C@H](F)C4)c(c3)C#N)cc2C1 |r|",
+   "mol_weight": 415.19,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 246019,
+   "bdbm_id": "BDBM246019",
+   "name": "US9433622, DMX- 115",
+   "smiles": "CN1CCC(CC1)NC(=O)c1cccc(Nc2nccc(n2)-c2cnc(NC3CCOC3)c(c2)C#N)c1",
+   "mol_weight": 498.25,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 246021,
+   "bdbm_id": "BDBM246021",
+   "name": "US9433622, DMX- 117",
+   "smiles": "O=C(NC1CCNCC1)c1cccc(Nc2nccc(n2)-c2cnc(NC3CCOC3)c(c2)C#N)c1",
+   "mol_weight": 484.23,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 246029,
+   "bdbm_id": "BDBM246029",
+   "name": "US9433622, DMX- 126",
+   "smiles": "F[C@H]1CCN(C1)c1ncc(cc1C#N)-c1ccnc(Nc2ccc3CNCc3c2)n1 |r|",
+   "mol_weight": 401.18,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 246030,
+   "bdbm_id": "BDBM246030",
+   "name": "US9433622, DMX- 127",
+   "smiles": "COCCN1Cc2ccc(Nc3nccc(n3)-c3cnc(N4CC[C@H](F)C4)c(c3)C#N)cc2C1 |r|",
+   "mol_weight": 459.22,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 246032,
+   "bdbm_id": "BDBM246032",
+   "name": "US9433622, DMX- 37",
+   "smiles": "NC(=O)c1ccc(Nc2nccc(n2)-c2cnc(N3CCCC3)c(c2)C#N)cc1",
+   "mol_weight": 385.17,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 246043,
+   "bdbm_id": "BDBM246043",
+   "name": "US9433622, DMX- 48",
+   "smiles": "OCCNC(=O)c1ccc(Nc2nccc(n2)-c2cnc(N3CC[C@H](F)C3)c(c2)C#N)cc1 |r|",
+   "mol_weight": 447.18,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 246044,
+   "bdbm_id": "BDBM246044",
+   "name": "US9433622, DMX- 49",
+   "smiles": "O[C@H]1CCN(C1)c1ncc(cc1C#N)-c1ccnc(Nc2ccc(cc2)N2CCOCC2)n1 |r|",
+   "mol_weight": 443.21,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 380786,
+   "bdbm_id": "BDBM380786",
+   "name": "N-(2-((2-(dimethylamino)ethyl)(methyl)amino)-4-methoxy-5-(4-(1-methyl-1H-pyrrolo[2,3-b]pyridin-5-yl)-7H-pyrrolo[2,3-d]pyrimidin-2-ylamino)phenyl)acrylamide",
+   "smiles": "C=CC(=O)Nc1cc(Nc2nc(-c3cnc4c(ccn4C)c3)c3cc[nH]c3n2)c(OC)cc1N(C)CCN(C)C",
+   "mol_weight": 539.28,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 380788,
+   "bdbm_id": "BDBM380788",
+   "name": "N-(2-((2-(dimethylamino)ethyl)(methyl)amino)-4-methoxy-5-(4-(pyridin-3-yl)-7H-pyrrolo[2,3-d]pyrimidin-2ylamino)phenyl)acrylamide",
+   "smiles": "C=CC(=O)Nc1cc(Nc2nc(-c3cccnc3)c3cc[nH]c3n2)c(OC)cc1N(C)CCN(C)C",
+   "mol_weight": 486.25,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 414521,
+   "bdbm_id": "BDBM414521",
+   "name": "N-(5-(5-chloro-4-(1-methyl-1H-pyrrolo[2,3-b]pyridin-5-yl)pyrimidin-2-amino)-2-(4-(dimethylamino)piperidin-1-yl)-4-methoxyphenyl)acrylamide",
+   "smiles": "COc1cc(N2CCC(CC2)N(C)C)c(NC(=O)C=C)cc1Nc1ncc(Cl)c(n1)-c1cnc2n(C)ccc2c1",
+   "mol_weight": 560.24,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 414523,
+   "bdbm_id": "BDBM414523",
+   "name": "N-(4-methoxy-5-(4-(1-methyl-1H-pyrazolo[3,4-b]pyridin-5-yl)pyrimidin-2-ylamino)-2-(4-methylpiperazin-1-yl)phenyl)acrylamide",
+   "smiles": "COc1cc(N2CCN(C)CC2)c(NC(=O)C=C)cc1Nc1nccc(n1)-c1cnc2n(C)ncc2c1",
+   "mol_weight": 499.24,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 414524,
+   "bdbm_id": "BDBM414524",
+   "name": "N-(2-((2-(dimethylamino)ethyl)(methyl)amino)-4-methoxy-5-(4-(1-methyl-1H-pyrazolo[3,4-b]pyridin-5-yl)pyrimidin-2-ylamino)phenyl)acrylamide",
+   "smiles": "COc1cc(N(C)CCN(C)C)c(NC(=O)C=C)cc1Nc1nccc(n1)-c1cnc2n(C)ncc2c1",
+   "mol_weight": 501.26,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 414526,
+   "bdbm_id": "BDBM414526",
+   "name": "US10435400, Compound Z-20",
+   "smiles": "COc1cc(N(C)CCN(C)N)c(NC(=O)C=C)cc1Nc1ncc(F)c(n1)-c1cnc2n(C)ccc2c1",
+   "mol_weight": 519.25,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 414528,
+   "bdbm_id": "BDBM414528",
+   "name": "N-(2-((2-(dimethylamino)ethyl)(methyl)amino)-4-methoxy-5-((5-methoxy-4-(1-methyl-1H-pyrrolo[2,3-b]pyridin-5-yl)pyrimidin-2-yl)amino)phenyl)acrylamide",
+   "smiles": "COc1cc(N(C)CCN(C)C)c(NC(=O)C=C)cc1Nc1ncc(OC)c(n1)-c1cnc2n(C)ccc2c1",
+   "mol_weight": 530.28,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 414529,
+   "bdbm_id": "BDBM414529",
+   "name": "N-(2-((2-(dimethylamino)ethyl)(methyl)amino)-4-methoxy-5-((4-(1-methyl-1H-pyrrolo[2,3-b]pyridin-5-yl)-5-(trifluoromethyl)pyrimidin-2-yl)amino)phenyl)acrylamide",
+   "smiles": "COc1cc(N(C)CCN(C)C)c(NC(=O)C=C)cc1Nc1ncc(c(n1)-c1cnc2n(C)ccc2c1)C(F)(F)F",
+   "mol_weight": 568.25,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 414531,
+   "bdbm_id": "BDBM414531",
+   "name": "US10435400, Compound Z-26",
+   "smiles": "COc1cc(N2CCN(C)CC2)c(NC(=O)C=C)cc1Nc1nccc(n1)-c1cnc2n(C)ccc2c1",
+   "mol_weight": 498.25,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 414532,
+   "bdbm_id": "BDBM414532",
+   "name": "US10435400, Compound Z-27",
+   "smiles": "COc1cc(N2CC(C2)N(C)C)c(NC(=O)C=C)cc1Nc1nccc(n1)-c1cnc2n(C)ccc2c1",
+   "mol_weight": 498.25,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 414533,
+   "bdbm_id": "BDBM414533",
+   "name": "US10435400, Compound Z-29",
+   "smiles": "COc1cc(N2CCC(CC2)N(C)C)c(NC(=O)C=C)cc1Nc1ncc(F)c(n1)-c1cnc2n(C)ccc2c1",
+   "mol_weight": 544.27,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 414534,
+   "bdbm_id": "BDBM414534",
+   "name": "US10435400, Compound Z-32",
+   "smiles": "COc1cc(N(C)CCN(C)C)c(NC(=O)C=C)cc1Nc1ncc(C(C)=O)c(n1)-c1cnc2n(C)ccc2c1",
+   "mol_weight": 542.28,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 414535,
+   "bdbm_id": "BDBM414535",
+   "name": "US10435400, Compound Z-37",
+   "smiles": "COc1cc(N2CCC(CC2)N(C)C)c(NC(=O)C=C)cc1Nc1ncc(F)c(n1)-c1cnc2n(C)ncc2c1",
+   "mol_weight": 545.27,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 414536,
+   "bdbm_id": "BDBM414536",
+   "name": "US10435400, Compound Z-38",
+   "smiles": "COc1cc(N2CCC(CC2)N(C)C)c(NC(=O)C=C)cc1Nc1ncc(OC)c(n1)-c1cnc2n(C)ncc2c1",
+   "mol_weight": 557.29,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 414537,
+   "bdbm_id": "BDBM414537",
+   "name": "US10435400, Compound Z-39",
+   "smiles": "COc1cc(N(C)CCN(C)C)c(NC(=O)C=C)cc1Nc1ncc(Cl)c(n1)-c1cnc2n(C)ncc2c1",
+   "mol_weight": 535.22,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 414538,
+   "bdbm_id": "BDBM414538",
+   "name": "US10435400, Compound Z-40",
+   "smiles": "COc1cc(N2CCC(CC2)N(C)C)c(NC(=O)C=C)cc1Nc1ncc(Cl)c(n1)-c1cnc2n(C)ncc2c1",
+   "mol_weight": 561.24,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 414539,
+   "bdbm_id": "BDBM414539",
+   "name": "US10435400, Compound Z-41",
+   "smiles": "COc1cc(N(C)CCN(C)C)c(NC(=O)C=C)cc1Nc1ncc(F)c(n1)-c1cnc2n(C)ncc2c1",
+   "mol_weight": 519.25,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 414540,
+   "bdbm_id": "BDBM414540",
+   "name": "US10435400, Compound Z-44",
+   "smiles": "COc1cc(N(C)CCN(C)C)c(NC(=O)C=C)cc1Nc1ncc(OC)c(n1)-c1cnc2n(C)ncc2c1",
+   "mol_weight": 531.27,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 414541,
+   "bdbm_id": "BDBM414541",
+   "name": "US10435400, Compound Z-54",
+   "smiles": "COc1cc(N(C)CCN(C)C)c(NC(=O)C=C)cc1Nc1nccc(n1)-c1cnc2n(C)cc(Cl)c2c1",
+   "mol_weight": 534.23,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 414563,
+   "bdbm_id": "BDBM414563",
+   "name": "US10435400, Compound Z-105",
+   "smiles": "CCN(C)CCN(C)c1cc(OC)c(Nc2nccc(n2)-c2cnc3n(C)ccc3c2)cc1NC(=O)C=C",
+   "mol_weight": 514.28,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 414564,
+   "bdbm_id": "BDBM414564",
+   "name": "US10435400, Compound Z-106",
+   "smiles": "CNCCN(C)c1cc(OC)c(Nc2nccc(n2)-c2cnc3n(C)ccc3c2)cc1NC(=O)C=C",
+   "mol_weight": 486.25,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 414565,
+   "bdbm_id": "BDBM414565",
+   "name": "US10435400, Compound Z-107",
+   "smiles": "CCN(CC)CCN(C)c1cc(OC)c(Nc2nccc(n2)-c2cnc3n(C)ccc3c2)cc1NC(=O)C=C",
+   "mol_weight": 528.3,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 414566,
+   "bdbm_id": "BDBM414566",
+   "name": "US10435400, Compound Z-109",
+   "smiles": "CCN(C)CCN(C)c1cc(OC)c(Nc2ncc(Cl)c(n2)-c2cnc3n(C)ccc3c2)cc1NC(=O)C=C",
+   "mol_weight": 548.24,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 414567,
+   "bdbm_id": "BDBM414567",
+   "name": "US10435400, Compound Z-110",
+   "smiles": "CCN(CC)CCN(C)c1cc(OC)c(Nc2ncc(Cl)c(n2)-c2cnc3n(C)ccc3c2)cc1NC(=O)C=C",
+   "mol_weight": 562.26,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 414568,
+   "bdbm_id": "BDBM414568",
+   "name": "US10435400, Compound Z-112",
+   "smiles": "COc1cc(N(C)CCN2CCCC2)c(NC(=O)C=C)cc1Nc1nccc(n1)-c1cnc2n(C)ccc2c1",
+   "mol_weight": 526.28,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 414569,
+   "bdbm_id": "BDBM414569",
+   "name": "US10435400, Compound Z-113",
+   "smiles": "COc1cc(N2CC(C2)N(C)C)c(NC(=O)C=C)cc1Nc1ncc(Cl)c(n1)-c1cnc2n(C)ccc2c1",
+   "mol_weight": 532.21,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 414570,
+   "bdbm_id": "BDBM414570",
+   "name": "US10435400, Compound Z-114",
+   "smiles": "COc1cc(N(C)CCCN(C)C)c(NC(=O)C=C)cc1Nc1ncc(Cl)c(n1)-c1cnc2n(C)ccc2c1",
+   "mol_weight": 548.24,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 414571,
+   "bdbm_id": "BDBM414571",
+   "name": "US10435400, Compound Z-115",
+   "smiles": "COc1cc(N(C)CCN(C)C(C)C)c(NC(=O)C=C)cc1Nc1nccc(n1)-c1cnc2n(C)ccc2c1",
+   "mol_weight": 528.3,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 414572,
+   "bdbm_id": "BDBM414572",
+   "name": "US10435400, Compound Z-116",
+   "smiles": "CNCCN(C)c1cc(OC)c(Nc2ncc(Cl)c(n2)-c2cnc3n(C)ccc3c2)cc1NC(=O)C=C",
+   "mol_weight": 520.21,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 414573,
+   "bdbm_id": "BDBM414573",
+   "name": "US10435400, Compound Z-117",
+   "smiles": "COc1cc(OCCN(C)C)c(NC(=O)C=C)cc1Nc1nccc(n1)-c1cnc2n(C)ccc2c1",
+   "mol_weight": 487.23,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 414574,
+   "bdbm_id": "BDBM414574",
+   "name": "US10435400, Compound Z-118",
+   "smiles": "COc1cc(OCCN(C)C)c(NC(=O)C=C)cc1Nc1ncc(F)c(n1)-c1cnc2n(C)ccc2c1",
+   "mol_weight": 505.22,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 414575,
+   "bdbm_id": "BDBM414575",
+   "name": "US10435400, Compound Z-121",
+   "smiles": "COc1cc(N(C)CCN(C)C)c(NC(=O)C=C)cc1Nc1ncc(Cl)c(n1)-c1cnc2n(C)cc(Cl)c2c1",
+   "mol_weight": 568.19,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 414576,
+   "bdbm_id": "BDBM414576",
+   "name": "US10435400, Compound Z-122",
+   "smiles": "COc1cc(N2CCC(CC2)N(C)C)c(NC(=O)C=C)cc1Nc1ncc(F)c(n1)-c1cnc2n(C)cc(Cl)c2c1",
+   "mol_weight": 578.23,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 414577,
+   "bdbm_id": "BDBM414577",
+   "name": "US10435400, Compound Z-123",
+   "smiles": "COc1cc(N(C)CCN(C)C)c(NC(=O)C=C)cc1Nc1ncc(F)c(n1)-c1cnc2n(C)cc(Cl)c2c1",
+   "mol_weight": 552.22,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 414578,
+   "bdbm_id": "BDBM414578",
+   "name": "US10435400, Compound Z-124",
+   "smiles": "COc1cc(N(C)CCN(C)C)c(NC(=O)C=C)cc1Nc1nccc(n1)-c1cnc2n(ccc2c1)C(C)C",
+   "mol_weight": 528.3,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 414579,
+   "bdbm_id": "BDBM414579",
+   "name": "US10435400, Compound Z-125",
+   "smiles": "COc1cc(N(C)CCN(C)C)c(NC(=O)C=C)cc1Nc1ncc(Cl)c(n1)-c1cnc2n(ccc2c1)C(C)C",
+   "mol_weight": 562.26,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 414580,
+   "bdbm_id": "BDBM414580",
+   "name": "US10435400, Compound Z-126",
+   "smiles": "COc1cc(N(C)CCN(C)C)c(NC(=O)C=C)cc1Nc1ncc(Cl)c(n1)-c1cnc2n(ccc2c1)C1CC1",
+   "mol_weight": 560.24,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 517814,
+   "bdbm_id": "BDBM517814",
+   "name": "N-(2-((2-(dimethylamino)ethyl)(methyl)amino)-5-((4-(1-isopropyl-2-methyl-1H-imidazo[4,5-b]pyridine-6-yl)pyrimidin-2-yl)amino)-4-methoxyphenyl)acrylamide",
+   "smiles": "COc1cc(N(C)CCN(C)C)c(NCC=C)cc1Nc1nccc(n1)-c1cnc2nc(C)n(C(C)C)c2c1",
+   "mol_weight": 529.33,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 517815,
+   "bdbm_id": "BDBM517815",
+   "name": "N1-(2-(2-(dimethylamino)ethyl)(methyl)amino)-5-((4-(1-isopropyl-2-methoxy-1H-imidazo[4,5-b]pyridine-6-yl)pyrimidin-2-yl)amino)-4-methoxyphenyl)acrylamide",
+   "smiles": "COc1nc2ncc(cc2n1C(C)C)-c1ccnc(Nc2cc(NCC=C)c(cc2OC)N(C)CCN(C)C)n1",
+   "mol_weight": 545.32,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 517820,
+   "bdbm_id": "BDBM517820",
+   "name": "N-(2-((2-(dimethylamino)ethyl)(methyl)amino)-5-((4-(8-fluoro-3-isopropyl-2-methylimidazo[1,2-a]pyridine-6-yl)pyrimidin-2-yl)amino)-4-methoxyphenyl)acrylamide",
+   "smiles": "COc1cc(N(C)CCN(C)C)c(NC(=O)C=C)cc1Nc1nccc(n1)-c1cc(F)c2nc(C)c(C(C)C)n2c1",
+   "mol_weight": 560.3,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 517821,
+   "bdbm_id": "BDBM517821",
+   "name": "N-(2-((2-(dimethylamino)ethyl)(methyl)amino)-5-((4-(8-fluoro-2-methylimidazo[1,2-a]pyridine-6-yl)pyrimidin-2-yl)amino)-4-methoxyphenyl)acrylamide",
+   "smiles": "COc1cc(N(C)CCN(C)C)c(NC(=O)C=C)cc1Nc1nccc(n1)-c1cc(F)c2nc(C)cn2c1",
+   "mol_weight": 518.26,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 517826,
+   "bdbm_id": "BDBM517826",
+   "name": "N-(2-((2-(dimethylamino)ethyl)(methyl)amino)-5-((5-fluoro-4-(8-fluoro-3-isopropyl-2-m ethylimidazo[1,2-a]pyridine-6-yl)pyrimidin-2-yl)amino)-4-methoxyphenyl)acrylamide",
+   "smiles": "COc1cc(N(C)CCN(C)C)c(NC(=O)C=C)cc1Nc1ncc(F)c(n1)-c1cc(F)c2nc(C)c(C(C)C)n2c1",
+   "mol_weight": 578.29,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 517848,
+   "bdbm_id": "BDBM517848",
+   "name": "US11111233, Example 56",
+   "smiles": "COc1cc(N(C)CCN(C)C)c(NC(=O)C=C)cc1Nc1ncc(F)c(n1)-c1cc(F)c2nc(C)c(C(C)=C)n2c1",
+   "mol_weight": 576.28,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 517849,
+   "bdbm_id": "BDBM517849",
+   "name": "US11111233, Example 57",
+   "smiles": "COc1cc(ccc1Nc1ncc(F)c(n1)-c1cc(F)c2nc(C)c(C(C)=C)n2c1)N1CCN(C)CC1",
+   "mol_weight": 505.24,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 517850,
+   "bdbm_id": "BDBM517850",
+   "name": "US11111233, Example 58",
+   "smiles": "COc1cc(ccc1Nc1ncc(F)c(n1)-c1cc(F)c2nc(C)cn2c1)N1CCN(C)CC1",
+   "mol_weight": 465.21,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 517851,
+   "bdbm_id": "BDBM517851",
+   "name": "US11111233, Example 59",
+   "smiles": "COc1cc(ccc1Nc1ncc(F)c(n1)-c1cc(F)c2nc(C)c(C(C)C)n2c1)N1CCN(C)CC1",
+   "mol_weight": 507.26,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 557267,
+   "bdbm_id": "BDBM557267",
+   "name": "US11352354, Example V-c-19",
+   "smiles": "Cc1ccc(NC(=O)c2cccc(C(F)(F)F)c2)cc1Nc1nc(-c2cccnc2)c2[nH]ccc2n1",
+   "mol_weight": 488.16,
+   "n_activities": 2,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50132705,
+   "bdbm_id": "BDBM50132705",
+   "name": "4-Amino-N-[3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-benzamide",
+   "smiles": "Nc1ccc(cc1)C(=O)Nc1cccc(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 382.15,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 50132707,
+   "bdbm_id": "BDBM50132707",
+   "name": "4-3,3-dimethyltriaz-1-ene-N-[4-methyl-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-benzamide",
+   "smiles": "CN(C)\\N=N\\c1ccc(cc1)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 452.21,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 50132708,
+   "bdbm_id": "BDBM50132708",
+   "name": "4-(3,ethylchloro3-methyltriaz-1-ene)-N-[4-methyl-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-benzamide",
+   "smiles": "CN(CCCl)\\N=N\\c1ccc(cc1)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 500.18,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 50155560,
+   "bdbm_id": "BDBM50155560",
+   "name": "1-(3-Chloro-phenyl)-3-[4-methyl-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-urea",
+   "smiles": "Cc1ccc(NC(=O)Nc2cccc(Cl)c2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 430.13,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 50155561,
+   "bdbm_id": "BDBM50155561",
+   "name": "4-Methyl-piperazine-1-carboxylic acid [4-methyl-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-amide",
+   "smiles": "CN1CCN(CC1)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 403.21,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 50155575,
+   "bdbm_id": "BDBM50155575",
+   "name": "1-[4-Methyl-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-3-(2-pyrrolidin-1-yl-ethyl)-urea",
+   "smiles": "Cc1ccc(NC(=O)NCCN2CCCC2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 417.23,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 50313640,
+   "bdbm_id": "BDBM50313640",
+   "name": "N-(4-methyl-3-(4-(6-methylpyridin-3-yl)pyrimidin-2-ylamino)phenyl)-4-((4-methylpiperazin-1-yl)methyl)benzamide",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3ccc(C)nc3)c2)CC1",
+   "mol_weight": 507.62931,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 50323922,
+   "bdbm_id": "BDBM50323922",
+   "name": "1-(4-chloro-3-(trifluoromethyl)phenyl)-3-(4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)phenyl)urea",
+   "smiles": "Cc1ccc(NC(=O)Nc2ccc(Cl)c(c2)C(F)(F)F)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 498.12,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 50382805,
+   "bdbm_id": "BDBM50382805",
+   "name": "CHEMBL2023199",
+   "smiles": "O=C(Nc1cccc(Nc2nc(-c3ccc(F)nc3)c3[nH]cnc3n2)c1)N1CCCC1",
+   "mol_weight": 418.17,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 50434581,
+   "bdbm_id": "BDBM50434581",
+   "name": "imatinib-CD3",
+   "smiles": "[2H]C([2H])([2H])N5CCN(Cc4ccc(C(=O)Nc3ccc(C)c(Nc2nccc(c1cccnc1)n2)c3)cc4)CC5",
+   "mol_weight": 496.58,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 50509978,
+   "bdbm_id": "BDBM50509978",
+   "name": "CHEMBL4584918",
+   "smiles": "COc1cc(Nc2ncc3CSc4ncccc4-c3n2)cc(OC)c1OC",
+   "mol_weight": 382.45,
+   "n_activities": 2,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50560736,
+   "bdbm_id": "BDBM50560736",
+   "name": "CHEMBL4757918",
+   "smiles": "CC(C)N1[C@H](C)C(=O)N(C)c2ccc(Nc3ncc(F)c(n3)-c3cncc4ccccc34)cc12 |r|",
+   "mol_weight": 456.53,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 50560737,
+   "bdbm_id": "BDBM50560737",
+   "name": "CHEMBL4783301",
+   "smiles": "CC(C)N1[C@H](C)C(=O)N(C)c2ccc(Nc3ncc(Cl)c(n3)-c3cncc4ccccc34)cc12 |r|",
+   "mol_weight": 472.98,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 50560738,
+   "bdbm_id": "BDBM50560738",
+   "name": "CHEMBL4800119",
+   "smiles": "CC(C)N1[C@H](C)C(=O)N(C)c2ccc(Nc3ncc(C)c(n3)-c3cncc4ccccc34)cc12 |r|",
+   "mol_weight": 452.56,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 50584625,
+   "bdbm_id": "BDBM50584625",
+   "name": "CHEMBL5082973",
+   "smiles": "N#Cc1c(nc(Nc2ccccc2)nc1-c1cccnc1)-c1ccccc1",
+   "mol_weight": 349.4,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 50599039,
+   "bdbm_id": "BDBM50599039",
+   "name": "CHEMBL5208448",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1ncc(s1)C(=O)Nc1c(C)cccc1Cl",
+   "mol_weight": 556.05,
+   "n_activities": 2,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50599045,
+   "bdbm_id": "BDBM50599045",
+   "name": "CHEMBL5207077",
+   "smiles": "CN1CCN(Cc2ccc(NC(=O)c3ccc(C)c(Nc4nccc(n4)-c4cccnc4)c3)cc2C(F)(F)F)CC1",
+   "mol_weight": 561.61,
+   "n_activities": 2,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50600441,
+   "bdbm_id": "BDBM50600441",
+   "name": "CHEMBL5180210",
+   "smiles": "CCOP(=O)(OCC)C(Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1)c1scnc1C",
+   "mol_weight": 524.59,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 50600442,
+   "bdbm_id": "BDBM50600442",
+   "name": "CHEMBL5200042",
+   "smiles": "CCOP(=O)(OCC)C(Nc1ccc(C)c(Nc2nccc(-c3cccnc3)n2)c1)c1ccn[nH]1",
+   "mol_weight": 493.51,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 50600443,
+   "bdbm_id": "BDBM50600443",
+   "name": "CHEMBL5173220",
+   "smiles": "CCOP(=O)(OCC)C(Nc1ccc(C)c(Nc2nccc(-c3cccnc3)n2)c1)c1ccc[nH]1",
+   "mol_weight": 492.52,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 50612664,
+   "bdbm_id": "BDBM50612664",
+   "name": "CHEMBL5269226",
+   "smiles": "CN(C)CCCNC(=O)c1cc2cc(Nc3nccc(-c4cccnc4)n3)ccc2[nH]1",
+   "mol_weight": 415.5,
+   "n_activities": 2,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50634633,
+   "bdbm_id": "BDBM50634633",
+   "name": null,
+   "smiles": "[2H]C([2H])([2H])N5CCN(Cc4ccc(C(=O)Nc3ccc(C)c(Nc2nccc(c1cccnc1)n2)c3)cc4)CC5",
+   "mol_weight": 496.28,
+   "n_activities": 2,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50635863,
+   "bdbm_id": "BDBM50635863",
+   "name": "CHEMBL5560052",
+   "smiles": "Cc1ccc(NC(=O)c2cn(CCNS(=O)(=O)c3ccccc3)nn2)cc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 555.62,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 50635864,
+   "bdbm_id": "BDBM50635864",
+   "name": "CHEMBL5557177",
+   "smiles": "Cc1ccc(NC(=O)c2cn(CCNS(=O)(=O)c3ccc(F)cc3C)nn2)cc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 587.64,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 50649915,
+   "bdbm_id": "BDBM50649915",
+   "name": "CHEMBL5624526",
+   "smiles": "CCN1CCN(c2ccc(Nc3ncc(F)c(-c4cnc5cnn(C(C)C)c5c4)n3)cc2OC)CC1",
+   "mol_weight": 490.59,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 50665118,
+   "bdbm_id": "BDBM50665118",
+   "name": "CHEMBL6175521",
+   "smiles": "CCN1CCN(c2ccc(Nc3ncc(F)c(-c4cnc5cnn(C(C)C)c5c4)n3)cc2)CC1",
+   "mol_weight": 460.56,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 50665119,
+   "bdbm_id": "BDBM50665119",
+   "name": "CHEMBL6162969",
+   "smiles": "CCN1CCN(c2ccc(Nc3ncc(F)c(-c4cnc5cnn(C(C)C)c5c4)n3)cc2F)CC1",
+   "mol_weight": 478.55,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 50666838,
+   "bdbm_id": "BDBM50666838",
+   "name": "CHEMBL6164759",
+   "smiles": "O=C(NCCN1CCOCC1)c1ccc2cc1OCCCCCCOc1cncc(c1)-c1nc(ncc1F)N2",
+   "mol_weight": 536.61,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 50666839,
+   "bdbm_id": "BDBM50666839",
+   "name": "CHEMBL6177527",
+   "smiles": "CC(=O)N1CCC(NC(=O)c2ccc3cc2OCCCCCCOc2cncc(c2)-c2nc(ncc2F)N3)CC1",
+   "mol_weight": 548.62,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 50666840,
+   "bdbm_id": "BDBM50666840",
+   "name": "CHEMBL6177471",
+   "smiles": "O=C(NC1CCN(C2CCOC2)CC1)c1ccc2cc1OCCCCCCOc1cncc(c1)-c1nc(ncc1F)N2",
+   "mol_weight": 576.67,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 50666841,
+   "bdbm_id": "BDBM50666841",
+   "name": "CHEMBL6175860",
+   "smiles": "O=C(NC1CCN(C2CC2)CC1)c1ccc2cc1OCCCCCCOc1cncc(c1)-c1nc(ncc1F)N2",
+   "mol_weight": 546.65,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 86631,
+   "bdbm_id": "BDBM86631",
+   "name": "JNK-IN-6",
+   "smiles": "CCC(=O)Nc1cccc(c1)C(=O)Nc1ccc(Nc2nccc(n2)-c2cccnc2)cc1",
+   "mol_weight": 438.18,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 86634,
+   "bdbm_id": "BDBM86634",
+   "name": "JNK-IN-9",
+   "smiles": "CN(C)C\\C=C\\C(=O)Nc1ccc(C)c(c1)C(=O)Nc1ccc(Nc2nccc(n2)-c2cccnc2)cc1",
+   "mol_weight": 507.24,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 86635,
+   "bdbm_id": "BDBM86635",
+   "name": "JNK-IN-10",
+   "smiles": "CN(C)C\\C=C\\C(=O)Nc1cc(ccc1C)C(=O)Nc1ccc(Nc2nccc(n2)-c2cccnc2)cc1",
+   "mol_weight": 507.24,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 106555,
+   "bdbm_id": "BDBM106555",
+   "name": "US8586600, II-40",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(NS(=O)(=O)c3cnccc3Cl)cc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 571.12,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 106556,
+   "bdbm_id": "BDBM106556",
+   "name": "US8586600, II-41",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(NS(=O)(=O)c3ccc(Cl)nc3)cc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 571.12,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 106567,
+   "bdbm_id": "BDBM106567",
+   "name": "US8586600, II-1",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(NC(=O)C=C)cc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 450.18,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 106568,
+   "bdbm_id": "BDBM106568",
+   "name": "US8586600, II-8",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3C(=O)C=CC3=O)cc2)cc1Nc1nccc(n1)-c1cccnc1 |c:16|",
+   "mol_weight": 490.18,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 111448,
+   "bdbm_id": "BDBM111448",
+   "name": "N-(3-chloro-4-fluorophenyl)-4-methyl-3-(4-(pyridin- 3-yl)pyrimidin-2-ylamino)benzamide (A1)",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1ccc(F)c(Cl)c1",
+   "mol_weight": 433.11,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 111449,
+   "bdbm_id": "BDBM111449",
+   "name": "4-Methyl-3-(4-(pyridin-3-yl) pyrimidin-2-ylamino)-N-(3-(trifluoro methyl) phenyl) benzamide (A2)",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1cccc(c1)C(F)(F)F",
+   "mol_weight": 449.15,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 111450,
+   "bdbm_id": "BDBM111450",
+   "name": "N-(3, 4-dichlorophenyl)-4-methyl-3-(4-(pyridin-3-yl) pyrimidin-2-yl amino) benzamide (A3)",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1ccc(Cl)c(Cl)c1",
+   "mol_weight": 449.08,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 111451,
+   "bdbm_id": "BDBM111451",
+   "name": "N-(4-methoxyphenyl)-4-methyl-3-(4-(pyridin-3-yl) pyrimidin-2-yl amino) benzamide (A4)",
+   "smiles": "COc1ccc(NC(=O)c2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)cc1",
+   "mol_weight": 411.17,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 111452,
+   "bdbm_id": "BDBM111452",
+   "name": "N-(4-bromophenyl)-4-methyl-3-(4-(pyridin-3-yl) pyrimidin-2-ylamino) benzamide (A5)",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1ccc(Br)cc1",
+   "mol_weight": 459.07,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 111453,
+   "bdbm_id": "BDBM111453",
+   "name": "N-(2-fluorophenyl)-4-methyl-3-(4-(pyridin-3-yl) pyrimidin-2-ylamino) benzamide (A6)",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1ccccc1F",
+   "mol_weight": 399.15,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 111454,
+   "bdbm_id": "BDBM111454",
+   "name": "N-(3-fluorophenyl)-4-methyl-3-(4-(pyridin-3-yl) pyrimidin-2-ylamino) benzamide (A7)",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1cccc(F)c1",
+   "mol_weight": 399.15,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 111455,
+   "bdbm_id": "BDBM111455",
+   "name": "N-(3,5-bis(trifluoromethyl) phenyl)-4-methyl-3-(4-(pyridin-3-yl) pyrimidin-2-ylamino) benzamide (A8)",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1cc(cc(c1)C(F)(F)F)C(F)(F)F",
+   "mol_weight": 517.13,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 111456,
+   "bdbm_id": "BDBM111456",
+   "name": "N-(3-bromo-5-(trifluoromethyl) phenyl)-4-methyl-3-(4-(pyridin-3-yl) pyrimidin-2-ylamino) benzamide (A9)",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1cc(Br)cc(c1)C(F)(F)F",
+   "mol_weight": 527.06,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 111457,
+   "bdbm_id": "BDBM111457",
+   "name": "4-Methyl-3-(4-(pyridin-3-yl) pyrimidin-2-ylamino)-N-p-tolyl benzamide (A10)",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)cc1",
+   "mol_weight": 395.17,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 111459,
+   "bdbm_id": "BDBM111459",
+   "name": "N-(2, 6-dimethylphenyl)-4-methyl-3-(4-(pyridin-3-yl) pyrimidin-2-yl amino) benzamide (A12)",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1c(C)cccc1C",
+   "mol_weight": 409.19,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 111460,
+   "bdbm_id": "BDBM111460",
+   "name": "N-(3-acetylphenyl)-4-methyl-3-(4-(pyridin-3-yl) pyrimidin-2-ylamino) benzamide (A13)",
+   "smiles": "COCc1cccc(NC(=O)c2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)c1",
+   "mol_weight": 425.19,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 111461,
+   "bdbm_id": "BDBM111461",
+   "name": "N-(3-methoxyphenyl)-4-methyl-3-(4-(pyridin-3-yl) pyrimidin-2-yl amino) benzamide (A14)",
+   "smiles": "COc1cccc(NC(=O)c2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)c1",
+   "mol_weight": 411.17,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 111462,
+   "bdbm_id": "BDBM111462",
+   "name": "4-Methyl-3-(4-(pyridin-3-yl) pyrimidin-2-ylamino)-N- (pyridin-4-yl) benzamide (A15)",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)NCc1ccncc1",
+   "mol_weight": 396.17,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 111463,
+   "bdbm_id": "BDBM111463",
+   "name": "4-Methyl-N-(pyridin-3-yl)-3-(4-(pyridin-3-yl) pyrimidin-2-ylamino) benzamide (A16)",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)NCc1cccnc1",
+   "mol_weight": 396.17,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 111464,
+   "bdbm_id": "BDBM111464",
+   "name": "4-Methyl-N-(pyridin-2-yl)-3-(4-(pyridin-3-yl) pyrimidin-2-ylamino) benzamide (A17)",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)NCc1ccccn1",
+   "mol_weight": 396.17,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 111465,
+   "bdbm_id": "BDBM111465",
+   "name": "N-(5-chloropyridin-2-yl)-4-methyl-3-(4-(pyridin-3-yl) pyrimidin-2-yl amino) benzamide (A18)",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)NCc1ccc(Cl)cn1",
+   "mol_weight": 430.13,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 111466,
+   "bdbm_id": "BDBM111466",
+   "name": "4-Methyl-3-(4-(pyridin-3-yl) pyrimidin-2-ylamino)-N-(pyrimidin-2-yl) benzamide (A19)",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)NCc1ncccn1",
+   "mol_weight": 397.17,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 111467,
+   "bdbm_id": "BDBM111467",
+   "name": "4-Methyl-3-(4-(pyridin-3-yl) pyrimidin-2-ylamino)-N-(thiazol-2-yl) benzamide (A20)",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)NCc1nccs1",
+   "mol_weight": 402.13,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 111468,
+   "bdbm_id": "BDBM111468",
+   "name": "N-(4-(3-(dimethylamino)propoxy) phenyl)-4-methyl- 3-(4-(pyridin-3-yl) pyrimidin-2-ylamino) benzamide (A21)",
+   "smiles": "CN(C)CCCOc1ccc(NC(=O)c2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)cc1",
+   "mol_weight": 482.24,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 111469,
+   "bdbm_id": "BDBM111469",
+   "name": "N-(4-(2-(dimethylamino)ethoxy)phenyl)-4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)benzamide (A22)",
+   "smiles": "CN(C)CCCCOc1ccc(NC(=O)c2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)cc1",
+   "mol_weight": 496.26,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 111470,
+   "bdbm_id": "BDBM111470",
+   "name": "N-(4-(2-(diethylamino)ethoxy)phenyl)-4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)benzamide (A23)",
+   "smiles": "CCN(CC)CCCOc1ccc(NC(=O)c2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)cc1",
+   "mol_weight": 510.27,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 111471,
+   "bdbm_id": "BDBM111471",
+   "name": "4-Methyl-3-(4-(pyridin-3-yl) pyrimidin-2-ylamino)-N- (4-(2-(pyrrolidin-1-yl) ethoxy) phenyl) benzamide (A24)",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1ccc(OCCCN2CCCC2)cc1",
+   "mol_weight": 508.26,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 111472,
+   "bdbm_id": "BDBM111472",
+   "name": "4-Methyl-N-(4-(2-(piperidin-1-yl) ethoxy) phenyl)-3-(4-(pyridin-3-yl) pyrimidin-2-ylamino) benzamide (A25)",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1ccc(OCCCN2CCCCC2)cc1",
+   "mol_weight": 522.27,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 111473,
+   "bdbm_id": "BDBM111473",
+   "name": "4-Methyl-N-(4-(2-morpholinoethoxy) phenyl)-3-(4-(pyridin-3-yl) pyrimidin-2-ylamino) benzamide (A26)",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1ccc(OCCCN2CCOCC2)cc1",
+   "mol_weight": 524.25,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 111474,
+   "bdbm_id": "BDBM111474",
+   "name": "4-Methyl-N-(4-(3-morpholinopropoxy) phenyl)-3-(4-(pyridin-3-yl) pyrimidin-2-ylamino) benzamide (A27)",
+   "smiles": "Cc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1ccc(OCCCCN2CCOCC2)cc1",
+   "mol_weight": 538.27,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 243363,
+   "bdbm_id": "BDBM243363",
+   "name": "4-{5-[3-(4-Pyridin-3-yl- pyrimidin-2-ylamino)- phenyl]-oxazol-2-yl}-4,7- diaza-spiro[2.5]octan-8- one",
+   "smiles": "O=C5NCCN(c4ncc(c3cccc(Nc2nccc(c1cccnc1)n2)c3)o4)C56CC6",
+   "mol_weight": 439.18,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 346016,
+   "bdbm_id": "BDBM346016",
+   "name": "[6-Methyl-2-(3- trifluoromethyl- phenyl)-3H- benzoimidazol-5-yl- (4-pyridin-3-yl- pyrimidin-2-yl)- amine",
+   "smiles": "Cc1cc2nc(-c3cccc(C(F)(F)F)c3)[nH]c2cc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 446.15,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 346023,
+   "bdbm_id": "BDBM346023",
+   "name": "[6-Methyl-2-(3- morpholin-4- ylmethyl-5- trifluoromethyl- phenyl)-3H- benzoimidazol-5-yl- (4-pyridin-3-yl- pyrimidin-2-yl)- amine",
+   "smiles": "Cc1cc2nc(-c3cc(CN4CCOCC4)cc(C(F)(F)F)c3)[nH]c2cc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 545.22,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 346024,
+   "bdbm_id": "BDBM346024",
+   "name": "[6-Methyl-2-(3- pyrrolidin-1-ylmethyl- 5-trifluoromethyl- phenyl)-3H- benzoimidazol-5-yl]- (4-pyridin-3-yl- pyrimidin-2-yl)- amine",
+   "smiles": "Cc1cc2nc(-c3cc(CN4CCCC4)cc(C(F)(F)F)c3)[nH]c2cc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 529.22,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 346025,
+   "bdbm_id": "BDBM346025",
+   "name": "[2-(3-Difluoromethyl- phenyl)-6-methyl- 3H-benzoimidazol-5- yl]-(4-pyridin-3-yl- pyrimidin-2-yl)- amine",
+   "smiles": "Cc1cc2nc(-c3cccc(C(F)F)c3)[nH]c2cc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 428.16,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 346026,
+   "bdbm_id": "BDBM346026",
+   "name": "[2-(3-Chloro-phenyl)- 6-methyl-3H- benzoimidazol-5-yl]- (4-pyridin-3-yl- pyrimidin-2-yl)- amine",
+   "smiles": "Cc1cc2nc(-c3cccc(Cl)c3)[nH]c2cc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 412.12,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 346030,
+   "bdbm_id": "BDBM346030",
+   "name": "[6-Methyl-2-(3- piperidin-1-ylmethyl- 5-trifluoromethyl- phenyl)-3H- benzoimidazol-5-yl]- (4-pyridin-3-yl- pyrimidin-2-yl)- amine",
+   "smiles": "Cc1cc2nc(-c3cc(CN4CCCCC4)cc(C(F)(F)F)c3)[nH]c2cc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 543.24,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 346031,
+   "bdbm_id": "BDBM346031",
+   "name": "[6-Methyl-2-(4- methyl-3- trifluoromethyl- phenyl)-3H- benzoimidazol-5-yl]- (4-pyridin-3-yl- pyrimidin-2-yl)- amine",
+   "smiles": "Cc1cc2nc(-c3ccc(C)c(C(F)(F)F)c3)[nH]c2cc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 460.16,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 346114,
+   "bdbm_id": "BDBM346114",
+   "name": "{6-Methyl-2-[4-(4- methyl-piperazin-1- ylmethyl)-phenyl]- 3H-benzoimidazol-5- yl}-(4-pyridin-3-yl- pyrimidin-2-yl)- amine",
+   "smiles": "Cc1cc2nc(-c3ccc(CN4CCN(C)CC4)cc3)[nH]c2cc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 490.26,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 346115,
+   "bdbm_id": "BDBM346115",
+   "name": "(6-Methyl-2-m-tolyl- 3H-benzoimidazol-5- yl)-(4-pyridin-3-yl- pyrimidin-2-yl)- amine",
+   "smiles": "Cc1cccc(-c2nc3cc(C)c(Nc4nccc(-c5cccnc5)n4)cc3[nH]2)c1",
+   "mol_weight": 392.17,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 346116,
+   "bdbm_id": "BDBM346116",
+   "name": "3-[5-Methyl-6-(4- pyridin-3-yl- pyrimidin-2- ylamino)-1H- benzoimidazol-2-yl]- benzonitrile",
+   "smiles": "Cc1cc2nc(-c3cccc(C#N)c3)[nH]c2cc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 403.15,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 346117,
+   "bdbm_id": "BDBM346117",
+   "name": "(6-Methyl-2-pyridin- 3-yl-3H- benzoimidazol-5-yl)- (4-pyridin-3-yl- pyrimidin-2-yl)- amine",
+   "smiles": "Cc1cc2nc(-c3cccnc3)[nH]c2cc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 379.15,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 346118,
+   "bdbm_id": "BDBM346118",
+   "name": "{6-Methyl-2-[3-(4- methyl-piperazin-1- yl)-phenyl]-3H- benzoimidazol-5-yl}- (4-pyridin-3-yl- pyrimidin-2-yl)- amine",
+   "smiles": "Cc1cc2nc(-c3cccc(N4CCN(C)CC4)c3)[nH]c2cc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 476.24,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 346119,
+   "bdbm_id": "BDBM346119",
+   "name": "{2-[3-(2- Dimethylamino- ethoxy)-phenyl]-6- methyl-3H- benzoimidazo1-5-yl}- (4-pyridin-3-yl- pyrimidin-2-yl)- amine",
+   "smiles": "Cc1cc2nc(-c3cccc(OCCN(C)C)c3)[nH]c2cc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 465.23,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 346120,
+   "bdbm_id": "BDBM346120",
+   "name": "(6-Methyl-2-quinolin- 3-yl-3H- benzoimidazol-5-yl)- (4-pyridin-3-yl- pyrimidin-2-yl)- amine",
+   "smiles": "Cc1cc2nc(-c3cnc4ccccc4c3)[nH]c2cc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 429.17,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 346121,
+   "bdbm_id": "BDBM346121",
+   "name": "[6-Methyl-2-(3- morpholin-4- ylmethyl-phenyl)-3H- benzoimidazol-5-yl]- (4-pyridin-3-yl- pyrimidin-2-yl)- amine",
+   "smiles": "Cc1cc2nc(-c3cccc(CN4CCOCC4)c3)[nH]c2cc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 477.23,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 346122,
+   "bdbm_id": "BDBM346122",
+   "name": "[2-(3-Fluoro-phenyl)- 6-methyl-3H- benzoimidazol-5-yl]- (4-pyridin-3-yl- pyrimidin-2-yl)- amine",
+   "smiles": "Cc1cc2nc(-c3cccc(F)c3)[nH]c2cc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 396.15,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 346127,
+   "bdbm_id": "BDBM346127",
+   "name": "[6-Methyl-2-(4- trifluoromethyl- phenyl)-3H- benzoimidazol-5-yl]- (4-pyridin-3-yl- pyrimidin-2-yl)- amine",
+   "smiles": "Cc1cc2nc(-c3ccc(C(F)(F)F)cc3)[nH]c2cc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 446.15,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 346128,
+   "bdbm_id": "BDBM346128",
+   "name": "{2-[5-tert-Butyl-2-(2- dimethylamino- ethoxy)-phenyl]-6- methyl-3H- benzoimidazol-5-yl}- (4-pyridin-3-yl- pyrimidin-2-yl)- amine",
+   "smiles": "Cc1cc2nc(-c3cc(C(C)(C)C)ccc3OCCN(C)C)[nH]c2cc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 521.29,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 346129,
+   "bdbm_id": "BDBM346129",
+   "name": "[6-Methyl-2-(3- trifluoromethoxy- phenyl)-3H- benzoimidazol-5-yl]- (4-pyridin-3-yl- pyrimidin-2-yl)- amine",
+   "smiles": "Cc1cc2nc(-c3cccc(OC(F)(F)F)c3)[nH]c2cc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 462.14,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 346130,
+   "bdbm_id": "BDBM346130",
+   "name": "Synthetic Approach of Example 038",
+   "smiles": "Cc1cc2nc(-c3cccc(S(C)(=O)=O)c3)[nH]c2cc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 456.14,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 346131,
+   "bdbm_id": "BDBM346131",
+   "name": "{6-Methyl-2-[3-(4- methyl-piperazin-1- ylmethyl)-5-oxazol- 5-yl-phenyl]-3H- benzoimidazol-5-yl}- (4-pyridin-3-yl- pyrimidin-2-yl)- amine",
+   "smiles": "Cc1cc2nc(-c3cc(CN4CCN(C)CC4)cc(-c4cnco4)c3)[nH]c2cc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 557.27,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 346132,
+   "bdbm_id": "BDBM346132",
+   "name": "{6-Methyl-2-[3-(4- methyl-piperazin-1- ylmethyl)-5- trifluoromethyl- phenyl]-3H- benzoimidazol-5-yl}- (4-pyridin-3-yl- pyrimidin-2-yl)- amine",
+   "smiles": "Cc1cc2nc(-c3cc(CN4CCN(C)CC4)cc(C(F)(F)F)c3)[nH]c2cc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 558.25,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 346133,
+   "bdbm_id": "BDBM346133",
+   "name": "[6-Methyl-2-(5- trifluoromethyl- pyridin-3-yl)-3H- benzoimidazol-5-yl]- (4-pyridin-3-yl- pyrimidin-2-yl)- amine",
+   "smiles": "Cc1cc2nc(-c3cncc(C(F)(F)F)c3)[nH]c2cc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 447.14,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 346134,
+   "bdbm_id": "BDBM346134",
+   "name": "{6-Methyl-2-[3-(4- methyl-piperazin-1- ylmethyl)-phenyl]- 3H-benzoimidazol-5- yl}-(4-pyridin-3-yl- pyrimidin-2-yl)- amine",
+   "smiles": "Cc1cc2nc(-c3cccc(CN4CCN(C)CC4)c3)[nH]c2cc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 490.26,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 464093,
+   "bdbm_id": "BDBM464093",
+   "name": "US10787436, Compound I-29",
+   "smiles": "CN(C)C/C=C/C(=O)Nc1ccc(C(=O)Nc2cccc(Nc3ncc(Cl)c(-c4cnc5[nH]ccc5c4)n3)c2)cc1",
+   "mol_weight": 566.19,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 534715,
+   "bdbm_id": "BDBM534715",
+   "name": "US11230524, Compound ST48",
+   "smiles": "Nc1ccccc1NC(=O)\\C=C\\c1cccc(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 408.17,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 557256,
+   "bdbm_id": "BDBM557256",
+   "name": "US11352354, Example V-c-1",
+   "smiles": "CS(=O)(=O)Nc1cccc(Nc2nc(-c3cccnc3)c3[nH]ccc3n2)c1",
+   "mol_weight": 380.11,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 557257,
+   "bdbm_id": "BDBM557257",
+   "name": "US11352354, Example V-c-2",
+   "smiles": "c1cncc(-c2nc(Nc3cc(N4CCOCC4)cc(N4CCOCC4)c3)nc3cc[nH]c23)c1",
+   "mol_weight": 457.22,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 557258,
+   "bdbm_id": "BDBM557258",
+   "name": "US11352354, Example V-c-10",
+   "smiles": "Cc1cn(-c2cc(NC(=O)c3ccc(C)c(Nc4nc(-c5cccnc5)c5[nH]ccc5n4)c3)cc(C(F)(F)F)c2)cn1",
+   "mol_weight": 568.19,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 557259,
+   "bdbm_id": "BDBM557259",
+   "name": "US11352354, Example V-c-11",
+   "smiles": "Cc1ccc(C(=O)Nc2ccc(CN3CCN(C)CC3)c(C(F)(F)F)c2)cc1Nc1nc(-c2cccnc2)c2[nH]ccc2n1",
+   "mol_weight": 600.26,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 557260,
+   "bdbm_id": "BDBM557260",
+   "name": "US11352354, Example V-c-12",
+   "smiles": "COc1ccc(C(F)(F)F)cc1NC(=O)c1ccc(C)c(Nc2nc(-c3cccnc3)c3[nH]ccc3n2)c1",
+   "mol_weight": 518.17,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 557261,
+   "bdbm_id": "BDBM557261",
+   "name": "US11352354, Example V-c-13",
+   "smiles": "Cc1ccc(C(=O)Nc2cc(C(F)(F)F)ccc2F)cc1Nc1nc(-c2cccnc2)c2[nH]ccc2n1",
+   "mol_weight": 506.15,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 557262,
+   "bdbm_id": "BDBM557262",
+   "name": "US11352354, Example V-c-14",
+   "smiles": "Cc1ccc(C(=O)Nc2cc(C(F)(F)F)ccc2Cl)cc1Nc1nc(-c2cccnc2)c2[nH]ccc2n1",
+   "mol_weight": 522.12,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 557263,
+   "bdbm_id": "BDBM557263",
+   "name": "US11352354, Example V-c-15",
+   "smiles": "Cc1ccc(NC(=O)Nc2cccc(C(F)(F)F)c2)cc1Nc1nc(-c2cccnc2)c2[nH]ccc2n1",
+   "mol_weight": 503.17,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 557264,
+   "bdbm_id": "BDBM557264",
+   "name": "US11352354, Example V-c-16",
+   "smiles": "Cc1ccc(NC(=S)Nc2cccc(C(F)(F)F)c2)cc1Nc1nc(-c2cccnc2)c2[nH]ccc2n1",
+   "mol_weight": 519.15,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 557266,
+   "bdbm_id": "BDBM557266",
+   "name": "US11352354, Example V-c-18",
+   "smiles": "O=C(Nc1cccc(Nc2nc(-c3cccnc3)c3[nH]ccc3n2)c1)c1cccc(C(F)(F)F)c1",
+   "mol_weight": 474.14,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 557268,
+   "bdbm_id": "BDBM557268",
+   "name": "US11352354, Example V-c-20",
+   "smiles": "Cc1ccc(NS(=O)(=O)c2cccc(C(F)(F)F)c2)cc1Nc1nc(-c2cccnc2)c2[nH]ccc2n1",
+   "mol_weight": 524.12,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 557269,
+   "bdbm_id": "BDBM557269",
+   "name": "US11352354, Example V-c-21",
+   "smiles": "Cc1ccc(NC(=O)c2cc(C(F)(F)F)cc(C(F)(F)F)c2)cc1Nc1nc(-c2cccnc2)c2[nH]ccc2n1",
+   "mol_weight": 556.14,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 557270,
+   "bdbm_id": "BDBM557270",
+   "name": "US11352354, Example V-c-22",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)c(C(F)(F)F)c2)cc1Nc1nc(-c2cccnc2)c2[nH]ccc2n1",
+   "mol_weight": 600.26,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 557271,
+   "bdbm_id": "BDBM557271",
+   "name": "US11352354, Example V-c-23",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(C(F)(F)F)cc2)cc1Nc1nc(-c2cccnc2)c2[nH]ccc2n1",
+   "mol_weight": 488.16,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 557272,
+   "bdbm_id": "BDBM557272",
+   "name": "US11352354, Example V-c-24",
+   "smiles": "Cc1cc(NC(=O)c2cccc(C(F)(F)F)c2)ccc1Nc1nc(-c2cccnc2)c2[nH]ccc2n1",
+   "mol_weight": 488.16,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 557275,
+   "bdbm_id": "BDBM557275",
+   "name": "US11352354, Example V-c-4",
+   "smiles": "O=C(Nc1cccc(C(F)(F)F)c1)c1cccc(Nc2nc(-c3cccnc3)c3[nH]ccc3n2)c1",
+   "mol_weight": 474.14,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 557276,
+   "bdbm_id": "BDBM557276",
+   "name": "US11352354, Example V-c-40",
+   "smiles": "Cc1ccc(NC(=O)c2cccc(c2)C(F)(F)F)cc1Nc1nc(-c2cccnc2)c2n(C)ccc2n1",
+   "mol_weight": 502.17,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 557283,
+   "bdbm_id": "BDBM557283",
+   "name": "US11352354, Example V-c-6",
+   "smiles": "Cc1ccc(C(=O)Nc2cccc(NS(C)(=O)=O)c2)cc1Nc1nc(-c2cccnc2)c2[nH]ccc2n1",
+   "mol_weight": 513.16,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 557287,
+   "bdbm_id": "BDBM557287",
+   "name": "US11352354, Example V-c-8",
+   "smiles": "Cc1ccc(C(=O)Nc2cccc(OC(F)(F)F)c2)cc1Nc1nc(-c2cccnc2)c2[nH]ccc2n1",
+   "mol_weight": 504.15,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 557288,
+   "bdbm_id": "BDBM557288",
+   "name": "US11352354, Example V-c-9",
+   "smiles": "Cc1ccc(C(=O)Nc2cc(C(F)(F)F)cc(C(F)(F)F)c2)cc1Nc1nc(-c2cccnc2)c2[nH]ccc2n1",
+   "mol_weight": 556.14,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50076748,
+   "bdbm_id": "BDBM50076748",
+   "name": "(2-Bromo-4,6-dimethoxy-phenyl)-ethyl-(4-methyl-6-pyridin-3-yl-pyrimidin-2-yl)-amine",
+   "smiles": "CCN(c1nc(C)cc(n1)-c1cccnc1)c1c(Br)cc(OC)cc1OC",
+   "mol_weight": 428.08,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50076773,
+   "bdbm_id": "BDBM50076773",
+   "name": "(2-Bromo-4-isopropyl-6-methyl-phenyl)-ethyl-[4-methyl-6-(2,4,6-trimethyl-pyridin-3-yl)-pyrimidin-2-yl]-amine",
+   "smiles": "CCN(c1nc(C)cc(n1)-c1c(C)cc(C)nc1C)c1c(C)cc(cc1Br)C(C)C",
+   "mol_weight": 466.17,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50083638,
+   "bdbm_id": "BDBM50083638",
+   "name": "(S)-4-(6-(3-methylpiperazin-1-yl)pyridin-3-yl)-N-(3,4,5-trimethoxyphenyl)pyrimidin-2-amine",
+   "smiles": "COc1cc(Nc2nccc(n2)-c2ccc(nc2)N2CCN[C@@H](C)C2)cc(OC)c1OC |r|",
+   "mol_weight": 436.22,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50083640,
+   "bdbm_id": "BDBM50083640",
+   "name": "[4-(6-[1,4]Diazepan-1-yl-pyridin-3-yl)-pyrimidin-2-yl]-(3,4,5-trimethoxy-phenyl)-amine",
+   "smiles": "COc1cc(Nc2nccc(n2)-c2ccc(nc2)N2CCCNCC2)cc(OC)c1OC",
+   "mol_weight": 436.22,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50083642,
+   "bdbm_id": "BDBM50083642",
+   "name": "{4-[6-((S)-3-Isopropyl-piperazin-1-yl)-pyridin-3-yl]-pyrimidin-2-yl}-(3,4,5-trimethoxy-phenyl)-amine",
+   "smiles": "COc1cc(Nc2nccc(n2)-c2ccc(nc2)N2CCN[C@H](C2)C(C)C)cc(OC)c1OC",
+   "mol_weight": 464.25,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50083645,
+   "bdbm_id": "BDBM50083645",
+   "name": "[4-(6-Morpholin-4-yl-pyridin-3-yl)-pyrimidin-2-yl]-(3,4,5-trimethoxy-phenyl)-amine",
+   "smiles": "COc1cc(Nc2nccc(n2)-c2ccc(nc2)N2CCOCC2)cc(OC)c1OC",
+   "mol_weight": 423.19,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50083646,
+   "bdbm_id": "BDBM50083646",
+   "name": "{4-[6-((R)-3-Methyl-piperazin-1-yl)-pyridin-3-yl]-pyrimidin-2-yl}-(3,4,5-trimethoxy-phenyl)-amine",
+   "smiles": "COc1cc(Nc2nccc(n2)-c2ccc(nc2)N2CCN[C@H](C)C2)cc(OC)c1OC",
+   "mol_weight": 436.22,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50083647,
+   "bdbm_id": "BDBM50083647",
+   "name": "{4-[6-(4-Ethyl-piperazin-1-yl)-pyridin-3-yl]-pyrimidin-2-yl}-(3,4,5-trimethoxy-phenyl)-amine",
+   "smiles": "CCN1CCN(CC1)c1ccc(cn1)-c1ccnc(Nc2cc(OC)c(OC)c(OC)c2)n1",
+   "mol_weight": 450.24,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50083648,
+   "bdbm_id": "BDBM50083648",
+   "name": "{4-[6-(4-Methyl-piperazin-1-yl)-pyridin-3-yl]-pyrimidin-2-yl}-(3,4,5-trimethoxy-phenyl)-amine",
+   "smiles": "COc1cc(Nc2nccc(n2)-c2ccc(nc2)N2CCN(C)CC2)cc(OC)c1OC",
+   "mol_weight": 436.22,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50083649,
+   "bdbm_id": "BDBM50083649",
+   "name": "{4-[6-(3-Methyl-piperazin-1-yl)-pyridin-3-yl]-pyrimidin-2-yl}-(3,4,5-trimethoxy-phenyl)-amine",
+   "smiles": "COc1cc(Nc2nccc(n2)-c2ccc(nc2)N2CCNC(C)C2)cc(OC)c1OC",
+   "mol_weight": 436.22,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50083650,
+   "bdbm_id": "BDBM50083650",
+   "name": "[4-(3,4,5,6-Tetrahydro-2H-[1,2']bipyridinyl-5'-yl)-pyrimidin-2-yl]-(3,4,5-trimethoxy-phenyl)-amine",
+   "smiles": "COc1cc(Nc2nccc(n2)-c2ccc(nc2)N2CCCCC2)cc(OC)c1OC",
+   "mol_weight": 421.21,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50132704,
+   "bdbm_id": "BDBM50132704",
+   "name": "4-[3-(2-methoxyethyl)triazanyl]-N-[3-(4-pyridin-3-ylpyrimidineamino)phenyl]benzamide",
+   "smiles": "COCCN=NNc1ccc(cc1)C(=O)Nc1cccc(Nc2nccc(n2)-c2cccnc2)c1 |w:4.3|",
+   "mol_weight": 468.2,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50132706,
+   "bdbm_id": "BDBM50132706",
+   "name": "N-{3-[(1Z)-3-(2-methoxyethyl)triaz-1-enyl]phenyl}-4-pyridin-3-ylpyrimidin-2-amine",
+   "smiles": "COCCN=NNc1cccc(Nc2nccc(n2)-c2cccnc2)c1 |w:4.3|",
+   "mol_weight": 349.17,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50132711,
+   "bdbm_id": "BDBM50132711",
+   "name": "N-{3-[(1Z)-3-(2-morpholin)triaz-1-enyl]phenyl}-4-pyridin-3-ylpyrimidin-2-amine",
+   "smiles": "C(CN1CCOCC1)N=NNc1cccc(Nc2nccc(n2)-c2cccnc2)c1 |w:8.8|",
+   "mol_weight": 404.21,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50155563,
+   "bdbm_id": "BDBM50155563",
+   "name": "1-{2-[(Cyclohexyl-methyl-amino)-methyl]-phenyl}-3-[4-methyl-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-urea",
+   "smiles": "CN(Cc1ccccc1NC(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1)C1CCCCC1",
+   "mol_weight": 521.29,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50155574,
+   "bdbm_id": "BDBM50155574",
+   "name": "1-[4-Methyl-3-(4-pyridin-3-yl-pyrimidin-2-ylamino)-phenyl]-3-pyridin-3-yl-urea",
+   "smiles": "Cc1ccc(NC(=O)Nc2cccnc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 397.17,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50215557,
+   "bdbm_id": "BDBM50215557",
+   "name": "4-amino-N-(4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)phenyl)-3-(trifluoromethyl)benzamide",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(N)c(c2)C(F)(F)F)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 464.16,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50215558,
+   "bdbm_id": "BDBM50215558",
+   "name": "4-(bis(2-chloroethyl)amino)-N-(4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)phenyl)benzamide",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(cc2)N(CCCl)CCCl)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 520.15,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50215560,
+   "bdbm_id": "BDBM50215560",
+   "name": "4-((bis(2-chloroethyl)amino)methyl)-N-(4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)phenyl)benzamide",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN(CCCl)CCCl)cc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 534.17,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50215561,
+   "bdbm_id": "BDBM50215561",
+   "name": "3-chloro-N-(4-methyl-3-{[4-(pyridin-3-yl)pyrimidin-2-yl]amino}phenyl)-4-(3-methyltriaz-1-en-1-yl)benzamide",
+   "smiles": "CN=NNc1ccc(cc1Cl)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1 |w:1.0|",
+   "mol_weight": 472.15,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50215562,
+   "bdbm_id": "BDBM50215562",
+   "name": "4-[3-(hydroxymethyl)-3-methyltriaz-1-en-1-yl]-N-(4-methyl-3-{[4-(pyridin-3-yl)pyrimidin-2-yl]amino}phenyl)-3-(trifluoromethyl)benzamide",
+   "smiles": "CN(CO)N=Nc1ccc(cc1C(F)(F)F)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 536.19,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50215563,
+   "bdbm_id": "BDBM50215563",
+   "name": "4-(3,3-dimethyltriaz-1-en-1-yl)-N-(4-methyl-3-{[4-(pyridin-3-yl)pyrimidin-2-yl]amino}phenyl)-3-(trifluoromethyl)benzamide",
+   "smiles": "CN(C)N=Nc1ccc(cc1C(F)(F)F)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 520.19,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50215564,
+   "bdbm_id": "BDBM50215564",
+   "name": "4-(((2-chloroethyl)(methyl)amino)methyl)-N-(4-methyl-3-(4-(pyridin-3-yl)pyrimidin-2-ylamino)phenyl)benzamide",
+   "smiles": "CN(CCCl)Cc1ccc(cc1)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 486.19,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50215565,
+   "bdbm_id": "BDBM50215565",
+   "name": "N-(4-methyl-3-{[4-(pyridin-3-yl)pyrimidin-2-yl]amino}phenyl)-4-(3-methyltriaz-1-en-1-yl)-3-(trifluoromethyl)benzamide",
+   "smiles": "CN=NNc1ccc(cc1C(F)(F)F)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1 |w:1.0|",
+   "mol_weight": 506.18,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50255915,
+   "bdbm_id": "BDBM50255915",
+   "name": "N-(2-aminophenyl)-4-(4-(pyridin-3-yl)pyrimidin-2-ylamino)benzamide",
+   "smiles": "Nc1ccccc1NC(=O)c1ccc(Nc2nccc(n2)-c2cccnc2)cc1",
+   "mol_weight": 382.41792,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50358831,
+   "bdbm_id": "BDBM50358831",
+   "name": "CHEMBL1923084",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(N)c(N)c2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 411.18,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50358832,
+   "bdbm_id": "BDBM50358832",
+   "name": "CHEMBL1923082",
+   "smiles": "CSc1cccc(c1)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 427.15,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50432859,
+   "bdbm_id": "BDBM50432859",
+   "name": "CHEMBL2376503",
+   "smiles": "Sc1ccccc1C(=O)Nc1cccc(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 399.47,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50432860,
+   "bdbm_id": "BDBM50432860",
+   "name": "CHEMBL2376633",
+   "smiles": "CCCCCCC(=O)Nc1cccc(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 375.47,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50432865,
+   "bdbm_id": "BDBM50432865",
+   "name": "CHEMBL203071",
+   "smiles": "CN1CCN(Cc2ccc(cc2I)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)CC1",
+   "mol_weight": 619.5,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50432866,
+   "bdbm_id": "BDBM50432866",
+   "name": "CHEMBL382605",
+   "smiles": "CN1CCN(Cc2ccc(cc2Cl)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)CC1",
+   "mol_weight": 528.05,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50432867,
+   "bdbm_id": "BDBM50432867",
+   "name": "CHEMBL2376497",
+   "smiles": "Cc1ccc(NC(=O)NCc2cccc(Cl)c2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 444.92,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50432868,
+   "bdbm_id": "BDBM50432868",
+   "name": "CHEMBL2376501",
+   "smiles": "COCCN(C)\\N=N\\c1ccc(cc1)C(=O)Nc1cccc(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 482.54,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50432869,
+   "bdbm_id": "BDBM50432869",
+   "name": "CHEMBL2376500",
+   "smiles": "C(Cc1cccc(Nc2nccc(n2)-c2cccnc2)c1)N1CCOCC1",
+   "mol_weight": 361.44,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50432872,
+   "bdbm_id": "BDBM50432872",
+   "name": "CHEMBL327907",
+   "smiles": "Cc1cccc(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 262.31,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50432873,
+   "bdbm_id": "BDBM50432873",
+   "name": "CHEMBL2376502",
+   "smiles": "NCCCCNC(=O)c1cccc(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 362.43,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50433223,
+   "bdbm_id": "BDBM50433223",
+   "name": "CHEMBL2375890",
+   "smiles": "COc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1cccc(c1)C(F)(F)F",
+   "mol_weight": 465.43,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50433224,
+   "bdbm_id": "BDBM50433224",
+   "name": "CHEMBL2375898",
+   "smiles": "COc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1ccncc1",
+   "mol_weight": 398.42,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50433225,
+   "bdbm_id": "BDBM50433225",
+   "name": "CHEMBL2375975",
+   "smiles": "COc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1ccc(OCCN2CCCCC2)cc1",
+   "mol_weight": 524.61,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50433226,
+   "bdbm_id": "BDBM50433226",
+   "name": "CHEMBL2375974",
+   "smiles": "COc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1ccc(OCCN2CCCC2)cc1",
+   "mol_weight": 510.59,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50433227,
+   "bdbm_id": "BDBM50433227",
+   "name": "CHEMBL2375901",
+   "smiles": "COc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1nccs1",
+   "mol_weight": 404.45,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50433228,
+   "bdbm_id": "BDBM50433228",
+   "name": "CHEMBL2375976",
+   "smiles": "COc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1ccc(OCCN2CCOCC2)cc1",
+   "mol_weight": 526.59,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50433229,
+   "bdbm_id": "BDBM50433229",
+   "name": "CHEMBL2375895",
+   "smiles": "COc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1cccc(Cl)c1",
+   "mol_weight": 431.87,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50433230,
+   "bdbm_id": "BDBM50433230",
+   "name": "CHEMBL2375977",
+   "smiles": "COc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1ccc(OCCCN2CCOCC2)cc1",
+   "mol_weight": 540.61,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50433231,
+   "bdbm_id": "BDBM50433231",
+   "name": "CHEMBL2375891",
+   "smiles": "COc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1ccc(Br)cc1",
+   "mol_weight": 476.33,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50433232,
+   "bdbm_id": "BDBM50433232",
+   "name": "CHEMBL2375889",
+   "smiles": "COc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1ccc(F)c(Cl)c1",
+   "mol_weight": 449.86,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50433233,
+   "bdbm_id": "BDBM50433233",
+   "name": "CHEMBL2375900",
+   "smiles": "COc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1ncccn1",
+   "mol_weight": 399.41,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50433234,
+   "bdbm_id": "BDBM50433234",
+   "name": "CHEMBL2375892",
+   "smiles": "COc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1cccc(F)c1",
+   "mol_weight": 415.42,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50433235,
+   "bdbm_id": "BDBM50433235",
+   "name": "CHEMBL2375972",
+   "smiles": "COc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1ccc(OCCN(C)C)cc1",
+   "mol_weight": 484.55,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50433236,
+   "bdbm_id": "BDBM50433236",
+   "name": "CHEMBL2375973",
+   "smiles": "CCN(CC)CCOc1ccc(NC(=O)c2ccc(OC)c(Nc3nccc(n3)-c3cccnc3)c2)cc1",
+   "mol_weight": 512.6,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50433237,
+   "bdbm_id": "BDBM50433237",
+   "name": "CHEMBL2375971",
+   "smiles": "COc1ccc(cc1Nc1nccc(n1)-c1cccnc1)C(=O)Nc1ccc(OCCCN(C)C)cc1",
+   "mol_weight": 498.58,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50443911,
+   "bdbm_id": "BDBM50443911",
+   "name": "CHEMBL3091557",
+   "smiles": "Cc1cccc(C)c1NC(=O)c1ccc(Nc2ncc(C)c(n2)-c2cccnc2)cc1",
+   "mol_weight": 409.48,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50444656,
+   "bdbm_id": "BDBM50444656",
+   "name": "CHEMBL3098614",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(Cc4ccc(I)cc4)CC3)cc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 695.6,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50444657,
+   "bdbm_id": "BDBM50444657",
+   "name": "CHEMBL3098615",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(CCO)CC3)cc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 523.63,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50444658,
+   "bdbm_id": "BDBM50444658",
+   "name": "CHEMBL3098616",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(CCF)CC3)cc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 525.62,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50467679,
+   "bdbm_id": "BDBM50467679",
+   "name": "CHEMBL4281817",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(Br)cc2OCCCCn2ccnc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 598.51,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50467680,
+   "bdbm_id": "BDBM50467680",
+   "name": "CHEMBL4288599",
+   "smiles": "Cc1ccc(NC(=O)c2cccc(OCCCCn3ccnc3)c2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 519.61,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50467681,
+   "bdbm_id": "BDBM50467681",
+   "name": "CHEMBL4294145",
+   "smiles": "COc1ccc(cc1OCCCCn1ccnc1)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 549.64,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50467682,
+   "bdbm_id": "BDBM50467682",
+   "name": "CHEMBL4277944",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(OCCCCn3ccnc3)cc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 519.61,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50467683,
+   "bdbm_id": "BDBM50467683",
+   "name": "CHEMBL4286253",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(c(OCCCCn3ccnc3)c2)[N+]([O-])=O)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 564.61,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50467684,
+   "bdbm_id": "BDBM50467684",
+   "name": "CHEMBL4278359",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(I)cc2OCCCCn2ccnc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 645.51,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50467685,
+   "bdbm_id": "BDBM50467685",
+   "name": "CHEMBL4282448",
+   "smiles": "COc1cc(ccc1OCCCCn1ccnc1)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 549.64,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50467686,
+   "bdbm_id": "BDBM50467686",
+   "name": "CHEMBL4289670",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(OCCCCn3ccnc3)c(Br)c2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 598.51,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50467687,
+   "bdbm_id": "BDBM50467687",
+   "name": "CHEMBL4278991",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(OCCCCn3ccnc3)c(I)c2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 645.51,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50467688,
+   "bdbm_id": "BDBM50467688",
+   "name": "CHEMBL4279418",
+   "smiles": "Cc1ccc(NC(=O)c2cc(Br)cc(OCCCCn3ccnc3)c2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 598.51,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50467689,
+   "bdbm_id": "BDBM50467689",
+   "name": "CHEMBL4290101",
+   "smiles": "COc1ccc(C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)c(OCCCCn2ccnc2)c1",
+   "mol_weight": 549.64,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50467690,
+   "bdbm_id": "BDBM50467690",
+   "name": "CHEMBL4289687",
+   "smiles": "Cc1ccc(OCCCCn2ccnc2)c(c1)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": 533.64,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50467691,
+   "bdbm_id": "BDBM50467691",
+   "name": "CHEMBL4286268",
+   "smiles": "Cc1ccc(NC(=O)c2cc(I)ccc2OCCCCn2ccnc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 645.51,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50467692,
+   "bdbm_id": "BDBM50467692",
+   "name": "CHEMBL4293078",
+   "smiles": "Cc1ccc(NC(=O)c2ccccc2OCCCCn2ccnc2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 519.61,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50509975,
+   "bdbm_id": "BDBM50509975",
+   "name": "CHEMBL4453147",
+   "smiles": "Fc1cccc(Nc2ncc3CSc4ncccc4-c3n2)c1",
+   "mol_weight": 310.36,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50509976,
+   "bdbm_id": "BDBM50509976",
+   "name": "CHEMBL4448243",
+   "smiles": "COc1cccc(Nc2ncc3CSc4ncccc4-c3n2)c1",
+   "mol_weight": 322.39,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50509977,
+   "bdbm_id": "BDBM50509977",
+   "name": "CHEMBL4463108",
+   "smiles": "COc1ccc(Nc2ncc3CSc4ncccc4-c3n2)cc1OC",
+   "mol_weight": 352.42,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50509979,
+   "bdbm_id": "BDBM50509979",
+   "name": "CHEMBL4441332",
+   "smiles": "C1Sc2ncccc2-c2nc(Nc3ccccc3)ncc12",
+   "mol_weight": 292.37,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50509980,
+   "bdbm_id": "BDBM50509980",
+   "name": "CHEMBL4582099",
+   "smiles": "COc1ccc(Nc2ncc3CSc4ncccc4-c3n2)cc1",
+   "mol_weight": 322.39,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50533531,
+   "bdbm_id": "BDBM50533531",
+   "name": "CHEMBL4555071",
+   "smiles": "CS(=O)(=O)N1CCN(CC1)C(=O)c1ccc(Nc2nc(cc(n2)-c2cnc(N)cc2C(F)(F)F)N2CCOCC2)cc1",
+   "mol_weight": 606.63,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50566594,
+   "bdbm_id": "BDBM50566594",
+   "name": "CHEMBL4875177",
+   "smiles": "COc1cc2CCN(CCc3ccc(NC(=O)c4ccc(C)c(Nc5nccc(n5)-c5cccnc5)c4)cc3)Cc2cc1OC",
+   "mol_weight": 600.72,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50573935,
+   "bdbm_id": "BDBM50573935",
+   "name": "CHEMBL4849528",
+   "smiles": "CC(=O)c1c(N2CCOCC2)c2ccc(Nc3nccc(n3)-c3ccc4nccn4c3)cc2oc1=O",
+   "mol_weight": 482.5,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50593434,
+   "bdbm_id": "BDBM50593434",
+   "name": "CHEMBL5183850",
+   "smiles": "Cc1ccc(NC(=O)NNc2cc(-c3ccc(F)cc3)c3cnn(C)c3n2)cc1Nc1nccc(n1)-c1cccnc1",
+   "mol_weight": 560.6,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50598058,
+   "bdbm_id": "BDBM50598058",
+   "name": "CHEMBL5182944",
+   "smiles": "CCN1C(=O)COc2c(CN3CCOCC3)cc(Nc3nccc(n3)-c3cccnc3)cc12",
+   "mol_weight": 446.51,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50612375,
+   "bdbm_id": "BDBM50612375",
+   "name": "CHEMBL5287588",
+   "smiles": "Cc1ccc(NC(=O)[C@H]2CC[C@H](CN3CCN(C)CC3)CC2)cc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 499.66,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50612376,
+   "bdbm_id": "BDBM50612376",
+   "name": "CHEMBL5275489",
+   "smiles": "CN1CCN(C[C@H]2CC[C@H](C2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)CC1 |r|",
+   "mol_weight": 485.64,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50612377,
+   "bdbm_id": "BDBM50612377",
+   "name": "CHEMBL5273946",
+   "smiles": "Cc1ccc(NC(=O)[C@H]2C[C@@H](CN3CCN(C)CC3)C2)cc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 471.61,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50612378,
+   "bdbm_id": "BDBM50612378",
+   "name": "CHEMBL5282860",
+   "smiles": "Cc1ccc(NC(=O)[C@H]2C[C@H](CN3CCN(C)CC3)C2)cc1Nc1nccc(-c2cccnc2)n1",
+   "mol_weight": 471.61,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50612379,
+   "bdbm_id": "BDBM50612379",
+   "name": "CHEMBL5281225",
+   "smiles": "CN1CCN(C[C@@H]2C[C@H]2C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)CC1 |r|",
+   "mol_weight": 457.58,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50612380,
+   "bdbm_id": "BDBM50612380",
+   "name": "CHEMBL5271953",
+   "smiles": "CN1CCN(C[C@H]2C[C@@H]2C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)CC1 |r|",
+   "mol_weight": 457.58,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50612381,
+   "bdbm_id": "BDBM50612381",
+   "name": "CHEMBL5279557",
+   "smiles": "CN1CCN(CC23CC(C2)(C3)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)CC1",
+   "mol_weight": 483.62,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50612382,
+   "bdbm_id": "BDBM50612382",
+   "name": "CHEMBL5269948",
+   "smiles": "CN1CCN(CCCCC(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)CC1",
+   "mol_weight": 459.6,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50612383,
+   "bdbm_id": "BDBM50612383",
+   "name": "CHEMBL5266376",
+   "smiles": "CN1CCN(CCCCCC(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)CC1",
+   "mol_weight": 473.63,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50617736,
+   "bdbm_id": "BDBM50617736",
+   "name": "CHEMBL5423653",
+   "smiles": "COc1ccc(cc1)S(=O)(=O)N(CC(C)C)C[C@@H](O)[C@H](Cc1ccccc1)NC(=O)c1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1 |r|",
+   "mol_weight": 694.86,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50617737,
+   "bdbm_id": "BDBM50617737",
+   "name": "CHEMBL5426587",
+   "smiles": "CC(C)CN(C[C@@H](O)[C@H](Cc1ccccc1)NC(=O)c1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1)S(=O)(=O)c1ccc(N)cc1 |r|",
+   "mol_weight": 679.85,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50617738,
+   "bdbm_id": "BDBM50617738",
+   "name": "CHEMBL5405409",
+   "smiles": "COc1ccc(cc1)S(=O)(=O)N(CC(C)C)C[C@@H](O)[C@H](Cc1cc(F)cc(F)c1)NC(=O)c1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1 |r|",
+   "mol_weight": 730.84,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50617739,
+   "bdbm_id": "BDBM50617739",
+   "name": "CHEMBL5415174",
+   "smiles": "CC(C)CN(C[C@@H](O)[C@H](Cc1cc(F)cc(F)c1)NC(=O)c1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1)S(=O)(=O)c1ccc(N)cc1 |r|",
+   "mol_weight": 715.83,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50622731,
+   "bdbm_id": "BDBM50622731",
+   "name": "CHEMBL5398492",
+   "smiles": "CN(C)CCCNC(=O)c1cc2ccc(Nc3nccc(-c4cccnc4)n3)cc2[nH]1",
+   "mol_weight": 415.5,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 50668888,
+   "bdbm_id": "BDBM50668888",
+   "name": "CHEMBL6192206",
+   "smiles": "CCOc1ccc(-c2cn(C)c3cc(NC(=O)c4ccc(C)c(Nc5nccc(-c6cccnc6)n5)c4)ccc23)cn1",
+   "mol_weight": 555.64,
+   "n_activities": 1,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 31341,
+   "bdbm_id": "BDBM31341",
+   "name": "IMATINIB",
+   "smiles": "Cc1ccc(cc1Nc2nccc(n2)c3cccnc3)NC(=O)c4ccc(cc4)CN5CCN(CC5)C",
+   "mol_weight": null,
+   "n_activities": 0,
+   "n_targets": 0
+  },
+  {
+   "monomerid": 120399,
+   "bdbm_id": "BDBM120399",
+   "name": "US8703771, 12",
+   "smiles": "CN1CCN(CC1)C1CCc2cc(ccc12)C(=O)Nc1ccc(C)c(Nc2nccc(n2)-c2cccnc2)c1",
+   "mol_weight": null,
+   "n_activities": 0,
+   "n_targets": 0
+  },
+  {
+   "monomerid": 414530,
+   "bdbm_id": "BDBM414530",
+   "name": "US10435400, Compound Z-25",
+   "smiles": "COc1cc(N2CCC(CC2)N(C)C)c(NC(=O)C=C)cc1Nc1nccc(n1)-c1cnc2n(C)ccc2c1",
+   "mol_weight": null,
+   "n_activities": 0,
+   "n_targets": 0
+  },
+  {
+   "monomerid": 414542,
+   "bdbm_id": "BDBM414542",
+   "name": "US10435400, Compound Z-87",
+   "smiles": "COc1cc(N(C)CCN(C)C)c(NC(=O)C=C)cc1Nc1nccc(n1)-c1cnc2n(C)ccc2c1",
+   "mol_weight": null,
+   "n_activities": 0,
+   "n_targets": 0
+  },
+  {
+   "monomerid": 414543,
+   "bdbm_id": "BDBM414543",
+   "name": "US10435400, Compound Z-88",
+   "smiles": "COc1cc(N(C)CCN(C)C)c(NC(=O)C=C)cc1Nc1ncc(Cl)c(n1)-c1cnc2n(C)ccc2c1",
+   "mol_weight": null,
+   "n_activities": 0,
+   "n_targets": 0
+  },
+  {
+   "monomerid": 481139,
+   "bdbm_id": "BDBM481139",
+   "name": "US10906896, Cpd 8230",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3ccns3)c2)CC1",
+   "mol_weight": null,
+   "n_activities": 0,
+   "n_targets": 0
+  },
+  {
+   "monomerid": 481146,
+   "bdbm_id": "BDBM481146",
+   "name": "US10906896, Cpd 8300",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cncc(c3)-c3ccn(C)n3)c2)CC1",
+   "mol_weight": null,
+   "n_activities": 0,
+   "n_targets": 0
+  }
+ ],
+ "compounds_searched": 1466457,
+ "search_set_size": 1466457
+}

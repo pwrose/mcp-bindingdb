@@ -1,0 +1,365 @@
+{
+ "query": {
+  "input": "CCCc1c2c(n(n1)C)C(=O)NC(=N2)c3cc(ccc3OCC)S(=O)(=O)N4CCN(CC4)C",
+  "canonical": "CCCc1nn(C)c2c(=O)[nH]c(-c3cc(S(=O)(=O)N4CCN(C)CC4)ccc3OCC)nc12",
+  "threshold": 0.7,
+  "fingerprint": "Morgan radius 2, 2048 bits, largest fragment"
+ },
+ "row_count": 35,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 14390,
+   "bdbm_id": "BDBM14390",
+   "name": "Viagra",
+   "smiles": "CCCc1c2c(n(n1)C)C(=O)NC(=N2)c3cc(ccc3OCC)S(=O)(=O)N4CCN(CC4)C",
+   "mol_weight": 474.2,
+   "n_activities": 201,
+   "n_targets": 58,
+   "similarity": 1.0
+  },
+  {
+   "monomerid": 50238854,
+   "bdbm_id": "BDBM50238854",
+   "name": "Viagra",
+   "smiles": "CCCc1nn(C)c2c(=O)[nH]c(-c3cc(S(=O)(=O)N4CCN(C)CC4)ccc3OCC)nc12",
+   "mol_weight": 474.2,
+   "n_activities": 8,
+   "n_targets": 5,
+   "similarity": 1.0
+  },
+  {
+   "monomerid": 50287543,
+   "bdbm_id": "BDBM50287543",
+   "name": "5-(2-ethoxy-5-(piperazin-1-ylsulfonyl)phenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7(6H)-one",
+   "smiles": "CCCc1nn(C)c2c(=O)[nH]c(-c3cc(S(=O)(=O)N4CCNCC4)ccc3OCC)nc12",
+   "mol_weight": 460.54981,
+   "n_activities": 4,
+   "n_targets": 3,
+   "similarity": 0.864
+  },
+  {
+   "monomerid": 50407422,
+   "bdbm_id": "BDBM50407422",
+   "name": "CHEMBL5276601",
+   "smiles": "CCCc1nn(C)c2c(=O)[nH]c(-c3cc(S(=O)(=O)N4CCC(=O)CC4)ccc3OCC)nc12",
+   "mol_weight": 473.56,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.864
+  },
+  {
+   "monomerid": 50287550,
+   "bdbm_id": "BDBM50287550",
+   "name": "5-(2-ethoxy-5-(4-(2-hydroxyethyl)piperazin-1-ylsulfonyl)phenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7(6H)-one",
+   "smiles": "CCCc1nn(C)c2c(=O)[nH]c(-c3cc(S(=O)(=O)N4CCN(CCO)CC4)ccc3OCC)nc12",
+   "mol_weight": 504.60237,
+   "n_activities": 4,
+   "n_targets": 3,
+   "similarity": 0.841
+  },
+  {
+   "monomerid": 50287545,
+   "bdbm_id": "BDBM50287545",
+   "name": "4-[4-Ethoxy-3-(1-methyl-7-oxo-3-propyl-6,7-dihydro-1H-pyrazolo[4,3-d]pyrimidin-5-yl)-benzenesulfonyl]-piperazine-1-carboxylic acid amide",
+   "smiles": "CCCc1nn(C)c2c(=O)[nH]c(-c3cc(S(=O)(=O)N4CCN(C(N)=O)CC4)ccc3OCC)nc12",
+   "mol_weight": 503.57455,
+   "n_activities": 3,
+   "n_targets": 3,
+   "similarity": 0.829
+  },
+  {
+   "monomerid": 50027774,
+   "bdbm_id": "BDBM50027774",
+   "name": "CHEMBL246337",
+   "smiles": "CCCc1nn(C)c2c(=O)[nH]c(-c3cc(S(=O)(=O)N4CCN(CCC(=O)O)CC4)ccc3OCC)nc12",
+   "mol_weight": 532.21,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.806
+  },
+  {
+   "monomerid": 50261603,
+   "bdbm_id": "BDBM50261603",
+   "name": "5-{2-Ethoxy-5-[(4-(4-fluorophenyl)piperazinylsulphonyl]phenyl)-1-methyl-3-N-propyl-1,6-dihydro-7H-pyrazolo[4,3-d]pyrimidin-7-one",
+   "smiles": "CCCc1nn(C)c2c(=O)[nH]c(-c3cc(S(=O)(=O)N4CCN(c5ccc(F)cc5)CC4)ccc3OCC)nc12",
+   "mol_weight": 554.63624,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.806
+  },
+  {
+   "monomerid": 50261648,
+   "bdbm_id": "BDBM50261648",
+   "name": "5-{2-Ethoxy-5-[(4-(4-chlorophenyl))piperazinylsulphonyl]phenyl)-1-methyl-3-N-propyl-1,6-dihydro-7H-pyrazolo[4,3-d]pyrimidin-7-one",
+   "smiles": "CCCc1nn(C)c2c(=O)[nH]c(-c3cc(S(=O)(=O)N4CCN(c5ccc(Cl)cc5)CC4)ccc3OCC)nc12",
+   "mol_weight": 571.09084,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.806
+  },
+  {
+   "monomerid": 50261652,
+   "bdbm_id": "BDBM50261652",
+   "name": "5-{2-Ethoxy-5-[(4-(1-(cyclohexyl))piperazinylsulphonyl]phenyl)-1-methyl-3-N-propyl-1,6-dihydro-7H-pyrazolo[4,3-d]pyrimidin-7-one",
+   "smiles": "CCCc1nn(C)c2c(=O)[nH]c(-c3cc(S(=O)(=O)N4CCN(C5CCCCC5)CC4)ccc3OCC)nc12",
+   "mol_weight": 542.69342,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.806
+  },
+  {
+   "monomerid": 50027738,
+   "bdbm_id": "BDBM50027738",
+   "name": "CHEMBL246135",
+   "smiles": "CCCc1nn(C)c2c(=O)[nH]c(-c3cc(S(=O)(=O)N4CCC(C(=O)O)CC4)ccc3OCC)nc12",
+   "mol_weight": 503.18,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.792
+  },
+  {
+   "monomerid": 50412319,
+   "bdbm_id": "BDBM50412319",
+   "name": "CHEMBL457207",
+   "smiles": "CCCc1nn(C)c2c(=O)[nH]c(-c3cc(S(=O)(=O)N4CCC(C(N)=O)CC4)ccc3OCC)nc12",
+   "mol_weight": 502.2,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.792
+  },
+  {
+   "monomerid": 50261574,
+   "bdbm_id": "BDBM50261574",
+   "name": "5-{2-Ethoxy-5-[(4-(1-(2-methoxyphenyl))piperazinylsulphonyl]phenyl)-1-methyl-3-N-propyl-1,6-dihydro-7H-pyrazolo[4,3-d]pyrimidin-7-one",
+   "smiles": "CCCc1nn(C)c2c(=O)[nH]c(-c3cc(S(=O)(=O)N4CCN(c5ccccc5OC)CC4)ccc3OCC)nc12",
+   "mol_weight": 566.67176,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.784
+  },
+  {
+   "monomerid": 50261602,
+   "bdbm_id": "BDBM50261602",
+   "name": "5-{2-Ethoxy-5-[(4-(2-fluorophenyl)piperazinylsulphonyl]phenyl)-1-methyl-3-N-propyl-1,6-dihydro-7H-pyrazolo[4,3-d]pyrimidin-7-one",
+   "smiles": "CCCc1nn(C)c2c(=O)[nH]c(-c3cc(S(=O)(=O)N4CCN(c5ccccc5F)CC4)ccc3OCC)nc12",
+   "mol_weight": 554.63624,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.784
+  },
+  {
+   "monomerid": 50261647,
+   "bdbm_id": "BDBM50261647",
+   "name": "5-{2-Ethoxy-5-[(4-(3-chlorophenyl))piperazinylsulphonyl]phenyl)-1-methyl-3-N-propyl-1,6-dihydro-7H-pyrazolo[4,3-d]pyrimidin-7-one",
+   "smiles": "CCCc1nn(C)c2c(=O)[nH]c(-c3cc(S(=O)(=O)N4CCN(c5cccc(Cl)c5)CC4)ccc3OCC)nc12",
+   "mol_weight": 571.09084,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.784
+  },
+  {
+   "monomerid": 50027734,
+   "bdbm_id": "BDBM50027734",
+   "name": "CHEMBL246136",
+   "smiles": "CCCc1nn(C)c2c(=O)[nH]c(-c3cc(S(=O)(=O)N4CCC(CC(=O)O)CC4)ccc3OCC)nc12",
+   "mol_weight": 517.2,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.781
+  },
+  {
+   "monomerid": 50196781,
+   "bdbm_id": "BDBM50196781",
+   "name": "CHEMBL3898716",
+   "smiles": "CCCc1nn(C)c2c(=O)[nH]c(-c3cc(S(=O)(=O)N4CCN(CCC(=O)NO)CC4)ccc3OCC)nc12",
+   "mol_weight": 547.22,
+   "n_activities": 4,
+   "n_targets": 4,
+   "similarity": 0.773
+  },
+  {
+   "monomerid": 50261649,
+   "bdbm_id": "BDBM50261649",
+   "name": "5-{2-Ethoxy-5-[(4-(4-nitrophenyl))piperazinylsulphonyl]phenyl)-1-methyl-3-N-propyl-1,6-dihydro-7H-pyrazolo[4,3-d]pyrimidin-7-one",
+   "smiles": "CCCc1nn(C)c2c(=O)[nH]c(-c3cc(S(=O)(=O)N4CCN(c5ccc([N+](=O)[O-])cc5)CC4)ccc3OCC)nc12",
+   "mol_weight": 581.64334,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.773
+  },
+  {
+   "monomerid": 50261650,
+   "bdbm_id": "BDBM50261650",
+   "name": "5-{2-Ethoxy-5-[4-(1-naphthyl)piperazinylsulphonyl]phenyl)-1-methyl-3-N-propyl-1,6-dihydro-7H-pyrazolo[4,3-d]pyrimidin-7-one",
+   "smiles": "CCCc1nn(C)c2c(=O)[nH]c(-c3cc(S(=O)(=O)N4CCN(c5cccc6ccccc56)CC4)ccc3OCC)nc12",
+   "mol_weight": 586.70446,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.773
+  },
+  {
+   "monomerid": 50027766,
+   "bdbm_id": "BDBM50027766",
+   "name": "CHEMBL391333",
+   "smiles": "CCCc1nn(C)c2c(=O)[nH]c(-c3cc(S(=O)(=O)N4CCC(CCC(=O)O)CC4)ccc3OCC)nc12",
+   "mol_weight": 531.22,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.76
+  },
+  {
+   "monomerid": 50196775,
+   "bdbm_id": "BDBM50196775",
+   "name": "CHEMBL3926754",
+   "smiles": "CCCc1nn(C)c2c(=O)[nH]c(-c3cc(S(=O)(=O)N4CCN(CCCC(=O)NO)CC4)ccc3OCC)nc12",
+   "mol_weight": 561.24,
+   "n_activities": 4,
+   "n_targets": 4,
+   "similarity": 0.753
+  },
+  {
+   "monomerid": 50027773,
+   "bdbm_id": "BDBM50027773",
+   "name": "CHEMBL264319",
+   "smiles": "CCCc1nn(C)c2c(=O)[nH]c(-c3cc(S(=O)(=O)N4CCC(CCCC(=O)O)CC4)ccc3OCC)nc12",
+   "mol_weight": 545.23,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.74
+  },
+  {
+   "monomerid": 50144220,
+   "bdbm_id": "BDBM50144220",
+   "name": "diethyl (4-(3-(1-methyl-7-oxo-3-propyl-6,7-dihydro-1H-pyrazolo[4,3-d]pyrimidin-5-yl)-4-propoxyphenylsulfonyl)piperazin-1-yl)methylphosphonate",
+   "smiles": "CCCOc1ccc(S(=O)(=O)N2CCN(CP(=O)(OCC)OCC)CC2)cc1-c1nc2c(CCC)nn(C)c2c(=O)[nH]1",
+   "mol_weight": 624.25,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.737
+  },
+  {
+   "monomerid": 50196669,
+   "bdbm_id": "BDBM50196669",
+   "name": "CHEMBL3970984",
+   "smiles": "CCCc1nn(C)c2c(=O)[nH]c(-c3cc(S(=O)(=O)N4CCN(c5ncc(C(=O)NO)cn5)CC4)ccc3OCC)nc12",
+   "mol_weight": 597.21,
+   "n_activities": 5,
+   "n_targets": 5,
+   "similarity": 0.734
+  },
+  {
+   "monomerid": 50261651,
+   "bdbm_id": "BDBM50261651",
+   "name": "5-{2-Ethoxy-5-[(4-(1-piperonyl)piperazinylsulphonyl]phenyl)-1-methyl-3-N-propyl-1,6-dihydro-7H-pyrazolo[4,3-d]pyrimidin-7-one",
+   "smiles": "CCCc1nn(C)c2c(=O)[nH]c(-c3cc(S(=O)(=O)N4CCN(Cc5ccc6c(c5)OCO6)CC4)ccc3OCC)nc12",
+   "mol_weight": 594.68186,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.734
+  },
+  {
+   "monomerid": 50196760,
+   "bdbm_id": "BDBM50196760",
+   "name": "CHEMBL3954968",
+   "smiles": "CCCc1nn(C)c2c(=O)[nH]c(-c3cc(S(=O)(=O)N4CCC(CCC(=O)NO)CC4)ccc3OCC)nc12",
+   "mol_weight": 546.23,
+   "n_activities": 4,
+   "n_targets": 4,
+   "similarity": 0.731
+  },
+  {
+   "monomerid": 50241305,
+   "bdbm_id": "BDBM50241305",
+   "name": "diethyl 2-(4-(3-(1-methyl-7-oxo-3-propyl-6,7-dihydro-1H-pyrazolo[4,3-d]pyrimidin-5-yl)-4-propoxyphenylsulfonyl)piperazin-1-yl)ethylphosphonate",
+   "smiles": "CCCOc1ccc(S(=O)(=O)N2CCN(CCP(=O)(OCC)OCC)CC2)cc1-c1nc2c(CCC)nn(C)c2c(=O)[nH]1",
+   "mol_weight": 638.27,
+   "n_activities": 2,
+   "n_targets": 1,
+   "similarity": 0.727
+  },
+  {
+   "monomerid": 50241308,
+   "bdbm_id": "BDBM50241308",
+   "name": "2-(4-(3-(1-methyl-7-oxo-3-propyl-6,7-dihydro-1H-pyrazolo[4,3-d]pyrimidin-5-yl)-4-propoxyphenylsulfonyl)piperazin-1-yl)ethylphosphonic acid",
+   "smiles": "CCCOc1ccc(S(=O)(=O)N2CCN(CCP(=O)(O)O)CC2)cc1-c1nc2c(CCC)nn(C)c2c(=O)[nH]1",
+   "mol_weight": 582.2,
+   "n_activities": 2,
+   "n_targets": 1,
+   "similarity": 0.724
+  },
+  {
+   "monomerid": 50144215,
+   "bdbm_id": "BDBM50144215",
+   "name": "{4-[3-(1-Methyl-7-oxo-3-propyl-6,7-dihydro-1H-pyrazolo[4,3-d]pyrimidin-5-yl)-4-propoxy-benzenesulfonyl]-piperazin-1-ylmethyl}-phosphonic acid",
+   "smiles": "CCCOc1ccc(S(=O)(=O)N2CCN(CP(=O)(O)O)CC2)cc1-c1nc2c(CCC)nn(C)c2c(=O)[nH]1",
+   "mol_weight": 568.19,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.724
+  },
+  {
+   "monomerid": 50241306,
+   "bdbm_id": "BDBM50241306",
+   "name": "diethyl 1-(3-(1-methyl-7-oxo-3-propyl-6,7-dihydro-1H-pyrazolo[4,3-d]pyrimidin-5-yl)-4-propoxyphenylsulfonyl)piperidin-4-ylphosphonate",
+   "smiles": "CCCOc1ccc(S(=O)(=O)N2CCC(P(=O)(OCC)OCC)CC2)cc1-c1nc2c(CCC)nn(C)c2c(=O)[nH]1",
+   "mol_weight": 609.24,
+   "n_activities": 2,
+   "n_targets": 1,
+   "similarity": 0.714
+  },
+  {
+   "monomerid": 50027728,
+   "bdbm_id": "BDBM50027728",
+   "name": "CHEMBL394886",
+   "smiles": "CCCOc1ccc(S(=O)(=O)N2CCC(C(=O)O)CC2)cc1-c1nc2c(CCC)nn(C)c2c(=O)[nH]1",
+   "mol_weight": 517.2,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.711
+  },
+  {
+   "monomerid": 50241300,
+   "bdbm_id": "BDBM50241300",
+   "name": "ethyl hydrogen (4-(3-(1-methyl-7-oxo-3-propyl-6,7-dihydro-1H-pyrazolo[4,3-d]pyrimidin-5-yl)-4-propoxyphenylsulfonyl)piperazin-1-yl)methylphosphonate",
+   "smiles": "CCCOc1ccc(S(=O)(=O)N2CCN(CP(=O)(O)OCC)CC2)cc1-c1nc2c(CCC)nn(C)c2c(=O)[nH]1",
+   "mol_weight": 596.22,
+   "n_activities": 2,
+   "n_targets": 1,
+   "similarity": 0.709
+  },
+  {
+   "monomerid": 50241301,
+   "bdbm_id": "BDBM50241301",
+   "name": "ethyl hydrogen 2-(4-(3-(1-methyl-7-oxo-3-propyl-6,7-dihydro-1H-pyrazolo[4,3-d]pyrimidin-5-yl)-4-propoxyphenylsulfonyl)piperazin-1-yl)ethylphosphonate",
+   "smiles": "CCCOc1ccc(S(=O)(=O)N2CCN(CCP(=O)(O)OCC)CC2)cc1-c1nc2c(CCC)nn(C)c2c(=O)[nH]1",
+   "mol_weight": 610.23,
+   "n_activities": 2,
+   "n_targets": 1,
+   "similarity": 0.709
+  },
+  {
+   "monomerid": 50241309,
+   "bdbm_id": "BDBM50241309",
+   "name": "1-(3-(1-methyl-7-oxo-3-propyl-6,7-dihydro-1H-pyrazolo[4,3-d]pyrimidin-5-yl)-4-propoxyphenylsulfonyl)piperidin-4-ylphosphonic acid",
+   "smiles": "CCCOc1ccc(S(=O)(=O)N2CCC(P(=O)(O)O)CC2)cc1-c1nc2c(CCC)nn(C)c2c(=O)[nH]1",
+   "mol_weight": 553.18,
+   "n_activities": 2,
+   "n_targets": 1,
+   "similarity": 0.701
+  },
+  {
+   "monomerid": 50027767,
+   "bdbm_id": "BDBM50027767",
+   "name": "CHEMBL246988",
+   "smiles": "CCCOc1ccc(S(=O)(=O)N2CCC(CC(=O)O)CC2)cc1-c1nc2c(CCC)nn(C)c2c(=O)[nH]1",
+   "mol_weight": 531.22,
+   "n_activities": 1,
+   "n_targets": 1,
+   "similarity": 0.701
+  }
+ ],
+ "n_similar_compounds": 35,
+ "compounds_searched": 1466457,
+ "search_set_size": 1466457
+}

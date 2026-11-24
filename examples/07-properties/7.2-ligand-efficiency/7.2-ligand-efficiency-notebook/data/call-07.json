@@ -1,0 +1,17 @@
+{
+ "row_count": 1,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 50580216,
+   "bdbm_id": "BDBM50580216",
+   "name": "VERUBECESTAT",
+   "inchi_key": "YHYKUSGACIYRML-KRWDZBQOSA-N",
+   "smiles": "C[C@]1(CS(=O)(=O)N(C(=N1)N)C)c2cc(ccc2F)NC(=O)c3ccc(cn3)F",
+   "mol_weight": 409.42,
+   "n_activities": 6,
+   "n_targets": 3,
+   "matched_name": "Verubecestat"
+  }
+ ]
+}

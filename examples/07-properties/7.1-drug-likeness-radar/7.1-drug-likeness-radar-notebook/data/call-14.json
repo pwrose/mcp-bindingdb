@@ -1,0 +1,126 @@
+{
+ "row_count": 15,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 11162,
+   "target": 1234,
+   "n_exact": 68,
+   "median_nm": 18.0,
+   "n_inactive": 0,
+   "max_conc_nm": null
+  },
+  {
+   "monomerid": 11162,
+   "target": 1236,
+   "n_exact": 16,
+   "median_nm": 48000.0,
+   "n_inactive": 9,
+   "max_conc_nm": 100000.0
+  },
+  {
+   "monomerid": 11162,
+   "target": 1237,
+   "n_exact": 8,
+   "median_nm": 77705.0,
+   "n_inactive": 13,
+   "max_conc_nm": 100000.0
+  },
+  {
+   "monomerid": 11695,
+   "target": 1234,
+   "n_exact": 36,
+   "median_nm": 51.0,
+   "n_inactive": 0,
+   "max_conc_nm": null
+  },
+  {
+   "monomerid": 11695,
+   "target": 1236,
+   "n_exact": 20,
+   "median_nm": 9000.0,
+   "n_inactive": 0,
+   "max_conc_nm": null
+  },
+  {
+   "monomerid": 11695,
+   "target": 1237,
+   "n_exact": 13,
+   "median_nm": 200.0,
+   "n_inactive": 0,
+   "max_conc_nm": null
+  },
+  {
+   "monomerid": 16285,
+   "target": 1234,
+   "n_exact": 33,
+   "median_nm": 4.5,
+   "n_inactive": 0,
+   "max_conc_nm": null
+  },
+  {
+   "monomerid": 16285,
+   "target": 1236,
+   "n_exact": 0,
+   "median_nm": null,
+   "n_inactive": 12,
+   "max_conc_nm": 100000.0
+  },
+  {
+   "monomerid": 16285,
+   "target": 1237,
+   "n_exact": 0,
+   "median_nm": null,
+   "n_inactive": 12,
+   "max_conc_nm": 1000000.0
+  },
+  {
+   "monomerid": 50225074,
+   "target": 1234,
+   "n_exact": 9,
+   "median_nm": 3.4,
+   "n_inactive": 0,
+   "max_conc_nm": null
+  },
+  {
+   "monomerid": 50225074,
+   "target": 1236,
+   "n_exact": 2,
+   "median_nm": 242.0,
+   "n_inactive": 0,
+   "max_conc_nm": null
+  },
+  {
+   "monomerid": 50225074,
+   "target": 1237,
+   "n_exact": 2,
+   "median_nm": 102.0,
+   "n_inactive": 0,
+   "max_conc_nm": null
+  },
+  {
+   "monomerid": 50228403,
+   "target": 1234,
+   "n_exact": 25,
+   "median_nm": 1.0,
+   "n_inactive": 0,
+   "max_conc_nm": null
+  },
+  {
+   "monomerid": 50228403,
+   "target": 1236,
+   "n_exact": 1,
+   "median_nm": 40000.0,
+   "n_inactive": 3,
+   "max_conc_nm": 100000.0
+  },
+  {
+   "monomerid": 50228403,
+   "target": 1237,
+   "n_exact": 0,
+   "median_nm": null,
+   "n_inactive": 3,
+   "max_conc_nm": 1000000.0
+  }
+ ]
+}

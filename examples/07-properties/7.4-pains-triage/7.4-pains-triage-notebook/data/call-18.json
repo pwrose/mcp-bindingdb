@@ -1,0 +1,17 @@
+{
+ "row_count": 1,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 50624921,
+   "bdbm_id": "BDBM50624921",
+   "name": "4-Phenylcatechol",
+   "inchi_key": "QDNPCYCBQFHNJC-UHFFFAOYSA-N",
+   "smiles": "Oc1ccc(cc1O)-c1ccccc1",
+   "mol_weight": 186.21,
+   "n_activities": 2,
+   "n_targets": 1,
+   "matched_name": "4-Phenylcatechol"
+  }
+ ]
+}

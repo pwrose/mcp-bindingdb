@@ -1,0 +1,106 @@
+{
+ "row_count": 25,
+ "truncated": false,
+ "rows": [
+  {
+   "target": "Autotaxin",
+   "patents": 55
+  },
+  {
+   "target": "Poly [ADP-ribose] polymerase 1",
+   "patents": 49
+  },
+  {
+   "target": "GTPase KRas",
+   "patents": 44
+  },
+  {
+   "target": "Isocitrate dehydrogenase [NADP] cytoplasmic",
+   "patents": 43
+  },
+  {
+   "target": "Apoptosis regulator Bcl-2",
+   "patents": 35
+  },
+  {
+   "target": "Protein O-GlcNAcase",
+   "patents": 33
+  },
+  {
+   "target": "Monoglyceride lipase",
+   "patents": 27
+  },
+  {
+   "target": "Egl nine homolog 1",
+   "patents": 26
+  },
+  {
+   "target": "Dihydroorotate dehydrogenase (quinone), mitochondrial",
+   "patents": 24
+  },
+  {
+   "target": "Diacylglycerol O-acyltransferase 2",
+   "patents": 24
+  },
+  {
+   "target": "Induced myeloid leukemia cell differentiation protein Mcl-1",
+   "patents": 23
+  },
+  {
+   "target": "Amine oxidase [copper-containing] 3",
+   "patents": 22
+  },
+  {
+   "target": "Acetyl-CoA carboxylase 2",
+   "patents": 20
+  },
+  {
+   "target": "Nicotinamide phosphoribosyltransferase",
+   "patents": 19
+  },
+  {
+   "target": "Glutaminyl-peptide cyclotransferase",
+   "patents": 18
+  },
+  {
+   "target": "Fatty-acid amide hydrolase 1",
+   "patents": 17
+  },
+  {
+   "target": "Heat shock protein HSP 90-alpha",
+   "patents": 17
+  },
+  {
+   "target": "Mucosa-associated lymphoid tissue lymphoma translocation protein 1",
+   "patents": 17
+  },
+  {
+   "target": "Diacylglycerol O-acyltransferase 1",
+   "patents": 15
+  },
+  {
+   "target": "Amyloid-beta precursor protein",
+   "patents": 15
+  },
+  {
+   "target": "11-beta-hydroxysteroid dehydrogenase 1",
+   "patents": 15
+  },
+  {
+   "target": "Glutaminase kidney isoform, mitochondrial",
+   "patents": 14
+  },
+  {
+   "target": "15-hydroxyprostaglandin dehydrogenase [NAD(+)]",
+   "patents": 14
+  },
+  {
+   "target": "DNA polymerase theta",
+   "patents": 13
+  },
+  {
+   "target": "Steroid 17-alpha-hydroxylase/17,20 lyase",
+   "patents": 13
+  }
+ ]
+}

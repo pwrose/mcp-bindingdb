@@ -1,0 +1,22 @@
+{
+ "query": {
+  "input": "C[C@@H](Oc1cc(cnc1N)-c1cnn(c1)C1CCNCC1)c1c(Cl)ccc(F)c1Cl",
+  "canonical": "C[C@@H](Oc1cc(-c2cnn(C3CCNCC3)c2)cnc1N)c1c(Cl)ccc(F)c1Cl",
+  "inchi_key": "KTEIFNKAUNYNJU-GFCCVEGCSA-N",
+  "match": "same canonical isomeric SMILES (salts, stereo, charges and isotopes included)"
+ },
+ "row_count": 1,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 50306682,
+   "bdbm_id": "BDBM50306682",
+   "name": "CRIZOTINIB",
+   "smiles": "C[C@@H](Oc1cc(cnc1N)-c1cnn(c1)C1CCNCC1)c1c(Cl)ccc(F)c1Cl |r|",
+   "mol_weight": 450.33668,
+   "n_activities": 813,
+   "n_targets": 402
+  }
+ ],
+ "n_exact_matches": 1
+}

@@ -1,0 +1,182 @@
+{
+ "row_count": 22,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 4779,
+   "affinity_type": "Ki",
+   "relation": "=",
+   "value": 7.1,
+   "source_id": "38134304",
+   "ki_result_id": 51593283
+  },
+  {
+   "monomerid": 4779,
+   "affinity_type": "Ki",
+   "relation": "=",
+   "value": 8.9,
+   "source_id": "38134304",
+   "ki_result_id": 51593274
+  },
+  {
+   "monomerid": 5446,
+   "affinity_type": "Ki",
+   "relation": "=",
+   "value": 0.1,
+   "source_id": "25383627",
+   "ki_result_id": 50247882
+  },
+  {
+   "monomerid": 5446,
+   "affinity_type": "Ki",
+   "relation": "=",
+   "value": 0.1,
+   "source_id": "26639762",
+   "ki_result_id": 50459684
+  },
+  {
+   "monomerid": 5446,
+   "affinity_type": "Ki",
+   "relation": "=",
+   "value": 0.1,
+   "source_id": "26819674",
+   "ki_result_id": 50485154
+  },
+  {
+   "monomerid": 5446,
+   "affinity_type": "Ki",
+   "relation": "=",
+   "value": 2.7,
+   "source_id": "9354447",
+   "ki_result_id": 51623177
+  },
+  {
+   "monomerid": 5446,
+   "affinity_type": "Ki",
+   "relation": "=",
+   "value": 45.0,
+   "source_id": "28478927",
+   "ki_result_id": 50761674
+  },
+  {
+   "monomerid": 5446,
+   "affinity_type": "Ki",
+   "relation": "=",
+   "value": 13700000.0,
+   "source_id": "39299082",
+   "ki_result_id": 51632313
+  },
+  {
+   "monomerid": 5447,
+   "affinity_type": "Ki",
+   "relation": "=",
+   "value": 0.4,
+   "source_id": "15975507",
+   "ki_result_id": 50917515
+  },
+  {
+   "monomerid": 5447,
+   "affinity_type": "Ki",
+   "relation": "=",
+   "value": 2.1,
+   "source_id": "12384534",
+   "ki_result_id": 51622484
+  },
+  {
+   "monomerid": 5447,
+   "affinity_type": "Ki",
+   "relation": "=",
+   "value": 2.5,
+   "source_id": "37669428",
+   "ki_result_id": 51563627
+  },
+  {
+   "monomerid": 5447,
+   "affinity_type": "Ki",
+   "relation": "=",
+   "value": 6.4,
+   "source_id": "37669428",
+   "ki_result_id": 51563625
+  },
+  {
+   "monomerid": 5447,
+   "affinity_type": "Ki",
+   "relation": "=",
+   "value": 11.0,
+   "source_id": "37669428",
+   "ki_result_id": 51563628
+  },
+  {
+   "monomerid": 5447,
+   "affinity_type": "Ki",
+   "relation": "=",
+   "value": 15.0,
+   "source_id": "12384534",
+   "ki_result_id": 51622485
+  },
+  {
+   "monomerid": 5447,
+   "affinity_type": "Ki",
+   "relation": "=",
+   "value": 16.0,
+   "source_id": "37669428",
+   "ki_result_id": 51563624
+  },
+  {
+   "monomerid": 5447,
+   "affinity_type": "Ki",
+   "relation": "=",
+   "value": 26.0,
+   "source_id": "37669428",
+   "ki_result_id": 51563626
+  },
+  {
+   "monomerid": 50161957,
+   "affinity_type": "Ki",
+   "relation": "=",
+   "value": 4.5,
+   "source_id": "38134304",
+   "ki_result_id": 51593282
+  },
+  {
+   "monomerid": 50161957,
+   "affinity_type": "Ki",
+   "relation": "=",
+   "value": 6.9,
+   "source_id": "38134304",
+   "ki_result_id": 51593273
+  },
+  {
+   "monomerid": 50322823,
+   "affinity_type": "Ki",
+   "relation": "=",
+   "value": 0.65,
+   "source_id": "38134304",
+   "ki_result_id": 51593272
+  },
+  {
+   "monomerid": 50322823,
+   "affinity_type": "Ki",
+   "relation": "=",
+   "value": 45.0,
+   "source_id": "38134304",
+   "ki_result_id": 51593281
+  },
+  {
+   "monomerid": 50613687,
+   "affinity_type": "Ki",
+   "relation": "<",
+   "value": 0.6,
+   "source_id": "27564586",
+   "ki_result_id": 51525430
+  },
+  {
+   "monomerid": 50613687,
+   "affinity_type": "Ki",
+   "relation": "=",
+   "value": 2.0,
+   "source_id": "27564586",
+   "ki_result_id": 51525470
+  }
+ ]
+}

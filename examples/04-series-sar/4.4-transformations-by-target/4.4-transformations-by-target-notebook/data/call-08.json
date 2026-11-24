@@ -1,0 +1,78 @@
+{
+ "row_count": 6,
+ "truncated": false,
+ "rows": [
+  {
+   "target_kind": "polymer",
+   "target_id": 738,
+   "name": "Nuclear receptor ROR-gamma",
+   "uniprot": "P51449",
+   "uniprot_raw": "P51449",
+   "organism": "Homo sapiens",
+   "type": "Enzyme Catalytic Domain",
+   "n_activities": 14722,
+   "n_compounds": 9600,
+   "matched_name": "Nuclear receptor ROR-gamma"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 430,
+   "name": "Nuclear receptor ROR-gamma [262-507]",
+   "uniprot": "P51449",
+   "uniprot_raw": "P51449[262-507]",
+   "organism": "Homo sapiens",
+   "type": "Enzyme Catalytic Domain",
+   "n_activities": 2063,
+   "n_compounds": 1925,
+   "matched_name": "Nuclear receptor ROR-gamma"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 673,
+   "name": "Isoform 2 of Nuclear receptor ROR-gamma (RORgT)",
+   "uniprot": "P51449",
+   "uniprot_raw": "P51449-2",
+   "organism": "Homo sapiens",
+   "type": "Protein",
+   "n_activities": 1067,
+   "n_compounds": 463,
+   "matched_name": "Nuclear receptor ROR-gammaT"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 363,
+   "name": "Nuclear receptor ROR-gamma [238-497]",
+   "uniprot": "P51449",
+   "uniprot_raw": "P51449[238-497]",
+   "organism": "Homo sapiens",
+   "type": "Protein",
+   "n_activities": 278,
+   "n_compounds": 162,
+   "matched_name": "Nuclear receptor ROR-gamma [238-497]"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 9294,
+   "name": "Nuclear receptor ROR-gamma [258-518,Y502F]",
+   "uniprot": "P51449",
+   "uniprot_raw": "P51449[258-518,Y502F]",
+   "organism": "Homo sapiens",
+   "type": "Enzyme",
+   "n_activities": 83,
+   "n_compounds": 43,
+   "matched_name": "Nuclear receptor ROR-gamma [258-518,Y502F]"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 9293,
+   "name": "Nuclear receptor ROR-gamma [258-518]",
+   "uniprot": "P51449",
+   "uniprot_raw": "P51449[258-518]",
+   "organism": "Homo sapiens",
+   "type": "Enzyme",
+   "n_activities": 68,
+   "n_compounds": 41,
+   "matched_name": "Nuclear receptor ROR-gamma [258-518]"
+  }
+ ]
+}

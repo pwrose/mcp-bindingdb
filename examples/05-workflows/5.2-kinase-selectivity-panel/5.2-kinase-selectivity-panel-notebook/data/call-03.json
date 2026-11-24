@@ -1,0 +1,41 @@
+{
+ "query": "dasatinib",
+ "resolved": true,
+ "source": "bindingdb",
+ "smiles": "Cc1cccc(c1NC(=O)c2cnc(s2)Nc3cc(nc(n3)C)N4CCN(CC4)CCO)Cl",
+ "inchi_key": "ZBNZXTGUTAYRHI-UHFFFAOYSA-N",
+ "monomerid": 13216,
+ "ambiguous": true,
+ "candidates": [
+  {
+   "monomerid": 13216,
+   "bdbm_id": "BDBM13216",
+   "name": "DASATINIB",
+   "inchi_key": "ZBNZXTGUTAYRHI-UHFFFAOYSA-N",
+   "smiles": "Cc1cccc(c1NC(=O)c2cnc(s2)Nc3cc(nc(n3)C)N4CCN(CC4)CCO)Cl",
+   "n_activities": 1226
+  },
+  {
+   "monomerid": 31089,
+   "bdbm_id": "BDBM31089",
+   "name": "DASATINIB",
+   "inchi_key": "ZBNZXTGUTAYRHI-UHFFFAOYSA-N",
+   "smiles": "Cc1cccc(c1NC(=O)c2cnc(s2)Nc3cc(nc(n3)C)N4CCN(CC4)CCO)Cl",
+   "n_activities": 16
+  },
+  {
+   "monomerid": 82130,
+   "bdbm_id": "BDBM82130",
+   "name": "Dasatinib",
+   "inchi_key": "JGPNDAHBLOQVAU-UHFFFAOYSA-N",
+   "smiles": "Cc1nc(cc(n1)N1CCN(CCO)CC1)N=C1NCC(S1)C(=O)Nc1c(C)cccc1Cl |w:16.17|",
+   "n_activities": 3
+  }
+ ],
+ "sources_tried": [
+  {
+   "source": "bindingdb",
+   "status": "found"
+  }
+ ]
+}

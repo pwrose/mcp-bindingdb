@@ -1,0 +1,126 @@
+{
+ "row_count": 10,
+ "truncated": false,
+ "rows": [
+  {
+   "target_kind": "polymer",
+   "target_id": 1341,
+   "name": "Coagulation factor X",
+   "uniprot": "P00742",
+   "uniprot_raw": "P00742",
+   "organism": "Homo sapiens",
+   "type": "Enzyme",
+   "n_activities": 8385,
+   "n_compounds": 7201,
+   "matched_name": "Coagulation factor X"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 5023,
+   "name": "Neutrophil elastase",
+   "uniprot": "P08246",
+   "uniprot_raw": "P08246",
+   "organism": "Homo sapiens",
+   "type": "Enzyme",
+   "n_activities": 4695,
+   "n_compounds": 3478,
+   "matched_name": "Coagulation factor X"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1357,
+   "name": "Coagulation factor XI",
+   "uniprot": "P03951",
+   "uniprot_raw": "P03951",
+   "organism": "Homo sapiens",
+   "type": "Enzyme",
+   "n_activities": 6746,
+   "n_compounds": 4822,
+   "matched_name": "Coagulation factor XI"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 8446,
+   "name": "Coagulation factor XII",
+   "uniprot": "P00748",
+   "uniprot_raw": "P00748",
+   "organism": "Homo sapiens",
+   "type": "Enzyme",
+   "n_activities": 2816,
+   "n_compounds": 2672,
+   "matched_name": "Coagulation factor XII"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1568,
+   "name": "Vitamin K-dependent protein C",
+   "uniprot": "P04070",
+   "uniprot_raw": "P04070",
+   "organism": "Homo sapiens",
+   "type": "Enzyme",
+   "n_activities": 395,
+   "n_compounds": 344,
+   "matched_name": "Blood coagulation factor XIV"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50003192,
+   "name": "Coagulation factor XIII A chain",
+   "uniprot": "P00488",
+   "uniprot_raw": "P00488",
+   "organism": "Homo sapiens",
+   "type": "PROTEIN",
+   "n_activities": 207,
+   "n_compounds": 200,
+   "matched_name": "Coagulation factor XIII"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 7810,
+   "name": "Coagulation factor XIII A chain [Q652E]",
+   "uniprot": "P00488",
+   "uniprot_raw": "P00488[Q652E]",
+   "organism": "Homo sapiens",
+   "type": "Protein",
+   "n_activities": 35,
+   "n_compounds": 33,
+   "matched_name": "Coagulation factor XIII A (FXIIIa)"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50000015,
+   "name": "Antithrombin-III",
+   "uniprot": "P01008",
+   "uniprot_raw": "P01008",
+   "organism": "Homo sapiens",
+   "type": "PROTEIN",
+   "n_activities": 21,
+   "n_compounds": 21,
+   "matched_name": "Coagulation factor X/antithrombin III"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 11120,
+   "name": "Coagulation factor XII [20-615]",
+   "uniprot": "P00748",
+   "uniprot_raw": "P00748[20-615]",
+   "organism": "Homo sapiens",
+   "type": "Enzyme",
+   "n_activities": 1,
+   "n_compounds": 1,
+   "matched_name": "Coagulation factor XIIa"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1310,
+   "name": "Coagulation factor XIII B chain",
+   "uniprot": "P05160",
+   "uniprot_raw": "P05160",
+   "organism": "Homo sapiens",
+   "type": "Protein",
+   "n_activities": 0,
+   "n_compounds": 0,
+   "matched_name": "Coagulation factor XIII B chain"
+  }
+ ]
+}

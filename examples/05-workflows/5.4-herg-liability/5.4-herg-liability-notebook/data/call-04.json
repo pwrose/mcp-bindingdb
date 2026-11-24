@@ -1,0 +1,25 @@
+{
+ "query": "ibutilide",
+ "resolved": true,
+ "source": "bindingdb",
+ "smiles": "CCCCCCCN(CC)CCCC(O)c1ccc(NS(C)(=O)=O)cc1",
+ "inchi_key": "ALOBUEHUHMBRLE-UHFFFAOYSA-N",
+ "monomerid": 50131432,
+ "ambiguous": false,
+ "candidates": [
+  {
+   "monomerid": 50131432,
+   "bdbm_id": "BDBM50131432",
+   "name": "Corvert",
+   "inchi_key": "ALOBUEHUHMBRLE-UHFFFAOYSA-N",
+   "smiles": "CCCCCCCN(CC)CCCC(O)c1ccc(NS(C)(=O)=O)cc1",
+   "n_activities": 6
+  }
+ ],
+ "sources_tried": [
+  {
+   "source": "bindingdb",
+   "status": "found"
+  }
+ ]
+}

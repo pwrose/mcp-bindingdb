@@ -1,0 +1,33 @@
+{
+ "query": "clozapine",
+ "resolved": true,
+ "source": "bindingdb",
+ "smiles": "CN1CCN(CC1)C2=Nc3cc(ccc3Nc4c2cccc4)Cl",
+ "inchi_key": "QZUDBNBUXVUHMW-UHFFFAOYSA-N",
+ "monomerid": 50001884,
+ "ambiguous": true,
+ "candidates": [
+  {
+   "monomerid": 50001884,
+   "bdbm_id": "BDBM50001884",
+   "name": "CLOZARIL",
+   "inchi_key": "QZUDBNBUXVUHMW-UHFFFAOYSA-N",
+   "smiles": "CN1CCN(CC1)C2=Nc3cc(ccc3Nc4c2cccc4)Cl",
+   "n_activities": 635
+  },
+  {
+   "monomerid": 22869,
+   "bdbm_id": "BDBM22869",
+   "name": "Leponex",
+   "inchi_key": "ZUXABONWMNSFBN-UHFFFAOYSA-N",
+   "smiles": "CN1CCN(C2=c3ccccc3=Nc3ccc(Cl)cc3N2)CC1",
+   "n_activities": 413
+  }
+ ],
+ "sources_tried": [
+  {
+   "source": "bindingdb",
+   "status": "found"
+  }
+ ]
+}

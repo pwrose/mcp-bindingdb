@@ -1,0 +1,17 @@
+{
+ "row_count": 2,
+ "truncated": false,
+ "rows": [
+  {
+   "item": "largest patent: US12581252-B2",
+   "value": "Phosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit alpha isoform",
+   "count": 2689
+  },
+  {
+   "item": "JAK family (JAK1, JAK2, JAK3, TYK2) as lead",
+   "value": null,
+   "count": 291
+  }
+ ],
+ "order_warning": "The query has no ORDER BY, so its 2 rows can come back in a different order. Add an ORDER BY that ends with a unique column (e.g. monomerid; ki_result_id, affinity_type for measurements) so the result is the same on every run and a notebook's rerun check passes."
+}

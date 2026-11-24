@@ -1,0 +1,25 @@
+{
+ "query": "domperidone",
+ "resolved": true,
+ "source": "bindingdb",
+ "smiles": "c1ccc2c(c1)NC(=O)N2CCCN3CCC(CC3)N4c5ccc(cc5NC4=O)Cl",
+ "inchi_key": "FGXWKSZFVQUSTL-UHFFFAOYSA-N",
+ "monomerid": 50241107,
+ "ambiguous": false,
+ "candidates": [
+  {
+   "monomerid": 50241107,
+   "bdbm_id": "BDBM50241107",
+   "name": "DOMPERIDONE",
+   "inchi_key": "FGXWKSZFVQUSTL-UHFFFAOYSA-N",
+   "smiles": "c1ccc2c(c1)NC(=O)N2CCCN3CCC(CC3)N4c5ccc(cc5NC4=O)Cl",
+   "n_activities": 55
+  }
+ ],
+ "sources_tried": [
+  {
+   "source": "bindingdb",
+   "status": "found"
+  }
+ ]
+}

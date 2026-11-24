@@ -1,0 +1,49 @@
+{
+ "row_count": 7,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 50237710,
+   "inchi_key": "HHZIURLSWUIHRB-UHFFFAOYSA-N",
+   "name": "NILOTINIB",
+   "n_activities": 614
+  },
+  {
+   "monomerid": 13530,
+   "inchi_key": "KTUFNOKKBVMGRW-UHFFFAOYSA-N",
+   "name": "Gleevec",
+   "n_activities": 1156
+  },
+  {
+   "monomerid": 31341,
+   "inchi_key": "KTUFNOKKBVMGRW-UHFFFAOYSA-N",
+   "name": "IMATINIB",
+   "n_activities": 0
+  },
+  {
+   "monomerid": 86734,
+   "inchi_key": "KTUFNOKKBVMGRW-UHFFFAOYSA-N",
+   "name": "Gleevec",
+   "n_activities": 66
+  },
+  {
+   "monomerid": 4552,
+   "inchi_key": "UBPYILGKFZZVDX-UHFFFAOYSA-N",
+   "name": "BOSUTINIB",
+   "n_activities": 585
+  },
+  {
+   "monomerid": 13216,
+   "inchi_key": "ZBNZXTGUTAYRHI-UHFFFAOYSA-N",
+   "name": "DASATINIB",
+   "n_activities": 1226
+  },
+  {
+   "monomerid": 31089,
+   "inchi_key": "ZBNZXTGUTAYRHI-UHFFFAOYSA-N",
+   "name": "DASATINIB",
+   "n_activities": 16
+  }
+ ],
+ "order_warning": "Rows 2 and 3 tie on every ORDER BY column (inchi_key), so rows like them can swap places from run to run. End the ORDER BY with a unique column (e.g. monomerid; ki_result_id, affinity_type for measurements) so the result is the same on every run and a notebook's rerun check passes."
+}

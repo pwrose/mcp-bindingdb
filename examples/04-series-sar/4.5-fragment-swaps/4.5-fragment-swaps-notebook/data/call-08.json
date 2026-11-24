@@ -1,0 +1,79 @@
+{
+ "row_count": 8,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 50121730,
+   "sources": "12467624",
+   "year": 2002,
+   "n": 1,
+   "types": [
+    "Ki"
+   ]
+  },
+  {
+   "monomerid": 50121731,
+   "sources": "12467624",
+   "year": 2002,
+   "n": 2,
+   "types": [
+    "IC50",
+    "Ki"
+   ]
+  },
+  {
+   "monomerid": 50121732,
+   "sources": "12467624",
+   "year": 2002,
+   "n": 1,
+   "types": [
+    "Ki"
+   ]
+  },
+  {
+   "monomerid": 50121735,
+   "sources": "12467624",
+   "year": 2002,
+   "n": 1,
+   "types": [
+    "Ki"
+   ]
+  },
+  {
+   "monomerid": 50541883,
+   "sources": "32551001",
+   "year": 2020,
+   "n": 1,
+   "types": [
+    "Ki"
+   ]
+  },
+  {
+   "monomerid": 50541884,
+   "sources": "32551001",
+   "year": 2020,
+   "n": 1,
+   "types": [
+    "Ki"
+   ]
+  },
+  {
+   "monomerid": 50541886,
+   "sources": "32551001",
+   "year": 2020,
+   "n": 1,
+   "types": [
+    "Ki"
+   ]
+  },
+  {
+   "monomerid": 50541887,
+   "sources": "32551001",
+   "year": 2020,
+   "n": 1,
+   "types": [
+    "Ki"
+   ]
+  }
+ ]
+}

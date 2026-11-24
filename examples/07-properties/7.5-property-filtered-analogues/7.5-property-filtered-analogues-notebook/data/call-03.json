@@ -1,0 +1,406 @@
+{
+ "compound": {
+  "monomerid": 50357312,
+  "bdbm_id": "BDBM50357312",
+  "name": "IBRUTINIB",
+  "inchi_key": "XYFPWWZEPKGCCK-GOSISDBHSA-N",
+  "smiles": "Nc1ncnc2n(nc(-c3ccc(Oc4ccccc4)cc3)c12)[C@@H]1CCCN(C1)C(=O)C=C",
+  "formula": "C25H24N6O2",
+  "mol_weight": 440.2,
+  "type": "Small organic molecule",
+  "het_pdb": "",
+  "n_pdb_ids_exact": 0,
+  "n_activities": 454,
+  "n_targets": 49,
+  "inchi": "InChI=1S/C25H24N6O2/c1-2-21(32)30-14-6-7-18(15-30)31-25-22(24(26)27-16-28-25)23(29-31)17-10-12-20(13-11-17)33-19-8-4-3-5-9-19/h2-5,8-13,16,18H,1,6-7,14-15H2,(H2,26,27,28)/t18-/m1/s1",
+  "pdb_ids_exact": "",
+  "pdb_ids_sub": null
+ },
+ "synonyms": [
+  "IBRUTINIB",
+  "PCI-32765",
+  "US9181263, 1",
+  "US9278100, 1",
+  "US9108973, Ref 1",
+  "US10919899, Ibrutinib",
+  "US20240358707, Compound 13",
+  "US10835536, Ref. Ex. Comp 1",
+  "US10793575, Example ibrutinib",
+  "US11078206, Example Ibrutinib",
+  "US11186578, Example Ibrutinib",
+  "US11339167, Example Ibrutinib",
+  "US11407754, Example Ibrutinib",
+  "US10711006, Compound Ibrutinib",
+  "US12606566, Compound Ibrutinib",
+  "US10124003, Ref. Ex. Compound 1",
+  "US20230364079, Example Ibrutinib",
+  "US20240059694, Compound Ibrutinib",
+  "US20240139326, Compound Ibrutinib",
+  "US20250304585, Compound Ibrutinib"
+ ],
+ "top_targets": [
+  {
+   "polymerid": 1846,
+   "complexid": null,
+   "target_name": "Tyrosine-protein kinase BTK",
+   "uniprot_raw": "Q06187",
+   "organism": "Homo sapiens",
+   "n_measurements": 150,
+   "best_p_affinity": 10.1,
+   "affinity_types": [
+    "EC50",
+    "IC50",
+    "Kd",
+    "Ki"
+   ],
+   "best_ligand_efficiency": 0.42
+  },
+  {
+   "polymerid": 5620,
+   "complexid": null,
+   "target_name": "Tyrosine-protein kinase Blk",
+   "uniprot_raw": "P51451",
+   "organism": "Homo sapiens",
+   "n_measurements": 17,
+   "best_p_affinity": 10.0,
+   "affinity_types": [
+    "EC50",
+    "IC50",
+    "Kd"
+   ],
+   "best_ligand_efficiency": 0.42
+  },
+  {
+   "polymerid": 5143,
+   "complexid": null,
+   "target_name": "Receptor tyrosine-protein kinase erbB-4",
+   "uniprot_raw": "Q15303",
+   "organism": "Homo sapiens",
+   "n_measurements": 15,
+   "best_p_affinity": 10.0,
+   "affinity_types": [
+    "IC50",
+    "Kd"
+   ],
+   "best_ligand_efficiency": 0.42
+  },
+  {
+   "polymerid": 2712,
+   "complexid": null,
+   "target_name": "Cytoplasmic tyrosine-protein kinase BMX",
+   "uniprot_raw": "P51813",
+   "organism": "Homo sapiens",
+   "n_measurements": 20,
+   "best_p_affinity": 9.4,
+   "affinity_types": [
+    "IC50",
+    "Kd"
+   ],
+   "best_ligand_efficiency": 0.39
+  },
+  {
+   "polymerid": 520,
+   "complexid": null,
+   "target_name": "Epidermal growth factor receptor",
+   "uniprot_raw": "P00533",
+   "organism": "Homo sapiens",
+   "n_measurements": 48,
+   "best_p_affinity": 9.3,
+   "affinity_types": [
+    "EC50",
+    "IC50",
+    "Kd"
+   ],
+   "best_ligand_efficiency": 0.39
+  },
+  {
+   "polymerid": 5624,
+   "complexid": null,
+   "target_name": "Tyrosine-protein kinase Tec",
+   "uniprot_raw": "P42680",
+   "organism": "Homo sapiens",
+   "n_measurements": 18,
+   "best_p_affinity": 9.3,
+   "affinity_types": [
+    "IC50",
+    "Kd"
+   ],
+   "best_ligand_efficiency": 0.39
+  },
+  {
+   "polymerid": 8772,
+   "complexid": null,
+   "target_name": "Tyrosine-protein kinase TXK",
+   "uniprot_raw": "P42681",
+   "organism": "Homo sapiens",
+   "n_measurements": 8,
+   "best_p_affinity": 9.21,
+   "affinity_types": [
+    "IC50",
+    "Kd"
+   ],
+   "best_ligand_efficiency": 0.38
+  },
+  {
+   "polymerid": 188,
+   "complexid": null,
+   "target_name": "Receptor tyrosine-protein kinase erbB-2",
+   "uniprot_raw": "P04626",
+   "organism": "Homo sapiens",
+   "n_measurements": 15,
+   "best_p_affinity": 9.12,
+   "affinity_types": [
+    "IC50",
+    "Kd"
+   ],
+   "best_ligand_efficiency": 0.38
+  },
+  {
+   "polymerid": 6818,
+   "complexid": null,
+   "target_name": "Tyrosine-protein kinase Fgr",
+   "uniprot_raw": "P09769",
+   "organism": "Homo sapiens",
+   "n_measurements": 7,
+   "best_p_affinity": 8.74,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.36
+  },
+  {
+   "polymerid": 507,
+   "complexid": null,
+   "target_name": "Tyrosine-protein kinase Lck",
+   "uniprot_raw": "P06239",
+   "organism": "Homo sapiens",
+   "n_measurements": 8,
+   "best_p_affinity": 8.7,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.36
+  },
+  {
+   "polymerid": 2869,
+   "complexid": null,
+   "target_name": "Tyrosine-protein kinase CSK",
+   "uniprot_raw": "P41240",
+   "organism": "Homo sapiens",
+   "n_measurements": 4,
+   "best_p_affinity": 8.66,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.36
+  },
+  {
+   "polymerid": 5623,
+   "complexid": null,
+   "target_name": "Tyrosine-protein kinase ITK/TSK",
+   "uniprot_raw": "Q08881",
+   "organism": "Homo sapiens",
+   "n_measurements": 29,
+   "best_p_affinity": 8.57,
+   "affinity_types": [
+    "IC50",
+    "Kd"
+   ],
+   "best_ligand_efficiency": 0.36
+  },
+  {
+   "polymerid": 2711,
+   "complexid": null,
+   "target_name": "Protein-tyrosine kinase 6",
+   "uniprot_raw": "Q13882",
+   "organism": "Homo sapiens",
+   "n_measurements": 4,
+   "best_p_affinity": 8.48,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.35
+  },
+  {
+   "polymerid": 4465,
+   "complexid": null,
+   "target_name": "Tyrosine-protein kinase HCK",
+   "uniprot_raw": "P08631",
+   "organism": "Homo sapiens",
+   "n_measurements": 7,
+   "best_p_affinity": 8.43,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.35
+  },
+  {
+   "polymerid": 5424,
+   "complexid": null,
+   "target_name": "Tyrosine-protein kinase Yes",
+   "uniprot_raw": "P07947",
+   "organism": "Homo sapiens",
+   "n_measurements": 4,
+   "best_p_affinity": 8.39,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.35
+  },
+  {
+   "polymerid": 60,
+   "complexid": null,
+   "target_name": "Epidermal growth factor receptor [T790M,L858R]",
+   "uniprot_raw": "P00533[T790M,L858R]",
+   "organism": "Homo sapiens",
+   "n_measurements": 1,
+   "best_p_affinity": 8.34,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.35
+  },
+  {
+   "polymerid": 5974,
+   "complexid": null,
+   "target_name": "Proto-oncogene tyrosine-protein kinase receptor Ret",
+   "uniprot_raw": "P07949",
+   "organism": "Homo sapiens",
+   "n_measurements": 3,
+   "best_p_affinity": 8.28,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.34
+  },
+  {
+   "polymerid": 502,
+   "complexid": null,
+   "target_name": "Tyrosine-protein kinase BTK [C481S]",
+   "uniprot_raw": "Q06187[C481S]",
+   "organism": "Homo sapiens",
+   "n_measurements": 3,
+   "best_p_affinity": 8.24,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.34
+  },
+  {
+   "polymerid": 50000968,
+   "complexid": null,
+   "target_name": "Nuclear receptor subfamily 4 group A member 3",
+   "uniprot_raw": "Q92570",
+   "organism": "Homo sapiens",
+   "n_measurements": 2,
+   "best_p_affinity": 8.24,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.34
+  },
+  {
+   "polymerid": 4919,
+   "complexid": null,
+   "target_name": "Tyrosine-protein kinase JAK3",
+   "uniprot_raw": "P52333",
+   "organism": "Homo sapiens",
+   "n_measurements": 24,
+   "best_p_affinity": 8.1,
+   "affinity_types": [
+    "IC50",
+    "Kd"
+   ],
+   "best_ligand_efficiency": 0.34
+  },
+  {
+   "polymerid": 13,
+   "complexid": null,
+   "target_name": "Proto-oncogene tyrosine-protein kinase Src",
+   "uniprot_raw": "P12931",
+   "organism": "Homo sapiens",
+   "n_measurements": 8,
+   "best_p_affinity": 7.8,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.32
+  },
+  {
+   "polymerid": 5481,
+   "complexid": null,
+   "target_name": "Tyrosine-protein kinase Lyn",
+   "uniprot_raw": "P07948",
+   "organism": "Homo sapiens",
+   "n_measurements": 6,
+   "best_p_affinity": 7.79,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.32
+  },
+  {
+   "polymerid": 8061,
+   "complexid": null,
+   "target_name": "Tyrosine-protein kinase Fyn",
+   "uniprot_raw": "P06241",
+   "organism": "Homo sapiens",
+   "n_measurements": 4,
+   "best_p_affinity": 7.54,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.31
+  },
+  {
+   "polymerid": 2863,
+   "complexid": null,
+   "target_name": "Tyrosine-protein kinase FRK",
+   "uniprot_raw": "P42685",
+   "organism": "Homo sapiens",
+   "n_measurements": 3,
+   "best_p_affinity": 7.54,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.31
+  },
+  {
+   "polymerid": 1358,
+   "complexid": null,
+   "target_name": "Receptor-type tyrosine-protein kinase FLT3",
+   "uniprot_raw": "P36888",
+   "organism": "Homo sapiens",
+   "n_measurements": 3,
+   "best_p_affinity": 7.14,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.3
+  }
+ ],
+ "properties": {
+  "heavy_atoms": 33,
+  "mw": 440.51,
+  "clogp": 4.22,
+  "tpsa": 99.16,
+  "hbd": 2,
+  "hba": 8,
+  "rotatable_bonds": 5,
+  "rings": 5,
+  "aromatic_rings": 4,
+  "fsp3": 0.2,
+  "qed": 0.467,
+  "ro5_violations": 0,
+  "scaffold": "c1ccc(Oc2ccc(-c3nn([C@@H]4CCCNC4)c4ncncc34)cc2)cc1",
+  "generic_scaffold": "C1CCC(CC2CCC(C3CC(C4CCCCC4)C4CCCCC34)CC2)CC1",
+  "pains": [],
+  "brenk": [
+   "Michael_acceptor_1"
+  ],
+  "nih": [
+   "acrylate",
+   "halo_acrylate"
+  ]
+ }
+}

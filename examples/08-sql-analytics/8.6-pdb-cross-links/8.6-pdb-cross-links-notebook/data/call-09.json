@@ -1,0 +1,523 @@
+{
+ "row_count": 29,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 577,
+   "name": "APV",
+   "smiles": "CC(C)CN(C[C@@H](O)[C@H](Cc1ccccc1)NC(=O)O[C@H]1CCOC1)S(=O)(=O)c1ccc(N)cc1 |r|",
+   "n_structures": 20,
+   "het_codes": "478",
+   "pdb_ids": [
+    "1HPV",
+    "1T7J",
+    "3EKP",
+    "3EKV",
+    "3EM3",
+    "3NU3",
+    "3NU4",
+    "3NU5",
+    "3NU6",
+    "3NU9",
+    "3NUJ",
+    "3NUO",
+    "3OXV",
+    "3S43",
+    "3S45",
+    "4JEC",
+    "4RVJ",
+    "5KR0",
+    "5T8H",
+    "7N6V"
+   ],
+   "n_ki": 47,
+   "ki_records": 20,
+   "median_ki_nm": 0.23,
+   "best_ki_nm": 0.007,
+   "protease_measurements": 58
+  },
+  {
+   "monomerid": 50163391,
+   "name": "{3-[(4-Amino-benzenesulfonyl)-isobutyl-amino]-1-benzyl-2-hydroxy-propyl}-carbamic acid tetrahydro-furan-3-yl ester",
+   "smiles": "CC(C)C[N@](C[C@H]([C@H](Cc1ccccc1)NC(=O)O[C@H]2CCOC2)O)S(=O)(=O)c3ccc(cc3)N",
+   "n_structures": 20,
+   "het_codes": "478",
+   "pdb_ids": [
+    "1HPV",
+    "1T7J",
+    "3EKP",
+    "3EKV",
+    "3EM3",
+    "3NU3",
+    "3NU4",
+    "3NU5",
+    "3NU6",
+    "3NU9",
+    "3NUJ",
+    "3NUO",
+    "3OXV",
+    "3S43",
+    "3S45",
+    "4JEC",
+    "4RVJ",
+    "5KR0",
+    "5T8H",
+    "7N6V"
+   ],
+   "n_ki": null,
+   "ki_records": null,
+   "median_ki_nm": null,
+   "best_ki_nm": null,
+   "protease_measurements": 1
+  },
+  {
+   "monomerid": 9236,
+   "name": "TMC-126",
+   "smiles": "COc1ccc(cc1)S(=O)(=O)N(CC(C)C)C[C@@H](O)[C@H](Cc1ccccc1)NC(=O)O[C@H]1CO[C@H]2OCC[C@@H]12 |@:11|",
+   "n_structures": 5,
+   "het_codes": "DJR",
+   "pdb_ids": [
+    "2I4U",
+    "2I4V",
+    "3I7E",
+    "7LDY",
+    "7M9Z"
+   ],
+   "n_ki": 4,
+   "ki_records": 2,
+   "median_ki_nm": 0.014,
+   "best_ki_nm": 0.01,
+   "protease_measurements": 5
+  },
+  {
+   "monomerid": 199,
+   "name": "A-77003",
+   "smiles": "CC(C)[C@@H](C(=O)N[C@@H](Cc1ccccc1)[C@@H]([C@@H]([C@H](Cc2ccccc2)NC(=O)[C@H](C(C)C)NC(=O)N(C)Cc3ccccn3)O)O)NC(=O)N(C)Cc4ccccn4",
+   "n_structures": 3,
+   "het_codes": "A77,A79",
+   "pdb_ids": [
+    "1HVI",
+    "1HVK",
+    "1HVS"
+   ],
+   "n_ki": 1,
+   "ki_records": 1,
+   "median_ki_nm": 0.012,
+   "best_ki_nm": 0.012,
+   "protease_measurements": 3
+  },
+  {
+   "monomerid": 50504127,
+   "name": "CHEMBL4563518",
+   "smiles": "CCC(CC)CN(C[C@H]([C@H](Cc1ccccc1)NC(=O)O[C@H]2CO[C@@H]3[C@H]2CCO3)O)S(=O)(=O)c4ccc(cc4)[C@H](CO)O",
+   "n_structures": 3,
+   "het_codes": "NJ1,NJJ",
+   "pdb_ids": [
+    "6OY1",
+    "6OY2",
+    "7M9I"
+   ],
+   "n_ki": 2,
+   "ki_records": 1,
+   "median_ki_nm": 0.0655,
+   "best_ki_nm": 0.057,
+   "protease_measurements": 2
+  },
+  {
+   "monomerid": 50504135,
+   "name": "CHEMBL4459766",
+   "smiles": "CC(C)CN(C[C@H]([C@H](Cc1ccccc1)NC(=O)O[C@H]2CO[C@@H]3[C@H]2CCO3)O)S(=O)(=O)c4ccc(cc4)[C@H](CO)O",
+   "n_structures": 3,
+   "het_codes": "NF7,NG4",
+   "pdb_ids": [
+    "6OXX",
+    "6OXY",
+    "7M9G"
+   ],
+   "n_ki": 2,
+   "ki_records": 1,
+   "median_ki_nm": 0.094,
+   "best_ki_nm": 0.09,
+   "protease_measurements": 2
+  },
+  {
+   "monomerid": 197,
+   "name": "A-76889",
+   "smiles": "CC(C)[C@H](NC(=O)N(C)Cc1ccccn1)C(=O)N[C@@H](Cc1ccccc1)[C@@H](O)[C@H](O)[C@H](Cc1ccccc1)NC(=O)[C@@H](NC(=O)N(C)Cc1ccccn1)C(C)C |r|",
+   "n_structures": 3,
+   "het_codes": "A77,A79",
+   "pdb_ids": [
+    "1HVI",
+    "1HVK",
+    "1HVS"
+   ],
+   "n_ki": 3,
+   "ki_records": 2,
+   "median_ki_nm": 0.112,
+   "best_ki_nm": 0.11,
+   "protease_measurements": 6
+  },
+  {
+   "monomerid": 17350,
+   "name": "(4S)-4-[(2S)-2-{[(2S,3S)-3-{[(tert-butoxy)carbonyl]amino}-2-hydroxy-4-phenylbutyl]amino}-3-phenylpropanamido]-4-{[(1S)-1-carbamoyl-2-phenylethyl]carbamoyl}butanoic acid",
+   "smiles": "CC(C)(C)OC(=O)N[C@@H](Cc1ccccc1)[C@H](CN[C@@H](Cc2ccccc2)C(=O)N[C@@H](CCC(=O)O)C(=O)N[C@@H](Cc3ccccc3)C(=O)N)O",
+   "n_structures": 3,
+   "het_codes": "0ZT",
+   "pdb_ids": [
+    "1FQX",
+    "1ZJ7",
+    "1ZSR"
+   ],
+   "n_ki": 3,
+   "ki_records": 2,
+   "median_ki_nm": 0.15,
+   "best_ki_nm": 0.15,
+   "protease_measurements": 3
+  },
+  {
+   "monomerid": 50504128,
+   "name": "CHEMBL4527553",
+   "smiles": "CCC(CC)CN(C[C@H]([C@H](Cc1ccccc1)NC(=O)O[C@H]2CO[C@@H]3[C@H]2CCO3)O)S(=O)(=O)c4ccc(cc4)[C@@H](CO)O",
+   "n_structures": 3,
+   "het_codes": "NJ1,NJJ",
+   "pdb_ids": [
+    "6OY1",
+    "6OY2",
+    "7M9I"
+   ],
+   "n_ki": 2,
+   "ki_records": 1,
+   "median_ki_nm": 0.177,
+   "best_ki_nm": 0.134,
+   "protease_measurements": 2
+  },
+  {
+   "monomerid": 50041035,
+   "name": "N-{(1S,2R,3R,4S)-1-Benzyl-2,3-dihydroxy-4-[3-methyl-2-(3-methyl-3-pyridin-2-ylmethyl-ureido)-butyrylamino]-5-phenyl-pentyl}-3-methyl-2-(3-methyl-3-pyridin-2-ylmethyl-ureido)-butyramide",
+   "smiles": "CC(C)C(NC(=O)N(C)Cc1ccccn1)C(=O)N[C@@H](Cc1ccccc1)[C@@H](O)[C@H](O)[C@H](Cc1ccccc1)NC(=O)C(NC(=O)N(C)Cc1ccccn1)C(C)C",
+   "n_structures": 3,
+   "het_codes": "A77,A79",
+   "pdb_ids": [
+    "1HVI",
+    "1HVK",
+    "1HVS"
+   ],
+   "n_ki": 1,
+   "ki_records": 1,
+   "median_ki_nm": 0.18,
+   "best_ki_nm": 0.18,
+   "protease_measurements": 2
+  },
+  {
+   "monomerid": 50504129,
+   "name": "CHEMBL4521688",
+   "smiles": "CC[C@H](C)CN(C[C@H]([C@H](Cc1ccccc1)NC(=O)O[C@H]2CO[C@@H]3[C@H]2CCO3)O)S(=O)(=O)c4ccc(cc4)[C@H](CO)O",
+   "n_structures": 3,
+   "het_codes": "NJ7,NJG",
+   "pdb_ids": [
+    "6OXZ",
+    "6OY0",
+    "7M9H"
+   ],
+   "n_ki": 1,
+   "ki_records": 1,
+   "median_ki_nm": 0.216,
+   "best_ki_nm": 0.216,
+   "protease_measurements": 1
+  },
+  {
+   "monomerid": 50504125,
+   "name": "CHEMBL4448856",
+   "smiles": "CC(C)CN(C[C@H]([C@H](Cc1ccccc1)NC(=O)O[C@H]2CO[C@@H]3[C@H]2CCO3)O)S(=O)(=O)c4ccc(cc4)[C@@H](CO)O",
+   "n_structures": 3,
+   "het_codes": "NF7,NG4",
+   "pdb_ids": [
+    "6OXX",
+    "6OXY",
+    "7M9G"
+   ],
+   "n_ki": 1,
+   "ki_records": 1,
+   "median_ki_nm": 0.283,
+   "best_ki_nm": 0.283,
+   "protease_measurements": 1
+  },
+  {
+   "monomerid": 50504136,
+   "name": "CHEMBL4552821",
+   "smiles": "CC[C@H](C)CN(C[C@H]([C@H](Cc1ccccc1)NC(=O)O[C@H]2CO[C@@H]3[C@H]2CCO3)O)S(=O)(=O)c4ccc(cc4)[C@@H](CO)O",
+   "n_structures": 3,
+   "het_codes": "NJ7,NJG",
+   "pdb_ids": [
+    "6OXZ",
+    "6OY0",
+    "7M9H"
+   ],
+   "n_ki": 1,
+   "ki_records": 1,
+   "median_ki_nm": 0.504,
+   "best_ki_nm": 0.504,
+   "protease_measurements": 1
+  },
+  {
+   "monomerid": 198,
+   "name": "A-76928",
+   "smiles": "CC(C)[C@@H](C(=O)N[C@@H](Cc1ccccc1)[C@@H]([C@H]([C@H](Cc2ccccc2)NC(=O)[C@H](C(C)C)NC(=O)N(C)Cc3ccccn3)O)O)NC(=O)N(C)Cc4ccccn4",
+   "n_structures": 3,
+   "het_codes": "A77,A79",
+   "pdb_ids": [
+    "1HVI",
+    "1HVK",
+    "1HVS"
+   ],
+   "n_ki": 3,
+   "ki_records": 3,
+   "median_ki_nm": 1.3,
+   "best_ki_nm": 0.011,
+   "protease_measurements": 5
+  },
+  {
+   "monomerid": 50041026,
+   "name": "N-{(1S,2S,3S,4S)-1-Benzyl-2,3-dihydroxy-4-[3-methyl-2-(3-methyl-3-pyridin-2-ylmethyl-ureido)-butyrylamino]-5-phenyl-pentyl}-3-methyl-2-(3-methyl-3-pyridin-2-ylmethyl-ureido)-butyramide",
+   "smiles": "CC(C)C(NC(=O)N(C)Cc1ccccn1)C(=O)N[C@@H](Cc1ccccc1)[C@H](O)[C@@H](O)[C@H](Cc1ccccc1)NC(=O)C(NC(=O)N(C)Cc1ccccn1)C(C)C",
+   "n_structures": 3,
+   "het_codes": "A77,A79",
+   "pdb_ids": [
+    "1HVI",
+    "1HVK",
+    "1HVS"
+   ],
+   "n_ki": 1,
+   "ki_records": 1,
+   "median_ki_nm": 1.7,
+   "best_ki_nm": 1.7,
+   "protease_measurements": 2
+  },
+  {
+   "monomerid": 50478960,
+   "name": "CHEMBL455734",
+   "smiles": "CC(C)[C@H](NC(=O)N(C)Cc1ccccn1)C(=O)NC(Cc1ccccc1)[C@H](O)[C@H](O)[C@H](Cc1ccccc1)NC(=O)[C@@H](NC(=O)N(C)Cc1ccccn1)C(C)C |r|",
+   "n_structures": 3,
+   "het_codes": "A77,A79",
+   "pdb_ids": [
+    "1HVI",
+    "1HVK",
+    "1HVS"
+   ],
+   "n_ki": 1,
+   "ki_records": 1,
+   "median_ki_nm": 1100.0,
+   "best_ki_nm": 1100.0,
+   "protease_measurements": 1
+  },
+  {
+   "monomerid": 50046384,
+   "name": "N-{1-Benzyl-2,3-dihydroxy-4-[3-methyl-2-(3-methyl-3-pyridin-2-ylmethyl-ureido)-butyrylamino]-5-phenyl-pentyl}-3-methyl-2-(3-methyl-3-pyridin-2-ylmethyl-ureido)-butyramide",
+   "smiles": "CC(C)[C@H](NC(=O)N(C)Cc1ccccn1)C(=O)N[C@@H](Cc1ccccc1)[C@@H](O)[C@@H](O)[C@H](Cc1ccccc1)NC(=O)[C@H](NC(=O)N(C)Cc1ccccn1)C(C)C",
+   "n_structures": 3,
+   "het_codes": "A77,A79",
+   "pdb_ids": [
+    "1HVI",
+    "1HVK",
+    "1HVS"
+   ],
+   "n_ki": null,
+   "ki_records": null,
+   "median_ki_nm": null,
+   "best_ki_nm": null,
+   "protease_measurements": 1
+  },
+  {
+   "monomerid": 50498523,
+   "name": "CHEMBL3605643",
+   "smiles": "CC(C)CN(C[C@H]([C@H](Cc1ccccc1)NC(=O)O[C@H]2CO[C@@H]3[C@H]2[C@H](CO3)NC)O)S(=O)(=O)c4ccc(cc4)OC",
+   "n_structures": 2,
+   "het_codes": "4UY",
+   "pdb_ids": [
+    "5BRY",
+    "6OTG"
+   ],
+   "n_ki": 1,
+   "ki_records": 1,
+   "median_ki_nm": 0.0015,
+   "best_ki_nm": 0.0015,
+   "protease_measurements": 1
+  },
+  {
+   "monomerid": 50498229,
+   "name": "CHEMBL3577575",
+   "smiles": "CC(C)CN(C[C@H]([C@H](Cc1ccccc1)NC(=O)O[C@H]2CO[C@@H]3[C@H]2C(CO3)(F)F)O)S(=O)(=O)c4ccc(cc4)N",
+   "n_structures": 2,
+   "het_codes": "G10",
+   "pdb_ids": [
+    "4U8W",
+    "6DJ7"
+   ],
+   "n_ki": 2,
+   "ki_records": 2,
+   "median_ki_nm": 0.0059,
+   "best_ki_nm": 0.0058,
+   "protease_measurements": 3
+  },
+  {
+   "monomerid": 50545795,
+   "name": "CHEMBL4641949",
+   "smiles": "CC[C@@H](C)[C@@H](C(=O)N[C@@H](Cc1ccccc1)[C@H](C[C@H](Cc2ccccc2)NC(=O)O[C@H]3CO[C@@H]4[C@H]3CCO4)O)NC(=O)OC",
+   "n_structures": 2,
+   "het_codes": "OQA,OQD",
+   "pdb_ids": [
+    "6PJK",
+    "6PJL"
+   ],
+   "n_ki": 3,
+   "ki_records": 2,
+   "median_ki_nm": 0.029,
+   "best_ki_nm": 0.027,
+   "protease_measurements": 3
+  },
+  {
+   "monomerid": 50504133,
+   "name": "CHEMBL4470821",
+   "smiles": "C[C@@H](c1ccc(cc1)S(=O)(=O)N(C[C@H]([C@H](Cc2ccccc2)NC(=O)O[C@H]3CO[C@@H]4[C@H]3CCO4)O)CC(C)C)O",
+   "n_structures": 2,
+   "het_codes": "NJ4,NJA",
+   "pdb_ids": [
+    "6OXR",
+    "6OXS"
+   ],
+   "n_ki": 2,
+   "ki_records": 1,
+   "median_ki_nm": 0.0525,
+   "best_ki_nm": 0.048,
+   "protease_measurements": 2
+  },
+  {
+   "monomerid": 50504130,
+   "name": "CHEMBL4570309",
+   "smiles": "CCC(CC)CN(C[C@H]([C@H](Cc1ccccc1)NC(=O)O[C@H]2CO[C@@H]3[C@H]2CCO3)O)S(=O)(=O)c4ccc(cc4)[C@H](C)O",
+   "n_structures": 2,
+   "het_codes": "NF4,NFJ",
+   "pdb_ids": [
+    "6OXV",
+    "6OXW"
+   ],
+   "n_ki": 2,
+   "ki_records": 1,
+   "median_ki_nm": 0.061,
+   "best_ki_nm": 0.02,
+   "protease_measurements": 2
+  },
+  {
+   "monomerid": 50504134,
+   "name": "CHEMBL4586167",
+   "smiles": "CCC(CC)CN(C[C@H]([C@H](Cc1ccccc1)NC(=O)O[C@H]2CO[C@@H]3[C@H]2CCO3)O)S(=O)(=O)c4ccc(cc4)[C@@H](C)O",
+   "n_structures": 2,
+   "het_codes": "NF4,NFJ",
+   "pdb_ids": [
+    "6OXV",
+    "6OXW"
+   ],
+   "n_ki": 2,
+   "ki_records": 1,
+   "median_ki_nm": 0.0675,
+   "best_ki_nm": 0.028,
+   "protease_measurements": 2
+  },
+  {
+   "monomerid": 50504126,
+   "name": "CHEMBL4472701",
+   "smiles": "C[C@H](c1ccc(cc1)S(=O)(=O)N(C[C@H]([C@H](Cc2ccccc2)NC(=O)O[C@H]3CO[C@@H]4[C@H]3CCO4)O)CC(C)C)O",
+   "n_structures": 2,
+   "het_codes": "NJ4,NJA",
+   "pdb_ids": [
+    "6OXR",
+    "6OXS"
+   ],
+   "n_ki": 2,
+   "ki_records": 1,
+   "median_ki_nm": 0.1005,
+   "best_ki_nm": 0.092,
+   "protease_measurements": 2
+  },
+  {
+   "monomerid": 50504132,
+   "name": "CHEMBL4441340",
+   "smiles": "CC[C@H](C)CN(C[C@H]([C@H](Cc1ccccc1)NC(=O)O[C@H]2CO[C@@H]3[C@H]2CCO3)O)S(=O)(=O)c4ccc(cc4)[C@H](C)O",
+   "n_structures": 2,
+   "het_codes": "NE7,NEJ",
+   "pdb_ids": [
+    "6OXT",
+    "6OXU"
+   ],
+   "n_ki": 2,
+   "ki_records": 1,
+   "median_ki_nm": 0.102,
+   "best_ki_nm": 0.093,
+   "protease_measurements": 2
+  },
+  {
+   "monomerid": 50504131,
+   "name": "CHEMBL4456326",
+   "smiles": "CC[C@H](C)CN(C[C@H]([C@H](Cc1ccccc1)NC(=O)O[C@H]2CO[C@@H]3[C@H]2CCO3)O)S(=O)(=O)c4ccc(cc4)[C@@H](C)O",
+   "n_structures": 2,
+   "het_codes": "NE7,NEJ",
+   "pdb_ids": [
+    "6OXT",
+    "6OXU"
+   ],
+   "n_ki": 2,
+   "ki_records": 1,
+   "median_ki_nm": 0.1135,
+   "best_ki_nm": 0.095,
+   "protease_measurements": 2
+  },
+  {
+   "monomerid": 50545794,
+   "name": "CHEMBL4648539",
+   "smiles": "CC[C@H](C)[C@@H](C(=O)N[C@@H](Cc1ccccc1)[C@H](C[C@H](Cc2ccccc2)NC(=O)O[C@H]3CO[C@@H]4[C@H]3CCO4)O)NC(=O)OC",
+   "n_structures": 2,
+   "het_codes": "OQA,OQD",
+   "pdb_ids": [
+    "6PJK",
+    "6PJL"
+   ],
+   "n_ki": 3,
+   "ki_records": 2,
+   "median_ki_nm": 0.198,
+   "best_ki_nm": 0.055,
+   "protease_measurements": 3
+  },
+  {
+   "monomerid": 32391,
+   "name": "iso-butyl-substituted sulfonamide, 9b",
+   "smiles": "CC(C)CN(CCNCCN(CC(C)C)S(=O)(=O)c1ccc(cc1)N)S(=O)(=O)c2ccc(cc2)N",
+   "n_structures": 2,
+   "het_codes": "LJG",
+   "pdb_ids": [
+    "3BGB",
+    "3PSU"
+   ],
+   "n_ki": 1,
+   "ki_records": 1,
+   "median_ki_nm": 900.0,
+   "best_ki_nm": 900.0,
+   "protease_measurements": 1
+  },
+  {
+   "monomerid": 50288363,
+   "name": "CHEMBL4173216",
+   "smiles": "Cc1cccc(c1CNC(=O)[C@@H]2C(SCN2C(=O)[C@H]([C@H](Cc3ccccc3)NC(=O)[C@H]([C@H]4CCOC4)NC(=O)c5cc6cccc(c6o5)OC)O)(C)C)C",
+   "n_structures": 2,
+   "het_codes": "8Z0",
+   "pdb_ids": [
+    "5YOJ",
+    "5YOK"
+   ],
+   "n_ki": null,
+   "ki_records": null,
+   "median_ki_nm": null,
+   "best_ki_nm": null,
+   "protease_measurements": 3
+  }
+ ]
+}

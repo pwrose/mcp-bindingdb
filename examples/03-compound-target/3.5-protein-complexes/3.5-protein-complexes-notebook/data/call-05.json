@@ -1,0 +1,39 @@
+{
+ "row_count": 3,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 50000766,
+   "bdbm_id": "BDBM50000766",
+   "name": "DIAZEPAM",
+   "inchi_key": "AAOVKJBEBIDNHE-UHFFFAOYSA-N",
+   "smiles": "CN1c2ccc(cc2C(=NCC1=O)c3ccccc3)Cl",
+   "mol_weight": 284.07,
+   "n_activities": 139,
+   "n_targets": 54,
+   "matched_name": "DIAZEPAM"
+  },
+  {
+   "monomerid": 22040,
+   "bdbm_id": "BDBM22040",
+   "name": "Ro-4864",
+   "inchi_key": "PUMYFTJOWAJIKF-UHFFFAOYSA-N",
+   "smiles": "CN1c2ccc(Cl)cc2C(=NCC1=O)c1ccc(Cl)cc1 |c:10|",
+   "mol_weight": 318.03,
+   "n_activities": 42,
+   "n_targets": 6,
+   "matched_name": "4 -chlorodiazepam"
+  },
+  {
+   "monomerid": 50027835,
+   "bdbm_id": "BDBM50027835",
+   "name": "Gen-Xene",
+   "inchi_key": "AKPLHCDWDRPJGD-UHFFFAOYSA-N",
+   "smiles": "Clc1ccc2NC(=O)CN=C(c3ccccc3)c2c1 |t:9|",
+   "mol_weight": 270.06,
+   "n_activities": 2,
+   "n_targets": 2,
+   "matched_name": "DESMETHYLDIAZEPAM"
+  }
+ ]
+}

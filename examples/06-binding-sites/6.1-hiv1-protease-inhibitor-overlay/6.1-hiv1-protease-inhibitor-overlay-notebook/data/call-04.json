@@ -1,0 +1,108 @@
+{
+ "target": "Dimer of Gag-Pol polyprotein [501-599]",
+ "n_compounds": 5,
+ "rows": [
+  {
+   "monomerid": 150,
+   "bdbm": "BDBM150",
+   "name": "DMP323",
+   "ligand_code": "DMP",
+   "match": "same structure",
+   "pdb_ids": [
+    "3JVW"
+   ],
+   "n_pdb_ids": 1,
+   "affinity_type": "Ki",
+   "median_nm": 0.27,
+   "best_nm": 0.27,
+   "n_measurements": 1,
+   "other_affinity_types": [],
+   "found_in_pdb_by_inchikey": [
+    "3JVW"
+   ]
+  },
+  {
+   "monomerid": 32391,
+   "bdbm": "BDBM32391",
+   "name": "iso-butyl-substituted sulfonamide, 9b",
+   "ligand_code": "LJG",
+   "match": "record",
+   "pdb_ids": [
+    "3BGB",
+    "3PSU"
+   ],
+   "n_pdb_ids": 2,
+   "affinity_type": "Ki",
+   "median_nm": 900.0,
+   "best_nm": 900.0,
+   "n_measurements": 1,
+   "other_affinity_types": []
+  },
+  {
+   "monomerid": 9339,
+   "bdbm": "BDBM9339",
+   "name": "Cyclic Urea 61",
+   "ligand_code": "DMP",
+   "match": "connectivity only",
+   "pdb_ids": [
+    "3JVW"
+   ],
+   "n_pdb_ids": 1,
+   "affinity_type": "Ki",
+   "median_nm": 1650.0,
+   "best_nm": 1650.0,
+   "n_measurements": 1,
+   "other_affinity_types": [],
+   "found_in_pdb_by_inchikey": [
+    "3JVW"
+   ]
+  },
+  {
+   "monomerid": 32387,
+   "bdbm": "BDBM32387",
+   "name": "phenyl-substituted sulfonamides, 6d",
+   "ligand_code": "LJH",
+   "match": "record",
+   "pdb_ids": [
+    "3BGC"
+   ],
+   "n_pdb_ids": 1,
+   "affinity_type": "Ki",
+   "median_nm": 9600.0,
+   "best_nm": 9600.0,
+   "n_measurements": 1,
+   "other_affinity_types": []
+  },
+  {
+   "monomerid": 517,
+   "bdbm": "BDBM517",
+   "name": "Crixivan",
+   "ligand_code": "MK1",
+   "match": "same structure",
+   "pdb_ids": [
+    "1HSG",
+    "1SDT",
+    "1SDU",
+    "1SDV",
+    "1SGU",
+    "2B7Z"
+   ],
+   "n_pdb_ids": 6,
+   "affinity_type": "IC50",
+   "median_nm": 0.36,
+   "best_nm": 0.36,
+   "n_measurements": 1,
+   "other_affinity_types": [],
+   "found_in_pdb_by_inchikey": [
+    "1HSG",
+    "1SDT",
+    "1SDU",
+    "1SDV",
+    "1SGU",
+    "2B7Z"
+   ]
+  }
+ ],
+ "truncated": false,
+ "note": "2 more compound(s) have PDB entries that BindingDB links to other proteins or to other records of this protein (e.g. another strain or construct); pass only_linked=false to list them. overlay_binding_site checks each chain against the target's sequence."
+}

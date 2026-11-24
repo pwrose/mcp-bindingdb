@@ -1,0 +1,48 @@
+{
+ "row_count": 6,
+ "truncated": false,
+ "rows": [
+  {
+   "target": "P00533, all variants",
+   "organism": "Homo sapiens",
+   "n_targets": 56,
+   "n_measurements": 31621,
+   "n_compounds": 16406
+  },
+  {
+   "target": "P00533[1-745,751-1210,C797S] Epidermal growth factor receptor [1-745,751-1210,C797S]",
+   "organism": "",
+   "n_targets": 1,
+   "n_measurements": 665,
+   "n_compounds": 664
+  },
+  {
+   "target": "P00533[T790M,C797S,L858R] Epidermal growth factor receptor [T790M,C797S,L858R]",
+   "organism": "",
+   "n_targets": 1,
+   "n_measurements": 275,
+   "n_compounds": 275
+  },
+  {
+   "target": "Q01279 Epidermal growth factor receptor",
+   "organism": "Mus musculus",
+   "n_targets": 1,
+   "n_measurements": 86,
+   "n_compounds": 84
+  },
+  {
+   "target": "P00533[1-18,20-745,751-1210,T790M] Epidermal growth factor receptor [1-18,20-745,751-1210,T790M]",
+   "organism": "",
+   "n_targets": 1,
+   "n_measurements": 80,
+   "n_compounds": 80
+  },
+  {
+   "target": "P00533[1-770,'NPG',771-1210,T790M] Epidermal growth factor receptor [1-770,'NPG',771-1210,T790M]",
+   "organism": "",
+   "n_targets": 1,
+   "n_measurements": 13,
+   "n_compounds": 13
+  }
+ ]
+}

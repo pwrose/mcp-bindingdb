@@ -1,0 +1,281 @@
+{
+ "row_count": 25,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 50306682,
+   "target_name": "Hepatocyte growth factor receptor",
+   "uniprot_raw": "P08581",
+   "source_id": "21812414",
+   "affinity_type": "IC50",
+   "relation": "<",
+   "value": 1.0,
+   "assay_name": "ChEMBL_767243 (CHEMBL1825355)",
+   "ki_result_id": 50176432
+  },
+  {
+   "monomerid": 50306682,
+   "target_name": "Hepatocyte growth factor receptor",
+   "uniprot_raw": "P08581",
+   "source_id": "21812414",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 8.0,
+   "assay_name": "ChEMBL_767236 (CHEMBL1826482)",
+   "ki_result_id": 50176442
+  },
+  {
+   "monomerid": 50306682,
+   "target_name": "Hepatocyte growth factor receptor",
+   "uniprot_raw": "P08581",
+   "source_id": "21812414",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 18.0,
+   "assay_name": "ChEMBL_767236 (CHEMBL1826482)",
+   "ki_result_id": 50176461
+  },
+  {
+   "monomerid": 50306682,
+   "target_name": "Hepatocyte growth factor receptor",
+   "uniprot_raw": "P08581",
+   "source_id": "21812414",
+   "affinity_type": "Ki",
+   "relation": "=",
+   "value": 2.0,
+   "assay_name": "ChEMBL_767240 (CHEMBL1825352)",
+   "ki_result_id": 50176446
+  },
+  {
+   "monomerid": 50306682,
+   "target_name": "Hepatocyte growth factor receptor",
+   "uniprot_raw": "P08581",
+   "source_id": "21812414",
+   "affinity_type": "Ki",
+   "relation": "=",
+   "value": 19.0,
+   "assay_name": "ChEMBL_767240 (CHEMBL1825352)",
+   "ki_result_id": 50659316
+  },
+  {
+   "monomerid": 50352564,
+   "target_name": "Hepatocyte growth factor receptor",
+   "uniprot_raw": "P08581",
+   "source_id": "21812414",
+   "affinity_type": "Ki",
+   "relation": "=",
+   "value": 161.0,
+   "assay_name": "ChEMBL_767240 (CHEMBL1825352)",
+   "ki_result_id": 50659320
+  },
+  {
+   "monomerid": 50306682,
+   "target_name": "Hepatocyte growth factor receptor",
+   "uniprot_raw": "P08581",
+   "source_id": "28280261",
+   "affinity_type": "Kd",
+   "relation": "=",
+   "value": 0.2,
+   "assay_name": "ChEMBL_1634387 (CHEMBL3877179)",
+   "ki_result_id": 50552356
+  },
+  {
+   "monomerid": 50352564,
+   "target_name": "Hepatocyte growth factor receptor",
+   "uniprot_raw": "P08581",
+   "source_id": "28280261",
+   "affinity_type": "Kd",
+   "relation": "=",
+   "value": 38.0,
+   "assay_name": "ChEMBL_1634387 (CHEMBL3877179)",
+   "ki_result_id": 50552355
+  },
+  {
+   "monomerid": 50352564,
+   "target_name": "Oxidized purine nucleoside triphosphate hydrolase",
+   "uniprot_raw": "P36639",
+   "source_id": "26878898",
+   "affinity_type": "EC50",
+   "relation": "=",
+   "value": 3600.0,
+   "assay_name": "ChEMBL_2020002 (CHEMBL4673815)",
+   "ki_result_id": 51354906
+  },
+  {
+   "monomerid": 50352564,
+   "target_name": "Oxidized purine nucleoside triphosphate hydrolase",
+   "uniprot_raw": "P36639",
+   "source_id": "26878898",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 138.0,
+   "assay_name": "ChEMBL_2020017 (CHEMBL4673830)",
+   "ki_result_id": 51354925
+  },
+  {
+   "monomerid": 50352564,
+   "target_name": "Oxidized purine nucleoside triphosphate hydrolase",
+   "uniprot_raw": "P36639",
+   "source_id": "26878898",
+   "affinity_type": "Kd",
+   "relation": "=",
+   "value": 39.0,
+   "assay_name": "ChEMBL_2020004 (CHEMBL4673817)",
+   "ki_result_id": 51354914
+  },
+  {
+   "monomerid": 50352564,
+   "target_name": "Oxidized purine nucleoside triphosphate hydrolase",
+   "uniprot_raw": "P36639",
+   "source_id": "26924380",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 330.0,
+   "assay_name": "ChEMBL_1572469 (CHEMBL3796329)",
+   "ki_result_id": 50489901
+  },
+  {
+   "monomerid": 50352564,
+   "target_name": "Oxidized purine nucleoside triphosphate hydrolase",
+   "uniprot_raw": "P36639",
+   "source_id": "28280261",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 330.0,
+   "assay_name": "ChEMBL_1634435 (CHEMBL3877227)",
+   "ki_result_id": 50552339
+  },
+  {
+   "monomerid": 50352564,
+   "target_name": "Oxidized purine nucleoside triphosphate hydrolase",
+   "uniprot_raw": "P36639",
+   "source_id": "28280261",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 408.0,
+   "assay_name": "ChEMBL_1634436 (CHEMBL3877228)",
+   "ki_result_id": 50552352
+  },
+  {
+   "monomerid": 50352564,
+   "target_name": "Oxidized purine nucleoside triphosphate hydrolase",
+   "uniprot_raw": "P36639",
+   "source_id": "30771603",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 1800.0,
+   "assay_name": "ChEMBL_1839104 (CHEMBL4339319)",
+   "ki_result_id": 51245733
+  },
+  {
+   "monomerid": 50352564,
+   "target_name": "Oxidized purine nucleoside triphosphate hydrolase",
+   "uniprot_raw": "P36639",
+   "source_id": "32184970",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 330.0,
+   "assay_name": "ChEMBL_1844827 (CHEMBL4345254)",
+   "ki_result_id": 51250504
+  },
+  {
+   "monomerid": 50352564,
+   "target_name": "Oxidized purine nucleoside triphosphate hydrolase",
+   "uniprot_raw": "P36639",
+   "source_id": "32184970",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 366.0,
+   "assay_name": "ChEMBL_1844828 (CHEMBL4345255)",
+   "ki_result_id": 51250473
+  },
+  {
+   "monomerid": 50306682,
+   "target_name": "Mitogen-activated protein kinase kinase kinase kinase 3",
+   "uniprot_raw": "Q8IVH8",
+   "source_id": "29636220",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 49.0,
+   "assay_name": "ChEMBL_2020700 (CHEMBL4674513)",
+   "ki_result_id": 51355147
+  },
+  {
+   "monomerid": 50306682,
+   "target_name": "Mitogen-activated protein kinase kinase kinase kinase 3",
+   "uniprot_raw": "Q8IVH8",
+   "source_id": "29636220",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 1700.0,
+   "assay_name": "ChEMBL_2020699 (CHEMBL4674512)",
+   "ki_result_id": 51355130
+  },
+  {
+   "monomerid": 50352564,
+   "target_name": "Mitogen-activated protein kinase kinase kinase kinase 3",
+   "uniprot_raw": "Q8IVH8",
+   "source_id": "29636220",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 680.0,
+   "assay_name": "ChEMBL_2020700 (CHEMBL4674513)",
+   "ki_result_id": 51355142
+  },
+  {
+   "monomerid": 50306682,
+   "target_name": "Mitogen-activated protein kinase kinase kinase kinase 3",
+   "uniprot_raw": "Q8IVH8",
+   "source_id": "29636220",
+   "affinity_type": "Kd",
+   "relation": "=",
+   "value": 75.0,
+   "assay_name": "ChEMBL_2020261 (CHEMBL4674074)",
+   "ki_result_id": 51355126
+  },
+  {
+   "monomerid": 50306682,
+   "target_name": "ALK tyrosine kinase receptor",
+   "uniprot_raw": "Q9UM73",
+   "source_id": "21812414",
+   "affinity_type": "IC50",
+   "relation": "<",
+   "value": 1.0,
+   "assay_name": "ChEMBL_767246 (CHEMBL1825358)",
+   "ki_result_id": 50176462
+  },
+  {
+   "monomerid": 50306682,
+   "target_name": "ALK tyrosine kinase receptor",
+   "uniprot_raw": "Q9UM73",
+   "source_id": "21812414",
+   "affinity_type": "IC50",
+   "relation": "=",
+   "value": 20.0,
+   "assay_name": "ChEMBL_767244 (CHEMBL1825356)",
+   "ki_result_id": 50176448
+  },
+  {
+   "monomerid": 50306682,
+   "target_name": "ALK tyrosine kinase receptor",
+   "uniprot_raw": "Q9UM73",
+   "source_id": "28280261",
+   "affinity_type": "Kd",
+   "relation": "=",
+   "value": 4.4,
+   "assay_name": "ChEMBL_1634388 (CHEMBL3877180)",
+   "ki_result_id": 50552357
+  },
+  {
+   "monomerid": 50352564,
+   "target_name": "ALK tyrosine kinase receptor",
+   "uniprot_raw": "Q9UM73",
+   "source_id": "28280261",
+   "affinity_type": "Kd",
+   "relation": "=",
+   "value": 525.0,
+   "assay_name": "ChEMBL_1634388 (CHEMBL3877180)",
+   "ki_result_id": 50552343
+  }
+ ]
+}

@@ -1,0 +1,561 @@
+{
+ "target": "P00519",
+ "n_compounds": 27,
+ "rows": [
+  {
+   "monomerid": 4552,
+   "bdbm": "BDBM4552",
+   "name": "BOSUTINIB",
+   "ligand_code": "DB8",
+   "match": "record",
+   "pdb_ids": [
+    "3UE4"
+   ],
+   "n_pdb_ids": 1,
+   "affinity_type": "Kd",
+   "median_nm": 0.062,
+   "best_nm": 0.029,
+   "n_measurements": 15,
+   "other_affinity_types": [
+    "IC50"
+   ]
+  },
+  {
+   "monomerid": 50459091,
+   "bdbm": "BDBM50459091",
+   "name": "Asciminib",
+   "ligand_code": "AY7",
+   "match": "same structure",
+   "pdb_ids": [
+    "5MO4",
+    "8SSN"
+   ],
+   "n_pdb_ids": 2,
+   "affinity_type": "Kd",
+   "median_nm": 0.5,
+   "best_nm": 0.5,
+   "n_measurements": 1,
+   "other_affinity_types": [
+    "IC50"
+   ],
+   "found_in_pdb_by_inchikey": [
+    "5MO4",
+    "8SSN"
+   ]
+  },
+  {
+   "monomerid": 13216,
+   "bdbm": "BDBM13216",
+   "name": "DASATINIB",
+   "ligand_code": "1N1",
+   "match": "record",
+   "pdb_ids": [
+    "2GQG",
+    "4XEY",
+    "4XLI",
+    "7N9G"
+   ],
+   "n_pdb_ids": 4,
+   "affinity_type": "Kd",
+   "median_nm": 0.53,
+   "best_nm": 0.016,
+   "n_measurements": 28,
+   "other_affinity_types": [
+    "IC50"
+   ]
+  },
+  {
+   "monomerid": 6568,
+   "bdbm": "BDBM6568",
+   "name": "PD173955",
+   "ligand_code": "P17",
+   "match": "record",
+   "pdb_ids": [
+    "1M52"
+   ],
+   "n_pdb_ids": 1,
+   "affinity_type": "Kd",
+   "median_nm": 1.35,
+   "best_nm": 0.52,
+   "n_measurements": 16,
+   "other_affinity_types": [
+    "IC50",
+    "Ki"
+   ]
+  },
+  {
+   "monomerid": 13534,
+   "bdbm": "BDBM13534",
+   "name": "VX680",
+   "ligand_code": "VX6",
+   "match": "same structure",
+   "pdb_ids": [
+    "2F4J",
+    "4ZOG"
+   ],
+   "n_pdb_ids": 2,
+   "affinity_type": "Kd",
+   "median_nm": 9.4,
+   "best_nm": 3.0,
+   "n_measurements": 27,
+   "other_affinity_types": [
+    "IC50",
+    "Ki"
+   ],
+   "found_in_pdb_by_inchikey": [
+    "2F4J",
+    "4ZOG"
+   ]
+  },
+  {
+   "monomerid": 50237710,
+   "bdbm": "BDBM50237710",
+   "name": "NILOTINIB",
+   "ligand_code": "NIL",
+   "match": "same structure",
+   "pdb_ids": [
+    "3CS9",
+    "5MO4"
+   ],
+   "n_pdb_ids": 2,
+   "affinity_type": "Kd",
+   "median_nm": 13.5,
+   "best_nm": 3.6,
+   "n_measurements": 16,
+   "other_affinity_types": [
+    "IC50",
+    "Ki"
+   ],
+   "found_in_pdb_by_inchikey": [
+    "3CS9",
+    "5MO4"
+   ]
+  },
+  {
+   "monomerid": 13530,
+   "bdbm": "BDBM13530",
+   "name": "Gleevec",
+   "ligand_code": "STI",
+   "match": "same structure",
+   "pdb_ids": [
+    "1IEP",
+    "1OPJ",
+    "2HYY",
+    "3GVU",
+    "3K5V",
+    "3MS9",
+    "3MSS",
+    "3PYY",
+    "6HD4",
+    "6HD6",
+    "6NPE",
+    "6NPU",
+    "6NPV",
+    "7N9G"
+   ],
+   "n_pdb_ids": 14,
+   "affinity_type": "Kd",
+   "median_nm": 35.0,
+   "best_nm": 1.0,
+   "n_measurements": 32,
+   "other_affinity_types": [
+    "EC50",
+    "IC50",
+    "Ki"
+   ]
+  },
+  {
+   "monomerid": 25117,
+   "bdbm": "BDBM25117",
+   "name": "AXITINIB",
+   "ligand_code": "AXI",
+   "match": "record",
+   "pdb_ids": [
+    "4TWP",
+    "4WA9"
+   ],
+   "n_pdb_ids": 2,
+   "affinity_type": "Kd",
+   "median_nm": 84.0,
+   "best_nm": 1.5,
+   "n_measurements": 15,
+   "other_affinity_types": [
+    "IC50"
+   ]
+  },
+  {
+   "monomerid": 50459086,
+   "bdbm": "BDBM50459086",
+   "name": "CHEMBL4217428",
+   "ligand_code": "FYH",
+   "match": "record",
+   "pdb_ids": [
+    "6HD6"
+   ],
+   "n_pdb_ids": 1,
+   "affinity_type": "Kd",
+   "median_nm": 2000.0,
+   "best_nm": 2000.0,
+   "n_measurements": 1,
+   "other_affinity_types": [
+    "IC50"
+   ]
+  },
+  {
+   "monomerid": 50459087,
+   "bdbm": "BDBM50459087",
+   "name": "CHEMBL1234477",
+   "ligand_code": "MS9",
+   "match": "record",
+   "pdb_ids": [
+    "3MS9"
+   ],
+   "n_pdb_ids": 1,
+   "affinity_type": "Kd",
+   "median_nm": 6000.0,
+   "best_nm": 6000.0,
+   "n_measurements": 1,
+   "other_affinity_types": []
+  },
+  {
+   "monomerid": 50322535,
+   "bdbm": "BDBM50322535",
+   "name": "PONATINIB",
+   "ligand_code": "0LI",
+   "match": "record",
+   "pdb_ids": [
+    "3IK3",
+    "3OXZ"
+   ],
+   "n_pdb_ids": 2,
+   "affinity_type": "IC50",
+   "median_nm": 0.37,
+   "best_nm": 0.3,
+   "n_measurements": 24,
+   "other_affinity_types": []
+  },
+  {
+   "monomerid": 185674,
+   "bdbm": "BDBM185674",
+   "name": "Rebastinib",
+   "ligand_code": "919",
+   "match": "same structure",
+   "pdb_ids": [
+    "3QRI",
+    "3QRJ"
+   ],
+   "n_pdb_ids": 2,
+   "affinity_type": "IC50",
+   "median_nm": 1.7,
+   "best_nm": 0.75,
+   "n_measurements": 14,
+   "other_affinity_types": [],
+   "found_in_pdb_by_inchikey": [
+    "3QRI",
+    "3QRJ"
+   ]
+  },
+  {
+   "monomerid": 50345584,
+   "bdbm": "BDBM50345584",
+   "name": "5-((5-(4-((4-(2-hydroxyethyl)piperazin-1-yl)methyl)-3-(trifluoromethyl)phenylcarbamoyl)-2-methylphenyl)ethynyl)-1-methyl-1H-imidazole-2-carboxamide",
+   "ligand_code": "XY3",
+   "match": "record",
+   "pdb_ids": [
+    "3OY3"
+   ],
+   "n_pdb_ids": 1,
+   "affinity_type": "IC50",
+   "median_nm": 3.6,
+   "best_nm": 3.6,
+   "n_measurements": 1,
+   "other_affinity_types": []
+  },
+  {
+   "monomerid": 3085,
+   "bdbm": "BDBM3085",
+   "name": "PD166326",
+   "ligand_code": "P16",
+   "match": "record",
+   "pdb_ids": [
+    "1OPK",
+    "1OPL",
+    "2FO0",
+    "2G2H"
+   ],
+   "n_pdb_ids": 4,
+   "affinity_type": "IC50",
+   "median_nm": 5.4,
+   "best_nm": 2.8,
+   "n_measurements": 2,
+   "other_affinity_types": []
+  },
+  {
+   "monomerid": 12985,
+   "bdbm": "BDBM12985",
+   "name": "5-Amido-pyrrolopyrazole 9d",
+   "ligand_code": "627",
+   "match": "same structure",
+   "pdb_ids": [
+    "2V7A"
+   ],
+   "n_pdb_ids": 1,
+   "affinity_type": "IC50",
+   "median_nm": 7.9,
+   "best_nm": 7.9,
+   "n_measurements": 1,
+   "other_affinity_types": []
+  },
+  {
+   "monomerid": 50208747,
+   "bdbm": "BDBM50208747",
+   "name": "(R)-4-((3-(dimethylamino)pyrrolidin-1-yl)methyl)-N-(4-methyl-3-(4-(pyrimidin-5-yl)pyrimidin-2-ylamino)phenyl)-3-(trifluoromethyl)benzamide hydrochloride",
+   "ligand_code": "406",
+   "match": "connectivity only",
+   "pdb_ids": [
+    "2E2B"
+   ],
+   "n_pdb_ids": 1,
+   "affinity_type": "IC50",
+   "median_nm": 12.0,
+   "best_nm": 12.0,
+   "n_measurements": 1,
+   "other_affinity_types": [],
+   "found_in_pdb_by_inchikey": [
+    "2E2B"
+   ]
+  },
+  {
+   "monomerid": 50590367,
+   "bdbm": "BDBM50590367",
+   "name": "CHEMBL384575",
+   "ligand_code": "627",
+   "match": "connectivity only",
+   "pdb_ids": [
+    "2V7A"
+   ],
+   "n_pdb_ids": 1,
+   "affinity_type": "IC50",
+   "median_nm": 25.0,
+   "best_nm": 25.0,
+   "n_measurements": 1,
+   "other_affinity_types": []
+  },
+  {
+   "monomerid": 50178612,
+   "bdbm": "BDBM50178612",
+   "name": "N-[3-(4,5'-BIPYRIMIDIN-2-YLAMINO)-4-METHYLPHENYL]-4-{[(3S)-3-(DIMETHYLAMINO)PYRROLIDIN-1-YL]METHYL}-3-(TRIFLUOROMETHYL)BENZAMIDE",
+   "ligand_code": "406",
+   "match": "same structure",
+   "pdb_ids": [
+    "2E2B"
+   ],
+   "n_pdb_ids": 1,
+   "affinity_type": "IC50",
+   "median_nm": 26.0,
+   "best_nm": 26.0,
+   "n_measurements": 1,
+   "other_affinity_types": [],
+   "found_in_pdb_by_inchikey": [
+    "2E2B"
+   ]
+  },
+  {
+   "monomerid": 50004205,
+   "bdbm": "BDBM50004205",
+   "name": "TOZASERTIB",
+   "ligand_code": "VX6",
+   "match": "same structure",
+   "pdb_ids": [
+    "2F4J",
+    "4ZOG"
+   ],
+   "n_pdb_ids": 2,
+   "affinity_type": "IC50",
+   "median_nm": 46.0,
+   "best_nm": 46.0,
+   "n_measurements": 1,
+   "other_affinity_types": [],
+   "found_in_pdb_by_inchikey": [
+    "2F4J",
+    "4ZOG"
+   ]
+  },
+  {
+   "monomerid": 50530294,
+   "bdbm": "BDBM50530294",
+   "name": "CHEMBL4538292",
+   "ligand_code": "KWP",
+   "match": "connectivity only",
+   "pdb_ids": [
+    "6NPV"
+   ],
+   "n_pdb_ids": 1,
+   "affinity_type": "IC50",
+   "median_nm": 129.0,
+   "best_nm": 100.0,
+   "n_measurements": 4,
+   "other_affinity_types": [
+    "EC50"
+   ],
+   "found_in_pdb_by_inchikey": [
+    "6NPV"
+   ]
+  },
+  {
+   "monomerid": 50434581,
+   "bdbm": "BDBM50434581",
+   "name": "imatinib-CD3",
+   "ligand_code": "STI",
+   "match": "connectivity only",
+   "pdb_ids": [
+    "1IEP",
+    "1OPJ",
+    "2HYY",
+    "3GVU",
+    "3K5V",
+    "3MS9",
+    "3MSS",
+    "3PYY",
+    "6HD4",
+    "6HD6",
+    "6NPE",
+    "6NPU",
+    "6NPV",
+    "7N9G"
+   ],
+   "n_pdb_ids": 14,
+   "affinity_type": "IC50",
+   "median_nm": 223.0,
+   "best_nm": 223.0,
+   "n_measurements": 1,
+   "other_affinity_types": []
+  },
+  {
+   "monomerid": 66241,
+   "bdbm": "BDBM66241",
+   "name": "MLS000036279",
+   "ligand_code": "3YY",
+   "match": "connectivity only",
+   "pdb_ids": [
+    "3PYY"
+   ],
+   "n_pdb_ids": 1,
+   "affinity_type": "IC50",
+   "median_nm": 324.5,
+   "best_nm": 251.0,
+   "n_measurements": 4,
+   "other_affinity_types": [
+    "EC50"
+   ],
+   "found_in_pdb_by_inchikey": [
+    "3PYY"
+   ]
+  },
+  {
+   "monomerid": 50530307,
+   "bdbm": "BDBM50530307",
+   "name": "CHEMBL4471351",
+   "ligand_code": "KWV",
+   "match": "record",
+   "pdb_ids": [
+    "6NPU"
+   ],
+   "n_pdb_ids": 1,
+   "affinity_type": "IC50",
+   "median_nm": 357.0,
+   "best_nm": 316.0,
+   "n_measurements": 4,
+   "other_affinity_types": [
+    "EC50"
+   ]
+  },
+  {
+   "monomerid": 50652932,
+   "bdbm": "BDBM50652932",
+   "name": "CHEMBL1738759",
+   "ligand_code": "9DP",
+   "match": "same structure",
+   "pdb_ids": [
+    "3QRK"
+   ],
+   "n_pdb_ids": 1,
+   "affinity_type": "IC50",
+   "median_nm": 415.0,
+   "best_nm": 57.0,
+   "n_measurements": 2,
+   "other_affinity_types": [],
+   "found_in_pdb_by_inchikey": [
+    "3QRK"
+   ]
+  },
+  {
+   "monomerid": 50325999,
+   "bdbm": "BDBM50325999",
+   "name": "3-(6-(4-(trifluoromethoxy)phenylamino)pyrimidin-4-yl)benzamide",
+   "ligand_code": "STJ",
+   "match": "record",
+   "pdb_ids": [
+    "3K5V"
+   ],
+   "n_pdb_ids": 1,
+   "affinity_type": "IC50",
+   "median_nm": 604.0,
+   "best_nm": 9.0,
+   "n_measurements": 4,
+   "other_affinity_types": []
+  },
+  {
+   "monomerid": 86734,
+   "bdbm": "BDBM86734",
+   "name": "Gleevec",
+   "ligand_code": "STI",
+   "match": "same structure",
+   "pdb_ids": [
+    "1IEP",
+    "1OPJ",
+    "2HYY",
+    "3GVU",
+    "3K5V",
+    "3MS9",
+    "3MSS",
+    "3PYY",
+    "6HD4",
+    "6HD6",
+    "6NPE",
+    "6NPU",
+    "6NPV",
+    "7N9G"
+   ],
+   "n_pdb_ids": 14,
+   "affinity_type": "IC50",
+   "median_nm": 825.0,
+   "best_nm": 75.0,
+   "n_measurements": 31,
+   "other_affinity_types": []
+  },
+  {
+   "monomerid": 50530275,
+   "bdbm": "BDBM50530275",
+   "name": "CHEMBL4562851",
+   "ligand_code": "KWD",
+   "match": "same structure",
+   "pdb_ids": [
+    "6NPE"
+   ],
+   "n_pdb_ids": 1,
+   "affinity_type": "IC50",
+   "median_nm": 880.0,
+   "best_nm": 501.0,
+   "n_measurements": 4,
+   "other_affinity_types": [
+    "EC50"
+   ],
+   "found_in_pdb_by_inchikey": [
+    "6NPE"
+   ]
+  }
+ ],
+ "truncated": false,
+ "note": "98 more compound(s) have PDB entries that BindingDB links to other proteins or to other records of this protein (e.g. another strain or construct); pass only_linked=false to list them. overlay_binding_site checks each chain against the target's sequence."
+}

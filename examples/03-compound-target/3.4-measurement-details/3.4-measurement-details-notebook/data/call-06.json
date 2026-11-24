@@ -1,0 +1,14 @@
+{
+ "row_count": 1,
+ "truncated": false,
+ "rows": [
+  {
+   "n": 256,
+   "papers": 151,
+   "pmin": 4.03,
+   "pmax": 10.0,
+   "pmed": 7.85,
+   "med_nm": 14.0
+  }
+ ]
+}

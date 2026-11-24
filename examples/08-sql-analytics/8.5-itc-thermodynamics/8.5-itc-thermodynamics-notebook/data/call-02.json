@@ -1,0 +1,48 @@
+{
+ "row_count": 6,
+ "truncated": false,
+ "rows": [
+  {
+   "target_id": 1193,
+   "name": "Carbonic anhydrase 2",
+   "uniprot_raw": "P00918",
+   "organism": "Homo sapiens",
+   "itc_results": 0
+  },
+  {
+   "target_id": 1277,
+   "name": "Carbonic anhydrase 2 [F130V]",
+   "uniprot_raw": "P00918[F130V]",
+   "organism": "Homo sapiens",
+   "itc_results": 0
+  },
+  {
+   "target_id": 4353,
+   "name": "Carbonic anhydrase 2",
+   "uniprot_raw": "P00921",
+   "organism": "Bos taurus",
+   "itc_results": 0
+  },
+  {
+   "target_id": 8817,
+   "name": "Carbonic anhydrase 2 [A65S,N67Q,E69T,I91L,F131V,K170E,L204A]",
+   "uniprot_raw": "P00918[A65S,N67Q,E69T,I91L,F131V,K170E,L204A]",
+   "organism": "Homo sapiens",
+   "itc_results": 0
+  },
+  {
+   "target_id": 10499,
+   "name": "Carbonic anhydrase 2",
+   "uniprot_raw": "P9WPJ9",
+   "organism": "Mycobacterium tuberculosis (strain ATCC 25618 / H37Rv)",
+   "itc_results": 0
+  },
+  {
+   "target_id": 50000479,
+   "name": "Carbonic anhydrase 2",
+   "uniprot_raw": "P27139",
+   "organism": "Rattus norvegicus",
+   "itc_results": 0
+  }
+ ]
+}

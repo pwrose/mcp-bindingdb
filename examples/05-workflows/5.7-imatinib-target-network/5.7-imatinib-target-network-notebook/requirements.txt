@@ -1,0 +1,83 @@
+# mcp-bindingdb at commit 79dae5d22c0f, with the versions of its dependencies its uv.lock pins.
+mcp-bindingdb[substructure,structures,opsin,notebook] @ git+https://github.com/sbl-sdsc/mcp-bindingdb.git@79dae5d22c0f15b8ded9b49adc8b105f0463703a
+annotated-doc==0.0.5
+annotated-types==0.8.0
+anyio==4.15.1
+appnope==1.0.0 ; sys_platform == 'darwin'
+asttokens==3.0.2
+attrs==26.1.0
+cffi==2.1.1 ; implementation_name == 'pypy' or platform_python_implementation != 'PyPy'
+click==8.5.0 ; sys_platform != 'emscripten'
+colorama==0.4.6 ; sys_platform == 'win32'
+comm==0.2.3
+cryptography==48.0.1 ; platform_machine == 'x86_64' and sys_platform == 'darwin'
+cryptography==50.0.2 ; platform_machine != 'x86_64' or sys_platform != 'darwin'
+debugpy==1.8.22
+duckdb==1.5.6
+executing==2.3.0
+gemmi==0.7.5
+h11==0.16.0 ; sys_platform != 'emscripten'
+httpcore2==2.13.1 ; sys_platform != 'emscripten'
+httpx2==2.13.1
+httpx2-jsfetch==1.0 ; python_full_version >= '3.12' and sys_platform == 'emscripten'
+idna==3.20
+ipykernel==7.4.0
+ipython==9.18.1
+ipython-pygments-lexers==1.1.1
+jdk4py==25.0.5.1
+jedi==0.20.1
+jpype1==1.7.1
+jsonschema==4.26.0
+jsonschema-specifications==2025.9.1
+jupyter-client==8.10.0
+jupyter-core==5.9.1
+markdown-it-py==4.2.0
+matplotlib-inline==0.2.2
+mcp==2.3.0
+mcp-types==2.3.0
+mdurl==0.1.2
+nest-asyncio2==1.7.4
+numpy==2.4.6 ; python_full_version < '3.12'
+numpy==2.5.3 ; python_full_version >= '3.12'
+opentelemetry-api==1.45.0
+packaging==26.3
+parso==0.8.7
+pexpect==4.9.0 ; sys_platform != 'emscripten' and sys_platform != 'win32'
+pillow==12.3.0
+platformdirs==4.14.7
+prompt-toolkit==3.0.53
+psutil==7.2.2 ; sys_platform != 'android' and sys_platform != 'cygwin' and sys_platform != 'emscripten'
+ptyprocess==0.7.0 ; sys_platform != 'emscripten' and sys_platform != 'win32'
+pure-eval==0.2.4
+pycparser==3.0 ; implementation_name == 'pypy' or (implementation_name != 'PyPy' and implementation_name != 'pypy' and platform_python_implementation != 'PyPy')
+pydantic==2.13.5
+pydantic-core==2.46.5
+pygments==2.21.0
+pyjwt==2.15.1
+pyopsin==1.1.0
+python-dateutil==4.0.0
+python-dotenv==1.2.4
+python-multipart==0.0.32
+pywin32==312 ; sys_platform == 'win32'
+pyzmq==27.3.0
+rdkit==2025.9.3 ; platform_machine == 'x86_64' and sys_platform == 'darwin'
+rdkit==2026.3.6 ; platform_machine != 'x86_64' or sys_platform != 'darwin'
+referencing==0.37.0
+rich==15.0.0
+rpds-py==2026.6.3
+shellingham==1.5.4
+sse-starlette==3.5.0
+stack-data==0.6.3
+starlette==1.7.0
+tornado==6.6.1
+traitlets==5.16.1
+truststore==0.10.4
+typer==0.27.2
+typing-extensions==4.16.0
+typing-inspection==0.4.4
+tzdata==2026.6
+uvicorn==0.54.0 ; sys_platform != 'emscripten'
+wcwidth==0.9.4
+zstandard==0.25.0
+# Imported by the analysis code:
+matplotlib

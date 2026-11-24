@@ -1,0 +1,257 @@
+{
+ "row_count": 25,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 281761,
+   "compound_name": "4-(2-acryloyl-1,2,3,4- tetrahydroisoquinolin- 5-yl)-6-chloro-3-fluoro- 9H-carbazole-1- carboxamide",
+   "source_id": "US10023534-B2",
+   "year": 2018,
+   "value": 0.00026,
+   "inchi_key": "PRKMJLHNBXYDTM-UHFFFAOYSA-N",
+   "ki_result_id": 536982,
+   "entryid": 610
+  },
+  {
+   "monomerid": 281762,
+   "compound_name": "4-(2-acryloyl-1,2,3,4- tetrahydroisoquinolin- 5-yl)-3-fluoro-9H- carbazole-1- carboxamide",
+   "source_id": "US10023534-B2",
+   "year": 2018,
+   "value": 0.0003,
+   "inchi_key": "HDEWPPNPDPMPSC-UHFFFAOYSA-N",
+   "ki_result_id": 536983,
+   "entryid": 610
+  },
+  {
+   "monomerid": 281763,
+   "compound_name": "9-(2-acryloyl-1,2,3,4- tetrahydroisoquinolin- 5-yl)-8-fluoro-5H- pyrido[4,3-b]indole-6- carboxamide",
+   "source_id": "US10023534-B2",
+   "year": 2018,
+   "value": 0.0003,
+   "inchi_key": "YVNOLRLSCNMLIY-UHFFFAOYSA-N",
+   "ki_result_id": 536984,
+   "entryid": 610
+  },
+  {
+   "monomerid": 281764,
+   "compound_name": "5-(2-acryloyl-1,2,3,4- tetrahydroisoquinolin- 5-yl)-6-chloro-2,3,4,9- tetrahydro-1H- carbazole-8- carboxamide",
+   "source_id": "US10023534-B2",
+   "year": 2018,
+   "value": 0.0006,
+   "inchi_key": "KSOJWLQEAAJFEY-UHFFFAOYSA-N",
+   "ki_result_id": 536985,
+   "entryid": 610
+  },
+  {
+   "monomerid": 281758,
+   "compound_name": "4-(2-acryloyl-1,2,3,4- tetrahydroisoquinolin- 5-yl)-3-fluoro-7-(2- fluoroethyl)-9H- carbazole-1- carboxamide",
+   "source_id": "US10023534-B2",
+   "year": 2018,
+   "value": 0.029,
+   "inchi_key": "AZUKRIAOZXZCBL-UHFFFAOYSA-N",
+   "ki_result_id": 536979,
+   "entryid": 610
+  },
+  {
+   "monomerid": 662949,
+   "compound_name": "US20240109877, Example 3",
+   "source_id": "US20240109877-A1",
+   "year": 2024,
+   "value": 0.034,
+   "inchi_key": "XTTYHHPEDDXLEH-HHHXNRCGSA-N",
+   "ki_result_id": 1398289,
+   "entryid": 11938
+  },
+  {
+   "monomerid": 662949,
+   "compound_name": "US20240109877, Example 3",
+   "source_id": "US20250304568-A1",
+   "year": 2025,
+   "value": 0.034,
+   "inchi_key": "XTTYHHPEDDXLEH-HHHXNRCGSA-N",
+   "ki_result_id": 1246313,
+   "entryid": 13296
+  },
+  {
+   "monomerid": 708087,
+   "compound_name": "US12172992, Example 3",
+   "source_id": "US12172992-B2",
+   "year": 2024,
+   "value": 0.034,
+   "inchi_key": "XTTYHHPEDDXLEH-HHHXNRCGSA-N",
+   "ki_result_id": 1470410,
+   "entryid": 12537
+  },
+  {
+   "monomerid": 662958,
+   "compound_name": "US20240109877, Example 12",
+   "source_id": "US20240109877-A1",
+   "year": 2024,
+   "value": 0.036,
+   "inchi_key": "VCYKHFWTVADJIM-AREMUKBSSA-N",
+   "ki_result_id": 1398307,
+   "entryid": 11938
+  },
+  {
+   "monomerid": 662958,
+   "compound_name": "US20240109877, Example 12",
+   "source_id": "US20250304568-A1",
+   "year": 2025,
+   "value": 0.036,
+   "inchi_key": "VCYKHFWTVADJIM-AREMUKBSSA-N",
+   "ki_result_id": 1246331,
+   "entryid": 13296
+  },
+  {
+   "monomerid": 708096,
+   "compound_name": "US12172992, Example 12",
+   "source_id": "US12172992-B2",
+   "year": 2024,
+   "value": 0.036,
+   "inchi_key": "VCYKHFWTVADJIM-AREMUKBSSA-N",
+   "ki_result_id": 1470428,
+   "entryid": 12537
+  },
+  {
+   "monomerid": 165511,
+   "compound_name": "US9688629, 167",
+   "source_id": "US10604504-B2",
+   "year": 2020,
+   "value": 0.04,
+   "inchi_key": "CDCZNLRXQCCGJO-UHFFFAOYSA-N",
+   "ki_result_id": 896343,
+   "entryid": 9073
+  },
+  {
+   "monomerid": 165511,
+   "compound_name": "US9688629, 167",
+   "source_id": "US9688629-B2",
+   "year": 2017,
+   "value": 0.04,
+   "inchi_key": "CDCZNLRXQCCGJO-UHFFFAOYSA-N",
+   "ki_result_id": 470238,
+   "entryid": 90
+  },
+  {
+   "monomerid": 165511,
+   "compound_name": "US9688629, 167",
+   "source_id": "US11623921-B2",
+   "year": 2023,
+   "value": 0.04,
+   "inchi_key": "CDCZNLRXQCCGJO-UHFFFAOYSA-N",
+   "ki_result_id": 1272773,
+   "entryid": 11202
+  },
+  {
+   "monomerid": 165511,
+   "compound_name": "US9688629, 167",
+   "source_id": "US9802915-B2",
+   "year": 2017,
+   "value": 0.04,
+   "inchi_key": "CDCZNLRXQCCGJO-UHFFFAOYSA-N",
+   "ki_result_id": 699784,
+   "entryid": 2079
+  },
+  {
+   "monomerid": 165511,
+   "compound_name": "US9688629, 167",
+   "source_id": "US9920031-B2",
+   "year": 2018,
+   "value": 0.04,
+   "inchi_key": "CDCZNLRXQCCGJO-UHFFFAOYSA-N",
+   "ki_result_id": 752388,
+   "entryid": 2711
+  },
+  {
+   "monomerid": 165960,
+   "compound_name": "US9688629, 204",
+   "source_id": "US10604504-B2",
+   "year": 2020,
+   "value": 0.04,
+   "inchi_key": "BGLCRSDXKMNCHF-UHFFFAOYSA-N",
+   "ki_result_id": 896381,
+   "entryid": 9073
+  },
+  {
+   "monomerid": 165960,
+   "compound_name": "US9688629, 204",
+   "source_id": "US9688629-B2",
+   "year": 2017,
+   "value": 0.04,
+   "inchi_key": "BGLCRSDXKMNCHF-UHFFFAOYSA-N",
+   "ki_result_id": 470276,
+   "entryid": 90
+  },
+  {
+   "monomerid": 165960,
+   "compound_name": "US9688629, 204",
+   "source_id": "US11623921-B2",
+   "year": 2023,
+   "value": 0.04,
+   "inchi_key": "BGLCRSDXKMNCHF-UHFFFAOYSA-N",
+   "ki_result_id": 1272811,
+   "entryid": 11202
+  },
+  {
+   "monomerid": 165960,
+   "compound_name": "US9688629, 204",
+   "source_id": "US9920031-B2",
+   "year": 2018,
+   "value": 0.04,
+   "inchi_key": "BGLCRSDXKMNCHF-UHFFFAOYSA-N",
+   "ki_result_id": 752426,
+   "entryid": 2711
+  },
+  {
+   "monomerid": 165960,
+   "compound_name": "US9688629, 204",
+   "source_id": "US9802915-B2",
+   "year": 2017,
+   "value": 0.04,
+   "inchi_key": "BGLCRSDXKMNCHF-UHFFFAOYSA-N",
+   "ki_result_id": 699822,
+   "entryid": 2079
+  },
+  {
+   "monomerid": 662952,
+   "compound_name": "US20240109877, Example 6",
+   "source_id": "US20240109877-A1",
+   "year": 2024,
+   "value": 0.04,
+   "inchi_key": "HJKHARHYGJCYLQ-MVSFAKPFSA-N",
+   "ki_result_id": 1398295,
+   "entryid": 11938
+  },
+  {
+   "monomerid": 662952,
+   "compound_name": "US20240109877, Example 6",
+   "source_id": "US20250304568-A1",
+   "year": 2025,
+   "value": 0.04,
+   "inchi_key": "HJKHARHYGJCYLQ-MVSFAKPFSA-N",
+   "ki_result_id": 1246319,
+   "entryid": 13296
+  },
+  {
+   "monomerid": 708090,
+   "compound_name": "US12172992, Example 6",
+   "source_id": "US12172992-B2",
+   "year": 2024,
+   "value": 0.04,
+   "inchi_key": "HJKHARHYGJCYLQ-MVSFAKPFSA-N",
+   "ki_result_id": 1470416,
+   "entryid": 12537
+  },
+  {
+   "monomerid": 281750,
+   "compound_name": "5-(2-Acryloyl-1,2,3,4-tetrahydroisoquinolin-5-yl)-6-fluoro-2-(S)-(2-hydroxypropan-2-yl)-2,3,4,9-tetrahydro-1H-carbazole-8-carboxamide (Single Diastereomer)",
+   "source_id": "US10023534-B2",
+   "year": 2018,
+   "value": 0.045,
+   "inchi_key": "ZCIRGAROIKDISM-INIZCTEOSA-N",
+   "ki_result_id": 536971,
+   "entryid": 610
+  }
+ ],
+ "order_warning": "Rows 6 and 7 tie on every ORDER BY column (value, monomerid), so rows like them can swap places from run to run. End the ORDER BY with a unique column (e.g. monomerid; ki_result_id, affinity_type for measurements) so the result is the same on every run and a notebook's rerun check passes."
+}

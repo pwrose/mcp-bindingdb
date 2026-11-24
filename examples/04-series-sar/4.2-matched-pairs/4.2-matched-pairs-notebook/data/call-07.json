@@ -1,0 +1,26 @@
+{
+ "row_count": 4,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 12659,
+   "best_nm": 0.09,
+   "best_source": "15771420"
+  },
+  {
+   "monomerid": 12693,
+   "best_nm": 0.03,
+   "best_source": "18054227"
+  },
+  {
+   "monomerid": 12705,
+   "best_nm": 3.5,
+   "best_source": "16682200"
+  },
+  {
+   "monomerid": 12743,
+   "best_nm": 0.18,
+   "best_source": "17914785"
+  }
+ ]
+}

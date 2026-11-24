@@ -1,0 +1,30 @@
+{
+ "row_count": 4,
+ "truncated": false,
+ "rows": [
+  {
+   "band": "1: <=10 nM",
+   "n_cpd": 42,
+   "n_pains": 5,
+   "pct": 11.9
+  },
+  {
+   "band": "2: 10-100 nM",
+   "n_cpd": 415,
+   "n_pains": 54,
+   "pct": 13.0
+  },
+  {
+   "band": "3: 0.1-1 uM",
+   "n_cpd": 958,
+   "n_pains": 197,
+   "pct": 20.6
+  },
+  {
+   "band": "4: >1 uM",
+   "n_cpd": 996,
+   "n_pains": 160,
+   "pct": 16.1
+  }
+ ]
+}

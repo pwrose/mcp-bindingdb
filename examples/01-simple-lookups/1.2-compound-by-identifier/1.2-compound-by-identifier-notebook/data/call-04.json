@@ -1,0 +1,56 @@
+{
+ "row_count": 5,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 13530,
+   "bdbm_id": "BDBM13530",
+   "name": "Gleevec",
+   "inchi_key": "KTUFNOKKBVMGRW-UHFFFAOYSA-N",
+   "smiles": "CN1CCN(Cc2ccc(cc2)C(=O)Nc2ccc(C)c(Nc3nccc(n3)-c3cccnc3)c2)CC1",
+   "mol_weight": 493.26,
+   "n_activities": 1156,
+   "n_targets": 459
+  },
+  {
+   "monomerid": 86734,
+   "bdbm_id": "BDBM86734",
+   "name": "Gleevec",
+   "inchi_key": "KTUFNOKKBVMGRW-UHFFFAOYSA-N",
+   "smiles": "Cc3ccc(NC(=O)c2ccc(CN1CCN(C)CC1)cc2)cc3Nc5nccc(c4cccnc4)n5",
+   "mol_weight": 493.26,
+   "n_activities": 66,
+   "n_targets": 10
+  },
+  {
+   "monomerid": 50434581,
+   "bdbm_id": "BDBM50434581",
+   "name": "imatinib-CD3",
+   "inchi_key": "KTUFNOKKBVMGRW-BMSJAHLVSA-N",
+   "smiles": "[2H]C([2H])([2H])N5CCN(Cc4ccc(C(=O)Nc3ccc(C)c(Nc2nccc(c1cccnc1)n2)c3)cc4)CC5",
+   "mol_weight": 496.58,
+   "n_activities": 2,
+   "n_targets": 2
+  },
+  {
+   "monomerid": 50634633,
+   "bdbm_id": "BDBM50634633",
+   "name": null,
+   "inchi_key": "KTUFNOKKBVMGRW-BMSJAHLVSA-N",
+   "smiles": "[2H]C([2H])([2H])N5CCN(Cc4ccc(C(=O)Nc3ccc(C)c(Nc2nccc(c1cccnc1)n2)c3)cc4)CC5",
+   "mol_weight": 496.28,
+   "n_activities": 2,
+   "n_targets": 1
+  },
+  {
+   "monomerid": 31341,
+   "bdbm_id": "BDBM31341",
+   "name": "IMATINIB",
+   "inchi_key": "KTUFNOKKBVMGRW-UHFFFAOYSA-N",
+   "smiles": "Cc1ccc(cc1Nc2nccc(n2)c3cccnc3)NC(=O)c4ccc(cc4)CN5CCN(CC5)C",
+   "mol_weight": null,
+   "n_activities": 0,
+   "n_targets": 0
+  }
+ ]
+}

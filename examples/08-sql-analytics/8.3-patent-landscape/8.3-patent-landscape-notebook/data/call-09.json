@@ -1,0 +1,591 @@
+{
+ "row_count": 65,
+ "truncated": false,
+ "rows": [
+  {
+   "target": "Mitogen-activated protein kinase kinase kinase kinase 1",
+   "tkey": "Q92918",
+   "early": 0,
+   "late": 44,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": 1.285
+  },
+  {
+   "target": "GTPase KRas",
+   "tkey": "P01116",
+   "early": 0,
+   "late": 41,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": 1.197
+  },
+  {
+   "target": "Replicase polyprotein 1a",
+   "tkey": "P0DTC1",
+   "early": 0,
+   "late": 41,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": 1.197
+  },
+  {
+   "target": "Receptor-interacting serine/threonine-protein kinase 1",
+   "tkey": "Q13546",
+   "early": 1,
+   "late": 35,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": 0.986
+  },
+  {
+   "target": "Tyrosine-protein phosphatase non-receptor type 11",
+   "tkey": "Q06124",
+   "early": 3,
+   "late": 35,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": 0.913
+  },
+  {
+   "target": "Replicase polyprotein 1ab",
+   "tkey": "P0DTD1",
+   "early": 0,
+   "late": 31,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": 0.905
+  },
+  {
+   "target": "Programmed cell death 1 ligand/protein 1",
+   "tkey": "Programmed cell death 1 ligand/protein 1",
+   "early": 0,
+   "late": 31,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": 0.905
+  },
+  {
+   "target": "Protein cereblon",
+   "tkey": "Q96SW2",
+   "early": 0,
+   "late": 29,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": 0.847
+  },
+  {
+   "target": "5-hydroxytryptamine receptor 2A",
+   "tkey": "P28223",
+   "early": 9,
+   "late": 38,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": 0.782
+  },
+  {
+   "target": "Stimulator of interferon genes protein",
+   "tkey": "Q86WV6",
+   "early": 0,
+   "late": 23,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": 0.672
+  },
+  {
+   "target": "Proto-oncogene tyrosine-protein kinase receptor Ret",
+   "tkey": "P07949",
+   "early": 2,
+   "late": 25,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": 0.657
+  },
+  {
+   "target": "Interleukin-1 receptor-associated kinase 4",
+   "tkey": "Q9NWZ3",
+   "early": 11,
+   "late": 36,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": 0.651
+  },
+  {
+   "target": "Diacylglycerol kinase alpha",
+   "tkey": "P23743",
+   "early": 0,
+   "late": 21,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": 0.613
+  },
+  {
+   "target": "Adenosine receptor A2a",
+   "tkey": "P29274",
+   "early": 5,
+   "late": 27,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": 0.607
+  },
+  {
+   "target": "Cyclin-dependent kinase 2/G1/S-specific cyclin-E1",
+   "tkey": "Cyclin-dependent kinase 2/G1/S-specific cyclin-E1",
+   "early": 1,
+   "late": 21,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": 0.577
+  },
+  {
+   "target": "DNA damage-binding protein 1/Protein cereblon",
+   "tkey": "DNA damage-binding protein 1/Protein cereblon",
+   "early": 0,
+   "late": 19,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": 0.555
+  },
+  {
+   "target": "Monoglyceride lipase",
+   "tkey": "Q99685",
+   "early": 1,
+   "late": 20,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": 0.548
+  },
+  {
+   "target": "Cytochrome P450 1A2",
+   "tkey": "P05177",
+   "early": 2,
+   "late": 21,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": 0.54
+  },
+  {
+   "target": "Potassium voltage-gated channel subfamily H member 2",
+   "tkey": "Q12809",
+   "early": 3,
+   "late": 22,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": 0.533
+  },
+  {
+   "target": "Non-receptor tyrosine-protein kinase TYK2",
+   "tkey": "P29597",
+   "early": 1,
+   "late": 19,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": 0.518
+  },
+  {
+   "target": "Tyrosine-protein kinase JAK1",
+   "tkey": "P23458",
+   "early": 11,
+   "late": 31,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": 0.505
+  },
+  {
+   "target": "Tyrosine-protein kinase JAK2",
+   "tkey": "O60674",
+   "early": 35,
+   "late": 60,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": 0.48
+  },
+  {
+   "target": "Epidermal growth factor receptor",
+   "tkey": "P00533",
+   "early": 27,
+   "late": 50,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": 0.479
+  },
+  {
+   "target": "Ectonucleotide pyrophosphatase/phosphodiesterase family member 1",
+   "tkey": "P22413",
+   "early": 0,
+   "late": 15,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": 0.438
+  },
+  {
+   "target": "TGF-beta receptor type-1",
+   "tkey": "P36897",
+   "early": 4,
+   "late": 17,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": 0.351
+  },
+  {
+   "target": "Histone deacetylase 6",
+   "tkey": "Q9UBN7",
+   "early": 4,
+   "late": 17,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": 0.351
+  },
+  {
+   "target": "Macrophage colony-stimulating factor 1 receptor",
+   "tkey": "P07333",
+   "early": 5,
+   "late": 16,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": 0.285
+  },
+  {
+   "target": "Dipeptidyl peptidase 1",
+   "tkey": "P53634",
+   "early": 8,
+   "late": 19,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": 0.264
+  },
+  {
+   "target": "D(2) dopamine receptor",
+   "tkey": "P14416",
+   "early": 10,
+   "late": 20,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": 0.221
+  },
+  {
+   "target": "Poly [ADP-ribose] polymerase 1",
+   "tkey": "P09874",
+   "early": 15,
+   "late": 26,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": 0.214
+  },
+  {
+   "target": "Serine/threonine-protein kinase ATR",
+   "tkey": "Q13535",
+   "early": 7,
+   "late": 16,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": 0.213
+  },
+  {
+   "target": "Bromodomain-containing protein 4",
+   "tkey": "O60885",
+   "early": 21,
+   "late": 32,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": 0.171
+  },
+  {
+   "target": "Leucine-rich repeat serine/threonine-protein kinase 2",
+   "tkey": "Q5S007",
+   "early": 15,
+   "late": 24,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": 0.156
+  },
+  {
+   "target": "Apoptosis regulator Bcl-2",
+   "tkey": "P10415",
+   "early": 13,
+   "late": 19,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": 0.082
+  },
+  {
+   "target": "Rho-associated protein kinase 2",
+   "tkey": "O75116",
+   "early": 14,
+   "late": 18,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": 0.017
+  },
+  {
+   "target": "Lysine-specific histone demethylase 1A",
+   "tkey": "O60341",
+   "early": 18,
+   "late": 19,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": -0.099
+  },
+  {
+   "target": "Fibroblast growth factor receptor 1",
+   "tkey": "P11362",
+   "early": 17,
+   "late": 17,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": -0.121
+  },
+  {
+   "target": "Serine/threonine-protein kinase B-raf",
+   "tkey": "P15056",
+   "early": 17,
+   "late": 15,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": -0.18
+  },
+  {
+   "target": "Complement factor D",
+   "tkey": "P00746",
+   "early": 15,
+   "late": 10,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": -0.253
+  },
+  {
+   "target": "Protein O-GlcNAcase",
+   "tkey": "O60502",
+   "early": 16,
+   "late": 10,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": -0.289
+  },
+  {
+   "target": "Cannabinoid receptor 1",
+   "tkey": "P21554",
+   "early": 16,
+   "late": 10,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": -0.289
+  },
+  {
+   "target": "Cytochrome P450 3A4",
+   "tkey": "P08684",
+   "early": 18,
+   "late": 12,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": -0.304
+  },
+  {
+   "target": "Phosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit alpha isoform",
+   "tkey": "P42336",
+   "early": 19,
+   "late": 12,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": -0.34
+  },
+  {
+   "target": "Mitogen-activated protein kinase 1",
+   "tkey": "P28482",
+   "early": 15,
+   "late": 6,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": -0.37
+  },
+  {
+   "target": "Coagulation factor XI",
+   "tkey": "P03951",
+   "early": 20,
+   "late": 11,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": -0.406
+  },
+  {
+   "target": "High affinity nerve growth factor receptor",
+   "tkey": "P04629",
+   "early": 23,
+   "late": 14,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": -0.427
+  },
+  {
+   "target": "E3 ubiquitin-protein ligase Mdm2",
+   "tkey": "Q00987",
+   "early": 19,
+   "late": 9,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": -0.428
+  },
+  {
+   "target": "RAC-alpha serine/threonine-protein kinase",
+   "tkey": "P31749",
+   "early": 18,
+   "late": 7,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": -0.45
+  },
+  {
+   "target": "Transient receptor potential cation channel subfamily V member 1",
+   "tkey": "Q8NER1",
+   "early": 15,
+   "late": 2,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": -0.487
+  },
+  {
+   "target": "Orexin receptor type 2",
+   "tkey": "O43614",
+   "early": 19,
+   "late": 6,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": -0.515
+  },
+  {
+   "target": "P2X purinoceptor 7",
+   "tkey": "Q99572",
+   "early": 16,
+   "late": 2,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": -0.523
+  },
+  {
+   "target": "Dipeptidyl peptidase 4",
+   "tkey": "P27487",
+   "early": 18,
+   "late": 4,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": -0.537
+  },
+  {
+   "target": "Prostaglandin D2 receptor 2",
+   "tkey": "Q9Y5Y4",
+   "early": 15,
+   "late": 0,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": -0.545
+  },
+  {
+   "target": "Hepatocyte growth factor receptor",
+   "tkey": "P08581",
+   "early": 22,
+   "late": 8,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": -0.566
+  },
+  {
+   "target": "Vascular endothelial growth factor receptor 2",
+   "tkey": "P35968",
+   "early": 23,
+   "late": 9,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": -0.573
+  },
+  {
+   "target": "Serine/threonine-protein kinase pim-1",
+   "tkey": "P11309",
+   "early": 19,
+   "late": 4,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": -0.574
+  },
+  {
+   "target": "Tyrosine-protein kinase BTK",
+   "tkey": "Q06187",
+   "early": 56,
+   "late": 50,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": -0.575
+  },
+  {
+   "target": "Sphingosine 1-phosphate receptor 1",
+   "tkey": "P21453",
+   "early": 19,
+   "late": 2,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": -0.632
+  },
+  {
+   "target": "Phosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit delta isoform",
+   "tkey": "O00329",
+   "early": 33,
+   "late": 19,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": -0.644
+  },
+  {
+   "target": "Orexin/Hypocretin receptor type 1",
+   "tkey": "O43613",
+   "early": 24,
+   "late": 5,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": -0.726
+  },
+  {
+   "target": "Nuclear receptor ROR-gamma",
+   "tkey": "P51449",
+   "early": 29,
+   "late": 9,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": -0.791
+  },
+  {
+   "target": "Tyrosine-protein kinase SYK",
+   "tkey": "P43405",
+   "early": 28,
+   "late": 6,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": -0.842
+  },
+  {
+   "target": "Sodium channel protein type 9 subunit alpha",
+   "tkey": "Q15858",
+   "early": 40,
+   "late": 8,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": -1.22
+  },
+  {
+   "target": "cAMP and cAMP-inhibited cGMP 3',5'-cyclic phosphodiesterase 10A",
+   "tkey": "Q9Y233",
+   "early": 53,
+   "late": 3,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": -1.838
+  },
+  {
+   "target": "Beta-secretase 1",
+   "tkey": "P56817",
+   "early": 80,
+   "late": 1,
+   "early_total": 2752,
+   "late_total": 3425,
+   "delta_pp": -2.878
+  }
+ ]
+}

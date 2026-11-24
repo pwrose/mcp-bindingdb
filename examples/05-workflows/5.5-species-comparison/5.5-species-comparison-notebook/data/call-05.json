@@ -1,0 +1,30 @@
+{
+ "row_count": 2,
+ "truncated": false,
+ "rows": [
+  {
+   "ki_result_id": 50471990,
+   "monomerid": 50086852,
+   "polymerid": 3630,
+   "organism": "Rattus norvegicus",
+   "affinity_type": "Ki",
+   "raw_value": "12",
+   "source_id": null,
+   "year": 1995,
+   "assay_name": "ChEMBL_58485 (CHEMBL670416)",
+   "title": "<span style='font-style: italic'>N</span>-(2-pyrrolidinylmethyl)benzoxazine-8-carboxamides exhibiting high affinities for All of D<sub>2</sub>, 5-HT<sub>1 A</sub>, and 5-HT<sub>2</sub> receptors"
+  },
+  {
+   "ki_result_id": 50154519,
+   "monomerid": 50086852,
+   "polymerid": 5866,
+   "organism": "Homo sapiens",
+   "affinity_type": "Ki",
+   "raw_value": "12",
+   "source_id": "10743959",
+   "year": 2000,
+   "assay_name": "ChEBML_61120",
+   "title": "N-[[1-(2-phenylethyl)pyrrolidin-2-yl]methyl]cyclohexanecarboxamides as selective 5-HT1A receptor agonists."
+  }
+ ]
+}

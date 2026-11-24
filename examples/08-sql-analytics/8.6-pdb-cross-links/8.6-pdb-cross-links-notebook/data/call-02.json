@@ -1,0 +1,38 @@
+{
+ "row_count": 4,
+ "truncated": false,
+ "rows": [
+  {
+   "target_kind": "polymer",
+   "target_id": 166,
+   "name": "HIV-1 Protease substrate",
+   "organism": null,
+   "uniprot": null,
+   "n_activities": 0
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 225,
+   "name": "Gag-Pol polyprotein [514-612]",
+   "organism": "Human immunodeficiency virus 2",
+   "uniprot": "P04584",
+   "n_activities": 0
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 1347,
+   "name": "HIV-1 Protease Substrate",
+   "organism": null,
+   "uniprot": null,
+   "n_activities": 0
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 50001675,
+   "name": "HIV-1 protease",
+   "organism": null,
+   "uniprot": null,
+   "n_activities": 1
+  }
+ ]
+}

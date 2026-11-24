@@ -1,0 +1,42 @@
+{
+ "row_count": 4,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 12659,
+   "smiles": "CS(=O)(=O)c1ccccc1-c1ccc(NC(=O)c2cc(nn2-c2ccc3onc(N)c3c2)C(F)(F)F)c(F)c1",
+   "name": "Razaxaban Analogue",
+   "n": 2,
+   "best_nm": 0.09,
+   "source_min": "15771420",
+   "source_max": "17933529"
+  },
+  {
+   "monomerid": 12693,
+   "smiles": "Nc1noc2ccc(cc12)-n1nc(c2CCN(C(=O)c12)c1ccc(cc1)-c1ccccc1CN1CC[C@@H](O)C1)C(F)(F)F |r|",
+   "name": "BMS-740808",
+   "n": 4,
+   "best_nm": 0.03,
+   "source_min": "16730984",
+   "source_max": "20503967"
+  },
+  {
+   "monomerid": 12705,
+   "smiles": "COc1ccc(cc1)-n1nc(cc1C(=O)Nc1ccc(cc1F)-c1ccccc1S(C)(=O)=O)C(F)(F)F",
+   "name": "N-arylpyrazole carboxamide 3",
+   "n": 2,
+   "best_nm": 3.5,
+   "source_min": "14640539",
+   "source_max": "16682200"
+  },
+  {
+   "monomerid": 12743,
+   "smiles": "COc1ccc(cc1)-n1nc(c2CCN(C(=O)c12)c1ccc(cc1)-c1ccccc1CN1CC[C@@H](O)C1)C(F)(F)F |r|",
+   "name": "dihydropyrazolopyridinone analogue 7c",
+   "n": 4,
+   "best_nm": 0.18,
+   "source_min": "16963264",
+   "source_max": "21443196"
+  }
+ ]
+}

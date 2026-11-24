@@ -1,0 +1,25 @@
+{
+ "query": "Ibrance",
+ "resolved": true,
+ "source": "bindingdb",
+ "smiles": "CC1=C(C(=O)N(c2c1cnc(n2)Nc3ccc(cn3)N4CCNCC4)C5CCCC5)C(=O)C",
+ "inchi_key": "AHJRHEGDXFFMBM-UHFFFAOYSA-N",
+ "monomerid": 6309,
+ "ambiguous": false,
+ "candidates": [
+  {
+   "monomerid": 6309,
+   "bdbm_id": "BDBM6309",
+   "name": "Ibrance",
+   "inchi_key": "AHJRHEGDXFFMBM-UHFFFAOYSA-N",
+   "smiles": "CC1=C(C(=O)N(c2c1cnc(n2)Nc3ccc(cn3)N4CCNCC4)C5CCCC5)C(=O)C",
+   "n_activities": 154
+  }
+ ],
+ "sources_tried": [
+  {
+   "source": "bindingdb",
+   "status": "found"
+  }
+ ]
+}

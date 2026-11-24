@@ -1,0 +1,273 @@
+{
+ "compound": {
+  "monomerid": 50225074,
+  "bdbm_id": "BDBM50225074",
+  "name": "SAXAGLIPTIN",
+  "inchi_key": "QGJUIPDUBHWZPV-SGTAVMJGSA-N",
+  "smiles": "N#C[C@@H]1C[C@@H]2C[C@@H]2N1C(=O)[C@@H](N)C12CC3CC(CC(O)(C3)C1)C2",
+  "formula": null,
+  "mol_weight": 315.19,
+  "type": "Small organic molecule",
+  "het_pdb": null,
+  "n_pdb_ids_exact": 0,
+  "n_activities": 49,
+  "n_targets": 17,
+  "inchi": "InChI=1S/C18H25N3O2/c19-8-13-2-12-3-14(12)21(13)16(22)15(20)17-4-10-1-11(5-17)7-18(23,6-10)9-17/h10-15,23H,1-7,9,20H2/t10?,11?,12-,13+,14+,15-,17?,18?/m1/s1",
+  "pdb_ids_exact": "",
+  "pdb_ids_sub": null
+ },
+ "synonyms": [
+  "BMS-477118",
+  "SAXAGLIPTIN",
+  "CHEMBL385517",
+  "(1S,6S)-2-(2-adamantan-1-yl-2-amino-acetyl)-2-aza-bicyclo[3.1.0]hexane-3-carbonitrile",
+  "(1S,3S,5S)-2-[(S)-2-amino-2-(3-hydroxy-adamantan-1-yl)-acetyl]-2-aza-bicyclo[3.1.0]hexane-3-carbonitrile"
+ ],
+ "top_targets": [
+  {
+   "polymerid": 1234,
+   "complexid": null,
+   "target_name": "Dipeptidyl peptidase 4",
+   "uniprot_raw": "P27487",
+   "organism": "Homo sapiens",
+   "n_measurements": 16,
+   "best_p_affinity": 9.52,
+   "affinity_types": [
+    "IC50",
+    "Kd",
+    "Ki"
+   ],
+   "best_ligand_efficiency": 0.57
+  },
+  {
+   "polymerid": 50002948,
+   "complexid": null,
+   "target_name": "Dipeptidyl peptidase 4",
+   "uniprot_raw": "P28843",
+   "organism": "Mus musculus",
+   "n_measurements": 1,
+   "best_p_affinity": 8.72,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.52
+  },
+  {
+   "polymerid": 1237,
+   "complexid": null,
+   "target_name": "Dipeptidyl peptidase 9",
+   "uniprot_raw": "Q86TI2",
+   "organism": "Homo sapiens",
+   "n_measurements": 3,
+   "best_p_affinity": 7.01,
+   "affinity_types": [
+    "IC50",
+    "Ki"
+   ],
+   "best_ligand_efficiency": 0.42
+  },
+  {
+   "polymerid": 1236,
+   "complexid": null,
+   "target_name": "Dipeptidyl peptidase 8",
+   "uniprot_raw": "Q6V1X1",
+   "organism": "Homo sapiens",
+   "n_measurements": 3,
+   "best_p_affinity": 6.62,
+   "affinity_types": [
+    "IC50",
+    "Ki"
+   ],
+   "best_ligand_efficiency": 0.39
+  },
+  {
+   "polymerid": 50002333,
+   "complexid": null,
+   "target_name": "Acyl-protein thioesterase 1",
+   "uniprot_raw": "P70470",
+   "organism": "Rattus norvegicus",
+   "n_measurements": 2,
+   "best_p_affinity": 6.0,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.36
+  },
+  {
+   "polymerid": 5699,
+   "complexid": null,
+   "target_name": "Prolyl endopeptidase FAP",
+   "uniprot_raw": "Q12884",
+   "organism": "Homo sapiens",
+   "n_measurements": 1,
+   "best_p_affinity": 5.89,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.35
+  },
+  {
+   "polymerid": 10014,
+   "complexid": null,
+   "target_name": "Prolyl endopeptidase",
+   "uniprot_raw": "P48147",
+   "organism": "Homo sapiens",
+   "n_measurements": 1,
+   "best_p_affinity": 5.11,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.3
+  },
+  {
+   "polymerid": 5468,
+   "complexid": null,
+   "target_name": "Dipeptidyl peptidase 2",
+   "uniprot_raw": "Q9UHL4",
+   "organism": "Homo sapiens",
+   "n_measurements": 2,
+   "best_p_affinity": 4.52,
+   "affinity_types": [
+    "IC50",
+    "Ki"
+   ],
+   "best_ligand_efficiency": 0.27
+  },
+  {
+   "polymerid": 2127,
+   "complexid": null,
+   "target_name": "Cytochrome P450 3A4",
+   "uniprot_raw": "P08684",
+   "organism": "Homo sapiens",
+   "n_measurements": 4,
+   "best_p_affinity": 4.3,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.26
+  },
+  {
+   "polymerid": 356,
+   "complexid": null,
+   "target_name": "Cytochrome P450 2D6",
+   "uniprot_raw": "P10635",
+   "organism": "Homo sapiens",
+   "n_measurements": 2,
+   "best_p_affinity": 4.3,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.26
+  },
+  {
+   "polymerid": 2128,
+   "complexid": null,
+   "target_name": "Cytochrome P450 2C9",
+   "uniprot_raw": "P11712",
+   "organism": "Homo sapiens",
+   "n_measurements": 2,
+   "best_p_affinity": 4.3,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.26
+  },
+  {
+   "polymerid": 2146,
+   "complexid": null,
+   "target_name": "Cytochrome P450 1A2",
+   "uniprot_raw": "P05177",
+   "organism": "Homo sapiens",
+   "n_measurements": 2,
+   "best_p_affinity": 4.3,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.26
+  },
+  {
+   "polymerid": 2148,
+   "complexid": null,
+   "target_name": "Cytochrome P450 2C19",
+   "uniprot_raw": "P33261",
+   "organism": "Homo sapiens",
+   "n_measurements": 2,
+   "best_p_affinity": 4.3,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.26
+  },
+  {
+   "polymerid": 4987,
+   "complexid": null,
+   "target_name": "Cytochrome P450 2A6",
+   "uniprot_raw": "P11509",
+   "organism": "Homo sapiens",
+   "n_measurements": 2,
+   "best_p_affinity": 4.3,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.26
+  },
+  {
+   "polymerid": 5173,
+   "complexid": null,
+   "target_name": "Cytochrome P450 2E1",
+   "uniprot_raw": "P05181",
+   "organism": "Homo sapiens",
+   "n_measurements": 2,
+   "best_p_affinity": 4.3,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.26
+  },
+  {
+   "polymerid": 6685,
+   "complexid": null,
+   "target_name": "Cytochrome P450 2B6",
+   "uniprot_raw": "P20813",
+   "organism": "Homo sapiens",
+   "n_measurements": 2,
+   "best_p_affinity": 4.3,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.26
+  },
+  {
+   "polymerid": 7129,
+   "complexid": null,
+   "target_name": "Cytochrome P450 2C8",
+   "uniprot_raw": "P10632",
+   "organism": "Homo sapiens",
+   "n_measurements": 2,
+   "best_p_affinity": 4.3,
+   "affinity_types": [
+    "IC50"
+   ],
+   "best_ligand_efficiency": 0.26
+  }
+ ],
+ "properties": {
+  "heavy_atoms": 23,
+  "mw": 315.42,
+  "clogp": 1.16,
+  "tpsa": 90.35,
+  "hbd": 3,
+  "hba": 5,
+  "rotatable_bonds": 2,
+  "rings": 6,
+  "aromatic_rings": 0,
+  "fsp3": 0.889,
+  "qed": 0.8,
+  "ro5_violations": 0,
+  "scaffold": "O=C(CC12CC3CC(CC(C3)C1)C2)N1CC[C@@H]2C[C@@H]21",
+  "generic_scaffold": "CC(CC12CC3CC(CC(C3)C1)C2)C1CCC2CC21",
+  "pains": [],
+  "brenk": [],
+  "nih": []
+ }
+}

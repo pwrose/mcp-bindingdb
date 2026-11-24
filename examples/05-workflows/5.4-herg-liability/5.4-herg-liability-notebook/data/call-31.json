@@ -1,0 +1,33 @@
+{
+ "query": "moxifloxacin",
+ "resolved": true,
+ "source": "bindingdb",
+ "smiles": "COc1c2c(cc(c1N3C[C@@H]4CCCN[C@@H]4C3)F)C(=O)C(=CN2C5CC5)C(=O)O",
+ "inchi_key": "FABPRXSRWADJSP-MEDUHNTESA-N",
+ "monomerid": 50366824,
+ "ambiguous": true,
+ "candidates": [
+  {
+   "monomerid": 50366824,
+   "bdbm_id": "BDBM50366824",
+   "name": "Avelox",
+   "inchi_key": "FABPRXSRWADJSP-MEDUHNTESA-N",
+   "smiles": "COc1c2c(cc(c1N3C[C@@H]4CCCN[C@@H]4C3)F)C(=O)C(=CN2C5CC5)C(=O)O",
+   "n_activities": 48
+  },
+  {
+   "monomerid": 50131428,
+   "bdbm_id": "BDBM50131428",
+   "name": "Avelox",
+   "inchi_key": "RGCXUJSMRUJKKB-UHFFFAOYSA-N",
+   "smiles": "COc1c(N2CC3CCCNC3C2)c(F)cc2C(=O)C(CN(C3CC3)c12)C(O)=O",
+   "n_activities": 4
+  }
+ ],
+ "sources_tried": [
+  {
+   "source": "bindingdb",
+   "status": "found"
+  }
+ ]
+}

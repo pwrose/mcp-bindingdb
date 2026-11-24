@@ -1,0 +1,30 @@
+{
+ "row_count": 2,
+ "truncated": false,
+ "rows": [
+  {
+   "target_kind": "polymer",
+   "target_id": 1236,
+   "name": "Dipeptidyl peptidase 8",
+   "uniprot": "Q6V1X1",
+   "uniprot_raw": "Q6V1X1",
+   "organism": "Homo sapiens",
+   "type": "Enzyme",
+   "n_activities": 2342,
+   "n_compounds": 2016,
+   "matched_name": "DPP8"
+  },
+  {
+   "target_kind": "complex",
+   "target_id": 336,
+   "name": "Dipeptidyl peptidase 8/9",
+   "uniprot": null,
+   "uniprot_raw": null,
+   "organism": null,
+   "type": "Protein",
+   "n_activities": 77,
+   "n_compounds": 35,
+   "matched_name": "DPP8/9"
+  }
+ ]
+}

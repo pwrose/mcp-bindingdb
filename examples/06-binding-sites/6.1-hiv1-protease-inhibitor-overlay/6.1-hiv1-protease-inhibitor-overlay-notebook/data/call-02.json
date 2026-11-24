@@ -1,0 +1,359 @@
+{
+ "target": "Dimer of Gag-Pol polyprotein [501-599,Q508K,L534I,L564I,C568A,C596A]",
+ "n_compounds": 13,
+ "rows": [
+  {
+   "monomerid": 518,
+   "bdbm": "BDBM518",
+   "name": "Viracept",
+   "ligand_code": "1UN",
+   "match": "same structure",
+   "pdb_ids": [
+    "2PYM",
+    "2PYN",
+    "2Q63",
+    "2Q64",
+    "2QAK"
+   ],
+   "n_pdb_ids": 5,
+   "affinity_type": "Ki",
+   "median_nm": 0.01,
+   "best_nm": 0.01,
+   "n_measurements": 1,
+   "other_affinity_types": [],
+   "found_in_pdb_by_inchikey": [
+    "2PYM",
+    "2PYN",
+    "2Q63",
+    "2Q64",
+    "2QAK"
+   ]
+  },
+  {
+   "monomerid": 9236,
+   "bdbm": "BDBM9236",
+   "name": "TMC-126",
+   "ligand_code": "DJR",
+   "match": "same structure",
+   "pdb_ids": [
+    "2I4U",
+    "7LDY",
+    "7M9Z"
+   ],
+   "n_pdb_ids": 3,
+   "affinity_type": "Ki",
+   "median_nm": 0.014499999999999999,
+   "best_nm": 0.014,
+   "n_measurements": 2,
+   "other_affinity_types": [
+    "EC50"
+   ]
+  },
+  {
+   "monomerid": 8125,
+   "bdbm": "BDBM8125",
+   "name": "Darunavir",
+   "ligand_code": "017",
+   "match": "same structure",
+   "pdb_ids": [
+    "2IEN",
+    "3BVB",
+    "3GGU",
+    "3JVY",
+    "3JW2",
+    "3PWM",
+    "3T3C",
+    "3TTP",
+    "3U7S",
+    "3UCB",
+    "4HLA",
+    "4LL3",
+    "5E5K",
+    "6P9A",
+    "7MAP",
+    "7MAQ",
+    "7MAR",
+    "7MAS"
+   ],
+   "n_pdb_ids": 18,
+   "affinity_type": "Ki",
+   "median_nm": 0.015,
+   "best_nm": 0.014,
+   "n_measurements": 2,
+   "other_affinity_types": [
+    "EC50"
+   ],
+   "found_in_pdb_by_inchikey": [
+    "2IEN",
+    "3BVB",
+    "3GGU",
+    "3JVY",
+    "3JW2",
+    "3PWM",
+    "3T3C",
+    "3TTP",
+    "3U7S",
+    "3UCB",
+    "4HLA",
+    "4LL3",
+    "5E5K",
+    "6P9A",
+    "7MAP",
+    "7MAQ",
+    "7MAR",
+    "7MAS"
+   ]
+  },
+  {
+   "monomerid": 520,
+   "bdbm": "BDBM520",
+   "name": "RTV",
+   "ligand_code": "RIT",
+   "match": "same structure",
+   "pdb_ids": [
+    "1RL8",
+    "1SH9",
+    "3NDW",
+    "3NDX"
+   ],
+   "n_pdb_ids": 4,
+   "affinity_type": "Ki",
+   "median_nm": 0.02,
+   "best_nm": 0.02,
+   "n_measurements": 1,
+   "other_affinity_types": [],
+   "found_in_pdb_by_inchikey": [
+    "1RL8",
+    "1SH9",
+    "3NDW",
+    "3NDX"
+   ]
+  },
+  {
+   "monomerid": 25367,
+   "bdbm": "BDBM25367",
+   "name": "GRL-0255A",
+   "ligand_code": "G55",
+   "match": "same structure",
+   "pdb_ids": [
+    "3DJK"
+   ],
+   "n_pdb_ids": 1,
+   "affinity_type": "Ki",
+   "median_nm": 0.026,
+   "best_nm": 0.026,
+   "n_measurements": 1,
+   "other_affinity_types": [
+    "IC50"
+   ],
+   "found_in_pdb_by_inchikey": [
+    "3DJK"
+   ]
+  },
+  {
+   "monomerid": 35968,
+   "bdbm": "BDBM35968",
+   "name": "cyclic compound, 14c",
+   "ligand_code": "GR6",
+   "match": "connectivity only",
+   "pdb_ids": [
+    "3I6O"
+   ],
+   "n_pdb_ids": 1,
+   "affinity_type": "Ki",
+   "median_nm": 0.028499999999999998,
+   "best_nm": 0.012,
+   "n_measurements": 2,
+   "other_affinity_types": [
+    "EC50"
+   ],
+   "found_in_pdb_by_inchikey": [
+    "3I6O"
+   ]
+  },
+  {
+   "monomerid": 577,
+   "bdbm": "BDBM577",
+   "name": "APV",
+   "ligand_code": "478",
+   "match": "same structure",
+   "pdb_ids": [
+    "1HPV",
+    "3NU3",
+    "3NU4",
+    "3NU5",
+    "3NU6",
+    "3NU9",
+    "3NUJ",
+    "3NUO",
+    "3S43",
+    "4J5J",
+    "4JEC",
+    "5KR0",
+    "5T8H",
+    "6P9B",
+    "7N6V",
+    "7N6X"
+   ],
+   "n_pdb_ids": 16,
+   "affinity_type": "Ki",
+   "median_nm": 0.04,
+   "best_nm": 0.04,
+   "n_measurements": 3,
+   "other_affinity_types": [
+    "IC50"
+   ]
+  },
+  {
+   "monomerid": 519,
+   "bdbm": "BDBM519",
+   "name": "SQV",
+   "ligand_code": "ROC",
+   "match": "same structure",
+   "pdb_ids": [
+    "3NDU",
+    "3PWR",
+    "3UFN"
+   ],
+   "n_pdb_ids": 3,
+   "affinity_type": "Ki",
+   "median_nm": 0.04,
+   "best_nm": 0.04,
+   "n_measurements": 1,
+   "other_affinity_types": [
+    "IC50"
+   ],
+   "found_in_pdb_by_inchikey": [
+    "3NDU",
+    "3PWR",
+    "3UFN"
+   ]
+  },
+  {
+   "monomerid": 35982,
+   "bdbm": "BDBM35982",
+   "name": "cyclic compound, 14c-E",
+   "ligand_code": "GR6",
+   "match": "same structure",
+   "pdb_ids": [
+    "3I6O"
+   ],
+   "n_pdb_ids": 1,
+   "affinity_type": "Ki",
+   "median_nm": 0.06,
+   "best_nm": 0.06,
+   "n_measurements": 1,
+   "other_affinity_types": [
+    "EC50"
+   ],
+   "found_in_pdb_by_inchikey": [
+    "3I6O"
+   ]
+  },
+  {
+   "monomerid": 517,
+   "bdbm": "BDBM517",
+   "name": "Crixivan",
+   "ligand_code": "MK1",
+   "match": "same structure",
+   "pdb_ids": [
+    "1HSG",
+    "1SDT",
+    "1SDU",
+    "1SDV",
+    "1SGU",
+    "2B7Z"
+   ],
+   "n_pdb_ids": 6,
+   "affinity_type": "Ki",
+   "median_nm": 0.07,
+   "best_nm": 0.07,
+   "n_measurements": 1,
+   "other_affinity_types": [],
+   "found_in_pdb_by_inchikey": [
+    "1HSG",
+    "1SDT",
+    "1SDU",
+    "1SDV",
+    "1SGU",
+    "2B7Z"
+   ]
+  },
+  {
+   "monomerid": 31817,
+   "bdbm": "BDBM31817",
+   "name": "GRL-02031",
+   "ligand_code": "031",
+   "match": "same structure",
+   "pdb_ids": [
+    "3H5B",
+    "3VF5",
+    "3VF7",
+    "3VFB",
+    "4J55"
+   ],
+   "n_pdb_ids": 5,
+   "affinity_type": "Ki",
+   "median_nm": 0.099,
+   "best_nm": 0.099,
+   "n_measurements": 1,
+   "other_affinity_types": [],
+   "found_in_pdb_by_inchikey": [
+    "3H5B",
+    "3VF5",
+    "3VF7",
+    "3VFB",
+    "4J55"
+   ]
+  },
+  {
+   "monomerid": 25365,
+   "bdbm": "BDBM25365",
+   "name": "(R)-(hydroxyethylamino)sulfonamide isostere, 3b",
+   "ligand_code": "G55",
+   "match": "connectivity only",
+   "pdb_ids": [
+    "3DJK"
+   ],
+   "n_pdb_ids": 1,
+   "affinity_type": "Ki",
+   "median_nm": 0.16,
+   "best_nm": 0.16,
+   "n_measurements": 1,
+   "other_affinity_types": [
+    "IC50"
+   ],
+   "found_in_pdb_by_inchikey": [
+    "3DJK"
+   ]
+  },
+  {
+   "monomerid": 31813,
+   "bdbm": "BDBM31813",
+   "name": "methyl-2-pyrrolidinone, 17b",
+   "ligand_code": "031",
+   "match": "connectivity only",
+   "pdb_ids": [
+    "3H5B",
+    "3VF5",
+    "3VF7",
+    "3VFB",
+    "4J55"
+   ],
+   "n_pdb_ids": 5,
+   "affinity_type": "Ki",
+   "median_nm": 0.31,
+   "best_nm": 0.31,
+   "n_measurements": 1,
+   "other_affinity_types": [],
+   "found_in_pdb_by_inchikey": [
+    "3H5B",
+    "3VF5",
+    "3VF7",
+    "3VFB",
+    "4J55"
+   ]
+  }
+ ],
+ "truncated": false
+}

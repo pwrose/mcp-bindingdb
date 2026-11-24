@@ -1,0 +1,30 @@
+{
+ "row_count": 3,
+ "truncated": false,
+ "rows": [
+  {
+   "uniprot": "P08581",
+   "affinity_type": "IC50",
+   "n": 51,
+   "n_exact": 47,
+   "n_sources": 39,
+   "median_nm": 8.0
+  },
+  {
+   "uniprot": "P08581",
+   "affinity_type": "Kd",
+   "n": 7,
+   "n_exact": 7,
+   "n_sources": 4,
+   "median_nm": 2.0
+  },
+  {
+   "uniprot": "P08581",
+   "affinity_type": "Ki",
+   "n": 12,
+   "n_exact": 12,
+   "n_sources": 4,
+   "median_nm": 14.0
+  }
+ ]
+}

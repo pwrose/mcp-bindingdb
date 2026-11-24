@@ -1,0 +1,42 @@
+{
+ "row_count": 3,
+ "truncated": false,
+ "rows": [
+  {
+   "target_kind": "polymer",
+   "target_id": 363,
+   "name": "Nuclear receptor ROR-gamma [238-497]",
+   "uniprot": "P51449",
+   "uniprot_raw": "P51449[238-497]",
+   "organism": "Homo sapiens",
+   "type": "Protein",
+   "n_activities": 278,
+   "n_compounds": 162,
+   "matched_name": "Retinoid-related orphan receptor gamma (RORgamma-LBD)"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 9294,
+   "name": "Nuclear receptor ROR-gamma [258-518,Y502F]",
+   "uniprot": "P51449",
+   "uniprot_raw": "P51449[258-518,Y502F]",
+   "organism": "Homo sapiens",
+   "type": "Enzyme",
+   "n_activities": 83,
+   "n_compounds": 43,
+   "matched_name": "Retinoic acid-related nuclear receptor gamma t (RORgammat)"
+  },
+  {
+   "target_kind": "polymer",
+   "target_id": 9293,
+   "name": "Nuclear receptor ROR-gamma [258-518]",
+   "uniprot": "P51449",
+   "uniprot_raw": "P51449[258-518]",
+   "organism": "Homo sapiens",
+   "type": "Enzyme",
+   "n_activities": 68,
+   "n_compounds": 41,
+   "matched_name": "Retinoic acid-related nuclear receptor gamma t (RORgammat)"
+  }
+ ]
+}

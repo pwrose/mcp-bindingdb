@@ -1,0 +1,33 @@
+{
+ "query": "mesoridazine",
+ "resolved": true,
+ "source": "bindingdb",
+ "smiles": "CN1CCCCC1CCN1c2ccccc2Sc2ccc(cc12)S(C)=O",
+ "inchi_key": "SLVMESMUVMCQIY-UHFFFAOYSA-N",
+ "monomerid": 50131440,
+ "ambiguous": false,
+ "candidates": [
+  {
+   "monomerid": 50131440,
+   "bdbm_id": "BDBM50131440",
+   "name": "Serentil",
+   "inchi_key": "SLVMESMUVMCQIY-UHFFFAOYSA-N",
+   "smiles": "CN1CCCCC1CCN1c2ccccc2Sc2ccc(cc12)S(C)=O",
+   "n_activities": 37
+  },
+  {
+   "monomerid": 50370414,
+   "bdbm_id": "BDBM50370414",
+   "name": "MESORIDAZINE",
+   "inchi_key": "SLVMESMUVMCQIY-DXPJPUQTSA-N",
+   "smiles": "CN1CCCC[C@@H]1CCN1c2ccccc2Sc2ccc([S@](C)=O)cc21",
+   "n_activities": 29
+  }
+ ],
+ "sources_tried": [
+  {
+   "source": "bindingdb",
+   "status": "found"
+  }
+ ]
+}

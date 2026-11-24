@@ -1,0 +1,25 @@
+{
+ "query": "crizotinib",
+ "resolved": true,
+ "source": "bindingdb",
+ "smiles": "C[C@@H](Oc1cc(cnc1N)-c1cnn(c1)C1CCNCC1)c1c(Cl)ccc(F)c1Cl |r|",
+ "inchi_key": "KTEIFNKAUNYNJU-GFCCVEGCSA-N",
+ "monomerid": 50306682,
+ "ambiguous": false,
+ "candidates": [
+  {
+   "monomerid": 50306682,
+   "bdbm_id": "BDBM50306682",
+   "name": "CRIZOTINIB",
+   "inchi_key": "KTEIFNKAUNYNJU-GFCCVEGCSA-N",
+   "smiles": "C[C@@H](Oc1cc(cnc1N)-c1cnn(c1)C1CCNCC1)c1c(Cl)ccc(F)c1Cl |r|",
+   "n_activities": 813
+  }
+ ],
+ "sources_tried": [
+  {
+   "source": "bindingdb",
+   "status": "found"
+  }
+ ]
+}

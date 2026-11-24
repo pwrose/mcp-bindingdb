@@ -1,0 +1,30 @@
+{
+ "row_count": 6,
+ "truncated": false,
+ "rows": [
+  {
+   "kind": "US granted (B1/B2)",
+   "patents": 7262
+  },
+  {
+   "kind": "US application (A1)",
+   "patents": 1631
+  },
+  {
+   "kind": "WO/PCT application",
+   "patents": 78
+  },
+  {
+   "kind": "US reissue (E)",
+   "patents": 24
+  },
+  {
+   "kind": "other: A9",
+   "patents": 8
+  },
+  {
+   "kind": "other: A2",
+   "patents": 1
+  }
+ ]
+}

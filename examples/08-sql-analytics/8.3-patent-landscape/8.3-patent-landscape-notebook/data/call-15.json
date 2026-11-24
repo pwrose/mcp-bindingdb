@@ -1,0 +1,18 @@
+{
+ "row_count": 2,
+ "truncated": false,
+ "rows": [
+  {
+   "source": "other",
+   "compounds": 322640,
+   "median_mw": 421.5,
+   "pct_mw_over_500": 25.4
+  },
+  {
+   "source": "patent",
+   "compounds": 516552,
+   "median_mw": 461.7,
+   "pct_mw_over_500": 34.2
+  }
+ ]
+}

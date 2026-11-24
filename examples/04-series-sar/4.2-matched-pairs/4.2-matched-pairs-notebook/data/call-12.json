@@ -1,0 +1,9 @@
+{
+ "affinity_type": "Ki",
+ "n_compounds": 1500,
+ "n_pairs": 0,
+ "row_count": 0,
+ "truncated": false,
+ "rows": [],
+ "note": "Only the 1,500 most potent compounds were paired; raise max_compounds to cover more of the target, at the cost of time. No pair of the 1,500 compounds differs by a single group under these filters; a larger max_compounds or max_variable_atoms finds more."
+}

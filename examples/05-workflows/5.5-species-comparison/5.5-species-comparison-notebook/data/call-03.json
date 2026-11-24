@@ -1,0 +1,30 @@
+{
+ "row_count": 3,
+ "truncated": false,
+ "rows": [
+  {
+   "same_paper": false,
+   "n_compounds": 213,
+   "mean_abs_diff": 0.51,
+   "median_diff": 0.0,
+   "n_identical_rounded": 43,
+   "n_within_10fold": 180
+  },
+  {
+   "same_paper": true,
+   "n_compounds": 162,
+   "mean_abs_diff": 0.55,
+   "median_diff": 0.0,
+   "n_identical_rounded": 3,
+   "n_within_10fold": 140
+  },
+  {
+   "same_paper": null,
+   "n_compounds": 375,
+   "mean_abs_diff": 0.53,
+   "median_diff": 0.0,
+   "n_identical_rounded": 46,
+   "n_within_10fold": 320
+  }
+ ]
+}

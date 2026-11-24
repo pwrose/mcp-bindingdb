@@ -1,0 +1,41 @@
+{
+ "query": "ondansetron",
+ "resolved": true,
+ "source": "bindingdb",
+ "smiles": "Cc1nccn1CC2CCc3c(c4ccccc4n3C)C2=O",
+ "inchi_key": "FELGMEQIXOGIFQ-UHFFFAOYSA-N",
+ "monomerid": 85330,
+ "ambiguous": false,
+ "candidates": [
+  {
+   "monomerid": 85330,
+   "bdbm_id": "BDBM85330",
+   "name": "ONDANSETRON",
+   "inchi_key": "FELGMEQIXOGIFQ-UHFFFAOYSA-N",
+   "smiles": "Cc1nccn1CC2CCc3c(c4ccccc4n3C)C2=O",
+   "n_activities": 117
+  },
+  {
+   "monomerid": 50241365,
+   "bdbm_id": "BDBM50241365",
+   "name": "ONDANSETRON",
+   "inchi_key": "FELGMEQIXOGIFQ-UHFFFAOYSA-N",
+   "smiles": "Cc1nccn1CC2CCc3c(c4ccccc4n3C)C2=O",
+   "n_activities": 1
+  },
+  {
+   "monomerid": 50000493,
+   "bdbm_id": "BDBM50000493",
+   "name": "Zofran",
+   "inchi_key": "FELGMEQIXOGIFQ-UHFFFAOYSA-N",
+   "smiles": "Cc1nccn1CC1CCc2c(C1=O)c1ccccc1n2C",
+   "n_activities": 0
+  }
+ ],
+ "sources_tried": [
+  {
+   "source": "bindingdb",
+   "status": "found"
+  }
+ ]
+}

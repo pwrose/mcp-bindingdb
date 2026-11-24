@@ -1,0 +1,53 @@
+{
+ "row_count": 2,
+ "truncated": false,
+ "rows": [
+  {
+   "summary": "all values",
+   "n": 25,
+   "censored": 21,
+   "median_p_affinity": 5.0,
+   "max_p_affinity": 9.96,
+   "raw_values": [
+    "= 0.110000 IC50",
+    "= 7600 Kd",
+    "= 7600 Kd",
+    "= 7600 Kd",
+    "> >10000 Kd",
+    "> >10000 Kd",
+    "> >10000 Kd",
+    "> >10000 Kd",
+    "> >10000 Kd",
+    "> >10000 Kd",
+    "> >10000 Kd",
+    "> >10000 Kd",
+    "> >10000 Kd",
+    "> >10000 Kd",
+    "> >10000 Kd",
+    "> >10000 Kd",
+    "> >10000 Kd",
+    "> >10000 Kd",
+    "> >10000 Kd",
+    "> >10000 Kd",
+    "> >10000 Kd",
+    "> >10000 Kd",
+    "> >10000 Kd",
+    "> >10000 Kd",
+    "> >100000 IC50"
+   ]
+  },
+  {
+   "summary": "exact values only",
+   "n": 4,
+   "censored": 0,
+   "median_p_affinity": 5.12,
+   "max_p_affinity": 9.96,
+   "raw_values": [
+    "= 0.110000 IC50",
+    "= 7600 Kd",
+    "= 7600 Kd",
+    "= 7600 Kd"
+   ]
+  }
+ ]
+}

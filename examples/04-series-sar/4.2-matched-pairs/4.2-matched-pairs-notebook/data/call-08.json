@@ -1,0 +1,17 @@
+{
+ "row_count": 1,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 19023,
+   "bdbm_id": "BDBM19023",
+   "name": "Apixaban",
+   "inchi_key": "QNZCBYKSOIHPEH-UHFFFAOYSA-N",
+   "smiles": "COc1ccc(cc1)-n1nc(C(N)=O)c2CCN(C(=O)c12)c1ccc(cc1)N1CCCCC1=O",
+   "mol_weight": 459.19,
+   "n_activities": 27,
+   "n_targets": 5,
+   "matched_name": "Apixaban"
+  }
+ ]
+}

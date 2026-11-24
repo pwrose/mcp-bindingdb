@@ -1,0 +1,345 @@
+{
+ "overlay_id": "b89c7bfcdc68",
+ "title": "Imatinib and approved analogs in the ABL1 kinase site",
+ "reference": "3K5V",
+ "entries": [
+  {
+   "pdb_id": "3K5V",
+   "het": "STI",
+   "name": "Gleevec",
+   "monomerid": 13530,
+   "affinity": "Kd 35 nM (median of 32)",
+   "resolution": 1.74,
+   "pocket_rmsd": 0.0,
+   "global_rmsd": 0.0,
+   "n_pocket": 286,
+   "n_core": 286,
+   "moved": [],
+   "identity": 100.0,
+   "target_identity": 97.9,
+   "chains": [
+    "A"
+   ],
+   "contacts": [
+    "L267:A",
+    "Y272:A",
+    "V275:A",
+    "A288:A",
+    "K290:A",
+    "E305:A",
+    "V308:A",
+    "M309:A",
+    "I312:A",
+    "V318:A",
+    "I332:A",
+    "T334:A",
+    "F336:A",
+    "M337:A",
+    "G340:A",
+    "F378:A",
+    "I379:A",
+    "H380:A",
+    "L389:A",
+    "A399:A",
+    "D400:A",
+    "F401:A"
+   ],
+   "potencies": {
+    "EC50": {
+     "n": 1,
+     "median": 70.0,
+     "q1": 70.0,
+     "q3": 70.0,
+     "min": 70.0,
+     "max": 70.0
+    },
+    "IC50": {
+     "n": 39,
+     "median": 300.0,
+     "q1": 189.0,
+     "q3": 828.0,
+     "min": 20.0,
+     "max": 74000.0
+    },
+    "Kd": {
+     "n": 32,
+     "median": 35.0,
+     "q1": 8.5,
+     "q3": 77.0,
+     "min": 1.0,
+     "max": 6200.0
+    },
+    "Ki": {
+     "n": 6,
+     "median": 25.0,
+     "q1": 13.0,
+     "q3": 232.8,
+     "min": 13.0,
+     "max": 7000.0
+    }
+   },
+   "hbond_partners": [
+    "D400:A",
+    "E305:A",
+    "H380:A",
+    "I379:A",
+    "M337:A",
+    "T334:A"
+   ],
+   "note": ""
+  },
+  {
+   "pdb_id": "5MO4",
+   "het": "NIL",
+   "name": "NILOTINIB",
+   "monomerid": 50237710,
+   "affinity": "Kd 13.5 nM (median of 16)",
+   "resolution": 2.17,
+   "pocket_rmsd": 0.44,
+   "global_rmsd": 7.95,
+   "n_pocket": 66,
+   "n_core": 65,
+   "moved": [],
+   "identity": 91.3,
+   "target_identity": 99.5,
+   "chains": [
+    "A"
+   ],
+   "contacts": [
+    "L267:A",
+    "Y272:A",
+    "V275:A",
+    "A288:A",
+    "V289:A",
+    "K290:A",
+    "K304:A",
+    "E305:A",
+    "V308:A",
+    "M309:A",
+    "I312:A",
+    "L317:A",
+    "V318:A",
+    "I332:A",
+    "T334:A",
+    "F336:A",
+    "M337:A",
+    "G340:A",
+    "F378:A",
+    "H380:A",
+    "L389:A",
+    "V398:A",
+    "A399:A",
+    "D400:A",
+    "F401:A"
+   ],
+   "potencies": {
+    "IC50": {
+     "n": 48,
+     "median": 30.0,
+     "q1": 14.5,
+     "q3": 55.0,
+     "min": 0.87,
+     "max": 9170.0
+    },
+    "Kd": {
+     "n": 16,
+     "median": 13.5,
+     "q1": 10.0,
+     "q3": 21.0,
+     "min": 3.6,
+     "max": 660.0
+    },
+    "Ki": {
+     "n": 1,
+     "median": 1.0,
+     "q1": 1.0,
+     "q3": 1.0,
+     "min": 1.0,
+     "max": 1.0
+    }
+   },
+   "hbond_partners": [
+    "D400:A",
+    "E305:A",
+    "M337:A"
+   ],
+   "note": ""
+  },
+  {
+   "pdb_id": "7N9G",
+   "het": "1N1",
+   "name": "DASATINIB",
+   "monomerid": 13216,
+   "affinity": "Kd 0.53 nM (median of 28)",
+   "resolution": 2.2,
+   "pocket_rmsd": 0.57,
+   "global_rmsd": 2.7,
+   "n_pocket": 65,
+   "n_core": 60,
+   "moved": [
+    "D400:A (3.9 Å)",
+    "F401:A (5.3 Å)",
+    "G402:A (5.7 Å)",
+    "L403:A (12.7 Å)"
+   ],
+   "identity": 99.6,
+   "target_identity": 100.0,
+   "chains": [
+    "A"
+   ],
+   "contacts": [
+    "L267:A",
+    "G268:A",
+    "Y272:A",
+    "V275:A",
+    "A288:A",
+    "V289:A",
+    "K290:A",
+    "M309:A",
+    "V318:A",
+    "I332:A",
+    "T334:A",
+    "E335:A",
+    "F336:A",
+    "M337:A",
+    "T338:A",
+    "Y339:A",
+    "G340:A",
+    "L389:A",
+    "A399:A",
+    "D400:A",
+    "F401:A"
+   ],
+   "potencies": {
+    "IC50": {
+     "n": 48,
+     "median": 1.05,
+     "q1": 0.575,
+     "q3": 2.075,
+     "min": 0.1,
+     "max": 1140.0
+    },
+    "Kd": {
+     "n": 28,
+     "median": 0.53,
+     "q1": 0.04475,
+     "q3": 1.2,
+     "min": 0.016,
+     "max": 890.0
+    }
+   },
+   "hbond_partners": [
+    "M337:A",
+    "T334:A"
+   ],
+   "note": ""
+  },
+  {
+   "pdb_id": "3UE4",
+   "het": "DB8",
+   "name": "BOSUTINIB",
+   "monomerid": 4552,
+   "affinity": "Kd 0.062 nM (median of 15)",
+   "resolution": 2.424,
+   "pocket_rmsd": 0.61,
+   "global_rmsd": 5.53,
+   "n_pocket": 67,
+   "n_core": 56,
+   "moved": [
+    "G268:A (4.3 Å)",
+    "G269:A (7.8 Å)",
+    "G270:A (6.7 Å)",
+    "Q271:A (8.2 Å)",
+    "Y272:A (8.0 Å)",
+    "G273:A (4.7 Å)",
+    "D400:A (4.4 Å)",
+    "F401:A (6.2 Å)",
+    "G402:A (6.3 Å)",
+    "L403:A (13.2 Å)",
+    "L406:A (26.1 Å)"
+   ],
+   "identity": 99.3,
+   "target_identity": 100.0,
+   "chains": [
+    "A"
+   ],
+   "contacts": [
+    "L267:A",
+    "A288:A",
+    "V289:A",
+    "K290:A",
+    "E305:A",
+    "V318:A",
+    "I332:A",
+    "T334:A",
+    "E335:A",
+    "F336:A",
+    "M337:A",
+    "T338:A",
+    "G340:A",
+    "L389:A",
+    "F401:A"
+   ],
+   "potencies": {
+    "IC50": {
+     "n": 13,
+     "median": 1.1,
+     "q1": 1.0,
+     "q3": 6167.0,
+     "min": 0.5,
+     "max": 10000.0
+    },
+    "Kd": {
+     "n": 15,
+     "median": 0.062,
+     "q1": 0.043,
+     "q3": 0.15,
+     "min": 0.029,
+     "max": 21.0
+    }
+   },
+   "hbond_partners": [
+    "M337:A",
+    "T334:A"
+   ],
+   "note": ""
+  }
+ ],
+ "residues": [
+  "L267:A",
+  "G268:A",
+  "Y272:A",
+  "V275:A",
+  "A288:A",
+  "V289:A",
+  "K290:A",
+  "K304:A",
+  "E305:A",
+  "V308:A",
+  "M309:A",
+  "I312:A",
+  "L317:A",
+  "V318:A",
+  "I332:A",
+  "T334:A",
+  "E335:A",
+  "F336:A",
+  "M337:A",
+  "T338:A",
+  "Y339:A",
+  "G340:A",
+  "F378:A",
+  "I379:A",
+  "H380:A",
+  "L389:A",
+  "V398:A",
+  "A399:A",
+  "D400:A",
+  "F401:A"
+ ],
+ "skipped": [],
+ "notes": [],
+ "folder": "~/Library/Application Support/mcp-bindingdb/overlays/b89c7bfcdc68",
+ "contact_figure_id": 1,
+ "client_shows_viewer": false
+}

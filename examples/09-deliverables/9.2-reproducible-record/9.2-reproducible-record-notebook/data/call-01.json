@@ -1,0 +1,17 @@
+{
+ "row_count": 1,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 148264,
+   "bdbm_id": "BDBM148264",
+   "name": "Kisqali",
+   "inchi_key": "RHXHGRAEPCAFML-UHFFFAOYSA-N",
+   "smiles": "CN(C)C(=O)c1cc2cnc(nc2n1C3CCCC3)Nc4ccc(cn4)N5CCNCC5",
+   "mol_weight": 434.25,
+   "n_activities": 59,
+   "n_targets": 15,
+   "matched_name": "Ribociclib"
+  }
+ ]
+}

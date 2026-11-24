@@ -1,0 +1,46 @@
+{
+ "row_count": 4,
+ "truncated": false,
+ "rows": [
+  {
+   "affinity_type": "Ki",
+   "n_compounds": 375,
+   "median_diff": 0.0,
+   "mean_abs_diff": 0.53,
+   "pearson_r": 0.79,
+   "n_gt_10fold": 55,
+   "pct_gt_10fold": 14.7,
+   "n_identical": 46
+  },
+  {
+   "affinity_type": "IC50",
+   "n_compounds": 35,
+   "median_diff": 0.15,
+   "mean_abs_diff": 0.71,
+   "pearson_r": 0.52,
+   "n_gt_10fold": 8,
+   "pct_gt_10fold": 22.9,
+   "n_identical": 2
+  },
+  {
+   "affinity_type": "EC50",
+   "n_compounds": 9,
+   "median_diff": -0.6,
+   "mean_abs_diff": 0.82,
+   "pearson_r": 0.69,
+   "n_gt_10fold": 4,
+   "pct_gt_10fold": 44.4,
+   "n_identical": 0
+  },
+  {
+   "affinity_type": "Kd",
+   "n_compounds": 4,
+   "median_diff": 0.73,
+   "mean_abs_diff": 0.77,
+   "pearson_r": 0.98,
+   "n_gt_10fold": 1,
+   "pct_gt_10fold": 25.0,
+   "n_identical": 0
+  }
+ ]
+}

@@ -1,0 +1,28 @@
+{
+ "row_count": 2,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 50017320,
+   "bdbm_id": "BDBM50017320",
+   "name": "Bretazenil",
+   "inchi_key": "LWUDDYHYYNNIQI-UHFFFAOYSA-N",
+   "smiles": "CC(C)(C)OC(=O)c1ncn-2c1C1CCCN1C(=O)c1c(Br)cccc-21",
+   "mol_weight": 417.07,
+   "n_activities": 13,
+   "n_targets": 7,
+   "matched_name": "Bretazenil"
+  },
+  {
+   "monomerid": 50083908,
+   "bdbm_id": "BDBM50083908",
+   "name": "Bretazenil",
+   "inchi_key": "LWUDDYHYYNNIQI-ZDUSSCGKSA-N",
+   "smiles": "CC(C)(C)OC(=O)c1ncn-2c1[C@@H]1CCCN1C(=O)c1c(Br)cccc-21",
+   "mol_weight": 417.07,
+   "n_activities": 5,
+   "n_targets": 5,
+   "matched_name": "Bretazenil"
+  }
+ ]
+}

@@ -1,0 +1,25 @@
+{
+ "query": "cisapride",
+ "resolved": true,
+ "source": "bindingdb",
+ "smiles": "COC1CN(CCCOc2ccc(F)cc2)CCC1NC(=O)c1cc(Cl)c(N)cc1OC",
+ "inchi_key": "DCSUBABJRXZOMT-UHFFFAOYSA-N",
+ "monomerid": 50005836,
+ "ambiguous": false,
+ "candidates": [
+  {
+   "monomerid": 50005836,
+   "bdbm_id": "BDBM50005836",
+   "name": "CISAPRIDE",
+   "inchi_key": "DCSUBABJRXZOMT-UHFFFAOYSA-N",
+   "smiles": "COC1CN(CCCOc2ccc(F)cc2)CCC1NC(=O)c1cc(Cl)c(N)cc1OC",
+   "n_activities": 93
+  }
+ ],
+ "sources_tried": [
+  {
+   "source": "bindingdb",
+   "status": "found"
+  }
+ ]
+}

@@ -1,0 +1,61 @@
+{
+ "row_count": 2,
+ "truncated": false,
+ "rows": [
+  {
+   "target_kind": "complex",
+   "records": 76,
+   "measurements": 2929,
+   "base_names": [
+    "Dimer of Gag-Pol polyprotein",
+    "HIV-1 Protease",
+    "HIV-1 Protease A Subtype",
+    "HIV-1 Protease A Subtype Mutant (V82F/I84V)",
+    "HIV-1 Protease B Subtype",
+    "HIV-1 Protease B Subtype Mutant (V82F/I84V)",
+    "HIV-1 Protease C Subtype",
+    "HIV-1 Protease C Subtype Mutant (V82F/I84V)",
+    "HIV-1 Protease Mutant (L10I/L90M)",
+    "HIV-1 Protease Mutant (M46I/I54V)",
+    "HIV-1 Protease Mutant (V82A/I84V)",
+    "HIV-1 Protease Mutant (V82F/I84V)",
+    "HIV-1 Protease Mutant, MDR-HM",
+    "HIV-1 Protease Mutant, MDR-QM"
+   ],
+   "organisms": [
+    null
+   ]
+  },
+  {
+   "target_kind": "polymer",
+   "records": 86,
+   "measurements": 7062,
+   "base_names": [
+    "Gag-Pol polyprotein",
+    "HIV-1 Protease A Subtype Mutant (V82F/I84V) chain A",
+    "HIV-1 Protease A Subtype chain A",
+    "HIV-1 Protease B Subtype Mutant (V82F/I84V) chain A",
+    "HIV-1 Protease C Subtype Mutant (V82F/I84V) chain A",
+    "HIV-1 Protease C Subtype chain A",
+    "HIV-1 Protease Mutant (L10I/L90M) chain A",
+    "HIV-1 Protease Mutant (M46I/I54V) chain A",
+    "HIV-1 Protease Mutant (Q7K/L33I/L63I) chain A",
+    "HIV-1 Protease Mutant (Q7K/L33I/L63I) chain B",
+    "HIV-1 Protease Mutant (V82A/I84V) chain A",
+    "HIV-1 Protease Mutant (V82F/I84V) chain A",
+    "HIV-1 Protease Mutant, MDR-HM chain A",
+    "HIV-1 Protease Mutant, MDR-QM chain A",
+    "HIV-1 Protease Substrate",
+    "HIV-1 Protease substrate",
+    "HIV-1 protease",
+    "Protease"
+   ],
+   "organisms": [
+    "Human immunodeficiency virus",
+    "Human immunodeficiency virus 1",
+    "Human immunodeficiency virus 2",
+    null
+   ]
+  }
+ ]
+}

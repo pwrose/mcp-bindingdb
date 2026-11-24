@@ -1,0 +1,55 @@
+{
+ "target": {
+  "target_kind": "polymer",
+  "target_id": 2259,
+  "name": "Polyunsaturated fatty acid 5-lipoxygenase",
+  "uniprot": "P09917",
+  "uniprot_raw": "P09917",
+  "organism": "Homo sapiens",
+  "taxid": "9606",
+  "type": "Enzyme",
+  "res_count": 674,
+  "n_pdb_ids": 9,
+  "chembl_id": "CHEMBL215",
+  "n_activities": 4164,
+  "n_compounds": 2740,
+  "unpid2": null,
+  "common_name": "HUMAN",
+  "topology": "null",
+  "weight": "77972.74",
+  "pdb_ids": "7TTL,7TTK,7TTJ,6NCF,6N2W,3O8Y,3V92,3V99,3V98"
+ },
+ "synonyms": [
+  "5-LO",
+  "LOG5",
+  "ALOX5",
+  "LOX5_HUMAN",
+  "5-Lipoygenase",
+  "5-lipoxygenase/FLAP",
+  "5-Lipoxygenase (LOX)",
+  "5-Lipoxygenase (5-LO)",
+  "5-Lipo-oxygenase (5-LOX)",
+  "Arachidonate 5-lipoxygenase",
+  "Polyunsaturated fatty acid 5-lipoxygenase"
+ ],
+ "measurements_by_type": [
+  {
+   "affinity_type": "IC50",
+   "n_measurements": 4036,
+   "n_compounds": 2684,
+   "best_p_affinity": 9.3
+  },
+  {
+   "affinity_type": "EC50",
+   "n_measurements": 112,
+   "n_compounds": 110,
+   "best_p_affinity": 8.52
+  },
+  {
+   "affinity_type": "Ki",
+   "n_measurements": 16,
+   "n_compounds": 15,
+   "best_p_affinity": 8.08
+  }
+ ]
+}

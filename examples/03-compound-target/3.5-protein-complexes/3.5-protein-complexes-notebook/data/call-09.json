@@ -1,0 +1,17 @@
+{
+ "row_count": 1,
+ "truncated": false,
+ "rows": [
+  {
+   "monomerid": 50310937,
+   "bdbm_id": "BDBM50310937",
+   "name": "5-((3-bromo-10-methyl-9H-benzo[f]imidazo[1,5-a][1,2,4]triazolo[1,5-d][1,4]diazepin-6-yl)methyl)-3-methyl-1,2,4-oxadiazole",
+   "inchi_key": "GCTGWUUTZLTQAR-UHFFFAOYSA-N",
+   "smiles": "Cc1noc(Cc2nc3-c4cc(Br)ccc4-n4cnc(C)c4Cn3n2)n1",
+   "mol_weight": 412.24335,
+   "n_activities": 4,
+   "n_targets": 4,
+   "matched_name": "CHEMBL1081861"
+  }
+ ]
+}
