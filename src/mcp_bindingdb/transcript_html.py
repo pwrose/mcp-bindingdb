@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import base64
 import html as _html
+import re
 from collections.abc import Callable
 from typing import Any, NamedTuple
 
@@ -84,6 +85,11 @@ def _images(smiles: list[str]) -> list[str | None]:
     return out
 
 
+def _unescape(text: str) -> str:
+    """A table cell's source without its backslash escapes: the SMILES as written, to draw."""
+    return re.sub(r"\\([!-/:-@\[-`{-~])", r"\1", text)
+
+
 def _cell(tag: str, attrs: dict[str, Any], children: list[Token]) -> list[Token]:
     """The tokens of one table cell."""
     return [Token(f"{tag}_open", tag, 1, attrs=dict(attrs)),
@@ -144,7 +150,7 @@ def _add_structure_columns(tokens: list[Token], figure: Callable[[str], Figure |
         if header and "smiles" in text.lower():
             columns[table, col] = []
         elif (table, col) in columns and not header:
-            columns[table, col].append(text.strip("`"))
+            columns[table, col].append(_unescape(text.strip("`")))
     for (table, col), values in list(columns.items()):
         shown = in_figures.get(table_section[table])
         if shown and values and all(depict.canonical(v) in shown for v in values if v):

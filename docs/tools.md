@@ -218,7 +218,9 @@ counts) and the conversation as 👤 User / 🧠 Assistant blocks.
 The tool calls are left out by default, also when the analysis used SQL. Only when the user asks for
 them does the model set `include_tool_calls`, and a "BindingDB tool calls" section follows the conversation:
 each call's arguments verbatim (SQL in a `sql` block for `run_sql`), then its result, with lists of rows
-as tables capped at `max_result_rows` (default 5; the true row count is kept). The header then also gives
+as tables capped at `max_result_rows` (default 5; the true row count is kept). Values show as written: the server escapes the characters Markdown would read in a
+table cell (a SMILES's brackets and asterisks), and in the prompts and answers it leaves a `[text](target)`
+whose target is no URL or file (a SMILES such as `N[C@@H](c1ccccc1)C`) as text rather than a link. The header then also gives
 the active window from the first to the last call. `format="json"` returns the same fields unrendered,
 with full results.
 

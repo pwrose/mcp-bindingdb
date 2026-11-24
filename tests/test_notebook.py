@@ -338,7 +338,7 @@ async def test_overlay_calls_carry_their_3d_viewer(tmp_path, monkeypatch):
     assert nb["metadata"]["bindingdb"]["overlay_files"] == ["overlays/call-01.html"]
     first, second = [c for c in nb["cells"] if "call" in c["metadata"].get("bindingdb", {})]
     viewer = "".join(first["outputs"][1]["data"]["text/html"])
-    assert viewer.startswith("<iframe srcdoc=\"") and "&quot;viewer&quot; &amp; co" in viewer and 'sandbox="' in viewer
+    assert viewer.startswith("<div><iframe srcdoc=\"") and "&quot;viewer&quot; &amp; co" in viewer and 'sandbox="' in viewer
     assert len(second["outputs"]) == 1
     assert "the 3D viewers of the binding-site overlays in `overlays/`" in "".join(nb["cells"][0]["source"])
     assert "- `overlays/call-01.html`: the 3D viewer of Call 1's binding-site overlay" in files["README.md"]

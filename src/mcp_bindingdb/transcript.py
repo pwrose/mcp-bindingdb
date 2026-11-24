@@ -7,6 +7,7 @@ supplies the tool calls it actually ran, verbatim, with their results.
 from __future__ import annotations
 
 import json
+import re
 from datetime import datetime, timezone
 from typing import Any
 
@@ -68,10 +69,10 @@ def render_transcript(*, title: str, when: str, model: str, release: str, genera
     if not exchanges:
         body += ["_No prompts recorded._", ""]
     for exchange in exchanges:
-        body += ["👤 **User**", "", (exchange.get("prompt") or "(no prompt)").strip(), "", "---", "",
-                 "🧠 **Assistant**", ""]
+        body += ["👤 **User**", "", escape_false_links((exchange.get("prompt") or "(no prompt)").strip()), "",
+                 "---", "", "🧠 **Assistant**", ""]
         if answer := (exchange.get("answer") or "").strip():
-            body += [answer, ""]
+            body += [escape_false_links(answer), ""]
         for figure_id in exchange.get("figures") or []:
             body += _figure_link(by_id[figure_id], numbers[figure_id], figure_files)
     if unplaced_figures:
@@ -218,8 +219,13 @@ def _rows_to_table(rows: list[dict[str, Any]]) -> list[str]:
     return [*out, ""]
 
 
+#: ASCII punctuation Markdown gives a meaning to in a table cell: a SMILES such as N[C@@H](c1ccccc1) would
+#: otherwise become a link, and [*:1]…[*:2] emphasis.
+_MD_SPECIAL = re.compile(r"([\\`*_\[\]<>~$|])")
+
+
 def _cell(v: Any) -> str:
-    """One value as Markdown table-cell text."""
+    """One value as Markdown table-cell text: shown as is, every character Markdown would read escaped."""
     if v is None:
         return ""
     if isinstance(v, float):
@@ -228,4 +234,24 @@ def _cell(v: Any) -> str:
         v = ", ".join(map(str, v))
     elif isinstance(v, (list, dict)):
         v = json.dumps(v, ensure_ascii=False, default=str)
-    return str(v).replace("|", "\\|").replace("\n", " ")
+    return _MD_SPECIAL.sub(r"\\\1", str(v)).replace("\n", " ")
+
+
+#: [text](target): inline code first, so a link inside `…` is left alone.
+_LINK = re.compile(r"(`+)(?:.|\n)*?\1|(?<![\\!])\[([^\[\]\n]*)\]\(((?:[^()\s]|\([^()\s]*\))*)\)")
+_URL_LIKE = re.compile(r"[A-Za-z][A-Za-z0-9+.-]*:|#|\.{0,2}/|.*/|.*\.[A-Za-z0-9]{1,6}(?:[#?]|$)")
+
+
+def escape_false_links(markdown: str) -> str:
+    """Markdown with each [text](target) whose target is no URL or file escaped, so it shows as written:
+    a SMILES in an answer, e.g. N[C@@H](c1ccccc1)C, is otherwise rendered as a link (to "c1ccccc1").
+    Fenced code blocks and inline code are left alone."""
+    out, fenced = [], False
+    for line in markdown.split("\n"):
+        if line.lstrip().startswith(("```", "~~~")):
+            fenced = not fenced
+        elif not fenced:
+            line = _LINK.sub(lambda m: m.group(0) if m.group(1) or _URL_LIKE.match(m.group(3))
+                             else "\\" + m.group(0), line)
+        out.append(line)
+    return "\n".join(out)

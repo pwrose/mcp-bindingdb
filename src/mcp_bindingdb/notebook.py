@@ -387,7 +387,7 @@ def build_notebook(*, title: str, when: str, model: str, build_info: dict[str, s
 
     body_start = len(nb.cells)
     for k, (exchange, made) in enumerate(zip(exchanges, code_figures), start=1):
-        nb.markdown(f"## Exchange {k}\n\n**👤 User**\n\n{(exchange.get('prompt') or '(no prompt)').strip()}")
+        nb.markdown(f"## Exchange {k}\n\n**👤 User**\n\n{transcript.escape_false_links((exchange.get('prompt') or '(no prompt)').strip())}")
         for entry in exchange["calls"]:
             nb.calls(entry)
         for block in exchange["code"]:
@@ -395,7 +395,8 @@ def build_notebook(*, title: str, when: str, model: str, build_info: dict[str, s
         for figure in exchange["figures"]:  # before the answer, as the chat showed them
             if figure.id not in made:
                 nb.figure(figure, numbers[figure.id])
-        nb.markdown("**🧠 Assistant**\n\n" + ((exchange.get("answer") or "").strip() or "_(no answer recorded)_"))
+        nb.markdown("**🧠 Assistant**\n\n" + (transcript.escape_false_links((exchange.get("answer") or "").strip())
+                                            or "_(no answer recorded)_"))
     if leftover_calls:
         nb.markdown("## BindingDB tool calls\n\nThe calls of this session, in the order they ran.")
         for entry in leftover_calls:
@@ -491,10 +492,10 @@ def overlay_page(tool: str, result: Any) -> str | None:
 def overlay_viewer(page: str) -> str:
     """An overlay's 3D viewer as HTML for a cell's output: the page in an iframe of its own (srcdoc), so its
     scripts and styles stay out of the notebook's page. Jupyter shows it once the notebook is trusted, e.g.
-    after running the cell."""
-    return (f'<iframe srcdoc="{html.escape(page, quote=True)}" title="Binding-site overlay" '
+    after running the cell. The <div> keeps IPython from suggesting its IFrame class instead."""
+    return (f'<div><iframe srcdoc="{html.escape(page, quote=True)}" title="Binding-site overlay" '
             f'style="width:100%;height:{OVERLAY_VIEWER_HEIGHT}px;border:1px solid #dfe3e0;border-radius:8px;'
-            'resize:vertical" sandbox="allow-scripts allow-downloads"></iframe>')
+            'resize:vertical" sandbox="allow-scripts allow-downloads"></iframe></div>')
 
 
 def _html_output(source: str) -> dict[str, Any]:
@@ -962,10 +963,7 @@ class Replay:
         self.results: dict[int, Any] = {}  # call number -> its result, rerun or recorded
         self.folder = Path(folder) if folder else Path.cwd()
         self.rerun = bool(rerun) or _rerun_from_env()
-        if not self.rerun:
-            if not (self.folder / "data").is_dir():
-                print(f"WARNING: no data/ folder in {self.folder}: run the notebook in its own folder, where its "
-                      "recorded results are", file=sys.stderr)
+        if not self.rerun:  # a call whose data/ file is missing says so itself
             print(f"Showing the results recorded with BindingDB release {release} (data/). To rerun the calls on a "
                   f"local database, set RERUN = True above or start Jupyter with {RERUN_ENV}=1.")
             return
