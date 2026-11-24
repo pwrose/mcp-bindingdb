@@ -26,6 +26,19 @@ analytics, and saving the work as a transcript or a reproducible, rerunnable Jup
    Click **mcp-bindingdb**, then **Configure** (top right). Select **Always allow** for all tools (there are several sections).
 4. **Enable mcp-bindingdb in a chat:** in a new chat, click the **+** button and enable **mcp-bindingdb**.
 5. **Ask a question** in that chat, e.g. "Look up imatinib in BindingDB."
+6. **Optional, to run Jupyter notebooks:** install [uv](https://docs.astral.sh/uv/getting-started/installation/).
+   The notebooks the server writes (see [Jupyter notebooks](#jupyter-notebooks)) run with uv.
+   On macOS or Linux, in a terminal (or with Homebrew: `brew install uv`):
+
+   ```bash
+   curl -LsSf https://astral.sh/uv/install.sh | sh
+   ```
+
+   On Windows, in PowerShell:
+
+   ```powershell
+   powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+   ```
 
 > **First Chat**
 >
@@ -108,7 +121,8 @@ any computer: the notebook `imatinib-analogues.ipynb` and an HTML copy to read i
 needs), the recorded results (`data/`), the figures (`figures/`), any longer code Claude wrote as `.py`
 files, and a `README.md`. Keep the folder together.
 
-**Run.** You need only [uv](https://docs.astral.sh/uv/), not mcp-bindingdb. Claude's reply gives the command
+**Run.** You need only [uv](https://docs.astral.sh/uv/), not mcp-bindingdb (to install uv, see step 6 of
+[Quick install](#quick-install-claude-desktop-bundle)). Claude's reply gives the command
 with your paths filled in:
 
 ```bash
